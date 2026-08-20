@@ -1,0 +1,54 @@
+name: FPL-data verversen
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"
+    - cron: "30 9,11,13,15 * * 4,5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ververs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Pillow installeren
+        run: python3 -m pip install --quiet Pillow
+      - uses: actions/setup-node@v4
+        with: { node-version: "24" }
+      - name: Chrome installeren
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+          install-chromedriver: false
+      - name: Data ophalen en de pagina bouwen
+        working-directory: scripts
+        run: |
+          set -e
+          node copilot_ophalen.js    || echo "::warning::Copilot ophalen mislukt"
+          python3 copilot_verwerk.py || echo "::warning::Copilot koppelen mislukt"
+          node odds_ophalen.js       || echo "::warning::odds ophalen mislukt"
+          python3 odds_verwerk.py    || echo "::warning::odds verwerken mislukt"
+          python3 rotatie.py         || echo "::warning::rotatie mislukt"
+          python3 stand.py           || echo "::warning::stand mislukt"
+          python3 vorm.py            || echo "::warning::vorm mislukt"
+          python3 archief.py         || echo "::warning::archief mislukt"
+          python3 dashboard.py --web ..
+          python3 nieuws_ophalen.py  || echo "::warning::nieuws mislukt"
+          python3 dashboard.py --web ..
+      - name: Wegschrijven als er iets veranderd is
+        run: |
+          git config user.name  "fpl-cockpit"
+          git config user.email "actions@github.com"
+          git add data/ index.html scripts/state/
+          if git diff --staged --quiet; then
+            echo "Niets veranderd."
+          else
+            git commit -m "Data bijgewerkt $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
