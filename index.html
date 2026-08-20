@@ -2989,6 +2989,16 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
   border-left:3px solid var(--warn);font-size:var(--t-sm);color:var(--fg-2);line-height:1.6;
   max-width:80ch}
 .drwaarschuw b{color:var(--fg)}
+.accountknop{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 12px;
+  border-radius:var(--r1);border:1px solid var(--line);background:var(--card);color:var(--fg-2);
+  cursor:pointer;font-family:inherit;font-size:var(--t-sm);font-weight:620;
+  transition:background .18s,color .18s,border-color .18s}
+.accountknop:hover{background:var(--card-hi);color:var(--fg);border-color:var(--accent)}
+.accountknop.aan{border-color:color-mix(in srgb,var(--good) 50%,transparent);
+  background:color-mix(in srgb,var(--good) 9%,var(--card));color:var(--good)}
+.accountknop.fout{border-color:color-mix(in srgb,var(--bad) 50%,transparent);color:var(--bad)}
+.accountknop svg{flex:none}
+@media(max-width:620px){.accountknop span{display:none}.accountknop{padding:0 9px}}
 .vers{font-weight:650}
 .vers.goed{color:var(--good)} .vers.let{color:var(--warn)} .vers.oud{color:var(--bad)}
 .drwaarschuw svg{flex:none;margin-top:2px;color:var(--warn)}
@@ -3352,6 +3362,7 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
     </div>
     <div class="moduswrap"><span class="mlbl">Weergave</span>
       <div class="modusknop" id="modusknop" role="group" aria-label="Dag of avond"></div></div>
+    <button class="accountknop" id="accountknop" hidden aria-haspopup="dialog"></button>
   </div>
 </div></header>
 
@@ -4505,7 +4516,7 @@ function solveJS(startSquad,startBudget,gws,startVrij){
       const ruimte=budget+uit.c;
       const clubs={}; sq.forEach(p=>{ if(p.id!==uit.id) clubs[p.t]=(clubs[p.t]||0)+1; });
       const kand=D.db.filter(c=>c.p===uit.p&&!have.has(c.id)&&c.c<=ruimte+1e-9
-        &&!["i","s","u"].includes(c.status)&&(c.st>=15||c.min>=900||c.p90geschat)
+        &&!["i","s","u"].includes(c.status)&&speeltMee(c,45)
         &&(clubs[c.t]||0)<3
         &&!(uit.p==="GKP"&&!["i","s","u","d"].includes(uit.status)))   // geen keeperwissels
         .map(c=>({c,w:venster.reduce((a,gg)=>a+(c.gw[gg]||0),0)-venster.reduce((a,gg)=>a+(uit.gw[gg]||0),0)}))
@@ -8135,6 +8146,215 @@ function kpis(){
 /* ---------- planner: transfers en chips per gameweek, opgeslagen in de browser ----------
    Werkt met localStorage, dus het blijft staan als je het dashboard opnieuw opent op
    hetzelfde apparaat. Het verandert NIETS in FPL zelf — dit is jouw werkblad.        */
+/* ══════════════════════════════════════════════════════════════════════
+   Inloggen en synchroniseren
+
+   Alles wat je in het dashboard doet staat in localStorage. Dat werkt, maar
+   per apparaat: je telefoon en je laptop weten niets van elkaar. Dit koppelt
+   ze aan elkaar via Supabase.
+
+   Waarom Supabase en niet iets eigens: het is gratis, doet authenticatie én
+   opslag, en werkt vanuit een statische pagina zonder eigen server.
+
+   Waarom een e-maillink en geen wachtwoord: dan is er geen wachtwoord om te
+   lekken, te vergeten of ergens in te typen. Je krijgt een link in je mail,
+   je klikt, je bent binnen — op dat apparaat blijf je ingelogd tot je zelf
+   uitlogt, want de sessie wordt met een refresh-token verlengd.
+
+   Er wordt géén bibliotheek geladen: alles gaat via de REST-koppeling van
+   Supabase met gewone fetch-verzoeken. Dat scheelt een externe host, en die
+   worden in de artifactomgeving toch geblokkeerd — daar valt de pagina
+   vanzelf terug op localStorage alleen.
+
+   Zonder ingevulde instellingen hieronder gebeurt er niets en blijft alles
+   werken zoals het werkte.
+   ══════════════════════════════════════════════════════════════════════ */
+const SYNC = Object.assign({url:"", anon:""}, window.FPL_SYNC||{});
+const SYNCSLEUTELS = ["fplcockpit_plan_v1","fplcockpit_watch_v1","fplcockpit_notities_v1",
+  "fplcockpit_versies_v1","fplcockpit_mijnpagina_v1","fplcockpit_nav_v1","fplcockpit_sub_v1",
+  "fplcockpit_inst_v1","fplcockpit_modus","fplcockpit_eigensquad_v1"];
+const SESSIE="fplcockpit_sessie_v1", TIJDEN="fplcockpit_tijden_v1";
+let SES=null, SYNCBEZIG=false, SYNCWACHT=null, SYNCSTAND="uit";
+
+function sesLees(){ try{ return JSON.parse(localStorage.getItem(SESSIE)||"null"); }catch(e){ return null; } }
+function sesZet(v){ try{ v?localStorage.setItem(SESSIE,JSON.stringify(v)):localStorage.removeItem(SESSIE); }catch(e){} SES=v; }
+function tijden(){ try{ return JSON.parse(localStorage.getItem(TIJDEN)||"{}"); }catch(e){ return {}; } }
+function tijdZet(k){ try{ const t=tijden(); t[k]=Date.now(); localStorage.setItem(TIJDEN,JSON.stringify(t)); }catch(e){} }
+
+/* Elke schrijfactie naar een gesynchroniseerde sleutel krijgt een tijdstempel
+   en zet een duwtje klaar. Dat gebeurt hier op één plek in plaats van bij de
+   twaalf plekken die localStorage schrijven — zo kan er nooit een vergeten
+   worden als er later iets bijkomt. */
+(function(){
+  const echt=localStorage.setItem.bind(localStorage);
+  try{
+    localStorage.setItem=function(k,v){
+      echt(k,v);
+      if(SYNCSLEUTELS.includes(k)){ tijdZet(k); duwLater(); }
+    };
+  }catch(e){}
+})();
+
+function syncAan(){ return !!(SYNC.url&&SYNC.anon); }
+async function supa(pad,opties){
+  const o=opties||{};
+  const kop=Object.assign({"apikey":SYNC.anon,"Content-Type":"application/json"},o.headers||{});
+  if(SES&&SES.access_token&&!o.geenToken) kop["Authorization"]="Bearer "+SES.access_token;
+  const r=await fetch(SYNC.url.replace(/\/+$/,"")+pad,{method:o.method||"GET",headers:kop,
+    body:o.body?JSON.stringify(o.body):undefined});
+  let data=null; try{ data=await r.json(); }catch(e){}
+  if(!r.ok){ const f=new Error((data&&(data.msg||data.message||data.error_description))||("HTTP "+r.status)); f.status=r.status; throw f; }
+  return data;
+}
+/* Een verlopen sessie stil vernieuwen. Zonder dit was je na een uur uitgelogd
+   en dat is precies niet wat "ingelogd blijven" betekent. */
+async function sessieVerversen(){
+  if(!SES||!SES.refresh_token) return false;
+  try{
+    const d=await supa("/auth/v1/token?grant_type=refresh_token",
+      {method:"POST",geenToken:true,body:{refresh_token:SES.refresh_token}});
+    if(d&&d.access_token){ sesZet({access_token:d.access_token,refresh_token:d.refresh_token,
+      email:(d.user&&d.user.email)||(SES&&SES.email), verloopt:Date.now()+((d.expires_in||3600)*1000)}); return true; }
+  }catch(e){ if(e.status===400||e.status===401) sesZet(null); }
+  return false;
+}
+async function zorgVoorToken(){
+  if(!SES) return false;
+  if(SES.verloopt&&Date.now()>SES.verloopt-60000) return await sessieVerversen();
+  return true;
+}
+async function inlogLink(email){
+  await supa("/auth/v1/otp",{method:"POST",geenToken:true,
+    body:{email:email, create_user:true, options:{email_redirect_to:location.origin+location.pathname}}});
+}
+/* Supabase zet de sessie na het klikken op de link in het deel achter het
+   hekje van de URL. Die halen we eruit en wissen we meteen, anders staat je
+   token in de adresbalk en in je geschiedenis. */
+function sessieUitURL(){
+  if(!location.hash||location.hash.length<10) return false;
+  const p=new URLSearchParams(location.hash.slice(1));
+  const at=p.get("access_token"), rt=p.get("refresh_token");
+  if(!at) return false;
+  sesZet({access_token:at, refresh_token:rt, email:null,
+          verloopt:Date.now()+((+p.get("expires_in")||3600)*1000)});
+  history.replaceState(null,"",location.pathname+location.search);
+  return true;
+}
+async function wieBenIk(){
+  if(!SES) return null;
+  try{ const u=await supa("/auth/v1/user"); if(u&&u.email){ SES.email=u.email; sesZet(SES); } return u; }
+  catch(e){ if(e.status===401){ if(await sessieVerversen()) return await wieBenIk(); sesZet(null); } return null; }
+}
+async function haalOp(){
+  const r=await supa("/rest/v1/voorkeuren?select=data,bijgewerkt&limit=1");
+  return (Array.isArray(r)&&r[0])?r[0]:null;
+}
+async function zetWeg(blok){
+  await supa("/rest/v1/voorkeuren",{method:"POST",
+    headers:{"Prefer":"resolution=merge-duplicates,return=minimal"},
+    body:[{gebruiker:(SES&&SES.gebruiker)||undefined, data:blok, bijgewerkt:new Date().toISOString()}]});
+}
+function lokaalBlok(){
+  const t=tijden(), uit={};
+  SYNCSLEUTELS.forEach(k=>{ const v=localStorage.getItem(k);
+    if(v!=null) uit[k]={w:v, t:t[k]||0}; });
+  return uit;
+}
+/* Samenvoegen per sleutel op tijdstempel: wie het laatst iets veranderde
+   wint, en alleen voor díe sleutel. Zo overschrijft je telefoon niet je
+   notities omdat je daar toevallig een transfer deed. */
+function voegSamen(extern){
+  if(!extern||typeof extern!=="object") return {veranderd:0, blok:lokaalBlok()};
+  const t=tijden(); let veranderd=0;
+  SYNCSLEUTELS.forEach(k=>{
+    const e=extern[k]; if(!e||typeof e.w!=="string") return;
+    const lokaalT=t[k]||0;
+    if((e.t||0)>lokaalT){
+      try{ localStorage.setItem(k,e.w); }catch(err){}
+      try{ const n=tijden(); n[k]=e.t; localStorage.setItem(TIJDEN,JSON.stringify(n)); }catch(err){}
+      veranderd++;
+    }
+  });
+  return {veranderd, blok:lokaalBlok()};
+}
+function duwLater(){
+  if(!syncAan()||!SES) return;
+  clearTimeout(SYNCWACHT);
+  SYNCWACHT=setTimeout(()=>synchroniseer(false),1500);   // even wachten: typen is geen twintig verzoeken
+}
+async function synchroniseer(herlaadNodig){
+  if(!syncAan()||!SES||SYNCBEZIG) return;
+  SYNCBEZIG=true; SYNCSTAND="bezig"; tekenAccount();
+  try{
+    if(!(await zorgVoorToken())) throw new Error("sessie verlopen");
+    const rij=await haalOp();
+    const {veranderd, blok}=voegSamen(rij&&rij.data);
+    await zetWeg(blok);
+    SYNCSTAND="klaar";
+    if(veranderd&&herlaadNodig!==false){
+      // er kwam werk van een ander apparaat binnen: alles opnieuw inlezen
+      laadInstellingen(); laadEigenSquad(); laadNav(); laadNotities(); laadMP(); laadPlan(); laadVersies();
+      try{ WATCH=JSON.parse(localStorage.getItem("fplcockpit_watch_v1")||"[]").filter(x=>D.db.some(p=>p.id===x)); }catch(e){}
+      tekenModus(); tekenAlles();
+      statusUit(`${veranderd} onderdeel${veranderd>1?"en":""} bijgewerkt vanaf je andere apparaat`,true);
+    }
+  }catch(e){ SYNCSTAND="fout"; }
+  SYNCBEZIG=false; tekenAccount();
+}
+function tekenAccount(){
+  const b=$("#accountknop"); if(!b) return;
+  if(!syncAan()){ b.hidden=true; return; }
+  b.hidden=false;
+  const stand={bezig:"synchroniseren…",klaar:"gesynchroniseerd",fout:"synchroniseren lukt niet",uit:""}[SYNCSTAND]||"";
+  if(SES){
+    const naam=(SES.email||"ingelogd").split("@")[0];
+    b.className="accountknop aan"+(SYNCSTAND==="fout"?" fout":"");
+    b.innerHTML=`${ik("vink",14)}<span>${esc(naam)}</span>`;
+    b.title=`Ingelogd als ${SES.email||"?"}${stand?" · "+stand:""} — klik om uit te loggen`;
+    b.onclick=()=>{ if(confirm("Uitloggen? Je werk blijft op dit apparaat staan.")){
+      sesZet(null); SYNCSTAND="uit"; tekenAccount(); } };
+  } else {
+    b.className="accountknop";
+    b.innerHTML=`${ik("oog",14)}<span>Inloggen</span>`;
+    b.title="Log in om je team op al je apparaten hetzelfde te houden";
+    b.onclick=inlogVenster;
+  }
+}
+function inlogVenster(){
+  toonVenster("Inloggen",`
+    <p class="leegtxt" style="margin-top:0">Vul je e-mailadres in. Je krijgt een link waarmee je
+      binnenkomt — geen wachtwoord om te onthouden of te lekken. Daarna blijft dit apparaat
+      ingelogd en houden je telefoon en laptop elkaar bij.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+      <input id="inlogmail" type="email" autocomplete="email" placeholder="jij@voorbeeld.nl"
+        aria-label="E-mailadres" style="flex:1;min-width:200px">
+      <button class="knop" id="inlogdoe">Stuur de link</button>
+    </div>
+    <p class="leegtxt" id="inlogmelding" style="margin-bottom:0"></p>`);
+  const inp=$("#inlogmail"), knop=$("#inlogdoe"), mld=$("#inlogmelding");
+  const doe=async()=>{
+    const e=(inp.value||"").trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)){ mld.textContent="Dat lijkt geen geldig e-mailadres."; return; }
+    knop.disabled=true; mld.textContent="Bezig…";
+    try{ await inlogLink(e); mld.textContent=`Verstuurd naar ${e}. Open de link op dit apparaat — dan ben je hier meteen ingelogd.`; }
+    catch(err){ mld.textContent="Versturen lukte niet: "+err.message; knop.disabled=false; }
+  };
+  knop.onclick=doe;
+  inp.onkeydown=ev=>{ if(ev.key==="Enter") doe(); };
+  setTimeout(()=>inp&&inp.focus(),50);
+}
+async function syncStart(){
+  if(!syncAan()){ tekenAccount(); return; }
+  const viaLink=sessieUitURL();
+  SES=sesLees();
+  if(SES){ await wieBenIk(); await synchroniseer(true); }
+  tekenAccount();
+  if(viaLink) statusUit("Ingelogd — je apparaten houden elkaar nu bij",true);
+  // terug op het tabblad: even kijken of er elders iets veranderd is
+  document.addEventListener("visibilitychange",()=>{ if(!document.hidden) synchroniseer(true); });
+  setInterval(()=>{ if(!document.hidden) synchroniseer(true); },120000);
+}
+
 const SLEUTEL="fplcockpit_plan_v1";
 let PLAN={gw:D.gw, transfers:{}, chips:{}};      // transfers: {gw:[{uit,in}]}, chips:{gw:naam}
 let WISSELS={};                                  // {gw:[[idA,idB],...]} opstellingswissels
@@ -8665,6 +8885,33 @@ function haalUit(pid){
   else LEEG.push(p);
   tekenAlles();
 }
+/* Speelt hij genoeg om te overwegen?
+
+   Dit stond op zes plekken los als (st>=15 || min>=900 || p90geschat): een
+   terugblik op vorig seizoen. Daar vielen precies de interessante gevallen
+   buiten. Kinsky speelde vorig seizoen 630 minuten — te weinig voor die
+   drempels — terwijl Copilot hem op 88 minuten per duel zet en 22% van de
+   managers hem heeft. Hij kwam dus niet in de bladerlijst, maar bij zoeken
+   wél, met "aanbevolen" erbij. Hetzelfde gold voor Isak, White, Havertz en
+   elke goedkope promovendus: die hebben nul Premier League-minuten en zijn
+   te goedkoop voor de schatting, dus verdwenen ze helemaal.
+
+   Negentien spelers met een serieuze projectie waren op die manier onzichtbaar
+   bij het bladeren. Nu is de vraag vooruitkijkend: hoeveel minuten verwacht
+   Copilot? Alleen voor de acht spelers zonder projectie valt hij terug op de
+   historie. */
+function speeltMee(c,drempel){
+  /* Standaard een lage drempel: bij bláderen wil je niks kwijt. Een reserve
+     die twintig minuten per duel maakt hoort gewoon in de lijst te staan —
+     hij zakt vanzelf naar beneden omdat er op projectie gesorteerd wordt, en
+     wie alleen vaste basisspelers wil heeft daar de knop "Vaste basisspeler"
+     voor. Advies geven is een andere vraag: daar geldt een hogere drempel,
+     die de aanroeper meegeeft. */
+  const grens=drempel==null?1:drempel;
+  if(c.cpmin!=null) return c.cpmin>=grens;
+  return (c.st||0)>=15||(c.min||0)>=900||!!c.p90geschat;
+}
+
 function kandidatenVoor(p,budget,zoek){
   VLAK="transfers";
   const lijst=squadInGW(PLANGW);
@@ -8673,12 +8920,12 @@ function kandidatenVoor(p,budget,zoek){
   const q=(zoek||"").toLowerCase().trim();
   return D.db.filter(c=>c.p===p.p && !heb.has(c.id) && c.id!==p.id   // niet zichzelf
       && c.status==="a"                                  // ook geen twijfelgevallen
-      && (c.st>=15||c.min>=900||c.p90geschat||q)          // bij zoeken alles tonen
+      && (speeltMee(c)||q||heb.has(c.id))       // zoeken en eigen spelers: altijd tonen
       && (!q || c.n.toLowerCase().includes(q) || c.t.toLowerCase().includes(q)))
     .map(c=>({c, xp:somGW(c,PLANGW,ENKEL?5:HZ), fdr:gemFDR(c,PLANGW,Math.min(ENKEL?5:HZ,5)),
               past:c.c<=budget, tekort:Math.max(0,c.c-budget),
               clubvol:c.t!==p.t&&(clubs[c.t]||0)>=3}))
-    .sort((a,b)=>(b.past-a.past)||(b.xp-a.xp)).slice(0,80);
+    .sort((a,b)=>(b.past-a.past)||(b.xp-a.xp)).slice(0,260);
 }
 function gemFDR(p,vanaf,n){
   const cel=(D.ticker.find(t=>t.team===p.t)||{}).cellen||{};
@@ -8693,7 +8940,9 @@ function bodemPrijs(P){
   if(!_bodemCache){
     _bodemCache={};
     ["GKP","DEF","MID","FWD"].forEach(pos=>{
-      const v=D.db.filter(p=>p.p===pos&&!["i","s","u","n"].includes(p.status)).map(p=>p.c);
+      // dezelfde maatstaf als de kiezer: reserveer geen geld voor een speler
+      // die je in de lijst nooit te zien krijgt
+      const v=D.db.filter(p=>p.p===pos&&!["i","s","u","n"].includes(p.status)&&speeltMee(p)).map(p=>p.c);
       _bodemCache[pos]=v.length?Math.min(...v):4.0;
     });
   }
@@ -8749,8 +8998,7 @@ let COMBIVARIANT=0;             // hoeveel goede uitkomsten je hebt overgeslagen
 
 function combiKandidaten(P,heb,uitIds,N){
   let c=D.db.filter(x=>x.p===P&&!heb.has(x.id)&&!uitIds.has(x.id)
-    &&!["i","s","u","n"].includes(x.status)&&(x.cpmin||0)>=45
-    &&(x.st>=15||x.min>=900||x.p90geschat));
+    &&!["i","s","u","n"].includes(x.status)&&speeltMee(x,45));
   /* Per prijspunt de vijf sterksten houden, niet alleen de allerbeste.
      Eerder bleef er één speler per prijs over, en dan kun je geen twee
      verdedigers van £5,0m kopen — terwijl dat juist heel normaal is. Met
@@ -8881,7 +9129,11 @@ function toonKiezer(slot,zoek){
   VLAK="transfers";
   const budget=beschikbaarBudget(slot.id);
   let kand=kandidatenVoor(slot,budget,zoek);
-  const beste=kand.filter(k=>k.past).slice(0,3).map(k=>k.c.id);
+  /* "Aanbevolen" moet hetzelfde betekenen of je nu bladert of zoekt. Het werd
+     berekend over de lijst die op dat moment getoond werd: typte je één naam,
+     dan was die ene per definitie de beste drie en kreeg hij het label. Nu
+     komt het uit de volledige lijst voor deze plek, los van wat je intypt. */
+  const beste=kandidatenVoor(slot,budget,"").filter(k=>k.past).slice(0,3).map(k=>k.c.id);
   const bereik=kiezerBereik(slot.p);
   if(KFILTER.min===null){ KFILTER.min=bereik.min; KFILTER.max=bereik.max; }
   KFILTER.min=Math.max(bereik.min,Math.min(KFILTER.min,bereik.max));
@@ -9900,8 +10152,7 @@ function advies(){
     D.db.forEach(c=>{
       if(c.p!==cur.p||heb.has(c.id)||c.c>room) return;
       if(["i","s","u","n"].includes(c.status)) return;
-      if((c.cpmin||0)<60) return;                       // moet zelf wel spelen
-      if(c.st<15&&c.min<900&&!c.p90geschat) return;
+      if(!speeltMee(c,45)) return;                      // moet zelf wel spelen
       if(c.t!==cur.t&&(clubs[c.t]||0)>=3) return;
       const r=reeksVan(c,PLANGW,HOR);
       if(r.langst<REEKS) return;                        // geen eendagsvlieg
@@ -9933,8 +10184,7 @@ function advies(){
     const room=bank+cur.c;
     D.db.forEach(c=>{
       if(c.p!==cur.p||heb.has(c.id)||c.c>room) return;
-      if(["i","s","u","n"].includes(c.status)||(c.cpmin||0)<60) return;
-      if(c.st<15&&c.min<900&&!c.p90geschat) return;
+      if(["i","s","u","n"].includes(c.status)||!speeltMee(c,45)) return;
       if(c.t!==cur.t&&(clubs[c.t]||0)>=3) return;
       const w=somGW(c,PLANGW,Math.max(N,5))-somGW(cur,PLANGW,Math.max(N,5));
       const r=reeksVan(c,PLANGW,Math.max(N,5));
@@ -9967,8 +10217,7 @@ function advies(){
       let best=null;
       D.db.forEach(c=>{
         if(c.p!==cur.p||heb.has(c.id)||c.c>room) return;
-        if(["i","s","u","n"].includes(c.status)||(c.cpmin||0)<60) return;
-        if(c.st<15&&c.min<900&&!c.p90geschat) return;
+        if(["i","s","u","n"].includes(c.status)||!speeltMee(c,45)) return;
         if(c.t!==cur.t&&(clubs[c.t]||0)>=3) return;
         const w=somGW(c,PLANGW,N2)-somGW(cur,PLANGW,N2);
         if(!best||w>best.w) best={c,w};
@@ -12093,6 +12342,7 @@ tekenModus();
 briefing(); highlights(); kpis(); squad(); squadMenuKoppel(); shotPaneel();
 GETEKEND={team:true};
 laadVersies(); teamscore(); watchlist(); vulVgl(); markt(); doel(); versies(); rotatiePaneel(); tekenStuur();
+syncStart();
 (function(){const b=$("#mpBewerk"); if(b) b.onclick=()=>{
   MPBEWERK=!MPBEWERK; b.textContent=MPBEWERK?"Klaar met bewerken":"Blokken kiezen";
   b.classList.toggle("actief",MPBEWERK); mijnpagina();};})();
