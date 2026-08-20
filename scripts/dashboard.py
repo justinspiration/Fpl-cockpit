@@ -919,7 +919,19 @@ def render_web(d):
     if merk not in tpl:
         raise SystemExit("Kon het scriptbegin niet vinden in het sjabloon")
 
-    kop = """<div id="laadscherm" style="position:fixed;inset:0;display:flex;align-items:center;
+    # ── Inloggen en synchroniseren ───────────────────────────────────────
+    # Alleen in de webversie. In een artifact wordt elk verzoek naar een
+    # externe host geblokkeerd, dus daar zou de knop verschijnen en meteen
+    # falen; dan is hem verbergen eerlijker.
+    #
+    # Deze twee waarden horen publiek te zijn. De beveiliging zit niet in de
+    # sleutel maar in de regels op de tabel: iedereen kan alleen bij zijn eigen
+    # rij. De service_role-sleutel, die dat wél omzeilt, staat hier niet en
+    # hoort nergens in een webpagina.
+    sync = ('<script>window.FPL_SYNC={url:"https://pzqplgwyhnldevydhhpd.supabase.co",'
+            'anon:"sb_publishable_juwI5GF8x7kfaID2gO2Z9w_nw8ThZXq"};</script>\n')
+
+    kop = sync + """<div id="laadscherm" style="position:fixed;inset:0;display:flex;align-items:center;
   justify-content:center;background:#0A0818;color:#B4ABDC;font:15px -apple-system,
   BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;z-index:999;flex-direction:column;gap:14px">
   <div style="width:34px;height:34px;border:3px solid rgba(168,152,255,.2);

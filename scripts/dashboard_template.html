@@ -8210,7 +8210,7 @@ function syncAan(){ return !!(SYNC.url&&SYNC.anon); }
 async function supa(pad,opties){
   const o=opties||{};
   const kop=Object.assign({"apikey":SYNC.anon,"Content-Type":"application/json"},o.headers||{});
-  if(SES&&SES.access_token&&!o.geenToken) kop["Authorization"]="Bearer "+SES.access_token;
+  kop["Authorization"]="Bearer "+((SES&&SES.access_token&&!o.geenToken)?SES.access_token:SYNC.anon);
   const r=await fetch(SYNC.url.replace(/\/+$/,"")+pad,{method:o.method||"GET",headers:kop,
     body:o.body?JSON.stringify(o.body):undefined});
   let data=null; try{ data=await r.json(); }catch(e){}
