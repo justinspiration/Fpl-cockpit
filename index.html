@@ -7,6 +7,20 @@
   m.content='width=device-width, initial-scale=1, viewport-fit=cover';
   document.head.appendChild(m);
 }})();
+/* De gekozen modus meteen toepassen, nog voor er iets getekend wordt.
+
+   Dit ontbrak: de keuze werd wel bewaard en de knop stond na herladen ook op
+   de goede stand, maar niemand zette het kenmerk terug op <html>. Stond je
+   laptop in dagmodus en had jij Avond gekozen, dan kreeg je na elke refresh
+   toch weer wit — met een knop die zei dat het donker was.
+
+   Hier bovenaan en niet verderop in het script, want alles wat later komt
+   draait pas na het eerste tekenen. Dan zie je de verkeerde kleuren opflitsen
+   voordat ze goed springen. */
+(function(){ try{
+  var m=localStorage.getItem('fplcockpit_modus');
+  if(m==='dark'||m==='light') document.documentElement.setAttribute('data-theme',m);
+}catch(e){} })();
 </script>
 <style>
 :root{
@@ -8153,12 +8167,24 @@ function laadPlan(){
 }
 function bewaarPlan(){
   try{localStorage.setItem(SLEUTEL,JSON.stringify({transfers:PLAN.transfers,chips:PLAN.chips,
-    wissels:WISSELS, band:BAND, bewaard:new Date().toISOString(),gw:D.gw, versie:3}));
+    wissels:WISSELS, band:BAND, bewaard:new Date().toISOString(),gw:D.gw, versie:3,
+    automatisch:false}));
     vuil=false; statusUit("Opgeslagen "+new Date().toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit"}),true);
   }catch(e){statusUit("Opslaan lukte niet: "+e.message,false);}
 }
 function statusUit(t,ok){const n=$("#planStatus"); n.textContent=t; n.className="status"+(ok?" saved":"");}
-function markeerVuil(){vuil=true; statusUit("Niet-opgeslagen wijzigingen",false);
+/* Werk in uitvoering meteen wegschrijven.
+
+   Opslaan zat alleen op de knop. Deed je drie transfers en ververste je de
+   pagina, dan was alles weg — zonder waarschuwing. Nu bewaart elke wijziging
+   zichzelf; de knop bevestigt alleen nog dat je tevreden bent. Terugdraaien
+   kan met "Terugzetten", dat wist het plan volledig. */
+function bewaarWerk(){
+  try{ localStorage.setItem(SLEUTEL,JSON.stringify({transfers:PLAN.transfers,chips:PLAN.chips,
+    wissels:WISSELS, band:BAND, bewaard:new Date().toISOString(), gw:D.gw, versie:3,
+    automatisch:true})); }catch(e){}
+}
+function markeerVuil(){vuil=true; bewaarWerk(); statusUit("Niet-opgeslagen wijzigingen",false);
   if(typeof keurOpslaan==="function") keurOpslaan(); else $("#saveBtn").disabled=false;}
 
 /* squad zoals hij er in gameweek G uitziet, na alle geplande transfers tot en met G */
@@ -12125,7 +12151,12 @@ $("#resetBtn").onclick=()=>{
   statusUit(hadEigen?"Terug naar je team zoals FPL het kent":"Plan gewist",false);
   $("#saveBtn").disabled=true; tekenAlles();};
 (function(){const r=(()=>{try{return JSON.parse(localStorage.getItem(SLEUTEL)||"null");}catch(e){return null;}})();
-  if(r&&r.bewaard) statusUit("Plan geladen van "+new Date(r.bewaard).toLocaleString("nl-NL",{dateStyle:"short",timeStyle:"short"}),true);
+  if(r&&r.bewaard){
+    const wanneer=new Date(r.bewaard).toLocaleString("nl-NL",{dateStyle:"short",timeStyle:"short"});
+    statusUit(r.automatisch?`Je werk van ${wanneer} staat er weer — nog niet vastgelegd`
+                           :`Plan geladen van ${wanneer}`, !r.automatisch);
+    if(r.automatisch){ vuil=true; if(typeof keurOpslaan==="function") keurOpslaan(); }
+  }
   else statusUit("Nog geen plan opgeslagen",false);})();
 bron("#src-db",[{label:"prijzen, minuten, set-pieces",bron:"FPL API bootstrap",url:"https://fantasy.premierleague.com/api/bootstrap-static/"},
   {label:"xG, G−xG, shots",bron:"Opta — PLAYERS > Attacking",url:"https://theanalyst.com/competition/premier-league/stats"},
