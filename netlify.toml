@@ -1,0 +1,28 @@
+[build]
+  publish = "."
+  command = "echo geen build nodig"
+
+# LET OP — hier stond een regel die de verversing stilletjes brak.
+#
+# De gedachte was: bouw niet opnieuw als alleen data/ verandert, dat scheelt
+# credits. Maar de pagina haalt zijn data op van data/dashboard.json op DEZE
+# site. Werd de publicatie overgeslagen, dan bleef het bestand op de site staan
+# zoals het bij de laatste echte build was — en toonde het dashboard voor
+# altijd oude cijfers, terwijl GitHub keurig verse data had.
+#
+# Dus: elke datawijziging publiceert opnieuw. Een publicatie hier is een kopie
+# zonder bouwstap (het commando hieronder doet niets), dus dat kost weinig.
+#
+# Wil je later tóch nul builds: zet de repository op publiek en voeg boven in
+# index.html een regel toe die naar GitHub zelf wijst. Dan is de data binnen
+# seconden na de Action ververst en bouwt Netlify nooit meer:
+#
+#   <script>window.FPL_DATA_URL =
+#     "https://raw.githubusercontent.com/<gebruiker>/<repo>/main/data/dashboard.json";</script>
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

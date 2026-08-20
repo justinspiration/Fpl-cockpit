@@ -1,0 +1,46 @@
+{
+  "_status": "Overgenomen uit Justins Transfers-scherm op 19-08-2026 (screenshot). Calafiori (id 8) stond eerder abusievelijk als Mosquera (id 11) — gecorrigeerd. Alle vijftien prijzen en posities geverifieerd tegen de FPL API; totaal exact £100,0m, iedereen fit gemeld.",
+  "bijgewerkt": "2026-08-19",
+  "teamnaam": "Reijning Champion",
+  "managernaam": "Mark Flekken met de F",
+  "entry_id": 258669,
+  "league_id": 81158,
+  "gameweek": 1,
+  "deadline_nl": "2026-08-21 19:30 CEST",
+  "budget": { "totaal": 100.0, "besteed": 100.0, "bank": 0.0 },
+  "formatie": "3-4-3",
+
+  "basis": [
+    { "naam": "Verbruggen",    "club": "BHA", "pos": "GKP", "prijs": 4.5, "id": 109 },
+    { "naam": "Calafiori",     "club": "ARS", "pos": "DEF", "prijs": 5.5, "id": 8 },
+    { "naam": "Shaw",          "club": "MUN", "pos": "DEF", "prijs": 4.5, "id": 423 },
+    { "naam": "White",         "club": "ARS", "pos": "DEF", "prijs": 5.5, "id": 10 },
+    { "naam": "Gibbs-White",   "club": "NFO", "pos": "MID", "prijs": 8.0, "id": 480 },
+    { "naam": "Mbeumo",        "club": "MUN", "pos": "MID", "prijs": 8.0, "id": 427, "rol": "vice-captain" },
+    { "naam": "Semenyo",       "club": "MCI", "pos": "MID", "prijs": 8.5, "id": 397 },
+    { "naam": "Szoboszlai",    "club": "LIV", "pos": "MID", "prijs": 7.0, "id": 368 },
+    { "naam": "Haaland",       "club": "MCI", "pos": "FWD", "prijs": 15.5, "id": 411, "rol": "captain" },
+    { "naam": "João Pedro",    "club": "CHE", "pos": "FWD", "prijs": 7.5, "id": 165 },
+    { "naam": "Calvert-Lewin", "club": "LEE", "pos": "FWD", "prijs": 6.0, "id": 346 }
+  ],
+
+  "bank": [
+    { "naam": "Lammens", "club": "MUN", "pos": "GKP", "prijs": 5.0, "id": 412, "bankplek": "GK" },
+    { "naam": "Ballard", "club": "SUN", "pos": "DEF", "prijs": 5.0, "id": 532, "bankplek": 1 },
+    { "naam": "Groß",    "club": "BHA", "pos": "MID", "prijs": 5.5, "id": 124, "bankplek": 2 },
+    { "naam": "Diop",    "club": "IPS", "pos": "DEF", "prijs": 4.0, "id": 259, "bankplek": 3 }
+  ],
+
+  "chips": {
+    "actief_gw1": "Bench Boost",
+    "beschikbaar_helft_1": ["Triple Captain", "Wildcard", "Free Hit"],
+    "gebruikt": [],
+    "deadline_eerste_set": "GW19, za 2 januari 2027 14:30 GMT"
+  },
+
+  "notities": [
+    "Squad is legaal: exact 100.0m, 2/5/5/3, geen club boven 3 spelers",
+    "Bench Boost staat aan voor GW1 — alle vijftien tellen dus mee",
+    "Clubverdeling: ARS 2, MUN 3, MCI 2, BHA 2, de rest 1"
+  ]
+}

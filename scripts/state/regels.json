@@ -1,0 +1,97 @@
+{
+  "_bron": "Officiële FPL-regels, https://fantasy.premierleague.com/help/rules",
+  "_opgehaald": "2026-08-13",
+  "_waarom": "Elke projectie en elk advies moet op de exacte regels rusten. Niets gokken.",
+
+  "scoring": [
+    {"actie": "Spelen tot 60 minuten", "ptn": 1},
+    {"actie": "Spelen 60 minuten of meer (zonder blessuretijd)", "ptn": 2},
+    {"actie": "Doelpunt door een keeper", "ptn": 10, "let_op": "verhoogd; was 6"},
+    {"actie": "Doelpunt door een verdediger", "ptn": 6},
+    {"actie": "Doelpunt door een middenvelder", "ptn": 5},
+    {"actie": "Doelpunt door een aanvaller", "ptn": 4},
+    {"actie": "Assist", "ptn": 3},
+    {"actie": "Clean sheet keeper of verdediger", "ptn": 4},
+    {"actie": "Clean sheet middenvelder", "ptn": 1},
+    {"actie": "Elke 3 reddingen", "ptn": 1},
+    {"actie": "Verdediger: 10+ clearances, blocks, interceptions en tackles", "ptn": 2, "code": "defcon-def"},
+    {"actie": "Middenvelder of aanvaller: 12+ CBI, tackles en recoveries", "ptn": 2, "code": "defcon-mid"},
+    {"actie": "Penalty gestopt", "ptn": 5},
+    {"actie": "Penalty gemist", "ptn": -2},
+    {"actie": "Bonuspunten (beste drie in een duel)", "ptn": "1 tot 3"},
+    {"actie": "Elke 2 tegendoelpunten (keeper of verdediger)", "ptn": -1},
+    {"actie": "Gele kaart", "ptn": -1},
+    {"actie": "Rode kaart", "ptn": -3},
+    {"actie": "Eigen doelpunt", "ptn": -2}
+  ],
+
+  "defcon": {
+    "verdediger": {"drempel": 10, "telt": "clearances, blocks, interceptions, tackles", "ptn": 2},
+    "middenvelder_aanvaller": {"drempel": 12, "telt": "clearances, blocks, interceptions, tackles, recoveries", "ptn": 2},
+    "stapelt_niet": "20 acties levert géén 4 punten op, nog steeds 2"
+  },
+
+  "bps": {
+    "uitleg": "De drie hoogste BPS-scores in een duel krijgen 3, 2 en 1 bonuspunt. Bij gelijke stand delen spelers de plek.",
+    "punten": {
+      "1-60 minuten": 3, "60+ minuten": 6,
+      "doelpunt uit penalty": 12,
+      "doelpunt keeper of verdediger (geen penalty)": 12,
+      "doelpunt middenvelder (geen penalty)": 18,
+      "doelpunt aanvaller (geen penalty)": 24,
+      "assist": 9,
+      "clean sheet keeper of verdediger": 12,
+      "redding": 2, "redding binnen de zestien": 1, "redding uit grote kans": 1,
+      "penalty gestopt": 7,
+      "elke 3 clearances, blocks en interceptions": 1,
+      "elke 3 recoveries": 1,
+      "kans gecreëerd": 1, "grote kans gecreëerd": 3,
+      "geslaagde voorzet uit open spel": 1,
+      "geslaagde tackle": 2, "geslaagde dribbel": 1,
+      "beslissend doelpunt": 3,
+      "redding op de lijn": 9,
+      "overtreding uitgelokt": 1,
+      "schot op doel": 2,
+      "70-79% passnauwkeurigheid (min. 30 passes)": 2,
+      "80-89% passnauwkeurigheid": 4,
+      "90%+ passnauwkeurigheid": 6
+    }
+  },
+
+  "transfers": {
+    "voor_eerste_deadline": "onbeperkt en gratis",
+    "per_gameweek": 1,
+    "opsparen_max": 5,
+    "kosten_extra": -4,
+    "max_per_gameweek": 20,
+    "uitzondering": "geldt niet bij Wildcard of Free Hit"
+  },
+
+  "prijzen": {
+    "start": "prijzen bewegen pas zodra het seizoen begint",
+    "verkoopregel": "bij winst houd je de helft van de stijging, naar beneden afgerond op £0,1m",
+    "voorbeeld": "gekocht voor £7,5m, nu £7,8m → verkoopprijs £7,6m"
+  },
+
+  "chips": {
+    "regel": "maximaal één chip per gameweek",
+    "soorten": {
+      "Bench Boost": "de punten van je bank tellen mee",
+      "Free Hit": "onbeperkt gratis transfers voor één gameweek; daarna keert je squad terug",
+      "Triple Captain": "je aanvoerder telt drie keer in plaats van twee keer",
+      "Wildcard": "alle transfers in die gameweek zijn gratis"
+    },
+    "twee_sets": "Twee Bench Boosts, Triple Captains, Free Hits en Wildcards per seizoen.",
+    "eerste_set_deadline": "GW19-deadline, zaterdag 2 januari 14:30",
+    "tweede_set": "beschikbaar na zaterdag 2 januari 14:30",
+    "annuleren": "kan tot de deadline van die gameweek"
+  },
+
+  "squad": {
+    "grootte": 15,
+    "budget": 100.0,
+    "per_positie": {"GKP": 2, "DEF": 5, "MID": 5, "FWD": 3},
+    "max_per_club": 3,
+    "opstelling": "1 keeper, minimaal 3 verdedigers, minimaal 1 aanvaller"
+  }
+}

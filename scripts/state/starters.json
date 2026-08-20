@@ -1,0 +1,49 @@
+{
+  "_doel": "Verwachte-startersinformatie die NIET uit de statistiek van vorig seizoen blijkt. Het model schat minuten normaal uit starts 25/26; dat gaat mis bij spelers met een nieuwe rol (blessure van een concurrent, transfer, trainerswissel, promovendus). Hier overschrijven we dat, altijd met bron en datum.",
+  "_hoe": "minuten_factor 0..1 = aandeel van de speelminuten dat we verwachten. 1.0 = onbetwiste basisspeler.",
+  "_onderhoud": "Bijwerken na elke persconferentie. Bron altijd invullen; zonder bron geen override.",
+  "bijgewerkt": "2026-08-12",
+
+  "spelers": {
+    "Mosquera|ARS": {
+      "minuten_factor": 0.90,
+      "reden": "Saliba is langdurig uit met een rugblessure opgelopen op het WK; Mosquera is de aangewezen vervanger centraal achterin. Timber (lies) en Ben White (knie) zijn eveneens out.",
+      "bron": "https://www.fantasyfootballhub.co.uk/premier-league-predicted-lineups",
+      "datum": "2026-08-12"
+    },
+    "Kinsky|TOT": {
+      "minuten_factor": 1.00,
+      "reden": "De Zerbi heeft Kinsky aangewezen als eerste keeper voor 26/27. Vicario vertrekt naar de Serie A, Dubravka is gehaald als reserve. Zijn 630 minuten in 25/26 zijn dus geen maat voor komend seizoen.",
+      "bron": "https://www.teamtalk.com/tottenham-hotspur/spurs-news-antonin-kinsky-new-contract-de-zerbi-keeper-decision-sources",
+      "datum": "2026-08-12"
+    },
+    "Semenyo|MCI": {
+      "minuten_factor": 1.00,
+      "reden": "Startte elke competitiewedstrijd voor City na zijn transfer in januari 2026 en is onder Maresca vaste linksbuiten. 5 assists in 3 pre-season duels.",
+      "bron": "https://www.fantasyfootballscout.co.uk/2026/08/03/fpl-pre-season-semenyos-role-change-rohl-goal-fulham-pens",
+      "datum": "2026-08-12"
+    }
+  },
+
+  "clubs": {
+    "_toelichting": "Clubs met een trainerswissel; relevant omdat rollen en systemen kunnen omgooien.",
+    "MCI": { "trainer": "Enzo Maresca", "sinds": "juni 2026", "vorige": "Pep Guardiola",
+             "bron": "https://www.aljazeera.com/sports/2026/6/29/enzo-maresca-appointed-man-city-manager-to-succeed-pep-guardiola" },
+    "CHE": { "trainer": "Xabi Alonso", "sinds": "2026", "bron": "https://www.fantasyfootballhub.co.uk/premier-league-predicted-lineups" },
+    "TOT": { "trainer": "Roberto De Zerbi", "sinds": "2026", "bron": "https://www.teamtalk.com/tottenham-hotspur/spurs-news-antonin-kinsky-new-contract-de-zerbi-keeper-decision-sources" },
+    "CRY": { "trainer": "Pierre Sage", "sinds": "2026", "bron": "https://www.fantasyfootballhub.co.uk/premier-league-predicted-lineups" },
+    "FUL": { "trainer": "Alvaro Arbeloa", "sinds": "2026", "bron": "https://www.fantasyfootballhub.co.uk/premier-league-predicted-lineups" },
+    "LIV": { "trainer": "Andoni Iraola", "sinds": "2026", "bron": "https://theanalyst.com/competition/premier-league" }
+  },
+
+  "blessures": {
+    "_toelichting": "Langdurige uitvallers die de rol van anderen veranderen. Korte blessures staan al in de FPL API.",
+    "Saliba|ARS": { "status": "langdurig uit", "letsel": "rug, opgelopen op het WK",
+                    "gevolg": "Mosquera en Gabriel spelen centraal achterin",
+                    "bron": "https://www.fantasyfootballhub.co.uk/premier-league-predicted-lineups" },
+    "Onana|AVL":  { "status": "maanden uit", "letsel": "kruisband, WK",
+                    "bron": "https://www.fantasyfootballhub.co.uk/premier-league-predicted-lineups" },
+    "Kroupi|BOU": { "status": "maanden uit", "letsel": "voet",
+                    "bron": "https://www.fantasyfootballhub.co.uk/premier-league-predicted-lineups" }
+  }
+}
