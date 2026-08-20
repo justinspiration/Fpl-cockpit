@@ -1,0 +1,1222 @@
+{
+ "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
+ "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
+ "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
+ "_opgehaald": "2026-08-20T13:25:08+00:00",
+ "_mislukt": [],
+ "clubs": {
+  "ARS": {
+   "artikel": "2026–27 Arsenal F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Arsenal_F.C._season",
+   "gespeeld": 5,
+   "laatste5": [
+    {
+     "datum": "2026-08-01",
+     "opp": "Girona",
+     "thuis": false,
+     "voor": 4,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-05",
+     "opp": "Real Betis",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-09",
+     "opp": "Borussia Dortmund",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "Emirates Cup"
+    },
+    {
+     "datum": "2026-08-12",
+     "opp": "Como",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-16",
+     "opp": "Manchester City",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "Final"
+    }
+   ],
+   "vorm": [
+    "W",
+    "V",
+    "V",
+    "G",
+    "W"
+   ],
+   "vormpunten": 7,
+   "vormmax": 15,
+   "oefen": 3
+  },
+  "AVL": {
+   "artikel": "2026–27 Aston Villa F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Aston_Villa_F.C._season",
+   "gespeeld": 7,
+   "laatste5": [
+    {
+     "datum": "2026-08-01",
+     "opp": "Indonesia All Stars",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-04",
+     "opp": "BG Pathum United",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-07",
+     "opp": "Bayern Munich",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-12",
+     "opp": "Paris Saint-Germain",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "Final"
+    },
+    {
+     "datum": "2026-08-15",
+     "opp": "Borussia Mönchengladbach",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "W",
+    "W",
+    "V",
+    "V",
+    "V"
+   ],
+   "vormpunten": 6,
+   "vormmax": 15,
+   "oefen": 4
+  },
+  "BOU": {
+   "artikel": "2026–27 AFC Bournemouth season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_AFC_Bournemouth_season",
+   "gespeeld": 5,
+   "laatste5": [
+    {
+     "datum": "2026-07-24",
+     "opp": "FC St. Pauli",
+     "thuis": false,
+     "voor": 4,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-07-30",
+     "opp": "FC Augsburg",
+     "thuis": false,
+     "voor": 5,
+     "tegen": 2,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-04",
+     "opp": "Genoa",
+     "thuis": true,
+     "voor": 10,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Real Betis",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-15",
+     "opp": "Mainz 05",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "W",
+    "W",
+    "W",
+    "G",
+    "V"
+   ],
+   "vormpunten": 10,
+   "vormmax": 15,
+   "oefen": 5
+  },
+  "BRE": {
+   "artikel": "2026–27 Brentford F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brentford_F.C._season",
+   "gespeeld": 6,
+   "laatste5": [
+    {
+     "datum": "2026-08-01",
+     "opp": "Watford",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-05",
+     "opp": "Wycombe Wanderers",
+     "thuis": true,
+     "voor": 4,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Rennes",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Rennes",
+     "thuis": false,
+     "voor": 4,
+     "tegen": 2,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-15",
+     "opp": "Eintracht Frankfurt",
+     "thuis": true,
+     "voor": 7,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "V",
+    "W",
+    "W",
+    "W",
+    "W"
+   ],
+   "vormpunten": 12,
+   "vormmax": 15,
+   "oefen": 5
+  },
+  "BHA": {
+   "artikel": "2026–27 Brighton & Hove Albion F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brighton_%26_Hove_Albion_F.C._season",
+   "gespeeld": 4,
+   "laatste5": [
+    {
+     "datum": "2026-07-18",
+     "opp": "Wycombe Wanderers",
+     "thuis": true,
+     "voor": 4,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-01",
+     "opp": "Strasbourg",
+     "thuis": false,
+     "voor": 4,
+     "tegen": 3,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Roma",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-15",
+     "opp": "Bologna",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "W",
+    "W",
+    "W",
+    "W"
+   ],
+   "vormpunten": 12,
+   "vormmax": 12,
+   "oefen": 4
+  },
+  "CHE": {
+   "artikel": "2026–27 Chelsea F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Chelsea_F.C._season",
+   "gespeeld": 5,
+   "laatste5": [
+    {
+     "datum": "2026-07-28",
+     "opp": "Western Sydney Wanderers",
+     "thuis": false,
+     "voor": 6,
+     "tegen": 4,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "Sydney Super Cup"
+    },
+    {
+     "datum": "2026-08-01",
+     "opp": "Tottenham Hotspur",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "Sydney Super Cup"
+    },
+    {
+     "datum": "2026-08-05",
+     "opp": "Juventus",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "Hong Kong Football Festival"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "AC Milan",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "Indonesia Super Cup"
+    },
+    {
+     "datum": "2026-08-09",
+     "opp": "Johor Darul Ta'zim",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 3,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "W",
+    "V",
+    "V",
+    "W",
+    "G"
+   ],
+   "vormpunten": 7,
+   "vormmax": 15,
+   "oefen": 1
+  },
+  "COV": {
+   "artikel": "2026–27 Coventry City F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Coventry_City_F.C._season",
+   "gespeeld": 4,
+   "laatste5": [
+    {
+     "datum": "2026-07-12",
+     "opp": "AFC Wimbledon",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-07-18",
+     "opp": "Northampton Town",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Espanyol",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-14",
+     "opp": "Monaco",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "V",
+    "G",
+    "W",
+    "W"
+   ],
+   "vormpunten": 7,
+   "vormmax": 12,
+   "oefen": 4
+  },
+  "CRY": {
+   "artikel": "2026–27 Crystal Palace F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Crystal_Palace_F.C._season",
+   "gespeeld": 3,
+   "laatste5": [
+    {
+     "datum": "2026-07-25",
+     "opp": "Bromley",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-07-28",
+     "opp": "Lens",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-07",
+     "opp": "Fulham",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "V",
+    "V",
+    "W"
+   ],
+   "vormpunten": 3,
+   "vormmax": 9,
+   "oefen": 3
+  },
+  "EVE": {
+   "artikel": "2026–27 Everton F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Everton_F.C._season",
+   "gespeeld": 1,
+   "laatste5": [
+    {
+     "datum": "2026-07-25",
+     "opp": "Bolton Wanderers",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "G"
+   ],
+   "vormpunten": 1,
+   "vormmax": 3,
+   "oefen": 1
+  },
+  "FUL": {
+   "artikel": "2026–27 Fulham F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Fulham_F.C._season",
+   "gespeeld": 6,
+   "laatste5": [
+    {
+     "datum": "2026-07-28",
+     "opp": "Al-Ahli",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-01",
+     "opp": "Farense",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-07",
+     "opp": "Crystal Palace",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-12",
+     "opp": "Málaga",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "Trofeo Costa del Sol"
+    },
+    {
+     "datum": "2026-08-15",
+     "opp": "Stuttgart",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "G",
+    "W",
+    "V",
+    "G",
+    "W"
+   ],
+   "vormpunten": 8,
+   "vormmax": 15,
+   "oefen": 4
+  },
+  "HUL": {
+   "artikel": "2026–27 Hull City A.F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Hull_City_A.F.C._season",
+   "gespeeld": 5,
+   "laatste5": [
+    {
+     "datum": "2026-07-25",
+     "opp": "Konyaspor",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-07-28",
+     "opp": "Çaykur Rizespor",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-01",
+     "opp": "Kasımpaşa",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Eintracht Frankfurt",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-15",
+     "opp": "OGC Nice",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "W",
+    "W",
+    "G",
+    "V",
+    "G"
+   ],
+   "vormpunten": 8,
+   "vormmax": 15,
+   "oefen": 5
+  },
+  "IPS": {
+   "artikel": "2026–27 Ipswich Town F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Ipswich_Town_F.C._season",
+   "gespeeld": 5,
+   "laatste5": [
+    {
+     "datum": "2026-07-29",
+     "opp": "CA Osasuna",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-01",
+     "opp": "Oxford United",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-01",
+     "opp": "Wycombe Wanderers",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-04",
+     "opp": "Le Havre AC",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-15",
+     "opp": "Union Berlin",
+     "thuis": false,
+     "voor": 4,
+     "tegen": 2,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "V",
+    "V",
+    "W",
+    "W",
+    "W"
+   ],
+   "vormpunten": 9,
+   "vormmax": 15,
+   "oefen": 5
+  },
+  "LEE": {
+   "artikel": "2026–27 Leeds United F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Leeds_United_F.C._season",
+   "gespeeld": 6,
+   "laatste5": [
+    {
+     "datum": "2026-07-30",
+     "opp": "Sunderland",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-02",
+     "opp": "Liverpool",
+     "thuis": false,
+     "voor": 4,
+     "tegen": 2,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "RB Leipzig",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-12",
+     "opp": "Manchester United",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-15",
+     "opp": "FC Augsburg",
+     "thuis": true,
+     "voor": 4,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "W",
+    "W",
+    "W",
+    "G",
+    "W"
+   ],
+   "vormpunten": 13,
+   "vormmax": 15,
+   "oefen": 5
+  },
+  "LIV": {
+   "artikel": "2026–27 Liverpool F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Liverpool_F.C._season",
+   "gespeeld": 6,
+   "laatste5": [
+    {
+     "datum": "2026-07-29",
+     "opp": "Wrexham",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-02",
+     "opp": "Leeds United",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 4,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-09",
+     "opp": "Monaco",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-16",
+     "opp": "Como",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "BCD Friendly"
+    },
+    {
+     "datum": "2026-08-16",
+     "opp": "Como",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "W",
+    "V",
+    "V",
+    "G",
+    "W"
+   ],
+   "vormpunten": 7,
+   "vormmax": 15,
+   "oefen": 5
+  },
+  "MCI": {
+   "artikel": "2026–27 Manchester City F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_City_F.C._season",
+   "gespeeld": 4,
+   "laatste5": [
+    {
+     "datum": "2026-08-01",
+     "opp": "Inter Milan",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Asahi Super Dry Trophy"
+    },
+    {
+     "datum": "2026-08-05",
+     "opp": "K-League All Stars",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "2026 coupang play series"
+    },
+    {
+     "datum": "2026-08-09",
+     "opp": "Atlético Madrid",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "2026 coupang play series"
+    },
+    {
+     "datum": "2026-08-16",
+     "opp": "Arsenal",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "Final"
+    }
+   ],
+   "vorm": [
+    "G",
+    "W",
+    "W",
+    "V"
+   ],
+   "vormpunten": 7,
+   "vormmax": 12,
+   "oefen": 1
+  },
+  "MUN": {
+   "artikel": "2026–27 Manchester United F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_United_F.C._season",
+   "gespeeld": 6,
+   "laatste5": [
+    {
+     "datum": "2026-07-24",
+     "opp": "Rosenborg",
+     "thuis": false,
+     "voor": 5,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Pre-season and friendlies",
+     "neutraal": false
+    },
+    {
+     "datum": "2026-08-01",
+     "opp": "Atlético Madrid",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Pre-season and friendlies",
+     "neutraal": true
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Paris Saint-Germain",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Pre-season and friendlies",
+     "neutraal": true
+    },
+    {
+     "datum": "2026-08-12",
+     "opp": "Leeds United",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Pre-season and friendlies",
+     "neutraal": true
+    },
+    {
+     "datum": "2026-08-15",
+     "opp": "Milan",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 4,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Pre-season and friendlies",
+     "neutraal": true
+    }
+   ],
+   "vorm": [
+    "W",
+    "W",
+    "G",
+    "G",
+    "V"
+   ],
+   "vormpunten": 8,
+   "vormmax": 15,
+   "oefen": 5
+  },
+  "NEW": {
+   "artikel": "2026–27 Newcastle United F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Newcastle_United_F.C._season",
+   "gespeeld": 5,
+   "laatste5": [
+    {
+     "datum": "2026-07-25",
+     "opp": "Gateshead",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Valencia",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "Trofeu Taronja"
+    },
+    {
+     "datum": "2026-08-12",
+     "opp": "Everton",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-15",
+     "opp": "Bayer Leverkusen",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "VisitMalta Weekender"
+    },
+    {
+     "datum": "2026-08-16",
+     "opp": "Strasbourg",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "VisitMalta Weekender"
+    }
+   ],
+   "vorm": [
+    "G",
+    "W",
+    "V",
+    "V",
+    "G"
+   ],
+   "vormpunten": 5,
+   "vormmax": 15,
+   "oefen": 2
+  },
+  "NFO": {
+   "artikel": "2026–27 Nottingham Forest F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Nottingham_Forest_F.C._season",
+   "gespeeld": 9,
+   "laatste5": [
+    {
+     "datum": "2026-07-31",
+     "opp": "Sporting CP",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 4,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Udinese",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Barcelona",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-12",
+     "opp": "Bayer Leverkusen",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-16",
+     "opp": "Brest",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "V",
+    "V",
+    "V",
+    "W",
+    "W"
+   ],
+   "vormpunten": 6,
+   "vormmax": 15,
+   "oefen": 5
+  },
+  "TOT": {
+   "artikel": "2026–27 Tottenham Hotspur F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Tottenham_Hotspur_F.C._season",
+   "gespeeld": 2,
+   "laatste5": [
+    {
+     "datum": "2026-07-26",
+     "opp": "Auckland",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-07-29",
+     "opp": "Sydney FC",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "Sydney Super Cup"
+    }
+   ],
+   "vorm": [
+    "W",
+    "G"
+   ],
+   "vormpunten": 4,
+   "vormmax": 6,
+   "oefen": 1
+  },
+  "SUN": {
+   "artikel": "2026–27 Sunderland A.F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Sunderland_A.F.C._season",
+   "gespeeld": 5,
+   "laatste5": [
+    {
+     "datum": "2026-07-25",
+     "opp": "Liverpool",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 4,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-07-30",
+     "opp": "Leeds United",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-02",
+     "opp": "Wrexham",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Lens",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 4,
+     "uit": "V",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-08",
+     "opp": "Lens",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "oefen",
+     "toernooi": "Friendly"
+    }
+   ],
+   "vorm": [
+    "V",
+    "V",
+    "W",
+    "V",
+    "W"
+   ],
+   "vormpunten": 6,
+   "vormmax": 15,
+   "oefen": 5
+  }
+ }
+}

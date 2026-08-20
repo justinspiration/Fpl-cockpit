@@ -1,0 +1,1705 @@
+{
+ "_bron": "UEFA-speelkalenders 2026/27 via Wikipedia, opgehaald 15-08-2026. Champions League en Europa League met exacte speeldagen; Conference League als benadering op donderdagen, omdat UEFA de losse speeldagen daarvan nog niet per matchday publiceert.",
+ "_opgehaald": "2026-08-20T13:25:06+00:00",
+ "_uitleg": "Rustdagen = het aantal dagen tussen het Europese duel en het competitieduel van die gameweek. 3 of minder is krap, 4 is normaal, 5 of meer is ruim. 'europa_erna' betekent dat er kort NA de gameweek een Europees duel staat, wat ook op de opstelling drukt.",
+ "_waarschuwing": "Dit zegt welke clubs onder druk staan, niet wie er gerouleerd wordt. Vaste krachten spelen vrijwel altijd; het risico zit bij de tweede linie. Persconferenties staan in het nieuwsoverzicht.",
+ "clubs": {
+  "ARS": "Champions League",
+  "AVL": "Champions League",
+  "BHA": "Conference League",
+  "BOU": "Europa League",
+  "CRY": "Europa League",
+  "LIV": "Champions League",
+  "MCI": "Champions League",
+  "MUN": "Champions League",
+  "SUN": "Europa League"
+ },
+ "per_gw": {
+  "4": {
+   "AVL": {
+    "rustdagen": 2,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-09-12"
+   },
+   "LIV": {
+    "rustdagen": 2,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-09-12"
+   },
+   "ARS": {
+    "rustdagen": 2,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-09-12"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 5,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-09-13"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 5,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-09-13"
+   }
+  },
+  "5": {
+   "CRY": {
+    "rustdagen": 2,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-09-19"
+   },
+   "SUN": {
+    "rustdagen": 2,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-09-19"
+   },
+   "BOU": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-09-20"
+   }
+  },
+  "7": {
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-17",
+    "europa_erna": 3
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-17",
+    "europa_erna": 3
+   },
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-17",
+    "europa_erna": 3
+   },
+   "BOU": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-10-18"
+   },
+   "SUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-10-18"
+   },
+   "BHA": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-10-18"
+   },
+   "CRY": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-10-18"
+   },
+   "MUN": {
+    "rustdagen": 4,
+    "rustdagen_max": 5,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-18",
+    "europa_erna": 2
+   },
+   "ARS": {
+    "rustdagen": 4,
+    "rustdagen_max": 5,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-18",
+    "europa_erna": 2
+   }
+  },
+  "8": {
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-24"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-24"
+   },
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-24"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-24"
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-10-24"
+   },
+   "CRY": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-10-25"
+   },
+   "MUN": {
+    "rustdagen": 4,
+    "rustdagen_max": 5,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-10-25"
+   },
+   "BOU": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-10-25"
+   },
+   "SUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-10-25"
+   }
+  },
+  "9": {
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-10-31"
+   },
+   "MUN": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-10-31",
+    "europa_erna": 3
+   },
+   "MCI": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-10-31",
+    "europa_erna": 3
+   },
+   "AVL": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-01",
+    "europa_erna": 2
+   },
+   "LIV": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-01",
+    "europa_erna": 2
+   },
+   "ARS": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-01",
+    "europa_erna": 2
+   }
+  },
+  "10": {
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-07"
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-07"
+   },
+   "CRY": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-07"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-07"
+   },
+   "BOU": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-07"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-07"
+   },
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-07"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-07"
+   },
+   "SUN": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-07"
+   }
+  },
+  "11": {
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-21"
+   },
+   "AVL": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-21",
+    "europa_erna": 3
+   },
+   "LIV": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-21",
+    "europa_erna": 3
+   },
+   "MUN": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-21",
+    "europa_erna": 3
+   },
+   "MCI": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-21",
+    "europa_erna": 3
+   },
+   "ARS": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-21",
+    "europa_erna": 3
+   }
+  },
+  "12": {
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-28"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-28"
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-28"
+   },
+   "CRY": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-28"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-28"
+   },
+   "BOU": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-28"
+   },
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-28"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-28"
+   },
+   "SUN": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-28"
+   }
+  },
+  "13": {
+   "AVL": {
+    "rustdagen": 7,
+    "rustdagen_max": 8,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2026-12-02"
+   },
+   "BOU": {
+    "rustdagen": 6,
+    "rustdagen_max": 6,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2026-12-02"
+   },
+   "BHA": {
+    "rustdagen": 6,
+    "rustdagen_max": 6,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-12-02",
+    "europa_erna": 1
+   },
+   "ARS": {
+    "rustdagen": 7,
+    "rustdagen_max": 8,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2026-12-02"
+   },
+   "CRY": {
+    "rustdagen": 6,
+    "rustdagen_max": 6,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2026-12-02"
+   },
+   "LIV": {
+    "rustdagen": 7,
+    "rustdagen_max": 8,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2026-12-02"
+   },
+   "SUN": {
+    "rustdagen": 6,
+    "rustdagen_max": 6,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2026-12-02"
+   },
+   "MCI": {
+    "rustdagen": 7,
+    "rustdagen_max": 8,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2026-12-02"
+   },
+   "MUN": {
+    "rustdagen": 7,
+    "rustdagen_max": 8,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2026-12-02"
+   }
+  },
+  "14": {
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-12-05"
+   },
+   "AVL": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-12-05",
+    "europa_erna": 3
+   },
+   "MCI": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-12-05",
+    "europa_erna": 3
+   },
+   "LIV": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-12-05",
+    "europa_erna": 3
+   },
+   "MUN": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-12-05",
+    "europa_erna": 3
+   },
+   "ARS": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-12-05",
+    "europa_erna": 3
+   }
+  },
+  "15": {
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-12-12"
+   },
+   "BOU": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-12-12"
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-12-12"
+   },
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-12-12"
+   },
+   "CRY": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-12-12"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-12-12"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-12-12"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-12-12"
+   },
+   "SUN": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-12-12"
+   }
+  },
+  "16": {
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-12-19"
+   }
+  },
+  "17": {
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-12-26"
+   }
+  },
+  "18": {
+   "BHA": {
+    "rustdagen": 6,
+    "rustdagen_max": 6,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-12-30",
+    "europa_erna": 1
+   }
+  },
+  "19": {
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-02"
+   }
+  },
+  "20": {
+   "BHA": {
+    "rustdagen": 6,
+    "rustdagen_max": 6,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-01-06",
+    "europa_erna": 1
+   }
+  },
+  "21": {
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-16"
+   },
+   "AVL": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2027-01-16",
+    "europa_erna": 3
+   },
+   "MUN": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2027-01-16",
+    "europa_erna": 3
+   },
+   "ARS": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2027-01-16",
+    "europa_erna": 3
+   },
+   "LIV": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2027-01-16",
+    "europa_erna": 3
+   },
+   "MCI": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2027-01-16",
+    "europa_erna": 3
+   }
+  },
+  "22": {
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-01-23"
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-23"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-01-23"
+   },
+   "CRY": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-23"
+   },
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-01-23"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-01-23"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-01-23"
+   },
+   "BOU": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-23"
+   },
+   "SUN": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-23"
+   }
+  },
+  "23": {
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-30"
+   },
+   "BOU": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-30"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-30"
+   },
+   "CRY": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-30"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-30"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-30"
+   },
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-30"
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-30"
+   },
+   "SUN": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2027-01-30"
+   }
+  },
+  "24": {
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-02-06"
+   }
+  },
+  "25": {
+   "BHA": {
+    "rustdagen": 6,
+    "rustdagen_max": 6,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-10",
+    "europa_erna": 1
+   }
+  },
+  "26": {
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-20",
+    "europa_erna": 3
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-02-20"
+   },
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-20",
+    "europa_erna": 3
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-20",
+    "europa_erna": 3
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-20",
+    "europa_erna": 3
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-20",
+    "europa_erna": 3
+   }
+  },
+  "27": {
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-27"
+   },
+   "BOU": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-27"
+   },
+   "CRY": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-27"
+   },
+   "SUN": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-27"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-27"
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-02-27"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-27"
+   },
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-27"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-02-27"
+   }
+  },
+  "28": {
+   "ARS": {
+    "rustdagen": 7,
+    "rustdagen_max": 8,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2027-03-03"
+   },
+   "CRY": {
+    "rustdagen": 6,
+    "rustdagen_max": 13,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2027-03-03"
+   },
+   "BOU": {
+    "rustdagen": 6,
+    "rustdagen_max": 13,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2027-03-03"
+   },
+   "BHA": {
+    "rustdagen": 6,
+    "rustdagen_max": 6,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-03",
+    "europa_erna": 1
+   },
+   "LIV": {
+    "rustdagen": 7,
+    "rustdagen_max": 8,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2027-03-03"
+   },
+   "AVL": {
+    "rustdagen": 7,
+    "rustdagen_max": 8,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2027-03-03"
+   },
+   "MCI": {
+    "rustdagen": 7,
+    "rustdagen_max": 8,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2027-03-03"
+   },
+   "SUN": {
+    "rustdagen": 6,
+    "rustdagen_max": 13,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2027-03-03"
+   },
+   "MUN": {
+    "rustdagen": 7,
+    "rustdagen_max": 8,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "ruim",
+    "pl_datum": "2027-03-03"
+   }
+  },
+  "29": {
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-13",
+    "europa_erna": 3
+   },
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-13",
+    "europa_erna": 3
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-13",
+    "europa_erna": 3
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-03-13"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-13",
+    "europa_erna": 3
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-13",
+    "europa_erna": 3
+   }
+  },
+  "30": {
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-20"
+   },
+   "SUN": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-20"
+   },
+   "BOU": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-20"
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-03-20"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-20"
+   },
+   "CRY": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-20"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-20"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-20"
+   },
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-03-20"
+   }
+  },
+  "31": {
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-10",
+    "europa_erna": 3
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-04-10"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-10",
+    "europa_erna": 3
+   },
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-10",
+    "europa_erna": 3
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-10",
+    "europa_erna": 3
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-10",
+    "europa_erna": 3
+   }
+  },
+  "32": {
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-17"
+   },
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-17"
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-04-17"
+   },
+   "BOU": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-17"
+   },
+   "SUN": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-17"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-17"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-17"
+   },
+   "CRY": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-17"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-04-17"
+   }
+  },
+  "33": {
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-04-24"
+   },
+   "AVL": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2027-04-24",
+    "europa_erna": 3
+   },
+   "ARS": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2027-04-24",
+    "europa_erna": 3
+   },
+   "MCI": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2027-04-24",
+    "europa_erna": 3
+   },
+   "LIV": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2027-04-24",
+    "europa_erna": 3
+   },
+   "MUN": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2027-04-24",
+    "europa_erna": 3
+   }
+  },
+  "34": {
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-01",
+    "europa_erna": 3
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-05-01"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-01",
+    "europa_erna": 3
+   },
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-01",
+    "europa_erna": 3
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-01",
+    "europa_erna": 3
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-01",
+    "europa_erna": 3
+   }
+  },
+  "35": {
+   "BOU": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-08"
+   },
+   "MUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-08"
+   },
+   "AVL": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-08"
+   },
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-05-08"
+   },
+   "SUN": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-08"
+   },
+   "ARS": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-08"
+   },
+   "MCI": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-08"
+   },
+   "LIV": {
+    "rustdagen": 3,
+    "rustdagen_max": 4,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-08"
+   },
+   "CRY": {
+    "rustdagen": 2,
+    "rustdagen_max": 9,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2027-05-08"
+   }
+  },
+  "36": {
+   "BHA": {
+    "rustdagen": 2,
+    "rustdagen_max": 2,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-05-15"
+   }
+  },
+  "37": {
+   "BHA": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-05-23"
+   }
+  },
+  "38": {
+   "BHA": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2027-05-30"
+   }
+  },
+  "3": {
+   "MCI": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-09-05",
+    "europa_erna": 3
+   },
+   "AVL": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-09-05",
+    "europa_erna": 3
+   },
+   "MUN": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-09-06",
+    "europa_erna": 2
+   },
+   "ARS": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-09-06",
+    "europa_erna": 2
+   }
+  },
+  "6": {
+   "ARS": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-10-10",
+    "europa_erna": 3
+   },
+   "AVL": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-10-10",
+    "europa_erna": 3
+   },
+   "MUN": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-10-10",
+    "europa_erna": 3
+   },
+   "LIV": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-11",
+    "europa_erna": 2
+   },
+   "MCI": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-10-11",
+    "europa_erna": 2
+   }
+  }
+ }
+}
