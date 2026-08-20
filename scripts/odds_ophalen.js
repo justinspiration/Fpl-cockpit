@@ -21,7 +21,37 @@ const path = require("path");
 
 const HIER = __dirname;
 const STATE = path.join(HIER, "state");
-const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+/* Waar staat Chrome?
+
+   Hier stond één hard pad naar /Applications — dat werkt op deze Mac en
+   nergens anders. Op GitHub draait Ubuntu, dus startte Chrome daar nooit en
+   mislukte het ophalen elke ronde stil. Nu: eerst kijken wat de omgeving
+   aangeeft (CHROME_PAD zet de workflow), daarna de gebruikelijke plekken op
+   macOS en Linux aflopen. */
+function vindChrome() {
+  const kandidaten = [
+    process.env.CHROME_PAD, process.env.CHROME_PATH, process.env.CHROME_BIN,
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    "/usr/bin/google-chrome-stable", "/usr/bin/google-chrome",
+    "/usr/bin/chromium-browser", "/usr/bin/chromium",
+    "/opt/google/chrome/chrome",
+  ].filter(Boolean);
+  for (const p of kandidaten) { try { if (fs.existsSync(p)) return p; } catch {} }
+  // setup-chrome zet hem soms in een eigen map onder de home van de runner
+  try {
+    const { execSync } = require("child_process");
+    const uit = execSync("command -v google-chrome-stable google-chrome chromium 2>/dev/null | head -1",
+      { encoding: "utf8" }).trim();
+    if (uit && fs.existsSync(uit)) return uit;
+  } catch {}
+  throw new Error("Geen Chrome gevonden. Zet CHROME_PAD naar het pad van je Chrome.");
+}
+/* In een container draait alles als root en weigert Chrome zonder deze twee
+   vlaggen te starten. Op een gewone Mac zijn ze overbodig maar onschadelijk. */
+const CI_ARGS = process.env.CI ? ["--no-sandbox", "--disable-dev-shm-usage",
+                                 "--disable-gpu", "--headless=new"] : [];
+const CHROME = vindChrome();
 const POORT = 9361;
 const ZICHTBAAR = process.argv.includes("--zichtbaar");
 const BRON = "https://www.oddsportal.com/football/england/premier-league/";
@@ -46,7 +76,7 @@ async function startChrome() {
   const args = [`--remote-debugging-port=${POORT}`, `--user-data-dir=${profiel}`,
     "--no-first-run", "--no-default-browser-check", "--window-size=1440,1600"];
   if (!ZICHTBAAR) args.push("--headless=new");
-  const proc = spawn(CHROME, args, { stdio: "ignore" });
+  const proc = spawn(CHROME, args.concat(CI_ARGS), { stdio: "ignore" });
   for (let i = 0; i < 60; i++) {
     await wacht(250);
     try { if ((await fetch(`http://127.0.0.1:${POORT}/json/version`)).ok) return { proc, profiel }; }

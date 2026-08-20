@@ -47,6 +47,28 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
 HERE = os.path.dirname(os.path.abspath(__file__))
 STATE = os.path.join(HERE, "state")
 
+
+def _lees(naam, standaard=None):
+    """Een optioneel gegevensbestand inlezen zonder de hele bouw te riskeren.
+
+    Deze bestanden werden ingelezen met een simpele bestaat-controle. Maar een
+    ophaalscript dat halverwege afbreekt laat een half geschreven bestand
+    achter: het bestaat, en json.load klapt erop. Dan valt de hele bouw om op
+    een bron die niet eens noodzakelijk is — precies wat er op GitHub gebeurde
+    nadat de odds waren mislukt. Kapot is nu hetzelfde als afwezig, met een
+    melding zodat het niet stil gebeurt.
+    """
+    pad = os.path.join(STATE, naam)
+    if not os.path.exists(pad):
+        return standaard
+    try:
+        return json.load(open(pad, encoding="utf-8"))
+    except Exception as ex:
+        print("  LET OP: %s is onleesbaar (%s) — wordt overgeslagen"
+              % (naam, str(ex)[:80]))
+        return standaard
+
+
 # Hoeveel van een spelerspositie hangt aan aanvallende vs verdedigende fixture-kwaliteit.
 # Gebaseerd op hoe FPL punten toekent: spitsen scoren vrijwel alleen aanvallend,
 # keepers vrijwel alleen via clean sheets en saves.
@@ -134,7 +156,7 @@ def build():
     # Justin wil xP van FPL-sites, niet van ons eigen model. Waar Copilot een speler
     # heeft, gebruiken we hun cijfer; ons model is alleen terugval voor de rest.
     xpp = os.path.join(STATE, "xp_copilot.json")
-    copilot = json.load(open(xpp)) if os.path.exists(xpp) else {"spelers": {}}
+    copilot = _lees("xp_copilot.json", {"spelers": {}}) or {"spelers": {}}
     cp_start = copilot.get("_start_gw", 1)
     # Tot hoe ver Copilot komt. Daarna is de projectie van ons eigen model,
     # en dat moet zichtbaar zijn in plaats van stilletjes doorlopen.
@@ -146,16 +168,16 @@ def build():
     # FPL's eigen statusveld miste op 14-08-2026 zeventien van de tweeenveertig
     # spelers op de officiele Premier League-blessurepagina. Deze laag corrigeert dat.
     vmp = os.path.join(STATE, "vorm.json")
-    vormdata = json.load(open(vmp, encoding="utf-8")) if os.path.exists(vmp) else {}
+    vormdata = _lees("vorm.json", {}) or {}
 
     stp = os.path.join(STATE, "stand.json")
-    stand = json.load(open(stp, encoding="utf-8")) if os.path.exists(stp) else {}
+    stand = _lees("stand.json", {}) or {}
 
     arp = os.path.join(STATE, "league_archief.json")
-    archief = json.load(open(arp, encoding="utf-8")) if os.path.exists(arp) else {}
+    archief = _lees("league_archief.json", {}) or {}
 
     blp = os.path.join(STATE, "blessures.json")
-    blessures = json.load(open(blp)) if os.path.exists(blp) else {}
+    blessures = _lees("blessures.json", {}) or {}
 
     def _nrm(x):
         x = unicodedata.normalize("NFKD", x or "").encode("ascii", "ignore").decode().lower()
@@ -171,7 +193,8 @@ def build():
 
     # ---- verwachte starters: overschrijft de minutenschatting waar de rol veranderd is ----
     sp = os.path.join(STATE, "starters.json")
-    starters = json.load(open(sp)) if os.path.exists(sp) else {"spelers": {}, "clubs": {}, "blessures": {}}
+    starters = _lees("starters.json", {"spelers": {}, "clubs": {}, "blessures": {}}) \
+               or {"spelers": {}, "clubs": {}, "blessures": {}}
 
     # Spelers zonder Premier League-minuten (promovendi, verse buitenlandse aankopen)
     # zouden anders projectie 0 krijgen en nooit in een advies opduiken. Dat was precies
@@ -817,8 +840,7 @@ def build():
         # Premier League spelen. Zo blijft de lijst elk seizoen vanzelf kloppen.
         "clubnamen": {t["short_name"]: t["name"] for t in bs["teams"]},
         "solver": solverplan,
-        "regels": (json.load(open(os.path.join(STATE, "regels.json")))
-                   if os.path.exists(os.path.join(STATE, "regels.json")) else {}),
+        "regels": _lees("regels.json", {}),
         "template": {
             "_bron": "FPL Focal Template Team, fpl.page",
             "_opgehaald": "2026-08-13",
@@ -829,13 +851,10 @@ def build():
             "vorig_punten": 2352, "vorig_rang": 49961,
             "_bron": "Justins eigen eindstand seizoen 2025/26",
             "league_naam": "FPL met de mannon", "league_deelnemers": 10, "pot_euro": 250},
-        "rotatie": (json.load(open(os.path.join(STATE, "rotatie.json")))
-                    if os.path.exists(os.path.join(STATE, "rotatie.json")) else None),
-        "nieuws": (json.load(open(os.path.join(STATE, "nieuws.json")))
-                   if os.path.exists(os.path.join(STATE, "nieuws.json")) else None),
-        "odds_meta": ({k: v for k, v in json.load(open(os.path.join(STATE, "odds.json"))).items()
-                       if k != "per_club"}
-                      if os.path.exists(os.path.join(STATE, "odds.json")) else None),
+        "rotatie": _lees("rotatie.json"),
+        "nieuws": _lees("nieuws.json"),
+        "odds_meta": ((lambda o: {k: v for k, v in o.items() if k != "per_club"} if o else None)
+                      (_lees("odds.json"))),
         "chipteams": chipteams,
         "ideaal": ideaal,
         "kalibratie": kal_info,
