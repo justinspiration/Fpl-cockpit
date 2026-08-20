@@ -951,6 +951,23 @@ WEB_SCRIPTS = [
 WEB_STATE = [
     "ids.json", "regels.json", "starters.json", "team.json", "blessures.json",
     "opta_raw.tsv", "opta_teams.tsv", "seizoen_2025_26.json",
+    # ── Laatst bekende goede uitkomst van elke ophaalstap ─────────────────
+    # Deze bestanden worden bij elke ronde opnieuw opgehaald, dus in theorie
+    # hoeven ze niet mee. In de praktijk wel: mislukt een ophaalstap op
+    # GitHub, dan stond er niets en viel het dashboard terug op het eigen
+    # model. Alle 595 spelers kregen dan andere cijfers dan FPL Copilot —
+    # Haaland van 6,7 naar 8,4 in gameweek 1 — zonder dat er iets stukging.
+    # Met een gezaaide versie in de repo degradeert een mislukte ronde naar
+    # "de cijfers van gisteren" in plaats van naar een heel ander model.
+    "xp_copilot.json", "copilot_ruw.json",
+    "odds.json", "odds_ruw.json",
+    "stand.json", "vorm.json", "rotatie.json",
+    # prijsgeschiedenis: zonder deze twee kan een prijswijziging niet gezien
+    # worden, want daar is een vorige stand voor nodig
+    "snapshot.json", "snapshot_prev.json",
+    "nieuws.json",
+    # groeit elke gameweek en is nergens anders vandaan te halen
+    "league_archief.json",
 ]
 # Documentatie die met de repo mee moet.
 WEB_DOCS = ["OPZETTEN.md", "CHAT-OPZETTEN.md"]

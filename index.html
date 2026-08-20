@@ -2999,6 +2999,14 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
 .accountknop.fout{border-color:color-mix(in srgb,var(--bad) 50%,transparent);color:var(--bad)}
 .accountknop svg{flex:none}
 @media(max-width:620px){.accountknop span{display:none}.accountknop{padding:0 9px}}
+.bronalarm{display:flex;gap:10px;align-items:flex-start;margin:var(--s3) 0 0;
+  padding:13px 16px;border-radius:var(--r2);line-height:1.6;font-size:var(--t-sm);
+  background:color-mix(in srgb,var(--warn) 12%,transparent);
+  border-left:3px solid var(--warn);color:var(--fg-2)}
+.bronalarm.hard{background:color-mix(in srgb,var(--bad) 12%,transparent);border-left-color:var(--bad)}
+.bronalarm b{color:var(--fg)}
+.bronalarm svg{flex:none;margin-top:2px;color:var(--warn)}
+.bronalarm.hard svg{color:var(--bad)}
 .vers{font-weight:650}
 .vers.goed{color:var(--good)} .vers.let{color:var(--warn)} .vers.oud{color:var(--bad)}
 .drwaarschuw svg{flex:none;margin-top:2px;color:var(--warn)}
@@ -3367,6 +3375,7 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
 </div></header>
 
 <div class="wrap">
+  <div id="bronalarm" hidden></div>
   <!-- Navigatie staat bovenaan: je moet kunnen springen zonder eerst langs
        de briefing te scrollen. Hij plakt ook aan de bovenkant. -->
   <nav class="tabbalk" id="tabbalk">
@@ -4016,6 +4025,35 @@ const gen=new Date(D.gegenereerd);
    is een advies dat klopte inmiddels achterhaald. De haal-actie draait elke
    drie uur; wordt het ouder dan zes uur, dan is er iets mis met de verversing
    en hoor je dat te zien in plaats van te moeten vermoeden. */
+/* Waarschuwen als de projecties niet van de gewone bron komen.
+
+   Dit ging een keer stil mis: de ophaalstap voor FPL Copilot mislukte op
+   GitHub, er stond geen bestand, en alle 595 spelers kregen cijfers uit het
+   eigen model. De pagina zag er normaal uit — alleen klopte geen enkel getal
+   meer met Copilot. Zoiets hoort te schreeuwen, niet te fluisteren. */
+function bronAlarm(){
+  const m=D.copilot_meta||{}, n=(D.db||[]).length;
+  const uit=$("#bronalarm"); if(!uit) return;
+  const metCopilot=(D.db||[]).filter(p=>p.projbron==="FPL Copilot").length;
+  const deel=n?metCopilot/n:0;
+  let waarschuwing=null;
+  if(!m.aantal||deel<0.5){
+    waarschuwing={hard:true, tekst:`De projecties komen nu uit het eigen model, niet uit FPL Copilot
+      (${metCopilot} van de ${n} spelers). De ophaalstap is misgegaan; de cijfers wijken daardoor af
+      van wat je op fplcopilot.com ziet.`};
+  } else if(m.opgehaald){
+    const dagen=(Date.now()-new Date(m.opgehaald+"T12:00:00Z").getTime())/864e5;
+    if(dagen>2) waarschuwing={hard:false, tekst:`De cijfers van FPL Copilot zijn van
+      ${new Date(m.opgehaald+"T12:00:00Z").toLocaleDateString("nl-NL",{day:"numeric",month:"long"})},
+      ${Math.floor(dagen)} dagen geleden. De laatste rondes hebben ze niet kunnen verversen.`};
+  }
+  if(!waarschuwing){ uit.hidden=true; uit.innerHTML=""; return; }
+  uit.hidden=false;
+  uit.className="bronalarm"+(waarschuwing.hard?" hard":"");
+  uit.innerHTML=`${ik(waarschuwing.hard?"min":"info",15)}<span><b>Let op de herkomst.</b>
+    ${esc(waarschuwing.tekst)}</span>`;
+}
+
 function versheidTonen(){
   const el=document.getElementById("versheid"); if(!el) return;
   let uren=(Date.now()-gen.getTime())/36e5;
@@ -8242,7 +8280,9 @@ function sessieUitURL(){
 }
 async function wieBenIk(){
   if(!SES) return null;
-  try{ const u=await supa("/auth/v1/user"); if(u&&u.email){ SES.email=u.email; sesZet(SES); } return u; }
+  try{ const u=await supa("/auth/v1/user");
+       if(u&&(u.email||u.id)){ SES.email=u.email||SES.email; SES.gebruiker=u.id||SES.gebruiker; sesZet(SES); }
+       return u; }
   catch(e){ if(e.status===401){ if(await sessieVerversen()) return await wieBenIk(); sesZet(null); } return null; }
 }
 async function haalOp(){
@@ -12303,7 +12343,7 @@ function magTransfer(uitId,inId,g){
 
 function tekenAlles(){
   schoonPlan();                       // eerst spoken opruimen, dan pas tekenen
-  versheidTonen();
+  versheidTonen(); bronAlarm();
   tekenGWSelector(); tekenChipbalk();
   // Mijn pagina toont kopieen van andere panelen. Die moeten na elke wijziging
   // opnieuw gevuld worden, anders blijft daar een verouderde opstelling staan
@@ -12342,6 +12382,7 @@ tekenModus();
 briefing(); highlights(); kpis(); squad(); squadMenuKoppel(); shotPaneel();
 GETEKEND={team:true};
 laadVersies(); teamscore(); watchlist(); vulVgl(); markt(); doel(); versies(); rotatiePaneel(); tekenStuur();
+bronAlarm(); versheidTonen();
 syncStart();
 (function(){const b=$("#mpBewerk"); if(b) b.onclick=()=>{
   MPBEWERK=!MPBEWERK; b.textContent=MPBEWERK?"Klaar met bewerken":"Blokken kiezen";
