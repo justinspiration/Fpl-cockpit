@@ -1,10 +1,19 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
  "_opgehaald": "2026-08-21",
- "_copilot_bijgewerkt": "Updated 8 hours ago",
+ "_copilot_bijgewerkt": "Updated 9 hours ago",
  "_start_gw": 1,
  "_horizon": 8,
- "_overgeslagen": [],
+ "_overgeslagen": [
+  {
+   "n": "Sangaré",
+   "pos": "MID"
+  },
+  {
+   "n": "Sangaré",
+   "pos": "MID"
+  }
+ ],
  "_methode": "Automatisch opgehaald met copilot_ophalen.js via Chrome DevTools Protocol. Per positiefilter uitgelezen; de telling per filter moet overeenkomen met wat de site meldt, anders breekt het script af. Dubbele naam+positie wordt opgelost via het clubfilter. Koppeling aan FPL-id door copilot_verwerk.py: naam plus positie, daarna clubfilter, daarna uitsluiting.",
  "_telling": {
   "GKP": 66,
@@ -12,7 +21,7 @@
   "MID": 262,
   "FWD": 71
  },
- "_dekking": "595 van 599 FPL-spelers",
+ "_dekking": "593 van 599 FPL-spelers",
  "_zonder_copilot": [
   {
    "n": "Ruggeri",
@@ -27,6 +36,12 @@
    "prijs": 5.0
   },
   {
+   "n": "M.Sangaré",
+   "t": "BRE",
+   "p": "MID",
+   "prijs": 5.5
+  },
+  {
    "n": "Cherif",
    "t": "COV",
    "p": "FWD",
@@ -37,6 +52,12 @@
    "t": "LEE",
    "p": "DEF",
    "prijs": 4.5
+  },
+  {
+   "n": "I.Sangaré",
+   "t": "NFO",
+   "p": "MID",
+   "prijs": 5.0
   }
  ],
  "spelers": {
@@ -1750,7 +1771,7 @@
     4.1,
     4.7,
     3.8,
-    4.5,
+    4.7,
     4.2,
     4.6
    ],
@@ -1760,7 +1781,7 @@
     84,
     84,
     84,
-    81,
+    86,
     82,
     82
    ]
@@ -1802,7 +1823,7 @@
     4.2,
     3.8,
     4.4,
-    4.4
+    4.5
    ],
    "mn": [
     89,
@@ -1812,7 +1833,7 @@
     89,
     89,
     89,
-    87
+    88
    ]
   },
   "387": {
@@ -7365,31 +7386,6 @@
     78
    ]
   },
-  "565": {
-   "n": "Sangaré",
-   "t": "BRE",
-   "p": "MID",
-   "gw": [
-    3.9,
-    3.1,
-    4,
-    3.6,
-    3.7,
-    3.4,
-    3.6,
-    3.8
-   ],
-   "mn": [
-    89,
-    73,
-    89,
-    89,
-    89,
-    89,
-    89,
-    89
-   ]
-  },
   "40": {
    "n": "Rogers",
    "t": "CHE",
@@ -8063,31 +8059,6 @@
     70,
     70,
     70
-   ]
-  },
-  "488": {
-   "n": "Sangaré",
-   "t": "NFO",
-   "p": "MID",
-   "gw": [
-    3,
-    2.8,
-    3,
-    2.9,
-    3,
-    2.9,
-    2.8,
-    3
-   ],
-   "mn": [
-    78,
-    78,
-    78,
-    78,
-    78,
-    78,
-    78,
-    78
    ]
   },
   "265": {
