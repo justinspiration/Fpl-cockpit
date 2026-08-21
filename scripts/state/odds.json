@@ -1,7 +1,7 @@
 {
  "_bron": "OddsPortal — https://www.oddsportal.com/football/england/premier-league/",
  "_markt": "1X2, gemiddelde van de getoonde bookmakers",
- "_opgehaald": "2026-08-21T09:41:45.890Z",
+ "_opgehaald": "2026-08-21T10:03:59.930Z",
  "_methode": "1X2-odds ontdaan van de bookmakersmarge (proportioneel), daarna de twee doelpuntverwachtingen exact opgelost zodat een Poisson-model diezelfde drie kansen oplevert. Clean sheet volgt als e^(-lambda) van de tegenstander.",
  "_aannames": [
   "Poisson-verdeling per ploeg",
@@ -353,23 +353,23 @@
     "uit": "AVL",
     "tijd": "13:00",
     "odds": {
-     "thuis": 2.2,
+     "thuis": 2.18,
      "gelijk": 3.59,
-     "uit": 3.05
+     "uit": 3.07
     },
-    "marge": 6.1,
+    "marge": 6.3,
     "kans": {
-     "thuis": 42.8,
-     "gelijk": 26.3,
-     "uit": 30.9
+     "thuis": 43.2,
+     "gelijk": 26.2,
+     "uit": 30.6
     },
     "xg": {
-     "thuis": 1.417,
-     "uit": 1.163
+     "thuis": 1.426,
+     "uit": 1.159
     },
     "cs": {
-     "thuis": 31.3,
-     "uit": 24.2
+     "thuis": 31.4,
+     "uit": 24.0
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -381,23 +381,23 @@
     "uit": "AVL",
     "tijd": "13:00",
     "odds": {
-     "thuis": 2.2,
+     "thuis": 2.18,
      "gelijk": 3.59,
-     "uit": 3.05
+     "uit": 3.07
     },
-    "marge": 6.1,
+    "marge": 6.3,
     "kans": {
-     "thuis": 42.8,
-     "gelijk": 26.3,
-     "uit": 30.9
+     "thuis": 43.2,
+     "gelijk": 26.2,
+     "uit": 30.6
     },
     "xg": {
-     "thuis": 1.417,
-     "uit": 1.163
+     "thuis": 1.426,
+     "uit": 1.159
     },
     "cs": {
-     "thuis": 31.3,
-     "uit": 24.2
+     "thuis": 31.4,
+     "uit": 24.0
     },
     "afwijking": 0.0,
     "thuisduel": false
