@@ -2,7 +2,7 @@
  "_bron": "FPL API /fixtures/ — de eindstanden van de afgeronde wedstrijden",
  "_methode": "De stand is opgeteld uit de eindstanden in /fixtures/: 3 punten voor winst, 1 voor gelijk. Gelijk in punten wordt gescheiden op doelsaldo, dan op doelpunten voor, precies zoals de Premier League het doet. Vorm is de laatste vijf competitieduels.",
  "_oefen": "Niet opgenomen. De FPL-API kent alleen competitieduels, en de gratis bronnen voor oefenwedstrijden bleken onbetrouwbaar: een wedstrijd per club, een verouderde clublijst, 12 van de 20 clubs koppelbaar en een uitslag die niet klopte. Zie de toelichting boven in stand.py.",
- "_opgehaald": "2026-08-22T15:26:17+00:00",
+ "_opgehaald": "2026-08-22T18:37:12+00:00",
  "_gespeeld": 0,
  "tabel": [
   {
