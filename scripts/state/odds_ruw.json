@@ -1,29 +1,22 @@
 {
  "_bron": "OddsPortal — https://www.oddsportal.com/football/england/premier-league/",
  "_markt": "1X2, gemiddelde van de getoonde bookmakers",
- "_opgehaald": "2026-08-21T18:42:16.442Z",
+ "_opgehaald": "2026-08-22T03:45:34.806Z",
  "_methode": "Alleen de 1X2-markt. Uit drie uitkomstkansen zijn de twee doelpuntverwachtingen exact op te lossen; over/under is daarvoor niet nodig.",
- "_duels": 15,
- "_onbekend": [],
+ "_duels": 14,
+ "_onbekend": [
+  "Finished",
+  "3"
+ ],
  "duels": [
-  {
-   "thuis": "ARS",
-   "uit": "COV",
-   "tijd": "22:00",
-   "odds": {
-    "thuis": 1.19,
-    "gelijk": 6.88,
-    "uit": 13.5
-   }
-  },
   {
    "thuis": "HUL",
    "uit": "MUN",
    "tijd": "14:30",
    "odds": {
-    "thuis": 8.44,
-    "gelijk": 5.04,
-    "uit": 1.36
+    "thuis": 8.88,
+    "gelijk": 4.98,
+    "uit": 1.34
    }
   },
   {
@@ -31,8 +24,8 @@
    "uit": "CRY",
    "tijd": "17:00",
    "odds": {
-    "thuis": 2.18,
-    "gelijk": 3.4,
+    "thuis": 2.19,
+    "gelijk": 3.39,
     "uit": 3.26
    }
   },
@@ -41,9 +34,9 @@
    "uit": "SUN",
    "tijd": "17:00",
    "odds": {
-    "thuis": 2.71,
+    "thuis": 2.7,
     "gelijk": 3.28,
-    "uit": 2.61
+    "uit": 2.62
    }
   },
   {
@@ -61,8 +54,8 @@
    "uit": "TOT",
    "tijd": "19:30",
    "odds": {
-    "thuis": 2.35,
-    "gelijk": 3.57,
+    "thuis": 2.33,
+    "gelijk": 3.63,
     "uit": 2.81
    }
   },
@@ -91,7 +84,7 @@
    "uit": "LIV",
    "tijd": "18:30",
    "odds": {
-    "thuis": 3.75,
+    "thuis": 3.78,
     "gelijk": 3.83,
     "uit": 1.89
    }
@@ -101,8 +94,8 @@
    "uit": "CHE",
    "tijd": "22:00",
    "odds": {
-    "thuis": 3.71,
-    "gelijk": 3.75,
+    "thuis": 3.72,
+    "gelijk": 3.78,
     "uit": 1.87
    }
   },
@@ -122,7 +115,7 @@
    "tijd": "19:30",
    "odds": {
     "thuis": 2,
-    "gelijk": 3.7,
+    "gelijk": 3.8,
     "uit": 3.4
    }
   },
@@ -151,9 +144,9 @@
    "uit": "ARS",
    "tijd": "22:00",
    "odds": {
-    "thuis": 4.4,
-    "gelijk": 3.8,
-    "uit": 1.71
+    "thuis": 4.6,
+    "gelijk": 3.9,
+    "uit": 1.67
    }
   }
  ]
