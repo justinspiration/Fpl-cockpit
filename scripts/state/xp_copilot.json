@@ -1,7 +1,7 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
  "_opgehaald": "2026-08-23",
- "_copilot_bijgewerkt": "Updated 1 day ago",
+ "_copilot_bijgewerkt": "Updated 1 hour ago",
  "_start_gw": 1,
  "_horizon": 8,
  "_overgeslagen": [
@@ -21,7 +21,7 @@
   "MID": 262,
   "FWD": 71
  },
- "_dekking": "593 van 604 FPL-spelers",
+ "_dekking": "593 van 609 FPL-spelers",
  "_zonder_copilot": [
   {
    "n": "Ruggeri",
@@ -36,6 +36,24 @@
    "prijs": 5.0
   },
   {
+   "n": "Rowe",
+   "t": "AVL",
+   "p": "DEF",
+   "prijs": 4.0
+  },
+  {
+   "n": "Lynch",
+   "t": "AVL",
+   "p": "MID",
+   "prijs": 4.5
+  },
+  {
+   "n": "Jebbison",
+   "t": "BOU",
+   "p": "FWD",
+   "prijs": 5.0
+  },
+  {
    "n": "M.Sangaré",
    "t": "BRE",
    "p": "MID",
@@ -46,6 +64,12 @@
    "t": "BHA",
    "p": "MID",
    "prijs": 5.0
+  },
+  {
+   "n": "Yalcouyé",
+   "t": "BHA",
+   "p": "MID",
+   "prijs": 4.5
   },
   {
    "n": "Cherif",
@@ -76,6 +100,12 @@
    "t": "LEE",
    "p": "MID",
    "prijs": 4.5
+  },
+  {
+   "n": "Shahar",
+   "t": "NEW",
+   "p": "DEF",
+   "prijs": 4.0
   },
   {
    "n": "I.Sangaré",
@@ -6791,31 +6821,6 @@
     82
    ]
   },
-  "481": {
-   "n": "Anderson",
-   "t": "MCI",
-   "p": "MID",
-   "gw": [
-    4.3,
-    4.4,
-    4,
-    4.4,
-    4,
-    4.4,
-    4.2,
-    4.3
-   ],
-   "mn": [
-    82,
-    84,
-    84,
-    84,
-    85,
-    85,
-    84,
-    84
-   ]
-  },
   "427": {
    "n": "Mbeumo",
    "t": "MUN",
@@ -6964,6 +6969,31 @@
     80,
     80,
     80
+   ]
+  },
+  "481": {
+   "n": "Anderson",
+   "t": "MCI",
+   "p": "MID",
+   "gw": [
+    3.5,
+    4.4,
+    4,
+    4.4,
+    3.7,
+    4,
+    3.8,
+    4.3
+   ],
+   "mn": [
+    68,
+    84,
+    84,
+    84,
+    78,
+    78,
+    77,
+    84
    ]
   },
   "335": {

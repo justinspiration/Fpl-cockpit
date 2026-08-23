@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-08-23T15:27:49+00:00",
+ "_opgehaald": "2026-08-23T18:35:57+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -813,18 +813,8 @@
   "LIV": {
    "artikel": "2026–27 Liverpool F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Liverpool_F.C._season",
-   "gespeeld": 6,
+   "gespeeld": 7,
    "laatste5": [
-    {
-     "datum": "2026-07-29",
-     "opp": "Wrexham",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-02",
      "opp": "Leeds United",
@@ -864,18 +854,28 @@
      "uit": "W",
      "soort": "oefen",
      "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-23",
+     "opp": "Newcastle United",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "1"
     }
    ],
    "vorm": [
-    "W",
     "V",
     "V",
     "G",
-    "W"
+    "W",
+    "G"
    ],
-   "vormpunten": 7,
+   "vormpunten": 5,
    "vormmax": 15,
-   "oefen": 5
+   "oefen": 4
   },
   "MCI": {
    "artikel": "2026–27 Manchester City F.C. season",
@@ -1019,18 +1019,8 @@
   "NEW": {
    "artikel": "2026–27 Newcastle United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Newcastle_United_F.C._season",
-   "gespeeld": 5,
+   "gespeeld": 6,
    "laatste5": [
-    {
-     "datum": "2026-07-25",
-     "opp": "Gateshead",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-08",
      "opp": "Valencia",
@@ -1070,18 +1060,28 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "VisitMalta Weekender"
+    },
+    {
+     "datum": "2026-08-23",
+     "opp": "Liverpool",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "1"
     }
    ],
    "vorm": [
-    "G",
     "W",
     "V",
     "V",
+    "G",
     "G"
    ],
    "vormpunten": 5,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "NFO": {
    "artikel": "2026–27 Nottingham Forest F.C. season",
