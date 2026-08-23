@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-08-23T12:48:22+00:00",
+ "_opgehaald": "2026-08-23T15:27:49+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -75,18 +75,8 @@
   "AVL": {
    "artikel": "2026–27 Aston Villa F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Aston_Villa_F.C._season",
-   "gespeeld": 7,
+   "gespeeld": 8,
    "laatste5": [
-    {
-     "datum": "2026-08-01",
-     "opp": "Indonesia All Stars",
-     "thuis": false,
-     "voor": 3,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-04",
      "opp": "BG Pathum United",
@@ -126,34 +116,34 @@
      "uit": "V",
      "soort": "oefen",
      "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-23",
+     "opp": "Brighton & Hove Albion",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 4,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "1"
     }
    ],
    "vorm": [
     "W",
-    "W",
+    "V",
     "V",
     "V",
     "V"
    ],
-   "vormpunten": 6,
+   "vormpunten": 3,
    "vormmax": 15,
-   "oefen": 4
+   "oefen": 3
   },
   "BOU": {
    "artikel": "2026–27 AFC Bournemouth season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_AFC_Bournemouth_season",
-   "gespeeld": 5,
+   "gespeeld": 6,
    "laatste5": [
-    {
-     "datum": "2026-07-24",
-     "opp": "FC St. Pauli",
-     "thuis": false,
-     "voor": 4,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-07-30",
      "opp": "FC Augsburg",
@@ -193,18 +183,28 @@
      "uit": "V",
      "soort": "oefen",
      "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-23",
+     "opp": "Manchester City",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "1"
     }
    ],
    "vorm": [
     "W",
     "W",
-    "W",
     "G",
+    "V",
     "V"
    ],
-   "vormpunten": 10,
+   "vormpunten": 7,
    "vormmax": 15,
-   "oefen": 5
+   "oefen": 4
   },
   "BRE": {
    "artikel": "2026–27 Brentford F.C. season",
@@ -276,18 +276,8 @@
   "BHA": {
    "artikel": "2026–27 Brighton & Hove Albion F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brighton_%26_Hove_Albion_F.C._season",
-   "gespeeld": 5,
+   "gespeeld": 6,
    "laatste5": [
-    {
-     "datum": "2026-07-18",
-     "opp": "Wycombe Wanderers",
-     "thuis": true,
-     "voor": 4,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-01",
      "opp": "Strasbourg",
@@ -327,18 +317,28 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "First leg"
+    },
+    {
+     "datum": "2026-08-23",
+     "opp": "Aston Villa",
+     "thuis": true,
+     "voor": 4,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "1"
     }
    ],
    "vorm": [
     "W",
     "W",
     "W",
-    "W",
-    "G"
+    "G",
+    "W"
    ],
    "vormpunten": 13,
    "vormmax": 15,
-   "oefen": 4
+   "oefen": 3
   },
   "CHE": {
    "artikel": "2026–27 Chelsea F.C. season",
@@ -880,7 +880,7 @@
   "MCI": {
    "artikel": "2026–27 Manchester City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_City_F.C._season",
-   "gespeeld": 4,
+   "gespeeld": 5,
    "laatste5": [
     {
      "datum": "2026-08-01",
@@ -921,16 +921,27 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "Final"
+    },
+    {
+     "datum": "2026-08-23",
+     "opp": "Bournemouth",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "1"
     }
    ],
    "vorm": [
     "G",
     "W",
     "W",
-    "V"
+    "V",
+    "W"
    ],
-   "vormpunten": 7,
-   "vormmax": 12,
+   "vormpunten": 10,
+   "vormmax": 15,
    "oefen": 1
   },
   "MUN": {
