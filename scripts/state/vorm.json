@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-08-22T21:26:51+00:00",
+ "_opgehaald": "2026-08-23T01:39:22+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -1142,7 +1142,7 @@
   "TOT": {
    "artikel": "2026–27 Tottenham Hotspur F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Tottenham_Hotspur_F.C._season",
-   "gespeeld": 2,
+   "gespeeld": 3,
    "laatste5": [
     {
      "datum": "2026-07-26",
@@ -1163,14 +1163,25 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "Sydney Super Cup"
+    },
+    {
+     "datum": "2026-08-22",
+     "opp": "Brentford",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "1"
     }
    ],
    "vorm": [
     "W",
-    "G"
+    "G",
+    "V"
    ],
    "vormpunten": 4,
-   "vormmax": 6,
+   "vormmax": 9,
    "oefen": 1
   },
   "SUN": {
