@@ -1,23 +1,69 @@
 {
  "_bron": "OddsPortal — https://www.oddsportal.com/football/england/premier-league/",
  "_markt": "1X2, gemiddelde van de getoonde bookmakers",
- "_opgehaald": "2026-08-23T18:35:53.653Z",
+ "_opgehaald": "2026-08-24T01:37:42.187Z",
  "_methode": "Alleen de 1X2-markt. Uit drie uitkomstkansen zijn de twee doelpuntverwachtingen exact op te lossen; over/under is daarvoor niet nodig.",
- "_duels": 1,
- "_onbekend": [
-  "Finished",
-  "4",
-  "2"
- ],
+ "_duels": 6,
+ "_onbekend": [],
  "duels": [
   {
    "thuis": "FUL",
    "uit": "CHE",
-   "tijd": "22:00",
+   "tijd": "19:00",
    "odds": {
-    "thuis": 3.85,
-    "gelijk": 3.84,
-    "uit": 1.85
+    "thuis": 3.95,
+    "gelijk": 3.82,
+    "uit": 1.84
+   }
+  },
+  {
+   "thuis": "BOU",
+   "uit": "EVE",
+   "tijd": "14:00",
+   "odds": {
+    "thuis": 2.01,
+    "gelijk": 3.45,
+    "uit": 3.41
+   }
+  },
+  {
+   "thuis": "TOT",
+   "uit": "NEW",
+   "tijd": "16:30",
+   "odds": {
+    "thuis": 2.13,
+    "gelijk": 3.5,
+    "uit": 3.08
+   }
+  },
+  {
+   "thuis": "LEE",
+   "uit": "BRE",
+   "tijd": "13:00",
+   "odds": {
+    "thuis": 2.46,
+    "gelijk": 3.35,
+    "uit": 2.65
+   }
+  },
+  {
+   "thuis": "CHE",
+   "uit": "BHA",
+   "tijd": "13:00",
+   "odds": {
+    "thuis": 1.95,
+    "gelijk": 3.58,
+    "uit": 3.44
+   }
+  },
+  {
+   "thuis": "AVL",
+   "uit": "ARS",
+   "tijd": "19:00",
+   "odds": {
+    "thuis": 6,
+    "gelijk": 4.07,
+    "uit": 1.48
    }
   }
  ]
