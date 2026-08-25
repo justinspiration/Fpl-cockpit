@@ -1607,6 +1607,13 @@ section.card:has(#askkop)>h2{padding-block:9px}
 .awnaam{font-size:14px;font-weight:700;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
 .awdet{font-size:11.5px;color:var(--fg-2);font-family:var(--mono)}
 .awhint{font-size:9.5px;color:var(--fg-3);margin-top:2px}
+.awextra2{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  margin-top:var(--s4)}
+.awx{padding:12px 15px;border-radius:var(--r2);background:var(--card-hi);
+  border-left:3px solid var(--accent);display:flex;flex-direction:column;gap:2px}
+.awxl{font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--fg-3);font-weight:700}
+.awx b{font-size:var(--t-lg);font-weight:700;letter-spacing:-.015em}
+.awxs{font-size:11px;color:var(--fg-3);line-height:1.5}
 .awchip{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:5px;font-style:normal;
   font-size:9px;font-weight:750;letter-spacing:.04em;background:var(--accent-dim);color:var(--accent)}
 .awgedeeld{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:5px;font-style:normal;
@@ -3472,7 +3479,7 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
   <!-- Teamscore en Teamversies stonden elk alleen in een tweekolomsrij, met
        een leeg vak ernaast — restant van het verplaatsen van de analist en de
        aanvoerder naar Assistent. Nu naast elkaar. -->
-  <div class="grid"><section class="card">
+  <div class="grid" id="shotkaart" hidden><section class="card">
     <h2><span class="dot"></span>Team inlezen
       <span class="tag">vanaf een schermafdruk</span></h2>
     <div class="body" id="shotbox"></div>
@@ -7425,6 +7432,29 @@ const AWARDS=[
    allenTekst:dl=>`${dl.length} managers bewaarden hun transfer: ${
      dl.slice(0,4).map(d=>esc(d.team)).join(", ")}${dl.length>4?` en ${dl.length-4} meer`:""}.`},
 
+  {id:"gok", titel:"Beste gok", hint:"laagst bezeten speler die toch leverde",
+   kies:d=>d.gok?(d.gok.pt*10-d.gok.bezit):null, hoog:true, minVerschil:1,
+   toon:d=>`${esc(d.gok.n)} (${esc(d.gok.t)}) · ${d.gok.pt} punten, en maar ${d.gok.bezit} van de ${d.gok.van} had hem`,
+   leegTekst:()=>"Niemand pakte punten met een speler die de rest links liet liggen."},
+
+  {id:"club", titel:"Clubverslaving", hint:"meeste spelers uit één club in de basis",
+   kies:d=>d.club_zwaar?d.club_zwaar.n:null, hoog:true, minVerschil:1,
+   toon:d=>`${d.club_zwaar.n} spelers van ${esc(d.club_zwaar.club)} · samen ${d.club_zwaar.punten} punten`,
+   gelijkTekst:dl=>`${dl.length} managers leunden even zwaar op één club: ${dl[0].club_zwaar.n} spelers.`},
+
+  {id:"bankdrama", titel:"Bankdrama", hint:"beste speler die op de bank bleef",
+   kies:d=>(d.chip!=="bboost"&&d.bank_top)?d.bank_top.pt:null, hoog:true, minVerschil:1,
+   toon:d=>`${esc(d.bank_top.n)} scoorde ${d.bank_top.pt} punten vanaf de bank`,
+   leegTekst:()=>"Niemand liet een uitschieter op de bank staan."},
+
+  {id:"kopie", titel:"Grootste meeloper", hint:"meeste overlap met de rest van de league",
+   kies:d=>d.gelijkenis, hoog:true, minVerschil:1,
+   toon:d=>`${d.gelijkenis}% van zijn selectie deelt hij met de rest`},
+
+  {id:"eigenwijs", titel:"Grootste einzelgänger", hint:"minste overlap met de rest",
+   kies:d=>d.gelijkenis!=null?100-d.gelijkenis:null, hoog:true, minVerschil:1,
+   toon:d=>`maar ${d.gelijkenis}% overlap met de rest van de league`},
+
   {id:"waarde", titel:"Rijkste selectie", hint:"hoogste teamwaarde",
    kies:d=>d.waarde, hoog:true, minVerschil:0.05,
    toon:d=>`£${(d.waarde||0).toFixed(1)}m · £${(d.opDeBank||0).toFixed(1)}m in de bank`,
@@ -7502,6 +7532,14 @@ function awards(){
   box.innerHTML=`<p class="awuit">Uit de werkelijke opstellingen van alle ${dl.length} managers
     in gameweek ${gwn}. Klik een prijs om de hele ranglijst te zien.</p>
     <div class="awgrid">${prijzen.map(kaart).join("")}</div>
+    ${(()=>{const T=L.template, N=L.niemand_had;
+      if(!T&&!N) return "";
+      return `<div class="awextra2">
+        ${T?`<div class="awx"><span class="awxl">Iedereen had hem</span>
+          <b>${esc(T.n)}</b><span class="awxs">${esc(T.t)} · ${T.bezit} van de ${T.van} managers · ${T.pt} punten</span></div>`:""}
+        ${N?`<div class="awx"><span class="awxl">Niemand had hem</span>
+          <b>${esc(N.n)}</b><span class="awxs">${esc(N.t)} · ${N.pt} punten, en geen enkele manager in deze league bezat hem</span></div>`:""}
+      </div>`;})()}
     ${feiten.length?`<div class="awfeiten"><h5>Waar niemand zich onderscheidde</h5>
       ${feiten.map(f=>`<div class="awfeit"><b>${esc(f.a.titel)}</b><span>${f.tekst}</span></div>`).join("")}
     </div>`:""}
@@ -12103,6 +12141,14 @@ function shotKoppel(naam,alGekozen){
 }
 
 function shotPaneel(){
+  /* Deze tool laat een taalmodel je schermafdruk uitlezen. Zonder ingestelde
+     API-sleutel doet hij niets — dan hoort hij er ook niet te staan. */
+  const kaart=$("#shotkaart");
+  if(!(window.FPL_SYNC&&window.FPL_AI)&&!(typeof AIAAN!=="undefined"&&AIAAN)){
+    if(kaart) kaart.hidden=true;
+    return;
+  }
+  if(kaart) kaart.hidden=false;
   const box=$("#shotbox"); if(!box) return;
   box.innerHTML=`
     <div class="shotuitleg">

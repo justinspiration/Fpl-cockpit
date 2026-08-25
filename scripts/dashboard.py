@@ -158,6 +158,15 @@ def build():
     xpp = os.path.join(STATE, "xp_copilot.json")
     copilot = _lees("xp_copilot.json", {"spelers": {}}) or {"spelers": {}}
     cp_start = copilot.get("_start_gw", 1)
+    # Klopt die startweek met waar we nu staan? Zo niet, dan staat elke
+    # projectie verschoven en is elk advies fout. Dat mag nooit stil gebeuren.
+    _volgende_gw = next((e["id"] for e in bs["events"]
+                         if not e.get("finished") and not e.get("is_previous")), gw)
+    cp_scheef = (cp_start != gw)
+    if cp_scheef:
+        print("  LET OP: Copilot begint bij GW%s terwijl de eerstvolgende gameweek GW%s is."
+              % (cp_start, gw))
+        print("          Draai copilot_ophalen.js opnieuw; anders staan alle projecties scheef.")
     # Tot hoe ver Copilot komt. Daarna is de projectie van ons eigen model,
     # en dat moet zichtbaar zijn in plaats van stilletjes doorlopen.
     cp_laatste = max((cp_start + len(v.get("gw") or []) - 1
@@ -539,14 +548,20 @@ def build():
                         "beste_mogelijk": besteXIpt,
                         "vice": dbmap[vice["element"]]["n"] if vice and vice["element"] in dbmap else None,
                         "xi": [x["element"] for x in xi],
+                        "alle15": [x["element"] for x in pk["picks"]],
                         "waarde": (dezeGw.get("value") or 0) / 10.0,
                         "opDeBank": (dezeGw.get("bank") or 0) / 10.0,
                     })
                 if deelnemers:
                     # hoe uniek is elke selectie binnen deze league?
+                    # Uniek betekent: niemand anders in de league HEEFT hem.
+                    # Dit telde alleen de basiselftallen, dus stond White als
+                    # differential terwijl drie anderen hem op de bank hadden.
+                    # Voor het bezit tellen alle vijftien; voor de punten telt
+                    # alleen wie hem ook opstelde.
                     tel = defaultdict(int)
                     for d in deelnemers:
-                        for pid in d["xi"]:
+                        for pid in set(d["alle15"]):
                             tel[pid] += 1
                     for d in deelnemers:
                         eigen = [pid for pid in d["xi"] if tel[pid] == 1]
@@ -563,6 +578,60 @@ def build():
                         # naam krijgt in plaats van alleen een getal
                         besteId = max(d["xi"], key=lambda pid: punten.get(pid, 0), default=None)
                         d["beste_naam"] = dbmap[besteId]["n"] if besteId in dbmap else None
+                    # ── Extra cijfers voor een gameweek-terugblik ────────
+                    # Alles hieronder komt uit dezelfde picks; niets geschat.
+                    aantal_m = len(deelnemers)
+                    top_punten = max((d["punten"] or 0) for d in deelnemers)
+                    for d in deelnemers:
+                        eigen15 = set(d["alle15"])
+                        xi_set = set(d["xi"])
+                        # hoe erg leunde hij op één club?
+                        clubtel = defaultdict(int)
+                        for pid in d["xi"]:
+                            if pid in dbmap:
+                                clubtel[dbmap[pid]["t"]] += 1
+                        if clubtel:
+                            club, n_club = max(clubtel.items(), key=lambda kv: kv[1])
+                            d["club_zwaar"] = {"club": club, "n": n_club,
+                                               "punten": sum(punten.get(pid, 0) for pid in d["xi"]
+                                                             if pid in dbmap and dbmap[pid]["t"] == club)}
+                        # de gok die uitpakte: laagst bezeten speler in zijn XI
+                        # die wel scoorde, gemeten binnen deze league
+                        kans = [(tel[pid], punten.get(pid, 0), pid) for pid in d["xi"] if pid in dbmap]
+                        kans = [k for k in kans if k[1] >= 6]
+                        if kans:
+                            kans.sort(key=lambda k: (k[0], -k[1]))
+                            bez, pt_, pid = kans[0]
+                            d["gok"] = {"n": dbmap[pid]["n"], "t": dbmap[pid]["t"],
+                                        "pt": pt_, "bezit": bez, "van": aantal_m}
+                        # achterstand op de nummer 1 van de week
+                        d["achterstand"] = top_punten - (d["punten"] or 0)
+                        # hoeveel van zijn elftal deelde hij met de rest?
+                        gedeeld_tot = sum(tel[pid] - 1 for pid in eigen15 if pid in tel)
+                        d["gelijkenis"] = round(gedeeld_tot / max(1, (aantal_m - 1) * 15) * 100)
+                        # wie op zijn bank scoorde het hardst (los van chip)
+                        bankp = [(punten.get(pid, 0), pid) for pid in eigen15 - xi_set]
+                        if bankp:
+                            bankp.sort(reverse=True)
+                            pt_, pid = bankp[0]
+                            if pid in dbmap:
+                                d["bank_top"] = {"n": dbmap[pid]["n"], "pt": pt_}
+                    # welke speler had bijna iedereen, en wat deed hij?
+                    if tel:
+                        meest = max(tel.items(), key=lambda kv: kv[1])
+                        if meest[0] in dbmap and meest[1] > 1:
+                            league["template"] = {
+                                "n": dbmap[meest[0]]["n"], "t": dbmap[meest[0]]["t"],
+                                "bezit": meest[1], "van": aantal_m,
+                                "pt": punten.get(meest[0], 0)}
+                    # de sterkste speler die NIEMAND had
+                    had_iemand = set(tel)
+                    gemist_all = [(v, k) for k, v in punten.items()
+                                  if k not in had_iemand and k in dbmap and v >= 6]
+                    if gemist_all:
+                        gemist_all.sort(reverse=True)
+                        pt_, pid = gemist_all[0]
+                        league["niemand_had"] = {"n": dbmap[pid]["n"], "t": dbmap[pid]["t"], "pt": pt_}
                     league["awards_gw"] = gw - 1
                     league["deelnemers"] = deelnemers
                 if n:
@@ -942,6 +1011,7 @@ def build():
                            "officieel": len(blessures.get("officieel_pl", [])),
                            "extra_geflagd": extern_geflagd,
                            "fpl_zelf": sum(1 for d0 in db if d0["status"] != "a" and not d0.get("extern"))},
+        "copilot_scheef": bool(cp_scheef),
         "copilot_meta": {"aantal": len(copilot.get("spelers", {})),
                          "bron": copilot.get("_bron", ""),
                          "opgehaald": copilot.get("_opgehaald", ""),

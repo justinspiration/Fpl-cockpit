@@ -216,9 +216,29 @@ async function pakClub(ev, club) {
       log("clubs opgelost voor", Object.keys(clubVan).length, "rijen");
     }
 
+    /* Vanaf welke gameweek loopt deze tabel?
+
+       Hier stond hard "1". Copilot toont altijd vanaf de eerstvolgende
+       gameweek, dus zodra GW1 gespeeld was begon zijn tabel bij GW2 terwijl
+       het dashboard hem als GW1 inlas. Elke projectie stond daardoor een week
+       verschoven: Haaland kreeg in GW2 het cijfer van GW3. Nu wordt de
+       startweek bij FPL zelf opgehaald: de eerste gameweek waarvan de deadline
+       nog niet verstreken is. */
+    let startGW = 1;
+    try {
+      const bs = await (await fetch("https://fantasy.premierleague.com/api/bootstrap-static/",
+        { headers: { "User-Agent": "Mozilla/5.0" } })).json();
+      const nu = Date.now();
+      const volgende = bs.events.find(e => new Date(e.deadline_time).getTime() > nu);
+      if (volgende) startGW = volgende.id;
+      log("startgameweek volgens FPL:", startGW);
+    } catch (e) {
+      log("LET OP: startgameweek niet op te halen, val terug op 1 —", e.message);
+    }
+
     const uit = { _bron: "FPL Copilot — https://fplcopilot.com/expected-points",
       _opgehaald: new Date().toISOString().slice(0, 10),
-      _copilot_bijgewerkt: stempel, _start_gw: 1, _horizon: 8,
+      _copilot_bijgewerkt: stempel, _start_gw: startGW, _horizon: 8,
       _methode: "Automatisch opgehaald met copilot_ophalen.js via Chrome DevTools Protocol. " +
         "Per positiefilter uitgelezen; de telling per filter moet overeenkomen met wat de site meldt, " +
         "anders breekt het script af. Dubbele naam+positie wordt opgelost via het clubfilter.",
