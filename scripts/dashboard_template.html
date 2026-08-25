@@ -1606,6 +1606,27 @@ section.card:has(#askkop)>h2{padding-block:9px}
 .awnaam{font-size:14px;font-weight:700;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
 .awdet{font-size:11.5px;color:var(--fg-2);font-family:var(--mono)}
 .awhint{font-size:9.5px;color:var(--fg-3);margin-top:2px}
+.awchip{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:5px;font-style:normal;
+  font-size:9px;font-weight:750;letter-spacing:.04em;background:var(--accent-dim);color:var(--accent)}
+.awgedeeld{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:5px;font-style:normal;
+  font-size:9px;font-weight:750;background:var(--card-hi);color:var(--fg-3)}
+.awk.gedeeld{border-style:dashed}
+.awmeer{font-weight:500;color:var(--fg-3);font-size:11px}
+.awuitleg{display:block;margin-top:6px;font-size:11px;color:var(--fg-3);line-height:1.5}
+.awspelers{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.awsp{display:inline-flex;align-items:baseline;gap:5px;padding:2px 7px;border-radius:6px;
+  background:var(--card-hi);font-size:10.5px}
+.awsp b{font-weight:650} .awsp i{font-style:normal;color:var(--fg-3);font-size:9px}
+.awsp em{font-style:normal;font-weight:750;color:var(--accent);font-family:var(--mono)}
+.awextra{padding:10px 13px;border-top:1px solid var(--line-2)}
+.awfeiten{margin-top:var(--s4);padding-top:var(--s4);border-top:1px solid var(--line-2)}
+.awfeiten h5{margin:0 0 var(--s2);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
+.awfeit{display:flex;gap:10px;padding:7px 0;font-size:var(--t-sm);line-height:1.55;
+  border-bottom:1px solid var(--line-2)}
+.awfeit:last-child{border-bottom:0}
+.awfeit b{flex:none;min-width:150px;color:var(--fg-2);font-weight:620}
+.awfeit span{color:var(--fg-3)}
+@media(max-width:620px){.awfeit{flex-direction:column;gap:2px}.awfeit b{min-width:0}}
 .awvoor{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:7px;margin-top:14px}
 .awv{padding:9px 12px;border-radius:10px;background:var(--card);border:1px dashed var(--line)}
 .awv b{display:block;font-size:11.5px;font-weight:650;margin-bottom:1px}
@@ -3006,6 +3027,10 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
 .bronalarm b{color:var(--fg)}
 .bronalarm svg{flex:none;margin-top:2px;color:var(--warn)}
 .bronalarm.hard svg{color:var(--bad)}
+.reset.chipop{opacity:.5;cursor:not-allowed;text-decoration:line-through;
+  text-decoration-thickness:1px;text-decoration-color:var(--fg-3)}
+.chipwas{font-style:normal;font-size:9px;font-weight:700;color:var(--fg-3);
+  text-decoration:none;display:inline-block;margin-left:3px}
 .vers{font-weight:650}
 .vers.goed{color:var(--good)} .vers.let{color:var(--warn)} .vers.oud{color:var(--bad)}
 .drwaarschuw svg{flex:none;margin-top:2px;color:var(--warn)}
@@ -4217,21 +4242,45 @@ function briefing(){
     }
   })();
 
-  /* 5. Prijswijziging vannacht bij iemand die je hebt of volgt. */
+  /* 5. Prijswijziging vannacht bij iemand die je hebt of volgt.
+
+     Stond hier een speler zowel in je selectie als op je volglijst, dan kwam
+     hij twee keer in de lijst: "M.Sangaré, M.Sangaré stijgen vannacht."
+     Ontdubbelen op id, en meteen scheiden waar hij staat — want voor een
+     speler die je hébt betekent een stijging iets heel anders dan voor een
+     speler die je overweegt. */
   (function(){
-    const kijk=[...live, ...WATCH.map(id=>D.db.find(p=>p.id===id)).filter(Boolean)];
-    const beweegt=kijk.map(p=>({p,m:prijsMeter(p)})).filter(x=>x.m.klaar);
+    const gezien=new Set();
+    const kijk=[...live, ...WATCH.map(id=>D.db.find(p=>p.id===id)).filter(Boolean)]
+      .filter(p=>{ if(gezien.has(p.id)) return false; gezien.add(p.id); return true; });
+    const beweegt=kijk.map(p=>({p,m:prijsMeter(p),mijn:mijnIds.has(p.id)})).filter(x=>x.m.klaar);
     if(!beweegt.length) return;
-    const stijgt=beweegt.filter(x=>x.m.richting==="stijging");
-    const daalt=beweegt.filter(x=>x.m.richting==="daling"&&mijnIds.has(x.p.id));
-    if(daalt.length)
-      voeg(6,"warn","£",
-        `<b>${daalt.map(x=>esc(x.p.n)).join(", ")}</b> ${daalt.length>1?"dalen":"daalt"} ${daalt[0].m.wanneer} in prijs.`,
-        `Je verliest teamwaarde. Was je van plan hem weg te doen, doe het dan voor de verwerking om 02:30.`);
-    if(stijgt.length)
+    const lijst=a=>a.map(x=>esc(x.p.n)).join(", ");
+    const ww=(a,enk,mv)=>a.length>1?mv:enk;
+
+    // je eigen spelers eerst: dat raakt je teamwaarde direct
+    const mijnDaalt=beweegt.filter(x=>x.mijn&&x.m.richting==="daling");
+    const mijnStijgt=beweegt.filter(x=>x.mijn&&x.m.richting==="stijging");
+    if(mijnDaalt.length)
+      voeg(4,"warn","£",
+        `<b>${lijst(mijnDaalt)}</b> uit jouw team ${ww(mijnDaalt,"daalt","dalen")} ${mijnDaalt[0].m.wanneer} in prijs.`,
+        `Dat kost je teamwaarde. Wilde je ${ww(mijnDaalt,"hem","ze")} toch wegdoen, doe het dan vóór de verwerking om 02:30.`);
+    if(mijnStijgt.length)
+      voeg(6,"ok","£",
+        `<b>${lijst(mijnStijgt)}</b> uit jouw team ${ww(mijnStijgt,"stijgt","stijgen")} ${mijnStijgt[0].m.wanneer}.`,
+        `Je teamwaarde gaat omhoog. Verkopen kan daarna zonder verlies, want je verkoopprijs stijgt mee.`);
+
+    // en dan wie je volgt maar nog niet hebt
+    const volgStijgt=beweegt.filter(x=>!x.mijn&&x.m.richting==="stijging");
+    const volgDaalt=beweegt.filter(x=>!x.mijn&&x.m.richting==="daling");
+    if(volgStijgt.length)
       voeg(5,"ok","£",
-        `<b>${stijgt.map(x=>esc(x.p.n)).join(", ")}</b> ${stijgt.length>1?"stijgen":"stijgt"} ${stijgt[0].m.wanneer}.`,
-        `Wil je hem hebben, dan is dit je laatste kans voor de oude prijs.`);
+        `<b>${lijst(volgStijgt)}</b> van je volglijst ${ww(volgStijgt,"stijgt","stijgen")} ${volgStijgt[0].m.wanneer}.`,
+        `Wil je ${ww(volgStijgt,"hem","ze")} hebben, dan is dit je laatste kans voor de oude prijs.`);
+    if(volgDaalt.length)
+      voeg(8,"info","£",
+        `<b>${lijst(volgDaalt)}</b> van je volglijst ${ww(volgDaalt,"daalt","dalen")} ${volgDaalt[0].m.wanneer}.`,
+        `Wachten wordt goedkoper, maar een daler is meestal een daler om een reden.`);
   })();
 
   /* 6. Nieuws dat een van jouw vijftien raakt, en alleen dat. */
@@ -4568,11 +4617,18 @@ function solverPaneel(){
   const gws=D.alle_gws.filter(g=>g>=PLANGW).slice(0,6);
   const bud=budgetIn(PLANGW), vrij=vrijeTransfers(PLANGW);
   const vrijGetal=vrij===Infinity?5:vrij;
+  const gepland0=geplandeTransfers(PLANGW);
+  /* Het pad begon met je squad ZOALS DIE ER NA JE GEPLANDE TRANSFERS UITZIET,
+     maar met het aantal vrije transfers van vóór die transfers. Had je er al
+     eentje ingepland, dan stelde het plan er nog een voor alsof die ook gratis
+     was — en dat kost je vier punten. De transfers die je al hebt ingepland
+     gaan er dus eerst af. */
+  const vrijNa=Math.max(0,vrijGetal-gepland0.length);
   const zonder=gws.reduce((a,g)=>a+besteXI(basisSquad,g),0);
-  const R=solveJS(basisSquad,bud,gws,vrijGetal);
+  const R=solveJS(basisSquad,bud,gws,vrijNa);
   const S={gws,basis:+zonder.toFixed(1),beste:+R.punten.toFixed(1),
            winst:+(R.punten-zonder).toFixed(1),hits:R.hits,pad:R.pad,alt:[]};
-  const gepland=geplandeTransfers(PLANGW);
+  const gepland=gepland0;
   const zetten=S.pad.reduce((a,st)=>a+st.acties.length,0);
   let h="";
   if(gepland.length||Object.keys(PLAN.chips).length){
@@ -4580,6 +4636,8 @@ function solverPaneel(){
       <h4><span class="tagje">jouw planning telt mee</span></h4>
       <p>Dit pad start vanaf <b>gameweek ${PLANGW}</b> met je squad zoals die er dan uitziet:
       ${gepland.length?`inclusief ${gepland.length} geplande transfer${gepland.length>1?"s":""} in GW${PLANGW}`:"zonder geplande transfers"}${
+      gepland.length?` — die ${gepland.length===1?"is":"zijn"} van je vrije transfers afgetrokken, dus je hebt er nog <b>${vrijNa}</b> over${
+        vrijNa===0?" en elke extra wissel in GW"+PLANGW+" kost 4 punten":""}`:""}${
       Object.keys(PLAN.chips).length?`, en je chipplan (${Object.entries(PLAN.chips).map(([g,c])=>`GW${g}: ${esc(c)}`).join(", ")})`:""}.
       Wijzig je iets in je team, dan herberekent dit pad zich meteen.</p></div>`;
   }
@@ -7259,34 +7317,91 @@ function koppelProfielZoek(){
    de puntenstand van die gameweek. Geen schattingen: als er staat dat iemand
    twaalf punten op de bank liet, dan zaten die daar ook.
    ══════════════════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════════════
+   Awards — wie deed wat, en klopt dat ook?
+
+   De eerste versie kroonde altijd een winnaar. Dat gaat mis zodra iedereen
+   hetzelfde deed, en in gameweek 1 gebeurt dat voortdurend: alle tien de
+   managers hadden nul transfers, alle tien een selectie van precies £100,0m,
+   en alle tien een aanvoerder die twee punten haalde. Dan is er geen winnaar,
+   dan is er een gelijkspel — en dat is óók een leuk gegeven, zolang je het
+   maar zegt in plaats van willekeurig iemand aan te wijzen.
+
+   Tweede fout: bankpunten werden geteld als gemiste kans, ook bij wie een
+   Bench Boost speelde. Voor hem telden die punten juist wél mee. Hetzelfde
+   getal, tegenovergestelde betekenis.
+   ══════════════════════════════════════════════════════════════════════ */
+const CHIPNAAM={bboost:"Bench Boost", "3xc":"Triple Captain", freehit:"Free Hit",
+                wildcard:"Wildcard", manager:"Assistant Manager"};
+const chipVan=d=>CHIPNAAM[d.chip]||null;
+
 const AWARDS=[
-  {id:"cap",  titel:"Beste aanvoerder",     hint:"meeste punten uit je captainkeuze",
-   kies:d=>d.cap_punten*2, hoog:true,
-   toon:d=>`${esc(d.cap||"—")} · ${d.cap_punten*2} punten`},
-  {id:"capmis",titel:"Grootste blunder",    hint:"aanvoerder die het meest liet liggen",
-   kies:d=>d.gemist, hoog:true,
-   toon:d=>`${esc(d.cap||"—")} in plaats van zijn beste · ${d.gemist} punten misgelopen`},
-  {id:"bank", titel:"Rijkste bank",         hint:"punten die op de bank bleven",
-   kies:d=>d.bankpunten, hoog:true,
-   toon:d=>`${d.bankpunten} punten die niet meetelden`},
-  {id:"uniek",titel:"Eigen weg",            hint:"punten uit spelers die niemand anders had",
-   kies:d=>d.uniek_punten, hoog:true,
-   toon:d=>`${d.uniek} unieke speler${d.uniek===1?"":"s"} · ${d.uniek_punten} punten`},
-  {id:"stijg",titel:"Grootste sprong",      hint:"meeste plaatsen gestegen",
-   kies:d=>(d.vorige_rang&&d.rang)?d.vorige_rang-d.rang:null, hoog:true,
-   toon:d=>`van ${d.vorige_rang}e naar ${d.rang}e`},
-  {id:"val",  titel:"Hardste val",          hint:"meeste plaatsen gezakt",
-   kies:d=>(d.vorige_rang&&d.rang)?d.rang-d.vorige_rang:null, hoog:true,
-   toon:d=>`van ${d.vorige_rang}e naar ${d.rang}e`},
-  {id:"hits", titel:"Duurste week",         hint:"meeste strafpunten betaald",
-   kies:d=>d.hits, hoog:true,
-   toon:d=>`${d.transfers} transfer${d.transfers===1?"":"s"} · −${d.hits} punten`},
-  {id:"geduld",titel:"IJzeren geduld",      hint:"geen transfer, geen strafpunt",
-   kies:d=>d.transfers===0?1:null, hoog:true,
-   toon:d=>`transfer bewaard · ${d.punten} punten`},
-  {id:"waarde",titel:"Rijkste selectie",    hint:"hoogste teamwaarde",
-   kies:d=>d.waarde, hoog:true,
-   toon:d=>`£${(d.waarde||0).toFixed(1)}m · £${(d.opDeBank||0).toFixed(1)}m in de bank`},
+  {id:"cap", titel:"Beste aanvoerder", hint:"meeste punten uit je captainkeuze",
+   kies:d=>d.cap_punten*2, hoog:true, minVerschil:1,
+   toon:d=>`${esc(d.cap||"—")} · ${d.cap_punten*2} punten`,
+   gelijkTekst:dl=>`Alle ${dl.length} managers haalden ${dl[0].cap_punten*2} punten uit hun aanvoerder.
+     ${new Set(dl.map(d=>d.cap)).size===1?`Iedereen koos ${esc(dl[0].cap)}.`
+       :`De keuzes liepen uiteen (${[...new Set(dl.map(d=>d.cap))].map(esc).join(", ")}) maar de opbrengst was identiek.`}`},
+
+  {id:"capmis", titel:"Grootste blunder", hint:"aanvoerder die het meest liet liggen",
+   kies:d=>d.gemist, hoog:true, minVerschil:1,
+   toon:d=>`${esc(d.cap||"—")} in plaats van ${esc(d.beste_naam||"zijn beste")} · ${d.gemist} punten misgelopen`,
+   gelijkTekst:dl=>`Iedereen liet evenveel liggen: ${dl[0].gemist} punten.`},
+
+  {id:"bank", titel:"Rijkste bank", hint:"punten die op de bank bleven liggen",
+   kies:d=>d.chip==="bboost"?null:d.bankpunten, hoog:true, minVerschil:1,
+   toon:d=>`${d.bankpunten} punten die niet meetelden`,
+   leegTekst:dl=>dl.every(d=>d.chip==="bboost")
+     ? "Iedereen speelde Bench Boost, dus er bleef bij niemand iets op de bank liggen."
+     : null},
+
+  {id:"bboost", titel:"Beste Bench Boost", hint:"wie haalde het meest uit zijn chip",
+   kies:d=>d.chip==="bboost"?d.bank_opbrengst:null, hoog:true, minVerschil:1,
+   toon:d=>`${d.bank_opbrengst} punten extra van de bank`,
+   leegTekst:()=>null},
+
+  {id:"chip", titel:"Chip ingezet", hint:"wie brandde er een op, en met welk resultaat",
+   kies:d=>d.chip?d.punten:null, hoog:true, minVerschil:1,
+   toon:d=>`${esc(chipVan(d)||"chip")} · ${d.punten} punten`,
+   leegTekst:()=>"Niemand heeft deze week een chip gebruikt."},
+
+  {id:"uniek", titel:"Eigen weg", hint:"punten uit spelers die niemand anders had",
+   kies:d=>d.uniek_punten, hoog:true, minVerschil:1,
+   toon:d=>`${d.uniek} unieke speler${d.uniek===1?"":"s"} · ${d.uniek_punten} punten`,
+   extra:d=>(d.uniek_namen&&d.uniek_namen.length)
+     ? `<span class="awspelers">${d.uniek_namen.map(x=>
+         `<span class="awsp"><b>${esc(x.n)}</b><i>${esc(x.t)}</i><em>${x.pt}</em></span>`).join("")}</span>`
+     : "",
+   leegTekst:()=>"Niemand had een speler die de rest niet ook had."},
+
+  {id:"stijg", titel:"Grootste sprong", hint:"meeste plaatsen gestegen",
+   kies:d=>(d.vorige_rang&&d.rang)?d.vorige_rang-d.rang:null, hoog:true, minVerschil:1,
+   toon:d=>`van ${d.vorige_rang}e naar ${d.rang}e`,
+   leegTekst:()=>"Na één gameweek is er nog geen vorige stand om mee te vergelijken."},
+
+  {id:"val", titel:"Hardste val", hint:"meeste plaatsen gezakt",
+   kies:d=>(d.vorige_rang&&d.rang)?d.rang-d.vorige_rang:null, hoog:true, minVerschil:1,
+   toon:d=>`van ${d.vorige_rang}e naar ${d.rang}e`,
+   leegTekst:()=>"Nog geen vorige stand."},
+
+  {id:"hits", titel:"Duurste week", hint:"meeste strafpunten betaald",
+   kies:d=>d.hits, hoog:true, minVerschil:1,
+   toon:d=>`${d.transfers} transfer${d.transfers===1?"":"s"} · −${d.hits} punten`,
+   leegTekst:()=>"Niemand nam strafpunten. Netjes."},
+
+  {id:"geduld", titel:"IJzeren geduld", hint:"transfer bewaard zonder strafpunten",
+   kies:d=>d.transfers===0?1:null, hoog:true, minVerschil:1,
+   toon:d=>`transfer bewaard · ${d.punten} punten`,
+   gelijkTekst:dl=>`Alle ${dl.length} managers hielden hun transfer op zak.
+     Dat is in gameweek 1 ook logisch — vanaf nu wordt het interessant.`,
+   allenTekst:dl=>`${dl.length} managers bewaarden hun transfer: ${
+     dl.slice(0,4).map(d=>esc(d.team)).join(", ")}${dl.length>4?` en ${dl.length-4} meer`:""}.`},
+
+  {id:"waarde", titel:"Rijkste selectie", hint:"hoogste teamwaarde",
+   kies:d=>d.waarde, hoog:true, minVerschil:0.05,
+   toon:d=>`£${(d.waarde||0).toFixed(1)}m · £${(d.opDeBank||0).toFixed(1)}m in de bank`,
+   gelijkTekst:dl=>`Iedereen staat nog op £${(dl[0].waarde||0).toFixed(1)}m.
+     Zodra er prijzen bewegen, loopt dit uiteen.`},
 ];
 
 function awards(){
@@ -7304,35 +7419,84 @@ function awards(){
     return;
   }
   const gwn=L.awards_gw;
-  const winnaars=AWARDS.map(a=>{
-    const kand=dl.map(d=>({d,w:a.kies(d)})).filter(x=>x.w!=null&&x.w>0);
-    if(!kand.length) return null;
-    kand.sort((x,y)=>a.hoog?y.w-x.w:x.w-y.w);
-    return {a, winnaar:kand[0].d, waarde:kand[0].w, aantal:kand.length};
-  }).filter(Boolean);
+
+  /* Per prijs bepalen wat er te melden valt. Drie uitkomsten:
+       winnaar   — één manager staat er duidelijk boven
+       gedeeld   — meerdere staan gelijk aan kop
+       gelijk    — iederéén staat gelijk, dus er valt niets te winnen
+     Plus "leeg" als niemand meedeed (geen chip gespeeld, geen strafpunten). */
+  const beoordeel=a=>{
+    const mee=dl.map(d=>({d,w:a.kies(d)})).filter(x=>x.w!=null);
+    if(!mee.length) return {a, soort:"leeg", tekst:a.leegTekst?a.leegTekst(dl):null};
+    mee.sort((x,y)=>a.hoog?y.w-x.w:x.w-y.w);
+    const top=mee[0].w;
+    const drempel=a.minVerschil||1;
+    const kop=mee.filter(x=>Math.abs(x.w-top)<drempel-1e-9);
+    // niemand haalde iets: geen prijs voor nul punten of nul strafpunten
+    if(top===0&&["bank","bboost","uniek","hits","stijg","val"].includes(a.id))
+      return {a, soort:"leeg", tekst:a.leegTekst?a.leegTekst(dl):null};
+    if(kop.length===mee.length&&mee.length>1)
+      return {a, soort:mee.length===dl.length?"gelijk":"allen", mee, kop,
+              tekst:(a.gelijkTekst&&a.gelijkTekst(kop.map(x=>x.d)))
+                 || (a.allenTekst&&a.allenTekst(kop.map(x=>x.d)))};
+    if(kop.length>1) return {a, soort:"gedeeld", mee, kop};
+    return {a, soort:"winnaar", mee, kop, winnaar:mee[0].d, waarde:top};
+  };
+  const alles=AWARDS.map(beoordeel);
+  const prijzen=alles.filter(x=>x.soort==="winnaar"||x.soort==="gedeeld"||x.soort==="allen");
+  const feiten=alles.filter(x=>(x.soort==="gelijk"||x.soort==="leeg")&&x.tekst);
+
+  const kaart=r=>{
+    const a=r.a;
+    if(r.soort==="winnaar"){
+      const d=r.winnaar;
+      return `<button class="awk${d.ik?" ik":""}" data-aw="${a.id}">
+        <span class="awtitel">${esc(a.titel)}</span>
+        <span class="awnaam"><b>${esc(d.team)}</b>${d.ik?' <span class="badge b-c">JIJ</span>':""}${
+          d.chip?`<i class="awchip">${esc(chipVan(d))}</i>`:""}</span>
+        <span class="awdet">${a.toon(d)}</span>
+        ${a.extra?a.extra(d):""}
+        <span class="awhint">${esc(a.hint)}</span></button>`;
+    }
+    // gedeeld of allen: alle koplopers noemen, niet willekeurig eentje kiezen
+    const namen=r.kop.map(x=>x.d);
+    const ikErbij=namen.some(d=>d.ik);
+    return `<button class="awk gedeeld${ikErbij?" ik":""}" data-aw="${a.id}">
+      <span class="awtitel">${esc(a.titel)}<i class="awgedeeld">${namen.length}× gedeeld</i></span>
+      <span class="awnaam">${namen.slice(0,3).map(d=>
+        `<b>${esc(d.team)}</b>${d.ik?' <span class="badge b-c">JIJ</span>':""}`).join(", ")}${
+        namen.length>3?` <span class="awmeer">en ${namen.length-3} meer</span>`:""}</span>
+      <span class="awdet">${a.toon(namen[0])}</span>
+      ${r.tekst?`<span class="awuitleg">${r.tekst}</span>`:""}
+      <span class="awhint">${esc(a.hint)}</span></button>`;
+  };
 
   box.innerHTML=`<p class="awuit">Uit de werkelijke opstellingen van alle ${dl.length} managers
     in gameweek ${gwn}. Klik een prijs om de hele ranglijst te zien.</p>
-    <div class="awgrid">${winnaars.map(w=>`
-      <button class="awk${w.winnaar.ik?" ik":""}" data-aw="${w.a.id}">
-        <span class="awtitel">${esc(w.a.titel)}</span>
-        <span class="awnaam"><b>${esc(w.winnaar.team)}</b>${w.winnaar.ik?' <span class="badge b-c">JIJ</span>':""}</span>
-        <span class="awdet">${w.a.toon(w.winnaar)}</span>
-        <span class="awhint">${esc(w.a.hint)}</span>
-      </button>`).join("")}</div>
+    <div class="awgrid">${prijzen.map(kaart).join("")}</div>
+    ${feiten.length?`<div class="awfeiten"><h5>Waar niemand zich onderscheidde</h5>
+      ${feiten.map(f=>`<div class="awfeit"><b>${esc(f.a.titel)}</b><span>${f.tekst}</span></div>`).join("")}
+    </div>`:""}
     <div id="awlijst"></div>`;
 
   box.querySelectorAll("[data-aw]").forEach(b=>b.onclick=()=>{
     const a=AWARDS.find(x=>x.id===b.dataset.aw);
     const rij=dl.map(d=>({d,w:a.kies(d)})).filter(x=>x.w!=null)
       .sort((x,y)=>a.hoog?y.w-x.w:x.w-y.w);
+    const top=rij.length?rij[0].w:null;
+    const drempel=a.minVerschil||1;
     const h=$("#awlijst");
     h.innerHTML=`<div class="awdetail">
       <h5>${esc(a.titel)} — volledige stand</h5>
-      ${rij.map((x,i)=>`<div class="awrij${x.d.ik?" ik":""}">
-        <span class="awpos">${i+1}</span>
-        <span class="awt"><b>${esc(x.d.team)}</b><span>${esc(x.d.manager)}</span></span>
-        <span class="aww">${a.toon(x.d)}</span></div>`).join("")}
+      ${rij.map((x,i)=>{
+        // wie gelijk staat krijgt dezelfde plaats, niet 1 en 2
+        const plek=rij.findIndex(y=>Math.abs(y.w-x.w)<drempel-1e-9)+1;
+        return `<div class="awrij${x.d.ik?" ik":""}">
+        <span class="awpos">${plek}</span>
+        <span class="awt"><b>${esc(x.d.team)}</b><span>${esc(x.d.manager)}${
+          x.d.chip?` · ${esc(chipVan(x.d))}`:""}</span></span>
+        <span class="aww">${a.toon(x.d)}</span></div>`;}).join("")}
+      ${a.extra&&rij.length?`<div class="awextra">${a.extra(rij[0].d)}</div>`:""}
       <button class="wlsluit" id="awdicht">Sluiten</button></div>`;
     h.querySelector("#awdicht").onclick=()=>{h.innerHTML="";};
     h.scrollIntoView({behavior:"smooth",block:"nearest"});
@@ -8564,10 +8728,32 @@ function haalTransferWeg(g,uitId){
   if(!PLAN.transfers[g].length) delete PLAN.transfers[g];
   markeerVuil(); tekenAlles();
 }
+/* Welke chips zijn al op, en voor welke seizoenshelft?
+
+   FPL geeft twee sets: de eerste moet vóór de GW19-deadline op, de tweede
+   geldt vanaf GW20. Het dashboard hield dat niet bij en bood daardoor een
+   Bench Boost aan die in gameweek 1 allang gebruikt was. */
+const CHIPCODE={"Bench Boost":"bboost","Triple Captain":"3xc","Free Hit":"freehit","Wildcard":"wildcard"};
+function helftVan(g){ return g<=19?1:2; }
+function chipOp(naam,g){
+  const code=CHIPCODE[naam]||naam;
+  return (D.chips_gebruikt||[]).some(c=>c.naam===code&&c.helft===helftVan(g));
+}
+function chipGebruiktIn(naam){
+  const code=CHIPCODE[naam]||naam;
+  return (D.chips_gebruikt||[]).filter(c=>c.naam===code);
+}
 function zetChip(g,naam){
-  if(PLAN.chips[g]===naam) delete PLAN.chips[g];
-  else { Object.keys(PLAN.chips).forEach(k=>{ if(PLAN.chips[k]===naam) delete PLAN.chips[k]; });
-         PLAN.chips[g]=naam; }
+  if(PLAN.chips[g]===naam){ delete PLAN.chips[g]; markeerVuil(); tekenAlles(); return; }
+  if(chipOp(naam,g)){
+    const w=chipGebruiktIn(naam)[0];
+    statusUit(`${naam} heb je al gebruikt in GW${w.gw}. In de ${helftVan(g)===1?"eerste":"tweede"} seizoenshelft krijg je er maar één.`,false);
+    return;
+  }
+  Object.keys(PLAN.chips).forEach(k=>{
+    // dezelfde chip niet twee keer in dezelfde helft inplannen
+    if(PLAN.chips[k]===naam&&helftVan(+k)===helftVan(g)) delete PLAN.chips[k]; });
+  PLAN.chips[g]=naam;
   markeerVuil(); tekenAlles();
 }
 
@@ -8584,8 +8770,15 @@ function tekenChipbalk(){
   const helft=PLANGW<=19?"eerste":"tweede";
   $("#chipbalk").innerHTML=`<div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
     <span class="lbl">Chip in GW${PLANGW}</span>`+
-    namen.map(n=>`<button class="reset" data-chip="${esc(n)}" style="${PLAN.chips[PLANGW]===n?"border-color:var(--warn);color:var(--warn);font-weight:650":""}">${esc(n)}</button>`).join("")+
-    `<span style="font-size:10.5px;color:var(--fg-3)">${helft} seizoenshelft</span></div>`;
+    namen.map(n=>{
+      const op=chipOp(n,PLANGW), w=op?chipGebruiktIn(n)[0]:null;
+      return `<button class="reset${op?" chipop":""}" data-chip="${esc(n)}"${op?" disabled":""}
+        title="${op?`Gebruikt in GW${w.gw} — je krijgt er één per seizoenshelft`:`${n} inzetten in GW${PLANGW}`}"
+        style="${PLAN.chips[PLANGW]===n?"border-color:var(--warn);color:var(--warn);font-weight:650":""}">${esc(n)}${
+        op?` <i class="chipwas">GW${w.gw}</i>`:""}</button>`;}).join("")+
+    `<span style="font-size:10.5px;color:var(--fg-3)">${helft} seizoenshelft${
+      (D.chips_gebruikt||[]).filter(c=>c.helft===helftVan(PLANGW)).length
+        ? ` · ${(D.chips_gebruikt||[]).filter(c=>c.helft===helftVan(PLANGW)).length} al gebruikt`:""}</span></div>`;
   $("#chipbalk").querySelectorAll("[data-chip]").forEach(b=>b.onclick=()=>zetChip(PLANGW,b.dataset.chip));
 }
 
@@ -8745,7 +8938,12 @@ function tekenSub(paneel){
    opsparen, elke extra transfer kost 4 punten. Voor de eerste deadline is alles gratis. */
 function vrijeTransfers(g){
   if(g<=D.gw && D.gw===1) return Infinity;           // vóór de eerste deadline: onbeperkt
-  let vrij=1;
+  /* Startpunt: wat je volgens FPL werkelijk hebt staan, afgeleid uit je
+     geschiedenis. Hier stond hard "1", en dat klopt alleen als je nooit een
+     week hebt overgeslagen. Had je er twee gespaard, dan meldde de pagina
+     strafpunten die je niet zou betalen; had je er al eentje gebruikt, dan
+     verzweeg hij strafpunten die je wél betaalt. */
+  let vrij=(D.entry&&Number.isFinite(D.entry.vrij))?D.entry.vrij:1;
   for(const gg of D.alle_gws){
     if(gg>=g) break;
     const gebruikt=(PLAN.transfers[gg]||[]).length;

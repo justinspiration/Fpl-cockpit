@@ -512,7 +512,12 @@ def build():
                     hev = (hist or {}).get("current", [])
                     dezeGw = next((h for h in hev if h["event"] == gw - 1), {})
                     vorige = next((h for h in hev if h["event"] == gw - 2), None)
-                    # bankpunten tellen alleen als die speler niet is ingevallen
+                    # Bankpunten: wat er op de bank bleef liggen. Met een Bench
+                    # Boost telden die punten juist WEL mee — dan is het geen
+                    # gemiste kans maar de opbrengst van je chip. Beide getallen
+                    # apart houden, want het is hetzelfde cijfer met een
+                    # tegenovergestelde betekenis.
+                    chip_actief = pk.get("active_chip")
                     bankpt = sum(punten.get(x["element"], 0) for x in bank
                                  if mins.get(x["element"], 0) > 0)
                     capId = capp["element"] if capp else None
@@ -524,8 +529,11 @@ def build():
                         "rang": r["rank"], "vorige_rang": r.get("last_rank"),
                         "transfers": dezeGw.get("event_transfers", 0),
                         "hits": dezeGw.get("event_transfers_cost", 0),
-                        "bankpunten": bankpt,
-                        "chip": pk.get("active_chip"),
+                        # gemist = op de bank blijven liggen; opbrengst = door de chip
+                        # alsnog binnengehaald. Nooit allebei tegelijk.
+                        "bankpunten": 0 if chip_actief == "bboost" else bankpt,
+                        "bank_opbrengst": bankpt if chip_actief == "bboost" else 0,
+                        "chip": chip_actief,
                         "cap": dbmap[capId]["n"] if capId in dbmap else None,
                         "cap_punten": punten.get(capId, 0) if capId else 0,
                         "beste_mogelijk": besteXIpt,
@@ -541,10 +549,20 @@ def build():
                         for pid in d["xi"]:
                             tel[pid] += 1
                     for d in deelnemers:
-                        d["uniek"] = sum(1 for pid in d["xi"] if tel[pid] == 1)
-                        d["uniek_punten"] = sum(punten.get(pid, 0) for pid in d["xi"] if tel[pid] == 1)
+                        eigen = [pid for pid in d["xi"] if tel[pid] == 1]
+                        d["uniek"] = len(eigen)
+                        d["uniek_punten"] = sum(punten.get(pid, 0) for pid in eigen)
+                        # wie die spelers zijn: een aantal zonder namen zegt niets
+                        d["uniek_namen"] = sorted(
+                            [{"n": dbmap[pid]["n"], "t": dbmap[pid]["t"],
+                              "pt": punten.get(pid, 0)} for pid in eigen if pid in dbmap],
+                            key=lambda x: -x["pt"])
                         d["gemist"] = max(0, d["beste_mogelijk"] * 2 - d["cap_punten"] * 2) \
                             if d["cap_punten"] < d["beste_mogelijk"] else 0
+                        # de beste speler in zijn elftal, zodat de blunder een
+                        # naam krijgt in plaats van alleen een getal
+                        besteId = max(d["xi"], key=lambda pid: punten.get(pid, 0), default=None)
+                        d["beste_naam"] = dbmap[besteId]["n"] if besteId in dbmap else None
                     league["awards_gw"] = gw - 1
                     league["deelnemers"] = deelnemers
                 if n:
@@ -749,6 +767,48 @@ def build():
         chipteams = {"fout": str(ex)[:200]}
 
     # ---- beste selectie voor hetzelfde budget, als ijkpunt ----
+    # ── Hoeveel vrije transfers heb je werkelijk? ────────────────────────
+    # De pagina nam aan dat het er één is en telde daarna zelf verder. Dat
+    # klopt alleen als je nooit iets hebt overgeslagen of juist extra hebt
+    # gedaan. FPL geeft het getal niet rechtstreeks, maar het is exact af te
+    # leiden uit je geschiedenis: vanaf gameweek 2 krijg je er elke week één
+    # bij, je mag er maximaal vijf sparen, en een Wildcard of Free Hit laat de
+    # teller ongemoeid.
+    vrij_nu = None
+    if entry_meta:
+        hist_eigen = try_get("%s/entry/%s/history/" % (BASE, entry_id)) or {}
+        chip_per_gw = {c.get("event"): c.get("name") for c in (hist_eigen.get("chips") or [])}
+        eigen_gws = sorted([h for h in (hist_eigen.get("current") or [])],
+                           key=lambda h: h.get("event") or 0)
+        if eigen_gws:
+            v = 1
+            for h in eigen_gws:
+                g = h.get("event")
+                if g == 1:            # vóór de eerste deadline is alles gratis
+                    v = 1
+                    continue
+                chip = chip_per_gw.get(g)
+                if chip in ("wildcard", "freehit"):
+                    continue          # kost niets en spaart niet op
+                v = max(1, min(5, v - (h.get("event_transfers") or 0) + 1))
+            # de eerstvolgende gameweek levert er nog één op
+            laatste = eigen_gws[-1].get("event") or 0
+            if chip_per_gw.get(laatste) not in ("wildcard", "freehit"):
+                v = max(1, min(5, v))
+            vrij_nu = v
+
+    # ── Welke chips heb je al opgebrand? ─────────────────────────────────
+    # Zonder dit bood het dashboard een Bench Boost aan die allang op was.
+    # FPL kent twee sets: de eerste moet vóór de GW19-deadline op, de tweede
+    # geldt vanaf GW20. Een chip uit set één is dus alleen "weg" voor de
+    # eerste seizoenshelft.
+    chips_op = []
+    if entry_meta:
+        for c in ((try_get("%s/entry/%s/history/" % (BASE, entry_id)) or {}).get("chips") or []):
+            g = c.get("event") or 0
+            chips_op.append({"naam": c.get("name"), "gw": g,
+                             "helft": 1 if g <= 19 else 2})
+
     ideaal = None
     try:
         import bouwer as BOUWER
@@ -826,8 +886,13 @@ def build():
                    "waarde": (entry_meta.get("last_deadline_value") or 0) / 10.0,
                    "manager": ("%s %s" % (entry_meta.get("player_first_name", ""),
                                           entry_meta.get("player_last_name", ""))).strip(),
-                   "bank": (entry_meta.get("last_deadline_bank") or 0) / 10.0}
+                   "bank": (entry_meta.get("last_deadline_bank") or 0) / 10.0,
+                   "vrij": vrij_nu,
+                   "vrij_bron": ("afgeleid uit /entry/%s/history/: één per gameweek vanaf GW2, "
+                                 "maximaal vijf gespaard, wildcard en free hit tellen niet mee"
+                                 % entry_id) if vrij_nu is not None else None}
                   if entry_meta else None),
+        "chips_gebruikt": chips_op,
         "league": league,
         "archief": archief,
         "stand": stand,

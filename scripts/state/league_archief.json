@@ -677,174 +677,6 @@
      ]
     },
     {
-     "entry": 474518,
-     "team": "Jonkies Iceboyss",
-     "manager": "Wessel Jonker",
-     "ik": false,
-     "chip": "bboost",
-     "punten": 61,
-     "straf": 0,
-     "transfers": 0,
-     "waarde": 100.0,
-     "bank": 0.0,
-     "cap": 426,
-     "vice": 165,
-     "autosub_uit": [],
-     "autosub_in": [],
-     "picks": [
-      {
-       "id": 496,
-       "n": "Kinsky",
-       "t": "TOT",
-       "p": "GKP",
-       "basis": true,
-       "cap": false,
-       "pt": 2,
-       "min": 90
-      },
-      {
-       "id": 11,
-       "n": "Mosquera",
-       "t": "ARS",
-       "p": "DEF",
-       "basis": true,
-       "cap": false,
-       "pt": 6,
-       "min": 90
-      },
-      {
-       "id": 423,
-       "n": "Shaw",
-       "t": "MUN",
-       "p": "DEF",
-       "basis": true,
-       "cap": false,
-       "pt": 1,
-       "min": 90
-      },
-      {
-       "id": 8,
-       "n": "Calafiori",
-       "t": "ARS",
-       "p": "DEF",
-       "basis": true,
-       "cap": false,
-       "pt": 9,
-       "min": 80
-      },
-      {
-       "id": 427,
-       "n": "Mbeumo",
-       "t": "MUN",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 2,
-       "min": 90
-      },
-      {
-       "id": 542,
-       "n": "E.Le Fée",
-       "t": "SUN",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 2,
-       "min": 79
-      },
-      {
-       "id": 237,
-       "n": "Ndiaye",
-       "t": "EVE",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 9,
-       "min": 90
-      },
-      {
-       "id": 124,
-       "n": "Groß",
-       "t": "BHA",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 2,
-       "min": 90
-      },
-      {
-       "id": 426,
-       "n": "B.Fernandes",
-       "t": "MUN",
-       "p": "MID",
-       "basis": true,
-       "cap": true,
-       "pt": 2,
-       "min": 90
-      },
-      {
-       "id": 411,
-       "n": "Haaland",
-       "t": "MCI",
-       "p": "FWD",
-       "basis": true,
-       "cap": false,
-       "pt": 2,
-       "min": 90
-      },
-      {
-       "id": 165,
-       "n": "João Pedro",
-       "t": "CHE",
-       "p": "FWD",
-       "basis": true,
-       "cap": false,
-       "pt": 11,
-       "min": 90
-      },
-      {
-       "id": 109,
-       "n": "Verbruggen",
-       "t": "BHA",
-       "p": "GKP",
-       "basis": false,
-       "cap": false,
-       "pt": 6,
-       "min": 90
-      },
-      {
-       "id": 469,
-       "n": "N.Williams",
-       "t": "NFO",
-       "p": "DEF",
-       "basis": false,
-       "cap": false,
-       "pt": 2,
-       "min": 90
-      },
-      {
-       "id": 305,
-       "n": "Davis",
-       "t": "IPS",
-       "p": "DEF",
-       "basis": false,
-       "cap": false,
-       "pt": 2,
-       "min": 90
-      },
-      {
-       "id": 346,
-       "n": "Calvert-Lewin",
-       "t": "LEE",
-       "p": "FWD",
-       "basis": false,
-       "cap": false,
-       "pt": 1,
-       "min": 90
-      }
-     ]
-    },
-    {
      "entry": 354683,
      "team": "Youpi Kroupi",
      "manager": "Youp Van Gelder",
@@ -1008,6 +840,174 @@
        "basis": false,
        "cap": false,
        "pt": 3,
+       "min": 90
+      }
+     ]
+    },
+    {
+     "entry": 474518,
+     "team": "Jonkies Iceboyss",
+     "manager": "Wessel Jonker",
+     "ik": false,
+     "chip": "bboost",
+     "punten": 61,
+     "straf": 0,
+     "transfers": 0,
+     "waarde": 100.0,
+     "bank": 0.0,
+     "cap": 426,
+     "vice": 165,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 496,
+       "n": "Kinsky",
+       "t": "TOT",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 11,
+       "n": "Mosquera",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 423,
+       "n": "Shaw",
+       "t": "MUN",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 9,
+       "min": 80
+      },
+      {
+       "id": 427,
+       "n": "Mbeumo",
+       "t": "MUN",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 542,
+       "n": "E.Le Fée",
+       "t": "SUN",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 79
+      },
+      {
+       "id": 237,
+       "n": "Ndiaye",
+       "t": "EVE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 9,
+       "min": 90
+      },
+      {
+       "id": 124,
+       "n": "Groß",
+       "t": "BHA",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 426,
+       "n": "B.Fernandes",
+       "t": "MUN",
+       "p": "MID",
+       "basis": true,
+       "cap": true,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 165,
+       "n": "João Pedro",
+       "t": "CHE",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 11,
+       "min": 90
+      },
+      {
+       "id": 109,
+       "n": "Verbruggen",
+       "t": "BHA",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 469,
+       "n": "N.Williams",
+       "t": "NFO",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 305,
+       "n": "Davis",
+       "t": "IPS",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 346,
+       "n": "Calvert-Lewin",
+       "t": "LEE",
+       "p": "FWD",
+       "basis": false,
+       "cap": false,
+       "pt": 1,
        "min": 90
       }
      ]
@@ -1685,7 +1685,7 @@
      ]
     }
    ],
-   "opgehaald": "2026-08-25T12:54:58+00:00"
+   "opgehaald": "2026-08-25T15:22:45+00:00"
   }
  },
  "prestatie": {
@@ -1700,7 +1700,7 @@
    "beste_cap": 9
   }
  },
- "_bijgewerkt": "2026-08-25T15:47:35+00:00",
+ "_bijgewerkt": "2026-08-25T15:22:47+00:00",
  "_afgerond": 1,
  "_managers": 10
 }
