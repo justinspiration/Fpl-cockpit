@@ -1,7 +1,7 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
  "_opgehaald": "2026-08-25",
- "_copilot_bijgewerkt": "Updated 6 hours ago",
+ "_copilot_bijgewerkt": "Updated 37 minutes ago",
  "_start_gw": 1,
  "_horizon": 8,
  "_overgeslagen": [],
@@ -12,7 +12,7 @@
   "MID": 266,
   "FWD": 72
  },
- "_dekking": "604 van 610 FPL-spelers",
+ "_dekking": "604 van 612 FPL-spelers",
  "_zonder_copilot": [
   {
    "n": "Rowe",
@@ -24,6 +24,12 @@
    "n": "Lynch",
    "t": "AVL",
    "p": "MID",
+   "prijs": 4.5
+  },
+  {
+   "n": "Wan-Bissaka",
+   "t": "AVL",
+   "p": "DEF",
    "prijs": 4.5
   },
   {
@@ -49,6 +55,12 @@
    "t": "NEW",
    "p": "DEF",
    "prijs": 4.0
+  },
+  {
+   "n": "Methalie",
+   "t": "SUN",
+   "p": "DEF",
+   "prijs": 4.5
   }
  ],
  "spelers": {
@@ -1736,8 +1748,8 @@
     5.1,
     5.5,
     5,
-    5.6,
-    5.3,
+    5.8,
+    5.4,
     5.9,
     4.4
    ],
@@ -1746,10 +1758,10 @@
     86,
     85,
     87,
-    85,
+    88,
+    88,
     87,
-    87,
-    87
+    88
    ]
   },
   "445": {
@@ -1852,31 +1864,6 @@
     79
    ]
   },
-  "130": {
-   "n": "Wieffer",
-   "t": "BHA",
-   "p": "DEF",
-   "gw": [
-    3.6,
-    4.8,
-    4.5,
-    3.7,
-    4.4,
-    4.6,
-    3.4,
-    3.2
-   ],
-   "mn": [
-    76,
-    79,
-    80,
-    79,
-    80,
-    80,
-    80,
-    80
-   ]
-  },
   "391": {
    "n": "Gvardiol",
    "t": "MCI",
@@ -1922,6 +1909,31 @@
     79,
     79,
     79,
+    79,
+    79,
+    79
+   ]
+  },
+  "130": {
+   "n": "Wieffer",
+   "t": "BHA",
+   "p": "DEF",
+   "gw": [
+    3.6,
+    4.7,
+    4.4,
+    3.7,
+    3.8,
+    4.5,
+    3.3,
+    3.1
+   ],
+   "mn": [
+    76,
+    79,
+    79,
+    79,
+    70,
     79,
     79,
     79
@@ -10554,7 +10566,7 @@
   },
   "403": {
    "n": "Savinho",
-   "t": "MCI",
+   "t": "TOT",
    "p": "MID",
    "gw": [
     0.6,
