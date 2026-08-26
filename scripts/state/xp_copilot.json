@@ -1,10 +1,15 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
  "_opgehaald": "2026-08-26",
- "_copilot_bijgewerkt": "Updated 3 hours ago",
+ "_copilot_bijgewerkt": "Updated 6 hours ago",
  "_start_gw": 2,
  "_horizon": 8,
- "_overgeslagen": [],
+ "_overgeslagen": [
+  {
+   "n": "Savinho",
+   "pos": "MID"
+  }
+ ],
  "_methode": "Automatisch opgehaald met copilot_ophalen.js via Chrome DevTools Protocol. Per positiefilter uitgelezen; de telling per filter moet overeenkomen met wat de site meldt, anders breekt het script af. Dubbele naam+positie wordt opgelost via het clubfilter. Koppeling aan FPL-id door copilot_verwerk.py: naam plus positie, daarna clubfilter, daarna uitsluiting.",
  "_telling": {
   "GKP": 67,
@@ -12,7 +17,7 @@
   "MID": 266,
   "FWD": 72
  },
- "_dekking": "604 van 612 FPL-spelers",
+ "_dekking": "603 van 612 FPL-spelers",
  "_zonder_copilot": [
   {
    "n": "Rowe",
@@ -55,6 +60,12 @@
    "t": "NEW",
    "p": "DEF",
    "prijs": 4.0
+  },
+  {
+   "n": "Sávio",
+   "t": "TOT",
+   "p": "MID",
+   "prijs": 6.5
   },
   {
    "n": "Methalie",
@@ -10562,31 +10573,6 @@
     15,
     15,
     15
-   ]
-  },
-  "403": {
-   "n": "Savinho",
-   "t": "TOT",
-   "p": "MID",
-   "gw": [
-    0.6,
-    1,
-    0.9,
-    1.1,
-    1,
-    1.5,
-    1.4,
-    1.5
-   ],
-   "mn": [
-    9,
-    12,
-    15,
-    17,
-    19,
-    22,
-    22,
-    22
    ]
   },
   "487": {
