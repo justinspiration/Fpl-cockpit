@@ -210,11 +210,33 @@ def build():
     # de Thomas-fout. Schat hun punten per 90 uit de mediaan van spelers met dezelfde
     # positie in dezelfde prijsklasse die WEL PL-data hebben. FPL's prijs is zelf een
     # marktinschatting van verwachte opbrengst, dus dat is een verdedigbare proxy.
+    # Referentie voor spelers zonder eigen historie: de mediaan p90 van
+    # positiegenoten in dezelfde prijsklasse. Die tabel werd gevuld uit spelers
+    # met 900+ minuten DIT seizoen — en dat zijn er in gameweek 2 nul, dus viel
+    # alles terug op een vaste positiewaarde. Nu wordt hij zo nodig uit de
+    # momentopname van vorig seizoen gevuld.
     ref = defaultdict(list)
     for e in bs["elements"]:
         if e["minutes"] >= 900:
             ref[(pos[e["element_type"]], round(e["now_cost"] / 5) * 5)].append(
                 e["total_points"] / e["minutes"] * 90.0)
+    if sum(len(v) for v in ref.values()) < 40:
+        _snappad0 = os.path.join(STATE, "seizoen_2025_26.json")
+        if os.path.exists(_snappad0):
+            try:
+                for pid, v in (json.load(open(_snappad0, encoding="utf-8")).get("spelers") or {}).items():
+                    m = v.get("minutes") or 0
+                    if m < 900:
+                        continue
+                    e0 = next((x for x in bs["elements"] if x["id"] == int(pid)), None)
+                    if not e0:
+                        continue
+                    ref[(pos[e0["element_type"]], round(e0["now_cost"] / 5) * 5)].append(
+                        (v.get("total_points") or 0) / m * 90.0)
+                print("  Referentie-p90 uit 2025/26 (dit seizoen nog te weinig minuten): "
+                      "%d waarden" % sum(len(v) for v in ref.values()))
+            except Exception:
+                pass
 
     def geschat_p90(P, kosten):
         bucket = round(kosten / 5) * 5
@@ -225,19 +247,82 @@ def build():
                 return v[len(v) // 2]
         return {"GKP": 3.0, "DEF": 3.0, "MID": 3.2, "FWD": 3.4}[P]
 
+    # ── Vorig seizoen erbij halen ────────────────────────────────────────
+    # FPL's API draagt maar één seizoen tegelijk. Zodra gameweek 1 is
+    # afgerond, overschrijft FPL de historische velden met de cijfers van dít
+    # seizoen. Na één speelronde staat dan bij iedereen "1 start, 90 minuten".
+    #
+    # Dat sloopte de projectie volledig: min_factor werd 1/30 = 0,03 en p90
+    # viel terug op een positiegemiddelde, waardoor elke gameweek voorbij
+    # Copilots horizon dertig keer te laag uitkwam. Haaland stond op 0,3 punten
+    # voor GW10 tot en met GW38 — en het chipadvies wees precies daarheen.
+    #
+    # De momentopname van 14-08-2026 heeft die cijfers wél. Die wordt hier
+    # gemengd met dit seizoen: in het begin telt vorig seizoen bijna volledig,
+    # naarmate er minuten bijkomen schuift het gewicht op.
+    _snap_vorig = {}
+    _snappad = os.path.join(STATE, "seizoen_2025_26.json")
+    if os.path.exists(_snappad):
+        try:
+            for pid, v in (json.load(open(_snappad, encoding="utf-8")).get("spelers") or {}).items():
+                _snap_vorig[int(pid)] = v
+        except Exception as ex:
+            print("  LET OP: momentopname vorig seizoen onleesbaar (%s)" % str(ex)[:60])
+
+    def _historie(e):
+        """Minuten, starts en punten om een p90 op te baseren.
+
+        Geeft (minuten, starts, punten, bron) terug. Zolang dit seizoen te
+        weinig minuten heeft, weegt vorig seizoen mee — evenredig aan hoeveel
+        er dit seizoen al gespeeld is.
+        """
+        nu_min = e.get("minutes") or 0
+        nu_st = e.get("starts") or 0
+        nu_pt = e.get("total_points") or 0
+        v = _snap_vorig.get(e["id"])
+        if not v:
+            return nu_min, nu_st, nu_pt, "dit seizoen"
+        vo_min = v.get("minutes") or 0
+        vo_st = v.get("starts") or 0
+        vo_pt = v.get("total_points") or 0
+        if vo_min < 90:
+            return nu_min, nu_st, nu_pt, "dit seizoen"
+        # weeg dit seizoen zwaarder naarmate er meer van gespeeld is; bij
+        # 900 minuten (tien duels) telt alleen dit seizoen nog
+        w = min(1.0, nu_min / 900.0)
+        if w <= 0.01:
+            return vo_min, vo_st, vo_pt, "2025/26"
+        # samenvoegen op tarief, niet op totaal: anders telt een half seizoen
+        # als een heel seizoen
+        p90_nu = (nu_pt / nu_min * 90.0) if nu_min else 0.0
+        p90_vo = (vo_pt / vo_min * 90.0) if vo_min else 0.0
+        p90 = w * p90_nu + (1 - w) * p90_vo
+        st_ratio = w * (nu_st / max(1, nu_min / 90.0)) + (1 - w) * (vo_st / max(1, vo_min / 90.0))
+        gedacht_min = max(nu_min, 900)
+        return (gedacht_min, round(st_ratio * gedacht_min / 90.0),
+                round(p90 * gedacht_min / 90.0), "gemengd %d%% dit seizoen" % round(w * 100))
+
     # ---- spelersdatabase met projectie PER gameweek ----
     db = []
     for e in bs["elements"]:
         P = pos[e["element_type"]]
         club = sn[e["team"]]
-        mins, starts = e["minutes"], (e.get("starts") or 0)
-        p90 = (e["total_points"] / mins * 90.0) if mins >= 450 else 0.0
+        # Niet de rauwe velden van de API: die dragen na gameweek 1 alleen nog
+        # dit seizoen en zeggen dan niets. Zie _historie().
+        mins, starts, hist_pt, hist_bron = _historie(e)
+        p90 = (hist_pt / mins * 90.0) if mins >= 450 else 0.0
         p90_geschat = False
         if p90 <= 0 and e["now_cost"] >= 45:
             p90 = geschat_p90(P, e["now_cost"])
             p90_geschat = True
         # minutenverwachting uit starts vorig seizoen; promovendi hebben geen PL-historie
-        if starts:
+        # Copilot geeft per speler een verwachting van minuten per duel. Dat is
+        # vooruitkijkend en dus beter dan tellen hoe vaak hij vorig jaar startte.
+        _cp0 = copilot.get("spelers", {}).get(str(e["id"]))
+        _cpmin0 = (_cp0.get("mn") or [None])[0] if _cp0 else None
+        if _cpmin0:
+            min_factor = max(0.0, min(1.0, float(_cpmin0) / 90.0))
+        elif starts:
             min_factor = min(1.0, starts / 30.0)
         elif p90_geschat:
             # geen PL-historie: we weten niet of hij start. Bewust gedempt tot er
@@ -359,8 +444,22 @@ def build():
             "c": e["now_cost"] / 10.0, "tp": e["total_points"],
             "ppg": float(e["points_per_game"] or 0), "p90": round(p90, 2),
             "own": float(e["selected_by_percent"] or 0),
-            "min": mins, "st": starts, "g": e["goals_scored"], "a": e["assists"],
+            # Let op: mins/starts hierboven zijn de GEMENGDE rekenwaarden voor
+            # de projectie. Wat je op het scherm ziet moet zijn wat er dit
+            # seizoen werkelijk gebeurd is — anders staat Haaland na één duel
+            # op 900 minuten en tien starts.
+            "min": e.get("minutes") or 0, "st": e.get("starts") or 0,
+            "g": e["goals_scored"], "a": e["assists"],
+            # waar de projectie zijn tarief vandaan haalt, zodat dat navraagbaar is
+            "histbron": hist_bron, "hist_min": mins,
+            # Opta-cijfers gaan over 2025/26 en moeten dus door DAT aantal
+            # duels gedeeld worden, niet door de duels van dit seizoen. Zonder
+            # dit kreeg Haaland straks 25,39 xG over drie duels toebedeeld.
+            "o_min": (_snap_vorig.get(e["id"], {}).get("minutes") or 0),
             "status": st, "news": (e.get("news") or "")[:110],
+            # FPL's eigen speelkans, nodig om een twijfelgeval bij het
+            # opstellen naar beneden te wegen in plaats van vol mee te tellen
+            "speelkans": _getal(e.get("chance_of_playing_next_round")),
             "tin": e.get("transfers_in_event", 0), "tout": e.get("transfers_out_event", 0),
             # Prijsverandering. FPL publiceert sinds dit seizoen zelf een
             # voortgangsmeter (price_change_percent): hoe ver een speler is
@@ -1012,6 +1111,10 @@ def build():
                            "extra_geflagd": extern_geflagd,
                            "fpl_zelf": sum(1 for d0 in db if d0["status"] != "a" and not d0.get("extern"))},
         "copilot_scheef": bool(cp_scheef),
+        # Tot en met deze gameweek komt de projectie van Copilot; daarna van
+        # het eigen model. Dat verschil hoort zichtbaar te zijn, want elk
+        # advies verderop rust op een andere bron.
+        "copilot_grens": cp_laatste,
         "copilot_meta": {"aantal": len(copilot.get("spelers", {})),
                          "bron": copilot.get("_bron", ""),
                          "opgehaald": copilot.get("_opgehaald", ""),

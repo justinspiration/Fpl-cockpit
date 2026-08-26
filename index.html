@@ -3039,6 +3039,18 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
   text-decoration-thickness:1px;text-decoration-color:var(--fg-3)}
 .chipwas{font-style:normal;font-size:9px;font-weight:700;color:var(--fg-3);
   text-decoration:none;display:inline-block;margin-left:3px}
+.bronsgrens{color:var(--fg-3)}
+.bronlet{display:flex;gap:8px;align-items:flex-start;margin-bottom:var(--s2);padding:8px 12px;
+  border-radius:var(--r1);background:var(--card-hi);font-size:11.5px;color:var(--fg-3);
+  line-height:1.5}
+.bronlet svg{flex:none;margin-top:1px}
+.pfseiz{display:inline-block;margin-left:6px;font-style:normal;font-size:9px;
+  font-weight:700;letter-spacing:.05em;color:var(--fg-3);background:var(--card-hi);
+  padding:1px 5px;border-radius:4px}
+.spaardoel{display:block;font-style:normal;font-size:10.5px;color:var(--accent);
+  margin-top:2px;font-weight:600}
+.stap.rust.verspild{background:color-mix(in srgb,var(--warn) 9%,transparent);
+  border-left:2px solid var(--warn);padding-left:9px}
 .vers{font-weight:650}
 .vers.goed{color:var(--good)} .vers.let{color:var(--warn)} .vers.oud{color:var(--bad)}
 .drwaarschuw svg{flex:none;margin-top:2px;color:var(--warn)}
@@ -3889,7 +3901,7 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
   
 
   <footer>
-    <span>Gegenereerd <span id="genstamp"></span><span id="versheid"></span></span>
+    <span>Gegenereerd <span id="genstamp"></span><span id="versheid"></span><span id="bronsgrens" class="bronsgrens"></span></span>
     <span id="optameta"></span>
   </footer>
 </div>
@@ -4098,6 +4110,14 @@ function versheidTonen(){
     :uren<24?`${uren.toFixed(uren<10?1:0)} uur oud`
     :`${Math.floor(uren/24)} dag${Math.floor(uren/24)>1?"en":""} oud`;
   el.textContent=` · ${tekst}`;
+  // waar houdt de externe bron op? Alles daarna is eigen rekenwerk.
+  const gr=document.getElementById("bronsgrens");
+  if(gr&&D.copilot_grens){
+    gr.textContent=` · FPL Copilot t/m GW${D.copilot_grens}, daarna eigen model`;
+    gr.title="Copilot publiceert acht gameweeks vooruit. Voor alles daarna rekent "
+      +"het dashboard zelf, op basis van doelpuntverwachtingen per duel. Adviezen "
+      +"die verder kijken dan GW"+D.copilot_grens+" leunen dus op een zwakkere bron.";
+  }
   el.className=uren>24?"vers oud":uren>6?"vers let":"vers goed";
   el.title=uren>6
     ? "De verversing draait elke drie uur. Duurt het langer, controleer dan de GitHub Action."
@@ -4573,17 +4593,40 @@ function antwoordIn(vraag){
    Methode: per gameweek de beste enkele zet zoeken met een vooruitblik van drie
    gameweeks, tegen "niets doen" afgezet. Respecteert de transferregels
    (1 gratis, maximaal 5 sparen, -4 per extra) en de squadregels.            */
+/* Wat levert deze speler op als je hem OPSTELT?
+
+   Niet hetzelfde als zijn projectie. Copilot geeft een geblesseerde met een
+   onbekende terugkeerdatum nog altijd een bescheiden verwachting, omdat hij
+   ergens in het venster terug kan komen. Over acht weken is dat verdedigbaar;
+   voor de eerstvolgende gameweek niet, want dan speelt hij simpelweg niet en
+   scoort hij nul.
+
+   Het opstellen ging puur op projectie, dus kon J.Timber met 13,8 over acht
+   weken zomaar in je basis belanden terwijl hij geblesseerd is. Hier telt
+   voor de eerstvolgende week de beschikbaarheid mee; verderop laten we
+   Copilots cijfer staan. De getoonde projectie verandert niet — alleen de
+   keuze wie er speelt. */
+function inzet(p,g){
+  const v=p.gw[g]||0;
+  if(g!==D.gw) return v;                       // verder weg: Copilot mag zijn gang gaan
+  if(["i","s","u","n"].includes(p.status)) return 0;
+  if(p.status==="d"){
+    const k=(p.speelkans!=null?p.speelkans:50)/100;
+    return v*Math.max(0,Math.min(1,k));
+  }
+  return v;
+}
 function besteXI(sq,g){
   const per={GKP:[],DEF:[],MID:[],FWD:[]};
   sq.forEach(p=>{ if(per[p.p]) per[p.p].push(p); });
-  for(const k in per) per[k].sort((a,b)=>(b.gw[g]||0)-(a.gw[g]||0));
+  for(const k in per) per[k].sort((a,b)=>inzet(b,g)-inzet(a,g));
   let best=-1;
   for(let d=3;d<=5;d++) for(let m=2;m<=5;m++) for(let f=1;f<=3;f++){
     if(1+d+m+f!==11) continue;
     if(per.GKP.length<1||per.DEF.length<d||per.MID.length<m||per.FWD.length<f) continue;
     const xi=[...per.GKP.slice(0,1),...per.DEF.slice(0,d),...per.MID.slice(0,m),...per.FWD.slice(0,f)];
-    let s=xi.reduce((a,x)=>a+(x.gw[g]||0),0);
-    s+=Math.max(...xi.map(x=>x.gw[g]||0));            // aanvoerder telt dubbel
+    let s=xi.reduce((a,x)=>a+inzet(x,g),0);
+    s+=Math.max(...xi.map(x=>inzet(x,g)));            // aanvoerder telt dubbel
     if(s>best) best=s;
   }
   return best<0?0:best;
@@ -4594,52 +4637,149 @@ function squadLegaal(sq,budget){
   for(const p of sq){ c[p.p]=(c[p.p]||0)+1; t[p.t]=(t[p.t]||0)+1; if(t[p.t]>3) return false; }
   return c.GKP===2&&c.DEF===5&&c.MID===5&&c.FWD===3;
 }
+/* ══════════════════════════════════════════════════════════════════════
+   Het transferpad over meerdere gameweeks
+
+   Twee dingen die de vorige versie fundamenteel misten:
+
+   1. Kandidaten werden gefilterd op "levert meer op dan wie eruit gaat".
+      Een goedkopere speler verkopen om een dure te kunnen betalen is per
+      definitie een verslechtering op zichzelf, dus die zet kwam nooit in
+      beeld. Daarmee was elke premium buiten je directe prijsklasse
+      onbereikbaar: Palmer kost 1,5 miljoen meer dan wie je ook op het
+      middenveld hebt, en dat geld moet ergens vandaan komen.
+
+   2. Er werd per week hooguit één wissel overwogen. Transfers opsparen heeft
+      dan geen doel — je spaart op naar iets wat de zoektocht niet kan zien.
+      Precies wat je terugzag: vier weken sparen en dan één kleine wissel.
+
+   Nu wordt per gameweek een BATCH gezocht: tot zoveel wissels als je vrije
+   transfers hebt (maximaal drie, meer wordt traag en is buiten een wildcard
+   zeldzaam), samen beoordeeld op wat de hele selectie erna oplevert. Een
+   financierende verslechtering mag daarin, zolang het geheel wint.
+   ══════════════════════════════════════════════════════════════════════ */
 function solveJS(startSquad,startBudget,gws,startVrij){
   let sq=startSquad.map(p=>({...p})), budget=startBudget, vrij=startVrij;
   const pad=[]; let totaal=0, hits=0;
-  const lookahead=3;
+  const lookahead=4;
+
+  /* Alle zinnige zetten voor één speler: verbeteringen én financierende
+     verslechteringen. Die laatste alleen als ze geld vrijmaken, want anders
+     is het puur verlies. */
+  /* Twee dingen die per gameweek maar één keer hoeven: de somprojectie over
+     het venster, en welke spelers per positie überhaupt in aanmerking komen.
+     Zonder die twee caches werd de hele database van 612 spelers bij elke
+     kandidaatvraag opnieuw gefilterd en gesorteerd — vier seconden per pad. */
+  let WSOM=null, POOL=null, WSLEUTEL=null;
+  const bouwCache=(venster)=>{
+    const k=venster.join(",");
+    if(WSLEUTEL===k) return;
+    WSLEUTEL=k; WSOM=new Map(); POOL={GKP:[],DEF:[],MID:[],FWD:[]};
+    for(const c of D.db){
+      let t=0; for(const gg of venster) t+=c.gw[gg]||0;
+      WSOM.set(c.id,t);
+      if(!["i","s","u"].includes(c.status)&&speeltMee(c,45)&&POOL[c.p]) POOL[c.p].push(c);
+    }
+    for(const k2 in POOL) POOL[k2].sort((a,b)=>WSOM.get(b.id)-WSOM.get(a.id));
+  };
+  const wsom=p=>{ const v=WSOM.get(p.id); return v===undefined?0:v; };
+  const zettenVoor=(squad,uit,ruimte,venster)=>{
+    bouwCache(venster);
+    const have=new Set(squad.map(p=>p.id));
+    const clubs={}; squad.forEach(p=>{ if(p.id!==uit.id) clubs[p.t]=(clubs[p.t]||0)+1; });
+    const uitW=wsom(uit);
+    const geenKeeperwissel=uit.p==="GKP"&&!["i","s","u","d"].includes(uit.status);
+    if(geenKeeperwissel) return [];
+    const uitkomst=[];
+    for(const c of POOL[uit.p]){          // al op projectie gesorteerd
+      if(have.has(c.id)||c.c>ruimte+1e-9||(clubs[c.t]||0)>=3) continue;
+      const w=wsom(c)-uitW, vrijgeld=uit.c-c.c;
+      if(!(w>0||(vrijgeld>=0.4&&w>-3.5))) continue;
+      uitkomst.push({c,w,vrij:vrijgeld});
+      if(uitkomst.length>=10) break;      // de lijst is aflopend, dus dit zijn de beste
+    }
+    return uitkomst;
+  };
+
   for(let i=0;i<gws.length;i++){
     const g=gws[i];
     const venster=gws.slice(i,i+lookahead);
+    bouwCache(venster);
     const nuScore=venster.reduce((a,x)=>a+besteXI(sq,x),0);
-    // zoek de beste enkele wissel binnen dit venster
+    const maxZet=Math.max(1,Math.min(3,vrij));
+
+    // beste batch van 1 t/m maxZet wissels, samen beoordeeld
     let beste=null;
-    const zwak=[...sq].sort((a,b)=>
-      venster.reduce((x,gg)=>x+(a.gw[gg]||0),0)-venster.reduce((x,gg)=>x+(b.gw[gg]||0),0)).slice(0,5);
-    const have=new Set(sq.map(p=>p.id));
-    for(const uit of zwak){
-      const ruimte=budget+uit.c;
-      const clubs={}; sq.forEach(p=>{ if(p.id!==uit.id) clubs[p.t]=(clubs[p.t]||0)+1; });
-      const kand=D.db.filter(c=>c.p===uit.p&&!have.has(c.id)&&c.c<=ruimte+1e-9
-        &&!["i","s","u"].includes(c.status)&&speeltMee(c,45)
-        &&(clubs[c.t]||0)<3
-        &&!(uit.p==="GKP"&&!["i","s","u","d"].includes(uit.status)))   // geen keeperwissels
-        .map(c=>({c,w:venster.reduce((a,gg)=>a+(c.gw[gg]||0),0)-venster.reduce((a,gg)=>a+(uit.gw[gg]||0),0)}))
-        .filter(x=>x.w>0).sort((a,b)=>b.w-a.w).slice(0,8);
-      for(const {c} of kand){
-        const nieuw=sq.filter(x=>x.id!==uit.id).concat([{...c}]);
-        const nb=budget+uit.c-c.c;
-        if(!squadLegaal(nieuw,nb)) continue;
-        const kosten=vrij>=1?0:4;
-        const score=venster.reduce((a,x)=>a+besteXI(nieuw,x),0)-kosten;
-        if(!beste||score>beste.score) beste={score,uit,in:c,nieuw,nb,kosten};
+    const zoek=(squad,bud,gedaan,diepte)=>{
+      if(gedaan.length){
+        const kosten=Math.max(0,gedaan.length-vrij)*4;
+        const score=venster.reduce((a,x)=>a+besteXI(squad,x),0)-kosten;
+        if(!beste||score>beste.score)
+          beste={score,paren:gedaan.map(x=>[x.uit,x.in]),nieuw:squad,nb:bud,
+                 kosten,aantal:gedaan.length};
       }
-    }
-    // Een transfer moet zich echt lonen. Onder de 2 punten over het venster is
-    // het geschuif zonder opbrengst: je verliest je vrije transfer, betaalt later
-    // misschien een strafpunt, en de winst valt binnen de ruis van elk model.
-    // Dit is dezelfde discipline als in het transferadvies.
-    const MINWINST=2.0;
-    if(beste&&beste.score>nuScore+MINWINST){
+      if(diepte>=maxZet) return;
+      /* Wie komt er in aanmerking om verkocht te worden?
+
+         Dit waren de vijf zwakste spelers. Dat is precies verkeerd om voor
+         een upgrade: je bankspelers ruil je tegen andere bankspelers, terwijl
+         een premium juist gefinancierd wordt door je middenmoot. Gibbs-White
+         stond zevende en O'Reilly achtste — allebei buiten beeld, en dat zijn
+         nou net de twee die je moet verkopen om Palmer te kunnen betalen.
+
+         Nu telt niet hoe zwak iemand is, maar hoeveel er voor hem in de
+         plaats te halen valt met het geld dat er dan is. */
+      const kans=[];
+      for(const p of squad){
+        const opties=zettenVoor(squad,p,bud+p.c,venster);
+        if(!opties.length){ continue; }
+        let beste=-99, meest=0;
+        for(const o of opties){ if(o.w>beste) beste=o.w; if(o.vrij>meest) meest=o.vrij; }
+        kans.push({p, potentie:beste, vrij:meest});
+      }
+      kans.sort((a,b)=>(b.potentie-a.potentie)||(b.vrij-a.vrij));
+      const kansen=kans.slice(0,diepte===0?7:5).map(x=>x.p);
+      for(const uit of kansen){
+        if(gedaan.some(x=>x.inId===uit.id)) continue;   // niet meteen weer weg
+        for(const z of zettenVoor(squad,uit,bud+uit.c,venster)){
+          const nieuwSq=squad.filter(x=>x.id!==uit.id).concat([{...z.c}]);
+          const nb=bud+uit.c-z.c.c;
+          if(!squadLegaal(nieuwSq,nb)) continue;
+          zoek(nieuwSq,nb,gedaan.concat([{uit:uit.n,in:z.c.n,inId:z.c.id}]),diepte+1);
+        }
+      }
+    };
+    zoek(sq,budget,[],0);
+
+    /* Loont het? Een wissel moet minstens 2 punten over het venster opleveren,
+       want je geeft er een vrije transfer voor op. Zit je op het maximum van
+       vijf, dan raak je die transfer toch kwijt en zakt de drempel. Bij een
+       batch schaalt de eis mee: twee wissels moeten samen meer opbrengen dan
+       één. */
+    const AANMAX=vrij>=5;
+    const perZet=AANMAX?0.5:2.0;
+    const vrijVoor=vrij;
+    if(beste&&beste.score>nuScore+perZet*beste.aantal){
       totaal+=besteXI(beste.nieuw,g)-beste.kosten; hits+=beste.kosten;
-      pad.push({gw:g,acties:[[beste.uit.n,beste.in.n]],hit:beste.kosten,
-                winst:+(beste.score-nuScore).toFixed(1)});
-      sq=beste.nieuw; budget=beste.nb; vrij=Math.min(5,Math.max(0,vrij-1)+1);
+      vrij=Math.min(5,Math.max(0,vrij-beste.aantal)+1);
+      pad.push({gw:g,acties:beste.paren,hit:beste.kosten,
+                winst:+(beste.score-nuScore).toFixed(1),vrijVoor,vrijNa:vrij});
+      sq=beste.nieuw; budget=beste.nb;
     } else {
       totaal+=besteXI(sq,g);
-      pad.push({gw:g,acties:[],hit:0});
-      vrij=Math.min(5,vrij+1);
+      const na=Math.min(5,vrij+1);
+      pad.push({gw:g,acties:[],hit:0,vrijVoor,vrijNa:na,
+                verspild:na===vrij&&vrij>=5});
+      vrij=na;
     }
+  }
+  /* Waar wordt naartoe gespaard? Een rustweek is pas te begrijpen als je weet
+     wat er straks mee gebeurt. */
+  for(let i=0;i<pad.length;i++){
+    if(pad[i].acties.length) continue;
+    const volgende=pad.slice(i+1).find(x=>x.acties.length);
+    if(volgende) pad[i].spaartVoor={gw:volgende.gw,n:volgende.acties.length,
+                                    wie:volgende.acties.map(a=>a[1])};
   }
   return {punten:totaal,hits,pad,eind:sq};
 }
@@ -4649,7 +4789,20 @@ function solverPaneel(){
   const box=$("#solverbox");
   const basisSquad=squadInGW(PLANGW);
   if(basisSquad.length!==15){box.innerHTML='<div class="empty">Geen volledige squad.</div>';return;}
-  const gws=D.alle_gws.filter(g=>g>=PLANGW).slice(0,6);
+  /* Hoe ver vooruit? Precies tot waar FPL Copilot reikt.
+
+     Er stond hier zes gameweeks, willekeurig gekozen. Dat gaf twee problemen:
+     de laatste weken leunden soms al op het eigen model, en het venster was
+     te kort om te zien dat sparen loont — een batch betaalt zich pas terug
+     over de weken erna. Nu loopt het venster tot Copilots laatste gameweek,
+     met acht als bovengrens zodat het rekenwerk behapbaar blijft. */
+  const grens=D.copilot_grens||(PLANGW+7);
+  // Kijk je naar een gameweek voorbij Copilots bereik, dan is dat venster leeg
+  // en stond er "punten over GWundefined–undefined". Dan gewoon acht weken
+  // vooruit met het eigen model, en dat staat er ook bij.
+  let gws=D.alle_gws.filter(g=>g>=PLANGW&&g<=grens).slice(0,8);
+  if(gws.length<2) gws=D.alle_gws.filter(g=>g>=PLANGW).slice(0,8);
+  if(!gws.length){ box.innerHTML='<div class="empty">Het seizoen is afgelopen.</div>'; return; }
   const bud=budgetIn(PLANGW), vrij=vrijeTransfers(PLANGW);
   const vrijGetal=vrij===Infinity?5:vrij;
   const gepland0=geplandeTransfers(PLANGW);
@@ -4661,6 +4814,36 @@ function solverPaneel(){
   const vrijNa=Math.max(0,vrijGetal-gepland0.length);
   const zonder=gws.reduce((a,g)=>a+besteXI(basisSquad,g),0);
   const R=solveJS(basisSquad,bud,gws,vrijNa);
+
+  /* Sparen en in één keer toeslaan.
+
+     Het pad hierboven beslist week voor week: loont een wissel nú meer dan
+     twee punten, dan doet hij hem. Wat het niet kan zien is dat drie weken
+     sparen een batch mogelijk maakt die veel meer oplevert — bijvoorbeeld
+     omdat je pas met drie transfers een premium kunt betalen die je met één
+     nooit bereikt.
+
+     Daarom hier de tegenhanger: niets doen tot je er genoeg hebt, en dan in
+     één keer. Beide paden staan naast elkaar, zodat je zelf kunt kiezen in
+     plaats van dat het gereedschap dat voor je doet. */
+  const spaarPad=(()=>{
+    const opties=[];
+    for(let w=1;w<Math.min(5,gws.length);w++){
+      const doelGW=gws[w];
+      const vrijDan=Math.min(5,vrijNa+w);
+      if(vrijDan<2) continue;
+      // punten tot dat moment met je huidige selectie
+      let voor=0; for(let k=0;k<w;k++) voor+=besteXI(basisSquad,gws[k]);
+      const rest=gws.slice(w);
+      const R2=solveJS(basisSquad,bud,rest,vrijDan);
+      const eerste=R2.pad[0];
+      if(!eerste||eerste.acties.length<2) continue;
+      opties.push({gw:doelGW,vrij:vrijDan,punten:voor+R2.punten,
+                   acties:eerste.acties,hit:eerste.hit});
+    }
+    opties.sort((a,b)=>b.punten-a.punten);
+    return opties[0]||null;
+  })();
   const S={gws,basis:+zonder.toFixed(1),beste:+R.punten.toFixed(1),
            winst:+(R.punten-zonder).toFixed(1),hits:R.hits,pad:R.pad,alt:[]};
   const gepland=gepland0;
@@ -4685,12 +4868,22 @@ function solverPaneel(){
       <div class="toe">${zetten} transfer${zetten===1?"":"s"}${S.hits?`, ${S.hits} strafpunten betaald`:", geen strafpunten"}
         · <b style="color:var(--good)">+${S.winst.toFixed(1)} punten</b></div></div></div>`;
   h+=`<div style="margin-bottom:9px">`+S.pad.map(st=>{
-    if(!st.acties.length) return `<div class="stap rust"><span class="gwl">GW${st.gw}</span>
-      <span class="wat" style="color:var(--fg-3)">Bewaar je transfer — dat levert volgende week meer op</span>
-      <span></span></div>`;
+    if(!st.acties.length){
+      const n=st.vrijNa!=null?st.vrijNa:null;
+      if(st.verspild) return `<div class="stap rust verspild"><span class="gwl">GW${st.gw}</span>
+        <span class="wat" style="color:var(--warn)">Je zit op het maximum van 5 opgespaarde transfers —
+          de transfer van deze week vervalt</span>
+        <span class="kost" style="color:var(--warn)">−1 vrij</span></div>`;
+      const doel=st.spaartVoor;
+      return `<div class="stap rust"><span class="gwl">GW${st.gw}</span>
+        <span class="wat" style="color:var(--fg-3)">Bewaar je transfer${
+          n!=null?` — dan heb je er ${n}`:""}${n===5?" en zit je aan het maximum":""}${
+          doel?`<i class="spaardoel">sparen voor GW${doel.gw}: ${doel.wie.map(esc).join(" + ")}</i>`:""}</span>
+        <span class="kost" style="color:var(--fg-3)">${n!=null?n+" vrij":""}</span></div>`;
+    }
     return st.acties.map(([u,i])=>`<div class="stap actie"><span class="gwl">GW${st.gw}</span>
       <span class="wat"><b>${esc(u)}</b><span class="pijl">${ik("pijlRechts",15)}</span><b>${esc(i)}</b></span>
-      <span class="kost">${st.hit?"−4":""}</span></div>`).join("");
+      <span class="kost">${st.hit?"−4":(st.vrijNa!=null?st.vrijNa+" vrij":"")}</span></div>`).join("");
   }).join("")+`</div>`;
   if(false){
     h+=`<div class="lbl" style="margin:13px 0 6px">Bijna even goed</div>`;
@@ -4699,6 +4892,24 @@ function solverPaneel(){
       h+=`<div style="font-size:12px;color:var(--fg-2);padding:5px 0;border-bottom:1px solid var(--line-2)">
         <span style="font-family:var(--mono);color:var(--fg)">${a.punten.toFixed(1)}</span> — ${esc(z.join(" · ")||"niets doen")}</div>`;});
   }
+  if(spaarPad&&spaarPad.punten>S.beste+1.0){
+    h+=`<div class="ins" style="border-color:var(--good);margin:11px 0">
+      <h4><span class="tagje" style="background:var(--good-vlak)">of: sparen en in één keer toeslaan</span></h4>
+      <p>Doe je tot <b>GW${spaarPad.gw}</b> niets, dan heb je er <b>${spaarPad.vrij}</b> staan en kun je
+      in één keer ${spaarPad.acties.length} wissels maken:</p>
+      <div style="margin:8px 0">${spaarPad.acties.map(([u,i])=>
+        `<div class="stap actie"><span class="gwl">GW${spaarPad.gw}</span>
+         <span class="wat"><b>${esc(u)}</b><span class="pijl">${ik("pijlRechts",15)}</span><b>${esc(i)}</b></span>
+         <span class="kost">${spaarPad.hit?"−"+spaarPad.hit:""}</span></div>`).join("")}</div>
+      <p><b style="color:var(--good)">${spaarPad.punten.toFixed(0)} punten</b> over dezelfde periode,
+      tegen ${S.beste.toFixed(0)} als je week voor week wisselt —
+      <b style="color:var(--good)">+${(spaarPad.punten-S.beste).toFixed(1)}</b>.
+      Sparen loont hier omdat je met ${spaarPad.vrij} transfers tegelijk spelers kunt betalen
+      die met één per week buiten bereik blijven.</p></div>`;
+  }
+  if(S.gws[S.gws.length-1]>grens)
+    h+=`<div class="bronlet">${ik("info",13)}<span>Dit venster loopt tot GW${S.gws[S.gws.length-1]},
+      voorbij het bereik van FPL Copilot (GW${grens}). Vanaf daar rekent het dashboard zelf.</span></div>`;
   h+=`<div class="legend"><span>De solver kijkt ${S.gws.length} gameweeks vooruit en respecteert de transferregels:
     1 gratis per week, maximaal 5 sparen, −4 per extra.</span>
     <span>Soms is niets doen de beste zet — dat zie je hierboven terug.</span></div>`;
@@ -5979,8 +6190,8 @@ function besteElftal(sq,g,n){
      bepaald: Thiaw met 36,6 op de bank, Groß met 31,4 in de basis. Vijf punten
      weggegeven aan een elftal dat je zelf zag kloppen noch niet kloppen. */
   const N=Math.max(1,n||1);
-  const w=p=>{ if(N===1) return p.gw[g]||0;
-    let t=0; for(let k=g;k<Math.min(39,g+N);k++) t+=p.gw[k]||0; return t; };
+  const w=p=>{ if(N===1) return inzet(p,g);
+    let t=0; for(let k=g;k<Math.min(39,g+N);k++) t+=inzet(p,k); return t; };
   const per={GKP:[],DEF:[],MID:[],FWD:[]};
   sq.forEach(p=>{ if(per[p.p]) per[p.p].push(p); });
   for(const k in per) per[k].sort((a,b)=>w(b)-w(a));
@@ -7177,35 +7388,46 @@ function profielIn(box,p){
      stonden alleen de seizoenstotalen en de percentielen. Deze tabel vult dat
      aan: dezelfde cijfers, per wedstrijd, zodat een speler met weinig minuten
      niet onterecht laag oogt.                                                */
+  /* Twee verschillende noemers, en dat is geen detail.
+
+     De cijfers van FPL gaan over dit seizoen; die van Opta over 2025/26.
+     Beide door hetzelfde aantal duels delen levert onzin op: Haalands 25,39
+     xG van vorig jaar gedeeld door drie duels van dit jaar wordt 8,5 per
+     wedstrijd. Elke rij weet nu zelf uit welk seizoen hij komt. */
   const duels=p.min?p.min/90:0;
+  const oDuels=p.o_min?p.o_min/90:0;
   const per90=(v)=>duels>=3&&v!=null?v/duels:null;
+  const oPer90=(v)=>oDuels>=5&&v!=null?v/oDuels:null;
   const mkt=marktDiepte(p.t,G);
   const rijen90=[
-    ["Verwachte goals per 90",   per90(p.oxg),      2],
-    ["Verwachte assists per 90", per90(p.xa),       2],
-    ["Doelpunten per 90",        per90(p.g),        2],
-    ["Assists per 90",           per90(p.a),        2],
-    ["Schoten per 90",           per90(p.oshots),   1],
-    ["DefCon-acties per 90",     p.dc90||null,      1],
-    ["BPS per 90",               per90(p.bps),      0],
-    ["Bonus per 90",             per90(p.bonus),    2],
+    ["Verwachte goals per 90",   oPer90(p.oxg),     2, "2025/26"],
+    ["Schoten per 90",           oPer90(p.oshots),  1, "2025/26"],
+    ["Verwachte assists per 90", per90(p.xa),       2, SEIZOEN],
+    ["Doelpunten per 90",        per90(p.g),        2, SEIZOEN],
+    ["Assists per 90",           per90(p.a),        2, SEIZOEN],
+    ["DefCon-acties per 90",     p.dc90||null,      1, SEIZOEN],
+    ["BPS per 90",               per90(p.bps),      0, SEIZOEN],
+    ["Bonus per 90",             per90(p.bonus),    2, SEIZOEN],
   ].filter(x=>x[1]!=null);
 
   const perWedstrijd=rijen90.length?`<section class="pfblok">
     <h4>Per wedstrijd</h4>
     <p class="pfuit">Dezelfde cijfers als in de vergelijker, gedeeld door ${duels.toFixed(0)} duels
       in ${esc(SEIZOEN)}. Zo weegt een speler met weinig minuten niet automatisch lager.</p>
-    <div class="pf90">${rijen90.map(([l,v,d])=>{
-      const g2=percentiel(p,x=>{const du=x.min?x.min/90:0; if(du<3) return null;
+    <div class="pf90">${rijen90.map(([l,v,d,seiz])=>{
+      const g2=percentiel(p,x=>{
+        const du=x.min?x.min/90:0, od=x.o_min?x.o_min/90:0;
+        // Opta-rijen tegen Opta-duels, FPL-rijen tegen FPL-duels
+        if(l.includes("Verwachte goals")) return (od>=5&&x.oxg!=null)?x.oxg/od:null;
+        if(l.includes("Schoten"))         return (od>=5&&x.oshots!=null)?x.oshots/od:null;
+        if(du<3) return null;
         return l.includes("DefCon")?x.dc90
-             : l.includes("Verwachte goals")?(x.oxg!=null?x.oxg/du:null)
              : l.includes("Verwachte assists")?(x.xa!=null?x.xa/du:null)
              : l.includes("Doelpunten")?x.g/du
              : l.includes("Assists")?x.a/du
-             : l.includes("Schoten")?(x.oshots!=null?x.oshots/du:null)
              : l.includes("BPS")?x.bps/du : x.bonus/du;});
       return `<div class="pf90r">
-        <span class="pf90l">${esc(l)}</span>
+        <span class="pf90l">${esc(l)}<i class="pfseiz">${esc(seiz||"")}</i></span>
         <span class="pf90v">${v.toFixed(d)}</span>
         <span class="pf90p">${g2?`${g2.plaats}e van ${g2.n}`:"—"}</span></div>`;}).join("")}</div>
   </section>`:"";
@@ -9727,7 +9949,11 @@ ${combi?`<div class="combi">
     </div>`:""}
     ${(()=>{const R=teamRating(g);
       const cel=(l,v)=>`<span class="rt"><b style="color:${ratingKleur(v)}">${v==null?"—":v+"%"}</b><span>${l}</span></span>`;
-      return `<div class="ratingbalk" title="Hoe dicht je linies bij het maximum voor hun eigen budget zitten, over ${R.periode===1?"deze gameweek":R.periode+" gameweeks"}">
+      return `${(PLANGW+(ENKEL?0:HZ-1))>(D.copilot_grens||99)?
+        `<div class="bronlet">${ik("info",13)}<span>Je kijkt tot GW${Math.min(38,PLANGW+(ENKEL?0:HZ-1))},
+          maar FPL Copilot reikt tot GW${D.copilot_grens}. Alles daarna komt uit het eigen model
+          en is minder hard.</span></div>`:""}
+      <div class="ratingbalk" title="Hoe dicht je linies bij het maximum voor hun eigen budget zitten, over ${R.periode===1?"deze gameweek":R.periode+" gameweeks"}">
         ${cel("totaal",R.totaal)}${cel("keeper",R.GKP)}${cel("verdediging",R.DEF)}${cel("middenveld",R.MID)}${cel("aanval",R.FWD)}
         <button class="ratinguit" data-rating="1" title="Wat betekent dit?">?</button>
       </div>`;})()}

@@ -31,13 +31,32 @@ XI_MIN = {"GKP": 1, "DEF": 3, "MID": 2, "FWD": 1}
 XI_MAX = {"GKP": 1, "DEF": 5, "MID": 5, "FWD": 3}
 
 
-def beste_xi(squad, gw):
+def inzet(p, gw, nu=None):
+    """Wat hij oplevert als je hem OPSTELT, niet zijn ruwe projectie.
+
+    Voor de eerstvolgende gameweek telt beschikbaarheid mee: wie geblesseerd
+    of geschorst is scoort nul, hoe hoopvol een externe bron ook is. Verderop
+    in het venster laten we die bron met rust, want dan kan hij terug zijn.
+    """
+    v = p["gw"].get(gw, 0)
+    if nu is None or gw != nu:
+        return v
+    if p.get("status") in ("i", "s", "u", "n"):
+        return 0.0
+    if p.get("status") == "d":
+        k = p.get("speelkans")
+        k = 50 if k is None else k
+        return v * max(0.0, min(1.0, k / 100.0))
+    return v
+
+
+def beste_xi(squad, gw, nu=None):
     """Hoogste elftal binnen de formatieregels; aanvoerder telt dubbel."""
     per = {}
     for p in squad:
         per.setdefault(p["p"], []).append(p)
     for k in per:
-        per[k].sort(key=lambda x: -x["gw"].get(gw, 0))
+        per[k].sort(key=lambda x: -inzet(x, gw, nu))
     beste, xi_beste = -1, None
     for d in range(XI_MIN["DEF"], XI_MAX["DEF"] + 1):
         for m in range(XI_MIN["MID"], XI_MAX["MID"] + 1):
@@ -48,8 +67,8 @@ def beste_xi(squad, gw):
                         or len(per.get("MID", [])) < m or len(per.get("FWD", [])) < f):
                     continue
                 xi = (per["GKP"][:1] + per["DEF"][:d] + per["MID"][:m] + per["FWD"][:f])
-                s = sum(x["gw"].get(gw, 0) for x in xi)
-                s += max(x["gw"].get(gw, 0) for x in xi)      # aanvoerder dubbel
+                s = sum(inzet(x, gw, nu) for x in xi)
+                s += max(inzet(x, gw, nu) for x in xi)        # aanvoerder dubbel
                 if s > beste:
                     beste, xi_beste = s, xi
     return beste, xi_beste
