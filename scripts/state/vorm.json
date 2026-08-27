@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-08-26T19:54:32+00:00",
+ "_opgehaald": "2026-08-27T00:35:02+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -522,7 +522,7 @@
   "EVE": {
    "artikel": "2026–27 Everton F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Everton_F.C._season",
-   "gespeeld": 1,
+   "gespeeld": 2,
    "laatste5": [
     {
      "datum": "2026-07-25",
@@ -533,13 +533,24 @@
      "uit": "G",
      "soort": "oefen",
      "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-08-26",
+     "opp": "Preston North End",
+     "thuis": false,
+     "voor": 4,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "Second round"
     }
    ],
    "vorm": [
-    "G"
+    "G",
+    "W"
    ],
-   "vormpunten": 1,
-   "vormmax": 3,
+   "vormpunten": 4,
+   "vormmax": 6,
    "oefen": 1
   },
   "FUL": {
@@ -1019,18 +1030,8 @@
   "NEW": {
    "artikel": "2026–27 Newcastle United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Newcastle_United_F.C._season",
-   "gespeeld": 6,
+   "gespeeld": 7,
    "laatste5": [
-    {
-     "datum": "2026-08-08",
-     "opp": "Valencia",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "Trofeu Taronja"
-    },
     {
      "datum": "2026-08-12",
      "opp": "Everton",
@@ -1070,14 +1071,24 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "1"
+    },
+    {
+     "datum": "2026-08-26",
+     "opp": "West Bromwich Albion",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 2,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "Second round"
     }
    ],
    "vorm": [
-    "W",
     "V",
     "V",
     "G",
-    "G"
+    "G",
+    "W"
    ],
    "vormpunten": 5,
    "vormmax": 15,
@@ -1153,7 +1164,7 @@
   "TOT": {
    "artikel": "2026–27 Tottenham Hotspur F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Tottenham_Hotspur_F.C._season",
-   "gespeeld": 3,
+   "gespeeld": 4,
    "laatste5": [
     {
      "datum": "2026-07-26",
@@ -1184,15 +1195,26 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "1"
+    },
+    {
+     "datum": "2026-08-26",
+     "opp": "Charlton Athletic",
+     "thuis": true,
+     "voor": 5,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "Second round"
     }
    ],
    "vorm": [
     "W",
     "G",
-    "V"
+    "V",
+    "W"
    ],
-   "vormpunten": 4,
-   "vormmax": 9,
+   "vormpunten": 7,
+   "vormmax": 12,
    "oefen": 1
   },
   "SUN": {
