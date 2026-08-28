@@ -72,7 +72,12 @@ def main():
              for t in bs["teams"]}
     leeg = {"gespeeld": 0, "winst": 0, "gelijk": 0, "verlies": 0,
             "voor": 0, "tegen": 0, "punten": 0, "vorm": [], "duels": []}
-    tabel = {t["short_name"]: dict(leeg, naam=t["name"], kort=t["short_name"])
+    # LET OP: dict(leeg, ...) kopieert alleen de buitenste laag. De lijsten
+    # "vorm" en "duels" bleven daardoor door alle twintig clubs gedeeld, en
+    # elke append kwam in dezelfde lijst terecht. Gevolg: iedere club toonde
+    # dezelfde vorm en dezelfde acht wedstrijden.
+    import copy as _copy
+    tabel = {t["short_name"]: dict(_copy.deepcopy(leeg), naam=t["name"], kort=t["short_name"])
              for t in bs["teams"]}
 
     klaar = [f for f in fixtures
@@ -80,7 +85,7 @@ def main():
     klaar.sort(key=lambda f: f.get("kickoff_time") or "")
 
     for f in klaar:
-        h, a = teams[f["team_h"]]["short_name"], teams[f["team_a"]]["short_name"]
+        h, a = teams[f["team_h"]]["kort"], teams[f["team_a"]]["kort"]
         hs, as_ = f["team_h_score"], f["team_a_score"]
         for kort, eigen, ander, thuis, opp in ((h, hs, as_, True, a), (a, as_, hs, False, h)):
             r = tabel[kort]
