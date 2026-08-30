@@ -1,209 +1,165 @@
 {
  "_bron": "OddsPortal — https://www.oddsportal.com/football/england/premier-league/",
  "_markt": "1X2, gemiddelde van de getoonde bookmakers",
- "_opgehaald": "2026-08-28T13:26:13.588Z",
+ "_opgehaald": "2026-08-29T17:46:43.323Z",
  "_methode": "Alleen de 1X2-markt. Uit drie uitkomstkansen zijn de twee doelpuntverwachtingen exact op te lossen; over/under is daarvoor niet nodig.",
- "_duels": 20,
- "_onbekend": [],
+ "_duels": 15,
+ "_onbekend": [
+  "Finished",
+  "2",
+  "1",
+  "0",
+  "60'"
+ ],
  "duels": [
-  {
-   "thuis": "CRY",
-   "uit": "MCI",
-   "tijd": "21:00",
-   "odds": {
-    "thuis": 4.94,
-    "gelijk": 4.03,
-    "uit": 1.67
-   }
-  },
-  {
-   "thuis": "LIV",
-   "uit": "NFO",
-   "tijd": "13:30",
-   "odds": {
-    "thuis": 1.51,
-    "gelijk": 4.51,
-    "uit": 5.84
-   }
-  },
-  {
-   "thuis": "BOU",
-   "uit": "EVE",
-   "tijd": "16:00",
-   "odds": {
-    "thuis": 2.06,
-    "gelijk": 3.5,
-    "uit": 3.56
-   }
-  },
-  {
-   "thuis": "COV",
-   "uit": "HUL",
-   "tijd": "16:00",
-   "odds": {
-    "thuis": 1.87,
-    "gelijk": 3.48,
-    "uit": 4.33
-   }
-  },
-  {
-   "thuis": "TOT",
-   "uit": "NEW",
-   "tijd": "18:30",
-   "odds": {
-    "thuis": 2.27,
-    "gelijk": 3.71,
-    "uit": 2.9
-   }
-  },
   {
    "thuis": "LEE",
    "uit": "BRE",
-   "tijd": "15:00",
+   "tijd": "16:00",
    "odds": {
-    "thuis": 2.58,
-    "gelijk": 3.37,
-    "uit": 2.71
+    "thuis": 2.6,
+    "gelijk": 3.36,
+    "uit": 2.74
    }
   },
   {
    "thuis": "CHE",
    "uit": "BHA",
-   "tijd": "15:00",
+   "tijd": "16:00",
    "odds": {
-    "thuis": 1.82,
-    "gelijk": 3.98,
-    "uit": 4.01
+    "thuis": 1.83,
+    "gelijk": 3.93,
+    "uit": 4.05
    }
   },
   {
    "thuis": "SUN",
    "uit": "FUL",
-   "tijd": "15:00",
+   "tijd": "16:00",
    "odds": {
-    "thuis": 2.42,
-    "gelijk": 3.25,
-    "uit": 3
+    "thuis": 2.44,
+    "gelijk": 3.27,
+    "uit": 3.01
    }
   },
   {
    "thuis": "MUN",
    "uit": "IPS",
-   "tijd": "17:30",
+   "tijd": "18:30",
    "odds": {
     "thuis": 1.41,
-    "gelijk": 4.93,
-    "uit": 7.05
+    "gelijk": 4.96,
+    "uit": 7.28
    }
   },
   {
    "thuis": "AVL",
    "uit": "ARS",
-   "tijd": "21:00",
+   "tijd": "22:00",
    "odds": {
-    "thuis": 6.1,
-    "gelijk": 4.16,
-    "uit": 1.54
+    "thuis": 6.25,
+    "gelijk": 4.28,
+    "uit": 1.53
    }
   },
   {
    "thuis": "IPS",
    "uit": "LIV",
-   "tijd": "21:00",
+   "tijd": "22:00",
    "odds": {
-    "thuis": 4.96,
-    "gelijk": 4.29,
-    "uit": 1.59
+    "thuis": 4.84,
+    "gelijk": 4.34,
+    "uit": 1.63
    }
   },
   {
    "thuis": "NEW",
    "uit": "BOU",
-   "tijd": "13:30",
+   "tijd": "14:30",
    "odds": {
-    "thuis": 2.29,
-    "gelijk": 3.59,
-    "uit": 2.84
+    "thuis": 2.34,
+    "gelijk": 3.66,
+    "uit": 2.86
    }
   },
   {
    "thuis": "BRE",
    "uit": "SUN",
-   "tijd": "16:00",
+   "tijd": "17:00",
    "odds": {
-    "thuis": 1.65,
-    "gelijk": 3.84,
-    "uit": 4.93
+    "thuis": 1.68,
+    "gelijk": 3.87,
+    "uit": 5.06
    }
   },
   {
    "thuis": "BHA",
    "uit": "LEE",
-   "tijd": "16:00",
+   "tijd": "17:00",
    "odds": {
-    "thuis": 1.8,
-    "gelijk": 3.63,
-    "uit": 4.23
+    "thuis": 1.83,
+    "gelijk": 3.68,
+    "uit": 4.28
    }
   },
   {
    "thuis": "MCI",
    "uit": "COV",
-   "tijd": "16:00",
+   "tijd": "17:00",
    "odds": {
     "thuis": 1.21,
-    "gelijk": 6.97,
-    "uit": 10.59
+    "gelijk": 7.15,
+    "uit": 11.6
    }
   },
   {
    "thuis": "FUL",
    "uit": "CRY",
-   "tijd": "16:00",
+   "tijd": "17:00",
    "odds": {
-    "thuis": 2.32,
-    "gelijk": 3.3,
-    "uit": 3.01
+    "thuis": 2.29,
+    "gelijk": 3.4,
+    "uit": 3.11
    }
   },
   {
    "thuis": "NFO",
    "uit": "TOT",
-   "tijd": "16:00",
+   "tijd": "17:00",
    "odds": {
-    "thuis": 2.72,
-    "gelijk": 3.32,
-    "uit": 2.51
+    "thuis": 2.74,
+    "gelijk": 3.39,
+    "uit": 2.57
    }
   },
   {
    "thuis": "HUL",
    "uit": "AVL",
-   "tijd": "18:30",
+   "tijd": "19:30",
    "odds": {
-    "thuis": 3.94,
-    "gelijk": 3.6,
-    "uit": 1.87
+    "thuis": 4.04,
+    "gelijk": 3.68,
+    "uit": 1.88
    }
   },
   {
    "thuis": "EVE",
    "uit": "MUN",
-   "tijd": "15:00",
+   "tijd": "16:00",
    "odds": {
-    "thuis": 3.04,
-    "gelijk": 3.38,
-    "uit": 2.26
+    "thuis": 2.97,
+    "gelijk": 3.44,
+    "uit": 2.3
    }
   },
   {
    "thuis": "ARS",
    "uit": "CHE",
-   "tijd": "17:30",
+   "tijd": "18:30",
    "odds": {
-    "thuis": 1.65,
-    "gelijk": 3.73,
-    "uit": 5.28
+    "thuis": 1.66,
+    "gelijk": 3.8,
+    "uit": 5.19
    }
   }
  ]

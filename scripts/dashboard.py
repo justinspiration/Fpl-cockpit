@@ -532,7 +532,8 @@ def build():
             cellen[g] = [{"opp": c["opp"], "h": c["thuis"], "fdr": c["fdr"],
                           "xg": c["xg"], "xga": c.get("xga"), "cs": c["cs"],
                           "bron": c.get("bron", "model"),
-                          "eigen_xg": c.get("eigen_xg"), "eigen_cs": c.get("eigen_cs")} for c in cs]
+                          "eigen_xg": c.get("eigen_xg"), "eigen_cs": c.get("eigen_cs"),
+                          "kick": c.get("kick")} for c in cs]
         td = teamdata.get(club, {})
         ticker.append({"team": club, "cellen": cellen,
                        "xgf": td.get("xgf"), "xga": td.get("xga"),

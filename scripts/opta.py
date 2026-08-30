@@ -226,6 +226,10 @@ def fixture_projecties(bs, fixtures, teamdata, gws):
                 "cs": round(cs), "bron": bron,
                 "eigen_xg": eigen_xg, "eigen_cs": eigen_cs,
                 "fdr": m["team_h_difficulty"] if thuis else m["team_a_difficulty"],
+                # Aftrap in UTC, precies zoals FPL hem geeft. De pagina rekent
+                # hem om naar de tijd van de kijker; hier niets omrekenen,
+                # want dan weet niemand meer welke zone er bedoeld is.
+                "kick": m.get("kickoff_time"),
             })
     return uit
 

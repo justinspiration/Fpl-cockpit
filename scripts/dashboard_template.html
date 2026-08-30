@@ -3038,6 +3038,8 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
   text-decoration-thickness:1px;text-decoration-color:var(--fg-3)}
 .chipwas{font-style:normal;font-size:9px;font-weight:700;color:var(--fg-3);
   text-decoration:none;display:inline-block;margin-left:3px}
+.gwtijd b{font-size:var(--t-sm)!important;font-weight:650}
+.gwtijd span{white-space:nowrap}
 .bronsgrens{color:var(--fg-3)}
 .bronlet{display:flex;gap:8px;align-items:flex-start;margin-bottom:var(--s2);padding:8px 12px;
   border-radius:var(--r1);background:var(--card-hi);font-size:11.5px;color:var(--fg-3);
@@ -4071,6 +4073,31 @@ function bronAlarm(){
     ${esc(waarschuwing.tekst)}</span>`;
 }
 
+/* Wanneer speelt hij?
+
+   De aftraptijden komen van FPL in UTC. Ze werden nergens getoond, en dat is
+   een gemis: je wilt weten wanneer je gameweek begint en wanneer je aanvoerder
+   aan de bak moet. Hier worden ze omgerekend naar de tijdzone van je eigen
+   apparaat — niet hardgecodeerd op Nederland, want dan klopt het niet meer
+   zodra je in het buitenland kijkt.
+
+   De deadline ligt altijd anderhalf uur vóór de eerste aftrap van de ronde;
+   dat is een FPL-regel, geen aanname van mij. */
+function kickTijd(iso,langvorm){
+  if(!iso) return "";
+  const d=new Date(iso);
+  if(isNaN(d)) return "";
+  return d.toLocaleString(undefined,langvorm
+    ? {weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}
+    : {weekday:"short",hour:"2-digit",minute:"2-digit"});
+}
+function eersteAftrap(g){
+  let vroegst=null;
+  (D.ticker||[]).forEach(t=>((t.cellen||{})[g]||[]).forEach(c=>{
+    if(c.kick&&(!vroegst||c.kick<vroegst)) vroegst=c.kick; }));
+  return vroegst;
+}
+
 function versheidTonen(){
   const el=document.getElementById("versheid"); if(!el) return;
   let uren=(Date.now()-gen.getTime())/36e5;
@@ -4194,6 +4221,25 @@ function briefing(){
   const pt=p=>p.gw[g]||0;
   const lang=p=>somGW(p,g,N);
   const voeg=(waarde,kl,ic,t,s)=>items.push({waarde,kl,ic,t,s});
+
+  /* 0. Wanneer speelt je team eigenlijk? Dat stond nergens, terwijl het
+        bepaalt tot wanneer je nog kunt schuiven en wanneer je gameweek
+        beslist is. */
+  (function(){
+    const cel=p=>((D.ticker.find(t=>t.team===p.t)||{}).cellen||{})[g]||[];
+    const tijden=live.map(p=>({p, k:(cel(p)[0]||{}).kick})).filter(x=>x.k);
+    if(!tijden.length) return;
+    tijden.sort((a,b)=>a.k<b.k?-1:1);
+    const eerste=tijden[0], laatste=tijden[tijden.length-1];
+    const capNaam=band.cap?band.cap.n:null;
+    const capT=band.cap?tijden.find(x=>x.p.id===band.cap.id):null;
+    voeg(3,"info","\u23f1",
+      `Je gameweek loopt van <b>${kickTijd(eerste.k,true)}</b> (${esc(eerste.p.n)})
+       tot <b>${kickTijd(laatste.k,true)}</b> (${esc(laatste.p.n)}).`,
+      `${capT?`Je aanvoerder ${esc(capNaam)} speelt ${kickTijd(capT.k,true)}. `:""}
+       De deadline ligt anderhalf uur voor de eerste aftrap van de ronde, dus alles
+       hierboven speelt zich af nadat je team vaststaat.`);
+  })();
 
   /* 1. Iemand uit je basis speelt niet. Dat is het enige dat altijd voorgaat. */
   xi.filter(p=>["i","s","u","n"].includes(p.status)||p.status==="d").forEach(p=>{
@@ -6311,7 +6357,8 @@ function droomelftal(){
       const cs=cel[g]||[];
       if(!cs.length) return `<i class="leeg" title="GW${g}: geen duel"></i>`;
       const c=cs[0];
-      return `<i class="f${c.fdr}" title="GW${g}: ${esc(c.opp)} ${c.h?"thuis":"uit"} · ${
+      return `<i class="f${c.fdr}" title="GW${g}: ${esc(c.opp)} ${c.h?"thuis":"uit"}${
+        c.kick?" — "+kickTijd(c.kick):""} · ${
         c.xg!=null?"xG "+c.xg.toFixed(2):""}">${cs.length>1?"2":""}</i>`;}).join("");
   };
   const kaartje=p=>{const k=shirtKleur(p.t); const heb=mijnIds.has(p.id);
@@ -9930,7 +9977,16 @@ ${combi?`<div class="combi">
         <button class="ratinguit" data-rating="1" title="Wat betekent dit?">?</button>
       </div>`;})()}
     <div class="pt-kop">
-      <span class="gwbadge">GW${g}</span>
+      <span class="gwbadge" title="${(()=>{const k=eersteAftrap(g);
+        return k?`Eerste aftrap ${kickTijd(k,true)} — de deadline ligt anderhalf uur daarvoor`:`Gameweek ${g}`;})()}">GW${g}</span>
+      ${(()=>{const cel=p=>((D.ticker.find(t=>t.team===p.t)||{}).cellen||{})[g]||[];
+        const tj=lijst.filter(p=>p.slot<=11).map(p=>({p,k:(cel(p)[0]||{}).kick})).filter(x=>x.k)
+          .sort((a,b)=>a.k<b.k?-1:1);
+        if(!tj.length) return "";
+        const e=tj[0], l=tj[tj.length-1];
+        return `<span class="stat gwtijd" title="Je basiself speelt tussen deze twee momenten. Alles daarna ligt vast: de deadline is anderhalf uur vóór de eerste aftrap van de ronde.">
+          <b>${kickTijd(e.k)}</b><span>eerst: ${esc(e.p.n)}</span></span>
+        <span class="stat gwtijd"><b>${kickTijd(l.k)}</b><span>laatst: ${esc(l.p.n)}</span></span>`;})()}
       <span class="stat"><b>${xiSom.toFixed(1)}</b><span>${ENKEL?"punten deze GW":`punten ${HZ} GW`}</span></span>
       ${bbActief?`<span class="stat"><b style="color:var(--good)">+${bankSom.toFixed(1)}</b><span>bank telt mee</span></span>`:""}
       ${tcActief&&band.cap?`<span class="stat"><b style="color:var(--good)">+${capX.toFixed(1)}</b><span>derde keer ${esc(band.cap.n)}</span></span>`:""}
@@ -10336,7 +10392,7 @@ function strook(p,n,vanaf){
   return D.alle_gws.filter(g=>g>=start).slice(0,n).map(g=>{
     const cs=cel[g]||[];
     if(!cs.length) return '<i class="e" title="GW'+g+': geen duel">—</i>';
-    return cs.map(c=>`<i class="c${c.fdr}${c.h?"":" uit"}" title="GW${g}: ${esc(c.opp)} ${c.h?"thuis":"uit"} — FDR ${c.fdr}, ${c.xg} verwachte goals, ${c.cs}% clean sheet">${esc(c.h?c.opp:c.opp.toLowerCase())}</i>`).join("");
+    return cs.map(c=>`<i class="c${c.fdr}${c.h?"":" uit"}" title="GW${g}: ${esc(c.opp)} ${c.h?"thuis":"uit"}${c.kick?" — "+kickTijd(c.kick,true):""} — FDR ${c.fdr}, ${c.xg} verwachte goals, ${c.cs}% clean sheet">${esc(c.h?c.opp:c.opp.toLowerCase())}</i>`).join("");
   }).join("");
 }
 
