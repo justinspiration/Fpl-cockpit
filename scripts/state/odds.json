@@ -1,14 +1,14 @@
 {
  "_bron": "OddsPortal — https://www.oddsportal.com/football/england/premier-league/",
  "_markt": "1X2, gemiddelde van de getoonde bookmakers",
- "_opgehaald": "2026-08-31T08:55:09.492Z",
+ "_opgehaald": "2026-08-31T15:15:10.620Z",
  "_methode": "1X2-odds ontdaan van de bookmakersmarge (proportioneel), daarna de twee doelpuntverwachtingen exact opgelost zodat een Poisson-model diezelfde drie kansen oplevert. Clean sheet volgt als e^(-lambda) van de tegenstander.",
  "_aannames": [
   "Poisson-verdeling per ploeg",
   "beide ploegen scoren onafhankelijk",
   "marge proportioneel verdeeld over de drie uitkomsten"
  ],
- "_grootste_afwijking": 5e-05,
+ "_grootste_afwijking": 6e-05,
  "_duels": 21,
  "per_club": {
   "AVL": [
@@ -17,23 +17,23 @@
     "uit": "ARS",
     "tijd": "21:00",
     "odds": {
-     "thuis": 6.44,
-     "gelijk": 4.35,
+     "thuis": 6.2,
+     "gelijk": 4.43,
      "uit": 1.5
     },
-    "marge": 5.18,
+    "marge": 5.37,
     "kans": {
-     "thuis": 14.8,
-     "gelijk": 21.9,
-     "uit": 63.4
+     "thuis": 15.3,
+     "gelijk": 21.4,
+     "uit": 63.3
     },
     "xg": {
-     "thuis": 0.764,
-     "uit": 1.859
+     "thuis": 0.817,
+     "uit": 1.917
     },
     "cs": {
-     "thuis": 15.6,
-     "uit": 46.6
+     "thuis": 14.7,
+     "uit": 44.2
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -43,23 +43,23 @@
     "uit": "AVL",
     "tijd": "18:30",
     "odds": {
-     "thuis": 4.13,
-     "gelijk": 3.68,
-     "uit": 1.85
+     "thuis": 4.1,
+     "gelijk": 3.66,
+     "uit": 1.83
     },
-    "marge": 5.44,
+    "marge": 6.36,
     "kans": {
-     "thuis": 23.0,
-     "gelijk": 25.8,
-     "uit": 51.3
+     "thuis": 22.9,
+     "gelijk": 25.7,
+     "uit": 51.4
     },
     "xg": {
-     "thuis": 0.931,
-     "uit": 1.53
+     "thuis": 0.934,
+     "uit": 1.537
     },
     "cs": {
-     "thuis": 21.7,
-     "uit": 39.4
+     "thuis": 21.5,
+     "uit": 39.3
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -69,23 +69,23 @@
     "uit": "NFO",
     "tijd": "16:00",
     "odds": {
-     "thuis": 1.89,
-     "gelijk": 3.55,
-     "uit": 3.9
+     "thuis": 1.94,
+     "gelijk": 3.58,
+     "uit": 3.78
     },
-    "marge": 6.72,
+    "marge": 5.93,
     "kans": {
-     "thuis": 49.6,
+     "thuis": 48.7,
      "gelijk": 26.4,
-     "uit": 24.0
+     "uit": 25.0
     },
     "xg": {
-     "thuis": 1.471,
-     "uit": 0.937
+     "thuis": 1.467,
+     "uit": 0.97
     },
     "cs": {
-     "thuis": 39.2,
-     "uit": 23.0
+     "thuis": 37.9,
+     "uit": 23.1
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -97,23 +97,23 @@
     "uit": "ARS",
     "tijd": "21:00",
     "odds": {
-     "thuis": 6.44,
-     "gelijk": 4.35,
+     "thuis": 6.2,
+     "gelijk": 4.43,
      "uit": 1.5
     },
-    "marge": 5.18,
+    "marge": 5.37,
     "kans": {
-     "thuis": 14.8,
-     "gelijk": 21.9,
-     "uit": 63.4
+     "thuis": 15.3,
+     "gelijk": 21.4,
+     "uit": 63.3
     },
     "xg": {
-     "thuis": 0.764,
-     "uit": 1.859
+     "thuis": 0.817,
+     "uit": 1.917
     },
     "cs": {
-     "thuis": 15.6,
-     "uit": 46.6
+     "thuis": 14.7,
+     "uit": 44.2
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -123,23 +123,23 @@
     "uit": "CHE",
     "tijd": "17:30",
     "odds": {
-     "thuis": 1.71,
-     "gelijk": 3.69,
-     "uit": 5.07
+     "thuis": 1.68,
+     "gelijk": 3.67,
+     "uit": 5.1
     },
-    "marge": 5.3,
+    "marge": 6.38,
     "kans": {
-     "thuis": 55.5,
-     "gelijk": 25.7,
-     "uit": 18.7
+     "thuis": 56.0,
+     "gelijk": 25.6,
+     "uit": 18.4
     },
     "xg": {
-     "thuis": 1.536,
-     "uit": 0.77
+     "thuis": 1.545,
+     "uit": 0.763
     },
     "cs": {
-     "thuis": 46.3,
-     "uit": 21.5
+     "thuis": 46.6,
+     "uit": 21.3
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -149,23 +149,23 @@
     "uit": "ARS",
     "tijd": "21:00",
     "odds": {
-     "thuis": 6.46,
-     "gelijk": 4.01,
-     "uit": 1.51
+     "thuis": 6.4,
+     "gelijk": 4.1,
+     "uit": 1.52
     },
-    "marge": 6.64,
+    "marge": 5.8,
     "kans": {
-     "thuis": 14.5,
-     "gelijk": 23.4,
-     "uit": 62.1
+     "thuis": 14.8,
+     "gelijk": 23.1,
+     "uit": 62.2
     },
     "xg": {
-     "thuis": 0.682,
-     "uit": 1.707
+     "thuis": 0.708,
+     "uit": 1.741
     },
     "cs": {
-     "thuis": 18.1,
-     "uit": 50.6
+     "thuis": 17.5,
+     "uit": 49.3
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -177,23 +177,23 @@
     "uit": "LIV",
     "tijd": "21:00",
     "odds": {
-     "thuis": 5.03,
-     "gelijk": 4.45,
-     "uit": 1.59
+     "thuis": 5,
+     "gelijk": 4.41,
+     "uit": 1.57
     },
-    "marge": 5.25,
+    "marge": 6.37,
     "kans": {
-     "thuis": 18.9,
-     "gelijk": 21.4,
-     "uit": 59.8
+     "thuis": 18.8,
+     "gelijk": 21.3,
+     "uit": 59.9
     },
     "xg": {
-     "thuis": 1.022,
-     "uit": 1.986
+     "thuis": 1.02,
+     "uit": 1.99
     },
     "cs": {
      "thuis": 13.7,
-     "uit": 36.0
+     "uit": 36.1
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -204,22 +204,22 @@
     "tijd": "16:00",
     "odds": {
      "thuis": 1.84,
-     "gelijk": 3.56,
-     "uit": 4.11
+     "gelijk": 3.65,
+     "uit": 4.25
     },
-    "marge": 6.77,
+    "marge": 5.27,
     "kans": {
-     "thuis": 50.9,
-     "gelijk": 26.3,
-     "uit": 22.8
+     "thuis": 51.6,
+     "gelijk": 26.0,
+     "uit": 22.4
     },
     "xg": {
-     "thuis": 1.484,
-     "uit": 0.897
+     "thuis": 1.51,
+     "uit": 0.895
     },
     "cs": {
      "thuis": 40.8,
-     "uit": 22.7
+     "uit": 22.1
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -231,23 +231,23 @@
     "uit": "LIV",
     "tijd": "21:00",
     "odds": {
-     "thuis": 5.03,
-     "gelijk": 4.45,
-     "uit": 1.59
+     "thuis": 5,
+     "gelijk": 4.41,
+     "uit": 1.57
     },
-    "marge": 5.25,
+    "marge": 6.37,
     "kans": {
-     "thuis": 18.9,
-     "gelijk": 21.4,
-     "uit": 59.8
+     "thuis": 18.8,
+     "gelijk": 21.3,
+     "uit": 59.9
     },
     "xg": {
-     "thuis": 1.022,
-     "uit": 1.986
+     "thuis": 1.02,
+     "uit": 1.99
     },
     "cs": {
      "thuis": 13.7,
-     "uit": 36.0
+     "uit": 36.1
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -257,23 +257,23 @@
     "uit": "FUL",
     "tijd": "16:00",
     "odds": {
-     "thuis": 1.44,
-     "gelijk": 4.71,
-     "uit": 6.18
+     "thuis": 1.46,
+     "gelijk": 4.75,
+     "uit": 6.3
     },
-    "marge": 6.86,
+    "marge": 5.42,
     "kans": {
      "thuis": 65.0,
-     "gelijk": 19.9,
+     "gelijk": 20.0,
      "uit": 15.1
     },
     "xg": {
-     "thuis": 2.104,
-     "uit": 0.904
+     "thuis": 2.088,
+     "uit": 0.892
     },
     "cs": {
-     "thuis": 40.5,
-     "uit": 12.2
+     "thuis": 41.0,
+     "uit": 12.4
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -285,23 +285,23 @@
     "uit": "BOU",
     "tijd": "13:30",
     "odds": {
-     "thuis": 2.23,
+     "thuis": 2.22,
      "gelijk": 3.67,
-     "uit": 2.98
+     "uit": 2.92
     },
-    "marge": 5.65,
+    "marge": 6.54,
     "kans": {
-     "thuis": 42.4,
-     "gelijk": 25.8,
-     "uit": 31.8
+     "thuis": 42.3,
+     "gelijk": 25.6,
+     "uit": 32.1
     },
     "xg": {
-     "thuis": 1.45,
-     "uit": 1.219
+     "thuis": 1.466,
+     "uit": 1.245
     },
     "cs": {
-     "thuis": 29.6,
-     "uit": 23.5
+     "thuis": 28.8,
+     "uit": 23.1
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -311,23 +311,23 @@
     "uit": "NEW",
     "tijd": "21:00",
     "odds": {
-     "thuis": 2.52,
-     "gelijk": 3.49,
-     "uit": 2.64
+     "thuis": 2.55,
+     "gelijk": 3.45,
+     "uit": 2.66
     },
-    "marge": 6.21,
+    "marge": 5.8,
     "kans": {
-     "thuis": 37.4,
-     "gelijk": 27.0,
-     "uit": 35.7
+     "thuis": 37.1,
+     "gelijk": 27.4,
+     "uit": 35.5
     },
     "xg": {
-     "thuis": 1.27,
-     "uit": 1.234
+     "thuis": 1.235,
+     "uit": 1.203
     },
     "cs": {
-     "thuis": 29.1,
-     "uit": 28.1
+     "thuis": 30.0,
+     "uit": 29.1
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -339,23 +339,23 @@
     "uit": "BOU",
     "tijd": "13:30",
     "odds": {
-     "thuis": 2.23,
+     "thuis": 2.22,
      "gelijk": 3.67,
-     "uit": 2.98
+     "uit": 2.92
     },
-    "marge": 5.65,
+    "marge": 6.54,
     "kans": {
-     "thuis": 42.4,
-     "gelijk": 25.8,
-     "uit": 31.8
+     "thuis": 42.3,
+     "gelijk": 25.6,
+     "uit": 32.1
     },
     "xg": {
-     "thuis": 1.45,
-     "uit": 1.219
+     "thuis": 1.466,
+     "uit": 1.245
     },
     "cs": {
-     "thuis": 29.6,
-     "uit": 23.5
+     "thuis": 28.8,
+     "uit": 23.1
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -365,22 +365,22 @@
     "uit": "BRE",
     "tijd": "16:00",
     "odds": {
-     "thuis": 2.46,
-     "gelijk": 3.54,
-     "uit": 2.64
+     "thuis": 2.48,
+     "gelijk": 3.58,
+     "uit": 2.69
     },
-    "marge": 6.78,
+    "marge": 5.43,
     "kans": {
-     "thuis": 38.1,
+     "thuis": 38.2,
      "gelijk": 26.5,
-     "uit": 35.5
+     "uit": 35.3
     },
     "xg": {
-     "thuis": 1.321,
-     "uit": 1.266
+     "thuis": 1.322,
+     "uit": 1.258
     },
     "cs": {
-     "thuis": 28.2,
+     "thuis": 28.4,
      "uit": 26.7
     },
     "afwijking": 0.0,
@@ -393,23 +393,23 @@
     "uit": "SUN",
     "tijd": "16:00",
     "odds": {
-     "thuis": 1.61,
-     "gelijk": 4.02,
-     "uit": 5.42
+     "thuis": 1.58,
+     "gelijk": 3.99,
+     "uit": 5.57
     },
-    "marge": 5.44,
+    "marge": 6.31,
     "kans": {
-     "thuis": 58.9,
+     "thuis": 59.5,
      "gelijk": 23.6,
-     "uit": 17.5
+     "uit": 16.9
     },
     "xg": {
-     "thuis": 1.72,
-     "uit": 0.815
+     "thuis": 1.716,
+     "uit": 0.787
     },
     "cs": {
-     "thuis": 44.3,
-     "uit": 17.9
+     "thuis": 45.5,
+     "uit": 18.0
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -419,22 +419,22 @@
     "uit": "BRE",
     "tijd": "16:00",
     "odds": {
-     "thuis": 2.46,
-     "gelijk": 3.54,
-     "uit": 2.64
+     "thuis": 2.48,
+     "gelijk": 3.58,
+     "uit": 2.69
     },
-    "marge": 6.78,
+    "marge": 5.43,
     "kans": {
-     "thuis": 38.1,
+     "thuis": 38.2,
      "gelijk": 26.5,
-     "uit": 35.5
+     "uit": 35.3
     },
     "xg": {
-     "thuis": 1.321,
-     "uit": 1.266
+     "thuis": 1.322,
+     "uit": 1.258
     },
     "cs": {
-     "thuis": 28.2,
+     "thuis": 28.4,
      "uit": 26.7
     },
     "afwijking": 0.0,
@@ -447,23 +447,23 @@
     "uit": "SUN",
     "tijd": "16:00",
     "odds": {
-     "thuis": 1.61,
-     "gelijk": 4.02,
-     "uit": 5.42
+     "thuis": 1.58,
+     "gelijk": 3.99,
+     "uit": 5.57
     },
-    "marge": 5.44,
+    "marge": 6.31,
     "kans": {
-     "thuis": 58.9,
+     "thuis": 59.5,
      "gelijk": 23.6,
-     "uit": 17.5
+     "uit": 16.9
     },
     "xg": {
-     "thuis": 1.72,
-     "uit": 0.815
+     "thuis": 1.716,
+     "uit": 0.787
     },
     "cs": {
-     "thuis": 44.3,
-     "uit": 17.9
+     "thuis": 45.5,
+     "uit": 18.0
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -473,23 +473,23 @@
     "uit": "ARS",
     "tijd": "21:00",
     "odds": {
-     "thuis": 6.46,
-     "gelijk": 4.01,
-     "uit": 1.51
+     "thuis": 6.4,
+     "gelijk": 4.1,
+     "uit": 1.52
     },
-    "marge": 6.64,
+    "marge": 5.8,
     "kans": {
-     "thuis": 14.5,
-     "gelijk": 23.4,
-     "uit": 62.1
+     "thuis": 14.8,
+     "gelijk": 23.1,
+     "uit": 62.2
     },
     "xg": {
-     "thuis": 0.682,
-     "uit": 1.707
+     "thuis": 0.708,
+     "uit": 1.741
     },
     "cs": {
-     "thuis": 18.1,
-     "uit": 50.6
+     "thuis": 17.5,
+     "uit": 49.3
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -502,21 +502,21 @@
     "tijd": "16:00",
     "odds": {
      "thuis": 1.83,
-     "gelijk": 3.64,
-     "uit": 4.24
+     "gelijk": 3.62,
+     "uit": 4.13
     },
-    "marge": 5.7,
+    "marge": 6.48,
     "kans": {
-     "thuis": 51.7,
-     "gelijk": 26.0,
-     "uit": 22.3
+     "thuis": 51.3,
+     "gelijk": 25.9,
+     "uit": 22.7
     },
     "xg": {
-     "thuis": 1.513,
-     "uit": 0.896
+     "thuis": 1.516,
+     "uit": 0.914
     },
     "cs": {
-     "thuis": 40.8,
+     "thuis": 40.1,
      "uit": 22.0
     },
     "afwijking": 0.0,
@@ -527,23 +527,23 @@
     "uit": "BHA",
     "tijd": "15:00",
     "odds": {
-     "thuis": 4.27,
-     "gelijk": 3.74,
-     "uit": 1.78
+     "thuis": 4.4,
+     "gelijk": 3.78,
+     "uit": 1.77
     },
-    "marge": 6.34,
+    "marge": 5.68,
     "kans": {
-     "thuis": 22.0,
-     "gelijk": 25.1,
-     "uit": 52.8
+     "thuis": 21.5,
+     "gelijk": 25.0,
+     "uit": 53.5
     },
     "xg": {
-     "thuis": 0.928,
-     "uit": 1.589
+     "thuis": 0.914,
+     "uit": 1.6
     },
     "cs": {
-     "thuis": 20.4,
-     "uit": 39.5
+     "thuis": 20.2,
+     "uit": 40.1
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -556,21 +556,21 @@
     "tijd": "16:00",
     "odds": {
      "thuis": 1.83,
-     "gelijk": 3.64,
-     "uit": 4.24
+     "gelijk": 3.62,
+     "uit": 4.13
     },
-    "marge": 5.7,
+    "marge": 6.48,
     "kans": {
-     "thuis": 51.7,
-     "gelijk": 26.0,
-     "uit": 22.3
+     "thuis": 51.3,
+     "gelijk": 25.9,
+     "uit": 22.7
     },
     "xg": {
-     "thuis": 1.513,
-     "uit": 0.896
+     "thuis": 1.516,
+     "uit": 0.914
     },
     "cs": {
-     "thuis": 40.8,
+     "thuis": 40.1,
      "uit": 22.0
     },
     "afwijking": 0.0,
@@ -581,23 +581,23 @@
     "uit": "NEW",
     "tijd": "21:00",
     "odds": {
-     "thuis": 2.52,
-     "gelijk": 3.49,
-     "uit": 2.64
+     "thuis": 2.55,
+     "gelijk": 3.45,
+     "uit": 2.66
     },
-    "marge": 6.21,
+    "marge": 5.8,
     "kans": {
-     "thuis": 37.4,
-     "gelijk": 27.0,
-     "uit": 35.7
+     "thuis": 37.1,
+     "gelijk": 27.4,
+     "uit": 35.5
     },
     "xg": {
-     "thuis": 1.27,
-     "uit": 1.234
+     "thuis": 1.235,
+     "uit": 1.203
     },
     "cs": {
-     "thuis": 29.1,
-     "uit": 28.1
+     "thuis": 30.0,
+     "uit": 29.1
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -609,25 +609,25 @@
     "uit": "COV",
     "tijd": "16:00",
     "odds": {
-     "thuis": 1.21,
-     "gelijk": 7.21,
-     "uit": 11.42
+     "thuis": 1.19,
+     "gelijk": 7.27,
+     "uit": 11.33
     },
-    "marge": 5.27,
+    "marge": 6.61,
     "kans": {
-     "thuis": 78.5,
-     "gelijk": 13.2,
+     "thuis": 78.8,
+     "gelijk": 12.9,
      "uit": 8.3
     },
     "xg": {
-     "thuis": 2.86,
-     "uit": 0.853
+     "thuis": 2.92,
+     "uit": 0.877
     },
     "cs": {
-     "thuis": 42.6,
-     "uit": 5.7
+     "thuis": 41.6,
+     "uit": 5.4
     },
-    "afwijking": 5e-05,
+    "afwijking": 6e-05,
     "thuisduel": true
    },
    {
@@ -635,23 +635,23 @@
     "uit": "MCI",
     "tijd": "17:30",
     "odds": {
-     "thuis": 3.1,
-     "gelijk": 3.7,
-     "uit": 2.11
+     "thuis": 3.13,
+     "gelijk": 3.73,
+     "uit": 2.14
     },
-    "marge": 6.68,
+    "marge": 5.49,
     "kans": {
-     "thuis": 30.2,
-     "gelijk": 25.3,
-     "uit": 44.4
+     "thuis": 30.3,
+     "gelijk": 25.4,
+     "uit": 44.3
     },
     "xg": {
-     "thuis": 1.206,
-     "uit": 1.517
+     "thuis": 1.202,
+     "uit": 1.508
     },
     "cs": {
-     "thuis": 21.9,
-     "uit": 29.9
+     "thuis": 22.1,
+     "uit": 30.1
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -663,25 +663,25 @@
     "uit": "COV",
     "tijd": "16:00",
     "odds": {
-     "thuis": 1.21,
-     "gelijk": 7.21,
-     "uit": 11.42
+     "thuis": 1.19,
+     "gelijk": 7.27,
+     "uit": 11.33
     },
-    "marge": 5.27,
+    "marge": 6.61,
     "kans": {
-     "thuis": 78.5,
-     "gelijk": 13.2,
+     "thuis": 78.8,
+     "gelijk": 12.9,
      "uit": 8.3
     },
     "xg": {
-     "thuis": 2.86,
-     "uit": 0.853
+     "thuis": 2.92,
+     "uit": 0.877
     },
     "cs": {
-     "thuis": 42.6,
-     "uit": 5.7
+     "thuis": 41.6,
+     "uit": 5.4
     },
-    "afwijking": 5e-05,
+    "afwijking": 6e-05,
     "thuisduel": false
    },
    {
@@ -689,23 +689,23 @@
     "uit": "BHA",
     "tijd": "15:00",
     "odds": {
-     "thuis": 4.27,
-     "gelijk": 3.74,
-     "uit": 1.78
+     "thuis": 4.4,
+     "gelijk": 3.78,
+     "uit": 1.77
     },
-    "marge": 6.34,
+    "marge": 5.68,
     "kans": {
-     "thuis": 22.0,
-     "gelijk": 25.1,
-     "uit": 52.8
+     "thuis": 21.5,
+     "gelijk": 25.0,
+     "uit": 53.5
     },
     "xg": {
-     "thuis": 0.928,
-     "uit": 1.589
+     "thuis": 0.914,
+     "uit": 1.6
     },
     "cs": {
-     "thuis": 20.4,
-     "uit": 39.5
+     "thuis": 20.2,
+     "uit": 40.1
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -717,23 +717,23 @@
     "uit": "CRY",
     "tijd": "16:00",
     "odds": {
-     "thuis": 2.27,
-     "gelijk": 3.41,
-     "uit": 3.1
+     "thuis": 2.26,
+     "gelijk": 3.36,
+     "uit": 3.08
     },
-    "marge": 5.64,
+    "marge": 6.48,
     "kans": {
-     "thuis": 41.7,
-     "gelijk": 27.8,
+     "thuis": 41.6,
+     "gelijk": 28.0,
      "uit": 30.5
     },
     "xg": {
-     "thuis": 1.291,
-     "uit": 1.062
+     "thuis": 1.276,
+     "uit": 1.05
     },
     "cs": {
-     "thuis": 34.6,
-     "uit": 27.5
+     "thuis": 35.0,
+     "uit": 27.9
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -743,23 +743,23 @@
     "uit": "FUL",
     "tijd": "16:00",
     "odds": {
-     "thuis": 1.44,
-     "gelijk": 4.71,
-     "uit": 6.18
+     "thuis": 1.46,
+     "gelijk": 4.75,
+     "uit": 6.3
     },
-    "marge": 6.86,
+    "marge": 5.42,
     "kans": {
      "thuis": 65.0,
-     "gelijk": 19.9,
+     "gelijk": 20.0,
      "uit": 15.1
     },
     "xg": {
-     "thuis": 2.104,
-     "uit": 0.904
+     "thuis": 2.088,
+     "uit": 0.892
     },
     "cs": {
-     "thuis": 40.5,
-     "uit": 12.2
+     "thuis": 41.0,
+     "uit": 12.4
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -771,23 +771,23 @@
     "uit": "CRY",
     "tijd": "16:00",
     "odds": {
-     "thuis": 2.27,
-     "gelijk": 3.41,
-     "uit": 3.1
+     "thuis": 2.26,
+     "gelijk": 3.36,
+     "uit": 3.08
     },
-    "marge": 5.64,
+    "marge": 6.48,
     "kans": {
-     "thuis": 41.7,
-     "gelijk": 27.8,
+     "thuis": 41.6,
+     "gelijk": 28.0,
      "uit": 30.5
     },
     "xg": {
-     "thuis": 1.291,
-     "uit": 1.062
+     "thuis": 1.276,
+     "uit": 1.05
     },
     "cs": {
-     "thuis": 34.6,
-     "uit": 27.5
+     "thuis": 35.0,
+     "uit": 27.9
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -798,22 +798,22 @@
     "tijd": "16:00",
     "odds": {
      "thuis": 1.84,
-     "gelijk": 3.56,
-     "uit": 4.11
+     "gelijk": 3.65,
+     "uit": 4.25
     },
-    "marge": 6.77,
+    "marge": 5.27,
     "kans": {
-     "thuis": 50.9,
-     "gelijk": 26.3,
-     "uit": 22.8
+     "thuis": 51.6,
+     "gelijk": 26.0,
+     "uit": 22.4
     },
     "xg": {
-     "thuis": 1.484,
-     "uit": 0.897
+     "thuis": 1.51,
+     "uit": 0.895
     },
     "cs": {
      "thuis": 40.8,
-     "uit": 22.7
+     "uit": 22.1
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -825,23 +825,23 @@
     "uit": "TOT",
     "tijd": "16:00",
     "odds": {
-     "thuis": 2.54,
-     "gelijk": 3.37,
-     "uit": 2.73
+     "thuis": 2.5,
+     "gelijk": 3.3,
+     "uit": 2.75
     },
-    "marge": 5.67,
+    "marge": 6.67,
     "kans": {
-     "thuis": 37.3,
-     "gelijk": 28.1,
-     "uit": 34.7
+     "thuis": 37.5,
+     "gelijk": 28.4,
+     "uit": 34.1
     },
     "xg": {
-     "thuis": 1.196,
-     "uit": 1.143
+     "thuis": 1.18,
+     "uit": 1.111
     },
     "cs": {
-     "thuis": 31.9,
-     "uit": 30.3
+     "thuis": 32.9,
+     "uit": 30.7
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -851,23 +851,23 @@
     "uit": "NFO",
     "tijd": "16:00",
     "odds": {
-     "thuis": 1.89,
-     "gelijk": 3.55,
-     "uit": 3.9
+     "thuis": 1.94,
+     "gelijk": 3.58,
+     "uit": 3.78
     },
-    "marge": 6.72,
+    "marge": 5.93,
     "kans": {
-     "thuis": 49.6,
+     "thuis": 48.7,
      "gelijk": 26.4,
-     "uit": 24.0
+     "uit": 25.0
     },
     "xg": {
-     "thuis": 1.471,
-     "uit": 0.937
+     "thuis": 1.467,
+     "uit": 0.97
     },
     "cs": {
-     "thuis": 39.2,
-     "uit": 23.0
+     "thuis": 37.9,
+     "uit": 23.1
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -879,23 +879,23 @@
     "uit": "TOT",
     "tijd": "16:00",
     "odds": {
-     "thuis": 2.54,
-     "gelijk": 3.37,
-     "uit": 2.73
+     "thuis": 2.5,
+     "gelijk": 3.3,
+     "uit": 2.75
     },
-    "marge": 5.67,
+    "marge": 6.67,
     "kans": {
-     "thuis": 37.3,
-     "gelijk": 28.1,
-     "uit": 34.7
+     "thuis": 37.5,
+     "gelijk": 28.4,
+     "uit": 34.1
     },
     "xg": {
-     "thuis": 1.196,
-     "uit": 1.143
+     "thuis": 1.18,
+     "uit": 1.111
     },
     "cs": {
-     "thuis": 31.9,
-     "uit": 30.3
+     "thuis": 32.9,
+     "uit": 30.7
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -905,23 +905,23 @@
     "uit": "EVE",
     "tijd": "18:30",
     "odds": {
-     "thuis": 2.05,
-     "gelijk": 3.42,
-     "uit": 3.46
+     "thuis": 2.07,
+     "gelijk": 3.43,
+     "uit": 3.55
     },
-    "marge": 6.92,
+    "marge": 5.63,
     "kans": {
-     "thuis": 45.6,
-     "gelijk": 27.3,
-     "uit": 27.0
+     "thuis": 45.7,
+     "gelijk": 27.6,
+     "uit": 26.7
     },
     "xg": {
-     "thuis": 1.367,
-     "uit": 0.985
+     "thuis": 1.351,
+     "uit": 0.961
     },
     "cs": {
-     "thuis": 37.3,
-     "uit": 25.5
+     "thuis": 38.2,
+     "uit": 25.9
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -933,23 +933,23 @@
     "uit": "AVL",
     "tijd": "18:30",
     "odds": {
-     "thuis": 4.13,
-     "gelijk": 3.68,
-     "uit": 1.85
+     "thuis": 4.1,
+     "gelijk": 3.66,
+     "uit": 1.83
     },
-    "marge": 5.44,
+    "marge": 6.36,
     "kans": {
-     "thuis": 23.0,
-     "gelijk": 25.8,
-     "uit": 51.3
+     "thuis": 22.9,
+     "gelijk": 25.7,
+     "uit": 51.4
     },
     "xg": {
-     "thuis": 0.931,
-     "uit": 1.53
+     "thuis": 0.934,
+     "uit": 1.537
     },
     "cs": {
-     "thuis": 21.7,
-     "uit": 39.4
+     "thuis": 21.5,
+     "uit": 39.3
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -960,22 +960,22 @@
     "tijd": "16:00",
     "odds": {
      "thuis": 1.23,
-     "gelijk": 5.92,
-     "uit": 11.63
+     "gelijk": 6.1,
+     "uit": 11.5
     },
-    "marge": 6.79,
+    "marge": 6.39,
     "kans": {
-     "thuis": 76.1,
-     "gelijk": 15.8,
-     "uit": 8.1
+     "thuis": 76.4,
+     "gelijk": 15.4,
+     "uit": 8.2
     },
     "xg": {
-     "thuis": 2.35,
-     "uit": 0.621
+     "thuis": 2.421,
+     "uit": 0.657
     },
     "cs": {
-     "thuis": 53.7,
-     "uit": 9.5
+     "thuis": 51.8,
+     "uit": 8.9
     },
     "afwijking": 1e-05,
     "thuisduel": false
@@ -987,23 +987,23 @@
     "uit": "MUN",
     "tijd": "15:00",
     "odds": {
-     "thuis": 3.08,
-     "gelijk": 3.46,
-     "uit": 2.26
+     "thuis": 3.09,
+     "gelijk": 3.43,
+     "uit": 2.22
     },
-    "marge": 5.62,
+    "marge": 6.56,
     "kans": {
-     "thuis": 30.7,
+     "thuis": 30.4,
      "gelijk": 27.4,
-     "uit": 41.9
+     "uit": 42.3
     },
     "xg": {
-     "thuis": 1.09,
-     "uit": 1.32
+     "thuis": 1.08,
+     "uit": 1.326
     },
     "cs": {
-     "thuis": 26.7,
-     "uit": 33.6
+     "thuis": 26.5,
+     "uit": 34.0
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -1013,23 +1013,23 @@
     "uit": "EVE",
     "tijd": "18:30",
     "odds": {
-     "thuis": 2.05,
-     "gelijk": 3.42,
-     "uit": 3.46
+     "thuis": 2.07,
+     "gelijk": 3.43,
+     "uit": 3.55
     },
-    "marge": 6.92,
+    "marge": 5.63,
     "kans": {
-     "thuis": 45.6,
-     "gelijk": 27.3,
-     "uit": 27.0
+     "thuis": 45.7,
+     "gelijk": 27.6,
+     "uit": 26.7
     },
     "xg": {
-     "thuis": 1.367,
-     "uit": 0.985
+     "thuis": 1.351,
+     "uit": 0.961
     },
     "cs": {
-     "thuis": 37.3,
-     "uit": 25.5
+     "thuis": 38.2,
+     "uit": 25.9
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -1041,23 +1041,23 @@
     "uit": "MUN",
     "tijd": "15:00",
     "odds": {
-     "thuis": 3.08,
-     "gelijk": 3.46,
-     "uit": 2.26
+     "thuis": 3.09,
+     "gelijk": 3.43,
+     "uit": 2.22
     },
-    "marge": 5.62,
+    "marge": 6.56,
     "kans": {
-     "thuis": 30.7,
+     "thuis": 30.4,
      "gelijk": 27.4,
-     "uit": 41.9
+     "uit": 42.3
     },
     "xg": {
-     "thuis": 1.09,
-     "uit": 1.32
+     "thuis": 1.08,
+     "uit": 1.326
     },
     "cs": {
-     "thuis": 26.7,
-     "uit": 33.6
+     "thuis": 26.5,
+     "uit": 34.0
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -1067,23 +1067,23 @@
     "uit": "MCI",
     "tijd": "17:30",
     "odds": {
-     "thuis": 3.1,
-     "gelijk": 3.7,
-     "uit": 2.11
+     "thuis": 3.13,
+     "gelijk": 3.73,
+     "uit": 2.14
     },
-    "marge": 6.68,
+    "marge": 5.49,
     "kans": {
-     "thuis": 30.2,
-     "gelijk": 25.3,
-     "uit": 44.4
+     "thuis": 30.3,
+     "gelijk": 25.4,
+     "uit": 44.3
     },
     "xg": {
-     "thuis": 1.206,
-     "uit": 1.517
+     "thuis": 1.202,
+     "uit": 1.508
     },
     "cs": {
-     "thuis": 21.9,
-     "uit": 29.9
+     "thuis": 22.1,
+     "uit": 30.1
     },
     "afwijking": 0.0,
     "thuisduel": true
@@ -1095,23 +1095,23 @@
     "uit": "CHE",
     "tijd": "17:30",
     "odds": {
-     "thuis": 1.71,
-     "gelijk": 3.69,
-     "uit": 5.07
+     "thuis": 1.68,
+     "gelijk": 3.67,
+     "uit": 5.1
     },
-    "marge": 5.3,
+    "marge": 6.38,
     "kans": {
-     "thuis": 55.5,
-     "gelijk": 25.7,
-     "uit": 18.7
+     "thuis": 56.0,
+     "gelijk": 25.6,
+     "uit": 18.4
     },
     "xg": {
-     "thuis": 1.536,
-     "uit": 0.77
+     "thuis": 1.545,
+     "uit": 0.763
     },
     "cs": {
-     "thuis": 46.3,
-     "uit": 21.5
+     "thuis": 46.6,
+     "uit": 21.3
     },
     "afwijking": 0.0,
     "thuisduel": false
@@ -1122,22 +1122,22 @@
     "tijd": "16:00",
     "odds": {
      "thuis": 1.23,
-     "gelijk": 5.92,
-     "uit": 11.63
+     "gelijk": 6.1,
+     "uit": 11.5
     },
-    "marge": 6.79,
+    "marge": 6.39,
     "kans": {
-     "thuis": 76.1,
-     "gelijk": 15.8,
-     "uit": 8.1
+     "thuis": 76.4,
+     "gelijk": 15.4,
+     "uit": 8.2
     },
     "xg": {
-     "thuis": 2.35,
-     "uit": 0.621
+     "thuis": 2.421,
+     "uit": 0.657
     },
     "cs": {
-     "thuis": 53.7,
-     "uit": 9.5
+     "thuis": 51.8,
+     "uit": 8.9
     },
     "afwijking": 1e-05,
     "thuisduel": true

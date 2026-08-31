@@ -33,6 +33,7 @@ from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import opta as OPTA
+import bronnen as BRONNEN
 
 
 def _getal(v, standaard=0.0):
@@ -157,6 +158,11 @@ def build():
     # heeft, gebruiken we hun cijfer; ons model is alleen terugval voor de rest.
     xpp = os.path.join(STATE, "xp_copilot.json")
     copilot = _lees("xp_copilot.json", {"spelers": {}}) or {"spelers": {}}
+    # Tweede, onafhankelijke puntenbron. Copilot vermenigvuldigt speelkans en
+    # punten tot één getal; FPL Form houdt ze apart. Waar ze uiteenlopen zit
+    # bijna altijd een meningsverschil over MINUTEN, niet over kwaliteit — en
+    # dat is precies wat we willen zien in plaats van wegmiddelen.
+    fplform = _lees("xp_fplform.json", {"spelers": {}}) or {"spelers": {}}
     cp_start = copilot.get("_start_gw", 1)
     # Klopt die startweek met waar we nu staan? Zo niet, dan staat elke
     # projectie verschoven en is elk advies fout. Dat mag nooit stil gebeuren.
@@ -302,6 +308,70 @@ def build():
         return (gedacht_min, round(st_ratio * gedacht_min / 90.0),
                 round(p90 * gedacht_min / 90.0), "gemengd %d%% dit seizoen" % round(w * 100))
 
+    # Schaalverhouding tussen de twee bronnen, per positie. Zonder dit middel je
+    # appels met peren: FPL Form ligt structureel iets lager dan Copilot en dan
+    # zouden spelers die maar bij één bron voorkomen kunstmatig beter of slechter
+    # lijken. Gemeten op de spelers die BEIDE bronnen kennen, binnen Copilots horizon.
+    # ---- BRONNENKEURING ----
+    # Geen bron doet mee zonder controle tegen de LEVENDE FPL API. Dit is geen
+    # theorie: FPL Prophet bleek op 31-08-2026 een compleet seizoen achter te
+    # lopen (hun gameweek stond op 38, Haaland kostte er £14,7m en hun speler-id's
+    # waren die van 25/26). Zonder keuring was dat gewoon meegemiddeld.
+    keuringen = []
+    _kf = BRONNEN.keur_spelerbron("FPL Copilot", copilot, bs)
+    keuringen.append(_kf.dict())
+    if not _kf.ok:
+        print("  BRON GEWEIGERD - FPL Copilot: %s" % _kf.reden)
+        copilot = {"spelers": {}}
+    _kg = BRONNEN.keur_spelerbron("FPL Form", fplform, bs)
+    keuringen.append(_kg.dict())
+    if not _kg.ok:
+        print("  BRON GEWEIGERD - FPL Form: %s" % _kg.reden)
+        fplform = {"spelers": {}}
+    _gq = _lees("goaliq.json", {}) or {}
+    _gq_uur = None
+    if _gq.get("per_club"):
+        _gq_uur = BRONNEN._leeftijd_uur(_gq.get("opgehaald"))
+        keuringen.append({"bron": "GoalIQ", "ok": _gq_uur is None or _gq_uur <= 36,
+                          "reden": "" if (_gq_uur is None or _gq_uur <= 36)
+                                   else "%.0f uur oud" % _gq_uur,
+                          "leeftijd_uur": round(_gq_uur, 1) if _gq_uur is not None else None,
+                          "dekking": len(_gq["per_club"])})
+    _od = _lees("odds.json", {}) or {}
+    if _od.get("per_club"):
+        _od_uur = BRONNEN._leeftijd_uur(_od.get("_opgehaald"))
+        keuringen.append({"bron": "bookmakers (OddsPortal)",
+                          "ok": _od_uur is None or _od_uur <= 36,
+                          "reden": "" if (_od_uur is None or _od_uur <= 36)
+                                   else "%.0f uur oud" % _od_uur,
+                          "leeftijd_uur": round(_od_uur, 1) if _od_uur is not None else None,
+                          "dekking": len(_od["per_club"])})
+    for k in keuringen:
+        print("  Bron %-24s %s%s" % (k["bron"], "toegelaten" if k["ok"] else "GEWEIGERD",
+                                     (" - " + k["reden"]) if k["reden"] else ""))
+
+    ff_ratio = {}
+    if fplform.get("spelers"):
+        _som = {}
+        for _e in bs["elements"]:
+            _cp = copilot.get("spelers", {}).get(str(_e["id"]))
+            _ff = fplform.get("spelers", {}).get(str(_e["id"]))
+            if not _cp or not _ff:
+                continue
+            _P = pos[_e["element_type"]]
+            _gs = [cp_start + i for i in range(len(_cp["gw"]))]
+            _h = sum(float(v) for v in _cp["gw"])
+            _f = sum(float(_ff["xp"].get(str(g), 0)) for g in _gs)
+            if _h > 4 and _f > 4:
+                a, b, n = _som.get(_P, (0.0, 0.0, 0))
+                _som[_P] = (a + _h, b + _f, n + 1)
+        for _P, (a, b, n) in _som.items():
+            if n >= 10 and b > 0:
+                ff_ratio[_P] = max(0.5, min(2.0, a / b))
+        print("  FPL Form geschaald naar Copilot-niveau: "
+              + ", ".join("%s %.3f (n=%d)" % (P, ff_ratio.get(P, 1.0), _som[P][2])
+                          for P in sorted(_som)))
+
     # ---- spelersdatabase met projectie PER gameweek ----
     db = []
     for e in bs["elements"]:
@@ -312,9 +382,19 @@ def build():
         mins, starts, hist_pt, hist_bron = _historie(e)
         p90 = (hist_pt / mins * 90.0) if mins >= 450 else 0.0
         p90_geschat = False
-        if p90 <= 0 and e["now_cost"] >= 45:
-            p90 = geschat_p90(P, e["now_cost"])
-            p90_geschat = True
+        # De prijsgrens van 45 (£4,5m) die hier stond sloot juist de klasse uit
+        # waar promovendi-verdedigers zitten: een £4,0m speler met te weinig
+        # minuten hield p90 = 0 en projecteerde dus 0,0 zodra Copilots horizon
+        # ophield. Dat maakte elke goedkope inschuiver waardeloos op lange
+        # horizon. De prijs zegt niets over of iemand speelt; de minuten wel.
+        # Daarom: schat altijd, maar alleen bij bewijs dat hij het veld op komt.
+        if p90 <= 0:
+            _cp_ev = copilot.get("spelers", {}).get(str(e["id"]))
+            _mn_ev = (_cp_ev.get("mn") or [None])[0] if _cp_ev else None
+            speelt = (float(_mn_ev) >= 45 if _mn_ev else False) or (e.get("starts") or 0) >= 1
+            if speelt:
+                p90 = geschat_p90(P, e["now_cost"])
+                p90_geschat = True
         # minutenverwachting uit starts vorig seizoen; promovendi hebben geen PL-historie
         # Copilot geeft per speler een verwachting van minuten per duel. Dat is
         # vooruitkijkend en dus beter dan tellen hoe vaak hij vorig jaar startte.
@@ -372,6 +452,11 @@ def build():
         # waardoor de dekking van 240 naar 581 van de 584 spelers ging.
         cp = copilot.get("spelers", {}).get(str(e["id"]))
         bron_proj = "eigen model"
+        ff = fplform.get("spelers", {}).get(str(e["id"]))
+        ff_kans = None
+        if ff:
+            _k = ff.get("kans") or {}
+            ff_kans = _k.get(str(alle_gws[0])) if alle_gws else None
         if cp:
             bron_proj = "FPL Copilot"
             for i, v in enumerate(cp["gw"]):
@@ -392,6 +477,27 @@ def build():
                 for g2 in per_gw:
                     if g2 not in dekking:
                         per_gw[g2] = round(per_gw[g2] * sch, 2)
+
+        # ---- BRONNEN VERZAMELEN ----
+        # Hier alleen inzamelen, nog niet middelen. De schaalcorrectie voor ons
+        # eigen model wordt pas na deze lus bepaald (die meet over alle spelers
+        # heen), en middelen vóór dat moment zou appels met peren optellen.
+        # Het mengen gebeurt verderop, in een tweede doorloop.
+        bron_strijd = None
+        bron_ruw = {}
+        for g in list(per_gw):
+            w = {}
+            if cp:
+                _i = g - cp_start
+                if 0 <= _i < len(cp["gw"]):
+                    w["FPL Copilot"] = round(float(cp["gw"][_i]), 2)
+            if ff and str(g) in (ff.get("xp") or {}):
+                w["FPL Form"] = round(float(ff["xp"][str(g)]), 3)
+            if eigen_gw.get(g) is not None:
+                w["eigen model"] = round(float(eigen_gw[g]), 3)
+            if w:
+                bron_ruw[str(g)] = w
+        eigen_schaal = sch if (cp and "sch" in dir()) else None
 
         # ---- CEILING EN FLOOR ----
         # xP is een gemiddelde. Voor de aanvoerder wil je juist weten wie kan uitschieten.
@@ -486,6 +592,10 @@ def build():
             "uitleg": uitleg,
             "minf": round(min_factor, 2), "minbron": min_bron,
             "projbron": bron_proj,
+            "ffkans": ff_kans,
+            "bronstrijd": bron_strijd,
+            "_ruw": bron_ruw or None,
+            "_eigenschaal": eigen_schaal,
             "cpmin": (next((m for m in cp["mn"] if m is not None), None) if cp else None),
                         "floor": floor_v, "ceiling": ceil_v,
                         "p90geschat": p90_geschat,
@@ -521,6 +631,80 @@ def build():
         d0["gw"] = {g: round(v * r, 2) for g, v in d0["gw"].items()}
         d0["kalibratie"] = round(r, 3)
 
+    # ---- TWEEDE DOORLOOP: BRONNEN MIDDELEN MET HERKOMST ----
+    # Nu alle schalen bekend zijn kan er gemiddeld worden. Elk getal dat hierna
+    # in het dashboard staat is het gewogen gemiddelde van de bronnen die het
+    # kennen, en draagt in `gwbron` mee hoe het is opgebouwd — dat is wat je ziet
+    # als je op een projectie hovert.
+    #
+    # Wegingen. De twee externe modellen krijgen vol gewicht; ons eigen model telt
+    # half mee, want het weet niets van blessures, rolwijzigingen of teamnieuws.
+    # Het is een stem, geen doorslaggevende.
+    #
+    # Eén uitzondering op het middelen: zegt FPL Form dat iemand vrijwel zeker NIET
+    # speelt (kans onder 15%), dan is dat een uitspraak over een feit — geblesseerd,
+    # geschorst, niet in de selectie — en geen modelmening. Middelen zou een speler
+    # die niet op het veld staat alsnog punten geven.
+    GEWICHT = {"FPL Copilot": 1.0, "FPL Form": 1.0, "eigen model": 0.5}
+    gemengd_n = strijd_n = gevolgd_n = 0
+    for d0 in db:
+        ruw = d0.pop("_ruw", None)
+        eigen_schaal = d0.pop("_eigenschaal", None)
+        d0["gwbron"] = None
+        if not ruw:
+            continue
+        P = d0["p"]
+        f_sch = ff_ratio.get(P, 1.0)
+        e_sch = eigen_schaal if eigen_schaal else ratio_per_pos.get(P, 1.0)
+        kans = d0.get("ffkans")
+        niet_speler = kans is not None and kans < 0.15
+        toon, strijd_tekst = {}, None
+        # `gw` gebruikt dezelfde sleutels als de rest van het bestand; die kunnen
+        # geheel getal of tekst zijn. Door elkaar heen schrijven laat json.dumps
+        # struikelen op het sorteren, dus we nemen over wat er al ligt.
+        _sleutel = (lambda x: int(x)) if any(isinstance(k, int) for k in d0["gw"]) \
+                   else (lambda x: str(x))
+        for g, w in ruw.items():
+            op_schaal = {}
+            if "FPL Copilot" in w:
+                op_schaal["FPL Copilot"] = w["FPL Copilot"]
+            if "FPL Form" in w:
+                op_schaal["FPL Form"] = round(w["FPL Form"] * f_sch, 2)
+            if "eigen model" in w:
+                op_schaal["eigen model"] = round(w["eigen model"] * e_sch, 2)
+            if not op_schaal:
+                continue
+            if niet_speler and "FPL Form" in op_schaal:
+                d0["gw"][_sleutel(g)] = op_schaal["FPL Form"]
+            else:
+                gem = BRONNEN.meng(op_schaal, GEWICHT)
+                d0["gw"][_sleutel(g)] = gem["waarde"]
+                # De vlag gaat alleen over de EXTERNE bronnen. Dat ons eigen model
+                # ergens anders uitkomt is te verwachten en zou de vlag betekenisloos
+                # maken; twee externe modellen die elkaar tegenspreken is het signaal
+                # dat je wilt zien.
+                if strijd_tekst is None and int(g) in alle_gws[:6]:
+                    extern = {k: v for k, v in op_schaal.items() if k != "eigen model"}
+                    if len(extern) > 1:
+                        strijd_tekst = BRONNEN.strijd(BRONNEN.meng(extern), 0.30)
+            if len(op_schaal) > 1:
+                toon[g] = op_schaal
+        if toon:
+            d0["gwbron"] = toon
+            gemengd_n += 1
+            eerste = toon.get(str(alle_gws[0])) or list(toon.values())[0]
+            d0["projbron"] = "%d bronnen: %s" % (len(eerste), ", ".join(sorted(eerste)))
+        if niet_speler:
+            d0["bronstrijd"] = ("FPL Form: speelkans %.0f%% — die bron gevolgd, "
+                                "niet gemiddeld" % (kans * 100))
+            gevolgd_n += 1
+        elif strijd_tekst:
+            d0["bronstrijd"] = strijd_tekst
+            strijd_n += 1
+    print("  Bronnen gemengd: %d spelers met 2+ bronnen, %d met een echt "
+          "meningsverschil, %d waar FPL Form 'speelt niet' zegt"
+          % (gemengd_n, strijd_n, gevolgd_n))
+
     dbmap = {d["id"]: d for d in db}
 
     # ---- fixture ticker: FDR + xG + clean sheet, alle gameweeks ----
@@ -531,6 +715,7 @@ def build():
             cs = fx_proj.get(club, {}).get(g, [])
             cellen[g] = [{"opp": c["opp"], "h": c["thuis"], "fdr": c["fdr"],
                           "xg": c["xg"], "xga": c.get("xga"), "cs": c["cs"],
+                          "bronxg": c.get("bronxg"), "broncs": c.get("broncs"),
                           "bron": c.get("bron", "model"),
                           "eigen_xg": c.get("eigen_xg"), "eigen_cs": c.get("eigen_cs"),
                           "kick": c.get("kick")} for c in cs]
@@ -541,7 +726,19 @@ def build():
 
     # ---- mijn squad ----
     squad, picks_gw, entry_meta = [], None, None
-    if entry_id:
+    # Een nog niet bevestigd concept voor DEZE gameweek gaat voor op de laatst
+    # bevestigde picks. Zonder dit toont het dashboard tijdens een openstaande
+    # wildcard nog altijd het oude elftal, want de API kent de draft niet.
+    _concept = False
+    _tp0 = os.path.join(STATE, "team.json")
+    if os.path.exists(_tp0):
+        try:
+            if int((json.load(open(_tp0, encoding="utf-8")) or {}).get("concept_gw") or 0) == gw:
+                _concept = True
+                print("  Concept voor GW%d uit team.json gaat voor op de bevestigde picks" % gw)
+        except Exception:
+            pass
+    if entry_id and not _concept:
         entry_meta = try_get("%s/entry/%s/" % (BASE, entry_id))
         for g in (gw - 1, gw):
             if g < 1:
@@ -552,6 +749,8 @@ def build():
                               cap=x["multiplier"] >= 2, vice=bool(x.get("is_vice_captain")))
                          for x in pk["picks"] if x["element"] in dbmap]
                 picks_gw = g
+    if _concept and entry_id and entry_meta is None:
+        entry_meta = try_get("%s/entry/%s/" % (BASE, entry_id))
     if not squad:
         tp = os.path.join(STATE, "team.json")
         if os.path.exists(tp):
@@ -978,6 +1177,71 @@ def build():
                 v = max(1, min(5, v))
             vrij_nu = v
 
+    # ---- TERUGBLIK: je eigen afgelopen gameweeks ----
+    # Het dashboard keek alleen vooruit. Wat er in de weken ervoor gebeurde stond
+    # nergens, terwijl juist dat je vertelt of een keuze werkte. Per afgelopen
+    # gameweek: je punten, je rang, wat er op de bank bleef liggen, welke chip er
+    # aan stond, en de volledige opstelling met punten per speler.
+    #
+    # De opstellingen worden gecachet: de API geeft ze wel, maar een afgelopen
+    # gameweek verandert niet meer, dus die halen we precies één keer op.
+    terugblik = []
+    if entry_meta and entry_id:
+        _pcache = _lees("eigen_picks.json", {"gws": {}}) or {"gws": {}}
+        _pgws = _pcache.get("gws") or {}
+        _nieuw = False
+        hist_speler = (_lees("historie.json", {}) or {}).get("spelers") or {}
+        _lopend = (_lees("historie.json", {}) or {}).get("lopend")
+        for h in eigen_gws:
+            g = h.get("event")
+            if not g:
+                continue
+            pk = _pgws.get(str(g))
+            if pk is None or g == _lopend:
+                pk = try_get("%s/entry/%s/event/%d/picks/" % (BASE, entry_id, g))
+                if pk and pk.get("picks"):
+                    _pgws[str(g)] = pk
+                    _nieuw = True
+            if not pk or not pk.get("picks"):
+                continue
+            rijen = []
+            for x in pk["picks"]:
+                d0 = dbmap.get(x["element"])
+                st = (hist_speler.get(str(x["element"])) or {}).get(str(g)) or {}
+                rijen.append({
+                    "id": x["element"],
+                    "n": d0["n"] if d0 else "?", "t": d0["t"] if d0 else "?",
+                    "p": d0["p"] if d0 else "?",
+                    "slot": x["position"], "basis": x["position"] <= 11,
+                    "mult": x.get("multiplier", 1),
+                    "cap": x.get("is_captain", False), "vice": x.get("is_vice_captain", False),
+                    "pt": (st.get("pt") or 0) * max(1, x.get("multiplier", 1) or 1),
+                    "ruw": st.get("pt") or 0, "min": st.get("min") or 0,
+                    "g": st.get("g") or 0, "a": st.get("a") or 0,
+                    "cs": st.get("cs") or 0, "dc": st.get("dc") or 0,
+                    "bo": st.get("bo") or 0, "opp": st.get("opp"),
+                    "thuis": st.get("thuis"), "uit": st.get("uit")})
+            terugblik.append({
+                "gw": g, "punten": h.get("points"), "straf": h.get("event_transfers_cost") or 0,
+                "totaal": h.get("total_points"), "rang": h.get("overall_rank"),
+                "gw_rang": h.get("rank"), "bank_punten": h.get("points_on_bench") or 0,
+                "transfers": h.get("event_transfers") or 0,
+                "waarde": round((h.get("value") or 0) / 10.0, 1),
+                "chip": chip_per_gw.get(g),
+                "voorlopig": g == _lopend,
+                "picks": rijen})
+        if _nieuw:
+            _pcache["gws"] = _pgws
+            try:
+                json.dump(_pcache, open(os.path.join(STATE, "eigen_picks.json"), "w",
+                                        encoding="utf-8"), ensure_ascii=False)
+            except Exception as ex:
+                print("  LET OP: opstellingen niet bewaard (%s)" % str(ex)[:60])
+        if terugblik:
+            print("  Terugblik: GW%s"
+                  % ", GW".join(str(t["gw"]) + ("*" if t["voorlopig"] else "")
+                                for t in terugblik))
+
     # ── Welke chips heb je al opgebrand? ─────────────────────────────────
     # Zonder dit bood het dashboard een Bench Boost aan die allang op was.
     # FPL kent twee sets: de eerste moet vóór de GW19-deadline op, de tweede
@@ -1204,6 +1468,9 @@ def build():
         # het eigen model. Dat verschil hoort zichtbaar te zijn, want elk
         # advies verderop rust op een andere bron.
         "copilot_grens": cp_laatste,
+        "bronkeuring": keuringen,
+        "terugblik": terugblik,
+        "historie": _lees("historie.json", {}) or {},
         "copilot_meta": {"aantal": len(copilot.get("spelers", {})),
                          "bron": copilot.get("_bron", ""),
                          "opgehaald": copilot.get("_opgehaald", ""),
@@ -1392,3 +1659,4 @@ if __name__ == "__main__":
           % (data["gw"], data["deadline_nl"], len(data["db"]), len(data["squad"])))
     print("  Opta: %d spelers gekoppeld | promovendi omgerekend: %s"
           % (data["opta_meta"]["gekoppeld"], ", ".join(data["opta_meta"]["promovendi"])))
+

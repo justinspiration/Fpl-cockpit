@@ -162,6 +162,23 @@ def koppel(bs, spelers_opta):
     return uit, gemist
 
 
+def _laad_goaliq():
+    """Derde bron voor verwachte goals en clean sheets: Dixon-Coles op Understat.
+
+    Vult het gat tussen de andere twee. Ons eigen model kent alleen vorig
+    seizoen; de bookmakersodds bestaan alleen voor duels die al geprijsd zijn,
+    in de praktijk de eerstvolgende speelronde. GoalIQ kijkt meerdere weken
+    vooruit met actuele clubsterktes.
+    """
+    pad = os.path.join(os.path.dirname(os.path.abspath(__file__)), "state", "goaliq.json")
+    if not os.path.exists(pad):
+        return {}
+    try:
+        return json.load(open(pad, encoding="utf-8")).get("per_club", {})
+    except Exception:
+        return {}
+
+
 def _laad_odds():
     """Marktafgeleide doelpuntverwachtingen, als odds_verwerk.py gedraaid heeft."""
     pad = os.path.join(os.path.dirname(os.path.abspath(__file__)), "state", "odds.json")
@@ -187,8 +204,10 @@ def fixture_projecties(bs, fixtures, teamdata, gws):
     # het dashboard vermeldt dat bij de bronvermelding van de ticker.
     THUIS, UIT = 1.10, 0.90
 
+    GEWICHT_FX = {"bookmakers": 1.0, "GoalIQ": 1.0, "eigen model": 0.5}
     uit = {sn[t["id"]]: {} for t in bs["teams"]}
     odds = _laad_odds()
+    goaliq = _laad_goaliq()
 
     for m in fixtures:
         g = m.get("event")
@@ -203,27 +222,49 @@ def fixture_projecties(bs, fixtures, teamdata, gws):
             lam_voor = (a["xgf"] / 38.0) * (b["xga"] / gem_xga if gem_xga else 1.0) * hf
             lam_tegen = (b["xgf"] / 38.0) * (a["xga"] / gem_xga if gem_xga else 1.0) * (UIT if thuis else THUIS)
             cs = math.exp(-lam_tegen) * 100.0
-            bron = "model"
             eigen_xg, eigen_cs = round(lam_voor, 2), round(cs)
 
-            # Waar de bookmakers dit duel al prijzen, gaat hun cijfer voor.
-            # Zij verwerken blessures, vorm en opstellingsnieuws van vandaag;
-            # het model hierboven kent alleen vorig seizoen.
+            # DRIE BRONNEN, GEMIDDELD MET HERKOMST.
+            # Vroeger overschreven de bookmakers dit duel volledig. Dat gooide
+            # informatie weg: waar twee onafhankelijke modellen hetzelfde zeggen
+            # is het cijfer steviger dan waar ze uiteenlopen, en dat verschil zag
+            # je nergens meer terug.
+            #
+            # Gewichten. Bookmakers krijgen vol gewicht: daar zit echt geld
+            # achter en zij verwerken blessures en opstellingsnieuws van vandaag.
+            # GoalIQ ook vol: actuele clubsterktes, meerdere weken vooruit.
+            # Ons eigen model half — dat kent alleen vorig seizoen.
+            bxg = {"eigen model": round(lam_voor, 3)}
+            bcs = {"eigen model": round(cs, 1)}
+            bxga = {"eigen model": round(lam_tegen, 3)}
             for r in odds.get(sn[tid], []):
                 anders = r["uit"] if r["thuisduel"] else r["thuis"]
                 if anders == sn[opp_id] and r["thuisduel"] == thuis:
                     kant = "thuis" if thuis else "uit"
                     ander = "uit" if thuis else "thuis"
-                    lam_voor = r["xg"][kant]
-                    lam_tegen = r["xg"][ander]
-                    cs = r["cs"][kant]
-                    bron = "odds"
+                    bxg["bookmakers"] = round(r["xg"][kant], 3)
+                    bxga["bookmakers"] = round(r["xg"][ander], 3)
+                    bcs["bookmakers"] = round(r["cs"][kant], 1)
                     break
+            for r in goaliq.get(sn[tid], {}).get(str(g), []):
+                if r.get("opp") == sn[opp_id] and bool(r.get("thuis")) == thuis:
+                    bxg["GoalIQ"] = round(float(r["xg"]), 3)
+                    bcs["GoalIQ"] = round(float(r["cs"]), 1)
+                    break
+
+            def _gem(d):
+                w = sum(GEWICHT_FX.get(k, 1.0) for k in d)
+                return sum(v * GEWICHT_FX.get(k, 1.0) for k, v in d.items()) / w if w else 0.0
+
+            lam_voor, lam_tegen, cs = _gem(bxg), _gem(bxga), _gem(bcs)
+            bron = "+".join(sorted(bxg)) if len(bxg) > 1 else "model"
 
             uit[sn[tid]].setdefault(g, []).append({
                 "opp": sn[opp_id], "thuis": thuis,
                 "xg": round(lam_voor, 2), "xga": round(lam_tegen, 2),
                 "cs": round(cs), "bron": bron,
+                "bronxg": bxg if len(bxg) > 1 else None,
+                "broncs": bcs if len(bcs) > 1 else None,
                 "eigen_xg": eigen_xg, "eigen_cs": eigen_cs,
                 "fdr": m["team_h_difficulty"] if thuis else m["team_a_difficulty"],
                 # Aftrap in UTC, precies zoals FPL hem geeft. De pagina rekent

@@ -3398,6 +3398,40 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
   .kpi .v{font-size:26px;line-height:1.15}
   .kpi .lbl{margin-bottom:1px}
 }
+
+/* ---- terugblik en wedstrijdhistorie ---- */
+.tbgw{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;
+  background:var(--bg-2);overflow:hidden}
+.tbgw>summary{cursor:pointer;padding:10px 12px;display:flex;flex-wrap:wrap;
+  align-items:center;gap:8px;list-style:none;user-select:none}
+.tbgw>summary::-webkit-details-marker{display:none}
+.tbgw>summary::before{content:"\25B8";color:var(--fg-3);transition:transform .15s}
+.tbgw[open]>summary::before{transform:rotate(90deg)}
+.tbgw[open]>summary{border-bottom:1px solid var(--line)}
+.tbgw>*:not(summary){padding:0 12px 12px}
+.tbpt{font-weight:700;color:var(--good)}
+.tbstraf{color:var(--bad);font-size:.85em}
+.tbchip{background:var(--acc,#6c5ce7);color:#fff;border-radius:6px;
+  padding:1px 7px;font-size:.78em;font-weight:600}
+.tbvoorlopig{background:var(--warn);color:#000;border-radius:6px;
+  padding:1px 7px;font-size:.78em;font-weight:600}
+.tbmeta{color:var(--fg-3);font-size:.82em;margin-left:auto}
+.pftab{width:100%;border-collapse:collapse;font-size:.88em;margin-top:6px}
+.pftab th{text-align:left;color:var(--fg-3);font-weight:600;
+  border-bottom:1px solid var(--line);padding:5px 6px;white-space:nowrap}
+.pftab td{padding:5px 6px;border-bottom:1px solid var(--line)}
+.pftab td.n,.pftab th[style*="right"]{text-align:right}
+.pftab tfoot td{border-bottom:none;border-top:1px solid var(--line)}
+.pftab tr.cap td{background:color-mix(in srgb,var(--good) 8%,transparent)}
+.pftab tr.lopend td{opacity:.75}
+.pftab .club{color:var(--fg-3);font-size:.85em;margin-left:5px}
+.pftab .band{font-size:.7em;margin-left:4px;padding:0 4px;border-radius:4px}
+.pfvoorlopig{color:var(--warn);font-weight:700;margin-left:3px}
+@media(max-width:640px){
+  .tbmeta{margin-left:0;flex-basis:100%}
+  .pftab{font-size:.8em}
+  .pftab th,.pftab td{padding:4px 3px}
+}
 </style>
 
 <header><div class="hdr">
@@ -3490,6 +3524,12 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
       <div class="src" id="src-squad"></div>
     </section>
   </div>
+  <div class="grid"><section class="card">
+    <h2><span class="dot"></span>Terugblik
+      <span class="tag">wat je al gescoord hebt</span></h2>
+    <div class="body" id="terugblikbox"></div>
+    <div class="src" id="src-terugblik"></div>
+  </section></div>
   <!-- Teamscore en Teamversies stonden elk alleen in een tweekolomsrij, met
        een leeg vak ernaast — restant van het verplaatsen van de analist en de
        aanvoerder naar Assistent. Nu naast elkaar. -->
@@ -3903,7 +3943,7 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
   
 
   <footer>
-    <span>Gegenereerd <span id="genstamp"></span><span id="versheid"></span><span id="bronsgrens" class="bronsgrens"></span></span>
+    <span>Gegenereerd <span id="genstamp"></span><span id="versheid"></span><span id="bronsgrens" class="bronsgrens"></span><span id="bronstatus"></span></span>
     <span id="optameta"></span>
   </footer>
 </div>
@@ -4081,13 +4121,20 @@ const gen=new Date(D.gegenereerd);
 function bronAlarm(){
   const m=D.copilot_meta||{}, n=(D.db||[]).length;
   const uit=$("#bronalarm"); if(!uit) return;
-  const metCopilot=(D.db||[]).filter(p=>p.projbron==="FPL Copilot").length;
+  /* Sinds elk cijfer een gemiddelde van meerdere bronnen is, staat in projbron
+     niet meer één naam maar een opsomming ("3 bronnen: FPL Copilot, FPL Form,
+     eigen model"). De oude gelijkheidstoets vond die nooit meer en riep dus
+     altijd vals alarm. Nu tellen we of Copilot ergens IN de opsomming zit. */
+  const metCopilot=(D.db||[]).filter(p=>(p.projbron||"").includes("FPL Copilot")).length;
   const deel=n?metCopilot/n:0;
+  const externe=(D.bronkeuring||[]).filter(b=>b.ok).length;
   let waarschuwing=null;
   if(!m.aantal||deel<0.5){
-    waarschuwing={hard:true, tekst:`De projecties komen nu uit het eigen model, niet uit FPL Copilot
-      (${metCopilot} van de ${n} spelers). De ophaalstap is misgegaan; de cijfers wijken daardoor af
-      van wat je op fplcopilot.com ziet.`};
+    waarschuwing={hard:externe<2, tekst:`FPL Copilot ontbreekt in de projecties
+      (${metCopilot} van de ${n} spelers). ${externe>=2
+        ? `De cijfers steunen nu op de overige ${externe} bronnen; dat werkt, maar de
+           kruiscontrole met Copilot is weg.`
+        : `De ophaalstap is misgegaan en er is te weinig over om op te bouwen.`}`};
   } else if(m.opgehaald){
     const dagen=(Date.now()-new Date(m.opgehaald+"T12:00:00Z").getTime())/864e5;
     if(dagen>2) waarschuwing={hard:false, tekst:`De cijfers van FPL Copilot zijn van
@@ -4145,6 +4192,25 @@ function versheidTonen(){
       +"het dashboard zelf, op basis van doelpuntverwachtingen per duel. Adviezen "
       +"die verder kijken dan GW"+D.copilot_grens+" leunen dus op een zwakkere bron.";
   }
+  /* Bronnenstatus. Elk cijfer in dit dashboard is een gemiddelde van de bronnen
+     die het kennen, en elke bron is vooraf gekeurd tegen de levende FPL API.
+     Wordt er een geweigerd, dan hoor je dat te zien in plaats van te moeten
+     raden waarom een advies opeens anders is. */
+  const gr2=document.getElementById("bronsgrens");
+  if(gr2&&Array.isArray(D.bronkeuring)&&D.bronkeuring.length){
+    const ok=D.bronkeuring.filter(b=>b.ok), nee=D.bronkeuring.filter(b=>!b.ok);
+    const el2=document.getElementById("bronstatus");
+    if(el2){
+      el2.textContent=" · "+ok.length+" bron"+(ok.length===1?"":"nen")+" actief"
+                      +(nee.length?", "+nee.length+" geweigerd":"");
+      el2.className=nee.length?"vers let":"vers goed";
+      el2.title="Elk getal is een gewogen gemiddelde van de bronnen die het kennen.\n\n"
+        +D.bronkeuring.map(b=>(b.ok?"\u2713 ":"\u2717 ")+b.bron
+            +(b.leeftijd_uur!=null?"  ("+b.leeftijd_uur+" uur oud)":"")
+            +(b.reden?"  \u2014 "+b.reden:"")).join("\n")
+        +"\n\nWegingen: externe modellen tellen vol mee, ons eigen model half.";
+    }
+  }
   el.className=uren>24?"vers oud":uren>6?"vers let":"vers goed";
   el.title=uren>6
     ? "De verversing draait elke drie uur. Duurt het langer, controleer dan de GitHub Action."
@@ -4176,6 +4242,55 @@ function hzVan(v){ return HZN[v||VLAK]||1; }
 /* ENKEL en HZ zijn afgeleiden van het actieve onderdeel; niet los zetten. */
 
 /* som van de projectie over de eerste N gameweeks */
+/* ---- herkomst van een projectie ----
+   Justins eis: geen enkel getal zonder herkomst. Elke puntenprojectie is het
+   gewogen gemiddelde van de bronnen die die speler kennen, en met deze functie
+   kun je op elk cijfer hoveren om te zien wie wat zegt.
+
+   De weging staat er expliciet bij, want het is GEEN plat gemiddelde: de twee
+   externe modellen tellen vol mee, ons eigen model half — dat weet niets van
+   blessures, rolwijzigingen of opstellingsnieuws. */
+/* Herkomst van een fixture-cijfer: verwachte goals en clean sheet-kans komen
+   uit drie richtingen die elkaar controleren — bookmakersodds, GoalIQ en ons
+   eigen Poisson-model op Opta-data. Zie ook bronTip() voor puntenprojecties. */
+function fixtureTip(c){
+  if(!c) return "";
+  const blok=(titel,d,eenheid,dec)=>{
+    if(!d) return "";
+    const namen=Object.keys(d).sort();
+    if(namen.length<2) return "";
+    return "\n"+titel+":\n"+namen.map(k=>"  "+k+": "+Number(d[k]).toFixed(dec)+eenheid
+             +(k==="eigen model"?"  (half gewicht)":"")).join("\n");
+  };
+  return blok("verwachte goals",c.bronxg,"",2)+blok("clean sheet",c.broncs,"%",1);
+}
+/* FPL's `explain` gebruikt technische namen; dit maakt ze leesbaar. */
+/* Sinds elk cijfer uit meerdere bronnen komt, staat in `projbron` een opsomming
+   in plaats van één naam. Overal waar de code vroeger op de exacte tekst
+   "FPL Copilot" toetste, vond hij niets meer. Deze twee helpers houden dat op
+   één plek, zodat een volgende bron er niet weer overheen struikelt. */
+function viaCopilot(p){ return !!p && (p.projbron||"").includes("FPL Copilot"); }
+function alleenEigen(p){ return !!p && !/Copilot|FPL Form/.test(p.projbron||""); }
+function puntNaam(k){
+  return ({minutes:"speeltijd",goals_scored:"doelpunt",assists:"assist",
+    clean_sheets:"clean sheet",goals_conceded:"tegendoelpunten",own_goals:"eigen doelpunt",
+    penalties_saved:"penalty gestopt",penalties_missed:"penalty gemist",
+    yellow_cards:"gele kaart",red_cards:"rode kaart",saves:"reddingen",bonus:"bonus",
+    defensive_contribution:"DefCon"})[k]||k;
+}
+function bronTip(p,g){
+  const alle=p.gwbron||{};
+  const b=alle[g]||alle[String(g)];
+  if(!b) return "";
+  const namen=Object.keys(b).sort();
+  const regels=namen.map(k=>"  "+k+": "+Number(b[k]).toFixed(2)
+                            +(k==="eigen model"?"  (half gewicht)":""));
+  let t="\n\nGW"+g+" \u2014 opbouw van dit cijfer:\n"+regels.join("\n")
+        +"\n  = "+Number(p.gw[g]||0).toFixed(2)+" gewogen gemiddelde";
+  if(p.ffkans!=null) t+="\nspeelkans volgens FPL Form: "+Math.round(p.ffkans*100)+"%";
+  if(p.bronstrijd) t+="\nLET OP: "+p.bronstrijd;
+  return t;
+}
 function proj(p,n){ if(ENKEL) return p.gw[PLANGW]||0;
   let s=0,c=0; for(const g of D.alle_gws){ if(c>=n) break; s+=(p.gw[g]||0); c++; } return s; }
 function projGW(p,g){ return p.gw[g]||0; }
@@ -4499,7 +4614,7 @@ function kaart(p){
   const cel=(D.ticker.find(t=>t.team===p.t)||{}).cellen||{};
   const xg=D.alle_gws.slice(0,HZ).reduce((a,g)=>a+(cel[g]||[]).reduce((x,c)=>x+c.xg,0),0);
   return `<tr><td>${spnm(p)} <span class="club">${esc(p.t)}</span></td>
-    <td class="n">£${p.c.toFixed(1)}</td><td class="n">${proj(p,HZ).toFixed(1)}</td>
+    <td class="n">£${p.c.toFixed(1)}</td><td class="n" title="${esc(bronTip(p,PLANGW).replace(/^\n+/,""))}">${proj(p,HZ).toFixed(1)}</td>
     <td class="n">${p.own.toFixed(1)}%</td>
     <td class="n">${p.oxg!=null?p.oxg.toFixed(1):"–"}</td>
     <td class="n">${p.ogxg!=null?(p.ogxg>0?"+":"")+p.ogxg.toFixed(1):"–"}</td>
@@ -4663,16 +4778,31 @@ function inzet(p,g){
   return v;
 }
 function besteXI(sq,g){
+  /* Deze functie is de hete lus van de solver: die roept haar tienduizenden
+     keren aan. In de oude opzet werd inzet() per aanroep een paar honderd keer
+     opnieuw uitgerekend — twee keer per sorteervergelijking, en daarna nog eens
+     per formatie per speler. Nu wordt elke speler precies één keer gewaardeerd.
+
+     Twee dingen maken de rest gratis. Voorsommen: de score van een formatie is
+     dan een optelling van vier getallen in plaats van een lus over elf spelers.
+     En de aanvoerder ligt vast: omdat elke formatie minstens 3 verdedigers,
+     2 middenvelders en 1 aanvaller bevat, zit de kopman van elke linie er altijd
+     in — de hoogste inzet is dus dezelfde ongeacht de formatie.
+
+     De uitkomst is identiek aan de oude versie; alleen het rekenwerk verandert. */
   const per={GKP:[],DEF:[],MID:[],FWD:[]};
-  sq.forEach(p=>{ if(per[p.p]) per[p.p].push(p); });
-  for(const k in per) per[k].sort((a,b)=>inzet(b,g)-inzet(a,g));
+  for(let i=0;i<sq.length;i++){ const b=per[sq[i].p]; if(b) b.push(inzet(sq[i],g)); }
+  const G=per.GKP,Dd=per.DEF,M=per.MID,F=per.FWD;
+  if(!G.length||Dd.length<3||M.length<2||!F.length) return 0;
+  G.sort((a,b)=>b-a); Dd.sort((a,b)=>b-a); M.sort((a,b)=>b-a); F.sort((a,b)=>b-a);
+  const cum=a=>{const c=[0];for(let i=0;i<a.length;i++)c.push(c[i]+a[i]);return c;};
+  const cD=cum(Dd),cM=cum(M),cF=cum(F);
+  const kop=Math.max(G[0],Dd[0],M[0],F[0]);          // aanvoerder telt dubbel
   let best=-1;
-  for(let d=3;d<=5;d++) for(let m=2;m<=5;m++) for(let f=1;f<=3;f++){
-    if(1+d+m+f!==11) continue;
-    if(per.GKP.length<1||per.DEF.length<d||per.MID.length<m||per.FWD.length<f) continue;
-    const xi=[...per.GKP.slice(0,1),...per.DEF.slice(0,d),...per.MID.slice(0,m),...per.FWD.slice(0,f)];
-    let s=xi.reduce((a,x)=>a+inzet(x,g),0);
-    s+=Math.max(...xi.map(x=>inzet(x,g)));            // aanvoerder telt dubbel
+  for(let d=3;d<=5;d++) for(let m=2;m<=5;m++){
+    const f=10-d-m;
+    if(f<1||f>3||Dd.length<d||M.length<m||F.length<f) continue;
+    const s=G[0]+cD[d]+cM[m]+cF[f]+kop;
     if(s>best) best=s;
   }
   return best<0?0:best;
@@ -4830,7 +4960,54 @@ function solveJS(startSquad,startBudget,gws,startVrij){
   return {punten:totaal,hits,pad,eind:sq};
 }
 /* ---------- seizoensplan: solver + rivalen ---------- */
+/* ---- geheugen voor de solver ----
+   solverPaneelBereken() doet tot vijf beam-searches over je hele selectie en
+   duurde gemeten 18,5 seconden. Die functie wordt aangeroepen vanuit
+   tekenAlles(), dus zolang je op de planpagina stond bevroor ELKE klik het
+   tabblad achttien seconden lang. Dat was de vastloper.
+
+   Twee dingen halen hem weg. Het antwoord wordt onthouden zolang de invoer niet
+   verandert — dezelfde selectie met dezelfde bank en dezelfde geplande
+   transfers geeft immers hetzelfde pad. En de eerste berekening start pas
+   nadat de browser heeft kunnen tekenen, zodat je "berekenen..." ziet in
+   plaats van een dood scherm. */
+let SOLVER_CACHE={sleutel:null,box:null,src:null};
+let SOLVER_BEZIG=false;
+function solverSleutel(){
+  try{
+    return JSON.stringify([PLANGW,
+      squadInGW(PLANGW).map(p=>p.id).sort((a,b)=>a-b),
+      budgetIn(PLANGW), vrijeTransfers(PLANGW),
+      (geplandeTransfers(PLANGW)||[]).map(t=>[t&&t.uit&&t.uit.id,t&&t.in&&t.in.id]),
+      D.gegenereerd]);
+  }catch(e){ return null; }
+}
 function solverPaneel(){
+  VLAK="plan";
+  const box=$("#solverbox");
+  if(!box) return;
+  const sleutel=solverSleutel();
+  if(sleutel&&SOLVER_CACHE.sleutel===sleutel&&SOLVER_CACHE.box!==null){
+    box.innerHTML=SOLVER_CACHE.box;
+    const sb=$("#src-solver");
+    if(sb&&SOLVER_CACHE.src!==null) sb.innerHTML=SOLVER_CACHE.src;
+    return;
+  }
+  if(SOLVER_BEZIG) return;
+  SOLVER_BEZIG=true;
+  box.innerHTML='<div class="empty">Transferpad berekenen\u2026</div>';
+  setTimeout(function(){
+    try{ solverPaneelBereken(); }
+    catch(e){ box.innerHTML='<div class="empty">Transferpad kon niet berekend worden ('+
+                            String(e.message).slice(0,90)+').</div>'; }
+    finally{
+      SOLVER_BEZIG=false;
+      const sb=$("#src-solver");
+      SOLVER_CACHE={sleutel:sleutel,box:box.innerHTML,src:sb?sb.innerHTML:null};
+    }
+  },30);
+}
+function solverPaneelBereken(){
   VLAK="plan";
   const box=$("#solverbox");
   const basisSquad=squadInGW(PLANGW);
@@ -6385,7 +6562,7 @@ function droomelftal(){
       const cs=cel[g]||[];
       if(!cs.length) return `<i class="leeg" title="GW${g}: geen duel"></i>`;
       const c=cs[0];
-      return `<i class="f${c.fdr}" title="GW${g}: ${esc(c.opp)} ${c.h?"thuis":"uit"}${
+      return `<i class="f${c.fdr}" title="GW${g}: ${esc(c.opp)} ${c.h?"thuis":"uit"}${esc(fixtureTip(c))}${
         c.kick?" — "+kickTijd(c.kick):""} · ${
         c.xg!=null?"xG "+c.xg.toFixed(2):""}">${cs.length>1?"2":""}</i>`;}).join("");
   };
@@ -7561,7 +7738,51 @@ function profielIn(box,p){
       `<div class="pfnot"><span class="d">${esc(n.datum)}</span><p>${esc(n.tekst)}</p></div>`).join("")}</div>
   </section>`:"";
 
-  box.innerHTML=kop+verloop+prijsblok+onderliggend+perWedstrijd+klein+marktblok+komt+notitieblok+nieuwsblok;
+  /* ── gespeeld: wat hij tot nu toe echt deed ──────────────────────
+     Het profiel keek alleen vooruit. Een verwachting van 4,2 zegt weinig als je
+     er niet naast kunt leggen wat er de weken ervoor daadwerkelijk gebeurde —
+     en of die minuten stijgen of dalen. FPL's eigen puntenopbouw staat erbij,
+     zodat je ziet waar elk punt vandaan kwam in plaats van alleen het totaal. */
+  const hist=((D.historie||{}).spelers||{})[p.id]||{};
+  const histGws=Object.keys(hist).map(Number).sort((a,b)=>a-b);
+  const lopendGW=(D.historie||{}).lopend;
+  const gespeeld=!histGws.length?"":`<section class="pfblok">
+    <h4>Wat hij tot nu toe deed</h4>
+    <p class="pfuit">Werkelijke opbrengst per gameweek, uit FPL's eigen wedstrijdgegevens
+      (<code>/event/{gw}/live/</code>). Hover over een puntentotaal voor de opbouw.
+      ${histGws.includes(lopendGW)?`GW${lopendGW} loopt nog: de bonuspunten staan nog niet vast.`:""}</p>
+    <table class="pftab"><thead><tr>
+      <th>GW</th><th>Tegen</th><th style="text-align:right">Min</th>
+      <th style="text-align:right">G</th><th style="text-align:right">A</th>
+      <th style="text-align:right">CS</th><th style="text-align:right">DefCon</th>
+      <th style="text-align:right">Bonus</th><th style="text-align:right">Punten</th>
+    </tr></thead><tbody>${histGws.map(g=>{
+      const r=hist[g]||{};
+      const opbouw=r.uit?Object.keys(r.uit).sort((a,b)=>r.uit[b]-r.uit[a])
+        .map(k=>"  "+puntNaam(k)+": "+(r.uit[k]>0?"+":"")+r.uit[k]).join("\n"):"";
+      const tip=opbouw?`GW${g} — waar de punten vandaan kwamen:\n`+opbouw:"";
+      return `<tr${g===lopendGW?' class="lopend"':""}>
+        <td><b>${g}</b>${g===lopendGW?'<i class="pfvoorlopig" title="Deze gameweek loopt nog; bonuspunten kunnen nog wijzigen">·</i>':""}</td>
+        <td>${r.opp?esc(r.opp)+(r.thuis?" (T)":" (U)"):"—"}</td>
+        <td class="n">${r.min||0}</td>
+        <td class="n">${r.g||0}</td><td class="n">${r.a||0}</td>
+        <td class="n">${r.cs?"ja":"—"}</td><td class="n">${r.dc||0}</td>
+        <td class="n">${r.bo||0}</td>
+        <td class="n"><b title="${esc(tip)}">${r.pt||0}</b></td></tr>`;}).join("")}
+    </tbody><tfoot><tr><td colspan="2"><b>Totaal</b></td>
+      <td class="n"><b>${histGws.reduce((a,g)=>a+(hist[g].min||0),0)}</b></td>
+      <td class="n"><b>${histGws.reduce((a,g)=>a+(hist[g].g||0),0)}</b></td>
+      <td class="n"><b>${histGws.reduce((a,g)=>a+(hist[g].a||0),0)}</b></td>
+      <td class="n"><b>${histGws.reduce((a,g)=>a+(hist[g].cs||0),0)}</b></td>
+      <td class="n"><b>${histGws.reduce((a,g)=>a+(hist[g].dc||0),0)}</b></td>
+      <td class="n"><b>${histGws.reduce((a,g)=>a+(hist[g].bo||0),0)}</b></td>
+      <td class="n"><b>${histGws.reduce((a,g)=>a+(hist[g].pt||0),0)}</b></td></tr></tfoot></table>
+    ${histGws.length>1?`<p class="pfuit">Speeltijd: ${histGws.map(g=>(hist[g].min||0)+"'").join(" \u2192 ")}.
+      ${(()=>{const e=hist[histGws[0]].min||0, l=hist[histGws[histGws.length-1]].min||0;
+        return l>=e+20?"Zijn rol groeit.":l<=e-20?"Zijn rol krimpt.":"Zijn rol is stabiel.";})()}</p>`:""}
+  </section>`;
+
+  box.innerHTML=kop+gespeeld+verloop+prijsblok+onderliggend+perWedstrijd+klein+marktblok+komt+notitieblok+nieuwsblok;
 
   box.querySelectorAll("[data-pf]").forEach(b=>b.onclick=()=>{
     const a=b.dataset.pf;
@@ -8584,10 +8805,10 @@ function signalen(){
 
 /* ---------- databetrouwbaarheid ---------- */
 function herkomst(){
-  const cp=D.db.filter(p=>p.projbron==="FPL Copilot").length;
+  const cp=D.db.filter(viaCopilot).length;
   const opta=D.db.filter(p=>p.oxg!=null).length;
   const sq=D.squad.length?D.squad.filter(p=>{
-    const d=D.db.find(x=>x.id===p.id); return d&&d.projbron==="FPL Copilot";}).length:0;
+    const d=D.db.find(x=>x.id===p.id); return d&&viaCopilot(d);}).length:0;
   const rijen=[
     {w:"Prijzen, minuten, starts, set-pieces, blessures, fixtures, FDR",
      b:"officiële FPL API", n:D.db.length+" spelers", k:"echt",
@@ -9745,7 +9966,7 @@ function toonKiezer(slot,zoek){
       <div class="kandidaat${k.clubvol?" tepool":k.past?"":" boven"}" data-in="${k.c.id}" data-uit="${slot.id}"
            title="${k.clubvol?"Je hebt al 3 spelers van "+esc(k.c.t)
              :(!k.past?"£"+k.tekort.toFixed(1)+"m boven je saldo — je mag hem kiezen en daarna elders geld vrijmaken":"")}">
-        <span><b>${esc(k.c.n)}</b>${beste.includes(k.c.id)?'<span class="aanbev">AANBEVOLEN</span>':""}${k.c.pen===1?' <span class="badge b-pen">PEN</span>':""}${k.c.projbron==="FPL Copilot"?' <span class="badge" style="color:var(--good)">xP</span>':""}${k.clubvol?' <span class="badge b-inj">3 VAN CLUB</span>':(!k.past?` <span class="badge b-doubt">£${k.tekort.toFixed(1)}m TEKORT</span>`:"")}
+        <span><b>${esc(k.c.n)}</b>${beste.includes(k.c.id)?'<span class="aanbev">AANBEVOLEN</span>':""}${k.c.pen===1?' <span class="badge b-pen">PEN</span>':""}${viaCopilot(k.c)?' <span class="badge" style="color:var(--good)">xP</span>':""}${k.clubvol?' <span class="badge b-inj">3 VAN CLUB</span>':(!k.past?` <span class="badge b-doubt">£${k.tekort.toFixed(1)}m TEKORT</span>`:"")}
           <span class="sub">${esc(k.c.t)} · £${k.c.c.toFixed(1)}m · ${k.c.own.toFixed(1)}% · FDR ${k.fdr.toFixed(1)}${k.c.drempel&&k.c.dc90>=k.c.drempel?" · DefCon-machine":""}</span></span>
         <span class="fxs">${strook(k.c,Math.min(HZ,5),PLANGW)}</span>
         <span class="xp">${k.xp.toFixed(1)}</span>
@@ -9851,7 +10072,7 @@ function spelerKaart(p,opts){
   const xp=projVanaf(p,g,ENKEL?1:HZ);
   const strook=D.alle_gws.filter(x=>x>=g).slice(0,5).map(gg=>{
     const cs=((D.ticker.find(t=>t.team===p.t)||{}).cellen||{})[gg]||[];
-    return cs.length?`<i class="c${cs[0].fdr}" title="GW${gg}: ${esc(cs[0].opp)} ${cs[0].h?"thuis":"uit"}"></i>`
+    return cs.length?`<i class="c${cs[0].fdr}" title="GW${gg}: ${esc(cs[0].opp)} ${cs[0].h?"thuis":"uit"}${esc(fixtureTip(cs[0]))}"></i>`
                     :'<i style="background:var(--line)"></i>';}).join("");
   const merken=[];
   if(["i","s","u"].includes(p.status)) merken.push(`<span class="merk" style="background:var(--bad);color:#fff">UIT</span>`);
@@ -9860,7 +10081,7 @@ function spelerKaart(p,opts){
   const band=p.cap?'<span class="band c">C</span>':p.vice?'<span class="band v">V</span>':"";
   return `<div class="sp${o.actief?" actief":""}${o.gewisseld?" gewisseld":""}" data-pid="${p.id}"
       style="--acc:${kl.acc};--tekst:${kl.tekst}"
-      title="${esc(p.n)} — ${esc(p.t)} · £${p.c.toFixed(1)}m · ${xp.toFixed(1)} punten${p.cpmin?" · "+p.cpmin+"' verwacht":""}">
+      title="${esc(p.n)} — ${esc(p.t)} · £${p.c.toFixed(1)}m · ${xp.toFixed(1)} punten${p.cpmin?" · "+p.cpmin+"' verwacht":""}${esc(bronTip(p,g))}">
     ${band}${merken.join("")}${rotatieMerk(p.t,g)}
     <span class="xp" style="color:${xpKleur(xp,ENKEL?1:HZ)}">${xp.toFixed(1)}</span>
     <div class="shirt" style="background:${kl.hoofd}">
@@ -10187,7 +10408,7 @@ function lijstRij(p,opts){
   if(p.pen===1) merk.push('<span class="badge b-pen" title="Eerste penaltynemer">PEN</span>');
   if(["i","s","u"].includes(p.status)) merk.push('<span class="badge b-inj">UIT</span>');
   else if(p.status==="d") merk.push('<span class="badge b-doubt">?</span>');
-  if(p.projbron!=="FPL Copilot") merk.push('<span class="badge" style="color:var(--fg-3)" title="Geen extern cijfer; onze eigen berekening">model</span>');
+  if(alleenEigen(p)) merk.push('<span class="badge" style="color:var(--fg-3)" title="Geen extern cijfer; onze eigen berekening">model</span>');
   const rm=rotatieMerk(p.t,PLANGW); if(rm) merk.push(rm);
   const kleurXp=xpKleur(xp,ENKEL?1:HZ);
   const dcOK=p.drempel&&p.dc90>=p.drempel;
@@ -10251,6 +10472,69 @@ function tekenLijst(box,lijst){
   box.innerHTML=h;
 }
 
+/* ---- terugblik op je eigen gameweeks ----
+   Het dashboard keek uitsluitend vooruit: de gameweek-kiezer begint bij de
+   eerstvolgende ronde, want daar hangt de hele planning aan (budget, transfers,
+   solver). Achteruit laten lopen zou al die machinerie betekenisloos maken.
+   Daarom staat het terugkijken hier apart: per afgelopen gameweek wat je
+   werkelijk scoorde, wie het deed, en wat er op de bank bleef liggen. */
+function terugblikPaneel(){
+  const box=$("#terugblikbox"); if(!box) return;
+  const rijen=(D.terugblik||[]).slice().sort((a,b)=>b.gw-a.gw);
+  if(!rijen.length){ box.innerHTML='<div class="empty">Nog geen afgeronde gameweek.</div>'; return; }
+  const chipNaam=c=>({bboost:"Bench Boost",'3xc':"Triple Captain",wildcard:"Wildcard",
+                      freehit:"Free Hit",manager:"Assistant Manager"})[c]||c;
+  const totaal=rijen.reduce((a,r)=>a+(r.punten||0),0);
+  const bank=rijen.reduce((a,r)=>a+(r.bank_punten||0),0);
+  box.innerHTML=`<p class="pfuit">${rijen.length} gameweek${rijen.length>1?"s":""} gespeeld,
+      <b>${totaal}</b> punten, <b>${bank}</b> punten op de bank blijven liggen.
+      Klik een gameweek open voor de volledige opstelling.</p>`+
+    rijen.map(r=>{
+      const xi=r.picks.filter(p=>p.basis).sort((a,b)=>a.slot-b.slot);
+      const bnk=r.picks.filter(p=>!p.basis).sort((a,b)=>a.slot-b.slot);
+      const rij=p=>`<tr${p.cap?' class="cap"':""}>
+        <td>${esc(p.n)}<span class="club">${esc(p.t)}</span>${
+          p.cap?'<b class="band c">C</b>':p.vice?'<b class="band v">V</b>':""}</td>
+        <td>${p.opp?esc(p.opp)+(p.thuis?" (T)":" (U)"):"—"}</td>
+        <td class="n">${p.min}</td><td class="n">${p.g||"—"}</td><td class="n">${p.a||"—"}</td>
+        <td class="n">${p.cs?"ja":"—"}</td><td class="n">${p.dc||"—"}</td>
+        <td class="n">${p.bo||"—"}</td>
+        <td class="n"><b title="${esc(p.uit?"waar de punten vandaan kwamen:\n"+
+            Object.keys(p.uit).sort((a,b)=>p.uit[b]-p.uit[a])
+              .map(k=>"  "+puntNaam(k)+": "+(p.uit[k]>0?"+":"")+p.uit[k]).join("\n")+
+            (p.mult>1?"\n  (x"+p.mult+" als aanvoerder)":""):"")}">${p.pt}</b></td></tr>`;
+      const kop=`<th>Speler</th><th>Tegen</th><th style="text-align:right">Min</th>
+        <th style="text-align:right">G</th><th style="text-align:right">A</th>
+        <th style="text-align:right">CS</th><th style="text-align:right">DefCon</th>
+        <th style="text-align:right">Bonus</th><th style="text-align:right">Punten</th>`;
+      return `<details class="tbgw"${r.gw===Math.max(...rijen.map(x=>x.gw))?" open":""}>
+        <summary><b>Gameweek ${r.gw}</b>
+          <span class="tbpt">${r.punten} punten</span>
+          ${r.straf?`<span class="tbstraf">\u2212${r.straf} strafpunten</span>`:""}
+          ${r.chip?`<span class="tbchip">${esc(chipNaam(r.chip))}</span>`:""}
+          ${r.voorlopig?'<span class="tbvoorlopig">loopt nog</span>':""}
+          <span class="tbmeta">wereldrang ${r.rang?r.rang.toLocaleString("nl"):"—"}
+            \u00b7 ${r.bank_punten} op de bank
+            \u00b7 ${r.transfers} transfer${r.transfers===1?"":"s"}
+            \u00b7 teamwaarde \u00a3${r.waarde}m</span></summary>
+        <table class="pftab"><thead><tr>${kop}</tr></thead>
+          <tbody>${xi.map(rij).join("")}</tbody>
+          <tfoot><tr><td colspan="8"><b>Basiself</b></td>
+            <td class="n"><b>${xi.reduce((a,p)=>a+p.pt,0)}</b></td></tr></tfoot></table>
+        <p class="pfuit" style="margin-top:8px">Bank${r.chip==="bboost"?" (telde mee door Bench Boost)":""}:</p>
+        <table class="pftab"><thead><tr>${kop}</tr></thead>
+          <tbody>${bnk.map(rij).join("")}</tbody>
+          <tfoot><tr><td colspan="8"><b>Bank</b></td>
+            <td class="n"><b>${bnk.reduce((a,p)=>a+p.ruw,0)}</b></td></tr></tfoot></table>
+      </details>`;}).join("");
+  bron("#src-terugblik",[
+    {label:"punten, rang en bank per gameweek",bron:"FPL API",
+     url:"https://fantasy.premierleague.com/api/entry/258669/history/"},
+    {label:"opstelling per gameweek",bron:"FPL API /entry/{id}/event/{gw}/picks/",
+     url:"https://fantasy.premierleague.com/api/entry/258669/history/"},
+    {label:"wat elke speler deed",bron:"FPL API /event/{gw}/live/",
+     url:"https://fantasy.premierleague.com/api/bootstrap-static/"}]);
+}
 function squad(){
   VLAK="team";
   const box=$("#squad");
@@ -10455,7 +10739,7 @@ function toonUitleg(pid){
 }
 function uitlegIn(box,p){
   if(!p){box.className="explain";return;}
-  if(p.projbron==="FPL Copilot"){
+  if(viaCopilot(p)){
     const cel=(D.ticker.find(t=>t.team===p.t)||{}).cellen||{};
     const rijen=D.alle_gws.slice(0,8).map(g=>{
       const cs=cel[g]||[];
@@ -10852,7 +11136,7 @@ function advies(){
       <div class="opts">${r.opties.map(o=>{
         const actief=gepland&&gepland["in"]===o.c.id;
         return `<div class="opt">
-          <span class="who"><b>${esc(o.c.n)}</b>${o.c.pen===1?' <span class="badge b-pen" title="Eerste penaltynemer">PEN</span>':""}${o.c.projbron==="FPL Copilot"?' <span class="badge" style="color:var(--good)" title="Verwachte punten komen van FPL Copilot, een extern FPL-model. Zonder dit label is het onze eigen berekening.">xP</span>':' <span class="badge" style="color:var(--fg-3)" title="Geen extern cijfer beschikbaar; dit is onze eigen berekening, geschaald op het niveau van FPL Copilot.">model</span>'}
+          <span class="who"><b>${esc(o.c.n)}</b>${o.c.pen===1?' <span class="badge b-pen" title="Eerste penaltynemer">PEN</span>':""}${viaCopilot(o.c)?' <span class="badge" style="color:var(--good)" title="Verwachte punten komen van FPL Copilot, een extern FPL-model. Zonder dit label is het onze eigen berekening.">xP</span>':' <span class="badge" style="color:var(--fg-3)" title="Geen extern cijfer beschikbaar; dit is onze eigen berekening, geschaald op het niveau van FPL Copilot.">model</span>'}
             <span>${esc(o.c.t)} · £${o.c.c.toFixed(1)}m · ${o.c.own.toFixed(1)}% eigendom${o.c.cpmin?" · "+o.c.cpmin+"' verwacht":""}</span></span>
           <span class="fxs">${strook(o.c,5,PLANGW)}</span>
           ${mini8(o.c,o.r)}
@@ -12880,6 +13164,7 @@ function tekenAlles(){
   // Mijn team is bijna altijd het actieve tabblad en levert de cijfers waar de
   // rest op leunt, dus die tekenen we hoe dan ook.
   squad(); squadMenuKoppel(); teamscore(); watchlist(); doel(); versies(); shotPaneel();
+  terugblikPaneel();
   // panelen die van de planning afhangen ook bijwerken als ze zichtbaar zijn
   const zichtbaar=n=>{const p=document.querySelector(`[data-paneel="${n}"]`);
     return p&&p.classList.contains("actief");};
@@ -12907,6 +13192,7 @@ tekenSub("assistent"); tekenSub("research"); tekenSub("leagues");
 tekenGWSelector(); tekenChipbalk();
 tekenModus();
 briefing(); highlights(); kpis(); squad(); squadMenuKoppel(); shotPaneel();
+terugblikPaneel();   // tekenAlles() draait niet bij het opstarten
 GETEKEND={team:true};
 laadVersies(); teamscore(); watchlist(); vulVgl(); markt(); doel(); versies(); rotatiePaneel(); tekenStuur();
 bronAlarm(); versheidTonen();

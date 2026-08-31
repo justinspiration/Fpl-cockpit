@@ -1,54 +1,152 @@
 {
-  "_status": "Gecorrigeerd 26-08-2026 tegen FPL API /entry/258669/event/1/picks/. Het vorige bestand (bijgewerkt 19-08) klopte niet meer: Justin maakte vlak voor de GW1-deadline (21-08) nog transfers die nooit zijn doorgevoerd in dit bestand. Verschil: Kinsky, O'Reilly en Brobbey kwamen in de basis voor Verbruggen, White en João Pedro; Ndiaye en Davis kwamen op de bank voor Groß en Diop/Ballard. Alle 15 spelers en prijzen nu 1-op-1 uit de API, iedereen status 'a' (fit).",
-  "bijgewerkt": "2026-08-26",
-  "teamnaam": "Reijning Champion",
-  "managernaam": "Mark Flekken met de F",
-  "entry_id": 258669,
-  "league_id": 81158,
-  "gameweek": 1,
-  "deadline_nl": "2026-08-21 19:30 CEST",
-  "budget": { "totaal": 100.0, "besteed": 100.0, "bank": 0.0 },
-  "formatie": "3-4-3",
-
-  "basis": [
-    { "naam": "Kinsky",        "club": "TOT", "pos": "GKP", "prijs": 4.5, "id": 496 },
-    { "naam": "Calafiori",     "club": "ARS", "pos": "DEF", "prijs": 5.5, "id": 8 },
-    { "naam": "Shaw",          "club": "MUN", "pos": "DEF", "prijs": 4.5, "id": 423 },
-    { "naam": "O'Reilly",      "club": "MCI", "pos": "DEF", "prijs": 6.5, "id": 387 },
-    { "naam": "Gibbs-White",   "club": "NFO", "pos": "MID", "prijs": 8.0, "id": 480 },
-    { "naam": "Mbeumo",        "club": "MUN", "pos": "MID", "prijs": 8.0, "id": 427, "rol": "vice-captain" },
-    { "naam": "Semenyo",       "club": "MCI", "pos": "MID", "prijs": 8.5, "id": 397 },
-    { "naam": "Szoboszlai",    "club": "LIV", "pos": "MID", "prijs": 7.0, "id": 368 },
-    { "naam": "Haaland",       "club": "MCI", "pos": "FWD", "prijs": 15.5, "id": 411, "rol": "captain" },
-    { "naam": "Brobbey",       "club": "SUN", "pos": "FWD", "prijs": 6.0, "id": 552 },
-    { "naam": "Calvert-Lewin", "club": "LEE", "pos": "FWD", "prijs": 6.0, "id": 346 }
-  ],
-
-  "bank": [
-    { "naam": "Verbruggen", "club": "BHA", "pos": "GKP", "prijs": 4.5, "id": 109, "bankplek": "GK" },
-    { "naam": "White",      "club": "ARS", "pos": "DEF", "prijs": 5.5, "id": 10,  "bankplek": 1 },
-    { "naam": "Ndiaye",     "club": "EVE", "pos": "MID", "prijs": 6.0, "id": 237, "bankplek": 2 },
-    { "naam": "Davis",      "club": "IPS", "pos": "DEF", "prijs": 4.0, "id": 305, "bankplek": 3 }
-  ],
-
-  "chips": {
-    "actief_gw1": "Bench Boost",
-    "beschikbaar_helft_1": ["Triple Captain", "Wildcard", "Free Hit"],
-    "gebruikt": ["Bench Boost (GW1)"],
-    "deadline_eerste_set": "GW19, za 2 januari 2027 14:30 GMT"
+ "_status": "Wildcard-concept voor GW3, ingevoerd 31-08-2026 vanaf Justins schermafbeelding van de Pick Team-pagina en geverifieerd tegen FPL API /bootstrap-static/ (id, club, positie, prijs). concept_gw=3 betekent: dit is de nog niet bevestigde draft voor GW3 en gaat voor op de laatst bevestigde picks uit /entry/258669/event/2/picks/.",
+ "bijgewerkt": "2026-08-31",
+ "teamnaam": "Reijning Champion",
+ "managernaam": "Mark Flekken met de F",
+ "entry_id": 258669,
+ "league_id": 81158,
+ "gameweek": 3,
+ "deadline_nl": "2026-09-04 19:30 CEST",
+ "budget": {
+  "totaal": 100.1,
+  "besteed": 99.9,
+  "bank": 0.2
+ },
+ "formatie": "4-4-2",
+ "basis": [
+  {
+   "naam": "Verbruggen",
+   "club": "BHA",
+   "pos": "GKP",
+   "prijs": 4.5,
+   "id": 109
   },
-
-  "gw1_resultaat": {
-    "punten": 63,
-    "overall_rank": 1282717,
-    "beste_uit_eigen_15_zonder_bboost": 66,
-    "toelichting": "Beste haalbare formatie+aanvoerder uit deze 15 (los van het Bench Boost-effect) was 66; verschil van 3 punten is normale ruis, geen paniek."
+  {
+   "naam": "Calafiori",
+   "club": "ARS",
+   "pos": "DEF",
+   "prijs": 5.6,
+   "id": 8
   },
-
-  "notities": [
-    "Squad is legaal: exact 100.0m, 2/5/5/3, geen club boven 3 spelers",
-    "Bench Boost is AL gebruikt in GW1 — niet meer beschikbaar deze seizoenshelft",
-    "Clubverdeling: ARS 2, MCI 2, MUN 2, de rest 1",
-    "Gibbs-White (id 480): knieblessure (MCL overrekt, geen structurele schade), 75% speelkans voor GW2 vs Liverpool (U). Bron: FPL API bootstrap-static + nieuwsberichten 26-08-2026. Monitoren richting vrijdag."
-  ]
+  {
+   "naam": "De Cuyper",
+   "club": "BHA",
+   "pos": "DEF",
+   "prijs": 4.6,
+   "id": 115
+  },
+  {
+   "naam": "Hall",
+   "club": "NEW",
+   "pos": "DEF",
+   "prijs": 5.0,
+   "id": 449
+  },
+  {
+   "naam": "Davis",
+   "club": "IPS",
+   "pos": "DEF",
+   "prijs": 4.0,
+   "id": 305
+  },
+  {
+   "naam": "B.Fernandes",
+   "club": "MUN",
+   "pos": "MID",
+   "prijs": 12.0,
+   "id": 426
+  },
+  {
+   "naam": "Schade",
+   "club": "BRE",
+   "pos": "MID",
+   "prijs": 6.0,
+   "id": 94
+  },
+  {
+   "naam": "Cherki",
+   "club": "MCI",
+   "pos": "MID",
+   "prijs": 7.6,
+   "id": 399,
+   "rol": "vice-captain"
+  },
+  {
+   "naam": "Palmer",
+   "club": "CHE",
+   "pos": "MID",
+   "prijs": 9.6,
+   "id": 154
+  },
+  {
+   "naam": "João Pedro",
+   "club": "CHE",
+   "pos": "FWD",
+   "prijs": 7.6,
+   "id": 165
+  },
+  {
+   "naam": "Haaland",
+   "club": "MCI",
+   "pos": "FWD",
+   "prijs": 15.5,
+   "id": 411,
+   "rol": "captain"
+  }
+ ],
+ "bank": [
+  {
+   "naam": "Kinsky",
+   "club": "TOT",
+   "pos": "GKP",
+   "prijs": 4.5,
+   "id": 496
+  },
+  {
+   "naam": "Konsa",
+   "club": "ARS",
+   "pos": "DEF",
+   "prijs": 4.4,
+   "id": 31
+  },
+  {
+   "naam": "Slater",
+   "club": "HUL",
+   "pos": "MID",
+   "prijs": 4.5,
+   "id": 290
+  },
+  {
+   "naam": "Walle Egeli",
+   "club": "IPS",
+   "pos": "FWD",
+   "prijs": 4.5,
+   "id": 321
+  }
+ ],
+ "chips": {
+  "actief_gw1": "Bench Boost",
+  "beschikbaar_helft_1": [
+   "Triple Captain",
+   "Free Hit"
+  ],
+  "gebruikt": [
+   "Bench Boost (GW1)",
+   "Wildcard (GW3, actief)"
+  ],
+  "deadline_eerste_set": "GW19, za 2 januari 2027 14:30 GMT"
+ },
+ "gw1_resultaat": {
+  "punten": 63,
+  "overall_rank": 1282717,
+  "beste_uit_eigen_15_zonder_bboost": 66,
+  "toelichting": "Beste haalbare formatie+aanvoerder uit deze 15 (los van het Bench Boost-effect) was 66; verschil van 3 punten is normale ruis, geen paniek."
+ },
+ "notities": [
+  "Squad is legaal: exact 100.0m, 2/5/5/3, geen club boven 3 spelers",
+  "Bench Boost is AL gebruikt in GW1 — niet meer beschikbaar deze seizoenshelft",
+  "Clubverdeling: ARS 2, MCI 2, MUN 2, de rest 1",
+  "Gibbs-White (id 480): knieblessure (MCL overrekt, geen structurele schade), 75% speelkans voor GW2 vs Liverpool (U). Bron: FPL API bootstrap-static + nieuwsberichten 26-08-2026. Monitoren richting vrijdag."
+ ],
+ "concept_gw": 3
 }
