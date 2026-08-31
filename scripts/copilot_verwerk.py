@@ -106,10 +106,24 @@ def main():
     for r, kand in ambigu:
         print("  ambigu: %s (%s) — kandidaten: %s"
               % (r["n"], r["pos"], [tm[e["team"]] for e in kand]), file=sys.stderr)
+    # Een rij die aan meerdere spelers kan horen wordt NIET gegokt — een
+    # verwisseling is erger dan een ontbrekende speler. Maar de hele update
+    # weggooien om een handvol dubbelzinnige namen is te streng: dan verliezen
+    # zeshonderd goede rijen het van twee twijfelgevallen, en valt het hele
+    # dashboard terug op oudere cijfers. Die paar slaan we over; alleen als het
+    # er structureel veel zijn is er iets mis met het ophalen zelf en stoppen
+    # we alsnog.
+    deel = len(ambigu) / max(1, len(rijen))
+    if ambigu and deel > 0.05:
+        sys.exit("AFGEBROKEN: %d van de %d rijen (%.0f%%) konden aan meerdere spelers horen. "
+                 "Dat is te veel om aan naamdubbels te wijten — controleer het ophalen."
+                 % (len(ambigu), len(rijen), deel * 100))
     if ambigu:
-        sys.exit("AFGEBROKEN: %d rijen konden aan meerdere spelers horen. "
-                 "Liever geen update dan een verwisseling." % len(ambigu))
-    overgeslagen = [{"n": r["n"], "pos": r["pos"]} for r, _ in onbekend]
+        print("  %d dubbelzinnige rijen overgeslagen (van de %d); de rest is wel bijgewerkt"
+              % (len(ambigu), len(rijen)), file=sys.stderr)
+    overgeslagen = ([{"n": r["n"], "pos": r["pos"]} for r, _ in onbekend]
+                    + [{"n": r["n"], "pos": r["pos"], "reden": "naam past op meerdere spelers"}
+                       for r, _ in ambigu])
 
     zonder = [e for e in bs["elements"] if e["id"] not in gebruikt]
     data = {

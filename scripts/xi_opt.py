@@ -97,7 +97,15 @@ def verbeter(db, ids, budget_cent, gws, per_positie=24, goedkoop=12, rondes=5, m
 
     bruikbaar = [p for p in db
                  if p.get("status", "a") not in ("i", "s", "u")
-                 and (p.get("cpmin") or 90) >= minuten]
+                 # LET OP: hier stond "or 90". Een speler zonder minuten-
+                 # verwachting werd daarmee behandeld als iemand die negentig
+                 # minuten speelt — onbekend werd stilzwijgend gelezen als
+                 # gegarandeerde basisspeler. Zo kwam een keeper zonder enige
+                 # projectie in de ideale selectie: hij kost weinig en levert
+                 # per definitie nul, dus hij "verspilt" geen budget.
+                 and (p.get("cpmin") or 0) >= minuten
+                 # en zonder projectie valt er niets te kiezen
+                 and any(v for v in (p.get("gw") or {}).values())]
     sterk, spot = {}, {}
     for P in FORMATIE:
         kand = [p for p in bruikbaar if p["p"] == P]

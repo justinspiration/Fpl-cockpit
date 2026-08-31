@@ -72,6 +72,13 @@ def bruikbaar(p):
         return False
     if (p.get("cpmin") or 0) < 45:
         return False
+    # Een speler zonder enige projectie is geen goedkope bankoptie maar een
+    # onbekende. De bouwer koos hem juist gráág — hij kost weinig en levert
+    # per definitie nul, dus hij "verspilt" geen budget. Maar die nul komt uit
+    # ontbrekende data, niet uit de verwachting dat hij niet speelt. Blind
+    # kiezen is geen strategie.
+    if not any(v for v in (p.get("gw") or {}).values()):
+        return False
     return True
 
 
@@ -121,6 +128,36 @@ def tabel_voor_positie(kandidaten, aantal, max_cent, breedte):
                 dp[n][c].sort(key=lambda x: -x[0])
                 del dp[n][c][breedte:]
     return dp
+
+
+def voorfilter(db, vanaf, gws, per_positie=45):
+    """Snoei de kandidatenlijst voordat de tabellen worden opgebouwd.
+
+    De bouwer kreeg alle 620 spelers mee. Zolang de projecties voorbij
+    gameweek 9 nog bijna nul waren viel dat niet op — de dominantiesnoei
+    veegde er dan vanzelf honderden weg. Nu die cijfers echt zijn, is het een
+    volwaardig zoekprobleem geworden en liep één bouw op naar een minuut; vier
+    horizonnen achter elkaar duurden daarmee langer dan de hele verversing mag
+    kosten.
+
+    Per positie blijven de sterksten over, plus per prijspunt de beste speler.
+    Dat laatste is essentieel: zonder een goedkope optie op elk prijspunt kun
+    je een dure aankoop elders niet meer financieren. Getest tegen de volledige
+    lijst over vier horizonnen: exact dezelfde uitkomst.
+    """
+    uit = []
+    for pos in FORMATIE:
+        lijst = [p for p in db if p["p"] == pos and bruikbaar(p)]
+        lijst.sort(key=lambda p: -opbrengst(p, vanaf, gws))
+        beste_per_prijs = {}
+        for p in lijst:
+            k = int(round(p["c"] * 10))
+            if k not in beste_per_prijs:
+                beste_per_prijs[k] = p
+        gekozen = {id(p): p for p in lijst[:per_positie]}
+        gekozen.update({id(p): p for p in beste_per_prijs.values()})
+        uit.extend(gekozen.values())
+    return uit
 
 
 def bouw(db, budget, vanaf, gws, breedte=60, vast=()):

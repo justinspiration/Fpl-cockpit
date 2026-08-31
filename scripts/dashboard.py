@@ -793,6 +793,9 @@ def build():
     #               beroerd programma daarna.
     chipteams = None
     try:
+        if _hergebruik and _cache.get("chipteams"):
+            chipteams = _cache["chipteams"]
+            raise StopIteration
         import bouwer as BW
         budget_nu = ((sum(x["c"] for x in squad) +
                       ((entry_meta or {}).get("last_deadline_bank") or 0) / 10.0)
@@ -894,7 +897,15 @@ def build():
             wanneer = {"freehit": [], "wildcard": []}
             for g2 in kandidaten_gw:
                 # Free Hit: geldt precies één gameweek, dus bouwen op die week.
-                r1 = BW.bouw(db, budget_nu, g2, 1, breedte=25)
+                # Deze lus draait twee bouwopdrachten per gameweek over twaalf
+                # gameweeks: vierentwintig volledige optimalisaties. Op de hele
+                # database met breedte 25 was dat veruit de duurste stap van de
+                # verversing en de reden dat hij op GitHub in de tijdslimiet
+                # liep. Voorfilteren geeft dezelfde uitkomst; een smallere
+                # breedte kost hier hooguit een paar tienden op een getal dat
+                # bedoeld is om weken te vergelijken, niet om op te acteren.
+                kand1 = BW.voorfilter(db, g2, [g2])
+                r1 = BW.bouw(kand1, budget_nu, g2, 1, breedte=12)
                 if r1:
                     # De bouwer maximaliseert de som van vijftien; je stelt er elf
                     # op. Deze pas verschuift bankgeld naar de basis zolang de
@@ -911,7 +922,8 @@ def build():
                 # Wildcard: het team blijft staan, dus bouwen over vijf weken
                 # vanaf die gameweek — en vergelijken over diezelfde vijf weken.
                 venster = [g for g in range(g2, min(39, g2 + 5))]
-                r5 = BW.bouw(db, budget_nu, g2, len(venster), breedte=25)
+                kand5 = BW.voorfilter(db, g2, venster)
+                r5 = BW.bouw(kand5, budget_nu, g2, len(venster), breedte=12)
                 if r5:
                     ids5, _v5, _n5 = XI.verbeter(db, r5[2], int(round(budget_nu * 10)), venster)
                     sp5 = [dbmap[i] for i in ids5 if i in dbmap]
@@ -978,8 +990,32 @@ def build():
             chips_op.append({"naam": c.get("name"), "gw": g,
                              "helft": 1 if g <= 19 else 2})
 
+    # ── Zware berekeningen hergebruiken ──────────────────────────────────
+    # De verversing bouwt twee keer: eerst het dashboard, dan het nieuws
+    # erbij, dan opnieuw. De tweede keer verandert alleen dat nieuws, maar het
+    # hele optimalisatiewerk werd toch overgedaan — vier minuten die nergens
+    # toe leiden. Dit legt de uitkomst vast onder een vingerafdruk van de
+    # invoer; verandert er iets aan de projecties, de selectie of het budget,
+    # dan wordt er gewoon opnieuw gerekend.
+    import hashlib as _hl
+    _vinger = _hl.sha1(json.dumps({
+        "gw": gw,
+        "squad": sorted(x["id"] for x in squad) if squad else [],
+        "bank": (entry_meta or {}).get("last_deadline_bank"),
+        "proj": _hl.sha1(json.dumps(
+            {str(p["id"]): p["gw"] for p in db}, sort_keys=True).encode()).hexdigest(),
+    }, sort_keys=True).encode()).hexdigest()
+    _cachepad = os.path.join(STATE, "zwaar_cache.json")
+    _cache = _lees("zwaar_cache.json", {}) or {}
+    _hergebruik = _cache.get("_vinger") == _vinger
+    if _hergebruik:
+        print("  Zware berekeningen hergebruikt (invoer ongewijzigd)")
+
     ideaal = None
     try:
+        if _hergebruik and _cache.get("ideaal"):
+            ideaal = _cache["ideaal"]
+            raise StopIteration           # rest van dit blok overslaan
         import bouwer as BOUWER
         budget_totaal = (sum(x["c"] for x in squad) + ((entry_meta or {}).get("last_deadline_bank") or 0) / 10.0) if squad else 100.0
         # Vier horizonnen: deze gameweek, en dan drie steeds langere blikken.
@@ -988,14 +1024,54 @@ def build():
         import xi_opt as XI2
         import solver as SOLVER2
         for horizon in (1, 3, 5, 8):
-            r = BOUWER.bouw(db, budget_totaal, gw, horizon, breedte=40)
-            if not r:
+            # Breedte 40 kostte 32 seconden per horizon en leverde tegenover
+            # breedte 16 precies 0,3 punt op — op één gameweek, in een getal
+            # dat als bovengrens dient en niet als advies. Vier horizonnen
+            # duurden zo samen drie minuten, en dat is wat de verversing op
+            # GitHub over de tijd hielp. Met voorfilteren erbij: exact dezelfde
+            # uitkomst, een fractie van de tijd.
+            # De bouwer maximaliseert de som van vijftien; xi_opt klimt daarna
+            # naar de echte elftalscore. Die klim blijft in een dal hangen: bij
+            # een test gaf de vrije zoektocht 467 punten terwijl dezelfde
+            # zoektocht mét Haaland verplicht op 486 uitkwam — een oplossing die
+            # in de vrije ruimte gewoon bestond maar niet gevonden werd.
+            #
+            # Daarom meerdere startpunten: vrij, en met elk van de duurste
+            # spelers verplicht erin. Die dwingen de zoektocht een ander dal in.
+            # De beste uitkomst wint.
+            kandidaten = BOUWER.voorfilter(db, gw, horizon)
+            venster_i = [g for g in range(gw, min(39, gw + horizon))]
+            duur = sorted([p for p in db if BOUWER.bruikbaar(p) and p["c"] >= 9.0],
+                          key=lambda p: -BOUWER.opbrengst(p, gw, horizon))[:3]
+            pogingen = [()] + [(p["n"],) for p in duur]
+            beste_r, beste_ids, beste_score = None, None, -1.0
+            for vast in pogingen:
+                kand = list(kandidaten)
+                for n in vast:
+                    q = next((x for x in db if x["n"] == n), None)
+                    if q is not None and q not in kand:
+                        kand.append(q)
+                try:
+                    rr = BOUWER.bouw(kand, budget_totaal, gw, horizon, breedte=16, vast=list(vast))
+                except SystemExit:
+                    continue
+                if not rr:
+                    continue
+                try:
+                    kids, _a, _b = XI2.verbeter(db, rr[2], int(round(budget_totaal * 10)), venster_i)
+                except Exception:
+                    kids = rr[2]
+                score = sum(SOLVER2.beste_xi([dbmap[i] for i in kids if i in dbmap], g)[0]
+                            for g in venster_i)
+                if score > beste_score:
+                    beste_r, beste_ids, beste_score = rr, list(kids), score
+            if not beste_r:
                 continue
+            r = beste_r
             xp, clubs, ids, kost = r
             # Ook hier: de bouwer telt vijftien, je scoort er elf. Zonder deze
             # pas staat er een "haalbaar maximum" met miljoenen op de bank.
-            venster_i = [g for g in range(gw, min(39, gw + horizon))]
-            ids, _voor, _na = XI2.verbeter(db, ids, int(round(budget_totaal * 10)), venster_i)
+            ids = beste_ids
             kost = int(round(sum(dbmap[i]["c"] for i in ids if i in dbmap) * 10))
             xi_echt = sum(SOLVER2.beste_xi([dbmap[i] for i in ids if i in dbmap], g)[0]
                           for g in venster_i)
@@ -1014,8 +1090,20 @@ def build():
             ideaal["_methode"] = ("bouwer.py — exacte selectie van 15 binnen 2-5-5-3, "
                                   "max 3 per club en het budget. Alleen spelers met minstens "
                                   "45 verwachte minuten en zonder blessure- of schorsingsvlag.")
+    except StopIteration:
+        pass
+    except StopIteration:
+        pass
     except Exception as ex:
         ideaal = {"fout": str(ex)[:200]}
+
+    # uitkomst bewaren zodat de tweede bouw (met het nieuws erbij) hem hergebruikt
+    if not _hergebruik:
+        try:
+            json.dump({"_vinger": _vinger, "ideaal": ideaal, "chipteams": chipteams},
+                      open(_cachepad, "w", encoding="utf-8"))
+        except Exception:
+            pass
 
     # ---- multi-gameweek solver ----
     solverplan = None

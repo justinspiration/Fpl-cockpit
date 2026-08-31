@@ -71,6 +71,19 @@ const CLUB = {
   "southampton": "SOU", "sheffield utd": "SHU", "luton": "LUT", "norwich": "NOR",
 };
 
+
+/* Wachten met een grens — zie de toelichting in copilot_ophalen.js.
+   Antwoordt Chrome niet, dan wacht dit script anders oneindig en eet het de
+   hele runtijd van de verversing op. */
+function metLimiet(belofte, ms, wat) {
+  let t;
+  return Promise.race([
+    belofte.finally(() => clearTimeout(t)),
+    new Promise((_, rej) => { t = setTimeout(
+      () => rej(new Error(`geen antwoord van Chrome binnen ${ms / 1000}s bij ${wat}`)), ms); }),
+  ]);
+}
+
 async function startChrome() {
   const profiel = fs.mkdtempSync(path.join(os.tmpdir(), "fplodds-"));
   const args = [`--remote-debugging-port=${POORT}`, `--user-data-dir=${profiel}`,
@@ -91,14 +104,15 @@ async function verbind() {
   const doel = lijst.find((t) => t.type === "page");
   if (!doel) throw new Error("geen tabblad");
   const ws = new WebSocket(doel.webSocketDebuggerUrl);
-  await new Promise((res, rej) => { ws.onopen = res; ws.onerror = rej; });
+  await metLimiet(new Promise((res, rej) => { ws.onopen = res; ws.onerror = rej; }),
+                  20000, "het openen van de verbinding");
   let id = 0; const open = new Map();
   ws.onmessage = (e) => { const m = JSON.parse(e.data); if (m.id && open.has(m.id)) { open.get(m.id)(m); open.delete(m.id); } };
-  const stuur = (method, params = {}) => new Promise((res, rej) => {
+  const stuur = (method, params = {}) => metLimiet(new Promise((res, rej) => {
     const mijn = ++id;
     open.set(mijn, (m) => (m.error ? rej(new Error(m.error.message)) : res(m.result)));
     ws.send(JSON.stringify({ id: mijn, method, params }));
-  });
+  }), 45000, method);
   const ev = async (expr) => {
     const r = await stuur("Runtime.evaluate", { expression: expr, returnByValue: true, awaitPromise: true });
     if (r.exceptionDetails) throw new Error(r.exceptionDetails.text);

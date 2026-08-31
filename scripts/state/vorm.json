@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-08-29T17:46:47+00:00",
+ "_opgehaald": "2026-08-31T08:55:14+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -209,18 +209,8 @@
   "BRE": {
    "artikel": "2026–27 Brentford F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brentford_F.C._season",
-   "gespeeld": 8,
+   "gespeeld": 9,
    "laatste5": [
-    {
-     "datum": "2026-08-08",
-     "opp": "Rennes",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-08",
      "opp": "Rennes",
@@ -260,6 +250,16 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Second round"
+    },
+    {
+     "datum": "2026-08-30",
+     "opp": "Leeds United",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
@@ -267,27 +267,17 @@
     "W",
     "W",
     "W",
-    "W"
+    "G"
    ],
-   "vormpunten": 15,
+   "vormpunten": 13,
    "vormmax": 15,
-   "oefen": 3
+   "oefen": 2
   },
   "BHA": {
    "artikel": "2026–27 Brighton & Hove Albion F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brighton_%26_Hove_Albion_F.C._season",
-   "gespeeld": 7,
+   "gespeeld": 8,
    "laatste5": [
-    {
-     "datum": "2026-08-08",
-     "opp": "Roma",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-15",
      "opp": "Bologna",
@@ -327,34 +317,34 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Second leg"
+    },
+    {
+     "datum": "2026-08-30",
+     "opp": "Chelsea",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 4,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
     "W",
-    "W",
     "G",
     "W",
-    "W"
+    "W",
+    "V"
    ],
-   "vormpunten": 13,
+   "vormpunten": 10,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "CHE": {
    "artikel": "2026–27 Chelsea F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Chelsea_F.C._season",
-   "gespeeld": 8,
+   "gespeeld": 9,
    "laatste5": [
-    {
-     "datum": "2026-08-08",
-     "opp": "AC Milan",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "Indonesia Super Cup"
-    },
     {
      "datum": "2026-08-09",
      "opp": "Johor Darul Ta'zim",
@@ -394,11 +384,21 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Second round"
+    },
+    {
+     "datum": "2026-08-30",
+     "opp": "Brighton & Hove Albion",
+     "thuis": true,
+     "voor": 4,
+     "tegen": 3,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
-    "W",
     "G",
+    "W",
     "W",
     "W",
     "W"
@@ -567,18 +567,8 @@
   "FUL": {
    "artikel": "2026–27 Fulham F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Fulham_F.C._season",
-   "gespeeld": 8,
+   "gespeeld": 9,
    "laatste5": [
-    {
-     "datum": "2026-08-07",
-     "opp": "Crystal Palace",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-12",
      "opp": "Málaga",
@@ -618,18 +608,28 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Second round"
+    },
+    {
+     "datum": "2026-08-30",
+     "opp": "Sunderland",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
-    "V",
     "G",
     "W",
     "V",
-    "W"
+    "W",
+    "V"
    ],
    "vormpunten": 7,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "HUL": {
    "artikel": "2026–27 Hull City A.F.C. season",
@@ -701,18 +701,8 @@
   "IPS": {
    "artikel": "2026–27 Ipswich Town F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Ipswich_Town_F.C._season",
-   "gespeeld": 7,
+   "gespeeld": 8,
    "laatste5": [
-    {
-     "datum": "2026-08-01",
-     "opp": "Wycombe Wanderers",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-04",
      "opp": "Le Havre AC",
@@ -752,6 +742,16 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Second round"
+    },
+    {
+     "datum": "2026-08-30",
+     "opp": "Manchester United",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 5,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
@@ -759,27 +759,17 @@
     "W",
     "W",
     "W",
-    "W"
+    "V"
    ],
-   "vormpunten": 15,
+   "vormpunten": 12,
    "vormmax": 15,
-   "oefen": 3
+   "oefen": 2
   },
   "LEE": {
    "artikel": "2026–27 Leeds United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Leeds_United_F.C._season",
-   "gespeeld": 8,
+   "gespeeld": 9,
    "laatste5": [
-    {
-     "datum": "2026-08-08",
-     "opp": "RB Leipzig",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-12",
      "opp": "Manchester United",
@@ -819,18 +809,28 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-08-30",
+     "opp": "Brentford",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
-    "W",
     "G",
     "W",
     "W",
-    "W"
+    "W",
+    "G"
    ],
-   "vormpunten": 13,
+   "vormpunten": 11,
    "vormmax": 15,
-   "oefen": 3
+   "oefen": 2
   },
   "LIV": {
    "artikel": "2026–27 Liverpool F.C. season",
@@ -969,19 +969,8 @@
   "MUN": {
    "artikel": "2026–27 Manchester United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_United_F.C._season",
-   "gespeeld": 7,
+   "gespeeld": 8,
    "laatste5": [
-    {
-     "datum": "2026-08-01",
-     "opp": "Atlético Madrid",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Pre-season and friendlies",
-     "neutraal": true
-    },
     {
      "datum": "2026-08-08",
      "opp": "Paris Saint-Germain",
@@ -1025,34 +1014,35 @@
      "soort": "officieel",
      "toernooi": "Matches",
      "neutraal": false
+    },
+    {
+     "datum": "2026-08-30",
+     "opp": "Ipswich Town",
+     "thuis": true,
+     "voor": 5,
+     "tegen": 2,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "Matches",
+     "neutraal": false
     }
    ],
    "vorm": [
-    "W",
     "G",
     "G",
     "V",
-    "V"
+    "V",
+    "W"
    ],
    "vormpunten": 5,
    "vormmax": 15,
-   "oefen": 4
+   "oefen": 3
   },
   "NEW": {
    "artikel": "2026–27 Newcastle United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Newcastle_United_F.C._season",
-   "gespeeld": 7,
+   "gespeeld": 8,
    "laatste5": [
-    {
-     "datum": "2026-08-12",
-     "opp": "Everton",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 3,
-     "uit": "V",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-15",
      "opp": "Bayer Leverkusen",
@@ -1092,18 +1082,28 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Second round"
+    },
+    {
+     "datum": "2026-08-29",
+     "opp": "Tottenham Hotspur",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
     "V",
-    "V",
     "G",
     "G",
+    "W",
     "W"
    ],
-   "vormpunten": 5,
+   "vormpunten": 8,
    "vormmax": 15,
-   "oefen": 1
+   "oefen": 0
   },
   "NFO": {
    "artikel": "2026–27 Nottingham Forest F.C. season",
@@ -1175,7 +1175,7 @@
   "TOT": {
    "artikel": "2026–27 Tottenham Hotspur F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Tottenham_Hotspur_F.C._season",
-   "gespeeld": 4,
+   "gespeeld": 5,
    "laatste5": [
     {
      "datum": "2026-07-26",
@@ -1216,33 +1216,34 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Second round"
+    },
+    {
+     "datum": "2026-08-29",
+     "opp": "Newcastle United",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
     "W",
     "G",
     "V",
-    "W"
+    "W",
+    "V"
    ],
    "vormpunten": 7,
-   "vormmax": 12,
+   "vormmax": 15,
    "oefen": 1
   },
   "SUN": {
    "artikel": "2026–27 Sunderland A.F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Sunderland_A.F.C._season",
-   "gespeeld": 6,
+   "gespeeld": 7,
    "laatste5": [
-    {
-     "datum": "2026-07-30",
-     "opp": "Leeds United",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-02",
      "opp": "Wrexham",
@@ -1282,18 +1283,28 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "1"
+    },
+    {
+     "datum": "2026-08-30",
+     "opp": "Fulham",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
-    "V",
     "W",
     "V",
     "W",
-    "V"
+    "V",
+    "W"
    ],
-   "vormpunten": 6,
+   "vormpunten": 9,
    "vormmax": 15,
-   "oefen": 4
+   "oefen": 3
   }
  }
 }

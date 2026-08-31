@@ -62,6 +62,26 @@ const wacht = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function log(...a) { console.log("[copilot]", ...a); }
 
+
+/* Wachten met een grens.
+
+   Hieronder stonden twee beloftes die alleen afliepen als Chrome antwoordde:
+   het openen van de WebSocket, en elk commando dat erover ging. Antwoordt de
+   browser niet — een vastgelopen renderer, een pagina die op een datacenter-IP
+   anders reageert — dan wacht het script tot in de eeuwigheid. Lokaal viel dat
+   nooit op omdat er altijd binnen een seconde antwoord kwam; op GitHub at het
+   de hele runtijd op en werd de complete verversing afgebroken.
+
+   Alles wat op de browser wacht loopt nu langs deze grens. */
+function metLimiet(belofte, ms, wat) {
+  let t;
+  return Promise.race([
+    belofte.finally(() => clearTimeout(t)),
+    new Promise((_, rej) => { t = setTimeout(
+      () => rej(new Error(`geen antwoord van Chrome binnen ${ms / 1000}s bij ${wat}`)), ms); }),
+  ]);
+}
+
 /* ---------- Chrome starten ---------- */
 async function startChrome() {
   const profiel = fs.mkdtempSync(path.join(os.tmpdir(), "fplcopilot-"));
@@ -93,7 +113,8 @@ async function verbind() {
   let doel = lijst.find((t) => t.type === "page");
   if (!doel) throw new Error("geen tabblad gevonden");
   const ws = new WebSocket(doel.webSocketDebuggerUrl);
-  await new Promise((res, rej) => { ws.onopen = res; ws.onerror = rej; });
+  await metLimiet(new Promise((res, rej) => { ws.onopen = res; ws.onerror = rej; }),
+                  20000, "het openen van de verbinding");
 
   let id = 0;
   const open = new Map();
@@ -102,11 +123,11 @@ async function verbind() {
     if (m.id && open.has(m.id)) { open.get(m.id)(m); open.delete(m.id); }
   };
   const stuur = (method, params = {}) =>
-    new Promise((res, rej) => {
+    metLimiet(new Promise((res, rej) => {
       const mijn = ++id;
       open.set(mijn, (m) => (m.error ? rej(new Error(m.error.message)) : res(m.result)));
       ws.send(JSON.stringify({ id: mijn, method, params }));
-    });
+    }), 45000, method);
 
   const evalueer = async (expr) => {
     const r = await stuur("Runtime.evaluate", {
