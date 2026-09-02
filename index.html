@@ -7159,6 +7159,9 @@ function mijnpagina(){
   VLAK="team";
   if(!MP) laadMP();
   const raster=$("#mpraster"); if(!raster) return;
+  // eerst alles teruggeven wat we vorige keer geleend hadden; anders tekenen de
+  // bronfuncties hierboven in panelen die nog in een oude tegel hangen
+  mpTeruggeven();
 
   // Alleen de bronpanelen tekenen die je daadwerkelijk hebt gekozen. Alle
   // zestien tekenen kostte een kwart seconde, ook als er vier blokken stonden.
@@ -7215,7 +7218,11 @@ function mijnpagina(){
     if(!b) return;
     if(b.teken){ b.teken(h); return; }
     const bronEl=document.querySelector(b.bron);
-    if(bronEl) h.innerHTML=bronEl.innerHTML;
+    if(bronEl){
+      // onthouden waar hij vandaan komt, zodat hij exact terug kan
+      MPGELEEND.push({el:bronEl, ouder:bronEl.parentNode, na:bronEl.nextSibling});
+      h.appendChild(bronEl);
+    }
     else h.innerHTML=`<div class="leegtxt">Dit blok heeft nog geen gegevens.</div>`;
   });
 
@@ -9360,8 +9367,29 @@ function paneelTekenen(t){
   else if(t==="profiel") profiel();
   GETEKEND[t]=true;
 }
+/* ---- Mijn pagina: echte panelen lenen in plaats van kopiëren ----
+   Hier zat een echte bug. Mijn pagina vulde elke tegel met
+   `h.innerHTML = bronEl.innerHTML` — een KOPIE van de opmaak. Alle klik- en
+   sleepacties in dit dashboard worden rechtstreeks op de elementen gezet
+   (`el.onclick = ...`), en die gaan bij zo'n kopie verloren. Je kreeg dus een
+   plaatje van je paneel in plaats van een werkend paneel: niets reageerde.
+
+   De oplossing is het echte element te VERPLAATSEN naar de tegel. Dan blijft
+   het dezelfde DOM-knoop, houdt het al zijn handlers, en blijft
+   `document.querySelector("#squad")` hem gewoon vinden waar hij ook hangt.
+   Voorwaarde is dat we hem terugzetten zodra je de pagina verlaat, anders is
+   het paneel weg op zijn eigen tabblad. Dat doet mpTeruggeven(). */
+let MPGELEEND=[];
+function mpTeruggeven(){
+  while(MPGELEEND.length){
+    const {el,ouder,na}=MPGELEEND.pop();
+    try{ if(ouder&&el) ouder.insertBefore(el, na&&na.parentNode===ouder?na:null); }
+    catch(e){}
+  }
+}
 function gaNaar(t){
   if(!VLAKNAAM[t]) return;
+  if(t!=="mijnpagina") mpTeruggeven();
   document.querySelectorAll("#hoofdtabs button").forEach(x=>
     x.setAttribute("aria-selected", x.dataset.tab===t));
   document.querySelectorAll(".tabpaneel").forEach(p=>
@@ -13086,6 +13114,24 @@ function keurSquad(g){
   const budget=budgetIn(g||PLANGW);
   if(budget<-0.001) fouten.push({kort:`£${budget.toFixed(1)}m tekort`,
     tekst:`Je staat £${Math.abs(budget).toFixed(1)}m in de min. Verkoop iemand of kies een goedkopere speler.`});
+
+  /* 4b. past dit concept nog binnen je ECHTE budget?
+     budgetIn() leidt je budget af uit de selectie die geladen is: wat je hebt is
+     per definitie wat je kunt betalen. Dat klopt zolang je binnen een bestaande
+     selectie schuift, maar niet voor een wildcard-concept dat je zelf hebt
+     ingevoerd. Prijzen bewegen dagelijks; een draft die gisteren precies paste,
+     kan vandaag te duur zijn. Dan zegt de balk "£0,0m in de bank" en merk je pas
+     bij FPL zelf dat het niet kan. Daarom hier de vergelijking met wat de API
+     zegt dat je te besteden hebt. */
+  if(D.concept && D.entry){
+    const echt=(D.entry.waarde||0)+(D.entry.bank||0);
+    const kost=l.reduce((a,p)=>a+p.c,0);
+    if(kost>echt+0.001) fouten.push({kort:`£${(kost-echt).toFixed(1)}m te duur`,
+      tekst:`Dit concept kost £${kost.toFixed(1)}m terwijl je £${echt.toFixed(1)}m te besteden hebt `
+        +`(teamwaarde £${(D.entry.waarde||0).toFixed(1)}m plus £${(D.entry.bank||0).toFixed(1)}m bank). `
+        +`Je komt £${(kost-echt).toFixed(1)}m tekort — waarschijnlijk zijn er prijzen gestegen `
+        +`sinds je deze selectie samenstelde. FPL laat je dit zo niet bevestigen.`});
+  }
 
   // 5. dingen die mogen maar zonde zijn
   const uit=xi.filter(p=>["i","s","u","n"].includes(p.status));

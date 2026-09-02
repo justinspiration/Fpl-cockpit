@@ -755,15 +755,28 @@ def build():
         tp = os.path.join(STATE, "team.json")
         if os.path.exists(tp):
             tj = json.load(open(tp))
+            # De aanvoerder stond alleen in een `rol`-veld per speler. Wordt het
+            # bestand met de hand bijgewerkt en schrijft iemand hem bovenaan als
+            # "aanvoerder": "Haaland", dan zag het dashboard geen aanvoerder en
+            # rekende het de hele gameweek zonder dubbele punten. Nu tellen beide
+            # schrijfwijzen, met het rolveld als de sterkste.
+            _capnaam = (tj.get("aanvoerder") or "").lower()
+            _vicenaam = (tj.get("vice") or "").lower()
             n = 1
             for grp in ("basis", "bank"):
                 for pl in tj.get(grp, []) or []:
                     d = next((x for x in db if x["n"].lower() == pl["naam"].lower()
                               and x["t"] == pl["club"]), None)
                     if d:
-                        squad.append(dict(d, slot=n, cap=pl.get("rol") == "captain",
-                                          vice=pl.get("rol") == "vice-captain"))
+                        nm = (pl.get("naam") or "").lower()
+                        squad.append(dict(
+                            d, slot=n,
+                            cap=(pl.get("rol") == "captain") or (bool(_capnaam) and nm == _capnaam),
+                            vice=(pl.get("rol") == "vice-captain") or (bool(_vicenaam) and nm == _vicenaam)))
                     n += 1
+            if not any(p.get("cap") for p in squad):
+                print("  LET OP: geen aanvoerder in team.json — zet 'rol': 'captain' "
+                      "bij een speler of 'aanvoerder': '<naam>' bovenaan het bestand")
 
     # ---- mini-league ----
     league = None
@@ -1469,6 +1482,7 @@ def build():
         # advies verderop rust op een andere bron.
         "copilot_grens": cp_laatste,
         "bronkeuring": keuringen,
+        "concept": _concept,
         "terugblik": terugblik,
         "historie": _lees("historie.json", {}) or {},
         "copilot_meta": {"aantal": len(copilot.get("spelers", {})),

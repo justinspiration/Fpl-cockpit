@@ -1,6 +1,6 @@
 {
- "_status": "Wildcard-concept voor GW3, ingevoerd 31-08-2026 vanaf Justins schermafbeelding van de Pick Team-pagina en geverifieerd tegen FPL API /bootstrap-static/ (id, club, positie, prijs). concept_gw=3 betekent: dit is de nog niet bevestigde draft voor GW3 en gaat voor op de laatst bevestigde picks uit /entry/258669/event/2/picks/.",
- "bijgewerkt": "2026-08-31",
+ "_status": "Wildcard-concept voor GW3, ingevoerd 02-09-2026 vanaf Justins schermafbeelding van de Transfers-pagina en geverifieerd tegen FPL API /bootstrap-static/ (id, club, positie, prijs). LET OP: vijf spelers staan in de API £0,1m hoger dan op de schermafbeelding (Calafiori, De Cuyper, Hall, Cherki, Joao Pedro) — de prijzen zijn na het maken van de afbeelding gestegen. De hier vermelde prijzen zijn de LEVENDE prijzen. concept_gw=3 betekent: nog niet bevestigde draft, gaat voor op de picks uit /entry/258669/event/2/picks/.",
+ "bijgewerkt": "2026-09-02",
  "teamnaam": "Reijning Champion",
  "managernaam": "Mark Flekken met de F",
  "entry_id": 258669,
@@ -9,8 +9,8 @@
  "deadline_nl": "2026-09-04 19:30 CEST",
  "budget": {
   "totaal": 100.1,
-  "besteed": 99.9,
-  "bank": 0.2
+  "besteed": 100.2,
+  "bank": -0.1
  },
  "formatie": "4-4-2",
  "basis": [
@@ -29,18 +29,18 @@
    "id": 8
   },
   {
-   "naam": "De Cuyper",
-   "club": "BHA",
-   "pos": "DEF",
-   "prijs": 4.6,
-   "id": 115
-  },
-  {
    "naam": "Hall",
    "club": "NEW",
    "pos": "DEF",
-   "prijs": 5.0,
+   "prijs": 5.1,
    "id": 449
+  },
+  {
+   "naam": "De Cuyper",
+   "club": "BHA",
+   "pos": "DEF",
+   "prijs": 4.7,
+   "id": 115
   },
   {
    "naam": "Davis",
@@ -54,36 +54,29 @@
    "club": "MUN",
    "pos": "MID",
    "prijs": 12.0,
-   "id": 426
-  },
-  {
-   "naam": "Schade",
-   "club": "BRE",
-   "pos": "MID",
-   "prijs": 6.0,
-   "id": 94
+   "id": 426,
+   "rol": "vice-captain"
   },
   {
    "naam": "Cherki",
    "club": "MCI",
    "pos": "MID",
-   "prijs": 7.6,
-   "id": 399,
-   "rol": "vice-captain"
+   "prijs": 7.7,
+   "id": 399
   },
   {
-   "naam": "Palmer",
-   "club": "CHE",
+   "naam": "Szoboszlai",
+   "club": "LIV",
    "pos": "MID",
-   "prijs": 9.6,
-   "id": 154
+   "prijs": 7.0,
+   "id": 368
   },
   {
-   "naam": "João Pedro",
-   "club": "CHE",
-   "pos": "FWD",
-   "prijs": 7.6,
-   "id": 165
+   "naam": "Groß",
+   "club": "BHA",
+   "pos": "MID",
+   "prijs": 5.5,
+   "id": 124
   },
   {
    "naam": "Haaland",
@@ -92,6 +85,13 @@
    "prijs": 15.5,
    "id": 411,
    "rol": "captain"
+  },
+  {
+   "naam": "João Pedro",
+   "club": "CHE",
+   "pos": "FWD",
+   "prijs": 7.7,
+   "id": 165
   }
  ],
  "bank": [
@@ -110,11 +110,11 @@
    "id": 31
   },
   {
-   "naam": "Slater",
-   "club": "HUL",
+   "naam": "Rogers",
+   "club": "CHE",
    "pos": "MID",
-   "prijs": 4.5,
-   "id": 290
+   "prijs": 7.5,
+   "id": 40
   },
   {
    "naam": "Walle Egeli",
@@ -148,5 +148,7 @@
   "Clubverdeling: ARS 2, MCI 2, MUN 2, de rest 1",
   "Gibbs-White (id 480): knieblessure (MCL overrekt, geen structurele schade), 75% speelkans voor GW2 vs Liverpool (U). Bron: FPL API bootstrap-static + nieuwsberichten 26-08-2026. Monitoren richting vrijdag."
  ],
- "concept_gw": 3
+ "concept_gw": 3,
+ "aanvoerder": "Haaland",
+ "vice": "B.Fernandes"
 }
