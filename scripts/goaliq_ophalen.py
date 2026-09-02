@@ -78,7 +78,7 @@ def main():
     gws = sorted({int(g) for v in per_club.values() for g in v})
     uit = {"bron": "GoalIQ (api.goaliq.app/api/fantasy)",
            "methode": meta.get("team_strength_source") or "Dixon-Coles op Understat",
-           "opgehaald": time.strftime("%Y-%m-%d %H:%M"),
+           "opgehaald": time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()),
            "gegenereerd": meta.get("generated_at"),
            "gameweeks": gws, "per_club": per_club}
     os.makedirs(STATE, exist_ok=True)

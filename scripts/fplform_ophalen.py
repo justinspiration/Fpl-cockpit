@@ -86,7 +86,7 @@ def main():
         raise SystemExit("[fplform] MISLUKT: slechts %d spelers gelezen, "
                          "verwacht 500+. Niets weggeschreven." % gewogen)
 
-    uit = {"bron": "FPL Form (fplform.com)", "opgehaald": time.strftime("%Y-%m-%d %H:%M"),
+    uit = {"bron": "FPL Form (fplform.com)", "opgehaald": time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()),
            "vanaf_gw": gw, "tot_gw": eind, "spelers": spelers}
     os.makedirs(STATE, exist_ok=True)
     pad = os.path.join(STATE, "xp_fplform.json")

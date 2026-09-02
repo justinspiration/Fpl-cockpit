@@ -183,9 +183,44 @@ async function pakClub(ev, club) {
 }
 
 /* ---------- hoofdprogramma ---------- */
+let cdp = null;
+
+/* Waarom dit bestaat.
+   Dit script werkt op Justins Mac en faalde tegelijk drie dagen lang op GitHub,
+   zonder dat we konden zien waarom: het log zei alleen "MISLUKT" met de melding.
+   Dat kan van alles zijn — Chrome niet gevonden, pagina niet geladen, of een
+   bot-controle die datacenter-adressen weert. Die laatste is bij een GitHub-runner
+   het meest waarschijnlijk, en herken je alleen aan wat er op de pagina STAAT. */
+async function storingsrapport(fout) {
+  if (!cdp) {
+    console.error("[copilot] geen browserverbinding — Chrome is niet opgestart. " +
+                  "Controleer de stap 'Chrome installeren' op de runner.");
+    return;
+  }
+  try {
+    const r = await metLimiet(cdp.stuur("Runtime.evaluate", {
+      expression: "JSON.stringify({t:document.title,u:location.href," +
+                  "n:document.querySelectorAll('tr').length," +
+                  "b:(document.body?document.body.innerText:'').slice(0,300)})",
+      returnByValue: true }), 10000, "storingsrapport");
+    const d = JSON.parse(r.result.value);
+    console.error("[copilot] pagina op het moment van de storing:");
+    console.error("[copilot]   url   :", d.u);
+    console.error("[copilot]   titel :", d.t);
+    console.error("[copilot]   rijen :", d.n);
+    console.error("[copilot]   tekst :", String(d.b).replace(/\s+/g, " ").slice(0, 260));
+    if (/just a moment|checking your browser|cloudflare|access denied|forbidden|captcha/i
+        .test(d.t + " " + d.b))
+      console.error("[copilot]   >> dit oogt als een bot-controle. Een GitHub-runner komt " +
+                    "van een datacenter-adres; die worden vaker geweerd dan een thuisverbinding.");
+  } catch (e2) {
+    console.error("[copilot] storingsrapport zelf mislukt:", e2.message);
+  }
+}
+
 (async () => {
   const { proc, profiel } = await startChrome();
-  let cdp;
+  cdp = null;
   try {
     cdp = await verbind();
     const { stuur, evalueer: ev } = cdp;
@@ -257,9 +292,29 @@ async function pakClub(ev, club) {
       log("LET OP: startgameweek niet op te halen, val terug op 1 —", e.message);
     }
 
+    /* Datum EN tijd. Er stond alleen een datum, en dat maakte de leeftijd tot
+       24 uur onnauwkeurig: een bestand van vanmiddag las als middernacht. Voor
+       een bron die elke drie uur zou moeten verversen is dat te grof.
+
+       En de stempel van de site zelf ("Updated 2 hours ago") is relatieve tekst.
+       Zodra je die opslaat betekent hij niets meer — over twee dagen staat er nog
+       steeds "2 hours ago". Daarom rekenen we hem hier meteen om naar een absoluut
+       moment, zolang we nog weten wanneer "nu" was. */
+    const nu = new Date();
+    let siteMoment = null;
+    if (stempel) {
+      const m = String(stempel).match(/(\d+)\s*(minute|minuut|hour|uur|day|dag)/i);
+      if (m) {
+        const n = Number(m[1]);
+        const eenheid = m[2].toLowerCase();
+        const ms = /min/.test(eenheid) ? 6e4 : /uur|hour/.test(eenheid) ? 36e5 : 864e5;
+        siteMoment = new Date(nu.getTime() - n * ms).toISOString().slice(0, 19).replace("T", " ");
+      }
+    }
     const uit = { _bron: "FPL Copilot — https://fplcopilot.com/expected-points",
-      _opgehaald: new Date().toISOString().slice(0, 10),
-      _copilot_bijgewerkt: stempel, _start_gw: startGW, _horizon: 8,
+      _opgehaald: nu.toISOString().slice(0, 19).replace("T", " "),
+      _copilot_bijgewerkt: stempel,
+      _copilot_moment: siteMoment, _start_gw: startGW, _horizon: 8,
       _methode: "Automatisch opgehaald met copilot_ophalen.js via Chrome DevTools Protocol. " +
         "Per positiefilter uitgelezen; de telling per filter moet overeenkomen met wat de site meldt, " +
         "anders breekt het script af. Dubbele naam+positie wordt opgelost via het clubfilter.",
@@ -268,9 +323,16 @@ async function pakClub(ev, club) {
       posities, clubVan };
     fs.writeFileSync(path.join(STATE, "copilot_ruw.json"), JSON.stringify(uit));
     log("geschreven: state/copilot_ruw.json");
+  } catch (e) {
+    /* Rapporteren VOORDAT het finally-blok Chrome afsluit. Stond dit in de
+       .catch() onderaan, dan was de verbinding al dicht en kregen we alleen
+       "geen antwoord van Chrome" — precies wat de test liet zien. */
+    await storingsrapport(e);
+    throw e;
   } finally {
     if (cdp) cdp.sluit();
     proc.kill();
     try { fs.rmSync(profiel, { recursive: true, force: true }); } catch {}
   }
-})().catch((e) => { console.error("[copilot] MISLUKT:", e.message); process.exit(1); });
+})().catch(() => process.exit(1));
+

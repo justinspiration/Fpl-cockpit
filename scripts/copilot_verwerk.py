@@ -129,6 +129,10 @@ def main():
     data = {
         "_bron": ruw["_bron"], "_opgehaald": ruw["_opgehaald"],
         "_copilot_bijgewerkt": ruw.get("_copilot_bijgewerkt", ""),
+        # Wanneer de SITE zelf voor het laatst bijwerkte, als absoluut moment.
+        # Hiermee kun je twee verschillende storingen uit elkaar houden: ligt het
+        # aan onze scraper, of publiceert Copilot zelf niets nieuws?
+        "_copilot_moment": ruw.get("_copilot_moment"),
         "_start_gw": ruw.get("_start_gw", 1), "_horizon": ruw.get("_horizon", 8),
         "_overgeslagen": overgeslagen,
         "_methode": ruw.get("_methode", "") + " Koppeling aan FPL-id door copilot_verwerk.py: "

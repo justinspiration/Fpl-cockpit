@@ -133,7 +133,7 @@ def main():
                  if g == lopend else ""))
 
     uit = {"bron": "FPL API /event/{gw}/live/",
-           "opgehaald": time.strftime("%Y-%m-%d %H:%M"),
+           "opgehaald": time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()),
            "gws": sorted(hebben), "lopend": lopend, "spelers": spelers}
     os.makedirs(STATE, exist_ok=True)
     json.dump(uit, open(PAD, "w", encoding="utf-8"), ensure_ascii=False)

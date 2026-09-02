@@ -21,7 +21,7 @@ Drie regels
    structureel hoger of lager; ongecorrigeerd middelen vergelijkt appels met peren.
 3. Elk gemengd getal draagt zijn opbouw mee. Geen cijfer zonder herkomst.
 """
-import json, os, time
+import calendar, json, os, time
 
 HIER = os.path.dirname(os.path.abspath(__file__))
 STATE = os.path.join(HIER, "state")
@@ -29,6 +29,25 @@ STATE = os.path.join(HIER, "state")
 # Hoe oud mag een bron zijn voordat we hem wantrouwen? Prijzen en blessures
 # verschuiven dagelijks; een projectie van vorige week is geen projectie meer.
 MAX_LEEFTIJD_UUR = 36.0
+# Boven deze grens doet een bron niet meer mee. Daartussen telt hij nog wel, maar
+# met een zichtbare kanttekening. Zonder dat onderscheid moet je kiezen tussen een
+# bron helemaal weggooien of hem stilzwijgend vertrouwen, en allebei is fout.
+HARDE_LEEFTIJD_UUR = 72.0
+
+# Elke bron schrijft zijn stempel onder een andere naam. Dit ging een keer mis:
+# xp_copilot.json gebruikt `_opgehaald` met een underscore, de keuring zocht naar
+# `opgehaald`, en dus werd de leeftijd van onze BELANGRIJKSTE bron nooit getoetst.
+# Hij stond 63 uur stil terwijl de keuring "toegelaten" meldde zonder leeftijd.
+STEMPELS = ("opgehaald", "_opgehaald", "generated_at", "gegenereerd",
+            "bijgewerkt", "_bijgewerkt")
+
+
+def _stempel(data):
+    for k in STEMPELS:
+        v = (data or {}).get(k)
+        if v:
+            return v
+    return None
 
 
 class Keuring:
@@ -55,9 +74,22 @@ def _leeftijd_uur(stempel):
     """Uren sinds een tijdstempel. None als het onleesbaar is."""
     if not stempel:
         return None
-    for vorm in ("%Y-%m-%d %H:%M", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d"):
+    # Elke bron schrijft zijn tijd nét anders. Dit ging al een keer mis: de
+    # parser kende "%Y-%m-%d %H:%M" maar niet dezelfde vorm mét seconden, en dus
+    # las hij een verse Copilot-stempel als onleesbaar — waarna de keuring
+    # "leeftijd onbekend" meldde over een bestand van vijf minuten oud.
+    # Daarom: van precies naar grof proberen, en de tekst per vorm afkappen op
+    # de lengte die bij die vorm hoort in plaats van altijd op 19 tekens.
+    tekst = str(stempel).strip()
+    for vorm, lengte in (("%Y-%m-%d %H:%M:%S", 19), ("%Y-%m-%dT%H:%M:%S", 19),
+                         ("%Y-%m-%d %H:%M", 16), ("%Y-%m-%dT%H:%M", 16),
+                         ("%Y-%m-%d", 10)):
         try:
-            return (time.time() - time.mktime(time.strptime(str(stempel)[:19], vorm))) / 3600.0
+            # timegm en niet mktime: alle stempels staan in UTC. mktime leest ze
+            # als lokale tijd, en dan is een bestand van vijf minuten oud in
+            # Nederland opeens "2 uur oud" terwijl het op een GitHub-runner
+            # (die in UTC draait) wel klopte. Dezelfde data, twee antwoorden.
+            return (time.time() - calendar.timegm(time.strptime(tekst[:lengte], vorm))) / 3600.0
         except (ValueError, OverflowError):
             continue
     return None
@@ -78,10 +110,19 @@ def keur_spelerbron(naam, data, bootstrap, id_veld="spelers", prijs_van=None,
         return Keuring(naam, False, "geen data")
 
     rijen = data[id_veld]
-    leeftijd = _leeftijd_uur(data.get("opgehaald") or data.get("generated_at"))
-    if leeftijd is not None and leeftijd > max_leeftijd:
-        return Keuring(naam, False, "%.0f uur oud (grens %.0f)" % (leeftijd, max_leeftijd),
-                       leeftijd, len(rijen))
+    leeftijd = _leeftijd_uur(_stempel(data))
+    if leeftijd is None:
+        # Geen stempel betekent niet "vers"; het betekent dat we het niet weten.
+        # Dat hoort zichtbaar te zijn, anders glipt een bevroren bron er dwars
+        # doorheen — precies wat er met Copilot gebeurde.
+        return Keuring(naam, True, "geen ophaaldatum in het bestand — leeftijd onbekend",
+                       None, len(rijen))
+    if leeftijd > HARDE_LEEFTIJD_UUR:
+        return Keuring(naam, False, "%.0f uur oud (harde grens %.0f)"
+                       % (leeftijd, HARDE_LEEFTIJD_UUR), leeftijd, len(rijen))
+    if leeftijd > max_leeftijd:
+        return Keuring(naam, True, "%.0f uur oud (grens %.0f) — telt mee, maar is niet vers"
+                       % (leeftijd, max_leeftijd), leeftijd, len(rijen))
 
     fpl = {e["id"]: e for e in bootstrap["elements"]}
     treffers = naam_ok = prijs_ok = prijs_getest = 0
