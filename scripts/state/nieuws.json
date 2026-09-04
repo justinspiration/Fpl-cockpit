@@ -1,6 +1,6 @@
 {
  "_bron": "publieke RSS-feeds",
- "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 8 extra gevonden, 10 ingebakken (221 KB).",
+ "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 8 extra gevonden, 10 ingebakken (223 KB).",
  "_feeds": [
   {
    "naam": "Fantasy Football Scout",
@@ -33,7 +33,7 @@
    "soort": "nl"
   }
  ],
- "_opgehaald": "2026-09-04T18:37:41+00:00",
+ "_opgehaald": "2026-09-04T20:37:27+00:00",
  "_methode": "Berichten uit de laatste 10 dagen, gescoord op blessure- en opstellingswoorden, op vermelde spelers (zwaarder als ze in de selectie zitten) en op versheid. Onder de 5 punten valt af.",
  "_mislukt": [],
  "_aantal": 114,
@@ -46,7 +46,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T18:15:00+00:00",
-   "score": 25.9,
+   "score": 25.6,
    "signalen": [
     "team news"
    ],
@@ -102,7 +102,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-09-04T06:00:02+00:00",
-   "score": 23.9,
+   "score": 23.6,
    "signalen": [
     "manager"
    ],
@@ -130,7 +130,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-09-03T14:39:30+00:00",
-   "score": 23.3,
+   "score": 23.0,
    "signalen": [
     "hamstring",
     "injury",
@@ -182,46 +182,6 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/5ca44b28313cf150dc48afe4df7ea7b3822ac1ae/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=fb1196dfa1fcf10e4e26e70c743af131"
   },
   {
-   "titel": "Premier League LIVE: Barcola on bench for Liverpool, Araujo replaces Frimpong, Palacios starts for Ipswich",
-   "link": "https://talksport.com/football/4518020/premier-league-live-today-stats-schedule-games-results-winners/",
-   "beeld": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAcFBQYFBAcGBgYIBwcICxILCwoKCxYPEA0SGhYbGhkWGRgcICgiHB4mHhgZIzAkJiorLS4tGyIyNTEsNSgsLSz/2wBDAQcICAsJCxULCxUsHRkdLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCz/wgARCAC/AVQDASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAAAQMAAgQFBgf/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/2gAMAwEAAhADEAAAAfXEnfWC8pVXU3FL0U6TKvUvoyL116zANq9wI0Z8aZWq+Ewc+2fUTlbWwGk2xzRlrPtXj4vVzx85Pc0856P12md+fbXSy9pQ1BU1BU1BBD6pZF/mbdFymVFdS1YNhS41F1YNkp1p0y52olrnbn5TnYtWPEwtxaZGVzsXFEt8ur59aMbzSN3x7nYpPqVWbRm02XWvYVNQVIKg1BJD6VfPfw6eU2Gikq5odQwSoDNgl6a5irqK525uc5vP2c7kzpYpNCr5+OhXSvnuIYvUT0ed39c+tS1fo2uXVkNlLU2rUgFSAVNSQQ+hMyt8enldi8pKZZZsYcewkYmrpYnblIuipnbm5uXi0I4znNSdR6NODhveqyp0Yq2SZp67zvp/TzlTT0hm0ZjXS1NhUgqCKqDWJBD3DczfNrRdF8nRZG52N1fD836P4X169ru8H7fy4ui6bOKm6t22dq8Tg0YvzzHQ5tTTnFON1MU7n1fytednv7oPpYFTXVGZ+dNdLU0AgACKqLUJJI9gzOzz60XRYfFyHxZxvm+S7nn/AEa6ftfD+zc9CWIzniUCtmUxY0tgrPLK49OTmgkwl6TKa8nf6uiBX301lSqHJjTWDSCAgEBU1JKw9axF+On3z3jQUmHJsa8p5/23lee9vsfnO/08/f8ADw8PM2Yc1O2X0TC5pXgZnZTyWpg5pJBvovNN9j0ow7O9lTSIhqI1Vg0NTWoIAVtSJBD1Nk25VrEXh9a8atXPSemRi6PL51Xa6nHsy8x+SQwVhkB6IJIoL18wQznRDIkk3L9niO9LvUg6aCXJh0E1IICCBQDWQQQ9FdDOdddN1Hm+lw5PpnP8drhGavT1NnAbkyzLtXlCJKhqYtAeo1Misk5CDAEMqo9T5vo2buR1uliWKtaV2sIAo1NYNYAQQ7zE3xXCqTj4348R2zIRHZ52s5V87LFiDghgJJKJF9N9/R9zq+Vxi+KEGBJD6D4Ls8rqX2uF2qK7r3Tdd6kgIIACAEEjuXTeVrs/QmtPh/Z+dm+cjoYZx383o8WySSSoI81sJNJJKnrvItr6RzfCzb0PnpMpAcpJDq429CuDoTXbs1w7e1F1MLAAIEBU1iQQ7NlFdGrAptx5Xa6Z5dbK45wZ5GZBMgCPNYQSSTaSSoRAyAkkyl6Pr0Y4q9tvI0Z+kO3FK6DUN1oiSoIIAgJBI//EACsQAAEDAwMDBQACAwEAAAAAAAIAAQMEERIQMDIgITEFEyIzQUBDFCMkRP/aAAgBAQABBQLosnVk7J2TsnFYJwQjZ1Jo6nkuZOjJd1d0zqY7v7NhcmVPNLCX+bDZquB1e+jr/wBG8+jqydlZWTsraS+ERWZ3uidO/e6Yc0fExCGP2yN3lAGKQj1opSGVOv795+qysi0l8KXvGfZOhf5p5GFmJyaSVzlb5KyJtaWleJxAjTp/uUjx267q6ur7R+FLxUhWYkSf4S3RNcpSwp2B3ViZN4k0jbKVMZDoX3bN1dX25OKl4qdmZyUjo+6YsXb5yVD/AOwQzWOL5XUjOJKiHKp1L7d2+zJxUj/H8PwfmVM90Xmnd8nfKTHs7JlJfSgC0ep/ZstuycVJx/D4l5LumexEo+f9jd1I3duz1Ds7qIfbh1Pnss6ur9N084CojCRiC2snG6kf4/knAnX67d7oO0zP3YrM8t010fmlj9yfok87LJnV+mZ3xqYZ1HNLAfp1e1TEXJScHdG/b8PuN+6LtJ+5WTP3xzQRNcoTZOqSL24uiTaZ0yur6XTOg5VQi4Ts2XppYVGV9JOH6fH8Uw4kpe7u6voBJ2uilMWje0nQ6k2mTOr6XV0zr5KvmOKLIjembGUH+Kk4X7nx/FLJnLxKTs3Rk+lMGc/Q6k8bLdYy4v6pPks1BJ843uKk4O9nM2xKpFk85OpDui+cZvlF1UkWEfTJx/NhtL9JjdVyvd6W2UUg2KQQaesujqE8runJd14Qli/h+mPHKMhcOmTj+bDa3V1dXXuCzTAEwyx+0/uuypZZSlmmd1JJ2ur630/H6WQk4vFPl0ycW8bDdJHipKqy95zQmYvK+ZYKIfZhqjsN/jvM6hkzHU+LeNhnV+iqlUFPJUkURwTS/EVBTBHQyneWoPKX+AB4Ez3bQ+Dcdi/RIeIkeZ+kNEEHrLAUtSaBsnmkxhiLOc/s32a7qmPU+A8dptKqTsyaeQWhJyU55T0bMyrJbqDkfPeBsjgpY4pJfuge0uhcR47LaEVmmPItCL24wa6jfCGR7yRovPXR0clbNX0RUVR1fF4j+wHsehcQ4bcrO4mJMr94+5zvdwG7zHiKFP1gLmbenS+mw1EUXqlAYuB9NDO8cU5Ocreb3ZP4Dhti2TlCDxVENpYWszveSIcQnPI9mj9HaWmoq28MVVBQVvqstLUS9Is/tzi7Go5MVdP4DjtwNZSyXbHOSZvbUQZlMeIbXuHjsDTkcTenj7hDgajPFP4DjssmRHiBS2aFVj94hwCY8z/hCOZ0rxvLLUQ0x+oj/wBGkZ3YOO0ymOzB83DsJNnPMeIfw4yYFBVPAFRO9TK85lDpezx8dj//xAAhEQACAQMEAwEAAAAAAAAAAAAAARECA0AwMUFQEiAhUf/aAAgBAwEBPwHokPbERA8SkY9tSlSyq3HuhFbXGpb3Lj+nGJJX+nliz39KkuYqcIbnE//EACYRAAICAAYCAQUBAAAAAAAAAAABAhEDEBIhMDEgQVEUIkBCYXH/2gAIAQIBAT8ByQhCZZeViZZr9IljV7PqH8GHPWr86KK4JbGtkpNiyhFR2X4P8ZPZC32JYekwlcuR7Cd+Ml7JsQ237MCPvjTrcw8XWtyUNMthZs1Ez/coqlXHLow9o2Tq9sqNJLss7yw46pclWQ3ekeH7EWajESY88HTXGhNI00xyLHKjYslEooRCV8T2Ir7i9xll2iLLJeGnTuJ8MmLZWLL9jrJM9eEpWiHCo/I/jOXZ3kjWN59kcl5LsZ7zl2Lzsk4uVxNQvH//xAAtEAABAgQFBAEEAgMAAAAAAAABAAIQERIhIDFAQVEDMGFxMgQTIkIzgVBSof/aAAgBAQAGPwLviMthHKMgquoaQrXVmmncK5p9r+QYB61ZKnhkLBTNyVX1XKTBNXMQz9XRbqyOVKDhH+1MbZKZvhrf8uEadoNg2ge9ZOIA3jeLR5h+JlBurEsHhSUv9Qje8ZGE+L4Gf4CaOC8HP5wM1pjSjADZfFCDW8DA3RXKzCmMZwgxss4DgXwt96Gym6am0kKTvmM8Zh6RhIRzW0JnN2FvvQ3gUe0fGGYKlNN94h70NoXQ7AG2SDU7zjHi+IaICAQwZqQurqoKY/VTx1bu1V1mpkqQsMXgot2OL8skA05agwspT99mWOyk7PVeTmg3nQ3zGjkFJioeJFTh9593OyQZyj40M1OJQ74XTc3MINQCa05NCqKPvQWgWxKHdlCQeQqnklW2VZz2VIge+BymvYS5rhaftPlyhEoaKfOSPaoZ/Z4VBu03aecdbcrS9J0+UIlDuWVxENQC9WHaDRmbJv1XTdX1WfNuxCFJzuw8FFrhIixxFpmWucAiXCTt8B710ZQJVW5Uth2vu9R3zH4y2Tuj9S4N6vSs6o5+U5jeq0/T9S9jOgodXoPm79rYm/KmjznNXbKHjvzVkYSX/B26a3S4n2QZneQVNR/EfmfPCLTtCW2gmpLyV4GjDeU2l1gaQh0aXn7bqiZ5lfdb8epeMtBfILydITvKyIa0T5X3C0NPhDpGVI7v/8QAJxABAAICAQMEAwEAAwAAAAAAAQARECExIEFRYXGBoTCRseHB0fH/2gAIAQEAAT8hqVKlYGcOkEelRXqKaLH1MXKw3Grf1qW8TwL5g6z2r7yxqxbFL5INy3j/ABFaPk1KCxse5HJOGOGMfwK1BHAcg0xwS4Dnbc+UZtgK9I6ajL0htLTz6ysvgeXxOCg+Z8kKeOPBm8q9jwxYo/VhYxw4cXBly8KXqMYkTBkUS49Zep+oJWg7TnL/AF0KrcoEEug4S4GtIDsq9YmuJXgFQOWfCV4TWl03g/1xjiQahjhjHBBkXFg9DKiQRccdpUYKorexhaKXoQuWazxBDTEZfcbibQNYcLuIy5ttpqOCxjHLkgwXLiwZeWEcFwO8NoOoQK4+0qIA3NIwWnwksJ4A+eZqtaaOILfqHGcxNz4rOwuDHEY4cuRgwZeCwehhjllxqlxdJyPiKHdziQ6EM+ziXni2AIIJWOwJffFwd9HxhjxPsRjGPUtQYMuXFgy5cuXDHLHmOF0i2j3n1MGjb6Rms50xr5qhpGkU8XzdwQCsfOR74Yz7uHpc6oQRcuXBmhHNE05PaVuQg4W8dsRdIod7vK4eZu/qbBcZ2NiQNzO3Qobpctq9tTczusscMxw5crWAgZcuDqWZzgrSkujSWoDhSppxLj2mxxb1gpeke/L37o61cwLHvEK63mUJ8wQ0xNNGKV+xNlWa5rc+hHDGcoPU50RQgi8NEIyScQpEeh3nCy49ou2K9Ysd3sP1L7+ZsiFScrlwPNTh8Zpi3FYdgy8XhRak/hWsBA5NERbctLzC57oivMsEuPaOyKL1xrV5zdg6vT/J8ug9+gIqLc9O7JcuMvD7EvXW4WoMGDLlwdQ6GAohMlpYtoaW1A7UhPIIhS5iOy9JD57+JX9909e7+X4jLlxjP6Ts6mOFqDCBgy4OpSsi1sbIOAQeyVIRqKI4Vg987jO39xH/ACe5m1qcf60a9ic3kU1XvqXwgVvmOGLGf1hx6mOFqXBhBgIubZv4gr3hy1QONeU9idw0S2w6Y233iveX8TctGXyfEV76dJaEjPrx84Y4X3i1xfQxwtS4MGDAFsEIM2txQXqNsYQO3W+GE52Y3J4lwbnM2S/Saj+E13qouGc84et6AMGXF5IhC65cQACY3uVeNIsorutnvVUvHDLly8P4WE9oJjhw4j6Zw4IGDBliy4bnBFvMq54mvE1S9VIrLjEdO8x/vZYOOD8SABV7GLBe2zDgKVxl4cOBhFLlFTFuVhHpLhLwWwm7NJb7QaS5dzzFVmfYz26nqF9oQXCKNdN3/wCJTQovX7nuLWHGcr6HNwilzZyxl7g2zhfERWy779YtvrFU3b6w69AwNvwImR4x4dZR3o0ceH/UaoEVWMsPrhn0MB6HpGDgLap7xmfin7AlY94WrgUYVE5wj07B1putxhCLL3IRyLX+U/4Yu59D2eoPCaW9xucJQPdUVBgARscfWnFHoY5GDBlSRxQ4hybZcWbh4T2mheDL17mG3t+pnah+CvaLxvn+R7RwC6FwfD1ESzvG6HJLMB4KecO6eU2LJyR69TkYMGBslraG8lZqMPZyy+TTwdDg6QAAPkqc/guLWIfSNG+FFUPsjBKXTh1bl9dB3i4scnEU5TjGd85htgkRyvlZY14DofzsFyqlsTwT0/yKN/CXqPmD8geudj5I4vpcjqXFuNG8TC4fJjp7HS/ntPvHvYuImxdmXhAp8oxC4Nb/AHkVhF+F/9oADAMBAAIAAwAAABBMKUmohfCEnP8AKUzZx973u+L0lUJM6I6a7IT6SDBUsamCDeqH3QgxtWzX4/DbXp7TOOGw8xPdMd0MFs0kcHnpTxmPcyIJa+bmAYDpODT6bjDQkyWE0bug1H4FqMTlBt6/CKiOIOOxDVGBdDCmMQk+eWU828FnEZHDR0g4/wAgn01IJSUJ/eXPNl5kFnsCv0bXu3ATVyPbyWBnAIJvsAsIPzC76YzqPg514F0+xdKoiGQkzIHJutsBPfcOzwU0frrv+ZXZ7kArAP/EAB4RAAMAAgMBAQEAAAAAAAAAAAABERAwICExQXFR/9oACAEDAQE/ELh8Euxl4QkKLnSl4vis9ROH5ovJjz3Z1dHbVQtnvB59DKQeQLX0wpKi1d8mjIfY1FsQfAPBtFKPCbXgsvSodQrcYiQbGyl4WCeps7GzUZBvR5qbL8PR+j0Wi82L0+aVoohDSSw8LzUnedh4T/uVp/Rdcv/EAB8RAQEBAAMAAwEBAQAAAAAAAAEAERAhMSBBUWGRof/aAAgBAgEBPxDIPgELecAg51fhC8lCD3/wgfe38Ay/ODil42223gQgREPUewD7MlCfcez5eq2tg1yBPCWHLbbeMsgiGGI94XuHStYR8pO7Yv8AIZedt4zkgnUh7EPH7L3fVmSOIl1zoshfD58kk4F6k/PAr4eH3ZeoQXcMhzxsYpkJDheNt+W/EAdTAIMJ8lBrH1dOpccMH4cvw23h4PKan4gfdkeoGWfy7EjO8Yf1JnC8bbPwGvd0hI6JMyASsbV3OrJunDR5YMeH4b8FNNE6c+m3qTBPGNsNOMg2UBfdsTD1bbbbzpPSdO70lxw6nrzizf6n23jKl0zHnC/ButgwDZDk82W42HSQPZC/LR3jY3pJG+rxztvA2IeifTfVuSjj3gmWP7BTr2UBh1/v3IA28fH/xAAoEAEAAgEEAgICAgMBAQAAAAABABEhEDFBUWFxgZEgobHRweHwMPH/2gAIAQEAAT8QM9JjGfSZTUfDAeILxCeJ4ZZtQJjbzDFniWsRErBfbzLyuUAwNpLtRTapcABV3sQrCQOv7iKDX7S7RFjd8IlmWxWD+5cFVrt5F7PmXdT3K3+UptPij7SUJsgSxmTFUWm7hYi5jiixRRRgkIGIkohtJScn4TsC8SxCfuzEDxFCwVR7vkYCs7QcMqzKF05l9Wu7Dc92MX99QQytT33DwO/qdsoXrHQcEdGZ1o/tj2c9A1QtwLuKLs+p0TJHSduLjQUUWLEdDvDSh0XoGgGhaRvpZSEVJ5m1niWG3oPuDge97im8W0UVtt8TKqqV4CB8BXoAbxZVyjmjv2xTy07i6U+oeYVWhNWlBMSsEJvPdXuWDdGW0uKO8+yRQkfzpzFiLGiiijvqB5fg+CLGJBiFtGtsIxPcFBfUYBzcdiu7DV3UcE7YYG7GGVgWN+ZQPUiv2zKWHllYF8MDwFqiUVN3QirTfuO7iOJ8jcm3uYP4Y4tRjofwAgvrsGhdW7QMpvY4ja4BJRoXqd+85upXXlUovdwiCNmrYvqG0ws+Am5T5wLfzDuEVe0X2ygNVLV5DzHFdLBHyyLS9LiL+WbH8xZv0um8scV3FilxdC6YzXSSLZggy4M2aEhhuZlBV7S5vBKXODXzHV7jUDsEMLdhIoktbZheAQ9XgmDFXI7jVMvVGeIqxh3ligXfUTWgx00oxn4b/Z/UXS4YN5RRbxaGMZzpeNcIJwzHDSIYeYsygqZ5mJ7nNcEqfoloeGUt33HxPur/AO+4zsUfcbt5U+MfuOyGSxvd5fuVAxFam5ZgxhxU/KC7QW1AVALYewofJl/bFijxNzK4ixFixYsWYsZhaWKGgxiiEVolCB5WCcz2irbyHUyRZVIr55mJ7n0xK/MSnbCHpCSyncYB2iDCQFjb5qMSjd5fnR8jSl7YxGhkWLPimickpFn1ZsfdRYsUeIskLEW8dDoNcb8SToibNrxEHibAcQI2OHD7iwyB2eSBfJkjH1sX5oyfcd91GK3tUsRlZcEE3QIS+CsgiKBS/EWoAo8CZ/xBDN1g7EEFCbwA3fVu0ZFqZ3Lib4t1EfEYO/Af5iixR4m86hYi5ixYx0MWYn4JkugbeV5mMtkPEw8TZYGmNCvEdKl8kYW8xvR1MkNpVr23/EMNmIfMSbbrbARdVDBSkKYVZi1YdxV+yrjhoFWcTPZhEvkjkxYwudD6JFgi5YuXRi1GMsmNqmeEOgVlJiBbTREMxUMQ73qOlW+aXb+YV9EW8rRyvEYLIYdrq7+SXtMIs4cqI5KFeoBsL4JebuO8FHEdhxEVrbEFWf4j/dR+0YWI0im66McfqLmLLixYsUuY34TmnS50BgKyDcDKIJ1yxHWh9TGEBbvAtZe95ZChsP8AMfI5gODxUu0QkHZSrgC5WXX/ADZlF7B7cy8TmOZVa7ApA8cD/MUdB5jixejBtPEvMYsWLFFUuYn44rO2jpfiUsEm/cqmaiMdqgTm21xyXg7YmrwtL7f6jlXg5ilBe1bMKpCjJ8rLsDGydyzU0UOoBDZ2+nj+olPUYpAax4johh+xUsrzgBYHmK4sWZmjxF+qL6IuYsWLFiilzCh+HBgg3gWLeJolrAwwGMWy7GNmT0EiW3Xi3Y7ilcwDCxL2itz5QDsq6iHN38wDyTsZOSBUmN10yz2d/cqVpxFAEo2RhMcPif7S4qjisyPAlnolxhZeYsU3aYWmmefRspUvzPiUCsOoc3VxKrYG/uCSoDe3IcH1/MZCvpeCWLuorhzOVvKIpMXLciL5X1A3EgaJoS0iCUomRJlTBXl5l0W4sTL4479ZFyxiy4uIsUuYCGgxQqWwjvGNdYtNiXL9HCQad6mS3OZfhNdee/gz9S2t/QDj/vEAZdIPjVbAsWTbT9Sy0MK4hvSpUrErUiS53HZF7sbNTqF3olx5jvFixFijMRo3SiFacRnMLoiJdbN3uZdEhyhszK2xgxVhiKRKY8G6/P8Aib1WPwdTM9/yRaYM7yiGWWYIR2iU68akTK1AWsKYim36HMWKO/RL/RGjFoWKLFLmMjslEDUNdxiKbpf8NxVFt9BdRL1cH/MroMWcPc5WK/T/AHDPi2jVHv8AzHJcGOY5g1DLbD8RqZ9kSFC75xAKwRoOCV8r6ZWYYccFoIHgwsU/Wn1UcpcuXFFjHKLBMEIFUxszBGkoIbsdVUlD3LDKrdxFLWo8HP3GVbvdL67ReWUyK0HUYMxVc511dcvQQAw26e3pHCf3qMd3T3Bwv+uimlerHZEgsApG3CRh+D/MXQ5Ffo0X+BYsd4OCYtB0bql/ReEzpUcmUYRxujb5VX15l5wB5X/Zl227stIrT5inaX+A8g4oCmjLgieyb8faaq7+eIiY2zfuddH9EXqfcgaTTmO/xqHGSUUGptjDjmo/igKUpAvzVzwMjDDZAxcTP3IpqG0WXqMuYCYtBASxgxaeRKEgXxEL5Wc0A0SwL9D2+ZZJeF5eWcwaubYNTcnP4LEqg7t2Q3R44zzBQouA2QVzZv8AfMoQoqoblWy8eOpw7j1TdTfh+NOY7GlxhpqxXAikBrPjeotsW2ypsuW1KzzCXPXeOvMAaCORI/odCW5dEXMuLFFqXMBrAOGVPAFREi7YVZWKPczE5PRzBzAKXGnMZt0USGtvIqBC98XUVVrb5h+F4NTygyLdjG/NxMsN1Bd6ZWNUVJ4RrQStwUV6jw9y8RwlzdoKLFiw0WJgEUXAULMKr9w0cNyvRXxBwR7C/wD6EdtOJs0IM2/8OdduFDxfME6SLUtNB9m+2VzHoWsoVe6NxkADbDP2Uw2hLtcWPJPqLHCXLlxYosuY0HFpmUpXaI6uLhsHEHJ8g7eCM45aeO9H8XMND8dzV30aY7KNsC/Bc3MlLdqw9YjkNMmqbLfNYiyjG5pV+3MIQytJzEW9sdpdRYxjGOGf/9k=",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-09-04T08:06:00+00:00",
-   "score": 22.2,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Palacios",
-     "t": "IPS",
-     "p": "MID",
-     "mijn": false
-    },
-    {
-     "n": "Frimpong",
-     "t": "LIV",
-     "p": "DEF",
-     "mijn": false
-    },
-    {
-     "n": "Araujo",
-     "t": "LIV",
-     "p": "DEF",
-     "mijn": false
-    },
-    {
-     "n": "Barcola",
-     "t": "LIV",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://talksport.com/wp-content/uploads/2026/09/GettyImages-2293542672.jpg?strip=all&quality=100&w=1920&h=1080&crop=1",
-   "beeld_breedte": 340,
-   "beeld_scherp": true
-  },
-  {
    "titel": "Premier League team news: predicted lineups for the weekend action",
    "link": "https://www.theguardian.com/football/2026/sep/04/premier-league-team-news-predicted-lineups-for-the-weekend-action",
    "beeld": "",
@@ -229,7 +189,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-09-04T17:38:28+00:00",
-   "score": 21.8,
+   "score": 21.5,
    "signalen": [
     "lineup",
     "team news"
@@ -296,7 +256,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T16:11:48+00:00",
-   "score": 19.6,
+   "score": 19.3,
    "signalen": [
     "rest",
     "team news"
@@ -356,7 +316,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-09-03T10:58:42+00:00",
-   "score": 18.7,
+   "score": 18.4,
    "signalen": [
     "manager",
     "signing",
@@ -388,7 +348,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T17:35:00+00:00",
-   "score": 17.8,
+   "score": 17.5,
    "signalen": [
     "team news"
    ],
@@ -405,7 +365,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T17:00:00+00:00",
-   "score": 17.7,
+   "score": 17.4,
    "signalen": [
     "team news"
    ],
@@ -422,7 +382,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T16:14:58+00:00",
-   "score": 17.6,
+   "score": 17.3,
    "signalen": [
     "team news"
    ],
@@ -439,7 +399,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T16:14:06+00:00",
-   "score": 17.6,
+   "score": 17.3,
    "signalen": [
     "team news"
    ],
@@ -456,7 +416,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T16:12:53+00:00",
-   "score": 17.6,
+   "score": 17.3,
    "signalen": [
     "team news"
    ],
@@ -468,16 +428,19 @@
   {
    "titel": "Man City v Coventry predicted line-ups + FPL team news",
    "link": "https://www.fantasyfootballscout.co.uk/2026/09/04/man-city-v-coventry-predicted-line-ups-fpl-team-news",
-   "beeld": "",
+   "beeld": "data:image/jpeg;base64,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",
    "samenvatting": "Team form, absentees and our predicted XIs The post Man City v Coventry predicted line-ups + FPL team news appeared first on Best FPL Tips, Advice, Team News, Picks, and Statistics from Fantasy Football Scout.",
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T16:10:41+00:00",
-   "score": 17.6,
+   "score": 17.3,
    "signalen": [
     "team news"
    ],
-   "spelers": []
+   "spelers": [],
+   "beeld_bron": "https://cdn.fantasyfootballscout.co.uk/wp-content/uploads/2025/03/leicester-v-man-united-fpl-team-news-predicted-line-ups.jpg",
+   "beeld_breedte": 340,
+   "beeld_scherp": true
   },
   {
    "titel": "Fulham v Crystal Palace predicted line-ups + FPL team news",
@@ -487,7 +450,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T16:09:31+00:00",
-   "score": 17.6,
+   "score": 17.3,
    "signalen": [
     "team news"
    ],
@@ -501,7 +464,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T16:07:15+00:00",
-   "score": 17.6,
+   "score": 17.2,
    "signalen": [
     "team news"
    ],
@@ -515,7 +478,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T16:04:42+00:00",
-   "score": 17.6,
+   "score": 17.2,
    "signalen": [
     "team news"
    ],
@@ -529,7 +492,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-09-04T16:02:51+00:00",
-   "score": 17.6,
+   "score": 17.2,
    "signalen": [
     "team news"
    ],
@@ -543,7 +506,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-09-04T14:58:41+00:00",
-   "score": 17.4,
+   "score": 17.1,
    "signalen": [
     "captain"
    ],
@@ -571,7 +534,7 @@
    "bron": "Voetbal International",
    "soort": "nl",
    "datum": "2026-09-04T17:45:00+02:00",
-   "score": 16.5,
+   "score": 16.2,
    "signalen": [
     "manager",
     "transfer"
@@ -585,52 +548,6 @@
     }
    ],
    "beeld_bron": "https://webp.vi.cdn.pxr.nl/news/2026/09/04/9387cea6f9071bc52df44ecfb9250babec4aeeeb.jpg?width=1200"
-  },
-  {
-   "titel": "Moyes lives with disappointment after deadline day",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c3v49617lzko?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Everton manager David Moyes accepts he has \"to live with disappointments\" after admitting he wanted to do more business on transfer deadline day.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-09-04T14:03:39+00:00",
-   "score": 16.2,
-   "signalen": [
-    "manager",
-    "transfer"
-   ],
-   "spelers": [
-    {
-     "n": "David",
-     "t": "BHA",
-     "p": "FWD",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d703/live/9abdc2d0-a855-11f1-ae45-e9984fc27c77.jpg"
-  },
-  {
-   "titel": "Several players wanted Fernandez updates - Maresca",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c5y4ge76jx8o?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Several Manchester City players wanted to know if Enzo Fernandez would join in the last days of the transfer window, says manager Enzo Maresca.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-09-04T13:35:28+00:00",
-   "score": 16.2,
-   "signalen": [
-    "manager",
-    "transfer"
-   ],
-   "spelers": [
-    {
-     "n": "Enzo",
-     "t": "MCI",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4fd1/live/65a5ebb0-a862-11f1-ae45-e9984fc27c77.jpg"
   },
   {
    "titel": "MOTD pundits debate controversial own goal in Man Utd victory",
@@ -696,6 +613,52 @@
    ]
   },
   {
+   "titel": "Moyes lives with disappointment after deadline day",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c3v49617lzko?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Everton manager David Moyes accepts he has \"to live with disappointments\" after admitting he wanted to do more business on transfer deadline day.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-09-04T14:03:39+00:00",
+   "score": 15.9,
+   "signalen": [
+    "manager",
+    "transfer"
+   ],
+   "spelers": [
+    {
+     "n": "David",
+     "t": "BHA",
+     "p": "FWD",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d703/live/9abdc2d0-a855-11f1-ae45-e9984fc27c77.jpg"
+  },
+  {
+   "titel": "Several players wanted Fernandez updates - Maresca",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c5y4ge76jx8o?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Several Manchester City players wanted to know if Enzo Fernandez would join in the last days of the transfer window, says manager Enzo Maresca.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-09-04T13:35:28+00:00",
+   "score": 15.8,
+   "signalen": [
+    "manager",
+    "transfer"
+   ],
+   "spelers": [
+    {
+     "n": "Enzo",
+     "t": "MCI",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4fd1/live/65a5ebb0-a862-11f1-ae45-e9984fc27c77.jpg"
+  },
+  {
    "titel": "Premier League: 10 things to look out for this weekend",
    "link": "https://www.theguardian.com/football/2026/sep/04/premier-league-10-things-to-look-out-for-this-weekend",
    "beeld": "",
@@ -703,7 +666,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-09-03T23:01:51+00:00",
-   "score": 15.7,
+   "score": 15.4,
    "signalen": [
     "out for",
     "rest"
@@ -726,7 +689,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-09-04T16:00:00+00:00",
-   "score": 15.6,
+   "score": 15.2,
    "signalen": [],
    "spelers": [
     {
@@ -752,7 +715,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-09-03T20:41:30+00:00",
-   "score": 15.3,
+   "score": 15.0,
    "signalen": [
     "transfer"
    ],
@@ -793,34 +756,6 @@
    ]
   },
   {
-   "titel": "Spurs latest: De Zerbi on Mudryk availability and Richarlison transfer",
-   "link": "https://www.skysports.com/football/live-blog/12040/13025489/tottenham-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-09-03T18:00:00+00:00",
-   "score": 14.9,
-   "signalen": [
-    "transfer"
-   ],
-   "spelers": [
-    {
-     "n": "Richarlison",
-     "t": "TOT",
-     "p": "FWD",
-     "mijn": false
-    },
-    {
-     "n": "Mudryk",
-     "t": "TOT",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://e2.365dm.com/26/08/1920x1080/skysports-tottenham-club-blog_7326708.jpg?20260820165557"
-  },
-  {
    "titel": "A window tax to curb the Premier League’s big spenders | Brief letters",
    "link": "https://www.theguardian.com/football/2026/sep/04/a-window-tax-to-curb-the-premier-leagues-big-spenders",
    "beeld": "",
@@ -828,7 +763,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-09-04T16:53:12+00:00",
-   "score": 14.7,
+   "score": 14.4,
    "signalen": [
     "transfer"
    ],
@@ -843,20 +778,51 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/5e7682ee7188e5f9afdd375cf712fcb7c3f674e6/128_0_2657_2126/master/2657.jpg?width=140&quality=85&auto=format&fit=max&s=ca8559b73e4ad22e39f432ace05f1187"
   },
   {
-   "titel": "O'Neill satisfied with Celtic signings | McInnes has Rangers squad he craved",
-   "link": "https://www.skysports.com/football/news/12040/13581374/old-firm-celtic-manager-martin-oneill-satisfied-with-signings-derek-mcinnes-believes-he-has-rangers-squad-he-craved",
+   "titel": "Xabi Alonso verwacht geduld van Emegha: 'Heeft bijzondere kwaliteiten'",
+   "link": "https://www.vi.nl/nieuws/xabi-alonso-verwacht-geduld-van-emegha-heeft-bijzondere-kwaliteiten",
    "beeld": "",
-   "samenvatting": "Martin O'Neill declared himself happy with Celtic's transfer business while Derek McInnes insists he now has the type of dressing room he desires at Rangers.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-09-04T16:00:00+00:00",
-   "score": 13.6,
+   "samenvatting": "Xabi Alonso verwacht van Emmanuel Emegha dat hij nog even geduld heeft. De manager van Chelsea beaamt dat de Nederlander 'buitengewone kwaliteiten' bezit, maar weet dat de jonge aanvaller nog een lange weg te gaan heeft.",
+   "bron": "Voetbal International",
+   "soort": "nl",
+   "datum": "2026-09-04T22:20:00+02:00",
+   "score": 14.0,
    "signalen": [
-    "signing",
-    "transfer"
+    "manager"
    ],
-   "spelers": [],
-   "beeld_bron": "https://e1.365dm.com/26/09/1920x1080/skysports-old-firm-rangers_7341038.jpg?20260904164951"
+   "spelers": [
+    {
+     "n": "Emegha",
+     "t": "CHE",
+     "p": "FWD",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://webp.vi.cdn.pxr.nl/news/2026/09/04/b422a27ac5ec87159c784d45f595b5ce6463c9cd.jpg?width=1200"
+  },
+  {
+   "titel": "Premier League LIVE: Isak scores two in space of ten minutes, Barcola on for Liverpool debut",
+   "link": "https://talksport.com/football/4518020/premier-league-live-today-stats-schedule-games-results-winners/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-09-04T08:06:00+00:00",
+   "score": 13.9,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Isak",
+     "t": "LIV",
+     "p": "FWD",
+     "mijn": false
+    },
+    {
+     "n": "Barcola",
+     "t": "LIV",
+     "p": "MID",
+     "mijn": false
+    }
+   ]
   },
   {
    "titel": "Richarlison omission not my decision - De Zerbi",
@@ -866,7 +832,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-09-04T15:32:22+00:00",
-   "score": 13.5,
+   "score": 13.2,
    "signalen": [
     "manager"
    ],
@@ -888,7 +854,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-09-02T22:07:52+00:00",
-   "score": 12.6,
+   "score": 12.3,
    "signalen": [],
    "spelers": [
     {
@@ -908,7 +874,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-09-03T09:00:49+00:00",
-   "score": 12.4,
+   "score": 12.1,
    "signalen": [
     "deal"
    ],
@@ -929,19 +895,24 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/52af0c45ed4412848a7eb4121d7f41b911656e73/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=f3213ab2aa8301aeb5d6018e4ae84418"
   },
   {
-   "titel": "Timber staat voor rentree bij Arsenal",
-   "link": "https://www.vi.nl/nieuws/timber-staat-voor-rentree-bij-arsenal",
+   "titel": "Greaves makes more history with win at Czech Darts Open",
+   "link": "https://www.skysports.com/darts/news/12040/13581507/beau-greaves-becomes-first-woman-to-win-a-match-on-pdc-european-tour-plays-luke-humphries-next-at-czech-darts-open",
    "beeld": "",
-   "samenvatting": "Jurriën Timber mag zich opmaken voor zijn rentree bij Arsenal. De verdediger kampt al maanden met een hardnekkige blessure. Mogelijk zit hij zondag weer bij de wedstrijdselectie voor de Premier League-kraker tegen Chelsea.",
-   "bron": "Voetbal International",
-   "soort": "nl",
-   "datum": "2026-09-04T16:22:00+02:00",
-   "score": 12.3,
-   "signalen": [
-    "blessure"
+   "samenvatting": "Beau Greaves made more darting history as she became the first woman to win a match on the PDC's European Tour - a feat that secured her a second-round clash with Luke Humphries at the Czech Darts Open.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-09-04T20:55:00+00:00",
+   "score": 12.0,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Greaves",
+     "t": "IPS",
+     "p": "DEF",
+     "mijn": false
+    }
    ],
-   "spelers": [],
-   "beeld_bron": "https://webp.vi.cdn.pxr.nl/news/2026/09/04/f007f8052b862e2329e9ac664931fd9a42ce0ea1.jpg?width=1200"
+   "beeld_bron": "https://e0.365dm.com/26/07/1920x1080/skysports-beau-greaves-darts_7307269.jpg?20260726172234"
   },
   {
    "titel": "Saka settles gruelling battle with Aston Villa to extend Arsenal’s winning start",
@@ -976,6 +947,26 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/65ce92ead56a6427d6af3cb88e550cea4dd579d0/932_237_2223_1779/master/2223.jpg?width=140&quality=85&auto=format&fit=max&s=7c662714210bc9ae2833f3c7d2db076a"
   },
   {
+   "titel": "'Let's go one more time' - Taylor bows out from boxing at 'dream' venue",
+   "link": "https://www.skysports.com/boxing/news/12040/13581455/katie-taylor-ready-to-go-one-more-time-as-glittering-career-ends-at-croke-park-with-dreams-of-being-undisputed-again",
+   "beeld": "",
+   "samenvatting": "Katie Taylor's glittering boxing career will draw to a close on Saturday night at her \"dream venue\" and with the message a simple one: \"Let's go one more time\".",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-09-04T19:45:00+00:00",
+   "score": 11.9,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Taylor",
+     "t": "IPS",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://e0.365dm.com/26/09/1920x1080/skysports-katie-taylor-boxing_7341205.jpg?20260904193145"
+  },
+  {
    "titel": "Brighton leave five high-profile players out of Conference League squad after &#8216;boxing style&#8217; injury",
    "link": "https://talksport.com/football/4557471/brighton-conference-league-squad-omissions-injuries/",
    "beeld": "",
@@ -983,31 +974,31 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-09-04T12:32:12+00:00",
-   "score": 12.0,
+   "score": 11.7,
    "signalen": [
     "injury"
    ],
    "spelers": []
   },
   {
-   "titel": "Ipswich vs Liverpool LIVE on Sky! Barcola on bench for visitors",
+   "titel": "Liverpool still lead at Ipswich through Isak double LIVE on Sky!",
    "link": "https://www.skysports.com/football/ipswich-town-vs-liverpool/live/559470",
    "beeld": "",
    "samenvatting": "",
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-09-04T18:00:00+00:00",
-   "score": 11.9,
+   "score": 11.6,
    "signalen": [],
    "spelers": [
     {
-     "n": "Barcola",
+     "n": "Isak",
      "t": "LIV",
-     "p": "MID",
+     "p": "FWD",
      "mijn": false
     }
    ],
-   "beeld_bron": "https://e2.365dm.com/26/09/1920x1080/skysports-barcola-liverpool_7341164.jpg?20260904185531"
+   "beeld_bron": "https://e0.365dm.com/26/09/1920x1080/skysports-liverpool-ipswich_7341355.jpg?20260904211653"
   },
   {
    "titel": "'It's going to be tight' - Hamilton eyes 'dream' Monza pole",
@@ -1017,7 +1008,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-09-04T18:00:00+00:00",
-   "score": 11.9,
+   "score": 11.6,
    "signalen": [],
    "spelers": [
     {
@@ -1037,7 +1028,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-09-04T17:56:56+00:00",
-   "score": 11.9,
+   "score": 11.6,
    "signalen": [],
    "spelers": [
     {
@@ -1049,21 +1040,6 @@
    ]
   },
   {
-   "titel": "Harry Kane&#8217;s former Tottenham manager reveals how every EFL loan club got it wrong about Ballon d&#8217;Or favourite",
-   "link": "https://talksport.com/football/4558711/harry-kane-tim-sherwood-tottenham-loans-ballon-dor/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-09-04T17:13:00+00:00",
-   "score": 11.8,
-   "signalen": [
-    "loan",
-    "manager"
-   ],
-   "spelers": []
-  },
-  {
    "titel": "'Adonis' Gibbs-White's chance to shine - will Tuchel take notice?",
    "link": "https://www.bbc.co.uk/sport/football/articles/c07lk45y3ego?at_medium=RSS&at_campaign=rss",
    "beeld": "",
@@ -1071,7 +1047,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-09-03T17:07:18+00:00",
-   "score": 11.7,
+   "score": 11.4,
    "signalen": [],
    "spelers": [
     {
@@ -1090,6 +1066,21 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/df57/live/4ed623b0-a7b2-11f1-b5cf-8556ae508a51.jpg"
   },
   {
+   "titel": "Harry Kane&#8217;s former Tottenham manager reveals how every EFL loan club got it wrong about Ballon d&#8217;Or favourite",
+   "link": "https://talksport.com/football/4558711/harry-kane-tim-sherwood-tottenham-loans-ballon-dor/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-09-04T17:13:00+00:00",
+   "score": 11.4,
+   "signalen": [
+    "loan",
+    "manager"
+   ],
+   "spelers": []
+  },
+  {
    "titel": "US Open LIVE! Alcaraz in action ahead of Williams sisters playing doubles",
    "link": "https://www.skysports.com/tennis/live-blog/12040/13581049/us-open-live-scores-updates-news-commentary-results-from-new-york-with-carlos-alcaraz-aryna-sabalenka-ben-shelton-serena-and-venus-williams-in-action",
    "beeld": "",
@@ -1097,7 +1088,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-09-04T15:30:00+00:00",
-   "score": 11.5,
+   "score": 11.1,
    "signalen": [],
    "spelers": [
     {
@@ -1107,27 +1098,7 @@
      "mijn": false
     }
    ],
-   "beeld_bron": "https://e1.365dm.com/26/09/1920x1080/skysports-carlos-alcaraz-tennis_7340108.jpg?20260903171635"
-  },
-  {
-   "titel": "Hearn: Talks 'reopened' for Fury vs AJ at Wembley",
-   "link": "https://www.skysports.com/boxing/news/12040/13581339/fury-vs-joshua-eddie-hearn-says-talks-have-reopened-to-stage-british-heavyweight-blockbuster-at-wembley-stadium",
-   "beeld": "",
-   "samenvatting": "Promoter Eddie Hearn has announced that talks have \"reopened\" to stage the Tyson Fury vs Anthony Joshua fight at Wembley Stadium.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-09-04T14:47:00+00:00",
-   "score": 11.4,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Anthony",
-     "t": "BRE",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://e2.365dm.com/26/08/1920x1080/skysports-boxing-tyson-fury_7329016.jpg?20260823125111"
+   "beeld_bron": "https://e1.365dm.com/26/09/1920x1080/skysports-carlos-alcaraz-tennis_7341263.jpg?20260904201634"
   },
   {
    "titel": "Fernandes hat-trick inspires five-goal Man Utd comeback against Ipswich",
@@ -1210,6 +1181,26 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2b49/live/a56e2550-a489-11f1-a291-b542ee92de7c.jpg"
   },
   {
+   "titel": "Hearn: Talks 'reopened' for Fury vs AJ at Wembley",
+   "link": "https://www.skysports.com/boxing/news/12040/13581339/fury-vs-joshua-eddie-hearn-says-talks-have-reopened-to-stage-british-heavyweight-blockbuster-at-wembley-stadium",
+   "beeld": "",
+   "samenvatting": "Promoter Eddie Hearn has announced that talks have \"reopened\" to stage the Tyson Fury vs Anthony Joshua fight at Wembley Stadium.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-09-04T14:47:00+00:00",
+   "score": 11.0,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Anthony",
+     "t": "BRE",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://e2.365dm.com/26/08/1920x1080/skysports-boxing-tyson-fury_7329016.jpg?20260823125111"
+  },
+  {
    "titel": "Liverpool&#8217;s stance on signing a new attacker as Cody Gakpo stays and Ismaila Sarr update",
    "link": "https://talksport.com/football/4550540/liverpool-transfer-stance-rumours-cody-gakpo-ismaila-sarr/",
    "beeld": "",
@@ -1244,7 +1235,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-09-04T11:31:39+00:00",
-   "score": 10.8,
+   "score": 10.5,
    "signalen": [],
    "spelers": [
     {
@@ -1263,7 +1254,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-09-04T10:44:37+00:00",
-   "score": 10.7,
+   "score": 10.4,
    "signalen": [],
    "spelers": [
     {
@@ -1283,7 +1274,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-09-04T16:32:24+00:00",
-   "score": 10.7,
+   "score": 10.3,
    "signalen": [
     "transfer"
    ],
@@ -1297,7 +1288,7 @@
    "bron": "Voetbal International",
    "soort": "nl",
    "datum": "2026-09-04T18:18:00+02:00",
-   "score": 10.6,
+   "score": 10.3,
    "signalen": [
     "transfer"
    ],
@@ -1305,24 +1296,18 @@
    "beeld_bron": "https://webp.vi.cdn.pxr.nl/news/2026/09/03/1a44c5cda8c92ce8eb8c4f91efe667c65050a968.jpg?width=1200"
   },
   {
-   "titel": "Arsenal’s ever-improving defence meets one that got away in Rogers",
-   "link": "https://www.skysports.com/football/news/12040/13581188/arsenals-defence-still-improving-even-without-william-saliba-but-morgan-rogers-and-chelsea-are-tougher-test-the-radar",
+   "titel": "Free agent Karim Benzema tipped for Premier League transfer aged 38",
+   "link": "https://talksport.com/football/4558187/karim-benzema-next-club-transfer-premier-league/",
    "beeld": "",
    "samenvatting": "",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-09-04T09:44:00+00:00",
-   "score": 10.5,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Rogers",
-     "t": "CHE",
-     "p": "MID",
-     "mijn": false
-    }
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-09-04T15:15:20+00:00",
+   "score": 10.1,
+   "signalen": [
+    "transfer"
    ],
-   "beeld_bron": "https://e1.365dm.com/26/09/1920x1080/skysports-calafiori-rogers_7340923.png?20260904144654"
+   "spelers": []
   },
   {
    "titel": "Man City should&#8217;ve snubbed Enzo Fernandez and saved £84m on &#8216;next Steven Gerrard&#8217;",
@@ -1332,7 +1317,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-09-04T09:25:11+00:00",
-   "score": 10.5,
+   "score": 10.1,
    "signalen": [],
    "spelers": [
     {
@@ -1344,20 +1329,6 @@
    ]
   },
   {
-   "titel": "Free agent Karim Benzema tipped for Premier League transfer aged 38",
-   "link": "https://talksport.com/football/4558187/karim-benzema-next-club-transfer-premier-league/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-09-04T15:15:20+00:00",
-   "score": 10.4,
-   "signalen": [
-    "transfer"
-   ],
-   "spelers": []
-  },
-  {
    "titel": "Coventry sign winger Gboho - cousin of PSG's Doue",
    "link": "https://www.bbc.co.uk/sport/football/articles/cvgypzg4y75o?at_medium=RSS&at_campaign=rss",
    "beeld": "",
@@ -1365,7 +1336,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-09-04T14:32:38+00:00",
-   "score": 10.3,
+   "score": 10.0,
    "signalen": [
     "signing"
    ],
@@ -1373,19 +1344,60 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7aad/live/c0cf0060-a869-11f1-bbad-43eaf67b94b6.jpg"
   },
   {
-   "titel": "F1 reveals location as season launch event returns for 2027",
-   "link": "https://www.skysports.com/f1/news/12040/13581325/f1-2027-season-launch-event-to-be-held-in-milan-in-february-ahead-of-next-campaign-with-teams-drivers-present",
+   "titel": "Jaissle claims first Premier League win at lacklustre Spurs",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c1kxe87ye7ro?at_medium=RSS&at_campaign=rss",
    "beeld": "",
-   "samenvatting": "Formula 1 will stage its second-ever season launch event in Milan in February ahead of the 2027 campaign.",
-   "bron": "Sky Sports",
+   "samenvatting": "Second-half goals from Anthony Elanga and Yoanne Wissa give manager Matthias Jaissle his first Premier League victory, as Newcastle United win 2-0 at Tottenham Hotspur.",
+   "bron": "BBC Sport",
    "soort": "algemeen",
-   "datum": "2026-09-04T14:07:00+00:00",
-   "score": 10.2,
+   "datum": "2026-08-29T19:27:16+00:00",
+   "score": 10,
    "signalen": [
-    "return"
+    "manager"
    ],
-   "spelers": [],
-   "beeld_bron": "https://e0.365dm.com/24/12/1920x1080/skysports-f1-logo-2023-las-vegas-gp_6774817.jpg?20241213120300"
+   "spelers": [
+    {
+     "n": "Elanga",
+     "t": "NEW",
+     "p": "MID",
+     "mijn": false
+    },
+    {
+     "n": "Wissa",
+     "t": "NEW",
+     "p": "FWD",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6052/live/2bac82c0-a3da-11f1-b109-879e35c24276.jpg"
+  },
+  {
+   "titel": "'It doesn't feel like a goal' - O'Neil questions law after 'blatant' Maguire handball",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cwyzxz0yvz0o?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Ipswich Town manager Gary O'Neil questions the handball rule after a loophole allowed Harry Maguire's handling offence to stand as a Jacob Greaves own goal.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-08-30T20:01:40+00:00",
+   "score": 10,
+   "signalen": [
+    "manager"
+   ],
+   "spelers": [
+    {
+     "n": "Greaves",
+     "t": "IPS",
+     "p": "DEF",
+     "mijn": false
+    },
+    {
+     "n": "Maguire",
+     "t": "MUN",
+     "p": "DEF",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/96e2/live/7e31e660-a4a3-11f1-aed2-8d6da8d75094.jpg"
   }
  ]
 }
