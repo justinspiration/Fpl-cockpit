@@ -74,10 +74,24 @@ def main():
             print("[historie] bestaand bestand onleesbaar, opnieuw opbouwen")
             oud = {"spelers": {}, "gws": []}
     hebben = set(int(g) for g in (oud.get("gws") or []))
-    nodig = [g for g in afgerond if g not in hebben]
+    # Welke gameweeks zijn opgeslagen terwijl ze nog liepen? Die dragen
+    # VOORLOPIGE cijfers en moeten precies één keer opnieuw opgehaald worden
+    # zodra ze officieel dicht zijn.
+    #
+    # Zonder deze lijst ging het mis, en niet subtiel. GW2 werd bewaard terwijl
+    # Arsenal nog moest spelen; Calafiori en White stonden dus op nul. Toen de
+    # gameweek daarna afliep, sloeg de incrementele logica hem over -- hij stond
+    # immers al in de lijst -- en bleven die twee voorgoed op nul staan. In de
+    # terugblik scheelde dat 18 punten op een gameweek van 90.
+    voorlopig = set(int(g) for g in (oud.get("voorlopig") or []))
+    nodig = [g for g in afgerond if g not in hebben or g in voorlopig]
     if lopend:
         nodig.append(lopend)          # altijd verversen zolang hij loopt
         hebben.discard(lopend)
+    for g in nodig:
+        voorlopig.discard(g)          # wat we nu halen is definitief, tenzij lopend
+    if lopend:
+        voorlopig.add(lopend)
     if not nodig:
         print("[historie] al bij: GW%s" % ", GW".join(str(g) for g in sorted(hebben)))
         return
@@ -134,7 +148,8 @@ def main():
 
     uit = {"bron": "FPL API /event/{gw}/live/",
            "opgehaald": time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()),
-           "gws": sorted(hebben), "lopend": lopend, "spelers": spelers}
+           "gws": sorted(hebben), "lopend": lopend,
+           "voorlopig": sorted(voorlopig), "spelers": spelers}
     os.makedirs(STATE, exist_ok=True)
     json.dump(uit, open(PAD, "w", encoding="utf-8"), ensure_ascii=False)
     kb = os.path.getsize(PAD) / 1024

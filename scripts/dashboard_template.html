@@ -3431,6 +3431,390 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
   .pftab{font-size:.8em}
   .pftab th,.pftab td{padding:4px 3px}
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   VERFIJNINGSLAAG — puur visueel
+
+   Deze laag staat bewust achteraan en helemaal apart. Hij verandert geen enkele
+   structuur, geen enkele klasse en geen enkele regel logica; hij legt er alleen
+   materiaal, beweging en ritme overheen. Wil je hem uitzetten, dan knip je dit
+   blok weg en werkt alles nog precies zoals het werkte.
+
+   Volgorde van klein naar groot, want zo bouwt kwaliteit op:
+     1. grondstof   — beweging, cijfers, focus, schuifbalken
+     2. aanraken    — wat er gebeurt als je iets indrukt
+     3. materiaal   — waar oppervlakken van gemaakt lijken
+     4. beweging    — hoe dingen binnenkomen en van staat wisselen
+     5. gebaar      — de grote vlakken: achtergrond, kop, veld
+
+   Bruikbaarheid gaat vóór schoonheid. Daarom: geen enkele functie zit achter
+   een hover verstopt, elk aanraakdoel blijft even groot, contrast gaat omhoog
+   in plaats van omlaag, en alles hieronder valt stil bij prefers-reduced-motion.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. GRONDSTOF ────────────────────────────────────────────────────────── */
+:root{
+  /* Eén ritme voor de hele pagina. Zonder gedeelde tijden voelt een interface
+     als losse onderdelen die toevallig naast elkaar staan. */
+  --snel:120ms;         /* directe terugkoppeling: indrukken, aanvinken */
+  --vlot:190ms;         /* de standaard: hover, kleurwissels */
+  --rustig:280ms;       /* iets dat groeit of verschijnt */
+  --veer:cubic-bezier(.34,1.28,.42,1);    /* verend, met een lichte overshoot */
+  --uit:cubic-bezier(.22,.61,.36,1);      /* afremmen: binnenkomen */
+  --in:cubic-bezier(.55,.06,.68,.19);     /* versnellen: vertrekken */
+
+  /* Materiaal. Een kaart is niet één vlakke kleur maar een oppervlak met een
+     lichtval: iets lichter aan de bovenrand, waar het licht vandaan komt. */
+  --glans:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0) 42%);
+  --randglans:rgba(255,255,255,.7);
+  --ring:color-mix(in srgb,var(--accent) 45%,transparent);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --glans:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,0) 46%);
+  --randglans:rgba(255,255,255,.09);
+}}
+:root[data-theme="dark"]{
+  --glans:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,0) 46%);
+  --randglans:rgba(255,255,255,.09);
+}
+
+/* Cijfers moeten uitlijnen. In een proportioneel lettertype is een 1 smaller
+   dan een 8, waardoor kolommen gaan wiebelen zodra een getal verandert — en in
+   een dashboard veranderen getallen voortdurend. */
+.kpi,.pftab,.trow,.lrij,.krij,.n,.pt,.xp,.tbpt,.geldbalk,.tgw,
+table td,table th,.stap,.vgltab,.clbfixcel{
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum" 1,"cv01" 1;
+}
+
+/* Focus. Een toetsenbordgebruiker moet altijd kunnen zien waar hij is; de ring
+   is daarom opvallend, maar volgt de vorm van het element in plaats van er een
+   rechthoek omheen te tekenen. */
+:where(a,button,select,input,textarea,summary,[tabindex]):focus-visible{
+  outline:2px solid var(--ring);
+  outline-offset:2px;
+  border-radius:inherit;
+}
+::selection{ background:color-mix(in srgb,var(--accent) 28%,transparent); }
+
+/* Schuifbalken die bij de rest horen in plaats van bij het besturingssysteem. */
+*{ scrollbar-width:thin; scrollbar-color:color-mix(in srgb,var(--fg) 22%,transparent) transparent; }
+*::-webkit-scrollbar{ width:10px; height:10px; }
+*::-webkit-scrollbar-track{ background:transparent; }
+*::-webkit-scrollbar-thumb{
+  background:color-mix(in srgb,var(--fg) 18%,transparent);
+  border-radius:99px; border:3px solid transparent; background-clip:content-box;
+}
+*::-webkit-scrollbar-thumb:hover{ background:color-mix(in srgb,var(--fg) 32%,transparent); background-clip:content-box; }
+
+/* ── 2. AANRAKEN ─────────────────────────────────────────────────────────── */
+/* Elk element dat iets doet, geeft antwoord binnen een tiende seconde. Dat is
+   het verschil tussen "werkt het?" en "het werkt". De schaal blijft klein
+   (0,97) zodat er niets verschuift van wat eromheen staat. */
+button,.knop,.save,.reset,.tabs button,.subkeus button,.mpbreedte,.mpweg,
+.vwissel,.chatwis,.tabsorteer{
+  transition:transform var(--snel) var(--uit),
+             background-color var(--vlot) var(--uit),
+             border-color var(--vlot) var(--uit),
+             box-shadow var(--vlot) var(--uit),
+             color var(--vlot) var(--uit);
+}
+button:active:not(:disabled),.knop:active:not(:disabled),
+.save:active:not(:disabled),.reset:active:not(:disabled){ transform:scale(.97); }
+button:disabled,.knop:disabled,.save:disabled{ opacity:.45; cursor:not-allowed; transform:none; }
+
+/* Aanraakdoelen blijven minimaal 44px hoog zonder dat de knop groter oogt:
+   het onzichtbare deel steekt buiten de rand uit. */
+@media (pointer:coarse){
+  .tabs button,.subkeus button,.knop,.save,.reset{ position:relative; }
+  .tabs button::after,.subkeus button::after,.knop::after,.save::after,.reset::after{
+    content:""; position:absolute; inset:-8px -4px; }
+}
+
+/* ── 3. MATERIAAL ────────────────────────────────────────────────────────── */
+/* Een kaart krijgt een lichtval over de bovenrand en een haarscherpe rand.
+   Dat is wat "vlak gecodeerd" scheidt van "gemaakt". */
+.card{
+  position:relative;
+  background-image:var(--glans);
+  border-radius:var(--r3);
+  transition:box-shadow var(--rustig) var(--uit), transform var(--rustig) var(--uit),
+             border-color var(--rustig) var(--uit);
+}
+.card::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:1px; pointer-events:none;
+  background:linear-gradient(90deg,transparent,var(--randglans) 18%,var(--randglans) 82%,transparent);
+  border-radius:var(--r3) var(--r3) 0 0; opacity:.85;
+}
+/* De sectiekleur als dunne draad langs de bovenkant. Elk werkgebied heeft er
+   al een; die was alleen nergens te zien. */
+.card::after{
+  content:""; position:absolute; left:var(--r3); right:var(--r3); top:0; height:2px;
+  background:linear-gradient(90deg,transparent,var(--sectie),transparent);
+  opacity:0; transition:opacity var(--rustig) var(--uit); pointer-events:none;
+}
+.card:hover::after{ opacity:.5; }
+.card:hover{ box-shadow:var(--e3); }
+
+/* De kerncijfers. Groot, strak gespatieerd, met de eenheid ondergeschikt. */
+.kpi{ transition:transform var(--vlot) var(--veer), box-shadow var(--vlot) var(--uit); }
+.kpi:hover{ transform:translateY(-2px); box-shadow:var(--e2); }
+.kpi b,.kpi .groot,.kpi strong{ letter-spacing:-.02em; }
+
+/* Spelerkaarten op het veld: oppakbaar in plaats van aangeklikt. */
+.sp{ transition:transform var(--vlot) var(--veer), box-shadow var(--vlot) var(--uit),
+                 border-color var(--vlot) var(--uit); }
+.sp:hover{ transform:translateY(-3px) scale(1.015); box-shadow:var(--e2); z-index:2; }
+.sp:active{ transform:translateY(-1px) scale(.99); }
+
+/* Tabelrijen: een rustige aanwijzer in plaats van harde zebrastrepen. */
+.pftab tbody tr,table tbody tr{ transition:background-color var(--snel) linear; }
+.pftab tbody tr:hover,table tbody tr:hover{
+  background:color-mix(in srgb,var(--accent) 5%,transparent);
+}
+
+/* ── 4. BEWEGING ─────────────────────────────────────────────────────────── */
+/* Binnenkomen met een trapje. Alles tegelijk laten verschijnen leest als een
+   flits; 40 milliseconden ertussen leest als opbouw. Zes stappen is genoeg —
+   daarna wordt wachten hinderlijk in plaats van elegant. */
+@keyframes opkomst{
+  from{ opacity:0; transform:translateY(10px) scale(.995); }
+  to{ opacity:1; transform:none; }
+}
+.tabpaneel.actief > .grid > .card,
+.tabpaneel.actief > .card{
+  animation:opkomst var(--rustig) var(--uit) both;
+}
+.tabpaneel.actief > .grid:nth-of-type(1) > .card:nth-child(2){ animation-delay:40ms; }
+.tabpaneel.actief > .grid:nth-of-type(2){ animation-delay:80ms; }
+.tabpaneel.actief > .grid:nth-of-type(2) > .card{ animation-delay:80ms; }
+.tabpaneel.actief > .grid:nth-of-type(3) > .card{ animation-delay:120ms; }
+.tabpaneel.actief > .grid:nth-of-type(4) > .card{ animation-delay:160ms; }
+.tabpaneel.actief > .grid:nth-of-type(n+5) > .card{ animation-delay:200ms; }
+
+/* Het actieve tabblad krijgt een streep die meebeweegt in plaats van te springen. */
+.tabs button{ position:relative; }
+.tabs button::before{
+  content:""; position:absolute; left:12px; right:12px; bottom:0; height:2px;
+  background:var(--sectie,var(--accent)); border-radius:2px;
+  transform:scaleX(0); transform-origin:center;
+  transition:transform var(--rustig) var(--veer), opacity var(--vlot) var(--uit);
+  opacity:0;
+}
+.tabs button[aria-selected="true"]::before{ transform:scaleX(1); opacity:1; }
+
+/* ── 5. GEBAAR ───────────────────────────────────────────────────────────── */
+/* De achtergrond is geen vlakke kleur maar een zaal met licht erin. Twee zeer
+   zachte lichtbronnen, vastgezet zodat ze niet meescrollen. Bij twee procent
+   dekking merk je hem niet bewust op — en dat is precies de bedoeling. */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(58rem 40rem at 12% -8%, color-mix(in srgb,var(--accent) 7%,transparent), transparent 62%),
+    radial-gradient(46rem 34rem at 100% 0%, color-mix(in srgb,var(--t-inzicht) 5%,transparent), transparent 58%);
+}
+body > *{ position:relative; z-index:1; }
+
+/* De geldbalk is het enige element dat over je werk heen zweeft. Die mag dus
+   ook echt als glas boven de pagina liggen in plaats van als een balk ervoor. */
+.geldbalk{
+  backdrop-filter:saturate(1.5) blur(14px);
+  -webkit-backdrop-filter:saturate(1.5) blur(14px);
+  border-bottom:1px solid var(--line);
+  box-shadow:var(--e2);
+}
+
+/* ── STIL BIJ VOORKEUR ───────────────────────────────────────────────────── */
+/* Wie bewegingsreductie aan heeft staan, krijgt alle bovenstaande beweging
+   niet. Niet afgezwakt — uit. De interface blijft volledig bruikbaar; er
+   gebeurt alleen niets dat je niet gevraagd hebt. */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important; animation-iteration-count:1 !important;
+    transition-duration:.001ms !important; scroll-behavior:auto !important;
+  }
+  .card:hover,.kpi:hover,.sp:hover,.sp:active{ transform:none; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   VERFIJNINGSLAAG 2 — de grotere gebaren
+
+   Laag 1 ging over grondstof en gedrag. Deze gaat over de vlakken die je het
+   eerst ziet: de kerncijfers, de tabbalk, de kop en het veld. Nog steeds puur
+   visueel, nog steeds niets dat een functie verplaatst of verbergt.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── KERNCIJFERS ─────────────────────────────────────────────────────────── */
+/* Een dashboard wordt beoordeeld op zijn getallen. Die stonden hier op dezelfde
+   grootte als hun eigen bijschrift, waardoor je las in plaats van zag. Nu is de
+   hiërarchie ondubbelzinnig: label klein en rustig, cijfer groot en strak,
+   toelichting eronder. Plus een verticale draad in de sectiekleur, zodat de
+   tegel ergens bij hoort in plaats van los te zweven. */
+.kpi{ position:relative; overflow:hidden; }
+.kpi::before{
+  content:""; position:absolute; left:0; top:14%; bottom:14%; width:3px;
+  border-radius:0 3px 3px 0;
+  background:linear-gradient(180deg,var(--sectie,var(--accent)),
+             color-mix(in srgb,var(--sectie,var(--accent)) 25%,transparent));
+  opacity:.75; transition:opacity var(--vlot) var(--uit), top var(--vlot) var(--uit),
+             bottom var(--vlot) var(--uit);
+}
+.kpi:hover::before{ opacity:1; top:6%; bottom:6%; }
+.kpi .lbl{
+  font-size:var(--t-xs); letter-spacing:.09em; text-transform:uppercase;
+  color:var(--fg-3); font-weight:650;
+}
+.kpi .v{
+  font-size:clamp(26px,3.1vw,36px); line-height:1.04; font-weight:700;
+  letter-spacing:-.025em; color:var(--fg);
+  font-variant-numeric:tabular-nums;
+}
+.kpi .m{ color:var(--fg-3); font-size:var(--t-sm); }
+
+/* ── TABBALK ─────────────────────────────────────────────────────────────── */
+/* Elf tabbladen is veel. De actieve moet daarom niet alleen een streep hebben
+   maar ook een eigen vlak — anders moet je zoeken waar je bent. Het vlak is
+   subtiel; de streep uit laag 1 doet het opvallende werk. */
+.tabs button{
+  border-radius:var(--r1) var(--r1) 0 0;
+  transition:background-color var(--vlot) var(--uit), color var(--vlot) var(--uit);
+}
+.tabs button:hover:not([aria-selected="true"]){
+  background:color-mix(in srgb,var(--fg) 4%,transparent);
+}
+.tabs button[aria-selected="true"]{
+  background:linear-gradient(180deg,transparent,
+             color-mix(in srgb,var(--sectie,var(--accent)) 9%,transparent));
+}
+.tabs button .tl{ font-weight:600; }
+.tabs button[aria-selected="true"] .tl{ color:var(--sectie,var(--accent)); }
+.tabs button .tsub{ transition:opacity var(--vlot) var(--uit); }
+
+/* ── KOP ─────────────────────────────────────────────────────────────────── */
+/* Het monogram was een gewoon vierkantje. Nu heeft het diepte en een lichtrand,
+   zoals een ingelegd plaatje. Het is het eerste dat je ziet; dat mag gemaakt
+   ogen. */
+.brand .mark{
+  background:linear-gradient(145deg,var(--accent),var(--accent-2));
+  box-shadow:0 2px 10px -2px color-mix(in srgb,var(--accent) 55%,transparent),
+             inset 0 1px 0 rgba(255,255,255,.28);
+  border-radius:var(--r2);
+  color:#fff; font-weight:700; letter-spacing:-.01em;
+}
+.brand h1{ letter-spacing:-.015em; }
+
+/* ── ETIKETTEN ───────────────────────────────────────────────────────────── */
+/* Pillen en badges droegen allemaal hun eigen vorm. Eén vorm, één ritme. */
+.tag,.badge,.merk,.tbchip,.tbvoorlopig,.aanbev{
+  border-radius:99px; font-weight:650; letter-spacing:.01em;
+  padding-inline:.55em; line-height:1.7;
+}
+
+/* ── HET VELD ────────────────────────────────────────────────────────────── */
+/* De grasmat was een vlakke groene rechthoek. Een lichtval vanaf de bovenkant
+   geeft er diepte aan zonder dat het een plaatje wordt: je kijkt nu een stadion
+   in in plaats van naar een tabel met shirtjes. */
+.grasmat{
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,.10), transparent 55%),
+    linear-gradient(180deg, rgba(0,0,0,.05), transparent 30%, rgba(0,0,0,.09));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10), var(--e1);
+}
+.bankvak{
+  border-radius:var(--r2);
+  background:color-mix(in srgb,var(--fg) 3.5%,transparent);
+  box-shadow:inset 0 1px 0 var(--randglans);
+}
+
+/* ── LEGE VLAKKEN ────────────────────────────────────────────────────────── */
+/* Een leeg vak hoort niet als een fout te lezen. Rustig, gecentreerd, met lucht
+   eromheen. */
+.empty,.leegtxt,.leeg{
+  color:var(--fg-3); text-align:center; padding:var(--s5) var(--s4);
+  border:1px dashed var(--line); border-radius:var(--r2);
+  background:color-mix(in srgb,var(--fg) 2%,transparent);
+}
+
+/* ── BRONVOET ────────────────────────────────────────────────────────────── */
+/* De herkomst van elk cijfer staat onderaan elke kaart. Dat is het hart van dit
+   dashboard, maar het mag de cijfers niet overstemmen: kleiner, rustiger, en
+   pas volledig leesbaar als je er aandacht aan geeft. */
+.src{
+  border-top:1px solid var(--line-2);
+  color:var(--fg-3); font-size:var(--t-xs);
+  /* Hier stond opacity .72, en dat was een fout van mij: de herkomst van elk
+     cijfer is precies het onderdeel dat áltijd leesbaar moet zijn. Doorzichtig
+     maken bracht het contrast onder de norm. Nu regelt kleur de rangorde, niet
+     dekking — dat scheelt leesbaarheid zonder de nadruk te verleggen. */
+  opacity:1; color:color-mix(in srgb,var(--fg-3) 88%,var(--fg));
+  transition:color var(--vlot) var(--uit);
+}
+.card:hover .src,.src:focus-within{ color:var(--fg-2); }
+
+/* ── SCHUIFGEDRAG ────────────────────────────────────────────────────────── */
+html{ scroll-behavior:smooth; }
+
+/* ── LEESBAARHEID VAN DE KLEINSTE TEKST ──────────────────────────────────── */
+/* Drie plekken vielen onder de norm, gemeten met een contrasttoets over de hele
+   pagina. Twee daarvan waren te kleine letters, één was doorzichtigheid.
+   Kleine tekst mag rustig zijn, maar nooit moeilijk. */
+.tabs .tsub{
+  opacity:1;                                   /* was .6 */
+  color:color-mix(in srgb,var(--fg-3) 92%,var(--fg));
+  font-size:10px;                              /* was 9px */
+}
+.tabs button[aria-selected="true"] .tsub{ color:var(--fg-2); }
+.lbl{ font-size:10.5px; }                      /* was 9,5px */
+
+/* ── AWARDS ──────────────────────────────────────────────────────────────── */
+.awkop{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:var(--s3); margin-bottom:var(--s4); }
+.awtabs{ display:flex; gap:4px; background:color-mix(in srgb,var(--fg) 5%,transparent);
+  padding:3px; border-radius:99px; }
+.awtabs .awtab{
+  border:0; background:transparent; color:var(--fg-2); cursor:pointer;
+  padding:7px 14px; border-radius:99px; font-size:var(--t-sm); font-weight:650;
+  min-height:34px;
+  transition:background-color var(--vlot) var(--uit), color var(--vlot) var(--uit);
+}
+.awtabs .awtab:hover{ color:var(--fg); }
+.awtabs .awtab.aan{ background:var(--card); color:var(--fg); box-shadow:var(--e1); }
+.awkeuze{ display:flex; align-items:center; gap:8px; font-size:var(--t-sm); color:var(--fg-3); }
+.awkeuze select{ min-height:36px; }
+
+/* Eén categorie: titel links, de twee kanten ernaast. Op smalle schermen
+   onder elkaar, want drie kolommen naast elkaar op een telefoon is onleesbaar. */
+.awrij{
+  display:grid; grid-template-columns:minmax(150px,1fr) 1.2fr 1.2fr;
+  gap:var(--s3); align-items:center;
+  padding:var(--s3) 0; border-bottom:1px solid var(--line-2);
+}
+.awrij:last-child{ border-bottom:0; }
+.awtitel b{ display:block; font-size:var(--t-md); }
+.awtitel i{ display:block; color:var(--fg-3); font-size:var(--t-xs); font-style:normal;
+  margin-top:2px; line-height:1.4; }
+.awkant{ border-radius:var(--r1); padding:8px 11px; border:1px solid transparent; }
+.awkant.win{ background:color-mix(in srgb,var(--good) 11%,transparent);
+  border-color:color-mix(in srgb,var(--good) 26%,transparent); }
+.awkant.ver{ background:color-mix(in srgb,var(--bad) 10%,transparent);
+  border-color:color-mix(in srgb,var(--bad) 24%,transparent); }
+.awlabel{ display:block; font-size:var(--t-xs); letter-spacing:.08em;
+  text-transform:uppercase; font-weight:700; margin-bottom:2px; }
+.awkant.win .awlabel{ color:var(--good); }
+.awkant.ver .awlabel{ color:var(--bad); }
+.awkant b{ display:block; font-size:var(--t-md); line-height:1.3; }
+.awkant i{ display:block; color:var(--fg-2); font-size:var(--t-sm); font-style:normal;
+  margin-top:2px; line-height:1.4; }
+.awrij.gelijk .awleeg{ grid-column:2 / -1; color:var(--fg-3); font-size:var(--t-sm);
+  padding:8px 11px; border:1px dashed var(--line); border-radius:var(--r1); }
+.awdet{ display:block; color:var(--fg-3); font-size:var(--t-xs); font-style:normal; }
+.awscroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+@media (max-width:760px){
+  .awrij{ grid-template-columns:1fr; gap:6px; }
+  .awrij.gelijk .awleeg{ grid-column:1; }
+  .awkop{ flex-direction:column; align-items:stretch; }
+  .awtabs{ justify-content:space-between; }
+}
 </style>
 
 <header><div class="hdr">
@@ -3877,6 +4261,12 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
   
 
   <div class="tabpaneel" data-paneel="leagues">
+  <div class="grid"><section class="card">
+    <h2><span class="dot"></span>Awards
+      <span class="tag">per gameweek en over het hele seizoen</span></h2>
+    <div class="body" id="awseizoenbox"></div>
+    <div class="src" id="src-awseizoen"></div>
+  </section></div>
     <div class="subkeus" id="lgkeus" role="tablist"></div>
     <div class="subvak" data-sub="stand" hidden>
 <div class="grid g2">
@@ -5453,9 +5843,14 @@ function teamscore(){
   const gemMin=mins.reduce((a,b)=>a+b,0)/mins.length;
   const sMin=Math.max(0,Math.min(15,(gemMin-45)/40*15));
 
-  // 4 BANK — levert je bank iets op bij autosubs of een Bench Boost
+  /* De bank telt NIET mee in de score.
+     Hij stond hier voor tien punten, en dat strafte een correcte keuze af: wie
+     goedkope bankvullers neemt om zijn basiself te kunnen betalen, kreeg een
+     lagere teamscore dan wie geld op de bank liet staan. Een bank telt alleen
+     bij autosubs en bij een Bench Boost — twee uitzonderingen, geen maatstaf
+     voor de kwaliteit van je team. Het getal blijft wel zichtbaar als
+     informatie, want bij een Bench Boost wil je het weten. */
   const bankSom=bn.reduce((a,p)=>a+punt(p),0);
-  const sBank=Math.max(0,Math.min(10,(bankSom-5)/11*10));
 
   // 5 CAPTAINKEUZE — ligt de aanvoerdersband bij je hoogst geprojecteerde speler
   const beste=xi.slice().sort((a,b)=>punt(b)-punt(a))[0];
@@ -5473,7 +5868,7 @@ function teamscore(){
   const sBud=Math.max(0,Math.min(10,10-Math.max(0,vrij-0.3)*4));
 
   const delen=[
-    {n:maxi?"Selectie tegen het maximum":"Projectie basiself",w:30,s:sProj,
+    {n:maxi?"Selectie tegen het maximum":"Projectie basiself",w:35,s:sProj,
      c:maxi?`${mijnEcht.toFixed(1)} van de ${maxi.toFixed(1)} die met £${D.ideaal._budget}m haalbaar was`
            :`${mijnXI.toFixed(1)} punten — de meest gekozen elf komt op ${tplXI.toFixed(1)}`,
      t:maxi?`bouwer.py rekent uit welke vijftien met jouw budget het meeste opleveren, `
@@ -5489,17 +5884,15 @@ function teamscore(){
        +`Gelijk spel levert ongeveer 17 van de 30 op; 15% erboven is de volle score.`},
     {n:"Programma",w:15,s:sFix,c:`gemiddelde FDR ${fdr.toFixed(2)} over 5 gameweeks`,
      t:"Het gemiddelde van de moeilijkheidsgraad van de komende vijf duels van je basisspelers. Lager is beter."},
-    {n:"Minutenzekerheid",w:15,s:sMin,c:`gemiddeld ${gemMin.toFixed(0)} verwachte minuten per basisspeler`,
+    {n:"Minutenzekerheid",w:20,s:sMin,c:`gemiddeld ${gemMin.toFixed(0)} verwachte minuten per basisspeler`,
      t:"Verwachte speeltijd volgens FPL Copilot. Een elf die niet speelt scoort niet."},
-    {n:"Bankkwaliteit",w:10,s:sBank,c:`${bankSom.toFixed(1)} punten op de bank`,
-     t:"Wat je bank oplevert bij autosubs, en wat een Bench Boost zou opbrengen."},
-    {n:"Aanvoerderskeuze",w:10,s:sCap,
+    {n:"Aanvoerderskeuze",w:15,s:sCap,
      c:band.cap?`${band.cap.n} met ${capP.toFixed(1)}${beste&&beste.id!==band.cap.id?` — ${beste.n} staat op ${punt(beste).toFixed(1)}`:" — je hoogste"}`:"geen aanvoerder gekozen",
      t:"Vol punt als je captainkeuze op je hoogst geprojecteerde speler valt."},
     {n:"Beschikbaarheid",w:10,s:sRisk,
      c:twijfel.length?`${uit} niet inzetbaar, ${dub} twijfelachtig`:"iedereen fit gemeld",
      t:"Aftrek voor elke basisspeler die FPL als geblesseerd of twijfelachtig markeert."},
-    {n:"Geld aan het werk",w:10,s:sBud,c:`£${vrij.toFixed(1)}m staat ongebruikt op de bank`,
+    {n:"Geld aan het werk",w:5,s:sBud,c:`£${vrij.toFixed(1)}m staat ongebruikt op de bank`,
      t:"Geld dat je niet hebt uitgegeven levert nul punten op. Boven de 0,3 miljoen gaat het punten kosten."}];
 
   const tot=delen.reduce((a,d)=>a+d.s,0);
@@ -6945,6 +7338,120 @@ function nieuws(){
 /* ══════════════════════════════════════════════════════════════════════
    Leagues — jouw tien tegen de wereld
    ══════════════════════════════════════════════════════════════════════ */
+/* ---- awards: per gameweek en over het seizoen ----
+   Elke afgeronde gameweek wordt doorgerekend en bewaard, met per categorie
+   ALTIJD twee kanten: wie hem won en wie hem verloor. Dat tweede is meestal het
+   leukste, en zonder die kant kun je aan het eind van het seizoen geen tabel
+   maken van wie het vaakst onderaan bungelde.
+
+   Drie weergaven: één gameweek (met een keuzelijst om terug te bladeren), de
+   seizoenstand met wie wat won en verloor, en de records met de gameweek erbij. */
+let AWGW=null, AWTAB="week";
+function awardsPaneel(){
+  const box=$("#awseizoenbox"); if(!box) return;
+  const A=D.awards||{};
+  const gws=Object.keys(A.gameweeks||{}).map(Number).sort((a,b)=>b-a);
+  if(!gws.length){
+    box.innerHTML='<div class="empty"><b>Nog geen awards.</b> Die verschijnen zodra '
+      +'de eerste gameweek is afgerond.</div>'; return; }
+  if(AWGW===null||!gws.includes(AWGW)) AWGW=gws[0];
+
+  const knop=(id,tekst)=>`<button class="awtab${AWTAB===id?" aan":""}" data-awtab="${id}">${tekst}</button>`;
+  let h=`<div class="awkop">
+    <div class="awtabs">${knop("week","Per gameweek")}${knop("stand","Seizoenstand")}${knop("records","Records")}</div>
+    ${AWTAB==="week"?`<label class="awkeuze"><span>Gameweek</span>
+      <select id="awgw" aria-label="Kies een gameweek">${gws.map(g=>
+        `<option value="${g}"${g===AWGW?" selected":""}>Gameweek ${g}</option>`).join("")}</select></label>`:""}
+  </div>`;
+
+  if(AWTAB==="week"){
+    const blok=A.gameweeks[String(AWGW)];
+    h+=`<p class="pfuit">${blok.managers} managers, ${blok.categorieen.length} categorieën.
+      Groen is de winnaar, rood de verliezer. Bij een gedeelde plek staan alle namen erbij.</p>`;
+    h+=blok.categorieen.map(r=>{
+      if(r.gelijk) return `<div class="awrij gelijk"><div class="awtitel"><b>${esc(r.titel)}</b>
+        <i>${esc(r.uitleg)}</i></div><div class="awleeg">iedereen gelijk — niets te winnen deze week</div></div>`;
+      const kant=(k,d,soort)=>`<div class="awkant ${soort}">
+        <span class="awlabel">${soort==="win"?"wint":"verliest"}</span>
+        <b>${d.teams.map(esc).join(", ")}</b>
+        <i>${esc(d.detail)}</i></div>`;
+      return `<div class="awrij">
+        <div class="awtitel"><b>${esc(r.titel)}</b><i>${esc(r.uitleg)}</i></div>
+        ${kant("w",r.winnaar,"win")}${kant("v",r.verliezer,"ver")}</div>`;}).join("");
+  }
+
+  if(AWTAB==="stand"){
+    const t=(A.seizoen&&A.seizoen.tabel)||[];
+    const cats=[...new Set(Object.keys(A.gameweeks).flatMap(g=>
+      A.gameweeks[g].categorieen.map(c=>c.sleutel)))];
+    const titels={}; Object.keys(A.gameweeks).forEach(g=>
+      A.gameweeks[g].categorieen.forEach(c=>titels[c.sleutel]=c.titel));
+    h+=`<p class="pfuit">Over ${Object.keys(A.gameweeks).length} gespeelde gameweek(s).
+      Saldo is gewonnen min verloren.</p>
+      <div class="awscroll"><table class="pftab"><thead><tr><th>Team</th>
+      <th style="text-align:right">Gewonnen</th><th style="text-align:right">Verloren</th>
+      <th style="text-align:right">Saldo</th>
+      ${cats.map(c=>`<th style="text-align:right" title="${esc(titels[c]||c)}">${esc((titels[c]||c).slice(0,9))}</th>`).join("")}
+      </tr></thead><tbody>${t.map(r=>`<tr${r.team===D.entry.naam?' class="cap"':""}>
+        <td>${esc(r.team)}</td>
+        <td class="n"><b>${r.gewonnen_totaal}</b></td>
+        <td class="n">${r.verloren_totaal}</td>
+        <td class="n" style="color:${r.saldo>0?"var(--good)":r.saldo<0?"var(--bad)":"var(--fg-3)"}">
+          <b>${r.saldo>0?"+":""}${r.saldo}</b></td>
+        ${cats.map(c=>{const w=r.gewonnen[c]||0,v=r.verloren[c]||0;
+          return `<td class="n">${w||v?`<span title="${w} gewonnen, ${v} verloren">${
+            w?`<b style="color:var(--good)">${w}</b>`:""}${w&&v?" / ":""}${
+            v?`<span style="color:var(--bad)">${v}</span>`:""}</span>`:"—"}</td>`;}).join("")}
+      </tr>`).join("")}</tbody></table></div>`;
+  }
+
+  if(AWTAB==="records"){
+    const R=(A.seizoen&&A.seizoen.records)||[];
+    const F=A.feiten||{};
+    const groep={}; R.forEach(r=>{(groep[r.titel]=groep[r.titel]||[]).push(r);});
+    h+=`<p class="pfuit">De uitersten van het seizoen, met de gameweek erbij.</p>
+      <div class="awscroll"><table class="pftab"><thead><tr><th>Categorie</th>
+      <th>Beste</th><th style="text-align:right">GW</th>
+      <th>Slechtste</th><th style="text-align:right">GW</th></tr></thead><tbody>${
+      Object.keys(groep).map(t=>{
+        const b=groep[t].find(x=>x.kant==="beste"), s=groep[t].find(x=>x.kant==="slechtste");
+        return `<tr><td><b>${esc(t)}</b></td>
+          <td>${b?esc(b.teams.join(", "))+` <i class="awdet">${esc(b.detail)}</i>`:"—"}</td>
+          <td class="n">${b?b.gw:"—"}</td>
+          <td>${s?esc(s.teams.join(", "))+` <i class="awdet">${esc(s.detail)}</i>`:"—"}</td>
+          <td class="n">${s?s.gw:"—"}</td></tr>`;}).join("")}</tbody></table></div>`;
+    if(F.chips_beste&&F.chips_beste.length){
+      h+=`<h4 style="margin-top:var(--s5)">Chips</h4>
+        <p class="pfuit">Wat een chip opleverde, afgezet tegen wat die manager gemiddeld scoort.</p>
+        <div class="awscroll"><table class="pftab"><thead><tr><th>GW</th><th>Chip</th><th>Team</th>
+        <th style="text-align:right">Punten</th><th style="text-align:right">Winst</th></tr></thead>
+        <tbody>${F.chips_beste.map(c=>`<tr><td>${c.gw}</td><td>${esc(c.chip)}</td>
+          <td>${esc(c.team)}</td><td class="n">${c.punten}</td>
+          <td class="n" style="color:${c.winst>0?"var(--good)":"var(--bad)"}">
+            <b>${c.winst>0?"+":""}${c.winst}</b></td></tr>`).join("")}</tbody></table></div>`;
+    }
+    if(F.gemiddelde_per_manager&&F.gemiddelde_per_manager.length){
+      h+=`<h4 style="margin-top:var(--s5)">Gemiddelden</h4>
+        <div class="awscroll"><table class="pftab"><thead><tr><th>Team</th>
+        <th style="text-align:right">Gemiddeld</th><th style="text-align:right">Beste week</th>
+        <th style="text-align:right">Slechtste week</th></tr></thead><tbody>${
+        F.gemiddelde_per_manager.map(r=>`<tr${r.team===D.entry.naam?' class="cap"':""}>
+          <td>${esc(r.team)}</td><td class="n"><b>${r.gemiddeld}</b></td>
+          <td class="n">${r.beste}</td><td class="n">${r.slechtste}</td></tr>`).join("")}
+        </tbody></table></div>`;
+    }
+  }
+
+  box.innerHTML=h;
+  const sel=$("#awgw");
+  if(sel) sel.onchange=e=>{ AWGW=+e.target.value; awardsPaneel(); };
+  box.querySelectorAll("[data-awtab]").forEach(b=>b.onclick=()=>{
+    AWTAB=b.dataset.awtab; awardsPaneel(); });
+  bron("#src-awseizoen",[
+    {label:"opstellingen en punten per manager",bron:"FPL API /entry/{id}/event/{gw}/picks/ en /event/{gw}/live/",
+     url:"https://fantasy.premierleague.com/api/leagues-classic/81158/standings/"},
+    {label:"categorieën en uitslagen",bron:"berekend in awards.py",calc:1}]);
+}
 function leagues(){
   VLAK="plan";
   const L=D.league||{};
@@ -9333,7 +9840,7 @@ function paneelTekenen(t){
   else if(t==="research"){ tekenSub("research");
     research(); notities(); standPaneel(); clubs(); dbDraw(); vergelijk(); inzichten(); radar(); herkomst(); }
   else if(t==="overzicht") nieuws();
-  else if(t==="leagues"){ tekenSub("leagues"); rivalenPaneel(); leagues(); live(); awards(); leagueArchief(); }
+  else if(t==="leagues"){ tekenSub("leagues"); rivalenPaneel(); leagues(); live(); awards(); awardsPaneel(); leagueArchief(); }
   else if(t==="mijnpagina") mijnpagina();
   else if(t==="transfers") advies();
   else if(t==="profiel") profiel();
@@ -13017,8 +13524,16 @@ function teamRating(g){
   const N=hzVan("team")===1?1:hzVan("team");
   const punt=p=>N===1?(p.gw[g||PLANGW]||0):somGW(p,g||PLANGW,N);
   const uit={};
+  /* Alleen de spelers die daadwerkelijk op het veld staan.
+     Hier stond de volledige vijftien, en dat maakte de score onbruikbaar: wie
+     bewust een bankvuller van £4,0m neemt om zijn basiself te betalen, kreeg
+     daarvoor een lagere efficiëntie. Dat is precies verkeerd om — die vuller
+     IS de manier waarop de basiself betaald wordt. Wat de vraag hoort te
+     beantwoorden is: hoe goed heb ik het geld besteed dat op het veld staat. */
+  const xi11=besteElftal(l,g||PLANGW);
+  const opVeld=xi11?xi11.xi:l.filter(p=>p.slot<=11);
   for(const P of ["GKP","DEF","MID","FWD"]){
-    const mijn=l.filter(p=>p.p===P);
+    const mijn=opVeld.filter(p=>p.p===P);
     if(!mijn.length){ uit[P]=null; continue; }
     const budget=mijn.reduce((a,p)=>a+p.c,0);
     // het beste dat er voor dit geld op deze positie te koop was
@@ -13096,13 +13611,22 @@ function keurSquad(g){
      bij FPL zelf dat het niet kan. Daarom hier de vergelijking met wat de API
      zegt dat je te besteden hebt. */
   if(D.concept && D.entry){
-    const echt=(D.entry.waarde||0)+(D.entry.bank||0);
+    /* Wat je te besteden hebt is NIET de som van de huidige prijzen.
+       Je budget is de som van je VERKOOPprijzen plus je bank, en van elke
+       koersstijging houd je maar de helft. Hier stond `waarde + bank` uit de
+       API, maar `last_deadline_value` is de waarde bij de VORIGE deadline —
+       prijzen bewegen elke nacht, dus dat getal loopt altijd achter. Daardoor
+       meldde het dashboard een tekort van £0,1m terwijl FPL zelf £1,1m over
+       toonde. Als team.json het bedrag draagt dat FPL zelf laat zien, gaat dat
+       voor; dat is het enige actuele, harde getal dat we hebben. */
+    const bi=D.budget_info||{};
+    const echt=bi.totaal!=null?bi.totaal:((D.entry.waarde||0)+(D.entry.bank||0));
     const kost=l.reduce((a,p)=>a+p.c,0);
-    if(kost>echt+0.001) fouten.push({kort:`£${(kost-echt).toFixed(1)}m te duur`,
-      tekst:`Dit concept kost £${kost.toFixed(1)}m terwijl je £${echt.toFixed(1)}m te besteden hebt `
-        +`(teamwaarde £${(D.entry.waarde||0).toFixed(1)}m plus £${(D.entry.bank||0).toFixed(1)}m bank). `
-        +`Je komt £${(kost-echt).toFixed(1)}m tekort — waarschijnlijk zijn er prijzen gestegen `
-        +`sinds je deze selectie samenstelde. FPL laat je dit zo niet bevestigen.`});
+    if(kost>echt+0.051) fouten.push({kort:`£${(kost-echt).toFixed(1)}m te duur`,
+      tekst:`Dit concept kost £${kost.toFixed(1)}m terwijl je £${echt.toFixed(1)}m te besteden hebt`
+        +(bi.gezien_op?` (afgelezen bij FPL op ${esc(bi.gezien_op)})`:"")
+        +`. Je komt £${(kost-echt).toFixed(1)}m tekort. Let op: prijzen bewegen elke nacht, `
+        +`dus controleer het bedrag bij FPL zelf voordat je iets weggooit.`});
   }
 
   // 5. dingen die mogen maar zonde zijn
@@ -13193,7 +13717,7 @@ function tekenAlles(){
   if(zichtbaar("overzicht")) nieuws();
   if(zichtbaar("fixtures")) rotatiePaneel();
   if(zichtbaar("mijnpagina")) mijnpagina();
-  if(zichtbaar("leagues")){ rivalenPaneel(); leagues(); leagueArchief(); }
+  if(zichtbaar("leagues")){ rivalenPaneel(); leagues(); leagueArchief(); awardsPaneel(); }
   geldbalkTeken();
   tekenStuur();
 }

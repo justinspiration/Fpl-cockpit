@@ -163,6 +163,17 @@ def build():
     # bijna altijd een meningsverschil over MINUTEN, niet over kwaliteit — en
     # dat is precies wat we willen zien in plaats van wegmiddelen.
     fplform = _lees("xp_fplform.json", {"spelers": {}}) or {"spelers": {}}
+    # Fantasy Football Pundit: tweede bron met een cijfer PER gameweek, plus een
+    # aparte startkans. Justin gaf aan FPL Form geen bruikbare maatstaf te vinden;
+    # Pundit vervangt die rol. Waar FPL Form speelkans en punten tot één getal
+    # vermenigvuldigde, houdt Pundit ze uit elkaar — en juist over minuten gaan
+    # de meeste meningsverschillen tussen modellen.
+    pundit = _lees("xp_pundit.json", {"spelers": {}}) or {"spelers": {}}
+    # FPL Estimator: derde mening, maar als TOTAAL over een venster van vijf
+    # gameweeks in plaats van per week. Die gebruiken we niet in het gemiddelde
+    # per gameweek — dat zou een weekcijfer met een vijfweekscijfer optellen —
+    # maar als onafhankelijke controle op de som over datzelfde venster.
+    estimator = _lees("xp_estimator.json", {"spelers": {}}) or {"spelers": {}}
     cp_start = copilot.get("_start_gw", 1)
     # Klopt die startweek met waar we nu staan? Zo niet, dan staat elke
     # projectie verschoven en is elk advies fout. Dat mag nooit stil gebeuren.
@@ -323,11 +334,17 @@ def build():
     if not _kf.ok:
         print("  BRON GEWEIGERD - FPL Copilot: %s" % _kf.reden)
         copilot = {"spelers": {}}
-    _kg = BRONNEN.keur_spelerbron("FPL Form", fplform, bs)
-    keuringen.append(_kg.dict())
-    if not _kg.ok:
-        print("  BRON GEWEIGERD - FPL Form: %s" % _kg.reden)
-        fplform = {"spelers": {}}
+    _kp = BRONNEN.keur_spelerbron("Pundit", pundit, bs)
+    keuringen.append(_kp.dict())
+    if not _kp.ok:
+        print("  BRON GEWEIGERD - Pundit: %s" % _kp.reden)
+        pundit = {"spelers": {}}
+    if estimator.get("spelers"):
+        _ke = BRONNEN.keur_spelerbron("FPL Estimator", estimator, bs, min_dekking=150)
+        keuringen.append(_ke.dict())
+        if not _ke.ok:
+            print("  BRON GEWEIGERD - FPL Estimator: %s" % _ke.reden)
+            estimator = {"spelers": {}}
     _gq = _lees("goaliq.json", {}) or {}
     _gq_uur = None
     if _gq.get("per_club"):
@@ -350,8 +367,56 @@ def build():
         print("  Bron %-24s %s%s" % (k["bron"], "toegelaten" if k["ok"] else "GEWEIGERD",
                                      (" - " + k["reden"]) if k["reden"] else ""))
 
+    # ---- schaalcorrectie: Pundit op het niveau van Copilot ----
+    # Twee modellen die hetzelfde meten liggen zelden op dezelfde schaal. Zonder
+    # correctie middel je appels met peren en schuift elk advies naar de bron die
+    # toevallig hoger uitkomt.
+    #
+    # Twee vallen zitten hierin, en ik ben in allebei gelopen.
+    #
+    # De eerste: middelen over ALLE gedeelde spelers. Dan absorbeer je
+    # meningsverschillen over SPEELTIJD in wat een schaalfactor heet. Copilot gaf
+    # Mosquera 8,4 punten over zes weken, Pundit 26,8 — dat is geen schaal, dat is
+    # onenigheid over of hij speelt. Zulke spelers trokken de factor voor
+    # middenvelders naar 0,55, waarna Pundit voor IEDEREEN met 45% werd gekort.
+    #
+    # De tweede: het gemiddelde nemen. Eén uitschieter verpest die. Daarom de
+    # mediaan, en alleen over spelers waarvan BEIDE bronnen zeggen dat hij vast
+    # speelt. Dan meet je zuiver de schaal. Zo gemeten liggen de bronnen 0,86 tot
+    # 0,92 uit elkaar over alle posities — bescheiden en consistent, precies wat
+    # een schaalverschil hoort te zijn.
     ff_ratio = {}
-    if fplform.get("spelers"):
+    if pundit.get("spelers"):
+        import statistics as _st
+        _paren = {}
+        for _e in bs["elements"]:
+            _cp = copilot.get("spelers", {}).get(str(_e["id"]))
+            _pd = pundit.get("spelers", {}).get(str(_e["id"]))
+            if not _cp or not _pd:
+                continue
+            _gs = [cp_start + i for i in range(len(_cp["gw"]))]
+            _gedeeld = [g for g in _gs if str(g) in (_pd.get("xp") or {})]
+            if not _gedeeld:
+                continue
+            _h = sum(float(_cp["gw"][g - cp_start]) for g in _gedeeld)
+            _f = sum(float(_pd["xp"][str(g)]) for g in _gedeeld)
+            if _h <= 4 or _f <= 4:
+                continue
+            _cpmin = (_cp.get("mn") or [0])[0] or 0
+            _stk = (_pd.get("start") or {}).get(str(_gedeeld[0]), 0)
+            if _cpmin < 70 or _stk < 0.70:
+                continue                      # geen eensgezindheid over speeltijd
+            _paren.setdefault(pos[_e["element_type"]], []).append(_h / _f)
+        for _P, _v in _paren.items():
+            if len(_v) >= 10:
+                ff_ratio[_P] = max(0.5, min(2.0, _st.median(_v)))
+        if _paren:
+            print("  Pundit geschaald naar Copilot-niveau (mediaan over spelers die "
+                  "volgens beide bronnen vast spelen): "
+                  + ", ".join("%s %.3f (n=%d)" % (P, ff_ratio.get(P, 1.0), len(_paren[P]))
+                              for P in sorted(_paren)))
+    _ff_ratio_oud = {}
+    if False and fplform.get("spelers"):
         _som = {}
         for _e in bs["elements"]:
             _cp = copilot.get("spelers", {}).get(str(_e["id"]))
@@ -399,6 +464,7 @@ def build():
         # Copilot geeft per speler een verwachting van minuten per duel. Dat is
         # vooruitkijkend en dus beter dan tellen hoe vaak hij vorig jaar startte.
         _cp0 = copilot.get("spelers", {}).get(str(e["id"]))
+        pd0 = pundit.get("spelers", {}).get(str(e["id"]))
         _cpmin0 = (_cp0.get("mn") or [None])[0] if _cp0 else None
         if _cpmin0:
             min_factor = max(0.0, min(1.0, float(_cpmin0) / 90.0))
@@ -453,9 +519,12 @@ def build():
         cp = copilot.get("spelers", {}).get(str(e["id"]))
         bron_proj = "eigen model"
         ff = fplform.get("spelers", {}).get(str(e["id"]))
+        # Startkans voor de eerstvolgende gameweek. Kwam van FPL Form; komt nu van
+        # Pundit, die hem als apart veld publiceert (`start_pct`) in plaats van
+        # hem in het puntencijfer te verstoppen.
         ff_kans = None
-        if ff:
-            _k = ff.get("kans") or {}
+        if pd0:
+            _k = pd0.get("start") or {}
             ff_kans = _k.get(str(alle_gws[0])) if alle_gws else None
         if cp:
             bron_proj = "FPL Copilot"
@@ -491,8 +560,8 @@ def build():
                 _i = g - cp_start
                 if 0 <= _i < len(cp["gw"]):
                     w["FPL Copilot"] = round(float(cp["gw"][_i]), 2)
-            if ff and str(g) in (ff.get("xp") or {}):
-                w["FPL Form"] = round(float(ff["xp"][str(g)]), 3)
+            if pd0 and str(g) in (pd0.get("xp") or {}):
+                w["Pundit"] = round(float(pd0["xp"][str(g)]), 3)
             if eigen_gw.get(g) is not None:
                 w["eigen model"] = round(float(eigen_gw[g]), 3)
             if w:
@@ -645,7 +714,12 @@ def build():
     # speelt (kans onder 15%), dan is dat een uitspraak over een feit — geblesseerd,
     # geschorst, niet in de selectie — en geen modelmening. Middelen zou een speler
     # die niet op het veld staat alsnog punten geven.
-    GEWICHT = {"FPL Copilot": 1.0, "FPL Form": 1.0, "eigen model": 0.5}
+    # Twee externe modellen tellen vol mee. Ons eigen model telt licht: het weet
+    # niets van blessures, rolwijzigingen of teamnieuws en is er alleen om gaten
+    # te vullen waar geen enkele bron iets zegt. Justin vroeg terecht waarom een
+    # cijfer dat hij niet kan navertellen even zwaar zou wegen als een model dat
+    # de markt verwerkt. Antwoord: dat hoort niet, en nu is het ook zo.
+    GEWICHT = {"FPL Copilot": 1.0, "Pundit": 1.0, "eigen model": 0.35}
     gemengd_n = strijd_n = gevolgd_n = 0
     for d0 in db:
         ruw = d0.pop("_ruw", None)
@@ -668,14 +742,14 @@ def build():
             op_schaal = {}
             if "FPL Copilot" in w:
                 op_schaal["FPL Copilot"] = w["FPL Copilot"]
-            if "FPL Form" in w:
-                op_schaal["FPL Form"] = round(w["FPL Form"] * f_sch, 2)
+            if "Pundit" in w:
+                op_schaal["Pundit"] = round(w["Pundit"] * f_sch, 2)
             if "eigen model" in w:
                 op_schaal["eigen model"] = round(w["eigen model"] * e_sch, 2)
             if not op_schaal:
                 continue
-            if niet_speler and "FPL Form" in op_schaal:
-                d0["gw"][_sleutel(g)] = op_schaal["FPL Form"]
+            if niet_speler and "Pundit" in op_schaal:
+                d0["gw"][_sleutel(g)] = op_schaal["Pundit"]
             else:
                 gem = BRONNEN.meng(op_schaal, GEWICHT)
                 d0["gw"][_sleutel(g)] = gem["waarde"]
@@ -695,14 +769,14 @@ def build():
             eerste = toon.get(str(alle_gws[0])) or list(toon.values())[0]
             d0["projbron"] = "%d bronnen: %s" % (len(eerste), ", ".join(sorted(eerste)))
         if niet_speler:
-            d0["bronstrijd"] = ("FPL Form: speelkans %.0f%% — die bron gevolgd, "
+            d0["bronstrijd"] = ("Pundit: startkans %.0f%% — die bron gevolgd, "
                                 "niet gemiddeld" % (kans * 100))
             gevolgd_n += 1
         elif strijd_tekst:
             d0["bronstrijd"] = strijd_tekst
             strijd_n += 1
     print("  Bronnen gemengd: %d spelers met 2+ bronnen, %d met een echt "
-          "meningsverschil, %d waar FPL Form 'speelt niet' zegt"
+          "meningsverschil, %d waar de startkans onder 15%% ligt"
           % (gemengd_n, strijd_n, gevolgd_n))
 
     dbmap = {d["id"]: d for d in db}
@@ -1190,6 +1264,47 @@ def build():
                 v = max(1, min(5, v))
             vrij_nu = v
 
+    # ---- BUDGET: squadwaarde, verkoopprijzen en overwaarde ----
+    # Hier ging het mis. Het dashboard telde overal de HUIDIGE prijzen op en
+    # noemde dat je budget. Maar je budget is de som van je VERKOOPprijzen plus
+    # je bank, en een verkoopprijs is lager dan de huidige prijs zodra een speler
+    # gestegen is: van elke stijging houd je maar de helft. Zie prijzen.py.
+    #
+    # De API geeft ons `last_deadline_value`, en dat is de squadwaarde bij de
+    # VORIGE deadline — niet die van vandaag. Prijzen bewegen elke nacht, dus dat
+    # getal loopt altijd achter. Daarom mag team.json een `budget_fpl` dragen:
+    # het bedrag dat FPL zelf op de Transfers-pagina toont. Dat is het enige
+    # actuele, harde getal dat er is, en het gaat voor op onze eigen som.
+    budget_info = None
+    if entry_meta:
+        _tj = _lees("team.json", {}) or {}
+        _bf = _tj.get("budget_fpl") or {}
+        _huidig = round(sum(p["c"] for p in squad), 1) if squad else None
+        _waarde = (entry_meta.get("last_deadline_value") or 0) / 10.0
+        _bank = (entry_meta.get("last_deadline_bank") or 0) / 10.0
+        budget_info = {
+            "squadwaarde_deadline": round(_waarde, 1),
+            "bank": round(_bank, 1),
+            "huidige_prijzen": _huidig,
+            "bron": "FPL API /entry/%s/ (last_deadline_value + last_deadline_bank)" % entry_id,
+            "achterstand": ("last_deadline_value is de waarde bij de vorige deadline; "
+                            "prijzen bewegen dagelijks, dus dit loopt achter"),
+        }
+        if _bf.get("totaal"):
+            budget_info.update({
+                "totaal": float(_bf["totaal"]),
+                "resterend_bij_fpl": _bf.get("resterend"),
+                "gezien_op": _bf.get("gezien_op"),
+                "bron": "afgelezen bij FPL zelf op %s" % _bf.get("gezien_op", "?"),
+                "uitleg": _bf.get("_uitleg"),
+            })
+        else:
+            budget_info["totaal"] = round(_waarde + _bank, 1)
+        if _huidig is not None:
+            budget_info["overwaarde"] = round(_huidig - budget_info["totaal"], 1)
+        print("  Budget: £%.1fm te besteden, selectie kost £%.1fm (%s)"
+              % (budget_info["totaal"], _huidig or 0, budget_info["bron"]))
+
     # ---- TERUGBLIK: je eigen afgelopen gameweeks ----
     # Het dashboard keek alleen vooruit. Wat er in de weken ervoor gebeurde stond
     # nergens, terwijl juist dat je vertelt of een keuze werkte. Per afgelopen
@@ -1210,7 +1325,11 @@ def build():
             if not g:
                 continue
             pk = _pgws.get(str(g))
-            if pk is None or g == _lopend:
+            # Ook de opstelling opnieuw halen zolang de gameweek nog liep toen we
+            # hem bewaarden. Autosubs worden pas definitief als alles gespeeld is.
+            _was_voorlopig = g in set(
+                (_lees("historie.json", {}) or {}).get("voorlopig") or [])
+            if pk is None or g == _lopend or _was_voorlopig:
                 pk = try_get("%s/entry/%s/event/%d/picks/" % (BASE, entry_id, g))
                 if pk and pk.get("picks"):
                     _pgws[str(g)] = pk
@@ -1483,6 +1602,8 @@ def build():
         "copilot_grens": cp_laatste,
         "bronkeuring": keuringen,
         "concept": _concept,
+        "budget_info": budget_info,
+        "awards": _lees("awards_historie.json", {}) or {},
         "terugblik": terugblik,
         "historie": _lees("historie.json", {}) or {},
         "copilot_meta": {"aantal": len(copilot.get("spelers", {})),
