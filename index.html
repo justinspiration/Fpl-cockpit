@@ -3816,6 +3816,92 @@ html{ scroll-behavior:smooth; }
   .awkop{ flex-direction:column; align-items:stretch; }
   .awtabs{ justify-content:space-between; }
 }
+
+/* ── awards: schakelaar en kopblokken ────────────────────────────────────── */
+.awkeuze.uit{ opacity:.4; }
+.awkeuze.uit select{ cursor:not-allowed; }
+.awschak{ display:flex; align-items:center; gap:var(--s3); flex-wrap:wrap; }
+.awschakknop{
+  display:inline-flex; align-items:center; gap:9px; cursor:pointer;
+  background:transparent; border:0; padding:6px 4px; min-height:40px;
+  color:var(--fg-2); font-size:var(--t-sm); font-weight:650;
+}
+.awschakknop .awpil{
+  width:42px; height:24px; border-radius:99px; position:relative; flex:0 0 auto;
+  background:color-mix(in srgb,var(--fg) 16%,transparent);
+  transition:background-color var(--vlot) var(--uit);
+}
+.awschakknop .awpil i{
+  position:absolute; top:3px; left:3px; width:18px; height:18px; border-radius:50%;
+  background:var(--card); box-shadow:var(--e1);
+  transition:transform var(--rustig) var(--veer);
+}
+.awschakknop[aria-checked="true"]{ color:var(--fg); }
+.awschakknop[aria-checked="true"] .awpil{ background:var(--accent); }
+.awschakknop[aria-checked="true"] .awpil i{ transform:translateX(18px); }
+.awsub{ display:flex; gap:4px; background:color-mix(in srgb,var(--fg) 5%,transparent);
+  padding:3px; border-radius:99px; }
+.awtop{ display:grid; grid-template-columns:1fr 1fr; gap:var(--s3); margin-bottom:var(--s4); }
+.awtopvak{ border-radius:var(--r2); padding:var(--s3) var(--s4); border:1px solid transparent; }
+.awtopvak.win{ background:color-mix(in srgb,var(--good) 11%,transparent);
+  border-color:color-mix(in srgb,var(--good) 26%,transparent); }
+.awtopvak.ver{ background:color-mix(in srgb,var(--bad) 10%,transparent);
+  border-color:color-mix(in srgb,var(--bad) 24%,transparent); }
+.awtopvak.win .awlabel{ color:var(--good); }
+.awtopvak.ver .awlabel{ color:var(--bad); }
+.awtopvak b{ display:block; font-size:var(--t-lg); line-height:1.25; margin-top:2px; }
+.awtopvak i{ display:block; color:var(--fg-2); font-size:var(--t-sm); font-style:normal; }
+@media (max-width:760px){ .awtop{ grid-template-columns:1fr; } }
+
+/* ── TERUGBLIK ALS VELD ──────────────────────────────────────────────────── */
+/* Dezelfde taal als Mijn team: linies onder elkaar, kaartjes per speler. Zo
+   herken je meteen in welke formatie je stond en wie waar hoorde. */
+.tbveld{
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,.08), transparent 55%),
+    linear-gradient(180deg,#1E7A46,#166139);
+  border-radius:var(--r3); padding:var(--s4) var(--s3);
+  display:flex; flex-direction:column; gap:var(--s3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12), var(--e1);
+}
+.tblinie{ display:flex; justify-content:center; gap:var(--s2); flex-wrap:wrap; }
+.tbsp{
+  position:relative; min-width:76px; max-width:104px; flex:1 1 76px;
+  background:rgba(0,0,0,.34); border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--r1); padding:7px 6px 6px; text-align:center; color:#fff;
+  transition:transform var(--vlot) var(--veer), box-shadow var(--vlot) var(--uit);
+}
+.tbsp:hover{ transform:translateY(-2px); box-shadow:var(--e2); z-index:2; }
+.tbsp.in{ border-color:var(--warn); box-shadow:0 0 0 1px var(--warn) inset; }
+.tbsp.uit{ opacity:.5; border-style:dashed; }
+.tbpunt{ display:block; font-size:19px; font-weight:700; line-height:1.05;
+  font-variant-numeric:tabular-nums; }
+.tbnaam{ display:block; font-size:var(--t-sm); font-weight:650; line-height:1.25;
+  margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.tbclub{ display:block; font-size:var(--t-xs); opacity:.72; line-height:1.3; }
+.tbmin{ display:block; font-size:var(--t-xs); opacity:.6; }
+.tbband,.tbsub{
+  position:absolute; top:-7px; font-size:9px; font-weight:800; line-height:1;
+  padding:3px 5px; border-radius:99px; letter-spacing:.03em;
+}
+.tbband{ left:-5px; background:#fff; color:#111; }
+.tbband.v{ background:rgba(255,255,255,.82); }
+.tbsub{ right:-5px; }
+.tbsub.in{ background:var(--warn); color:#111; }
+.tbsub.uit{ background:var(--bad); color:#fff; }
+.tbbank{ margin-top:var(--s3); }
+.tbbanklabel{ display:block; font-size:var(--t-xs); letter-spacing:.08em;
+  text-transform:uppercase; color:var(--fg-3); font-weight:650; margin-bottom:6px; }
+.tbbank .tblinie{ justify-content:flex-start; }
+.tbbank .tbsp{ background:color-mix(in srgb,var(--fg) 6%,transparent);
+  border-color:var(--line); color:var(--fg); }
+.tbuitleg{ margin-top:var(--s3); font-size:var(--t-sm); color:var(--fg-2);
+  border-left:3px solid var(--warn); padding-left:var(--s3); }
+@media (max-width:620px){
+  .tbsp{ min-width:64px; flex-basis:64px; padding:6px 4px 5px; }
+  .tbpunt{ font-size:16px; }
+  .tbnaam{ font-size:var(--t-xs); }
+}
 </style>
 
 <header><div class="hdr">
@@ -3955,22 +4041,6 @@ html{ scroll-behavior:smooth; }
   </div>
   </div>
 
-  <div class="tabpaneel" data-paneel="profiel">
-    <div class="grid"><section class="card">
-      <h2><span class="dot"></span>Spelerpagina
-        <span class="tag">elk cijfer over één speler</span></h2>
-      <div class="body">
-        <div class="vzoek" style="margin-bottom:15px">
-          <input id="pfQ" type="search" autocomplete="off"
-                 placeholder="Zoek een speler…" aria-label="Zoek een speler">
-          <div class="vsug" id="pfS" hidden></div>
-        </div>
-        <div id="profielbox"></div>
-      </div>
-      <div class="src" id="src-profiel"></div>
-    </section></div>
-  </div>
-
   <div class="tabpaneel" data-paneel="transfers">
   <div class="grid">
     <section class="card">
@@ -4058,6 +4128,21 @@ html{ scroll-behavior:smooth; }
   </div>
   <div class="tabpaneel" data-paneel="research">
     <div class="subkeus" id="rekeus" role="tablist"></div>
+    <div class="subvak" data-sub="speler" hidden>
+<div class="grid"><section class="card">
+      <h2><span class="dot"></span>Spelerpagina
+        <span class="tag">elk cijfer over één speler</span></h2>
+      <div class="body">
+        <div class="vzoek" style="margin-bottom:15px">
+          <input id="pfQ" type="search" autocomplete="off"
+                 placeholder="Zoek een speler…" aria-label="Zoek een speler">
+          <div class="vsug" id="pfS" hidden></div>
+        </div>
+        <div id="profielbox"></div>
+      </div>
+      <div class="src" id="src-profiel"></div>
+    </section></div>
+    </div>
     <div class="subvak" data-sub="zoek" hidden>
       <div class="grid">
         <section class="card">
@@ -5858,18 +5943,14 @@ function teamscore(){
   const tplXI=tplNamen.map(n=>D.db.find(p=>p.n===n)).filter(Boolean).reduce((a,p)=>a+punt(p),0);
   // 70% van het maximum is de bodem, 100% is de volle score
   const ratio=maxi?Math.min(1.25,mijnEcht/maxi):(tplXI>0?mijnXI/tplXI:1);
-  const sProj=maxi?Math.max(0,Math.min(30,(ratio-0.70)/0.30*30))
-                  :Math.max(0,Math.min(30,(ratio-0.80)/0.35*30));
 
   // 2 FIXTURES — gemiddelde FDR van je basiself over vijf gameweeks
   const fdrs=xi.map(p=>gemFDR(p,G,5)).filter(v=>v>0);
   const fdr=fdrs.length?fdrs.reduce((a,b)=>a+b,0)/fdrs.length:3;
-  const sFix=Math.max(0,Math.min(15,(4.2-fdr)/1.7*15));
 
   // 3 MINUTEN — hoe zeker is het dat je elf ook echt speelt
   const mins=xi.map(p=>p.cpmin!=null?p.cpmin:(p.minf||0)*90);
   const gemMin=mins.reduce((a,b)=>a+b,0)/mins.length;
-  const sMin=Math.max(0,Math.min(15,(gemMin-45)/40*15));
 
   /* De bank telt NIET mee in de score.
      Hij stond hier voor tien punten, en dat strafte een correcte keuze af: wie
@@ -5883,20 +5964,42 @@ function teamscore(){
   // 5 CAPTAINKEUZE — ligt de aanvoerdersband bij je hoogst geprojecteerde speler
   const beste=xi.slice().sort((a,b)=>punt(b)-punt(a))[0];
   const capP=band.cap?punt(band.cap):0;
-  const sCap=beste?Math.max(0,Math.min(10,capP/punt(beste)*10)):5;
 
   // 6 RISICO — geblesseerden en twijfelgevallen in je basiself
   const twijfel=xi.filter(p=>p.status&&p.status!=="a");
   const uit=twijfel.filter(p=>["i","s","u","n"].includes(p.status)).length;
   const dub=twijfel.length-uit;
-  const sRisk=Math.max(0,10-uit*4-dub*1.7);
 
   // 7 BUDGET — geld dat op de bank staat werkt niet voor je
   const vrij=budgetIn(PLANGW);
-  const sBud=Math.max(0,Math.min(10,10-Math.max(0,vrij-0.3)*4));
 
+  /* ── SCOREBEREKENING ──────────────────────────────────────────────────
+     Elk onderdeel wordt eerst op een schaal van 0 tot 1 gezet en pas daarna
+     met zijn gewicht vermenigvuldigd.
+
+     Waarom dat uitmaakt: hiervoor stond het plafond hard in elke formule
+     (`Math.min(10, ...)`). Toen de gewichten werden herzien, bleven die
+     plafonds staan. Gevolg: Haaland als perfecte aanvoerder haalde 10 van de
+     15 — een tien was simpelweg het hoogst mogelijke, hoe goed je keuze ook
+     was. Hetzelfde gold voor Selectie (30 van 35) en Minutenzekerheid (15 van
+     20), terwijl Geld aan het werk juist tot 10 kon oplopen op een schaal van 5.
+
+     Met deze opzet kan dat niet meer gebeuren: het gewicht staat op één plek
+     en de formule weet er niets van. */
+  const GEW={proj:35,fix:15,min:20,cap:15,risk:10,bud:5};
+  const schaal=(v,lo,hi)=>Math.max(0,Math.min(1,(v-lo)/(hi-lo)));
+
+  const sProj=GEW.proj*(maxi?schaal(ratio,0.70,1.00):schaal(ratio,0.80,1.15));
+  const sFix =GEW.fix *schaal(4.2-fdr,0,1.7);
+  const sMin =GEW.min *schaal(gemMin,45,85);
+  // Vol punt als je band op je hoogst geprojecteerde speler ligt. Ligt hij
+  // daarnaast, dan telt de verhouding tussen beide — je verliest precies het
+  // deel dat je laat liggen.
+  const sCap =GEW.cap *(beste&&punt(beste)>0?Math.min(1,capP/punt(beste)):0.5);
+  const sRisk=GEW.risk*Math.max(0,1-uit*0.40-dub*0.17);
+  const sBud =GEW.bud *Math.max(0,1-Math.max(0,vrij-0.3)*0.4);
   const delen=[
-    {n:maxi?"Selectie tegen het maximum":"Projectie basiself",w:35,s:sProj,
+    {n:maxi?"Selectie tegen het maximum":"Projectie basiself",w:GEW.proj,s:sProj,
      c:maxi?`${mijnEcht.toFixed(1)} van de ${maxi.toFixed(1)} die met £${D.ideaal._budget}m haalbaar was`
            :`${mijnXI.toFixed(1)} punten — de meest gekozen elf komt op ${tplXI.toFixed(1)}`,
      t:maxi?`bouwer.py rekent uit welke vijftien met jouw budget het meeste opleveren, `
@@ -5910,17 +6013,17 @@ function teamscore(){
        +`. Ik leg er mijn eigen projectiecijfers overheen, zodat beide kanten met dezelfde meetlat gemeten worden. `
        +`Let op: dit is een populariteitslat, geen kwaliteitslat — Focal beschrijft wat mensen kiezen, niet wat goed is. `
        +`Gelijk spel levert ongeveer 17 van de 30 op; 15% erboven is de volle score.`},
-    {n:"Programma",w:15,s:sFix,c:`gemiddelde FDR ${fdr.toFixed(2)} over 5 gameweeks`,
+    {n:"Programma",w:GEW.fix,s:sFix,c:`gemiddelde FDR ${fdr.toFixed(2)} over 5 gameweeks`,
      t:"Het gemiddelde van de moeilijkheidsgraad van de komende vijf duels van je basisspelers. Lager is beter."},
-    {n:"Minutenzekerheid",w:20,s:sMin,c:`gemiddeld ${gemMin.toFixed(0)} verwachte minuten per basisspeler`,
+    {n:"Minutenzekerheid",w:GEW.min,s:sMin,c:`gemiddeld ${gemMin.toFixed(0)} verwachte minuten per basisspeler`,
      t:"Verwachte speeltijd volgens FPL Copilot. Een elf die niet speelt scoort niet."},
-    {n:"Aanvoerderskeuze",w:15,s:sCap,
+    {n:"Aanvoerderskeuze",w:GEW.cap,s:sCap,
      c:band.cap?`${band.cap.n} met ${capP.toFixed(1)}${beste&&beste.id!==band.cap.id?` — ${beste.n} staat op ${punt(beste).toFixed(1)}`:" — je hoogste"}`:"geen aanvoerder gekozen",
      t:"Vol punt als je captainkeuze op je hoogst geprojecteerde speler valt."},
-    {n:"Beschikbaarheid",w:10,s:sRisk,
+    {n:"Beschikbaarheid",w:GEW.risk,s:sRisk,
      c:twijfel.length?`${uit} niet inzetbaar, ${dub} twijfelachtig`:"iedereen fit gemeld",
      t:"Aftrek voor elke basisspeler die FPL als geblesseerd of twijfelachtig markeert."},
-    {n:"Geld aan het werk",w:5,s:sBud,c:`£${vrij.toFixed(1)}m staat ongebruikt op de bank`,
+    {n:"Geld aan het werk",w:GEW.bud,s:sBud,c:`£${vrij.toFixed(1)}m staat ongebruikt op de bank`,
      t:"Geld dat je niet hebt uitgegeven levert nul punten op. Boven de 0,3 miljoen gaat het punten kosten."}];
 
   const tot=delen.reduce((a,d)=>a+d.s,0);
@@ -7384,12 +7487,29 @@ function awardsPaneel(){
       +'de eerste gameweek is afgerond.</div>'; return; }
   if(AWGW===null||!gws.includes(AWGW)) AWGW=gws[0];
 
-  const knop=(id,tekst)=>`<button class="awtab${AWTAB===id?" aan":""}" data-awtab="${id}">${tekst}</button>`;
+  /* Kop: links kies je de gameweek, rechts zet je het seizoensoverzicht aan.
+     Die twee horen niet in dezelfde rij knoppen: het één is "welke week", het
+     ander is "week of heel seizoen". Als schakelaar is dat in één oogopslag
+     duidelijk; als drie gelijkwaardige tabbladen moet je lezen wat er staat. */
+  const seizoen=(AWTAB!=="week");
   let h=`<div class="awkop">
-    <div class="awtabs">${knop("week","Per gameweek")}${knop("stand","Seizoenstand")}${knop("records","Records")}</div>
-    ${AWTAB==="week"?`<label class="awkeuze"><span>Gameweek</span>
-      <select id="awgw" aria-label="Kies een gameweek">${gws.map(g=>
-        `<option value="${g}"${g===AWGW?" selected":""}>Gameweek ${g}</option>`).join("")}</select></label>`:""}
+    <label class="awkeuze${seizoen?" uit":""}">
+      <span>Gameweek</span>
+      <select id="awgw" aria-label="Kies een gameweek"${seizoen?" disabled":""}>${gws.map(g=>
+        `<option value="${g}"${g===AWGW?" selected":""}>Gameweek ${g}</option>`).join("")}</select>
+    </label>
+    <div class="awschak">
+      <button class="awschakknop" id="awtoggle" role="switch"
+aria-checked="${seizoen}"
+        aria-label="Seizoensoverzicht aan of uit">
+        <span class="awpil"><i></i></span>
+        <span class="awschaklabel">Seizoensoverzicht</span>
+      </button>
+      ${seizoen?`<div class="awsub">
+        <button class="awtab${AWTAB==="stand"?" aan":""}" data-awtab="stand">Wie wint wat</button>
+        <button class="awtab${AWTAB==="records"?" aan":""}" data-awtab="records">Records</button>
+      </div>`:""}
+    </div>
   </div>`;
 
   if(AWTAB==="week"){
@@ -7414,8 +7534,22 @@ function awardsPaneel(){
       A.gameweeks[g].categorieen.map(c=>c.sleutel)))];
     const titels={}; Object.keys(A.gameweeks).forEach(g=>
       A.gameweeks[g].categorieen.forEach(c=>titels[c.sleutel]=c.titel));
-    h+=`<p class="pfuit">Over ${Object.keys(A.gameweeks).length} gespeelde gameweek(s).
-      Saldo is gewonnen min verloren.</p>
+    /* De twee vragen waar het aan het eind van het seizoen om draait, en die
+       je niet uit een brede tabel wilt vissen: wie won de meeste weken, en wie
+       verloor er de meeste. Die staan daarom apart bovenaan. */
+    const wk=t.map(r=>({team:r.team, w:(r.gewonnen.score||0), v:(r.verloren.score||0)}));
+    const meestW=Math.max(0,...wk.map(r=>r.w)), meestV=Math.max(0,...wk.map(r=>r.v));
+    const lijstW=wk.filter(r=>r.w===meestW&&meestW>0), lijstV=wk.filter(r=>r.v===meestV&&meestV>0);
+    h+=`<div class="awtop">
+      <div class="awtopvak win"><span class="awlabel">meeste gameweeks gewonnen</span>
+        <b>${lijstW.length?lijstW.map(r=>esc(r.team)).join(", "):"nog niemand"}</b>
+        <i>${meestW} van de ${Object.keys(A.gameweeks).length}</i></div>
+      <div class="awtopvak ver"><span class="awlabel">meeste gameweeks verloren</span>
+        <b>${lijstV.length?lijstV.map(r=>esc(r.team)).join(", "):"nog niemand"}</b>
+        <i>${meestV} van de ${Object.keys(A.gameweeks).length}</i></div>
+    </div>
+    <p class="pfuit">Over ${Object.keys(A.gameweeks).length} gespeelde gameweek(s).
+      Saldo is gewonnen min verloren. Groen is hoe vaak je die prijs won, rood hoe vaak je hem verloor.</p>
       <div class="awscroll"><table class="pftab"><thead><tr><th>Team</th>
       <th style="text-align:right">Gewonnen</th><th style="text-align:right">Verloren</th>
       <th style="text-align:right">Saldo</th>
@@ -7475,6 +7609,8 @@ function awardsPaneel(){
   if(sel) sel.onchange=e=>{ AWGW=+e.target.value; awardsPaneel(); };
   box.querySelectorAll("[data-awtab]").forEach(b=>b.onclick=()=>{
     AWTAB=b.dataset.awtab; awardsPaneel(); });
+  const tg=$("#awtoggle");
+  if(tg) tg.onclick=()=>{ AWTAB=(AWTAB==="week")?"stand":"week"; awardsPaneel(); };
   bron("#src-awseizoen",[
     {label:"opstellingen en punten per manager",bron:"FPL API /entry/{id}/event/{gw}/picks/ en /event/{gw}/live/",
      url:"https://fantasy.premierleague.com/api/leagues-classic/81158/standings/"},
@@ -7911,7 +8047,13 @@ function ladeIn(pid,stapelen){
 function openProfiel(pid,volledig){
   if(!volledig&&ladeIn(pid,true)) return;
   PROFIEL=+pid;
-  gaNaar("profiel");
+  /* De spelerpagina is geen eigen tabblad meer maar het eerste onderdeel van
+     Research. Alles wat hiernaartoe verwees moet dus twee dingen doen: naar
+     Research gaan én daar het juiste subtabblad kiezen. */
+  SUBKEUS.research="speler";
+  try{ localStorage.setItem(SUBS,JSON.stringify(SUBKEUS)); }catch(e){}
+  gaNaar("research");
+  tekenSub("research");
   profiel();
   setTimeout(()=>$("#profielbox")?.scrollIntoView({behavior:"smooth",block:"start"}),60);
 }
@@ -9381,7 +9523,11 @@ function kpis(){
       ? {k:"Mijn punten",v:e.punten,m:e.rang?"wereldrang "+e.rang.toLocaleString("nl-NL")+(e.gw_punten!=null?" · GW"+(D.gw-1)+": "+e.gw_punten:""):"totaal dit seizoen"}
       : {k:ENKEL?`XI-projectie GW${PLANGW}`:`XI-projectie ${HZ} GW`,v:som?som.toFixed(0):"—",
          m:bandK.cap?`inclusief ${esc(bandK.cap.n)} als aanvoerder`:"aanvoerder nog niet gekozen"},
-    {k:"Squadwaarde",v:"£"+waarde.toFixed(1)+"m",m:D.entry?"bank £"+(D.entry.bank||0).toFixed(1)+"m":"15 spelers"},
+    /* De bank stond op D.entry.bank, en dat is de stand bij de VORIGE deadline —
+       dus vrijwel altijd nul. Het actuele bedrag komt uit budget_info. */
+    {k:"Squadwaarde",v:"£"+waarde.toFixed(1)+"m",
+     m:D.entry?"bank £"+((D.budget_info&&D.budget_info.bank_nu!=null
+       ?D.budget_info.bank_nu:(D.entry.bank||0))).toFixed(1)+"m":"15 spelers"},
     {k:"FPL-managers",v:D.spelers_totaal?(D.spelers_totaal/1e6).toFixed(2)+"M":"—",m:"wereldwijd dit seizoen"},
     {k:"Spelers",v:D.db.length,m:"actuele prijzen"}];
   $("#kpis").innerHTML=k.map(x=>`<div class="kpi"><div class="lbl">${esc(x.k)}</div><div class="v">${esc(x.v)}</div><div class="m">${esc(x.m)}</div></div>`).join("");
@@ -9866,12 +10012,11 @@ function paneelTekenen(t){
   else if(t==="assistent"){ tekenSub("assistent");
     analist(); captain(); droomelftal(); ideaal(); chips(); chipteams(); signalen(); }
   else if(t==="research"){ tekenSub("research");
-    research(); notities(); standPaneel(); clubs(); dbDraw(); vergelijk(); inzichten(); radar(); herkomst(); }
+    profiel(); research(); notities(); standPaneel(); clubs(); dbDraw(); vergelijk(); inzichten(); radar(); herkomst(); }
   else if(t==="overzicht") nieuws();
   else if(t==="leagues"){ tekenSub("leagues"); rivalenPaneel(); leagues(); live(); awards(); awardsPaneel(); leagueArchief(); }
   else if(t==="mijnpagina") mijnpagina();
   else if(t==="transfers") advies();
-  else if(t==="profiel") profiel();
   GETEKEND[t]=true;
 }
 /* ---- Mijn pagina: echte panelen lenen in plaats van kopiëren ----
@@ -9994,16 +10139,26 @@ function sleepbaar(el,houder,soort){
    vier kaarten te scrollen om bij de vijfde te komen. Welke open stond
    blijft bewaard. */
 const SUBS="fplcockpit_sub_v1";
-let SUBKEUS={assistent:"nu", research:"zoek"};
+let SUBKEUS={assistent:"nu", research:"speler", leagues:"stand"};
 try{ Object.assign(SUBKEUS, JSON.parse(localStorage.getItem(SUBS)||"{}")); }catch(e){}
+/* Wat er bewaard was kan naar een subtabblad wijzen dat niet meer bestaat --
+   bij het verplaatsen van de spelerpagina verschoof de hele lijst. Dan valt hij
+   terug op het eerste, in plaats van een leeg vak te tonen. */
+setTimeout(()=>{ for(const p in SUBTABS){
+  const geldig=SUBTABS[p].map(x=>x[0]);
+  if(!geldig.includes(SUBKEUS[p])) SUBKEUS[p]=geldig[0];
+} },0);
 const SUBTABS={
   assistent:[["nu","Wat nu","de analist"],["cap","Aanvoerder","je captainkeuze"],
              ["droom","Droomelftal","het maximum"],["chips","Chips","wanneer inzetten"],
              ["signalen","Signalen","wat de cijfers roepen"]],
-  research:[["zoek","Zoeken","buiten het dashboard"],["stand","Stand","de competitie"],
+  /* Speler en Vergelijken staan vooraan: dat zijn de twee waar je het vaakst
+     bent. De spelerpagina was een eigen hoofdtabblad, maar dat kostte een van de
+     elf plekken in de balk voor iets dat inhoudelijk research is. */
+  research:[["speler","Speler","één dossier"],["vgl","Vergelijken","twee naast elkaar"],
+            ["zoek","Zoeken","buiten het dashboard"],["stand","Stand","de competitie"],
             ["clubs","Clubs","twintig dossiers"],
-            ["db","Database","alle spelers"],
-            ["vgl","Vergelijken","twee naast elkaar"],["inzicht","Inzichten","radar & rangen"],
+            ["db","Database","alle spelers"],["inzicht","Inzichten","radar & rangen"],
             ["herkomst","Herkomst","waar het vandaan komt"]],
   leagues:[["stand","Stand & live","jouw tien en de wereld"],
            ["archief","Archief","wie had wat, wanneer"]],
@@ -10055,7 +10210,15 @@ function hitKosten(g){
 }
 function budgetIn(g){
   const lijst=squadInGW(g);
-  const start=D.squad.reduce((a,p)=>a+p.c,0)+(D.entry?D.entry.bank:0);
+  /* De bank kwam uit D.entry.bank, en dat is `last_deadline_bank`: wat er in de
+     bank zat bij de VORIGE deadline. Sindsdien bewegen prijzen elke nacht, dus
+     dat getal staat vrijwel altijd op nul terwijl je in werkelijkheid wel geld
+     hebt. Justin had £0,2m; het dashboard toonde £0,0m.
+     Ligt er een actueel bankbedrag in budget_info — afgelezen bij FPL zelf —
+     dan gaat dat voor. */
+  const bank=(D.budget_info&&D.budget_info.bank_nu!=null)
+    ? D.budget_info.bank_nu : (D.entry?D.entry.bank:0);
+  const start=D.squad.reduce((a,p)=>a+p.c,0)+bank;
   // spelers die je in deze sessie hebt weggehaald tellen niet meer mee in de kosten,
   // dus hun waarde komt meteen vrij in de bank
   const uit=new Set(LEEG.map(x=>x.id));
@@ -11038,29 +11201,61 @@ function terugblikPaneel(){
             Object.keys(p.uit).sort((a,b)=>p.uit[b]-p.uit[a])
               .map(k=>"  "+puntNaam(k)+": "+(p.uit[k]>0?"+":"")+p.uit[k]).join("\n")+
             (p.mult>1?"\n  (x"+p.mult+" als aanvoerder)":""):"")}">${p.pt}</b></td></tr>`;
-      const kop=`<th>Speler</th><th>Tegen</th><th style="text-align:right">Min</th>
-        <th style="text-align:right">G</th><th style="text-align:right">A</th>
-        <th style="text-align:right">CS</th><th style="text-align:right">DefCon</th>
-        <th style="text-align:right">Bonus</th><th style="text-align:right">Punten</th>`;
+      /* Het veld, precies zoals de gameweek gespeeld is.
+         Twee dingen die een tabel niet laat zien en een veld wel: in welke
+         formatie je stond, en wie er vanaf de bank is ingevallen omdat een
+         basisspeler niet speelde. Dat laatste heet een autosub en FPL doet het
+         automatisch na afloop. Je herkent het aan de multiplier: een speler die
+         bij de deadline in je basis stond maar op nul staat, is eruit gehaald;
+         een bankspeler die op één staat, is ingevallen. */
+      const speelde=p=>p.mult>0;
+      const opveld=r.picks.filter(speelde);
+      const eruit=r.picks.filter(p=>p.basis&&!speelde(p));
+      const erin=r.picks.filter(p=>!p.basis&&speelde(p));
+      const echteBank=r.picks.filter(p=>!speelde(p));
+      const perPos=P=>opveld.filter(p=>p.p===P).sort((a,b)=>a.slot-b.slot);
+      const kaart=(p,soort)=>{
+        const merk=[];
+        if(p.cap) merk.push('<b class="tbband c">C</b>');
+        else if(p.vice) merk.push('<b class="tbband v">V</b>');
+        if(soort==="in") merk.push('<b class="tbsub in" title="Ingevallen vanaf je bank omdat een basisspeler niet speelde">IN</b>');
+        if(soort==="uit") merk.push('<b class="tbsub uit" title="Speelde niet; vervangen door een bankspeler">UIT</b>');
+        const tip=p.uit?Object.keys(p.uit).sort((a,b)=>p.uit[b]-p.uit[a])
+          .map(k=>puntNaam(k)+": "+(p.uit[k]>0?"+":"")+p.uit[k]).join("\n"):"";
+        return `<div class="tbsp${soort?" "+soort:""}" title="${esc(p.n)} — ${esc(p.t)}${
+          p.opp?" tegen "+esc(p.opp)+(p.thuis?" (thuis)":" (uit)"):""}\n${p.min} minuten${
+          tip?"\n\n"+tip:""}">
+          ${merk.join("")}
+          <span class="tbpunt">${p.pt}</span>
+          <span class="tbnaam">${esc(p.n)}</span>
+          <span class="tbclub">${esc(p.t)}${p.opp?" · "+esc(p.opp)+(p.thuis?"":" (u)"):""}</span>
+          <span class="tbmin">${p.min}'</span>
+        </div>`;};
+      const linie=arr=>arr.length?`<div class="tblinie">${arr.map(p=>kaart(p,
+        erin.includes(p)?"in":"")).join("")}</div>`:"";
+      const formatie=`${perPos("DEF").length}-${perPos("MID").length}-${perPos("FWD").length}`;
       return `<details class="tbgw"${r.gw===Math.max(...rijen.map(x=>x.gw))?" open":""}>
         <summary><b>Gameweek ${r.gw}</b>
           <span class="tbpt">${r.punten} punten</span>
           ${r.straf?`<span class="tbstraf">\u2212${r.straf} strafpunten</span>`:""}
           ${r.chip?`<span class="tbchip">${esc(chipNaam(r.chip))}</span>`:""}
           ${r.voorlopig?'<span class="tbvoorlopig">loopt nog</span>':""}
-          <span class="tbmeta">wereldrang ${r.rang?r.rang.toLocaleString("nl"):"—"}
+          ${erin.length?`<span class="tbchip" style="background:var(--warn);color:#000">${erin.length} autosub</span>`:""}
+          <span class="tbmeta">${formatie} \u00b7 wereldrang ${r.rang?r.rang.toLocaleString("nl"):"\u2014"}
             \u00b7 ${r.bank_punten} op de bank
             \u00b7 ${r.transfers} transfer${r.transfers===1?"":"s"}
             \u00b7 teamwaarde \u00a3${r.waarde}m</span></summary>
-        <table class="pftab"><thead><tr>${kop}</tr></thead>
-          <tbody>${xi.map(rij).join("")}</tbody>
-          <tfoot><tr><td colspan="8"><b>Basiself</b></td>
-            <td class="n"><b>${xi.reduce((a,p)=>a+p.pt,0)}</b></td></tr></tfoot></table>
-        <p class="pfuit" style="margin-top:8px">Bank${r.chip==="bboost"?" (telde mee door Bench Boost)":""}:</p>
-        <table class="pftab"><thead><tr>${kop}</tr></thead>
-          <tbody>${bnk.map(rij).join("")}</tbody>
-          <tfoot><tr><td colspan="8"><b>Bank</b></td>
-            <td class="n"><b>${bnk.reduce((a,p)=>a+p.ruw,0)}</b></td></tr></tfoot></table>
+        <div class="tbveld">
+          ${linie(perPos("GKP"))}${linie(perPos("DEF"))}${linie(perPos("MID"))}${linie(perPos("FWD"))}
+        </div>
+        ${eruit.length?`<p class="tbuitleg"><b>Niet gespeeld:</b>
+          ${eruit.map(p=>esc(p.n)).join(", ")} \u2014 vervangen door
+          ${erin.map(p=>esc(p.n)).join(", ")||"niemand (geen geldige vervanger)"}.</p>`:""}
+        <div class="tbbank">
+          <span class="tbbanklabel">Bank${r.chip==="bboost"?" (telde mee door Bench Boost)":""}</span>
+          <div class="tblinie">${echteBank.sort((a,b)=>a.slot-b.slot)
+            .map(p=>kaart(p,eruit.includes(p)?"uit":"bank")).join("")}</div>
+        </div>
       </details>`;}).join("");
   bron("#src-terugblik",[
     {label:"punten, rang en bank per gameweek",bron:"FPL API",
@@ -12004,7 +12199,6 @@ $("#dbtag").textContent="xG-kolommen: Opta · – = geen Opta-match (meestal kee
    sleep hem om, verberg wat je niet gebruikt, het blijft bewaard. */
 const VLAKKEN=[
   ["team","Mijn team","opstellen & wisselen"],
-  ["profiel","Speler","alles over één man"],
   ["transfers","Transfers","wie erin, wie eruit"],
   ["assistent","Assistent","wat de data concludeert"],
   ["research","Research","zoeken, vergelijken, database"],
@@ -12026,6 +12220,9 @@ let NAVORDE=VLAKKEN.map(v=>v[0]), NAVUIT=[];
 function laadNav(){
   try{
     const s=JSON.parse(localStorage.getItem(NAVS)||"{}");
+    /* 'profiel' was tot september een eigen tabblad en zit nog in de opgeslagen
+       volgorde van iedereen die het dashboard eerder opende. De filter hieronder
+       gooit hem er vanzelf uit, want hij staat niet meer in VLAKKEN. */
     const geldig=new Set(VLAKKEN.map(v=>v[0]));
     const orde=(s.orde||[]).filter(k=>geldig.has(k));
     NAVORDE=[...orde, ...VLAKKEN.map(v=>v[0]).filter(k=>!orde.includes(k))];

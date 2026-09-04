@@ -153,9 +153,7 @@
  "vice": "B.Fernandes",
  "budget_fpl": {
   "gezien_op": "2026-09-04",
-  "resterend": 1.1,
-  "selectie_kostte": 99.7,
-  "totaal": 100.8,
-  "_uitleg": "Wat FPL zelf toonde op de Transfers-pagina: 15/15 geselecteerd met £1,1m over. De 15 kostten daar £99,7m, dus je totale bestedingsruimte was £100,8m. Dat getal is leidend boven onze eigen som, want wij kennen je aankoopprijzen niet en kunnen je verkoopprijzen dus niet exact uitrekenen. De API geeft alleen last_deadline_value (£100,1m), en dat is de waarde bij de GW2-deadline — niet van vandaag."
+  "bank": 0.2,
+  "_uitleg": "Het bedrag dat FPL zelf op je team-pagina toont als 'in de bank'. Je totale bestedingsruimte is de kosten van je huidige selectie plus dit bedrag. Dat kunnen we niet zelf uitrekenen: daarvoor zouden we je aankoopprijzen moeten kennen, en die geeft de publieke API niet. last_deadline_value uit de API is de waarde bij de VORIGE deadline en loopt dus altijd achter."
  }
 }

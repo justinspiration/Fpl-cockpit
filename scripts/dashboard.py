@@ -1290,10 +1290,22 @@ def build():
             "achterstand": ("last_deadline_value is de waarde bij de vorige deadline; "
                             "prijzen bewegen dagelijks, dus dit loopt achter"),
         }
-        if _bf.get("totaal"):
+        # Zelfconsistent: wat je selectie NU kost plus wat er in de bank ligt.
+        # Alleen dat laatste getal kunnen we niet zelf bepalen — daarvoor zouden
+        # we je aankoopprijzen moeten kennen — dus dat lezen we af bij FPL.
+        # Zo blijft het kloppen ook als prijzen 's nachts bewegen: beide kanten
+        # schuiven dan mee.
+        if _bf.get("bank") is not None and _huidig is not None:
+            budget_info.update({
+                "bank_nu": float(_bf["bank"]),
+                "totaal": round(_huidig + float(_bf["bank"]), 1),
+                "gezien_op": _bf.get("gezien_op"),
+                "bron": "selectie plus de bank die FPL toont (%s)" % _bf.get("gezien_op", "?"),
+                "uitleg": _bf.get("_uitleg"),
+            })
+        elif _bf.get("totaal"):
             budget_info.update({
                 "totaal": float(_bf["totaal"]),
-                "resterend_bij_fpl": _bf.get("resterend"),
                 "gezien_op": _bf.get("gezien_op"),
                 "bron": "afgelezen bij FPL zelf op %s" % _bf.get("gezien_op", "?"),
                 "uitleg": _bf.get("_uitleg"),
