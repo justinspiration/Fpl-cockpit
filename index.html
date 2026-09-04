@@ -4265,8 +4265,8 @@ html{ scroll-behavior:smooth; }
   <div class="grid"><section class="card">
     <h2><span class="dot"></span>Awards
       <span class="tag">per gameweek en over het hele seizoen</span></h2>
-    <div class="body" id="awardsbox"></div>
-    <div class="src" id="src-awards"></div>
+    <div class="body" id="awseizoenbox"></div>
+    <div class="src" id="src-awseizoen"></div>
   </section></div>
     <div class="subkeus" id="lgkeus" role="tablist"></div>
     <div class="subvak" data-sub="stand" hidden>
@@ -7376,7 +7376,7 @@ function nieuws(){
    seizoenstand met wie wat won en verloor, en de records met de gameweek erbij. */
 let AWGW=null, AWTAB="week";
 function awardsPaneel(){
-  const box=$("#awardsbox"); if(!box) return;
+  const box=$("#awseizoenbox"); if(!box) return;
   const A=D.awards||{};
   const gws=Object.keys(A.gameweeks||{}).map(Number).sort((a,b)=>b-a);
   if(!gws.length){
@@ -7475,7 +7475,7 @@ function awardsPaneel(){
   if(sel) sel.onchange=e=>{ AWGW=+e.target.value; awardsPaneel(); };
   box.querySelectorAll("[data-awtab]").forEach(b=>b.onclick=()=>{
     AWTAB=b.dataset.awtab; awardsPaneel(); });
-  bron("#src-awards",[
+  bron("#src-awseizoen",[
     {label:"opstellingen en punten per manager",bron:"FPL API /entry/{id}/event/{gw}/picks/ en /event/{gw}/live/",
      url:"https://fantasy.premierleague.com/api/leagues-classic/81158/standings/"},
     {label:"categorieën en uitslagen",bron:"berekend in awards.py",calc:1}]);
@@ -9868,7 +9868,7 @@ function paneelTekenen(t){
   else if(t==="research"){ tekenSub("research");
     research(); notities(); standPaneel(); clubs(); dbDraw(); vergelijk(); inzichten(); radar(); herkomst(); }
   else if(t==="overzicht") nieuws();
-  else if(t==="leagues"){ tekenSub("leagues"); rivalenPaneel(); leagues(); live(); awards(); leagueArchief(); }
+  else if(t==="leagues"){ tekenSub("leagues"); rivalenPaneel(); leagues(); live(); awards(); awardsPaneel(); leagueArchief(); }
   else if(t==="mijnpagina") mijnpagina();
   else if(t==="transfers") advies();
   else if(t==="profiel") profiel();
