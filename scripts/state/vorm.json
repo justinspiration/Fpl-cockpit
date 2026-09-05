@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-05T14:52:57+00:00",
+ "_opgehaald": "2026-09-05T17:14:38+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -209,18 +209,8 @@
   "BRE": {
    "artikel": "2026–27 Brentford F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brentford_F.C._season",
-   "gespeeld": 9,
+   "gespeeld": 10,
    "laatste5": [
-    {
-     "datum": "2026-08-08",
-     "opp": "Rennes",
-     "thuis": false,
-     "voor": 4,
-     "tegen": 2,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-15",
      "opp": "Eintracht Frankfurt",
@@ -260,34 +250,34 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Sunderland",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
     "W",
     "W",
     "W",
-    "W",
+    "G",
     "G"
    ],
-   "vormpunten": 13,
+   "vormpunten": 11,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "BHA": {
    "artikel": "2026–27 Brighton & Hove Albion F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brighton_%26_Hove_Albion_F.C._season",
-   "gespeeld": 8,
+   "gespeeld": 9,
    "laatste5": [
-    {
-     "datum": "2026-08-15",
-     "opp": "Bologna",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-20",
      "opp": "Tromsø",
@@ -327,18 +317,28 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Leeds United",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
-    "W",
     "G",
     "W",
     "W",
-    "V"
+    "V",
+    "G"
    ],
-   "vormpunten": 10,
+   "vormpunten": 8,
    "vormmax": 15,
-   "oefen": 1
+   "oefen": 0
   },
   "CHE": {
    "artikel": "2026–27 Chelsea F.C. season",
@@ -410,18 +410,8 @@
   "COV": {
    "artikel": "2026–27 Coventry City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Coventry_City_F.C._season",
-   "gespeeld": 7,
+   "gespeeld": 8,
    "laatste5": [
-    {
-     "datum": "2026-08-08",
-     "opp": "Espanyol",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-14",
      "opp": "Monaco",
@@ -461,23 +451,33 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Manchester City",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
     "W",
-    "W",
     "V",
     "W",
+    "V",
     "V"
    ],
-   "vormpunten": 9,
+   "vormpunten": 6,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "CRY": {
    "artikel": "2026–27 Crystal Palace F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Crystal_Palace_F.C._season",
-   "gespeeld": 3,
+   "gespeeld": 4,
    "laatste5": [
     {
      "datum": "2026-07-25",
@@ -508,15 +508,26 @@
      "uit": "W",
      "soort": "oefen",
      "toernooi": "Friendly"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Fulham",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 2,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
     "V",
     "V",
+    "W",
     "W"
    ],
-   "vormpunten": 3,
-   "vormmax": 9,
+   "vormpunten": 6,
+   "vormmax": 12,
    "oefen": 3
   },
   "EVE": {
@@ -567,18 +578,8 @@
   "FUL": {
    "artikel": "2026–27 Fulham F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Fulham_F.C._season",
-   "gespeeld": 9,
+   "gespeeld": 10,
    "laatste5": [
-    {
-     "datum": "2026-08-12",
-     "opp": "Málaga",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "soort": "officieel",
-     "toernooi": "Trofeo Costa del Sol"
-    },
     {
      "datum": "2026-08-15",
      "opp": "Stuttgart",
@@ -618,16 +619,26 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Crystal Palace",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
-    "G",
     "W",
     "V",
     "W",
+    "V",
     "V"
    ],
-   "vormpunten": 7,
+   "vormpunten": 6,
    "vormmax": 15,
    "oefen": 1
   },
@@ -768,18 +779,8 @@
   "LEE": {
    "artikel": "2026–27 Leeds United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Leeds_United_F.C._season",
-   "gespeeld": 9,
+   "gespeeld": 10,
    "laatste5": [
-    {
-     "datum": "2026-08-12",
-     "opp": "Manchester United",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-15",
      "opp": "FC Augsburg",
@@ -819,18 +820,28 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Brighton & Hove Albion",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
+    "W",
+    "W",
+    "W",
     "G",
-    "W",
-    "W",
-    "W",
     "G"
    ],
    "vormpunten": 11,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "LIV": {
    "artikel": "2026–27 Liverpool F.C. season",
@@ -902,18 +913,8 @@
   "MCI": {
    "artikel": "2026–27 Manchester City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_City_F.C._season",
-   "gespeeld": 6,
+   "gespeeld": 7,
    "laatste5": [
-    {
-     "datum": "2026-08-05",
-     "opp": "K-League All Stars",
-     "thuis": false,
-     "voor": 3,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "2026 coupang play series"
-    },
     {
      "datum": "2026-08-09",
      "opp": "Atlético Madrid",
@@ -953,12 +954,22 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Coventry City",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
     "W",
-    "W",
     "V",
+    "W",
     "W",
     "W"
    ],
@@ -1108,18 +1119,8 @@
   "NFO": {
    "artikel": "2026–27 Nottingham Forest F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Nottingham_Forest_F.C._season",
-   "gespeeld": 12,
+   "gespeeld": 13,
    "laatste5": [
-    {
-     "datum": "2026-08-12",
-     "opp": "Bayer Leverkusen",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-16",
      "opp": "Brest",
@@ -1159,34 +1160,34 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Tottenham Hotspur",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
     "W",
-    "W",
     "V",
     "V",
+    "G",
     "G"
    ],
-   "vormpunten": 7,
+   "vormpunten": 5,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "TOT": {
    "artikel": "2026–27 Tottenham Hotspur F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Tottenham_Hotspur_F.C._season",
-   "gespeeld": 5,
+   "gespeeld": 6,
    "laatste5": [
-    {
-     "datum": "2026-07-26",
-     "opp": "Auckland",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-07-29",
      "opp": "Sydney FC",
@@ -1226,34 +1227,34 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Nottingham Forest",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
-    "W",
     "G",
     "V",
     "W",
-    "V"
+    "V",
+    "G"
    ],
-   "vormpunten": 7,
+   "vormpunten": 5,
    "vormmax": 15,
-   "oefen": 1
+   "oefen": 0
   },
   "SUN": {
    "artikel": "2026–27 Sunderland A.F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Sunderland_A.F.C._season",
-   "gespeeld": 7,
+   "gespeeld": 8,
    "laatste5": [
-    {
-     "datum": "2026-08-02",
-     "opp": "Wrexham",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-08",
      "opp": "Lens",
@@ -1293,18 +1294,28 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Brentford",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
-    "W",
     "V",
     "W",
     "V",
-    "W"
+    "W",
+    "G"
    ],
-   "vormpunten": 9,
+   "vormpunten": 7,
    "vormmax": 15,
-   "oefen": 3
+   "oefen": 2
   }
  }
 }
