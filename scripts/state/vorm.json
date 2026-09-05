@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-05T17:14:38+00:00",
+ "_opgehaald": "2026-09-05T20:08:22+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -75,18 +75,8 @@
   "AVL": {
    "artikel": "2026–27 Aston Villa F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Aston_Villa_F.C._season",
-   "gespeeld": 9,
+   "gespeeld": 10,
    "laatste5": [
-    {
-     "datum": "2026-08-07",
-     "opp": "Bayern Munich",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-12",
      "opp": "Paris Saint-Germain",
@@ -126,6 +116,16 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Hull City",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
@@ -133,11 +133,11 @@
     "V",
     "V",
     "V",
-    "V"
+    "G"
    ],
-   "vormpunten": 0,
+   "vormpunten": 1,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "BOU": {
    "artikel": "2026–27 AFC Bournemouth season",
@@ -645,18 +645,8 @@
   "HUL": {
    "artikel": "2026–27 Hull City A.F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Hull_City_A.F.C._season",
-   "gespeeld": 8,
+   "gespeeld": 9,
    "laatste5": [
-    {
-     "datum": "2026-08-08",
-     "opp": "Eintracht Frankfurt",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 2,
-     "uit": "V",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-15",
      "opp": "Nice",
@@ -696,18 +686,28 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-05",
+     "opp": "Aston Villa",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
-    "V",
     "G",
     "W",
     "G",
-    "W"
+    "W",
+    "G"
    ],
-   "vormpunten": 8,
+   "vormpunten": 9,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "IPS": {
    "artikel": "2026–27 Ipswich Town F.C. season",
