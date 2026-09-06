@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-06T10:36:30+00:00",
+ "_opgehaald": "2026-09-06T15:12:52+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -533,7 +533,7 @@
   "EVE": {
    "artikel": "2026–27 Everton F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Everton_F.C._season",
-   "gespeeld": 3,
+   "gespeeld": 4,
    "laatste5": [
     {
      "datum": "2026-07-25",
@@ -564,15 +564,26 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-06",
+     "opp": "Manchester United",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
     "G",
     "W",
+    "G",
     "G"
    ],
-   "vormpunten": 5,
-   "vormmax": 9,
+   "vormpunten": 6,
+   "vormmax": 12,
    "oefen": 1
   },
   "FUL": {
@@ -980,19 +991,8 @@
   "MUN": {
    "artikel": "2026–27 Manchester United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_United_F.C._season",
-   "gespeeld": 8,
+   "gespeeld": 9,
    "laatste5": [
-    {
-     "datum": "2026-08-08",
-     "opp": "Paris Saint-Germain",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "soort": "oefen",
-     "toernooi": "Pre-season and friendlies",
-     "neutraal": true
-    },
     {
      "datum": "2026-08-12",
      "opp": "Leeds United",
@@ -1036,18 +1036,29 @@
      "soort": "officieel",
      "toernooi": "Matches",
      "neutraal": false
+    },
+    {
+     "datum": "2026-09-06",
+     "opp": "Everton",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "Matches",
+     "neutraal": false
     }
    ],
    "vorm": [
     "G",
-    "G",
     "V",
     "V",
-    "W"
+    "W",
+    "V"
    ],
-   "vormpunten": 5,
+   "vormpunten": 4,
    "vormmax": 15,
-   "oefen": 3
+   "oefen": 2
   },
   "NEW": {
    "artikel": "2026–27 Newcastle United F.C. season",
