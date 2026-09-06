@@ -2,24 +2,14 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-06T15:12:52+00:00",
+ "_opgehaald": "2026-09-06T20:12:58+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
    "artikel": "2026–27 Arsenal F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Arsenal_F.C._season",
-   "gespeeld": 7,
+   "gespeeld": 8,
    "laatste5": [
-    {
-     "datum": "2026-08-09",
-     "opp": "Borussia Dortmund",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 3,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "Emirates Cup"
-    },
     {
      "datum": "2026-08-12",
      "opp": "Como",
@@ -59,16 +49,26 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-06",
+     "opp": "Chelsea",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
-    "V",
     "G",
+    "W",
     "W",
     "W",
     "W"
    ],
-   "vormpunten": 10,
+   "vormpunten": 13,
    "vormmax": 15,
    "oefen": 1
   },
@@ -343,18 +343,8 @@
   "CHE": {
    "artikel": "2026–27 Chelsea F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Chelsea_F.C._season",
-   "gespeeld": 9,
+   "gespeeld": 10,
    "laatste5": [
-    {
-     "datum": "2026-08-09",
-     "opp": "Johor Darul Ta'zim",
-     "thuis": false,
-     "voor": 3,
-     "tegen": 3,
-     "uit": "G",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-15",
      "opp": "Real Sociedad",
@@ -394,18 +384,28 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-06",
+     "opp": "Arsenal",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
-    "G",
     "W",
     "W",
     "W",
-    "W"
+    "W",
+    "V"
    ],
-   "vormpunten": 13,
+   "vormpunten": 12,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "COV": {
    "artikel": "2026–27 Coventry City F.C. season",
@@ -1041,9 +1041,9 @@
      "datum": "2026-09-06",
      "opp": "Everton",
      "thuis": false,
-     "voor": 0,
+     "voor": 2,
      "tegen": 2,
-     "uit": "V",
+     "uit": "G",
      "soort": "officieel",
      "toernooi": "Matches",
      "neutraal": false
@@ -1054,9 +1054,9 @@
     "V",
     "V",
     "W",
-    "V"
+    "G"
    ],
-   "vormpunten": 4,
+   "vormpunten": 5,
    "vormmax": 15,
    "oefen": 2
   },
