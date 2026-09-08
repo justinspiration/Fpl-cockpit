@@ -17,7 +17,18 @@ scheiden hoeft Netlify nooit opnieuw te bouwen.
 
 **Wat jij doet**
 
-1. Maak een GitHub-repository, bijvoorbeeld `fpl-cockpit`. Privé mag.
+1. Maak een GitHub-repository, bijvoorbeeld `fpl-cockpit`. **Zet hem op publiek.**
+
+   > Dit stond hier eerder als "privé mag", en dat klopte niet. De pagina haalt
+   > zijn data rechtstreeks bij GitHub op, en `raw.githubusercontent.com` weigert
+   > privérepositories zonder token — een token dat je nooit in een openbare
+   > pagina mag zetten. Blijft de repo privé, dan valt de site terug op zijn
+   > eigen kopie en moet Netlify dus tóch publiceren bij elke datawijziging.
+   > Dat kost 15 credits per keer, ruim vierduizend per maand.
+   >
+   > Er staat niets gevoeligs in: alleen publieke FPL-cijfers en je eigen
+   > opstellingen. Sleutels en wachtwoorden staan in Netlify en GitHub Secrets,
+   > niet in de repository.
 2. Zet de **hele inhoud van `netlify/repo/`** erin. Die map is compleet en
    wordt bij elke bouw automatisch gelijkgetrokken, dus je hoeft niets te
    selecteren:

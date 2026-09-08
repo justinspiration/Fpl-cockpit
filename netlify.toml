@@ -1,28 +1,42 @@
 [build]
   publish = "."
   command = "echo geen build nodig"
+  # exitcode 0 = OVERSLAAN, 1 = BOUWEN. Bouw alleen als er iets buiten data/ en
+  # scripts/state/ is gewijzigd; die twee bevatten uitsluitend opgehaalde cijfers.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)data' ':(exclude)scripts/state'"
 
-# LET OP — hier stond een regel die de verversing stilletjes brak.
+# ── WANNEER NETLIFY WEL EN NIET PUBLICEERT ────────────────────────────────────
 #
-# De gedachte was: bouw niet opnieuw als alleen data/ verandert, dat scheelt
-# credits. Maar de pagina haalt zijn data op van data/dashboard.json op DEZE
-# site. Werd de publicatie overgeslagen, dan bleef het bestand op de site staan
-# zoals het bij de laatste echte build was — en toonde het dashboard voor
-# altijd oude cijfers, terwijl GitHub keurig verse data had.
+# Wat er misging. Elke ronde van de GitHub Action duwt verse data naar de
+# repository. Netlify publiceerde daarop, ook al veranderde de pagina zelf niet,
+# en dat kostte 15 credits per keer. Bij acht rondes per dag is dat ruim
+# vierduizend credits per maand voor een site die niet wijzigt. Justins tegoed
+# was daardoor halverwege september op.
 #
-# Dus: elke datawijziging publiceert opnieuw. Een publicatie hier is een kopie
-# zonder bouwstap (het commando hieronder doet niets), dus dat kost weinig.
+# Waarom het filter er eerder úit ging. Toen haalde de pagina zijn data op van
+# data/dashboard.json op DEZE site. Sla je de publicatie over, dan blijft dat
+# bestand staan zoals het bij de laatste bouw was en toont het dashboard voor
+# altijd oude cijfers. Het filter alleen was dus fout — maar het weghalen ook.
 #
-# Wil je later tóch nul builds: zet de repository op publiek en voeg boven in
-# index.html een regel toe die naar GitHub zelf wijst. Dan is de data binnen
-# seconden na de Action ververst en bouwt Netlify nooit meer:
+# Wat nu klopt. De pagina haalt zijn data rechtstreeks bij GitHub op
+# (raw.githubusercontent.com, met access-control-allow-origin: *), en valt terug
+# op de lokale kopie als dat niet lukt. Daardoor mag Netlify de publicatie
+# gerust overslaan: de data komt niet meer van hier.
 #
-#   <script>window.FPL_DATA_URL =
-#     "https://raw.githubusercontent.com/<gebruiker>/<repo>/main/data/dashboard.json";</script>
-
+# VOORWAARDE: de repository moet PUBLIEK zijn. raw.githubusercontent.com weigert
+# privérepositories zonder token, en een token hoort niet in een pagina die
+# iedereen kan openen. Staat hij op privé, dan valt de site terug op zijn eigen
+# kopie en zie je weer bevroren data — precies het probleem van hiervoor.
+#
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# De data komt van GitHub, dus de browser moet die host mogen benaderen.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

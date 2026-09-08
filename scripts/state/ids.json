@@ -1,20 +1,22 @@
 {
-  "_uitleg": "Vul deze twee IDs in zodra FPL 26/27 live is. Daarmee haal ik Justins squad, de mini-leaguestand en de effectieve ownership binnen zijn league automatisch op.",
-  "_hoe_vind_je_entry_id": "Log in op fantasy.premierleague.com, ga naar 'Points'. De URL is /entry/<ENTRY_ID>/event/<GW>. Het getal na /entry/ is het entry-ID.",
-  "_hoe_vind_je_league_id": "Ga naar je mini-league. De URL is /leagues/<LEAGUE_ID>/standings/c. Het getal is het league-ID.",
-  "entry_id": 258669,
-  "league_id": 81158,
-  "league_naam": "FPL met de mannon",
-  "teamnaam": "Reijning Champion",
-  "manager_display": "Mark Flekken met de F",
-  "manager_naam": "Justin",
-  "seizoen": "2026/27",
-  "vorig_seizoen": {
-    "punten": 2352,
-    "wereldrang": 49961,
-    "mini_league": "1e van 10",
-    "winnaar_wereld_punten": 2506
-  },
-  "dashboard_url": "https://claude.ai/code/artifact/2f24cfa9-ee2d-4162-b50c-6c98712a6964",
-  "dashboard_bestand": "/Users/justin/.claude/skills/fpl-cockpit/state/dashboard.html"
+ "_uitleg": "Vul deze twee IDs in zodra FPL 26/27 live is. Daarmee haal ik Justins squad, de mini-leaguestand en de effectieve ownership binnen zijn league automatisch op.",
+ "_hoe_vind_je_entry_id": "Log in op fantasy.premierleague.com, ga naar 'Points'. De URL is /entry/<ENTRY_ID>/event/<GW>. Het getal na /entry/ is het entry-ID.",
+ "_hoe_vind_je_league_id": "Ga naar je mini-league. De URL is /leagues/<LEAGUE_ID>/standings/c. Het getal is het league-ID.",
+ "entry_id": 258669,
+ "league_id": 81158,
+ "league_naam": "FPL met de mannon",
+ "teamnaam": "Reijning Champion",
+ "manager_display": "Mark Flekken met de F",
+ "manager_naam": "Justin",
+ "seizoen": "2026/27",
+ "vorig_seizoen": {
+  "punten": 2352,
+  "wereldrang": 49961,
+  "mini_league": "1e van 10",
+  "winnaar_wereld_punten": 2506
+ },
+ "dashboard_url": "https://claude.ai/code/artifact/2f24cfa9-ee2d-4162-b50c-6c98712a6964",
+ "dashboard_bestand": "/Users/justin/.claude/skills/fpl-cockpit/state/dashboard.html",
+ "github_repo": "justinspiration/Fpl-cockpit",
+ "_github_repo_uitleg": "Waar de data vandaan wordt gehaald door de gepubliceerde pagina. De repository moet PUBLIEK zijn: raw.githubusercontent.com weigert privérepos zonder token, en een token hoort niet in een pagina die iedereen kan openen."
 }

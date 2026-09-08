@@ -28,21 +28,46 @@ const MINSTENS = 300;
 function vindChrome() {
   const kandidaten = [
     process.env.CHROME_PAD, process.env.CHROME_PATH, process.env.CHROME_BIN,
+    // macOS
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
     "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    // Linux
     "/usr/bin/google-chrome-stable", "/usr/bin/google-chrome",
     "/usr/bin/chromium-browser", "/usr/bin/chromium",
     "/opt/google/chrome/chrome",
+    // Windows. Edge staat er bewust bij: die draait op dezelfde Chromium-motor
+    // en spreekt hetzelfde debug-protocol, dus als Chrome ontbreekt werkt hij ook.
+    ...(process.platform === "win32" ? [
+      path.join(process.env["PROGRAMFILES"] || "C:\\Program Files",
+                "Google", "Chrome", "Application", "chrome.exe"),
+      path.join(process.env["PROGRAMFILES(X86)"] || "C:\\Program Files (x86)",
+                "Google", "Chrome", "Application", "chrome.exe"),
+      path.join(process.env.LOCALAPPDATA || "",
+                "Google", "Chrome", "Application", "chrome.exe"),
+      path.join(process.env["PROGRAMFILES(X86)"] || "C:\\Program Files (x86)",
+                "Microsoft", "Edge", "Application", "msedge.exe"),
+      path.join(process.env["PROGRAMFILES"] || "C:\\Program Files",
+                "Microsoft", "Edge", "Application", "msedge.exe"),
+    ] : []),
   ].filter(Boolean);
   for (const p of kandidaten) { try { if (fs.existsSync(p)) return p; } catch {} }
-  // setup-chrome zet hem soms in een eigen map onder de home van de runner
+  /* Staat hij ergens anders, dan vragen we het besturingssysteem zelf.
+     `command -v` is een shell-ingebouwde die op Windows niet bestaat; daar heet
+     het `where`. Zonder dat onderscheid faalde de zoektocht op Windows stil. */
   try {
     const { execSync } = require("child_process");
-    const uit = execSync("command -v google-chrome-stable google-chrome chromium 2>/dev/null | head -1",
-      { encoding: "utf8" }).trim();
+    const cmd = process.platform === "win32"
+      ? "where chrome.exe 2>nul || where msedge.exe 2>nul"
+      : "command -v google-chrome-stable google-chrome chromium 2>/dev/null | head -1";
+    const uit = execSync(cmd, { encoding: "utf8", shell: true }).trim().split(/\r?\n/)[0];
     if (uit && fs.existsSync(uit)) return uit;
   } catch {}
-  throw new Error("Geen Chrome gevonden. Zet CHROME_PAD naar het pad van je Chrome.");
+  throw new Error(
+    "Geen Chrome gevonden. Zet de omgevingsvariabele CHROME_PAD naar het pad van je Chrome.\n" +
+    (process.platform === "win32"
+      ? "  Op Windows meestal: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\n" +
+        "  PowerShell:  $env:CHROME_PAD = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'"
+      : "  Op macOS meestal: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome"));
 }
 /* In een container draait alles als root en weigert Chrome zonder deze twee
    vlaggen te starten. Op een gewone Mac zijn ze overbodig maar onschadelijk. */

@@ -4514,22 +4514,46 @@ html{ scroll-behavior:smooth; }
 </div>
 <script>
 (async function(){
-  // Waar de data staat. De GitHub Action werkt dit bestand vier keer per dag bij;
-  // Netlify hoeft daar niets voor te doen, dus het kost geen build.
-  const BRON = window.FPL_DATA_URL || "data/dashboard.json";
-  let D;
-  try {
-    const r = await fetch(BRON, {cache: "no-store"});
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    D = await r.json();
-  } catch (e) {
+  /* Waar de data vandaan komt, en waarom in deze volgorde.
+
+     Eerst GitHub zelf. De Action schrijft daar elke ronde verse cijfers naartoe,
+     en raw.githubusercontent.com stuurt `access-control-allow-origin: *` met een
+     cache van vijf minuten -- dus de pagina mag hem gewoon ophalen en ziet nieuwe
+     data binnen minuten. Netlify hoeft daar niets voor te doen.
+
+     Dat laatste is precies waar het misging. Netlify bouwde tot nu toe bij ELKE
+     push opnieuw, ook als alleen data/ veranderde, en dat kostte 15 credits per
+     keer. Bij acht rondes per dag is dat ruim vierduizend credits per maand voor
+     een site die niet verandert. Nu haalt de pagina zijn data rechtstreeks bij
+     GitHub en bouwt Netlify alleen nog als de PAGINA zelf wijzigt.
+
+     Daarna het lokale bestand als terugval. Dat blijft nodig: staat de repository
+     op privé, dan weigert raw.githubusercontent.com zonder token en moet de site
+     op zijn eigen kopie terugvallen in plaats van een foutscherm te tonen. */
+  const BRONNENLIJST = [
+    window.FPL_DATA_URL,
+    "https://raw.githubusercontent.com/justinspiration/Fpl-cockpit/main/data/dashboard.json",
+    "data/dashboard.json",
+  ].filter(Boolean);
+  let D, gebruikt = null, fouten = [];
+  for (const bron of BRONNENLIJST) {
+    try {
+      const r = await fetch(bron, {cache: "no-store"});
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      D = await r.json();
+      gebruikt = bron;
+      break;
+    } catch (e) { fouten.push(bron.replace(/^https:\/\/[^/]+/, "") + ": " + e.message); }
+  }
+  if (!D) {
     document.getElementById("laadscherm").innerHTML =
-      '<div style="max-width:420px;text-align:center;line-height:1.6">' +
+      '<div style="max-width:460px;text-align:center;line-height:1.6">' +
       '<b style="color:#F0426B;display:block;margin-bottom:8px">De data kon niet geladen worden</b>' +
-      'Gezocht op <code>' + BRON + '</code> — ' + e.message + '.<br><br>' +
-      'Draait de GitHub Action al? Controleer of <code>data/dashboard.json</code> in je repository staat.</div>';
+      'Geprobeerd:<br><code style="font-size:12px">' + fouten.join('<br>') + '</code><br><br>' +
+      'Draait de GitHub Action al, en staat <code>data/dashboard.json</code> in je repository?</div>';
     return;
   }
+  window.__DATABRON = gebruikt;
   document.getElementById("laadscherm").remove();
 
 const $=s=>document.querySelector(s);
