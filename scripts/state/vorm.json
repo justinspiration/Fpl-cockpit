@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-08T20:55:32+00:00",
+ "_opgehaald": "2026-09-08T23:16:45+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -935,18 +935,8 @@
   "MCI": {
    "artikel": "2026–27 Manchester City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_City_F.C._season",
-   "gespeeld": 7,
+   "gespeeld": 8,
    "laatste5": [
-    {
-     "datum": "2026-08-09",
-     "opp": "Atlético Madrid",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "2026 coupang play series"
-    },
     {
      "datum": "2026-08-16",
      "opp": "Arsenal",
@@ -986,11 +976,21 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "3"
+    },
+    {
+     "datum": "2026-09-08",
+     "opp": "Porto",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "1"
     }
    ],
    "vorm": [
-    "W",
     "V",
+    "W",
     "W",
     "W",
     "W"
