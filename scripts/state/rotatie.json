@@ -1,6 +1,6 @@
 {
  "_bron": "UEFA-speelkalenders 2026/27 via Wikipedia, opgehaald 15-08-2026. Champions League en Europa League met exacte speeldagen; Conference League als benadering op donderdagen, omdat UEFA de losse speeldagen daarvan nog niet per matchday publiceert.",
- "_opgehaald": "2026-09-10T13:20:27+00:00",
+ "_opgehaald": "2026-09-10T17:30:03+00:00",
  "_uitleg": "Rustdagen = het aantal dagen tussen het Europese duel en het competitieduel van die gameweek. 3 of minder is krap, 4 is normaal, 5 of meer is ruim. 'europa_erna' betekent dat er kort NA de gameweek een Europees duel staat, wat ook op de opstelling drukt.",
  "_waarschuwing": "Dit zegt welke clubs onder druk staan, niet wie er gerouleerd wordt. Vaste krachten spelen vrijwel altijd; het risico zit bij de tweede linie. Persconferenties staan in het nieuwsoverzicht.",
  "clubs": {
@@ -705,13 +705,13 @@
   },
   "18": {
    "BHA": {
-    "rustdagen": 6,
-    "rustdagen_max": 6,
+    "rustdagen": 5,
+    "rustdagen_max": 5,
     "toernooi": "Conference League",
     "exact": false,
     "zwaarte": "mogelijk krap",
-    "pl_datum": "2026-12-30",
-    "europa_erna": 1
+    "pl_datum": "2026-12-29",
+    "europa_erna": 2
    }
   },
   "19": {
@@ -726,13 +726,13 @@
   },
   "20": {
    "BHA": {
-    "rustdagen": 6,
-    "rustdagen_max": 6,
+    "rustdagen": 5,
+    "rustdagen_max": 5,
     "toernooi": "Conference League",
     "exact": false,
     "zwaarte": "mogelijk krap",
-    "pl_datum": "2027-01-06",
-    "europa_erna": 1
+    "pl_datum": "2027-01-05",
+    "europa_erna": 2
    }
   },
   "21": {
