@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-09-10 08:55:10",
- "_copilot_bijgewerkt": "Updated an hour ago",
- "_copilot_moment": null,
+ "_opgehaald": "2026-09-10 13:19:56",
+ "_copilot_bijgewerkt": "Updated 6 hours ago",
+ "_copilot_moment": "2026-09-10 07:19:56",
  "_start_gw": 4,
  "_horizon": 8,
  "_overgeslagen": [
@@ -10693,6 +10693,31 @@
     12
    ]
   },
+  "121": {
+   "n": "Mitoma",
+   "t": "BHA",
+   "p": "MID",
+   "gw": [
+    0,
+    0,
+    0.9,
+    1.1,
+    0.9,
+    0.9,
+    1.1,
+    1.1
+   ],
+   "mn": [
+    null,
+    null,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18
+   ]
+  },
   "323": {
    "n": "McAteer",
    "t": "IPS",
@@ -10916,6 +10941,31 @@
     10,
     10,
     10
+   ]
+  },
+  "135": {
+   "n": "Yohanna",
+   "t": "BHA",
+   "p": "MID",
+   "gw": [
+    0,
+    0,
+    0.8,
+    1,
+    0.8,
+    0.8,
+    0.9,
+    0.9
+   ],
+   "mn": [
+    null,
+    null,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14
    ]
   },
   "617": {
@@ -11768,31 +11818,6 @@
     2
    ]
   },
-  "219": {
-   "n": "J.Rak-Sakyi",
-   "t": "CRY",
-   "p": "MID",
-   "gw": [
-    0.4,
-    0.3,
-    0.3,
-    0.3,
-    0.3,
-    0.3,
-    0.3,
-    0.3
-   ],
-   "mn": [
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2
-   ]
-  },
   "218": {
    "n": "Doucouré",
    "t": "CRY",
@@ -11841,31 +11866,6 @@
     4,
     4,
     4
-   ]
-  },
-  "135": {
-   "n": "Yohanna",
-   "t": "BHA",
-   "p": "MID",
-   "gw": [
-    0.3,
-    0.3,
-    0.3,
-    0.4,
-    0.3,
-    0.3,
-    0.3,
-    0.3
-   ],
-   "mn": [
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2
    ]
   },
   "604": {
@@ -12793,31 +12793,6 @@
     null
    ]
   },
-  "121": {
-   "n": "Mitoma",
-   "t": "BHA",
-   "p": "MID",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
   "122": {
    "n": "Minteh",
    "t": "BHA",
@@ -13020,6 +12995,31 @@
   },
   "216": {
    "n": "Esse",
+   "t": "CRY",
+   "p": "MID",
+   "gw": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "mn": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "219": {
+   "n": "J.Rak-Sakyi",
    "t": "CRY",
    "p": "MID",
    "gw": [
