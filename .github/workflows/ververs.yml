@@ -1,10 +1,35 @@
 name: FPL-data verversen
 
+# Draait elk uur. Er wordt alleen naar data/ en scripts/state/ geschreven,
+# nooit naar de pagina zelf. Netlify slaat de publicatie daarom over (zie de
+# ignore-regel in netlify.toml) en de site haalt zijn cijfers rechtstreeks bij
+# GitHub op. Verversen kost dus geen Netlify-credits, en omdat de repository
+# publiek is zijn de Actions-minuten onbeperkt.
 on:
   schedule:
-    - cron: "0 */3 * * *"
-    - cron: "30 9,11,13,15 * * 4,5"
-  workflow_dispatch:
+    # Elk uur. Stond op elke drie uur, en dat was zuinigheid: elke ronde kostte
+    # toen een Netlify-publicatie. Die rem is weg ‚Äî de pagina haalt haar data nu
+    # rechtstreeks bij GitHub op, en omdat de repository publiek is zijn de
+    # Actions-minuten onbeperkt. Je data is hierdoor nooit ouder dan ruim een uur.
+    #
+    # De losse extra rondes op donderdag en vrijdag zijn vervallen: die bestonden
+    # om persconferentienieuws niet drie uur te laten liggen, en dat vangt een
+    # rondje per uur vanzelf af.
+    #
+    # Let op: GitHub voert cron-taken uit "op of na" het genoemde moment. Bij
+    # drukte kan een ronde tien tot twintig minuten later starten. Dat is normaal
+    # en geen storing.
+    - cron: "0 * * * *"
+  workflow_dispatch:                  # met de hand starten kan altijd
+
+# Twee rondes tegelijk mogen niet. Bij elk uur kan dat gebeuren zodra GitHub een
+# start uitstelt of een ronde ongewoon lang doet: dan pushen er twee tegelijk naar
+# dezelfde tak en botsen ze. Hier wacht een nieuwe ronde netjes tot de vorige klaar
+# is, in plaats van hem af te breken ‚Äî halverwege afkappen laat de data in een
+# halve staat achter.
+concurrency:
+  group: fpl-ververs
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -12,43 +37,231 @@ permissions:
 jobs:
   ververs:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    # Ruim boven de werkelijke duur (zeven minuten gemeten), maar ver onder een
+    # uur: bij een ronde per uur mag een vastgelopen job geen heel uurvak
+    # opeten. Stond op 55 toen er nog maar acht rondes per dag waren.
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
         with: { python-version: "3.12" }
+
+      # Pillow verkleint de nieuwsafbeeldingen voordat ze in de pagina gaan.
+      # Zonder dit pakket slaat nieuws_ophalen.py het inbakken over en blijft
+      # de nieuwspagina zonder plaatjes.
       - name: Pillow installeren
         run: python3 -m pip install --quiet Pillow
-      - uses: actions/setup-node@v4
+
+      - uses: actions/setup-node@v5
         with: { node-version: "24" }
+
       - name: Chrome installeren
+        id: chrome
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: stable
           install-chromedriver: false
-      - name: Data ophalen en de pagina bouwen
+
+      - name: Wat ligt er klaar?
         working-directory: scripts
         run: |
+          echo "## Gegevensbestanden bij aanvang" >> $GITHUB_STEP_SUMMARY
+          echo '| bestand | grootte | geldig |' >> $GITHUB_STEP_SUMMARY
+          echo '|---|---|---|' >> $GITHUB_STEP_SUMMARY
+          for f in state/*.json; do
+            n=$(basename "$f"); g=$(du -h "$f" | cut -f1)
+            if python3 -c "import json,sys;json.load(open(sys.argv[1]))" "$f" 2>/dev/null
+              then ok="ja"; else ok="**NEE**"; fi
+            echo "| $n | $g | $ok |" >> $GITHUB_STEP_SUMMARY
+          done
+
+      - name: Data ophalen en de pagina bouwen
+        working-directory: scripts
+        env:
+          CHROME_PAD: ${{ steps.chrome.outputs.chrome-path }}
+        run: |
           set -e
-          node copilot_ophalen.js    || echo "::warning::Copilot ophalen mislukt"
-          python3 copilot_verwerk.py || echo "::warning::Copilot koppelen mislukt"
-          node odds_ophalen.js       || echo "::warning::odds ophalen mislukt"
-          python3 odds_verwerk.py    || echo "::warning::odds verwerken mislukt"
-          python3 rotatie.py         || echo "::warning::rotatie mislukt"
-          python3 stand.py           || echo "::warning::stand mislukt"
-          python3 vorm.py            || echo "::warning::vorm mislukt"
-          python3 archief.py         || echo "::warning::archief mislukt"
-          python3 dashboard.py --web ..
-          python3 nieuws_ophalen.py  || echo "::warning::nieuws mislukt"
-          python3 dashboard.py --web ..
+          echo "1/9  Copilot"
+          # De projecties zijn het hart van het dashboard. Mislukt het ophalen,
+          # dan blijft het bestand van de vorige ronde staan (dat zit in de
+          # repo) en gaan we verder met die cijfers. Wat NIET mag gebeuren is
+          # doorbouwen zonder projecties: dan valt alles terug op het eigen
+          # model en klopt geen enkel getal meer met FPL Copilot.
+          # Elke stap krijgt zijn eigen tijdslimiet.
+          #
+          # Lokaal duurt de hele keten anderhalve minuut; op GitHub liep hij in
+          # de limiet van 25 minuten en werd de hele run afgebroken ‚Äî inclusief
+          # de stappen die al gelukt waren. E√©n hangende scraper mag nooit de
+          # rest meesleuren. Wat over zijn tijd gaat wordt afgekapt en de
+          # verversing loopt door met wat er w√©l is.
+          # Kapt een stap af als hij over zijn tijd gaat, meldt dat, en houdt
+          # bij hoe lang elke stap werkelijk duurde.
+          #
+          # LET OP de exitcode: "if cmd; then ...; fi" gevolgd door $? geeft de
+          # status van de IF, niet van cmd ‚Äî die is nul zodra er geen tak liep.
+          # Daardoor gaf deze wrapper eerst altijd "gelukt" terug, ook bij een
+          # afgekapte stap. De status moet dus direct na het commando gelezen
+          # worden, zonder if ertussen.
+          T() {
+            local limiet="$1"; shift
+            local naam="$1"; shift
+            local t0=$SECONDS
+            timeout --signal=KILL "$limiet" "$@"
+            local code=$?
+            local duur=$(( SECONDS - t0 ))
+            if [ $code -eq 0 ]; then
+              echo "   [${duur}s] $naam"
+            elif [ $code -eq 137 ] || [ $code -eq 124 ]; then
+              echo "::warning::$naam is afgekapt na $limiet ‚Äî deze stap hangt op GitHub"
+              echo "   [${duur}s] $naam AFGEKAPT"
+            else
+              echo "   [${duur}s] $naam mislukt (exitcode $code)"
+            fi
+            return $code
+          }
+          echo "start: $(date -u '+%H:%M:%S') UTC"
+          cp state/xp_copilot.json /tmp/xp_terugval.json 2>/dev/null || true
+          if T 6m "Copilot ophalen" node copilot_ophalen.js && T 2m "Copilot koppelen" python3 copilot_verwerk.py; then
+            echo "Copilot ververst."
+          else
+            echo "::warning::Copilot ophalen mislukt ‚Äî cijfers van de vorige ronde blijven staan"
+            cp /tmp/xp_terugval.json state/xp_copilot.json 2>/dev/null || true
+          fi
+          cp state/xp_pundit.json /tmp/pd_terugval.json 2>/dev/null || true
+          if T 3m "Pundit ophalen" python3 pundit_ophalen.py; then
+            echo "Pundit ververst."
+          else
+            echo "::warning::Pundit ophalen mislukt ‚Äî vorige cijfers blijven staan"
+            cp /tmp/pd_terugval.json state/xp_pundit.json 2>/dev/null || true
+          fi
+          cp state/xp_estimator.json /tmp/es_terugval.json 2>/dev/null || true
+          if T 4m "Estimator ophalen" node estimator_ophalen.js && T 2m "Estimator koppelen" python3 estimator_verwerk.py; then
+            echo "Estimator ververst."
+          else
+            echo "::warning::Estimator ophalen mislukt ‚Äî vorige cijfers blijven staan"
+            cp /tmp/es_terugval.json state/xp_estimator.json 2>/dev/null || true
+          fi
+          if [ ! -s state/xp_copilot.json ] && [ ! -s state/xp_pundit.json ]; then
+            echo "::error::Geen enkele projectiebron beschikbaar (Copilot noch Pundit)."
+            echo "::error::De bouw stopt hier: anders komt er een dashboard online waarvan"
+            echo "::error::elk getal uit ons eigen model komt zonder externe toets."
+            exit 1
+          fi
+          if [ ! -s state/xp_copilot.json ] || [ ! -s state/xp_pundit.json ]; then
+            echo "::warning::Slechts een van de twee projectiebronnen beschikbaar; geen kruiscontrole"
+          fi
+          # Hoe oud is wat er nu ligt?
+          #
+          # Hier ging het mis. Faalde het ophalen, dan zette de stap hierboven het
+          # VORIGE bestand terug en liep de workflow groen door. Dat is bedoeld --
+          # oude cijfers zijn beter dan geen -- maar het werd nergens zichtbaar.
+          # Gevolg: drie dagen lang groene runs met bevroren projecties, en pas
+          # opgemerkt doordat Justin de cijfers herkende.
+          #
+          # Een bestand terugzetten mag. Er stil over blijven niet. Boven de harde
+          # grens gaat de run daarom rood: dan is er iets structureel stuk en moet
+          # het opgelost worden, niet weggewuifd.
+          python3 - <<'PYEOF'
+          import json, os, sys, time
+          HARD, ZACHT = 72.0, 36.0
+          def leeftijd(pad, sleutels):
+              if not os.path.exists(pad): return None
+              try: d = json.load(open(pad, encoding="utf-8"))
+              except Exception: return None
+              for k in sleutels:
+                  v = d.get(k)
+                  if not v: continue
+                  for vorm in ("%Y-%m-%d %H:%M", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%d"):
+                      try:
+                          return (time.time() - time.mktime(time.strptime(str(v)[:19], vorm))) / 3600.0
+                      except (ValueError, OverflowError): continue
+              return None
+          stuk = False
+          for naam, pad in (("FPL Copilot", "state/xp_copilot.json"),
+                            ("Pundit", "state/xp_pundit.json"),
+                            ("FPL Estimator", "state/xp_estimator.json"),
+                            ("GoalIQ", "state/goaliq.json")):
+              u = leeftijd(pad, ("opgehaald", "_opgehaald", "generated_at"))
+              if u is None:
+                  print("::warning::%s heeft geen leesbare ophaaldatum" % naam); continue
+              if u > HARD:
+                  print("::error::%s is %.0f uur oud (harde grens %.0f). Het ophalen "
+                        "mislukt structureel; het dashboard draait op bevroren cijfers."
+                        % (naam, u, HARD))
+                  stuk = True
+              elif u > ZACHT:
+                  print("::warning::%s is %.0f uur oud -- het ophalen mislukte deze ronde"
+                        % (naam, u))
+              else:
+                  print("   %s: %.0f uur oud" % (naam, u))
+          sys.exit(1 if stuk else 0)
+          PYEOF
+          cp state/goaliq.json /tmp/gq_terugval.json 2>/dev/null || true
+          if T 2m "GoalIQ ophalen" python3 goaliq_ophalen.py; then
+            echo "GoalIQ ververst."
+          else
+            echo "::warning::GoalIQ ophalen mislukt ‚Äî vorige cijfers blijven staan"
+            cp /tmp/gq_terugval.json state/goaliq.json 2>/dev/null || true
+          fi
+          T 2m "Wedstrijdhistorie" python3 historie_ophalen.py || echo "::warning::historie ophalen mislukt ‚Äî terugblik blijft op de vorige stand"
+          echo "2/9  bookmakersodds"
+          T 3m "odds ophalen" node odds_ophalen.js || echo "::warning::odds ophalen mislukt of over tijd"
+          T 2m "odds verwerken" python3 odds_verwerk.py || echo "::warning::odds verwerken mislukt"
+          echo "3/9  Europees schema"
+          T 3m "rotatie" python3 rotatie.py || echo "::warning::rotatie mislukt of over tijd"
+          echo "4/9  competitiestand"
+          T 2m "stand" python3 stand.py || echo "::warning::stand mislukt of over tijd"
+          echo "5/9  vorm per club (Wikipedia)"
+          T 3m "clubvorm" python3 vorm.py || echo "::warning::vorm mislukt of over tijd"
+          echo "6/9  league-archief"
+          T 2m "league-archief" python3 archief.py || echo "::warning::archief mislukt of over tijd"
+          T 2m "awards berekenen" python3 awards.py || echo "::warning::awards berekenen mislukt ‚Äî vorige uitslagen blijven staan"
+          echo "7/9  dashboard bouwen"
+          if ! T 4m "dashboard bouwen" python3 dashboard.py --web ..; then
+            echo "::error::Het bouwen van het dashboard is mislukt (stap 7). De regels hierboven"
+            echo "::error::laten zien welke bron ontbrak of onleesbaar was."
+            exit 1
+          fi
+          echo "8/9  nieuws"
+          T 5m "nieuws" python3 nieuws_ophalen.py || echo "::warning::nieuws mislukt of over tijd"
+          echo "9/9  opnieuw bouwen met het nieuws erin"
+          if ! T 4m "dashboard bouwen" python3 dashboard.py --web ..; then
+            echo "::error::Herbouw met het nieuws erin mislukte (stap 9)."
+            exit 1
+          fi
+          echo "einde: $(date -u '+%H:%M:%S') UTC, totaal ${SECONDS}s"
+          echo "Klaar. Projecties: $(python3 -c "import json;d=json.load(open('../data/dashboard.json'));from collections import Counter;c=Counter(p.get('projbron') for p in d['db']);print(', '.join('%s: %d'%kv for kv in c.items()))")"
+          python3 -c "import json;d=json.load(open('../data/dashboard.json'));from collections import Counter;c=Counter(p.get('projbron') for p in d['db']);print('## Uitkomst');print('Projecties: '+', '.join('%s %d'%kv for kv in c.items()))" >> $GITHUB_STEP_SUMMARY
+
       - name: Wegschrijven als er iets veranderd is
         run: |
           git config user.name  "fpl-cockpit"
           git config user.email "actions@github.com"
+          # scripts/state bevat het league-archief: dat groeit elke gameweek en
+          # is nergens anders te herstellen, dus dat moet mee.
           git add data/ index.html scripts/state/
           if git diff --staged --quiet; then
             echo "Niets veranderd."
-          else
-            git commit -m "Data bijgewerkt $(date -u '+%Y-%m-%d %H:%M UTC')"
-            git push
+            exit 0
           fi
+          git commit -m "Data bijgewerkt $(date -u '+%Y-%m-%d %H:%M UTC')"
+          # Deze taak draait op een schema en jij werkt gewoon door. Upload je
+          # iets terwijl de ronde loopt, dan weigert git te pushen omdat er op
+          # GitHub iets staat wat deze machine niet kende. Dat is geen fout in
+          # de data: de nieuwe cijfers zijn prima, ze moeten alleen bovenop
+          # jouw wijziging worden gezet in plaats van ernaast.
+          for poging in 1 2 3; do
+            if git push; then
+              echo "Weggeschreven."
+              exit 0
+            fi
+            echo "Push geweigerd ‚Äî jouw wijziging ophalen en de data erbovenop zetten (poging $poging)"
+            git pull --rebase --autostash origin main || true
+            sleep 5
+          done
+          echo "::error::Wegschrijven lukte na drie pogingen niet. De data is wel opgehaald;"
+          echo "::error::draai de workflow opnieuw als je klaar bent met uploaden."
+          exit 1
