@@ -82,6 +82,10 @@ jobs:
         working-directory: scripts
         env:
           CHROME_PAD: ${{ steps.chrome.outputs.chrome-path }}
+          # Sleutel staat in Settings > Secrets and variables > Actions.
+          # Nooit in de repository: die is publiek.
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          HANDMATIG: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
         run: |
           set -e
           echo "1/9  Copilot"
@@ -208,7 +212,31 @@ jobs:
           fi
           T 2m "Wedstrijdhistorie" python3 historie_ophalen.py || echo "::warning::historie ophalen mislukt ‚Äî terugblik blijft op de vorige stand"
           echo "2/9  bookmakersodds"
-          T 3m "odds ophalen" node odds_ophalen.js || echo "::warning::odds ophalen mislukt of over tijd"
+          # Odds: eerst de API, dan pas de scraper.
+          #
+          # Scrapen van odds is een verloren gevecht. Gemeten op 10-09-2026 geeft
+          # Oddschecker een 403 met bot-controle, en OddsPortal serveert zelfs in
+          # een echte browser met de cookiemuur afgehandeld alleen nog advertenties.
+          # Die sites verdedigen zich actief, want hun odds zijn geld waard.
+          #
+          # the-odds-api.com is gedocumenteerd en verandert niet zonder aankondiging.
+          # E√©n markt in √©√©n regio kost 1 credit; de gratis laag geeft er 500 per
+          # maand. We halen daarom NIET elk uur op maar twee keer per dag ‚Äî odds
+          # bewegen op teamnieuws, niet per uur. Dat kost 60 van de 500.
+          #
+          # Zonder ODDS_API_KEY slaat het script zichzelf netjes over en proberen
+          # we alsnog de scraper, voor het geval die het die dag wel doet.
+          UUR=$(date -u +%H)
+          if [ "$UUR" = "06" ] || [ "$UUR" = "16" ] || [ -n "$HANDMATIG" ]; then
+            if T 2m "odds via API" python3 odds_api_ophalen.py; then
+              echo "Odds via de API."
+            else
+              echo "::warning::odds-API mislukt ‚Äî scraper als terugval"
+              T 3m "odds scrapen" node odds_ophalen.js || echo "::warning::ook de scraper mislukte"
+            fi
+          else
+            echo "   odds overgeslagen dit uur (API-credits sparen; om 06 en 16 UTC wel)"
+          fi
           T 2m "odds verwerken" python3 odds_verwerk.py || echo "::warning::odds verwerken mislukt"
           echo "3/9  Europees schema"
           T 3m "rotatie" python3 rotatie.py || echo "::warning::rotatie mislukt of over tijd"
