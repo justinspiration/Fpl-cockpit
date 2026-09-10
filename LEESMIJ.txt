@@ -1,37 +1,23 @@
-ALLEEN DEZE 9 BESTANDEN UPLOADEN
-================================
+VIER BESTANDEN
+==============
 
-Niet de map data/ en niet de rest van scripts/state/. Die worden door de
-GitHub Action zelf ververst, en de kopie op deze Mac is inmiddels ouder dan
-wat er op GitHub staat. Upload je ze mee, dan duw je oude cijfers terug.
+1. scripts/odds_api_ophalen.py    NIEUW — odds via the-odds-api.com
+2. scripts/dashboard.py           cijfers van DIT seizoen erbij
+3. scripts/dashboard_template.html schakelaar dit / vorig seizoen
+4. .github/workflows/ververs.yml  roept de odds-API aan, 2x per dag
 
-Wat er verandert, en waarom:
+Nummer 1 t/m 3 kun je slepen. Nummer 4 moet je weer BEWERKEN via:
+https://github.com/justinspiration/Fpl-cockpit/edit/main/.github/workflows/ververs.yml
 
-  netlify.toml                      Netlify slaat de publicatie over als alleen
-                                    data/ wijzigt. Dit is de creditbesparing.
+EERST DIT: DE API-SLEUTEL
+-------------------------
+1. Ga naar https://the-odds-api.com en vraag een gratis sleutel aan
+   (500 credits per maand; wij gebruiken er 60)
+2. GitHub -> Settings -> Secrets and variables -> Actions -> New repository secret
+   Naam  : ODDS_API_KEY
+   Waarde: je sleutel
 
-  index.html                        De pagina haalt zijn data nu rechtstreeks
-                                    bij GitHub op, met de lokale kopie als
-                                    terugval.
+Zet hem NIET in een bestand. De repository is publiek.
 
-  .github/workflows/ververs.yml     BELANGRIJKSTE. Op GitHub draait nog de oude
-                                    versie: joblimiet 25 minuten, geen
-                                    tijdlimiet per stap, en geen van de nieuwe
-                                    bronnen. Daardoor worden Pundit, Estimator
-                                    en GoalIQ nooit opgehaald.
-
-  scripts/dashboard.py              Bouwt de nieuwe index.html, plus de
-                                    budget- en verkoopprijslogica.
-
-  scripts/state/ids.json            Het repo-adres waar de pagina zijn data
-                                    vandaan haalt.
-
-  scripts/copilot_ophalen.js        Chrome wordt nu ook op Windows gevonden,
-  scripts/odds_ophalen.js           inclusief Edge als terugval.
-  scripts/estimator_ophalen.js
-
-  OPZETTEN.md                       Stond nog "privé mag"; dat klopte niet.
-
-Na het uploaden: ga naar Actions en start de workflow met de hand
-("Run workflow"). Dan haalt hij meteen alle bronnen op in plaats van tot de
-volgende ronde te wachten.
+Zonder sleutel slaat het script zichzelf netjes over en probeert het alsnog de
+oude scraper. Het dashboard werkt dan gewoon, alleen zonder marktkennis.

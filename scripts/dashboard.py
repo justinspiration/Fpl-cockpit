@@ -49,6 +49,17 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 STATE = os.path.join(HERE, "state")
 
 
+def _komma(v):
+    """FPL levert xG en xA als tekst ("2.46"). Zonder deze omzetting worden het
+    strings in de JSON en rekent de pagina er niet mee — dan staat er stil 0,0."""
+    if v is None or v == "":
+        return None
+    try:
+        return round(float(v), 2)
+    except (TypeError, ValueError):
+        return None
+
+
 def _lees(naam, standaard=None):
     """Een optioneel gegevensbestand inlezen zonder de hele bouw te riskeren.
 
@@ -330,7 +341,20 @@ def build():
     # waren die van 25/26). Zonder keuring was dat gewoon meegemiddeld.
     keuringen = []
     _kf = BRONNEN.keur_spelerbron("FPL Copilot", copilot, bs)
-    keuringen.append(_kf.dict())
+    _kfd = _kf.dict()
+    # Opgehaald is iets anders dan gewijzigd. Copilot ververst zijn projecties
+    # niet elke ronde -- tussen twee gameweeks, en zeker in een interlandperiode,
+    # staan ze dagenlang stil. Zonder dit onderscheid lijkt een bevroren bron
+    # vers, of een werkende bron kapot. Beide zijn misleidend.
+    _iw = copilot.get("_inhoud_gewijzigd")
+    if _iw:
+        _u = BRONNEN._leeftijd_uur(_iw)
+        _kfd["inhoud_gewijzigd"] = _iw
+        _kfd["inhoud_leeftijd_uur"] = round(_u, 1) if _u is not None else None
+        if _u is not None and _u > 24:
+            _kfd["opmerking"] = ("opgehaald en bereikbaar, maar de cijfers zijn "
+                                 "%.0f uur ongewijzigd — dat is Copilot zelf, niet ons" % _u)
+    keuringen.append(_kfd)
     if not _kf.ok:
         print("  BRON GEWEIGERD - FPL Copilot: %s" % _kf.reden)
         copilot = {"spelers": {}}
@@ -669,7 +693,38 @@ def build():
                         "floor": floor_v, "ceiling": ceil_v,
                         "p90geschat": p90_geschat,
             "wa": wa, "wd": wd,
-            # Opta-velden: alleen aanwezig als er een match was
+            # ── DIT SEIZOEN, uit FPL zelf ─────────────────────────────────
+            # De Opta-velden hieronder gaan over VORIG seizoen: Haaland staat er
+            # met 25,39 xG over 2953 minuten. Dat is precies wat je wilt zien om
+            # een patroon te herkennen, en precies wat je NIET wilt zien als je
+            # vraagt hoe iemand er nu voor staat.
+            #
+            # FPL publiceert die cijfers zelf voor het lopende seizoen, inclusief
+            # per-90-varianten. Geen scraper nodig, en het is de bron waar de
+            # punten ook vandaan komen — dus per definitie consistent met de rest.
+            #
+            # Deze velden beginnen met s van "seizoen"; de Opta-velden met o.
+            "smin": e.get("minutes") or 0,
+            "sst": e.get("starts") or 0,
+            "sg": e.get("goals_scored") or 0,
+            "sa": e.get("assists") or 0,
+            "spt": e.get("total_points") or 0,
+            "sxg": _komma(e.get("expected_goals")),
+            "sxa": _komma(e.get("expected_assists")),
+            "sxgi": _komma(e.get("expected_goal_involvements")),
+            "sxgc": _komma(e.get("expected_goals_conceded")),
+            "sxg90": _komma(e.get("expected_goals_per_90")),
+            "sxa90": _komma(e.get("expected_assists_per_90")),
+            "sxgi90": _komma(e.get("expected_goal_involvements_per_90")),
+            "sdc90": _komma(e.get("defensive_contribution_per_90")),
+            # goals boven of onder verwachting, dit seizoen
+            "sgxg": (round((e.get("goals_scored") or 0) - _komma(e.get("expected_goals")), 2)
+                     if _komma(e.get("expected_goals")) is not None else None),
+            "sbonus": e.get("bonus") or 0,
+            "sbps": e.get("bps") or 0,
+            "scs": e.get("clean_sheets") or 0,
+
+            # Opta-velden: VORIG seizoen, alleen aanwezig als er een match was
             "oxg": op["xg"] if op else None,
             "ogxg": op["g_min_xg"] if op else None,
             "oshots": op["shots"] if op else None,

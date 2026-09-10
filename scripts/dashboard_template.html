@@ -3901,6 +3901,25 @@ html{ scroll-behavior:smooth; }
   .tbpunt{ font-size:16px; }
   .tbnaam{ font-size:var(--t-xs); }
 }
+
+/* ── seizoenschakelaar in het spelerprofiel ──────────────────────────────── */
+.pfblok h4{ display:flex; align-items:center; gap:var(--s3); flex-wrap:wrap; }
+.pfseiz{ margin-left:auto; display:inline-flex; gap:3px; padding:3px;
+  border-radius:99px; background:color-mix(in srgb,var(--fg) 6%,transparent); }
+.pfseiz button{
+  border:0; background:transparent; color:var(--fg-3); cursor:pointer;
+  padding:5px 12px; border-radius:99px; font-size:var(--t-sm); font-weight:650;
+  min-height:32px; white-space:nowrap;
+  transition:background-color var(--vlot) var(--uit), color var(--vlot) var(--uit);
+}
+.pfseiz button:hover{ color:var(--fg-2); }
+.pfseiz button[aria-pressed="true"]{
+  background:var(--card); color:var(--fg); box-shadow:var(--e1);
+}
+@media(max-width:520px){
+  .pfseiz{ margin-left:0; flex-basis:100%; }
+  .pfseiz button{ flex:1; }
+}
 </style>
 
 <header><div class="hdr">
@@ -4653,8 +4672,11 @@ function versheidTonen(){
       el2.className=nee.length?"vers let":"vers goed";
       el2.title="Elk getal is een gewogen gemiddelde van de bronnen die het kennen.\n\n"
         +D.bronkeuring.map(b=>(b.ok?"\u2713 ":"\u2717 ")+b.bron
-            +(b.leeftijd_uur!=null?"  ("+b.leeftijd_uur+" uur oud)":"")
-            +(b.reden?"  \u2014 "+b.reden:"")).join("\n")
+            +(b.leeftijd_uur!=null?"  (opgehaald "+b.leeftijd_uur+" uur geleden)":"")
+            +(b.inhoud_leeftijd_uur!=null&&b.inhoud_leeftijd_uur>b.leeftijd_uur+1
+               ?", cijfers "+Math.round(b.inhoud_leeftijd_uur)+" uur ongewijzigd":"")
+            +(b.reden?"  \u2014 "+b.reden:"")
+            +(b.opmerking?"\n     "+b.opmerking:"")).join("\n")
         +"\n\nWegingen: externe modellen tellen vol mee, ons eigen model half.";
     }
   }
@@ -7450,6 +7472,9 @@ function nieuws(){
    Drie weergaven: één gameweek (met een keuzelijst om terug te bladeren), de
    seizoenstand met wie wat won en verloor, en de records met de gameweek erbij. */
 let AWGW=null, AWTAB="week";
+/* Welk seizoen je in het spelerprofiel ziet. Blijft staan terwijl je van speler
+   wisselt: kijk je naar dit seizoen, dan wil je dat voor de volgende ook. */
+let PFSEIZOEN="nu";
 function awardsPaneel(){
   const box=$("#awseizoenbox"); if(!box) return;
   const A=D.awards||{};
@@ -7889,8 +7914,21 @@ function pctGroep(pos){
   return (_pctCache[pos]={groep,n:groep.length});
 }
 /* Percentiel: welk deel van zijn positiegenoten scoort lager? */
-function percentiel(p,haal,omgekeerd){
-  const {groep}=pctGroep(p.p);
+/* Vergelijkingsgroep voor cijfers van DIT seizoen.
+   pctGroep() filtert op verwachte minuten, en dat is vooruitkijkend: precies
+   goed voor projecties, verkeerd voor wat er al gebeurd is. Wie tot nu toe geen
+   minuut speelde hoort niet in een ranglijst over dit seizoen — anders staat een
+   speler met één invalbeurt zomaar in de top tien. Vandaar een aparte groep op
+   werkelijk gespeelde minuten. */
+const _pctCacheNu={};
+function pctGroepNu(pos,drempel){
+  const k=pos+"|"+drempel;
+  if(_pctCacheNu[k]) return _pctCacheNu[k];
+  const groep=D.db.filter(p=>p.p===pos&&(p.smin||0)>=drempel);
+  return (_pctCacheNu[k]={groep,n:groep.length});
+}
+function percentiel(p,haal,omgekeerd,eigenGroep){
+  const {groep}=eigenGroep||pctGroep(p.p);
   const mijn=haal(p);
   if(mijn==null) return null;
   const alle=groep.map(haal).filter(v=>v!=null);
@@ -8123,8 +8161,34 @@ function profielIn(box,p){
     </div>
   </section>`;
 
-  /* ── 3. onderliggende cijfers, gerangschikt ──────────────────────── */
-  const assen=p.p==="GKP"?[
+  /* ── 3. onderliggende cijfers, gerangschikt ──────────────────────────
+     Twee seizoenen, want ze beantwoorden verschillende vragen.
+
+       DIT SEIZOEN   wat er nu gebeurt. Weinig wedstrijden, dus gevoelig voor
+                     toeval — maar het is wel de werkelijkheid van vandaag.
+       VORIG SEIZOEN het patroon over 38 duels. Betrouwbaar, maar het kan
+                     achterhaald zijn door een transfer of een nieuwe trainer.
+
+     Ze door elkaar halen is het ergste van beide. Daarom een schakelaar, en bij
+     elk cijfer staat welk seizoen je ziet. */
+  const nuSeizoen=(PFSEIZOEN!=="vorig");
+  const NU_DREMPEL=90;                       // minstens één volledige wedstrijd
+  const groepNu=pctGroepNu(p.p,NU_DREMPEL);
+  const p90nu=x=>x.smin?x.spt/(x.smin/90):null;
+  const assenNu=p.p==="GKP"?[
+      ["Clean sheets",              x=>x.scs,0,false],
+      ["Verwachte tegendoelpunten", x=>x.sxgc,2,true],
+      ["Bonuspunten",               x=>x.sbonus,0,false],
+      ["Punten per 90",             p90nu,2,false],
+    ]:[
+      ["Verwachte goals",       x=>x.sxg,2,false],
+      ["Goals boven verwacht",  x=>x.sgxg,2,false],
+      ["Verwachte assists",     x=>x.sxa,2,false],
+      ["Doelpuntbetrokkenheid per 90", x=>x.sxgi90,2,false],
+      ["Bonuspunten",           x=>x.sbonus,0,false],
+      ["Punten per 90",         p90nu,2,false],
+    ];
+  const assenVorig=p.p==="GKP"?[
       ["Reddingen per 90", x=>x.min?x.rec/(x.min/90):null,1],
       ["Bonus per 90",     x=>x.min?x.bonus/(x.min/90):null,2],
       ["BPS per 90",       x=>x.min?x.bps/(x.min/90):null,0],
@@ -8137,10 +8201,13 @@ function profielIn(box,p){
       ["Afmaakpercentage",    x=>x.oconv,1],
       ["Punten per 90",       x=>x.p90,2],
     ];
-  const balken=assen.map(([lbl,haal,dec])=>{
-    const r=percentiel(p,haal);
+  const assen=nuSeizoen?assenNu:assenVorig;
+  const balken=assen.map(([lbl,haal,dec,omgekeerd])=>{
+    const r=percentiel(p,haal,omgekeerd,nuSeizoen?groepNu:null);
     if(!r) return `<div class="pfrij leeg"><span class="pfl">${esc(lbl)}</span>
-      <span class="pfgeen">geen Opta-data voor deze speler</span></div>`;
+      <span class="pfgeen">${nuSeizoen
+        ?"nog te weinig gespeeld dit seizoen"
+        :"geen Opta-data voor deze speler"}</span></div>`;
     const kl=r.pct>=80?"var(--good)":r.pct>=55?"var(--accent)":r.pct>=30?"var(--warn)":"var(--bad)";
     const deel=r.plaats/r.n;
     const duiding=r.plaats===1?"de beste":deel<=.1?"uitstekend":deel<=.25?"sterk"
@@ -8164,13 +8231,24 @@ function profielIn(box,p){
       <span class="pfw">${r.waarde.toFixed(dec)}<small>${esc(vgl)}</small></span>
     </div>`;}).join("");
 
+  const speelduur=nuSeizoen?`${p.smin||0} minuten in ${p.sst||0} basisplaats${(p.sst||0)===1?"":"en"}`:"";
   const onderliggend=`<section class="pfblok">
-    <h4>De onderliggende cijfers</h4>
-    <p class="pfuit">Hoe verhoudt hij zich tot zijn concurrenten? Elke regel zet hem op volgorde
-      tegenover de ${pctGroep(p.p).n} ${p.p}-spelers die minstens 45 minuten per duel verwacht worden.
-      <b>Staat er "8e van 67", dan zijn er zeven ${p.p}-spelers beter op dat punt.</b>
-      Hoe voller de balk, hoe hoger hij staat. Reserves die nooit spelen doen niet mee — anders lijkt
-      iedere basisspeler een uitblinker. Cijfers uit Opta over ${esc(SEIZOEN)}.</p>
+    <h4>De onderliggende cijfers
+      <span class="pfseiz" role="group" aria-label="Kies een seizoen">
+        <button data-pfs="nu" aria-pressed="${nuSeizoen}">Dit seizoen</button>
+        <button data-pfs="vorig" aria-pressed="${!nuSeizoen}">${esc(SEIZOEN)}</button>
+      </span></h4>
+    <p class="pfuit">${nuSeizoen
+      ? `Wat hij tot nu toe <b>werkelijk</b> heeft gedaan: ${speelduur}. Vergeleken met de
+         ${groepNu.n} ${p.p}-spelers die dit seizoen minstens één volledige wedstrijd speelden.
+         <b>Staat er "8e van ${groepNu.n}", dan zijn er zeven beter op dat punt.</b>
+         Let op de steekproef: na ${D.gw-1} gameweek${D.gw-1===1?"":"s"} kan één goede middag een
+         speler bovenaan zetten. Cijfers uit de FPL API zelf, dezelfde bron als je punten.`
+      : `Het patroon over een heel seizoen: 38 duels, dus veel minder gevoelig voor toeval.
+         Vergeleken met de ${pctGroep(p.p).n} ${p.p}-spelers die minstens 45 minuten per duel
+         verwacht worden. <b>Staat er "8e van ${pctGroep(p.p).n}", dan zijn er zeven beter.</b>
+         Wel oppassen: een transfer of een nieuwe trainer kan dit achterhaald hebben.
+         Cijfers uit Opta over ${esc(SEIZOEN)}.`}</p>
     ${balken}
   </section>`;
 
@@ -8412,6 +8490,8 @@ function profielIn(box,p){
 
   box.innerHTML=kop+gespeeld+verloop+prijsblok+onderliggend+perWedstrijd+klein+marktblok+komt+notitieblok+nieuwsblok;
 
+  box.querySelectorAll("[data-pfs]").forEach(b=>b.onclick=()=>{
+    PFSEIZOEN=b.dataset.pfs; profielIn(box,p); });
   box.querySelectorAll("[data-pf]").forEach(b=>b.onclick=()=>{
     const a=b.dataset.pf;
     // In de lade blijft de lade staan; alleen acties die je ergens anders
