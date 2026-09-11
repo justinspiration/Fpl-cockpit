@@ -4010,6 +4010,187 @@ body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .hlbalk,
 body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .kpis{ display:none; }
 body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .tabpaneel.actief{ margin-top:var(--s4); }
 
+/* ══ VISUELE LAAG: Mijn team, Transfers, Spelerpagina, Vergelijken ═══════
+   Vier pagina's die je het vaakst ziet, als eerste opgepoetst. De regels
+   hieronder bouwen op de klassen die er al staan; er is niets aan de logica
+   veranderd. Later volgen de andere pagina's op dezelfde manier.          */
+
+/* clubtegel: klein vlak in de twee clubkleuren */
+.ctegel{ flex:none; display:inline-flex; align-items:center; justify-content:center;
+  width:34px; height:34px; border-radius:9px; font-family:var(--mono); font-size:10px;
+  font-weight:800; letter-spacing:.04em; box-shadow:inset 0 1px 0 rgba(255,255,255,.28), 0 1px 3px rgba(0,0,0,.25); }
+.ctegel.klein{ width:28px; height:28px; border-radius:8px; font-size:9px; }
+
+/* ── MIJN TEAM ───────────────────────────────────────────────────────── */
+.pt{ border-radius:var(--r3); border:1px solid var(--line); box-shadow:var(--e1); }
+.pt-kop{ gap:var(--s3); padding:var(--s3) var(--s4);
+  background:linear-gradient(90deg,color-mix(in srgb,var(--t-team) 14%,transparent),transparent 70%); }
+.pt-kop .gwbadge{ border-radius:8px; padding:6px 10px; font-size:11px;
+  box-shadow:0 3px 10px -3px color-mix(in srgb,var(--accent) 70%,transparent); }
+.pt-kop .stat{ padding:5px 10px; border-radius:10px; background:color-mix(in srgb,var(--fg) 4%,transparent);
+  border:1px solid color-mix(in srgb,var(--fg) 6%,transparent); }
+.pt-kop .stat b{ font-size:15px; }
+.pt-kop .stat span{ font-size:9px; }
+
+/* de vijf meters: een echte balk onder elk percentage */
+.ratingbalk{ gap:var(--s2); padding:var(--s3) var(--s4); }
+.ratingbalk .rt{ position:relative; flex:1 1 90px; padding:8px 10px 12px; border-radius:10px;
+  background:color-mix(in srgb,var(--fg) 3.5%,transparent); text-align:center; }
+.ratingbalk .rt b{ font-size:19px; letter-spacing:-.02em; }
+.ratingbalk .rt .rtbalk{ position:absolute; left:10px; right:10px; bottom:6px; height:3px;
+  border-radius:2px; background:color-mix(in srgb,var(--fg) 10%,transparent); overflow:hidden; }
+.ratingbalk .rt .rtbalk::after{ content:""; position:absolute; left:0; top:0; bottom:0;
+  width:calc(var(--v,0) * 1%); background:var(--rk,var(--accent)); border-radius:2px;
+  transition:width var(--rustig) var(--uit); }
+
+/* het veld: echt gras, geen grijze rechthoek */
+:root{ --gras:color-mix(in srgb,var(--f1) 62%,#eef5f0); }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --gras:color-mix(in srgb,var(--f1) 34%,var(--ink-2)); } }
+:root[data-theme="dark"]{ --gras:color-mix(in srgb,var(--f1) 34%,var(--ink-2)); }
+@media(min-width:641px){ .grasmat{ padding:38px 14px 22px; } .sp{ width:114px; } .linie{ gap:var(--s3); margin-bottom:22px; } }
+.grasmat{
+  background-color:var(--gras);
+  background-image:
+    radial-gradient(120% 70% at 50% -10%, rgba(255,255,255,.14), transparent 55%),
+    repeating-linear-gradient(180deg, rgba(255,255,255,.035) 0 46px, rgba(0,0,0,.045) 46px 92px),
+    linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.16));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12), inset 0 0 80px rgba(0,0,0,.18);
+}
+.grasmat::before{ border-color:rgba(255,255,255,.17); width:min(240px,52%); height:64px; margin-left:0;
+  left:50%; transform:translateX(-50%); }
+.grasmat::after{ border-color:rgba(255,255,255,.14); width:130px; height:130px; margin:-65px 0 0 -65px; }
+
+/* spelerkaart */
+.sp .shirt{ height:62px; border-radius:12px 12px 6px 6px;
+  box-shadow:0 6px 16px -4px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.3); }
+.sp .naam{ background:color-mix(in srgb,var(--card) 92%,transparent); border-color:var(--line);
+  border-radius:0 0 11px 11px; padding:6px 6px 7px;
+  box-shadow:0 6px 14px -6px rgba(0,0,0,.35); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); }
+.sp .naam b{ font-size:12px; font-weight:700; }
+.sp .naam .duel{ font-size:9.5px; }
+.sp .strook{ margin-top:4px; gap:3px; }
+.sp .strook i{ width:13px; height:4px; border-radius:2px; }
+.sp .xp{ top:6px; right:6px; font-size:11.5px; padding:2px 7px; border-radius:7px;
+  background:rgba(10,8,20,.78); box-shadow:0 2px 8px rgba(0,0,0,.35); }
+.sp .band{ top:-7px; left:-7px; min-width:22px; height:22px; font-size:10px; }
+.sp .band.c{ box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 35%,transparent), 0 2px 8px rgba(0,0,0,.5); }
+.sp:hover{ transform:translateY(-5px) scale(1.02); }
+.sp.gewisseld .shirt{ box-shadow:0 0 0 2px color-mix(in srgb,var(--good) 70%,transparent), 0 6px 16px -4px rgba(0,0,0,.45); }
+
+/* de bank als dug-out */
+.bankvak{ margin:var(--s2) var(--s2) var(--s2); padding:20px 12px 12px; border-radius:var(--r2);
+  border:1px solid var(--line-2); border-top:1px dashed color-mix(in srgb,var(--fg) 22%,transparent);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--fg) 5%,transparent),color-mix(in srgb,var(--fg) 2%,transparent)); }
+.bankvak .titel{ background:var(--card); border:1px solid var(--line-2); border-radius:99px; padding:2px 12px;
+  top:-11px; font-weight:700; }
+.bankvak .sp{ opacity:.92; }
+.bankvak .sp:hover{ opacity:1; }
+
+/* ── TRANSFERS ───────────────────────────────────────────────────────── */
+.trow{ border-radius:var(--r2); margin-bottom:var(--s2); border-color:var(--line);
+  box-shadow:var(--e1); transition:box-shadow var(--vlot) var(--uit), border-color var(--vlot) var(--uit); }
+.trow:hover{ box-shadow:var(--e2); }
+.trow.open{ border-color:color-mix(in srgb,var(--t-transfers) 45%,transparent); }
+.trow>.hd{ grid-template-columns:16px minmax(0,1fr) auto auto auto; gap:var(--s3); padding:var(--s3) var(--s4); }
+.trow .nm{ display:flex; align-items:center; gap:10px; min-width:0; }
+.trow .nm .nmtxt{ min-width:0; }
+.trow .nm .nmtxt b{ display:block; font-size:var(--t-md); font-weight:680; letter-spacing:-.01em; }
+.trow .nm .nmtxt>span{ font-size:10.5px; }
+.trow .best{ display:flex; flex-direction:column; align-items:flex-end; min-width:74px; padding:6px 10px;
+  border-radius:10px; background:color-mix(in srgb,var(--good) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--good) 28%,transparent); font-size:15px; }
+.trow .best small{ font-size:8.5px; letter-spacing:.08em; }
+.trow .opts{ padding:var(--s2) var(--s2) var(--s2); background:color-mix(in srgb,var(--fg) 2.5%,transparent); }
+.opt{ grid-template-columns:minmax(0,1fr) auto auto 62px 60px auto; gap:var(--s3);
+  padding:var(--s3) var(--s3); border-radius:var(--r1); margin:0 0 var(--s1);
+  background:var(--card); border:1px solid var(--line-2);
+  transition:border-color var(--vlot) var(--uit), transform var(--snel) var(--uit); }
+.opt:hover{ border-color:color-mix(in srgb,var(--t-transfers) 40%,transparent); }
+.opt .who{ display:flex; align-items:center; gap:9px; }
+.opt .who .whotxt{ min-width:0; display:flex; flex-direction:column; gap:1px; }
+.opt .who .whotxt b{ font-size:var(--t-sm); font-weight:660; }
+.opt .who .whotxt>span:last-child{ font-size:10px; }
+.opt .gain{ font-size:14px; }
+.opt .houd b{ font-size:16px; }
+.opt .doe{ min-height:34px; padding:0 14px; border-radius:9px; font-weight:650; font-size:12px;
+  box-shadow:0 3px 10px -3px color-mix(in srgb,var(--accent) 70%,transparent); }
+.opt .doe:hover{ filter:brightness(1.08); }
+.timing{ margin:0 0 var(--s2); padding:var(--s2) var(--s3); border-radius:var(--r1);
+  background:color-mix(in srgb,var(--fg) 3%,transparent); }
+.tgw{ border-radius:8px; }
+.fxs i{ min-width:32px; height:19px; border-radius:5px; font-size:9.5px; font-weight:700; }
+.xpr i{ border-radius:2px; }
+.kansen{ margin-top:var(--s5); padding-top:var(--s4); }
+.kansen h4{ font-size:var(--t-md); }
+.krij{ border-radius:var(--r2); padding:var(--s3) var(--s3); border-color:var(--line); box-shadow:var(--e1);
+  grid-template-columns:minmax(0,1.2fr) 22px minmax(0,1.2fr) auto 66px 66px auto; }
+.krij .uit,.krij .in{ display:flex; align-items:center; gap:9px; min-width:0; }
+.krij .ktxt{ min-width:0; }
+.krij .uit{ opacity:.8; }
+.krij .pijl{ width:22px; height:22px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+  background:color-mix(in srgb,var(--t-transfers) 14%,transparent); color:var(--t-transfers); }
+.krij .wns{ font-size:14px; }
+.krij .doe{ min-height:32px; padding:0 13px; border-radius:9px; font-weight:650; }
+
+/* ── SPELERPAGINA ────────────────────────────────────────────────────── */
+.pfkop{ position:relative; align-items:center; gap:var(--s4); padding:var(--s4) var(--s4);
+  margin:0 0 var(--s4); border-radius:var(--r3); overflow:hidden; isolation:isolate;
+  background:linear-gradient(120deg,color-mix(in srgb,var(--k1,var(--accent)) 26%,var(--card)),
+                                     color-mix(in srgb,var(--k2,var(--accent)) 12%,var(--card)) 60%, var(--card));
+  border:1px solid color-mix(in srgb,var(--k1,var(--accent)) 35%,var(--line)); box-shadow:var(--e2); }
+.pfkop::before{ content:""; position:absolute; right:-60px; top:-70px; width:240px; height:240px; border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--k1,var(--accent)) 30%,transparent),transparent 65%);
+  pointer-events:none; z-index:-1; }
+.pftegel{ width:64px; height:64px; border-radius:16px; font-size:13px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 8px 20px -6px rgba(0,0,0,.5); }
+.pfnaam h3{ font-size:26px; letter-spacing:-.02em; }
+.pfnaam>span{ font-size:var(--t-sm); }
+.pfacties .knop{ min-height:36px; border-radius:10px; }
+.pfkern{ gap:var(--s2); }
+.pfk{ border-radius:var(--r2); padding:12px 14px; box-shadow:var(--e1);
+  background-image:var(--glans); border-color:var(--line); }
+.pfk b{ font-size:23px; }
+.pfblok h4{ padding:8px 12px; border-radius:10px; background:color-mix(in srgb,var(--fg) 3.5%,transparent); }
+.pfblok h4::before{ height:20px; }
+
+/* ── VERGELIJKEN ─────────────────────────────────────────────────────── */
+.vglkop{ position:relative; gap:var(--s3); padding:var(--s3); border-radius:var(--r3); margin-bottom:var(--s4);
+  background:linear-gradient(90deg,color-mix(in srgb,var(--ka,var(--accent)) 16%,var(--card)),
+                                    var(--card) 40%, var(--card) 60%,
+                                    color-mix(in srgb,var(--kb,var(--accent)) 16%,var(--card)));
+  border:1px solid var(--line); box-shadow:var(--e1); }
+.vglkaart{ padding:var(--s2) var(--s3); border-radius:var(--r2);
+  background:color-mix(in srgb,var(--card) 70%,transparent); border:1px solid color-mix(in srgb,var(--k1,var(--line)) 30%,var(--line)); }
+.vglkaart .tegel{ width:44px; height:44px; border-radius:12px; font-size:11px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 4px 12px -4px rgba(0,0,0,.5); }
+.vglkaart .info b{ font-size:var(--t-lg); letter-spacing:-.015em; }
+.vglkop .vs{ width:38px; height:38px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+  font-family:var(--mono); font-weight:800; font-size:11px; letter-spacing:.06em;
+  background:var(--card); border:1px solid var(--line); box-shadow:var(--e1); }
+.vgltab{ border-collapse:separate; border-spacing:0 3px; }
+.vgltab tr.kop td{ padding-top:var(--s4); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); }
+.vgltab td{ position:relative; }
+.vgltab td.l,.vgltab td.r{ height:36px; vertical-align:middle; background:color-mix(in srgb,var(--fg) 2.5%,transparent); }
+.vgltab td.l{ border-radius:9px 0 0 9px; }
+.vgltab td.r{ border-radius:0 9px 9px 0; }
+.vgltab td .vwaarde{ position:relative; z-index:1; font-weight:650; }
+.vgltab td .vbalk{ position:absolute; top:6px; bottom:6px; width:calc(var(--w,0) * 1%); max-width:100%;
+  border-radius:6px; background:color-mix(in srgb,var(--fg) 8%,transparent); pointer-events:none;
+  transition:width var(--rustig) var(--uit); }
+.vgltab td.l .vbalk{ right:0; }
+.vgltab td.r .vbalk{ left:0; }
+.vgltab td.win .vbalk{ background:color-mix(in srgb,var(--good) 26%,transparent); }
+.vgltab td.win .vwaarde{ color:var(--good); }
+.vgltab td.gelijk .vbalk{ background:color-mix(in srgb,var(--accent) 16%,transparent); }
+.vgltab td.mid{ font-size:var(--t-xs); color:var(--fg-2); text-align:center; padding:0 var(--s3); white-space:nowrap; }
+.vgluit{ margin-top:var(--s4); padding:var(--s3) var(--s4); border-radius:var(--r2);
+  background:color-mix(in srgb,var(--accent) 8%,transparent); border:1px solid color-mix(in srgb,var(--accent) 22%,transparent); }
+@media(max-width:640px){
+  .vgltab td.mid{ white-space:normal; }
+  .pfnaam h3{ font-size:21px; }
+  .pftegel{ width:52px; height:52px; }
+}
+
 /* het zwevende menu: zelfde iconen als de tabbalk */
 .snav button{ display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto auto;
   column-gap:10px; align-items:center; text-align:left; }
@@ -4715,6 +4896,12 @@ const IK={
 };
 const VLAKIKOON={team:"shirt",transfers:"wissel",assistent:"vonk",research:"loep",
                  overzicht:"krant",leagues:"beker",mijnpagina:"raster"};
+/* Een klein clubvlak in de twee clubkleuren, voor lijsten waar alleen een
+   afkorting stond. Kleur herken je sneller dan drie letters. */
+function clubTegel(t,kl){
+  const k=shirtKleur(t);
+  return `<span class="ctegel${kl?" "+kl:""}" style="background:linear-gradient(150deg,${k.hoofd},${k.acc});color:${k.tekst}">${esc(t)}</span>`;
+}
 function ik(naam,maat){
   const d=IK[naam]; if(!d) return "";
   const m=maat||14;
@@ -6437,7 +6624,7 @@ function vergelijk(){
     return d>=3&&v!=null?v/d:null;};
   const duels=p=>((hist(p,"min")||0)/90);
   const kaart=p=>{const k=shirtKleur(p.t);
-    return `<div class="vglkaart">
+    return `<div class="vglkaart" style="--k1:${k.hoofd};--k2:${k.acc};--kt:${k.tekst}">
       <div class="tegel" style="background:linear-gradient(150deg,${k.hoofd},${k.acc});color:${k.tekst}">${esc(p.t)}</div>
       <div class="info"><b>${esc(p.n)}</b><span>${p.p} · £${p.c.toFixed(1)}m${
         p.status!=="a"?" · <span style=\"color:var(--warn)\">niet fit</span>":""}</span></div></div>`;};
@@ -6477,7 +6664,8 @@ function vergelijk(){
   // cijfers meten iets anders. Dan geen winnaar aanwijzen op die assen.
   const zelfdePositie=a.p===b.p;
   const keeperErbij=(a.p==="GKP")!==(b.p==="GKP");
-  let h=`<div class="vglkop">${kaart(a)}<div class="vs">VS</div>${kaart(b)}</div>`;
+  const ka0=shirtKleur(a.t), kb0=shirtKleur(b.t);
+  let h=`<div class="vglkop" style="--ka:${ka0.hoofd};--kb:${kb0.hoofd}">${kaart(a)}<div class="vs">VS</div>${kaart(b)}</div>`;
   if(!zelfdePositie) h+=`<div class="vglwaarschuwing">
       <b>${esc(a.p)} tegenover ${esc(b.p)}</b>
       ${keeperErbij
@@ -6508,8 +6696,16 @@ function vergelijk(){
     else if(num&&Math.abs(va-vb)<=1e-9){ ka=kb="gelijk"; }
     else if(!num&&va===vb){ ka=kb="gelijk"; }
     else if(num&&rich){ const aWint=rich>0?va>vb:va<vb; ka=aWint?"win":""; kb=aWint?"":"win"; }
-    h+=`<tr><td class="l ${ka}">${fmt(va)}</td><td class="mid">${esc(lbl)}</td>
-      <td class="r ${kb}">${fmt(vb)}</td></tr>`;
+    /* Twee balken vanuit het midden: je ziet de verhouding zonder te lezen.
+       Alleen bij twee getallen met dezelfde eenheid; tekst blijft tekst. */
+    let ba="",bb="";
+    if(num&&vergelijkbaar){
+      const m=Math.max(Math.abs(va),Math.abs(vb));
+      if(m>0){ ba=`<i class="vbalk" style="--w:${(Math.abs(va)/m*100).toFixed(0)}"></i>`;
+               bb=`<i class="vbalk" style="--w:${(Math.abs(vb)/m*100).toFixed(0)}"></i>`; }
+    }
+    h+=`<tr><td class="l ${ka}"><span class="vwaarde">${fmt(va)}</span>${ba}</td><td class="mid">${esc(lbl)}</td>
+      <td class="r ${kb}"><span class="vwaarde">${fmt(vb)}</span>${bb}</td></tr>`;
   });
   h+=`</tbody></table>`;
 
@@ -8262,7 +8458,7 @@ function profielIn(box,p){
   const boven=perDuel>=dr;
   const reeks=reeksVan(p,G,6);
 
-  const kop=`<div class="pfkop">
+  const kop=`<div class="pfkop" style="--k1:${k.hoofd};--k2:${k.acc};--kt:${k.tekst}">
     <div class="pfid">
       <span class="pftegel" style="background:linear-gradient(150deg,${k.hoofd},${k.acc});color:${k.tekst}">${esc(p.t)}</span>
       <div class="pfnaam">
@@ -11116,7 +11312,7 @@ ${combi?`<div class="combi">
           binnen je budget, met de 3-per-club-regel erin</span></div>
     </div>`:""}
     ${(()=>{const R=teamRating(g);
-      const cel=(l,v)=>`<span class="rt"><b style="color:${ratingKleur(v)}">${v==null?"—":v+"%"}</b><span>${l}</span></span>`;
+      const cel=(l,v)=>`<span class="rt" style="--v:${v==null?0:v};--rk:${ratingKleur(v)}"><b style="color:${ratingKleur(v)}">${v==null?"—":v+"%"}</b><span>${l}</span><i class="rtbalk"></i></span>`;
       return `${(PLANGW+(ENKEL?0:HZ-1))>(D.copilot_grens||99)?
         `<div class="bronlet">${ik("info",13)}<span>Je kijkt tot GW${Math.min(38,PLANGW+(ENKEL?0:HZ-1))},
           maar FPL Copilot reikt tot GW${D.copilot_grens}. Alles daarna komt uit het eigen model
@@ -12062,7 +12258,7 @@ function advies(){
     return `<div class="trow${gepland?" open":""}" data-i="${i}">
       <div class="hd">
         <span class="caret">${ik("chevron",13)}</span>
-        <span class="nm"><b>${esc(r.cur.n)}</b><span>${esc(r.cur.t)} · £${r.cur.c.toFixed(1)}m · <em style="font-style:normal;color:${r.rd.dwang?"var(--bad)":r.rd.kans?"var(--good)":"var(--warn)"}">${esc(r.rd.r)}</em>${gepland?" · WISSEL GEPLAND":""}</span></span>
+        <span class="nm">${clubTegel(r.cur.t)}<span class="nmtxt"><b>${esc(r.cur.n)}</b><span>${esc(r.cur.t)} · £${r.cur.c.toFixed(1)}m · <em style="font-style:normal;color:${r.rd.dwang?"var(--bad)":r.rd.kans?"var(--good)":"var(--warn)"}">${esc(r.rd.r)}</em>${gepland?" · WISSEL GEPLAND":""}</span></span></span>
         <span class="fxs">${strook(r.cur,5,PLANGW)}</span>
         ${mini(r.cur)}
         <span class="best">+${r.opties[0].d.toFixed(1)}<small>OVER ${hzVan("transfers")===1?"GW"+PLANGW:hzVan("transfers")+" GW"}</small></span>
@@ -12070,8 +12266,8 @@ function advies(){
       <div class="opts">${r.opties.map(o=>{
         const actief=gepland&&gepland["in"]===o.c.id;
         return `<div class="opt">
-          <span class="who"><b>${esc(o.c.n)}</b>${o.c.pen===1?' <span class="badge b-pen" title="Eerste penaltynemer">PEN</span>':""}${viaCopilot(o.c)?' <span class="badge" style="color:var(--good)" title="Verwachte punten komen van FPL Copilot, een extern FPL-model. Zonder dit label is het onze eigen berekening.">xP</span>':' <span class="badge" style="color:var(--fg-3)" title="Geen extern cijfer beschikbaar; dit is onze eigen berekening, geschaald op het niveau van FPL Copilot.">model</span>'}
-            <span>${esc(o.c.t)} · £${o.c.c.toFixed(1)}m · ${o.c.own.toFixed(1)}% eigendom${o.c.cpmin?" · "+o.c.cpmin+"' verwacht":""}</span></span>
+          <span class="who">${clubTegel(o.c.t,"klein")}<span class="whotxt"><b>${esc(o.c.n)}</b>${o.c.pen===1?' <span class="badge b-pen" title="Eerste penaltynemer">PEN</span>':""}${viaCopilot(o.c)?' <span class="badge" style="color:var(--good)" title="Verwachte punten komen van FPL Copilot, een extern FPL-model. Zonder dit label is het onze eigen berekening.">xP</span>':' <span class="badge" style="color:var(--fg-3)" title="Geen extern cijfer beschikbaar; dit is onze eigen berekening, geschaald op het niveau van FPL Copilot.">model</span>'}
+            <span>${esc(o.c.t)} · £${o.c.c.toFixed(1)}m · ${o.c.own.toFixed(1)}% eigendom${o.c.cpmin?" · "+o.c.cpmin+"' verwacht":""}</span></span></span>
           <span class="fxs">${strook(o.c,5,PLANGW)}</span>
           ${mini8(o.c,o.r)}
           <span class="gain">+${o.d.toFixed(1)}<small>${hzVan("transfers")===1?"GW"+PLANGW:hzVan("transfers")+" GW"}</small></span>
@@ -12101,9 +12297,9 @@ function advies(){
         ${N===1?`gameweek ${PLANGW}`:`GW${PLANGW}–${Math.min(38,PLANGW+N-1)}`} net wat meer oplevert
         en zelf minstens 3 weken op rij boven zijn positieniveau blijft. Kost meestal geld.</p>
       ${kansTop.map(k=>`<div class="krij">
-        <span class="uit"><b>${esc(k.cur.n)}</b><span>${esc(k.cur.t)} · £${k.cur.c.toFixed(1)}m</span></span>
+        <span class="uit">${clubTegel(k.cur.t,"klein")}<span class="ktxt"><b>${esc(k.cur.n)}</b><span>${esc(k.cur.t)} · £${k.cur.c.toFixed(1)}m</span></span></span>
         <span class="pijl">${ik("pijlRechts",15)}</span>
-        <span class="in"><b>${esc(k.c.n)}</b><span>${esc(k.c.t)} · £${k.c.c.toFixed(1)}m · ${k.c.own.toFixed(1)}%</span></span>
+        <span class="in">${clubTegel(k.c.t,"klein")}<span class="ktxt"><b>${esc(k.c.n)}</b><span>${esc(k.c.t)} · £${k.c.c.toFixed(1)}m · ${k.c.own.toFixed(1)}%</span></span></span>
         <span class="fxs">${strook(k.c,5,PLANGW)}</span>
         <span class="kost" style="color:${k.kosten>0?"var(--warn)":"var(--good)"}">${k.kosten>0?"−":"+"}£${Math.abs(k.kosten).toFixed(1)}m</span>
         <span class="wns">+${k.w.toFixed(1)}<small>${k.r.langst} WK OP RIJ</small></span>
