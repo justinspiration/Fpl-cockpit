@@ -19,7 +19,10 @@ on:
     # Let op: GitHub voert cron-taken uit "op of na" het genoemde moment. Bij
     # drukte kan een ronde tien tot twintig minuten later starten. Dat is normaal
     # en geen storing.
-    - cron: "0 * * * *"
+    # Niet op het hele uur: dat is het drukste moment op GitHub en dan worden
+    # geplande rondes uitgesteld of overgeslagen (op 11 september liepen er
+    # maar vijf van de vierentwintig). Een schuin minuutgetal helpt daar echt.
+    - cron: "13 * * * *"
   workflow_dispatch:                  # met de hand starten kan altijd
 
 # Twee rondes tegelijk mogen niet. Bij elk uur kan dat gebeuren zodra GitHub een
@@ -184,6 +187,12 @@ jobs:
                       except (ValueError, OverflowError): continue
               return None
           stuk = False
+          # Alleen de projectiebronnen mogen de ronde rood maken: zonder die
+          # twee klopt geen getal meer. Estimator en GoalIQ zijn aanvullend;
+          # zijn die oud, dan is dat een waarschuwing, geen reden om de
+          # prijzen en de opstelling van vandaag niet te publiceren.
+          kern = {"FPL Copilot", "Pundit"}
+          oud_kern = []
           for naam, pad in (("FPL Copilot", "state/xp_copilot.json"),
                             ("Pundit", "state/xp_pundit.json"),
                             ("FPL Estimator", "state/xp_estimator.json"),
@@ -191,16 +200,21 @@ jobs:
               u = leeftijd(pad, ("opgehaald", "_opgehaald", "generated_at"))
               if u is None:
                   print("::warning::%s heeft geen leesbare ophaaldatum" % naam); continue
-              if u > HARD:
+              if u > HARD and naam in kern:
                   print("::error::%s is %.0f uur oud (harde grens %.0f). Het ophalen "
                         "mislukt structureel; het dashboard draait op bevroren cijfers."
                         % (naam, u, HARD))
-                  stuk = True
+                  oud_kern.append(naam)
+              elif u > HARD:
+                  print("::warning::%s is %.0f uur oud -- aanvullende bron, de ronde loopt door"
+                        % (naam, u))
               elif u > ZACHT:
                   print("::warning::%s is %.0f uur oud -- het ophalen mislukte deze ronde"
                         % (naam, u))
               else:
                   print("   %s: %.0f uur oud" % (naam, u))
+          # pas rood als BEIDE projectiebronnen te oud zijn
+          stuk = len(oud_kern) == len(kern)
           sys.exit(1 if stuk else 0)
           PYEOF
           cp state/goaliq.json /tmp/gq_terugval.json 2>/dev/null || true
