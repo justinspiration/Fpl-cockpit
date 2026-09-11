@@ -224,10 +224,10 @@ header{position:relative;z-index:40;border-bottom:1px solid var(--line-2)}
 .card{--sectie:var(--accent)}
 [data-paneel="team"] .card{--sectie:var(--t-team)}
 [data-paneel="transfers"] .card{--sectie:var(--t-transfers)}
-[data-paneel="plan"] .card{--sectie:var(--t-plan)}
+[data-paneel="transfers"] [data-sub="plan"] .card{--sectie:var(--t-plan)}
 [data-paneel="inzichten"] .card{--sectie:var(--t-inzicht)}
-[data-paneel="prijzen"] .card{--sectie:var(--t-prijs)}
-[data-paneel="fixtures"] .card{--sectie:var(--t-fixture)}
+[data-paneel="transfers"] [data-sub="prijzen"] .card{--sectie:var(--t-prijs)}
+[data-paneel="research"] [data-sub="fixtures"] .card{--sectie:var(--t-fixture)}
 [data-paneel="database"] .card{--sectie:var(--t-data)}
 .card h2{color:color-mix(in srgb,var(--sectie) 72%,var(--fg-2))}
 .card h2 .tag{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--fg-3);text-transform:none;letter-spacing:.02em}
@@ -3927,6 +3927,96 @@ html{ scroll-behavior:smooth; }
   .pfseiz{ margin-left:0; flex-basis:100%; }
   .pfseiz button{ flex:1; }
 }
+
+/* ══ Navigatie: zeven knoppen met een eigen kleur en icoon ═════════════
+   Tien smalle tekstknoppen met een streepje eronder was te weinig houvast.
+   Elke pagina heeft nu een tegel met icoon in zijn sectiekleur; de actieve
+   krijgt een gevuld icoon en een licht vlak, zodat je zonder lezen ziet
+   waar je bent. Sectiekleuren per pagina komen uit het ontwerpsysteem. */
+.tabs button[data-tab="team"]{--tk:var(--t-team)}
+.tabs button[data-tab="transfers"]{--tk:var(--t-transfers)}
+.tabs button[data-tab="assistent"]{--tk:var(--t-plan)}
+.tabs button[data-tab="research"]{--tk:var(--t-inzicht)}
+.tabs button[data-tab="overzicht"]{--tk:var(--t-nieuws)}
+.tabs button[data-tab="leagues"]{--tk:var(--t-league)}
+.tabs button[data-tab="mijnpagina"]{--tk:var(--t-mijn)}
+[data-paneel="assistent"] .card{--sectie:var(--t-plan)}
+
+.tabbalk{ padding-top:var(--s2); padding-bottom:var(--s2); gap:var(--s2); }
+.tabs{ gap:var(--s1); align-items:stretch; mask-image:none; }
+.tabbalk.meerlinks .tabs,.tabbalk.meerrechts .tabs,.tabbalk.meerlinks.meerrechts .tabs{ mask-image:none; }
+.tabs button{
+  flex:0 0 auto; display:flex; flex-direction:row; align-items:center; gap:10px;
+  min-height:50px; padding:6px 14px 6px 8px; border:1px solid transparent;
+  border-bottom:1px solid transparent; border-radius:var(--r2);
+  background:transparent; color:var(--fg-2); text-align:left;
+  transition:background-color var(--vlot) var(--uit), border-color var(--vlot) var(--uit),
+             color var(--vlot) var(--uit), transform var(--snel) var(--uit);
+}
+.tabs button::before{ display:none; }
+.tabs button .tik{
+  flex:none; width:34px; height:34px; border-radius:10px; display:inline-flex;
+  align-items:center; justify-content:center; color:var(--tk);
+  background:color-mix(in srgb,var(--tk) 13%,transparent);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tk) 22%,transparent);
+  transition:background-color var(--vlot) var(--uit), color var(--vlot) var(--uit),
+             box-shadow var(--vlot) var(--uit), transform var(--vlot) var(--veer);
+}
+.tabs button .ttxt{ display:flex; flex-direction:column; gap:1px; min-width:0; }
+.tabs button .tl{ font-size:var(--t-md); font-weight:650; letter-spacing:-.012em; color:var(--fg); line-height:1.15; }
+.tabs button .tsub{ font-size:10.5px; color:var(--fg-3); line-height:1.15; white-space:nowrap; }
+.tabs button:hover:not([aria-selected="true"]){
+  background:color-mix(in srgb,var(--fg) 4%,transparent); border-color:transparent; }
+.tabs button:hover:not([aria-selected="true"]) .tik{ transform:translateY(-1px); }
+.tabs button[aria-selected="true"]{
+  background:color-mix(in srgb,var(--tk) 10%,transparent);
+  border-color:color-mix(in srgb,var(--tk) 32%,transparent);
+  box-shadow:0 1px 0 color-mix(in srgb,var(--tk) 12%,transparent), var(--e1);
+}
+.tabs button[aria-selected="true"] .tik{
+  background:var(--tk); color:var(--ink);
+  box-shadow:0 4px 12px -4px color-mix(in srgb,var(--tk) 75%,transparent);
+}
+.tabs button[aria-selected="true"] .tl{ color:var(--tk); }
+.tabs button[aria-selected="true"] .tsub{ color:var(--fg-2); }
+.tabs button.verborgen{ opacity:.35; }
+.tabs button.verborgen .tik{ filter:saturate(0); }
+.tabsorteer{ min-height:36px; align-self:center; border-radius:10px; }
+@media(max-width:1240px){
+  .tabs button{ padding:6px 10px 6px 6px; gap:8px; min-height:44px; }
+  .tabs button .tsub{ display:none; }
+  .tabs button .tik{ width:30px; height:30px; border-radius:9px; }
+}
+@media(max-width:560px){
+  .tabs button .tl{ font-size:var(--t-sm); }
+  .tabs button{ padding:4px 8px 4px 4px; gap:6px; min-height:40px; }
+}
+
+/* onderdelen binnen een pagina: rustiger, met de sectiekleur als stip */
+.subkeus{ gap:4px; padding:4px; border-radius:var(--r2); margin:var(--s3) 0 var(--s4);
+  background:color-mix(in srgb,var(--card) 70%,transparent); }
+.subkeus button{ min-height:46px; flex:1 1 auto; min-width:0; padding:0 var(--s3); border-radius:calc(var(--r2) - 4px); }
+.subkeus button b{ font-size:var(--t-sm); font-weight:640; }
+.subkeus button span{ font-size:10.5px; }
+.subkeus button[aria-pressed="true"]{ background:var(--accent-vlak); color:#fff;
+  box-shadow:0 2px 8px -2px color-mix(in srgb,var(--accent) 55%,transparent), inset 0 1px 0 rgba(255,255,255,.14); }
+
+/* De briefing en de kerncijfers horen bij je team. Op elke andere pagina
+   duwden ze de inhoud vierhonderd pixels naar beneden; daar staan ze nu niet. */
+body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .kopblok,
+body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .brief,
+body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .hlbalk,
+body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .kpis{ display:none; }
+body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .tabpaneel.actief{ margin-top:var(--s4); }
+
+/* het zwevende menu: zelfde iconen als de tabbalk */
+.snav button{ display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto auto;
+  column-gap:10px; align-items:center; text-align:left; }
+.snav .snik{ grid-row:1/3; width:30px; height:30px; border-radius:9px; display:inline-flex;
+  align-items:center; justify-content:center; color:var(--tk,var(--accent));
+  background:color-mix(in srgb,var(--tk,var(--accent)) 13%,transparent); }
+.snav button[aria-current="true"] .snik{ background:var(--tk,var(--accent)); color:var(--ink); }
+.snav .greep{ grid-row:1/3; }
 </style>
 
 <header><div class="hdr">
@@ -3940,7 +4030,7 @@ html{ scroll-behavior:smooth; }
         stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
         <circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
       <input id="zoekin" type="search" autocomplete="off" spellcheck="false"
-             placeholder="Zoek een speler, club, pagina of begrip…" aria-label="Zoeken">
+             placeholder="Zoek een speler, club of functie…" aria-label="Zoeken">
       <div class="zoekres" id="zoekres" hidden role="listbox"></div>
     </div>
     <div class="moduswrap"><span class="mlbl">Weergave</span>
@@ -4067,6 +4157,8 @@ html{ scroll-behavior:smooth; }
   </div>
 
   <div class="tabpaneel" data-paneel="transfers">
+    <div class="subkeus" id="trkeus" role="tablist"></div>
+    <div class="subvak" data-sub="advies" hidden>
   <div class="grid">
     <section class="card">
       <h2><span class="dot"></span>Transfers
@@ -4087,6 +4179,32 @@ html{ scroll-behavior:smooth; }
       <div class="src" id="src-advies"></div>
     </section>
   </div>
+    </div>
+    <div class="subvak" data-sub="plan" hidden>
+    <div class="grid"><section class="card">
+      <h2><span class="dot"></span>Transferpad over meerdere gameweeks
+        <span class="tag">solver kijkt 6 gameweeks vooruit</span></h2>
+      <div class="body" id="solverbox"></div>
+      <div class="src" id="src-solver"></div>
+    </section></div>
+    </div>
+    <div class="subvak" data-sub="prijzen" hidden>
+    <div class="grid"><section class="card">
+      <h2><span class="dot"></span>Prijsveranderingen
+        <span class="seg" id="prijsfilter" style="margin-left:12px">
+          <button data-pf="mijn" aria-pressed="true">Mijn team</button>
+          <button data-pf="alle" aria-pressed="false">Alle spelers</button>
+          <button data-pf="stijgers" aria-pressed="false">Stijgers</button>
+          <button data-pf="dalers" aria-pressed="false">Dalers</button>
+        </span></h2>
+      <div class="body" id="prijzen"></div>
+      <div class="src" id="src-prijzen"></div>
+    </section>
+    <section class="card">
+      <h2><span class="dot"></span>Transfermarkt <span class="tag">wat de wereld deze week doet</span></h2>
+      <div class="body" id="marktbox"></div>
+    </section></div>
+    </div>
   </div>
 
     <div class="tabpaneel" data-paneel="assistent">
@@ -4178,6 +4296,28 @@ html{ scroll-behavior:smooth; }
         <div class="body" id="standbox"></div>
         <div class="src" id="src-stand"></div>
       </section></div>
+    </div>
+    <div class="subvak" data-sub="fixtures" hidden>
+  <div class="grid">
+    <section class="card">
+      <h2><span class="dot"></span>Fixture ticker
+        <span class="seg" role="group" aria-label="Weergave" id="tkmode" style="margin-left:12px">
+          <button data-m="fdr" aria-pressed="true">FDR</button>
+          <button data-m="xg" aria-pressed="false">Verwachte goals</button>
+          <button data-m="cs" aria-pressed="false">Clean sheet %</button>
+        </span>
+        <span class="seg" role="group" aria-label="Aantal gameweeks" id="tkspan"></span>
+      </h2>
+      <div class="body"><div class="legend" style="margin:0 0 10px"><span id="tickerinfo"></span></div>
+        <div class="scroll" style="max-height:620px"><table id="ticker"></table></div></div>
+      <div class="src" id="src-ticker"></div>
+    </section>
+    <section class="card">
+      <h2><span class="dot"></span>Rotatiedruk <span class="tag">Europees programma</span></h2>
+      <div class="body" id="rotbox"></div>
+      <div class="src" id="src-rot"></div>
+    </section>
+  </div>
     </div>
     <div class="subvak" data-sub="clubs" hidden>
 <div class="grid"><section class="card">
@@ -4304,56 +4444,6 @@ html{ scroll-behavior:smooth; }
     </div>
   </div>
 
-  <div class="tabpaneel" data-paneel="plan">
-    <div class="grid"><section class="card">
-      <h2><span class="dot"></span>Transferpad over meerdere gameweeks
-        <span class="tag">solver kijkt 6 gameweeks vooruit</span></h2>
-      <div class="body" id="solverbox"></div>
-      <div class="src" id="src-solver"></div>
-    </section></div>
-    </div>
-
-  <div class="tabpaneel" data-paneel="prijzen">
-    <div class="grid"><section class="card">
-      <h2><span class="dot"></span>Prijsveranderingen
-        <span class="seg" id="prijsfilter" style="margin-left:12px">
-          <button data-pf="mijn" aria-pressed="true">Mijn team</button>
-          <button data-pf="alle" aria-pressed="false">Alle spelers</button>
-          <button data-pf="stijgers" aria-pressed="false">Stijgers</button>
-          <button data-pf="dalers" aria-pressed="false">Dalers</button>
-        </span></h2>
-      <div class="body" id="prijzen"></div>
-      <div class="src" id="src-prijzen"></div>
-    </section>
-    <section class="card">
-      <h2><span class="dot"></span>Transfermarkt <span class="tag">wat de wereld deze week doet</span></h2>
-      <div class="body" id="marktbox"></div>
-    </section></div>
-  </div>
-
-  <div class="tabpaneel" data-paneel="fixtures">
-  <div class="grid">
-    <section class="card">
-      <h2><span class="dot"></span>Fixture ticker
-        <span class="seg" role="group" aria-label="Weergave" id="tkmode" style="margin-left:12px">
-          <button data-m="fdr" aria-pressed="true">FDR</button>
-          <button data-m="xg" aria-pressed="false">Verwachte goals</button>
-          <button data-m="cs" aria-pressed="false">Clean sheet %</button>
-        </span>
-        <span class="seg" role="group" aria-label="Aantal gameweeks" id="tkspan"></span>
-      </h2>
-      <div class="body"><div class="legend" style="margin:0 0 10px"><span id="tickerinfo"></span></div>
-        <div class="scroll" style="max-height:620px"><table id="ticker"></table></div></div>
-      <div class="src" id="src-ticker"></div>
-    </section>
-    <section class="card">
-      <h2><span class="dot"></span>Rotatiedruk <span class="tag">Europees programma</span></h2>
-      <div class="body" id="rotbox"></div>
-      <div class="src" id="src-rot"></div>
-    </section>
-  </div>
-
-  </div>
 
   <div class="tabpaneel" data-paneel="overzicht">
     <div class="grid"><section class="card">
@@ -4563,7 +4653,16 @@ const IK={
   heelvak:'<rect x="3" y="5" width="18" height="14" rx="2"/>',
   terugdraai:'<path d="M3 10h10a5.5 5.5 0 1 1 0 11H8"/><path d="m7 6-4 4 4 4"/>',
   euro:'<path d="M17 6.2A6 6 0 0 0 8 11v2a6 6 0 0 0 9 4.8M4 11h8M4 14h8"/>',
+  /* pagina-iconen in de navigatie */
+  shirt:'<path d="M8 3 4 5.5l2 4 2-1V21h8V8.5l2 1 2-4L16 3a4 4 0 0 1-8 0Z"/>',
+  vonk:'<path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/>',
+  loep:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8M8 10.5h5M10.5 8v5"/>',
+  krant:'<path d="M4 5h13v14H6a2 2 0 0 1-2-2ZM17 9h3v8a2 2 0 0 1-2 2M7 9h6M7 13h6M7 16h4"/>',
+  beker:'<path d="M8 4h8v5a4 4 0 0 1-8 0ZM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M9 21h6M10 17h4"/>',
+  raster:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
 };
+const VLAKIKOON={team:"shirt",transfers:"wissel",assistent:"vonk",research:"loep",
+                 overzicht:"krant",leagues:"beker",mijnpagina:"raster"};
 function ik(naam,maat){
   const d=IK[naam]; if(!d) return "";
   const m=maat||14;
@@ -10032,17 +10131,15 @@ function tekenChipbalk(){
    verplaatst schuift de rest een plek op, zoals op een telefoon. */
 function paneelTekenen(t){
   if(GETEKEND[t]) return;
-  if(t==="fixtures"){ ticker(); rotatiePaneel(); }
-  else if(t==="prijzen"){ prijzen(); markt(); }
-  else if(t==="plan"){ solverPaneel(); }
-  else if(t==="assistent"){ tekenSub("assistent");
+  if(t==="assistent"){ tekenSub("assistent");
     analist(); captain(); droomelftal(); ideaal(); chips(); chipteams(); }
   else if(t==="research"){ tekenSub("research");
-    profiel(); research(); notities(); standPaneel(); clubs(); dbDraw(); vergelijk(); inzichten(); radar(); signalen(); herkomst(); }
+    profiel(); research(); notities(); standPaneel(); clubs(); dbDraw(); vergelijk(); inzichten(); radar(); signalen(); herkomst();
+    ticker(); rotatiePaneel(); }
   else if(t==="overzicht") nieuws();
   else if(t==="leagues"){ tekenSub("leagues"); rivalenPaneel(); leagues(); live(); awards(); awardsPaneel(); leagueArchief(); }
   else if(t==="mijnpagina") mijnpagina();
-  else if(t==="transfers") advies();
+  else if(t==="transfers"){ tekenSub("transfers"); advies(); solverPaneel(); prijzen(); markt(); }
   GETEKEND[t]=true;
 }
 /* ---- Mijn pagina: echte panelen lenen in plaats van kopiëren ----
@@ -10066,12 +10163,14 @@ function mpTeruggeven(){
   }
 }
 function gaNaar(t){
+  if(OUDE_VLAKKEN[t]) return gaNaarSub(...OUDE_VLAKKEN[t]);
   if(!VLAKNAAM[t]) return;
   if(t!=="mijnpagina") mpTeruggeven();
   document.querySelectorAll("#hoofdtabs button").forEach(x=>
     x.setAttribute("aria-selected", x.dataset.tab===t));
   document.querySelectorAll(".tabpaneel").forEach(p=>
     p.classList.toggle("actief", p.dataset.paneel===t));
+  document.body.dataset.vlak=t;
   paneelTekenen(t);
   tekenStuur();
   window.scrollTo({top:0,behavior:"smooth"});
@@ -10113,9 +10212,10 @@ function tekenTabs(){
   const lijst=NAVBEWERK?NAVORDE:navZichtbaar();
   tabs.innerHTML=lijst.map(k=>{const v=VLAKNAAM[k];
     const uit=NAVUIT.includes(k);
-    return `<button role="tab" data-tab="${k}" aria-selected="${k===nu}"
+    return `<button role="tab" data-tab="${k}" aria-selected="${k===nu}" style="--tk:var(--t-${k})"
       ${NAVBEWERK?'draggable="true"':""} class="${uit?"verborgen":""}">
-      <span class="tl">${esc(v.t)}</span><span class="tsub">${esc(v.o)}</span>
+      <span class="tik">${ik(VLAKIKOON[k]||"sorteer",18)}</span>
+      <span class="ttxt"><span class="tl">${esc(v.t)}</span><span class="tsub">${esc(v.o)}</span></span>
       ${NAVBEWERK&&k!=="team"?`<i class="oogje" data-oog="${k}" title="${uit?"Weer laten zien":"Verbergen"}">${ik(uit?"oogUit":"oog",13)}</i>`:""}
       </button>`;}).join("");
   tabs.querySelectorAll("button").forEach(b=>{
@@ -10165,7 +10265,7 @@ function sleepbaar(el,houder,soort){
    vier kaarten te scrollen om bij de vijfde te komen. Welke open stond
    blijft bewaard. */
 const SUBS="fplcockpit_sub_v1";
-let SUBKEUS={assistent:"nu", research:"speler", leagues:"stand"};
+let SUBKEUS={assistent:"nu", research:"speler", leagues:"stand", transfers:"advies"};
 try{ Object.assign(SUBKEUS, JSON.parse(localStorage.getItem(SUBS)||"{}")); }catch(e){}
 /* Wat er bewaard was kan naar een subtabblad wijzen dat niet meer bestaat --
    bij het verplaatsen van de spelerpagina verschoof de hele lijst. Dan valt hij
@@ -10175,14 +10275,18 @@ setTimeout(()=>{ for(const p in SUBTABS){
   if(!geldig.includes(SUBKEUS[p])) SUBKEUS[p]=geldig[0];
 } },0);
 const SUBTABS={
+  transfers:[["advies","Voorstellen","wie erin, wie eruit"],
+             ["plan","Seizoensplan","meerdere gameweeks vooruit"],
+             ["prijzen","Prijzen","stijgers & dalers"]],
   assistent:[["nu","Wat nu","de analist"],["cap","Aanvoerder","je captainkeuze"],
              ["droom","Droomelftal","het maximum"],["chips","Chips","wanneer inzetten"]],
   /* Speler en Vergelijken staan vooraan: dat zijn de twee waar je het vaakst
      bent. De spelerpagina was een eigen hoofdtabblad, maar dat kostte een van de
      elf plekken in de balk voor iets dat inhoudelijk research is. */
   research:[["speler","Speler","één dossier"],["vgl","Vergelijken","twee naast elkaar"],
-            ["zoek","Zoeken","buiten het dashboard"],["stand","Stand","de competitie"],
-            ["clubs","Clubs","twintig dossiers"],
+            ["fixtures","Fixtures","programma & moeilijkheid"],
+            ["clubs","Clubs","twintig dossiers"],["stand","Stand","de competitie"],
+            ["zoek","Zoeken","buiten het dashboard"],
             ["db","Database","alle spelers"],["inzicht","Inzichten","radar & rangen"],
             ["herkomst","Herkomst","waar het vandaan komt"]],
   leagues:[["stand","Stand & live","jouw tien en de wereld"],
@@ -10190,7 +10294,7 @@ const SUBTABS={
 };
 function tekenSub(paneel){
   const houder=document.querySelector(
-    `#${paneel==="assistent"?"as":paneel==="research"?"re":"lg"}keus`);
+    `#${({assistent:"as",research:"re",leagues:"lg",transfers:"tr"})[paneel]||paneel}keus`);
   if(!houder) return;
   const nu=SUBKEUS[paneel];
   houder.innerHTML=SUBTABS[paneel].map(([k,t,o])=>
@@ -12245,17 +12349,20 @@ $("#dbtag").textContent="xG-kolommen: Opta · – = geen Opta-match (meestal kee
    bovenaan als het zwevende menu wordt hieruit getekend, in dezelfde volgorde,
    zodat de twee nooit meer uit de pas lopen. De volgorde zelf is van jou:
    sleep hem om, verberg wat je niet gebruikt, het blijft bewaard. */
+/* Zeven pagina's. Seizoensplan en Prijzen zijn onderdelen van Transfers
+   geworden, Fixtures een onderdeel van Research: dat zijn de plekken waar je
+   ze gebruikt, en tien knoppen op een rij was er te veel om te overzien. */
 const VLAKKEN=[
   ["team","Mijn team","opstellen & wisselen"],
-  ["transfers","Transfers","wie erin, wie eruit"],
+  ["transfers","Transfers","voorstellen, plan & prijzen"],
   ["assistent","Assistent","wat de data concludeert"],
-  ["research","Research","zoeken, vergelijken, database"],
-  ["plan","Seizoensplan","meerdere gameweeks"],
-  ["prijzen","Prijzen","stijgers & dalers"],
-  ["fixtures","Fixtures","programma & moeilijkheid"],
+  ["research","Research","spelers, clubs & fixtures"],
   ["overzicht","Nieuws","wat er speelt"],
   ["leagues","Leagues","jouw league & de wereld"],
   ["mijnpagina","Mijn pagina","zelf samengesteld"]];
+/* Oude sleutels blijven werken: opgeslagen voorkeuren, zoekopdrachten en
+   knoppen die naar "plan" wijzen komen op het juiste onderdeel uit. */
+const OUDE_VLAKKEN={plan:["transfers","plan"], prijzen:["transfers","prijzen"], fixtures:["research","fixtures"]};
 const PERIODES=[[1,"deze"],[2,"2 GW"],[3,"3 GW"],[5,"5 GW"],[8,"8 GW"]];
 const VLAKNAAM=Object.fromEntries(VLAKKEN.map(([k,t,o])=>[k,{t,o}]));
 
@@ -12339,6 +12446,7 @@ function tekenStuur(){
       return `<button data-ga="${k}" style="--tk:var(--t-${k})" draggable="${NAVBEWERK}"
         class="${uit?"verborgen":""}" aria-current="${k===nu}">
         ${NAVBEWERK?`<i class="greep">${ik("greep",13)}</i>`:""}
+        <span class="snik">${ik(VLAKIKOON[k]||"sorteer",16)}</span>
         <b>${esc(v.t)}</b><span>${esc(v.o)}</span>
         ${NAVBEWERK&&k!=="team"?`<i class="oogje" data-oog="${k}">${ik(uit?"oogUit":"oog",13)}</i>`:""}
       </button>`;}).join("");
@@ -12576,9 +12684,9 @@ const BEGRIPPEN=[
   {t:"Over- en onderprestatie", w:"overprestatie onderprestatie xg regressie geluk",
    naar:()=>gaNaarSub("research","inzicht"), sub:"Research — goals tegenover xG"},
   {t:"Prijsdruk",      w:"prijsdruk prijs stijgers dalers prijswijziging price change",
-   naar:()=>gaNaar("prijzen"), sub:"Prijzen — wie er stijgt of daalt"},
+   naar:()=>gaNaarSub("transfers","prijzen"), sub:"Transfers — wie er stijgt of daalt"},
   {t:"Rotatiedruk",    w:"rotatie europa champions league europa league rust",
-   naar:()=>gaNaar("fixtures"), sub:"Fixtures — Europees programma"},
+   naar:()=>gaNaarSub("research","fixtures"), sub:"Research — Europees programma"},
   {t:"Wildcard",       w:"wildcard chip",
    naar:()=>{gaNaarSub("assistent","chips"); CHIPKEUS="wildcard5"; CTGW=null; chipteams();}, sub:"Assistent — wanneer inzetten"},
   {t:"Free Hit",       w:"free hit freehit chip",
@@ -12610,13 +12718,43 @@ const BEGRIPPEN=[
   {t:"Notities",       w:"notities aantekening eigen research",
    naar:()=>gaNaarSub("research","zoek"), sub:"Research — wat jij hebt gevonden"},
   {t:"Transferpad",    w:"solver transferpad pad meerdere gameweeks plan",
-   naar:()=>gaNaar("plan"), sub:"Seizoensplan — meerdere gameweeks"},
+   naar:()=>gaNaarSub("transfers","plan"), sub:"Transfers — seizoensplan over meerdere gameweeks"},
   {t:"Mini-league",    w:"league minileague rivalen stand klassement",
    naar:()=>gaNaar("leagues"), sub:"Leagues — jouw tien"},
   {t:"Volglijst",      w:"volglijst watchlist volgen ster",
    naar:()=>gaNaar("team"), sub:"Mijn team — spelers die je volgt"},
   {t:"Teamscore",      w:"teamscore score uit 100 rapport",
    naar:()=>gaNaar("team"), sub:"Mijn team — je score uit 100"},
+  {t:"Transfers doen", w:"transfer transfers wisselen erin eruit kopen verkopen budget bank",
+   naar:()=>{gaNaar("team"); if(!TMODE) toggleTMode();}, sub:"Mijn team — spelers erin en eruit"},
+  {t:"Opstelling",     w:"opstelling opstellen basis bank wissel formatie elf",
+   naar:()=>gaNaar("team"), sub:"Mijn team — veld en bank"},
+  {t:"Transfervoorstellen", w:"voorstel voorstellen advies transferadvies wie erin wie eruit",
+   naar:()=>gaNaarSub("transfers","advies"), sub:"Transfers — wie erin, wie eruit"},
+  {t:"Chipplanner",    w:"chips chipplanner planner wanneer inzetten",
+   naar:()=>gaNaarSub("assistent","chips"), sub:"Assistent — alle 38 gameweeks"},
+  {t:"Spelerpagina",   w:"speler spelerpagina profiel dossier",
+   naar:()=>gaNaarSub("research","speler"), sub:"Research — elk cijfer over één speler"},
+  {t:"Spelersdatabase", w:"database db tabel alle spelers filter zoeken",
+   naar:()=>gaNaarSub("research","db"), sub:"Research — alle spelers in een tabel"},
+  {t:"Fixtures",       w:"fixtures programma moeilijkheid fdr ticker wedstrijden schema",
+   naar:()=>gaNaarSub("research","fixtures"), sub:"Research — programma en moeilijkheid"},
+  {t:"Prijzen",        w:"prijzen prijs stijgers dalers transfermarkt",
+   naar:()=>gaNaarSub("transfers","prijzen"), sub:"Transfers — stijgers en dalers"},
+  {t:"Nieuws",         w:"nieuws berichten blessures persconferentie",
+   naar:()=>gaNaar("overzicht"), sub:"Nieuws — wat er speelt"},
+  {t:"Awards",         w:"awards prijzen wie wint wat records seizoen",
+   naar:()=>gaNaar("leagues"), sub:"Leagues — per gameweek en over het seizoen"},
+  {t:"Live",           w:"live stand rivalen punten deze gameweek",
+   naar:()=>gaNaarSub("leagues","stand"), sub:"Leagues — jij tegen je negen rivalen"},
+  {t:"Terugblik",      w:"terugblik gescoord vorige gameweeks punten historie",
+   naar:()=>gaNaar("team"), sub:"Mijn team — wat je al gescoord hebt"},
+  {t:"Mijn pagina",    w:"mijn pagina eigen samenstellen tegels",
+   naar:()=>gaNaar("mijnpagina"), sub:"Zelf samengesteld"},
+  {t:"Inloggen",       w:"inloggen account synchroniseren telefoon laptop",
+   naar:()=>{const b=$("#accountknop"); if(b&&!b.hidden) b.click();}, sub:"Je werk op elk apparaat"},
+  {t:"Dag of avond",   w:"weergave thema donker licht dag avond modus",
+   naar:()=>{const b=$("#modusknop"); if(b) b.scrollIntoView({block:"center"});}, sub:"Weergave omschakelen"},
 ];
 /* De clubnamen komen uit de FPL-API zelf (D.clubnamen). Ze stonden hier
    hardgecodeerd en waren na promotie en degradatie verouderd — er stonden nog
@@ -12652,33 +12790,41 @@ function zoekTreffers(q){
     const s=Math.max(sN2, sA?sA+10:0);
     if(s>0) uit.push({soort:"club", s, club:af, titel:naam, sub:`Alles over ${af}`});
   });
-  // pagina's
+  /* Functies: pagina's, onderdelen en begrippen zijn voor de zoeker één
+     soort. Typ "vergelijk" en je krijgt de vergelijker, niet drie regels
+     die naar dezelfde plek wijzen. Een functie die op de zoekterm begint
+     wint van een speler die hem toevallig ergens in zijn naam heeft. */
+  const functies=[];
   VLAKKEN.forEach(([k,t,o])=>{
-    const sT2=punt(t), sO=punt(o);
-    const s=Math.max(sT2, sO?sO-25:0);
-    if(s>0) uit.push({soort:"pagina", s, sleutel:k, titel:t, sub:o});
+    const s=Math.max(punt(t), punt(o)?punt(o)-25:0);
+    if(s>0) functies.push({soort:"functie", s:s+15, sleutel:k, titel:t, sub:o});
   });
-  // onderdelen binnen pagina's
   Object.entries(SUBTABS).forEach(([pan,lijst])=>lijst.forEach(([sk,t,o])=>{
-    const s=punt(t);
-    if(s>0) uit.push({soort:"pagina", s:s-5, sleutel:pan, subsleutel:sk,
+    const s=Math.max(punt(t), punt(o)?punt(o)-25:0);
+    if(s>0) functies.push({soort:"functie", s:s+10, sleutel:pan, subsleutel:sk,
       titel:t, sub:`${VLAKNAAM[pan].t} — ${o}`});
   }));
-  // begrippen
   BEGRIPPEN.forEach(b=>{
     const sB=punt(b.t), sW=punt(b.w);
-    const s=Math.max(sB?sB+5:0, sW?sW-15:0);
-    if(s>0) uit.push({soort:"begrip", s, b, titel:b.t, sub:b.sub});
+    const s=Math.max(sB?sB+15:0, sW?sW-10:0);
+    if(s>0) functies.push({soort:"functie", s, b, titel:b.t, sub:b.sub});
   });
-  const rang={speler:0,club:1,begrip:2,pagina:3};
+  // ontdubbelen op naam: de hoogste score blijft
+  const gezien=new Map();
+  functies.sort((a,b)=>b.s-a.s).forEach(f=>{
+    const k=f.titel.toLowerCase().replace(/[^a-z0-9]/g,"");
+    if(!gezien.has(k)) gezien.set(k,f);
+  });
+  uit.push(...gezien.values());
+  const rang={functie:0,speler:1,club:2};
   return uit.sort((a,b)=>b.s-a.s||rang[a.soort]-rang[b.soort]).slice(0,12);
 }
 function zoekKies(t){
   zoekSluit();
   if(t.soort==="speler") openProfiel(t.p.id);
   else if(t.soort==="club") openClub(t.club);
-  else if(t.soort==="pagina") t.subsleutel?gaNaarSub(t.sleutel,t.subsleutel):gaNaar(t.sleutel);
-  else if(t.soort==="begrip") t.b.naar();
+  else if(t.b) t.b.naar();
+  else t.subsleutel?gaNaarSub(t.sleutel,t.subsleutel):gaNaar(t.sleutel);
 }
 function zoekSluit(){
   const r=$("#zoekres"); if(r) r.hidden=true;
@@ -12691,10 +12837,10 @@ function zoekTeken(){
   if(!tr.length){
     res.hidden=inp.value.trim().length<2;
     res.innerHTML=`<div class="zoekleeg">Niets gevonden voor “${esc(inp.value.trim())}”.
-      Probeer een speler, een club, een pagina of een begrip als “DefCon” of “rotatie”.</div>`;
+      Probeer een speler, een club of een functie als “vergelijk”, “transfers” of “chips”.</div>`;
     return;
   }
-  const ikoon={speler:"zoek",club:"bank",pagina:"sorteer",begrip:"info"};
+  const ikoon={speler:"zoek",club:"bank",functie:"sorteer"};
   res.hidden=false;
   res.innerHTML=tr.map((t,i)=>{
     const kl=t.soort==="speler"?shirtKleur(t.p.t):(t.soort==="club"?shirtKleur(t.club):null);
@@ -13979,11 +14125,9 @@ function tekenAlles(){
   const zichtbaar=n=>{const p=document.querySelector(`[data-paneel="${n}"]`);
     return p&&p.classList.contains("actief");};
   if(zichtbaar("assistent")){ analist(); captain(); droomelftal(); ideaal(); chips(); chipteams(); }
-  if(zichtbaar("research")){ dbDraw(); vergelijk(); inzichten(); radar(); signalen(); clubs(); standPaneel(); }
-  if(zichtbaar("plan")){ solverPaneel(); }
-  if(zichtbaar("prijzen")){ prijzen(); markt(); }
+  if(zichtbaar("research")){ dbDraw(); vergelijk(); inzichten(); radar(); signalen(); clubs(); standPaneel(); rotatiePaneel(); }
+  if(zichtbaar("transfers")){ solverPaneel(); prijzen(); markt(); }
   if(zichtbaar("overzicht")) nieuws();
-  if(zichtbaar("fixtures")) rotatiePaneel();
   if(zichtbaar("mijnpagina")) mijnpagina();
   if(zichtbaar("leagues")){ rivalenPaneel(); leagues(); leagueArchief(); awardsPaneel(); }
   geldbalkTeken();
