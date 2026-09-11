@@ -4426,7 +4426,7 @@ body::after{
 .pfhero-pos{ font-size:var(--t-xs); font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:3px 9px; border-radius:99px;
   background:color-mix(in srgb,var(--k1) 40%,transparent); color:var(--fg); border:1px solid color-mix(in srgb,var(--k2) 45%,transparent); }
 .pfhero-naam{ margin:0; font-size:clamp(30px,4.4vw,52px); line-height:.95; font-weight:800; letter-spacing:-.035em; text-transform:uppercase;
-  background:linear-gradient(180deg,var(--fg),color-mix(in srgb,var(--fg) 70%,var(--k2))); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  background:linear-gradient(180deg,var(--fg) 30%,color-mix(in srgb,var(--fg) 45%,var(--k1))); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .pfhero-badges{ display:flex; gap:6px; flex-wrap:wrap; min-height:18px; }
 .pfhero-cijfers{ display:flex; gap:var(--s4); flex-wrap:wrap; margin-top:auto; }
 .pfhero-cijfers span{ display:flex; flex-direction:column; gap:1px; }
@@ -4680,6 +4680,114 @@ body::after{
 .nwg:hover,.nwr:hover{ transform:translateY(-2px); box-shadow:var(--e2); }
 .nwbeeld{ border-radius:var(--r1); }
 .nwsoort{ border-radius:99px; letter-spacing:.08em; }
+
+/* ══ VISUELE LAAG 5: achtergrond, grafiek, spelerpagina-raster, vergelijken ═ */
+
+/* Achtergrond, beide thema's. Dag: koel wit dat naar een zachte lila-groene
+   waas loopt, met twee lichtvlekken. Avond: diep nachtblauw met dezelfde
+   twee vlekken, iets sterker, en de korrel. Het raster blijft in beide. */
+body{ background-image:
+  linear-gradient(180deg, color-mix(in srgb,var(--accent) 5%,var(--ink)) 0, var(--ink) 34rem, color-mix(in srgb,var(--f1) 3%,var(--ink)) 100%); }
+body::before{ background:
+    radial-gradient(64rem 40rem at 6% -8%, color-mix(in srgb,var(--accent) 13%,transparent), transparent 62%),
+    radial-gradient(48rem 34rem at 102% -4%, color-mix(in srgb,var(--t-inzicht) 10%,transparent), transparent 60%),
+    radial-gradient(54rem 36rem at 50% 108%, color-mix(in srgb,var(--f1) 8%,transparent), transparent 62%),
+    repeating-linear-gradient(90deg, color-mix(in srgb,var(--fg) 2.4%,transparent) 0 1px, transparent 1px 96px),
+    repeating-linear-gradient(180deg, color-mix(in srgb,var(--fg) 2.4%,transparent) 0 1px, transparent 1px 96px);
+  mask-image:linear-gradient(180deg,#000,rgba(0,0,0,.6) 56rem,rgba(0,0,0,.4)); }
+body::after{ opacity:.06; }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) body::after{ opacity:.09; } }
+:root[data-theme="dark"] body::after{ opacity:.09; }
+
+/* ── terugblikgrafiek ─────────────────────────────────────────────────── */
+.tbgrafiekvak{ position:relative; padding:var(--s4) var(--s3) var(--s2); }
+.tbgrafiek{ height:auto; max-height:230px; }
+.tbgrafiek .tbhit{ fill:transparent; }
+.tbgrafiek .tbkol{ cursor:default; outline:none; }
+.tbgrafiek .tbkol:hover .tbstaaf,.tbgrafiek .tbkol:focus-visible .tbstaaf{ filter:brightness(1.12); }
+.tbgrafiek .tbkol:hover .tbhit{ fill:color-mix(in srgb,var(--fg) 4%,transparent); }
+.tbgrafiek .tbstaaf{ fill:url(#tbStaaf); stroke:color-mix(in srgb,var(--accent) 60%,transparent); stroke-width:1; transition:filter var(--vlot) var(--uit); }
+.tbgrafiek .tbstaaf.beste{ fill:url(#tbBeste); stroke:color-mix(in srgb,var(--good) 70%,transparent); }
+.tbgrafiek .tbglans{ fill:rgba(255,255,255,.22); pointer-events:none; }
+.tbgrafiek .tbvlek{ fill:url(#tbVlek); }
+.tbgrafiek .tblijn{ fill:none; stroke:var(--warn); stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:none;
+  filter:drop-shadow(0 2px 4px color-mix(in srgb,var(--warn) 45%,transparent)); }
+.tbgrafiek .tbgemstip{ fill:var(--card); stroke:var(--warn); stroke-width:2.2; }
+.tbgrafiek .tbtopstip{ fill:none; stroke:var(--fg); stroke-width:1.6; stroke-dasharray:2 2; }
+.tbgrafiek .tbwaarde{ font-size:12px; font-weight:800; letter-spacing:-.02em; }
+.tbgrafiek .tbwaarde.binnen{ fill:#fff; }
+.tbgrafiek .tbas{ font-size:9.5px; }
+.tbtip{ position:absolute; z-index:5; pointer-events:none; min-width:180px; max-width:260px; padding:9px 12px; border-radius:12px;
+  background:color-mix(in srgb,var(--card) 94%,transparent); border:1px solid var(--line); box-shadow:var(--e3); backdrop-filter:blur(10px);
+  display:flex; flex-direction:column; gap:3px; font-size:var(--t-xs); color:var(--fg-2); }
+.tbtip b{ font-size:var(--t-sm); color:var(--fg); }
+.tbtip .t1{ font-family:var(--mono); font-size:16px; font-weight:800; color:var(--fg); }
+.tbtip em{ font-style:normal; color:var(--bad); font-size:11px; }
+.tblegenda .l.lijn{ border-top-style:solid; }
+.tblegenda .l.top{ border-style:dashed; }
+
+/* ── spelerpagina: blokken in een raster, zodat de breedte werkt ─────── */
+@media(min-width:960px){
+  #profielbox{ display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:var(--s4); grid-auto-flow:dense; align-items:start; }
+  #profielbox>*{ grid-column:span 12; min-width:0; }
+  #profielbox>.pfkop,#profielbox>.pfkern,#profielbox>.pfalarm{ margin-bottom:0; }
+  #profielbox>.pfblok{ margin-bottom:0; }
+  #profielbox>.pfblok:nth-of-type(1){ grid-column:span 7; }   /* tot nu toe */
+  #profielbox>.pfblok:nth-of-type(2){ grid-column:span 12; }  /* verwachting per gameweek */
+  #profielbox>.pfblok:nth-of-type(3){ grid-column:span 6; }   /* prijs */
+  #profielbox>.pfblok:nth-of-type(4){ grid-column:span 7; }   /* onderliggend */
+  #profielbox>.pfblok:nth-of-type(5){ grid-column:span 5; }   /* per wedstrijd */
+  #profielbox>.pfblok:nth-of-type(6){ grid-column:span 6; }   /* kleine punten */
+  #profielbox>.pfblok:nth-of-type(7){ grid-column:span 5; }   /* wat er aankomt */
+  #profielbox>.pfblok:nth-of-type(8){ grid-column:span 12; }  /* nieuws */
+  .ladeinhoud #profielbox{ display:block; }
+  .ladeinhoud #profielbox>*{ margin-bottom:var(--s4); }
+}
+.pfkern{ grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
+.pfk{ padding:14px 16px; }
+.pfk b{ font-size:26px; }
+.pfk .l{ font-size:9.5px; }
+
+/* ── vergelijken: twee kanten tegenover elkaar ───────────────────────── */
+.vglkop{ display:none; }
+.vglhero{ position:relative; display:grid; grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr); align-items:stretch; gap:0;
+  border-radius:var(--r3); overflow:hidden; border:1px solid var(--line); box-shadow:var(--e2); margin-bottom:var(--s3); min-height:210px;
+  background:linear-gradient(90deg, color-mix(in srgb,var(--ka) 38%,var(--ink)) 0%, color-mix(in srgb,var(--ka) 12%,var(--card)) 42%,
+                                    color-mix(in srgb,var(--kb) 12%,var(--card)) 58%, color-mix(in srgb,var(--kb) 38%,var(--ink)) 100%); }
+.vglhero::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.3;
+  background:repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 2px, transparent 2px 14px); }
+.vglhero-kant{ position:relative; display:grid; grid-template-columns:auto minmax(0,1fr); align-items:end; gap:var(--s3); padding:var(--s4); min-width:0; }
+.vglhero-kant.rechts{ grid-template-columns:minmax(0,1fr) auto; text-align:right; }
+.vglhero-kant.rechts .vglhero-foto{ order:2; }
+.vglhero-kant.rechts .vglhero-tekst{ order:1; align-items:flex-end; }
+.vglhero-kant.rechts .vglhero-club{ flex-direction:row-reverse; }
+.vglhero-foto{ width:150px; height:170px; display:flex; align-items:flex-end; justify-content:center; overflow:visible; }
+.vglhero-foto img{ height:190px; width:auto; max-width:none; filter:drop-shadow(0 10px 20px rgba(0,0,0,.5)); margin-bottom:-14px; }
+.vglhero-kant:not(.metfoto){ grid-template-columns:minmax(0,1fr); }
+.vglhero-tekst{ position:relative; z-index:2; display:flex; flex-direction:column; gap:4px; min-width:0; }
+.vglhero-club{ display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:650; letter-spacing:.04em; text-transform:uppercase; color:var(--fg-2); }
+.vglhero-naam{ font-size:clamp(24px,3.4vw,40px); font-weight:800; letter-spacing:-.03em; line-height:.98; text-transform:uppercase;
+  text-shadow:0 2px 12px color-mix(in srgb,var(--ink) 70%,transparent); overflow:hidden; text-overflow:ellipsis; }
+.vglhero-meta{ font-size:var(--t-xs); color:var(--fg-3); }
+.vglhero-meta em{ font-style:normal; color:var(--warn); }
+.vglhero-xp{ display:inline-flex; align-items:baseline; gap:6px; margin-top:4px; }
+.vglhero-xp b{ font-family:var(--mono); font-size:24px; font-weight:800; letter-spacing:-.02em; line-height:1; }
+.vglhero-xp i{ font-style:normal; font-size:10px; color:var(--fg-3); letter-spacing:.06em; text-transform:uppercase; }
+.vglhero-vs{ position:relative; z-index:2; align-self:center; justify-self:center; width:44px; height:44px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+  font-family:var(--mono); font-weight:800; font-size:12px; background:var(--card); border:1px solid var(--line); box-shadow:var(--e2); color:var(--fg-2); }
+.vglseizoen{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:var(--s3); font-size:var(--t-xs); color:var(--fg-3); }
+.vglseizoen .pfseiz{ margin-left:0; }
+.vglseizoen i{ font-style:normal; }
+.vgltab td.l .vwaarde,.vgltab td.r .vwaarde{ font-size:13.5px; }
+.vgltab td.l,.vgltab td.r{ height:38px; }
+@media(max-width:640px){
+  .vglhero{ grid-template-columns:1fr; }
+  .vglhero-vs{ margin:-22px auto; }
+  .vglhero-kant,.vglhero-kant.rechts{ grid-template-columns:auto minmax(0,1fr); text-align:left; }
+  .vglhero-kant.rechts .vglhero-foto{ order:0; } .vglhero-kant.rechts .vglhero-tekst{ order:1; align-items:flex-start; }
+  .vglhero-kant.rechts .vglhero-club{ flex-direction:row; }
+  .vglhero-foto{ width:96px; height:110px; } .vglhero-foto img{ height:124px; }
+}
 
 /* het zwevende menu: zelfde iconen als de tabbalk */
 .snav button{ display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto auto;
@@ -5332,6 +5440,8 @@ const IK={
 };
 const VLAKIKOON={team:"shirt",transfers:"wissel",assistent:"vonk",research:"loep",
                  overzicht:"krant",leagues:"beker",mijnpagina:"raster"};
+const VLAKKLEUR={team:"--t-team",transfers:"--t-transfers",assistent:"--t-plan",research:"--t-inzicht",
+                 overzicht:"--t-nieuws",leagues:"--t-league",mijnpagina:"--t-mijn"};
 /* Een klein clubvlak in de twee clubkleuren, voor lijsten waar alleen een
    afkorting stond. Kleur herken je sneller dan drie letters. */
 function clubTegel(t,kl){
@@ -6936,7 +7046,11 @@ function radar(){
    Vergelijker — twee spelers naast elkaar over alle assen
    ══════════════════════════════════════════════════════════════════════ */
 let VGL=[null,null];
-let SEIZOEN="2025/26";            // welk seizoen de historische kolommen beschrijven
+/* Standaard het lopende seizoen zodra er drie ronden gespeeld zijn: dan is
+   er genoeg om op te bouwen en zijn de cijfers van vorig jaar vooral nog
+   context. Wie het toch anders wil, kiest het in het stuurpaneel of op de
+   vergelijkpagina. */
+let SEIZOEN=(D.seizoen&&(D.seizoen.gespeeld||0)>=3&&D.seizoen.live_is)?D.seizoen.live_is:"2025/26";
 
 /* Haal een historisch veld op in het gekozen seizoen.
    FPL's API draagt maar een seizoen tegelijk: voor de eerste afgeronde gameweek
@@ -7058,8 +7172,11 @@ function vergelijk(){
   const a=D.db.find(p=>p.id===+VGL[0]), b=D.db.find(p=>p.id===+VGL[1]);
   if(!a||!b){ box.innerHTML=""; return; }
   const G=PLANGW;
+  /* Twee volle duels is de ondergrens voor een per-90-cijfer: na drie
+     ronden zit een speler met 262 minuten anders nog op "geen data". */
+  const MIN_DUELS=2;
   const per90=(p,veld)=>{const m=hist(p,"min")||0,d=m/90,v=hist(p,veld);
-    return d>=3&&v!=null?v/d:null;};
+    return d>=MIN_DUELS&&v!=null?v/d:null;};
   const duels=p=>((hist(p,"min")||0)/90);
   const kaart=p=>{const k=shirtKleur(p.t);
     return `<div class="vglkaart" style="--k1:${k.hoofd};--k2:${k.acc};--kt:${k.tekst}">
@@ -7080,19 +7197,20 @@ function vergelijk(){
     ["Starts", p=>hist(p,"st"), 0, 1],
     ["Set pieces", p=>[p.pen===1?"penalty's":"",p.cor===1?"corners":"",p.dfk===1?"vrije trappen":""].filter(Boolean).join(", ")||"geen", 0, 0],
     ["kop",`Onderliggend spel — per wedstrijd, seizoen ${SEIZOEN}`],
-    ["Verwachte goals per 90", p=>{const d=duels(p),v=hist(p,"oxg"); return d>=3&&v!=null?v/d:null;}, 2, 1],
+    // lopend seizoen: FPL's eigen xG (sxg); vorig seizoen: Opta uit de momentopname
+    ["Verwachte goals per 90", p=>{const d=duels(p),v=SEIZOEN===(D.seizoen||{}).live_is?p.sxg:hist(p,"oxg"); return d>=MIN_DUELS&&v!=null?v/d:null;}, 2, 1],
     ["Verwachte assists per 90", p=>per90(p,"xa"), 2, 1],
     ["Doelpunten per 90", p=>per90(p,"g"), 2, 1],
     ["Assists per 90", p=>per90(p,"a"), 2, 1],
-    ["Schoten per 90", p=>{const d=duels(p); return SEIZOEN==="2025/26"&&d>=3&&p.oshots!=null?p.oshots/d:null;}, 1, 1],
+    ["Schoten per 90", p=>{const d=duels(p); return SEIZOEN==="2025/26"&&d>=MIN_DUELS&&p.oshots!=null?p.oshots/d:null;}, 1, 1],
     ["Verwachte goals per schot", p=>SEIZOEN==="2025/26"&&p.oxgs!=null?p.oxgs:null, 2, 1],
     ["Goals boven verwachting", p=>SEIZOEN==="2025/26"&&p.ogxg!=null?p.ogxg:null, 1, 1],
     ["kop",`Punten uit klein werk — per wedstrijd, seizoen ${SEIZOEN}`],
-    ["DefCon-acties per 90", p=>{const d=duels(p),v=hist(p,"dc"); return d>=3&&v!=null?v/d:null;}, 1, 1],
+    ["DefCon-acties per 90", p=>{const d=duels(p),v=hist(p,"dc"); return d>=MIN_DUELS&&v!=null?v/d:null;}, 1, 1],
     ["Drempel voor 2 punten", p=>p.drempel||"—", 0, 0],
     ["Bonuspunten per 90", p=>per90(p,"bonus"), 2, 1],
     ["BPS per 90", p=>per90(p,"bps"), 0, 1],
-    ["Kaarten per 90", p=>{const d=duels(p); return d>=3?((hist(p,"geel")||0)+(hist(p,"rood")||0))/d:null;}, 2, -1],
+    ["Kaarten per 90", p=>{const d=duels(p); return d>=MIN_DUELS?((hist(p,"geel")||0)+(hist(p,"rood")||0))/d:null;}, 2, -1],
     ["kop","Markt en programma"],
     ["Eigendom wereldwijd", p=>p.own, 1, 0],
     ["Netto transfers deze week", p=>(p.tin||0)-(p.tout||0), 0, 0],
@@ -7103,7 +7221,20 @@ function vergelijk(){
   const zelfdePositie=a.p===b.p;
   const keeperErbij=(a.p==="GKP")!==(b.p==="GKP");
   const ka0=shirtKleur(a.t), kb0=shirtKleur(b.t);
-  let h=`<div class="vglkop" style="--ka:${ka0.hoofd};--kb:${kb0.hoofd}">${kaart(a)}<div class="vs">VS</div>${kaart(b)}</div>`;
+  const heroKaart=(p,kant)=>{const k=shirtKleur(p.t); const wA=somGW(p,G,5);
+    return `<div class="vglhero-kant ${kant}${p.code?" metfoto":""}" style="--k1:${k.hoofd};--k2:${k.acc}">
+      ${p.code?`<div class="vglhero-foto"><img alt="" decoding="async" draggable="false" src="${spelerFoto(p,"500x500")}" data-alt="${fotoAlt(p,spelerFoto(p,"500x500"))}" onerror="fotoFout(this)"></div>`:""}
+      <div class="vglhero-tekst">
+        <span class="vglhero-club">${clubTegel(p.t,"klein")}<span>${esc(clubNaam(p.t))}</span></span>
+        <b class="vglhero-naam">${esc(p.n)}</b>
+        <span class="vglhero-meta">${({GKP:"Keeper",DEF:"Verdediger",MID:"Middenvelder",FWD:"Aanvaller"})[p.p]||p.p} · £${p.c.toFixed(1)}m · ${p.own.toFixed(1)}%${p.status!=="a"?" · <em>niet fit</em>":""}</span>
+        <span class="vglhero-xp"><b>${wA.toFixed(1)}</b><i>punten GW${G}–${Math.min(38,G+4)}</i></span>
+      </div></div>`;};
+  const S0=D.seizoen||{};
+  let h=`<div class="vglhero" style="--ka:${ka0.hoofd};--kb:${kb0.hoofd}">${heroKaart(a,"links")}<div class="vglhero-vs">vs</div>${heroKaart(b,"rechts")}</div>
+    <div class="vglseizoen"><span>Gespeelde cijfers uit</span><span class="pfseiz">${["2026/27","2025/26"].map(x=>
+      `<button data-vs="${x}" aria-pressed="${SEIZOEN===x}"${x===S0.live_is&&(S0.gespeeld||0)===0?" disabled":""}>${x}</button>`).join("")}</span>
+      <i>${SEIZOEN===S0.live_is?`${S0.gespeeld||0} ronden gespeeld — per-90-cijfers zijn nog een kleine steekproef`:"vorig seizoen, momentopname van 14-08-2026"}</i></div>`;
   if(!zelfdePositie) h+=`<div class="vglwaarschuwing">
       <b>${esc(a.p)} tegenover ${esc(b.p)}</b>
       ${keeperErbij
@@ -7116,7 +7247,11 @@ function vergelijk(){
     Alles wat over gespeelde wedstrijden gaat blijft leeg tot na gameweek 1.
     Zet hem op 2025/26 om te vergelijken op wat er werkelijk gebeurd is.</p></div>`;
   h+=`<table class="vgltab"><tbody>`;
-  rijen.forEach(r=>{
+  /* Rijen waar geen van beiden een cijfer heeft (Opta-assen in het lopende
+     seizoen) tonen we niet; een kop zonder rijen eronder ook niet. */
+  const zichtbaar=rijen.filter(r=>r[0]==="kop"||r[1](a)!=null||r[1](b)!=null);
+  const metInhoud=zichtbaar.filter((r,i)=>r[0]!=="kop"||(zichtbaar[i+1]&&zichtbaar[i+1][0]!=="kop"));
+  metInhoud.forEach(r=>{
     if(r[0]==="kop"){ h+=`<tr class="kop"><td colspan="3">${esc(r[1])}</td></tr>`; return; }
     const [lbl,fn,dec,rich]=r;
     let va=fn(a), vb=fn(b);
@@ -7160,6 +7295,8 @@ function vergelijk(){
       a.cpmin>b.cpmin?esc(a.n):esc(b.n)} wordt ${Math.abs(a.cpmin-b.cpmin)} minuten per duel meer verwacht.`:""}
     ${[a,b].filter(p=>p.status!=="a").map(p=>` <b style="color:var(--warn)">${esc(p.n)} is niet fit gemeld:</b> ${esc(p.news||"geen toelichting")}.`).join("")}</div>`;
   box.innerHTML=h;
+  box.querySelectorAll("[data-vs]").forEach(b=>b.onclick=()=>{ if(b.disabled) return;
+    SEIZOEN=b.dataset.vs; bewaarInstellingen(); vergelijk(); });
 
   const slim=$("#vglSlim");
   if(slim){
@@ -10979,7 +11116,7 @@ function tekenTabs(){
   const lijst=NAVBEWERK?NAVORDE:navZichtbaar();
   tabs.innerHTML=lijst.map(k=>{const v=VLAKNAAM[k];
     const uit=NAVUIT.includes(k);
-    return `<button role="tab" data-tab="${k}" aria-selected="${k===nu}" style="--tk:var(--t-${k})"
+    return `<button role="tab" data-tab="${k}" aria-selected="${k===nu}" style="--tk:var(${VLAKKLEUR[k]||"--accent"})"
       ${NAVBEWERK?'draggable="true"':""} class="${uit?"verborgen":""}">
       <span class="tik">${ik(VLAKIKOON[k]||"sorteer",18)}</span>
       <span class="ttxt"><span class="tl">${esc(v.t)}</span><span class="tsub">${esc(v.o)}</span></span>
@@ -12156,24 +12293,41 @@ function terugblikPaneel(){
 
   /* seizoensgrafiek: jouw punten per gameweek als staaf, het league-
      gemiddelde als lijn, met de beste van die week als stip */
-  const W=Math.max(320, Math.min(760, 120+oplopend.length*64)), H=150, PAD=30;
+  const W=800, H=170, PAD=34;
   const maxP=Math.max(1,...oplopend.map(r=>{const L=leagueVan(r.gw);return Math.max(r.punten||0,L?L.top:0);}));
   const x=i=>PAD+8+i*((W-PAD*2-16)/Math.max(1,oplopend.length-1||1));
   const y=v=>H-22-(v/maxP)*(H-44);
   const kol=(W-PAD*2)/Math.max(1,oplopend.length);
-  const grafiek=`<svg class="tbgrafiek" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Punten per gameweek">
+  /* Een grafiek die je kunt lezen zonder legenda: jouw staaf met verloop en
+     een lichtrand, het league-gemiddelde als vloeiende lijn met een zachte
+     vlek eronder, de hoogste van de week als open ring. Aanwijzen geeft per
+     gameweek een kaartje met de exacte cijfers. */
+  const X=i=>oplopend.length===1?W/2:x(i);
+  const curve=pts=>{ if(pts.length<2) return ""; let d=`M${pts[0][0]},${pts[0][1]}`;
+    for(let i=1;i<pts.length;i++){ const [x0,y0]=pts[i-1],[x1,y1]=pts[i]; const c=(x1-x0)/2.2;
+      d+=` C${x0+c},${y0} ${x1-c},${y1} ${x1},${y1}`; } return d; };
+  const gemPts=oplopend.map((r,i)=>{const L=leagueVan(r.gw);return L?[X(i),y(L.gem),L]:null;}).filter(Boolean);
+  const bw=Math.min(64,kol*.5);
+  const grafiek=`<svg class="tbgrafiek" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Punten per gameweek">
+    <defs>
+      <linearGradient id="tbStaaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--accent-2,var(--accent))"/><stop offset="1" stop-color="var(--accent)"/></linearGradient>
+      <linearGradient id="tbBeste" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fe3b0"/><stop offset="1" stop-color="var(--good)"/></linearGradient>
+      <linearGradient id="tbVlek" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--warn)" stop-opacity=".22"/><stop offset="1" stop-color="var(--warn)" stop-opacity="0"/></linearGradient>
+    </defs>
     ${[0.25,0.5,0.75,1].map(f=>`<line x1="${PAD}" x2="${W-PAD}" y1="${y(maxP*f)}" y2="${y(maxP*f)}" class="tbgrid"/>
       <text x="${PAD-6}" y="${y(maxP*f)+3}" class="tbas">${Math.round(maxP*f)}</text>`).join("")}
-    ${oplopend.map((r,i)=>{const cx=oplopend.length===1?W/2:x(i), bw=Math.min(34,kol*.55);
-      return `<rect x="${cx-bw/2}" y="${y(r.punten||0)}" width="${bw}" height="${H-22-y(r.punten||0)}" rx="5" class="tbstaaf${beste&&beste.gw===r.gw?" beste":""}"/>
-        <text x="${cx}" y="${y(r.punten||0)-6}" class="tbwaarde">${r.punten}</text>
-        <text x="${cx}" y="${H-7}" class="tbas mid">GW${r.gw}</text>`;}).join("")}
-    ${(()=>{const pts=oplopend.map((r,i)=>{const L=leagueVan(r.gw);return L?[oplopend.length===1?W/2:x(i),y(L.gem),L]:null;}).filter(Boolean);
-      if(pts.length<1) return "";
-      const lijn=pts.length>1?`<polyline points="${pts.map(q=>q[0]+","+q[1]).join(" ")}" class="tblijn"/>`:"";
-      return lijn+pts.map(q=>`<circle cx="${q[0]}" cy="${q[1]}" r="3.5" class="tbgemstip"><title>league-gemiddelde GW: ${q[2].gem.toFixed(1)}</title></circle>
-        <circle cx="${q[0]}" cy="${y(q[2].top)}" r="3" class="tbtopstip"><title>hoogste in je league: ${q[2].top} (${esc(q[2].topWie||"")})</title></circle>`).join("");})()}
-  </svg>`;
+    ${gemPts.length>1?`<path d="${curve(gemPts)} L${gemPts[gemPts.length-1][0]},${H-22} L${gemPts[0][0]},${H-22} Z" class="tbvlek"/>`:""}
+    ${oplopend.map((r,i)=>{const cx=X(i), top=y(r.punten||0), best=beste&&beste.gw===r.gw;
+      return `<g class="tbkol" data-i="${i}">
+        <rect x="${cx-kol/2}" y="${PAD-10}" width="${kol}" height="${H-PAD-12}" class="tbhit"/>
+        <rect x="${cx-bw/2}" y="${top}" width="${bw}" height="${Math.max(2,H-22-top)}" rx="7" class="tbstaaf${best?" beste":""}"/>
+        <rect x="${cx-bw/2+1}" y="${top+1}" width="${bw-2}" height="6" rx="3" class="tbglans"/>
+        <text x="${cx}" y="${(H-22-top)>=34?top+18:top-7}" class="tbwaarde${(H-22-top)>=34?" binnen":""}">${r.punten}</text>
+        <text x="${cx}" y="${H-7}" class="tbas mid">GW${r.gw}</text></g>`;}).join("")}
+    ${gemPts.length>1?`<path d="${curve(gemPts)}" class="tblijn"/>`:""}
+    ${gemPts.map(q=>`<circle cx="${q[0]}" cy="${q[1]}" r="4" class="tbgemstip"/>
+        <circle cx="${q[0]}" cy="${y(q[2].top)}" r="4.5" class="tbtopstip"/>`).join("")}
+  </svg><div class="tbtip" hidden></div>`;
 
   const kopvak=`<div class="tbkop">
     <div class="tbtegels">
@@ -12249,6 +12403,26 @@ function terugblikPaneel(){
       </div>`:`<p class="tbuitleg">Bench Boost: alle vijftien telden mee, de vier met <b>BB</b> kwamen van de bank.</p>`}
     </details>`;}).join("");
   box.innerHTML=kopvak+kaarten;
+  /* hover: één kaartje met de cijfers van die gameweek */
+  const vak=box.querySelector(".tbgrafiekvak"), tip=box.querySelector(".tbtip");
+  if(vak&&tip){
+    box.querySelectorAll(".tbkol").forEach(g=>{
+      const r=oplopend[+g.dataset.i], L=leagueVan(r.gw);
+      const toon=()=>{
+        tip.innerHTML=`<b>Gameweek ${r.gw}</b><span class="t1">${r.punten} punten${r.straf?` <em>−${r.straf}</em>`:""}</span>${
+          L?`<span>league-gemiddelde ${L.gem.toFixed(1)} · hoogste ${L.top} (${esc(L.topWie||"")})${L.pos?` · jij ${L.pos}e van ${L.n}`:""}</span>`:""}${
+          r.rang?`<span>wereldrang ${r.rang.toLocaleString("nl-NL")}</span>`:""}`;
+        tip.hidden=false;
+        const rb=g.querySelector(".tbstaaf").getBoundingClientRect(), vb=vak.getBoundingClientRect();
+        const left=Math.max(8,Math.min(vb.width-tip.offsetWidth-8, rb.left-vb.left+rb.width/2-tip.offsetWidth/2));
+        tip.style.left=left+"px"; tip.style.top=Math.max(4,rb.top-vb.top-tip.offsetHeight-10)+"px";
+      };
+      g.addEventListener("mouseenter",toon); g.addEventListener("focus",toon);
+      g.addEventListener("mouseleave",()=>tip.hidden=true);
+      g.setAttribute("tabindex","0");
+    });
+    vak.addEventListener("mouseleave",()=>tip.hidden=true);
+  }
   bron("#src-terugblik",[
     {label:"punten, rang en bank per gameweek",bron:"FPL API",
      url:"https://fantasy.premierleague.com/api/entry/258669/history/"},
@@ -13432,7 +13606,7 @@ function tekenStuur(){
     nav.classList.toggle("bewerk",NAVBEWERK);
     nav.innerHTML=lijst.map(k=>{const v=VLAKNAAM[k];
       const uit=NAVUIT.includes(k);
-      return `<button data-ga="${k}" style="--tk:var(--t-${k})" draggable="${NAVBEWERK}"
+      return `<button data-ga="${k}" style="--tk:var(${VLAKKLEUR[k]||"--accent"})" draggable="${NAVBEWERK}"
         class="${uit?"verborgen":""}" aria-current="${k===nu}">
         ${NAVBEWERK?`<i class="greep">${ik("greep",13)}</i>`:""}
         <span class="snik">${ik(VLAKIKOON[k]||"sorteer",16)}</span>
