@@ -4525,9 +4525,16 @@ body::after{
   font-family:var(--mono); font-size:9.5px; font-weight:800; border:2px solid var(--card); box-shadow:0 2px 6px rgba(0,0,0,.4); }
 .tbsp .tbband.c{ background:var(--accent-vlak); color:#fff; box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 35%,transparent); }
 .tbsp .tbband.v{ background:var(--fg-2); color:var(--ink); }
-.tbsp .tbsub{ position:absolute; left:50%; bottom:-8px; transform:translateX(-50%); z-index:4; font-size:7.5px; font-weight:800; letter-spacing:.08em;
-  padding:1px 6px; border-radius:99px; color:#fff; box-shadow:0 1px 3px rgba(0,0,0,.3); }
-.tbsp .tbsub.in{ background:var(--good-vlak,var(--good)); } .tbsp .tbsub.uit{ background:var(--bad); }
+.tbsp .tbsub{ position:absolute; top:auto; right:auto; left:50%; bottom:-9px; transform:translateX(-50%); z-index:4;
+  display:inline-flex; align-items:center; gap:3px; font-size:8px; font-weight:800; letter-spacing:.1em; line-height:1;
+  padding:3px 8px; border-radius:99px; color:#fff; border:1.5px solid var(--card);
+  box-shadow:0 3px 8px -2px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.25); }
+.tbsp .tbsub::before{ content:""; width:5px; height:5px; border-radius:50%; background:currentColor; opacity:.9; }
+.tbsp .tbsub.in{ background:linear-gradient(135deg,var(--good),color-mix(in srgb,var(--good) 70%,#000)); }
+.tbsp .tbsub.uit{ background:linear-gradient(135deg,var(--bad),color-mix(in srgb,var(--bad) 70%,#000)); }
+.tbsp.bboost::after{ content:"BB"; position:absolute; top:-7px; right:-6px; z-index:4; font-family:var(--mono); font-size:8px; font-weight:800;
+  padding:2px 5px; border-radius:6px; background:var(--warn); color:#000; border:1.5px solid var(--card); }
+.tbsp.bboost{ opacity:1; filter:none; }
 .tbsp.uit,.tbsp.bank{ opacity:.6; filter:saturate(.7); } .tbsp.uit:hover,.tbsp.bank:hover{ opacity:1; filter:none; }
 .tbsp.in{ border-color:color-mix(in srgb,var(--good) 60%,transparent); }
 @media(max-width:640px){ .tbsp{ width:74px; } .tbsp .tbfoto{ height:54px; } .tbsp .tbfoto img{ height:64px; }
@@ -12186,7 +12193,8 @@ function terugblikPaneel(){
     const speelde=p=>p.mult>0;
     const opveld=r.picks.filter(speelde);
     const eruit=r.picks.filter(p=>p.basis&&!speelde(p));
-    const erin=r.picks.filter(p=>!p.basis&&speelde(p));
+    // bij een Bench Boost telt de hele bank mee: dat is geen invalbeurt
+    const erin=r.chip==="bboost"?[]:r.picks.filter(p=>!p.basis&&speelde(p));
     const echteBank=r.picks.filter(p=>!speelde(p));
     const perPos=P=>opveld.filter(p=>p.p===P).sort((a,b)=>a.slot-b.slot);
     const L=leagueVan(r.gw);
@@ -12209,7 +12217,7 @@ function terugblikPaneel(){
         <span class="tbnaam">${esc(p.n)}</span>
         <span class="tbclub">${p.opp?esc(p.opp)+(p.thuis?"":" (u)"):esc(p.t)} · ${p.min}'</span>
       </div>`;};
-    const linie=arr=>arr.length?`<div class="tblinie">${arr.map(p=>kaart(p,erin.includes(p)?"in":"")).join("")}</div>`:"";
+    const linie=arr=>arr.length?`<div class="tblinie">${arr.map(p=>kaart(p,erin.includes(p)?"in":(r.chip==="bboost"&&!p.basis?"bboost":""))).join("")}</div>`:"";
     const formatie=`${perPos("DEF").length}-${perPos("MID").length}-${perPos("FWD").length}`;
     const open=r.gw===Math.max(...rijen.map(x=>x.gw));
     return `<details class="tbgw"${open?" open":""}>
@@ -12235,10 +12243,10 @@ function terugblikPaneel(){
       <div class="tbveld">
         ${linie(perPos("GKP"))}${linie(perPos("DEF"))}${linie(perPos("MID"))}${linie(perPos("FWD"))}
       </div>
-      <div class="tbbank">
-        <span class="tbbanklabel">Bank${r.chip==="bboost"?" · telde mee door Bench Boost":""}</span>
+      ${echteBank.length?`<div class="tbbank">
+        <span class="tbbanklabel">Bank</span>
         <div class="tblinie">${echteBank.sort((a,b)=>a.slot-b.slot).map(p=>kaart(p,eruit.includes(p)?"uit":"bank")).join("")}</div>
-      </div>
+      </div>`:`<p class="tbuitleg">Bench Boost: alle vijftien telden mee, de vier met <b>BB</b> kwamen van de bank.</p>`}
     </details>`;}).join("");
   box.innerHTML=kopvak+kaarten;
   bron("#src-terugblik",[
