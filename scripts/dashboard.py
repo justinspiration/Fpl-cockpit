@@ -1781,7 +1781,7 @@ def render_web(d):
       D = await r.json();
       gebruikt = bron;
       break;
-    } catch (e) { fouten.push(bron.replace(/^https:\/\/[^/]+/, "") + ": " + e.message); }
+    } catch (e) { fouten.push(bron.replace(/^https:\\/\\/[^/]+/, "") + ": " + e.message); }
   }
   if (!D) {
     document.getElementById("laadscherm").innerHTML =

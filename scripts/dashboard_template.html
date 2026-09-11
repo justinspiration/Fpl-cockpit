@@ -4789,6 +4789,13 @@ body::after{ opacity:.06; }
   .vglhero-foto{ width:96px; height:110px; } .vglhero-foto img{ height:124px; }
 }
 
+/* Foto's komen binnen zonder te knipperen: eerst onzichtbaar, dan een korte
+   vervaging zodra ze geladen zijn. Wie bewegingsreductie aan heeft ziet ze meteen. */
+@keyframes fotoIn{ from{ opacity:0; transform:translateX(-50%) translateY(4px); } to{ opacity:1; transform:translateX(-50%); } }
+.sp.metfoto .foto,.tbsp .tbfoto img,.portret img{ animation:fotoIn var(--rustig) var(--uit) both; }
+.pfhero-foto img,.vglhero-foto img{ animation:fade var(--rustig) var(--uit) both; }
+@media (prefers-reduced-motion:reduce){ .sp.metfoto .foto,.tbsp .tbfoto img,.portret img,.pfhero-foto img,.vglhero-foto img{ animation:none; } }
+
 /* het zwevende menu: zelfde iconen als de tabbalk */
 .snav button{ display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto auto;
   column-gap:10px; align-items:center; text-align:left; }

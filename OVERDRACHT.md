@@ -4,7 +4,7 @@ Dit bestand is bedoeld om te lezen aan het begin van een nieuw gesprek, zodat je
 niet opnieuw hoeft uit te leggen wat er is en waarom. Het staat in de repository
 zodat het meeverhuist naar elke machine.
 
-Bijgewerkt: 10 september 2026, gameweek 4.
+Bijgewerkt: 11 september 2026, gameweek 4.
 
 ---
 
@@ -110,35 +110,64 @@ Lukt dat niet, zet dan `CHROME_PAD` naar het pad van je browser.
 ## Waar het nu staat
 
 - Gameweek 4, deadline zaterdag 12 september 14:30
-- 196 punten, wereldrang 2.764.150, teamwaarde £100,5m
-- Vier van de vijf bronnen vers; odds wachten op een API-sleutel
-- Awards en terugblik lopen vanaf GW1
+- Site: `https://justinspiration.github.io/Fpl-cockpit/` (hoofdletter F; de
+  kleine letter geeft 404). GitHub Pages publiceert bij elke push.
+- De Action draait op minuut 13 en 43 van elk uur; op het hele uur werden
+  rondes massaal overgeslagen. Eerste bouw duurt ~7 minuten (chipteams),
+  de tweede hergebruikt `state/zwaar_cache.json`. Een mislukte uitkomst
+  wordt niet gecachet.
+- Odds wachten op `ODDS_API_KEY`; zonder sleutel rekent GoalIQ + eigen model.
 
 ## Wat nog open staat
 
 1. `ODDS_API_KEY` aanvragen en in GitHub Secrets zetten
-2. Hosting: de site draait op GitHub Pages
-   (`https://justinspiration.github.io/Fpl-cockpit/`). Netlify is alleen nog
-   nodig voor de taalmodel-assistent (`netlify/functions/chat.mjs`), en die
-   werkt vanaf GitHub Pages sowieso niet omdat `/api/chat` daar niet bestaat.
-   Netlify uitzetten kost dus niets wat nu werkt.
-3. Supabase: Site URL en Redirect URLs op het GitHub Pages-adres zetten, zie
+2. Netlify mag uit: alleen `netlify/functions/chat.mjs` (taalmodel-assistent)
+   draait daar, en die werkt vanaf GitHub Pages toch niet (`/api/chat`
+   bestaat daar niet). Wil je de assistent met taalmodel, dan moet die
+   functie ergens anders komen te staan (Cloudflare Worker o.i.d.).
+3. Supabase: Site URL en Redirect URLs op het GitHub Pages-adres, zie
    `INLOGGEN-OPZETTEN.md` stap 3. Anders komt de inloglink op Netlify uit.
 
 ## Werken aan de pagina
 
 De pagina is `scripts/dashboard_template.html`; `index.html` wordt daaruit
 gebouwd en overschreven door de Action. Wijzig dus altijd het sjabloon.
-Lokaal bouwen zonder bronnen op te halen kan met:
+Lokaal bouwen zonder bronnen op te halen:
 
 ```
 cd scripts
 python -c "import json,dashboard as d;print(open('../index.html','w',encoding='utf-8').write('<!doctype html>\n'+d.render_web(json.load(open('../data/dashboard.json',encoding='utf-8')))))"
 ```
 
-Sinds september 2026: zeven pagina's (Seizoensplan en Prijzen zitten onder
-Transfers, Fixtures onder Research), een geplande transfer onthoudt de prijs
-van het moment van invoeren, en Mijn team, Transfers, Spelerpagina en
-Vergelijken hebben een eigen visuele laag onderaan het stijlblok
-("VISUELE LAAG"). Volgende pagina's krijgen dezelfde behandeling op dezelfde
-plek.
+Volledige bouw met ophalen: `python dashboard.py --web ..` (Windows werkt
+sinds september; bestanden worden expliciet als UTF-8 gelezen). Let op
+`core.autocrlf` op Windows: na een rebase staan werkbestanden op CRLF.
+Patchscripts moeten daar tegen kunnen (`.replace(b"\r\n", b"\n")`).
+
+Hoe het sjabloon in elkaar zit sinds september 2026:
+
+- Zeven pagina's (`VLAKKEN`); Seizoensplan en Prijzen zijn onderdelen van
+  Transfers, Fixtures van Research (`SUBTABS`). Oude sleutels werken via
+  `OUDE_VLAKKEN`. Elke pagina heeft een icoon (`VLAKIKOON`) en kleur
+  (`VLAKKLEUR`) -- die laatste wijst naar bestaande tokens, niet naar
+  `--t-<paginanaam>`.
+- Spelersfoto's: `spelerFoto(p, maat)` bouwt de URL uit `p.code` (nieuw
+  veld uit de FPL API). Actuele reeks:
+  `resources.premierleague.com/premierleague25/photos/players/{110x140|500x500}/<code>.png`
+  (server-datum augustus 2026). De oude reeks `premierleague/.../p<code>.png`
+  is van 2024 (oude shirts) en is alleen terugval. `fotoFout()` loopt de
+  keten af; `portret()` en `clubTegel()` zijn de bouwstenen.
+- Een geplande transfer legt `c_in`/`c_uit`/`op` vast; `budgetIn()` rekent
+  daarmee, niet met de prijs van vandaag.
+- Transfers: `transferRoutes(g,N)` bouwt complete routes (één, twee,
+  gespreid, geld vrij); winst = beste elf ná min beste elf vóór, aanvoerder
+  en al gepland strafwerk inbegrepen. `UITSLUIT` (localStorage,
+  gesynchroniseerd) haalt spelers uit alle routes.
+- Assistent "Wat nu": `beslissingen(G)` vóór de signalen van `analyseer()`.
+- Terugblik: league-gemiddelde en hoogste per gameweek komen uit
+  `D.archief.gameweeks` (echte punten van alle managers), nooit geschat.
+- Vergelijken: standaard het lopende seizoen zodra er drie ronden zijn;
+  xG dit seizoen is FPL's `sxg`, vorig seizoen Opta. Ondergrens per-90:
+  twee duels.
+- Stijl: alles nieuws staat in de "VISUELE LAAG"-blokken onderaan het
+  stijlblok, in volgorde. Nieuwe pagina's krijgen daar hun eigen blok.

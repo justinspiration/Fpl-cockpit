@@ -23,6 +23,10 @@ on:
     # geplande rondes uitgesteld of overgeslagen (op 11 september liepen er
     # maar vijf van de vierentwintig). Een schuin minuutgetal helpt daar echt.
     - cron: "13 * * * *"
+    # Een tweede kans per uur. GitHub slaat geplande rondes bij drukte over;
+    # twee tijdstippen per uur verdubbelen de kans dat er minstens één loopt.
+    # Overlap is uitgesloten door de concurrency-groep hieronder.
+    - cron: "43 * * * *"
   workflow_dispatch:                  # met de hand starten kan altijd
 
 # Twee rondes tegelijk mogen niet. Bij elk uur kan dat gebeuren zodra GitHub een
