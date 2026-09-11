@@ -44,10 +44,18 @@ publieke sleutel uit stap 3.
 
 | Veld | Waarde |
 |---|---|
-| Site URL | het adres van je Netlify-site, bijvoorbeeld `https://reijning-champion.netlify.app` |
-| Redirect URLs | hetzelfde adres |
+| Site URL | het adres waar je de site opent, nu `https://justinspiration.github.io/Fpl-cockpit/` |
+| Redirect URLs | hetzelfde adres, plus `https://justinspiration.github.io/Fpl-cockpit/**` |
 
-Zonder deze stap komt de link in je mail wel aan, maar loopt hij dood.
+Zonder deze stap komt de link in je mail wel aan, maar loopt hij dood — of
+erger: hij brengt je naar een ander adres. De pagina vraagt Supabase om je
+terug te sturen naar de plek waar je inlogde (`email_redirect_to`), maar
+Supabase doet dat alleen als dat adres in de lijst met Redirect URLs staat.
+Staat hij er niet in, dan valt hij terug op de Site URL. Dat is precies wat
+er gebeurde toen de Site URL nog naar Netlify wees: inloggen op GitHub Pages,
+uitkomen op Netlify.
+
+Gebruik je de Netlify-site niet meer, haal hem dan hier weg.
 
 ## 4. De twee waarden doorgeven
 

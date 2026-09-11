@@ -117,5 +117,28 @@ Lukt dat niet, zet dan `CHROME_PAD` naar het pad van je browser.
 ## Wat nog open staat
 
 1. `ODDS_API_KEY` aanvragen en in GitHub Secrets zetten
-2. Hosting: Netlify-credits zijn op tot 19 september; GitHub Pages is gratis en
-   werkt meteen (Settings > Pages > main / root)
+2. Hosting: de site draait op GitHub Pages
+   (`https://justinspiration.github.io/Fpl-cockpit/`). Netlify is alleen nog
+   nodig voor de taalmodel-assistent (`netlify/functions/chat.mjs`), en die
+   werkt vanaf GitHub Pages sowieso niet omdat `/api/chat` daar niet bestaat.
+   Netlify uitzetten kost dus niets wat nu werkt.
+3. Supabase: Site URL en Redirect URLs op het GitHub Pages-adres zetten, zie
+   `INLOGGEN-OPZETTEN.md` stap 3. Anders komt de inloglink op Netlify uit.
+
+## Werken aan de pagina
+
+De pagina is `scripts/dashboard_template.html`; `index.html` wordt daaruit
+gebouwd en overschreven door de Action. Wijzig dus altijd het sjabloon.
+Lokaal bouwen zonder bronnen op te halen kan met:
+
+```
+cd scripts
+python -c "import json,dashboard as d;print(open('../index.html','w',encoding='utf-8').write('<!doctype html>\n'+d.render_web(json.load(open('../data/dashboard.json',encoding='utf-8')))))"
+```
+
+Sinds september 2026: zeven pagina's (Seizoensplan en Prijzen zitten onder
+Transfers, Fixtures onder Research), een geplande transfer onthoudt de prijs
+van het moment van invoeren, en Mijn team, Transfers, Spelerpagina en
+Vergelijken hebben een eigen visuele laag onderaan het stijlblok
+("VISUELE LAAG"). Volgende pagina's krijgen dezelfde behandeling op dezelfde
+plek.
