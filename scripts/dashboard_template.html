@@ -4015,7 +4015,7 @@ body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .tabpaneel
    veranderd. Later volgen de andere pagina's op dezelfde manier.          */
 
 /* clubtegel: klein vlak in de twee clubkleuren */
-.ctegel{ flex:none; display:inline-flex; align-items:center; justify-content:center;
+.ctegel{ flex:none; display:inline-flex; align-items:center; justify-content:center; font-style:normal;
   width:34px; height:34px; border-radius:9px; font-family:var(--mono); font-size:10px;
   font-weight:800; letter-spacing:.04em; box-shadow:inset 0 1px 0 rgba(255,255,255,.28), 0 1px 3px rgba(0,0,0,.25); }
 .ctegel.klein{ width:28px; height:28px; border-radius:8px; font-size:9px; }
@@ -4047,6 +4047,7 @@ body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .tabpaneel
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --gras:color-mix(in srgb,var(--f1) 34%,var(--ink-2)); } }
 :root[data-theme="dark"]{ --gras:color-mix(in srgb,var(--f1) 34%,var(--ink-2)); }
 @media(min-width:641px){ .grasmat{ padding:38px 14px 22px; } .sp{ width:114px; } .linie{ gap:var(--s3); margin-bottom:22px; } }
+.linie,.bankrij2{ align-items:flex-end; }
 .grasmat{
   background-color:var(--gras);
   background-image:
@@ -4075,6 +4076,26 @@ body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .tabpaneel
 .sp .band.c{ box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 35%,transparent), 0 2px 8px rgba(0,0,0,.5); }
 .sp:hover{ transform:translateY(-5px) scale(1.02); }
 .sp.gewisseld .shirt{ box-shadow:0 0 0 2px color-mix(in srgb,var(--good) 70%,transparent), 0 6px 16px -4px rgba(0,0,0,.45); }
+
+/* spelerfoto op de kaart: het shirt wordt een podium in de clubkleur, de
+   foto staat erop met de schouders net onder de rand. */
+.sp.metfoto .shirt{ height:84px; align-items:flex-start; justify-content:flex-start; padding:0;
+  background:linear-gradient(180deg,var(--hoofd) 0%,var(--hoofd) 55%,color-mix(in srgb,var(--hoofd) 70%,#000) 100%); }
+.sp.metfoto .shirt::before{ inset:0; width:auto; opacity:1; background:
+  radial-gradient(90% 70% at 50% 100%, rgba(0,0,0,.35), transparent 70%),
+  linear-gradient(158deg,rgba(255,255,255,.22),rgba(255,255,255,0) 45%); }
+.sp.metfoto .shirt::after{ inset:auto 0 0 0; width:auto; height:22px; border-radius:0;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.28)); opacity:1; box-shadow:none; }
+.sp.metfoto .foto{ position:absolute; left:50%; bottom:-2px; transform:translateX(-50%);
+  height:104px; width:auto; max-width:none; z-index:2; pointer-events:none;
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,.45)); }
+.sp.metfoto .nr{ position:absolute; left:6px; bottom:6px; z-index:3; font-size:8.5px; letter-spacing:.06em;
+  padding:2px 6px; border-radius:6px; background:rgba(10,8,20,.55); color:#fff; text-shadow:none;
+  backdrop-filter:blur(3px); }
+.sp.metfoto:hover .foto{ transform:translateX(-50%) scale(1.04); transition:transform var(--vlot) var(--veer); }
+.bankslot .sp.metfoto .shirt{ height:70px; }
+.bankslot .sp.metfoto .foto{ height:84px; }
+@media(max-width:640px){ .sp.metfoto .shirt{ height:70px; } .sp.metfoto .foto{ height:86px; } }
 
 /* de bank als dug-out */
 .bankvak{ margin:var(--s2) var(--s2) var(--s2); padding:20px 12px 12px; border-radius:var(--r2);
@@ -4189,6 +4210,156 @@ body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .tabpaneel
   .pfnaam h3{ font-size:21px; }
   .pftegel{ width:52px; height:52px; }
 }
+
+/* De kop moet boven de pagina liggen: het zoekmenu hangt eraan. `body > *`
+   zette alles op z-index 1, waardoor de resultaten achter de kaarten vielen. */
+body > header{ z-index:60; }
+.zoekres{ background:var(--card); box-shadow:0 18px 48px rgba(0,0,0,.35), 0 0 0 1px var(--line); }
+
+/* ══ VISUELE LAAG 2: Seizoensplan, Prijzen, Assistent, Leagues ═══════════ */
+
+/* portret: foto op clubkleur, of het clubvlak als er geen foto is */
+.portret{ position:relative; flex:none; width:46px; height:46px; border-radius:12px; overflow:hidden;
+  display:inline-flex; align-items:flex-end; justify-content:center;
+  background:linear-gradient(160deg,var(--k1),color-mix(in srgb,var(--k1) 60%,#000));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28), 0 4px 10px -4px rgba(0,0,0,.5); }
+.portret img{ position:absolute; left:50%; bottom:-3px; transform:translateX(-50%); height:56px; width:auto; max-width:none;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.4)); }
+.portret i{ position:absolute; left:0; right:0; bottom:0; text-align:center; font-style:normal; font-family:var(--mono);
+  font-size:8px; font-weight:800; letter-spacing:.06em; padding:1px 0; background:rgba(10,8,20,.45); color:#fff; }
+.portret:has(img) i{ opacity:0; }
+.portret.groot{ width:64px; height:64px; border-radius:16px; }
+.portret.groot img{ height:78px; }
+
+/* ── SEIZOENSPLAN: tijdlijn ─────────────────────────────────────────── */
+.vgl{ gap:var(--s3); margin-bottom:var(--s4); }
+.vgl .vak{ border-radius:var(--r2); padding:var(--s4); box-shadow:var(--e1); background-image:var(--glans); }
+.vgl .vak .grt{ font-size:34px; letter-spacing:-.03em; }
+.vgl .vak.win{ border-color:color-mix(in srgb,var(--good) 45%,var(--line));
+  background:linear-gradient(135deg,color-mix(in srgb,var(--good) 14%,var(--card)),var(--card) 70%); }
+.stap{ position:relative; display:grid; grid-template-columns:52px minmax(0,1fr) auto; gap:var(--s3); align-items:center;
+  padding:10px 12px 10px 0; margin:0; border:0; border-radius:0; background:transparent; }
+.stap::before{ content:""; position:absolute; left:23px; top:0; bottom:0; width:2px;
+  background:color-mix(in srgb,var(--fg) 10%,transparent); }
+.stap:first-child::before{ top:50%; } .stap:last-child::before{ bottom:50%; }
+.stap .gwl{ position:relative; z-index:1; width:46px; height:26px; border-radius:8px; display:inline-flex; align-items:center;
+  justify-content:center; font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--fg-3);
+  background:var(--card); border:1px solid var(--line); box-shadow:var(--e1); }
+.stap.actie .gwl{ color:var(--ink); background:var(--t-plan); border-color:transparent; }
+.stap.actie{ background:color-mix(in srgb,var(--t-plan) 9%,transparent); border-radius:var(--r2); padding-right:var(--s3);
+  margin:4px 0; border:1px solid color-mix(in srgb,var(--t-plan) 28%,transparent); }
+.stap.actie::before{ background:color-mix(in srgb,var(--t-plan) 40%,transparent); }
+.stap .wat{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; min-width:0; }
+.stap .wat .wie{ display:inline-flex; align-items:center; gap:8px; }
+.stap .wat .wie b{ font-size:var(--t-md); font-weight:680; }
+.stap .wat .wie.uit b{ color:var(--fg-2); text-decoration:line-through; text-decoration-color:color-mix(in srgb,var(--bad) 60%,transparent); }
+.stap .wat .pijl{ width:24px; height:24px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+  background:color-mix(in srgb,var(--t-plan) 18%,transparent); color:var(--t-plan); }
+.stap.rust .wat{ font-size:var(--t-sm); }
+.stap .spaardoel{ display:block; font-style:normal; font-size:var(--t-xs); color:var(--t-plan); margin-top:2px; }
+.stap .kost{ font-family:var(--mono); font-size:var(--t-xs); font-weight:700; padding:3px 9px; border-radius:99px;
+  background:color-mix(in srgb,var(--fg) 6%,transparent); color:var(--fg-2); white-space:nowrap; }
+.stap .kost.hit{ background:color-mix(in srgb,var(--bad) 16%,transparent); color:var(--bad); }
+
+/* ── PRIJZEN ────────────────────────────────────────────────────────── */
+#prijzen table{ border-collapse:separate; border-spacing:0 4px; }
+#prijzen tbody tr td{ background:color-mix(in srgb,var(--fg) 2.5%,transparent); border:0; padding:9px 10px; }
+#prijzen tbody tr td:first-child{ border-radius:10px 0 0 10px; }
+#prijzen tbody tr td:last-child{ border-radius:0 10px 10px 0; }
+#prijzen tbody tr[style*="accent-dim"] td{ background:color-mix(in srgb,var(--accent) 9%,transparent); }
+#prijzen .pmeter{ height:8px; border-radius:99px; background:color-mix(in srgb,var(--fg) 9%,transparent); }
+#prijzen .pmeter>span{ border-radius:99px; box-shadow:0 0 8px -1px currentColor; }
+#prijzen .pmc{ font-size:10.5px; }
+.markt .mrij{ padding:8px 10px; border-radius:var(--r1); background:color-mix(in srgb,var(--fg) 2.5%,transparent); margin-bottom:4px;
+  display:grid; grid-template-columns:34px minmax(0,1fr) minmax(70px,120px) 68px; gap:10px; align-items:center; }
+.markt .mrij .tegel{ width:34px; height:34px; border-radius:9px; font-size:10px; font-weight:800; display:inline-flex; align-items:center; justify-content:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28), 0 1px 3px rgba(0,0,0,.25); }
+.markt .mrij .nm{ min-width:0; }
+.markt .mrij .nm b{ display:block; font-size:var(--t-sm); }
+.markt .mrij .nm .badge{ vertical-align:middle; }
+.markt .mrij .nm>span{ display:block; font-size:var(--t-xs); color:var(--fg-3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.markt .mbalk{ height:7px; border-radius:99px; background:color-mix(in srgb,var(--fg) 9%,transparent); overflow:hidden; }
+.markt .mbalk span{ display:block; height:100%; border-radius:99px; }
+.markt .aant{ text-align:right; font-family:var(--mono); font-size:var(--t-sm); font-weight:650; }
+.markt h5{ font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; margin:0 0 var(--s2); }
+
+/* ── ASSISTENT: analist ─────────────────────────────────────────────── */
+.ankop{ padding:var(--s4); border-radius:var(--r2); margin-bottom:var(--s4);
+  background:linear-gradient(120deg,color-mix(in srgb,var(--t-plan) 16%,var(--card)),var(--card) 65%);
+  border:1px solid color-mix(in srgb,var(--t-plan) 30%,var(--line)); box-shadow:var(--e1); }
+.ankop .anlbl{ color:var(--t-plan); }
+.anlijst .anb{ border-radius:var(--r2); border:1px solid var(--line); background:var(--card); box-shadow:var(--e1);
+  margin-bottom:var(--s2); transition:border-color var(--vlot) var(--uit), box-shadow var(--vlot) var(--uit); }
+.anlijst .anb:hover{ box-shadow:var(--e2); }
+.anlijst .anb.open{ border-color:color-mix(in srgb,var(--t-plan) 45%,var(--line)); }
+.anlijst .anb .anpunt{ width:12px; height:12px; border-radius:50%; box-shadow:0 0 0 4px color-mix(in srgb,currentColor 18%,transparent); }
+.anlijst .ankopje{ padding:12px 14px; }
+.anlijst .aninhoud{ padding:0 14px 14px; }
+.anbewijs{ border-radius:var(--r1); background:color-mix(in srgb,var(--fg) 3%,transparent); padding:var(--s3); }
+.andoen{ border-radius:var(--r1); background:color-mix(in srgb,var(--t-plan) 10%,transparent); border:1px solid color-mix(in srgb,var(--t-plan) 30%,transparent); padding:var(--s3); }
+
+/* ── ASSISTENT: aanvoerder ──────────────────────────────────────────── */
+#captain .cap{ grid-template-columns:46px minmax(0,1fr) 150px auto auto; gap:var(--s3); padding:10px 12px;
+  border-radius:var(--r2); border:1px solid var(--line); background:var(--card); box-shadow:var(--e1); margin-bottom:var(--s2); }
+#captain .cap.top{ border-color:color-mix(in srgb,var(--accent) 55%,var(--line));
+  background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 12%,var(--card)),var(--card) 60%); }
+#captain .cap .nm b{ font-size:var(--t-md); }
+#captain .cap .nm span:last-child{ display:block; font-size:var(--t-xs); color:var(--fg-3); margin-top:2px; }
+#captain .stars{ display:flex; flex-direction:column; gap:4px; letter-spacing:.05em; font-size:11px; }
+#captain .stars .capbalk{ display:block; height:6px; border-radius:99px; background:color-mix(in srgb,var(--fg) 9%,transparent); overflow:hidden; }
+#captain .stars .capbalk b{ display:block; height:100%; width:calc(var(--deel,0) * 1%); border-radius:99px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2)); transition:width var(--rustig) var(--uit); }
+#captain .cap .xp{ font-size:20px; letter-spacing:-.02em; }
+#captain .bandknop button{ width:32px; height:32px; border-radius:9px; font-size:12px; }
+@media(max-width:640px){ #captain .cap{ grid-template-columns:46px minmax(0,1fr) auto; }
+  #captain .stars{ grid-column:2/-1; } }
+
+/* ── ASSISTENT: droomelftal en chips ────────────────────────────────── */
+.drveld{ background-color:var(--gras); background-image:
+  radial-gradient(120% 70% at 50% -10%, rgba(255,255,255,.14), transparent 55%),
+  repeating-linear-gradient(180deg, rgba(255,255,255,.035) 0 40px, rgba(0,0,0,.045) 40px 80px);
+  border-radius:var(--r3); box-shadow:inset 0 1px 0 rgba(255,255,255,.12), inset 0 0 80px rgba(0,0,0,.18); }
+.drkaart{ background:color-mix(in srgb,var(--card) 92%,transparent); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  box-shadow:0 6px 14px -6px rgba(0,0,0,.4); }
+.drkaart .shirt{ border-radius:7px; padding:5px 0; }
+.drbank{ background:color-mix(in srgb,var(--fg) 4%,transparent); border-radius:var(--r2); }
+.chiprow{ align-items:center; }
+.chiprow .bar{ height:8px; border-radius:99px; overflow:hidden; background:color-mix(in srgb,var(--fg) 8%,transparent); }
+.chiprow .bar i{ border-radius:99px; }
+.rec{ border-radius:var(--r2); border:1px solid var(--line); background:var(--card); box-shadow:var(--e1);
+  padding:var(--s3) var(--s4); margin-bottom:var(--s2); background-image:var(--glans); }
+.rec .t{ color:var(--t-plan); font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; font-weight:700; }
+.rec .d{ font-size:var(--t-md); }
+
+/* ── LEAGUES ────────────────────────────────────────────────────────── */
+.lgkopregel{ display:grid; grid-template-columns:28px 1fr 44px 56px; gap:10px; padding:0 9px 6px;
+  font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); }
+.lgkopregel span:nth-child(3),.lgkopregel span:nth-child(4){ text-align:right; }
+#league .lrow{ grid-template-columns:28px 1fr 44px 56px; padding:8px 9px; border-radius:var(--r1); margin-bottom:3px;
+  background:color-mix(in srgb,var(--fg) 2.5%,transparent); border:1px solid transparent; cursor:pointer;
+  transition:background-color var(--vlot) var(--uit), border-color var(--vlot) var(--uit); }
+#league .lrow:hover{ background:color-mix(in srgb,var(--fg) 5%,transparent); }
+#league .lrow.me{ background:color-mix(in srgb,var(--accent) 10%,transparent); border-color:color-mix(in srgb,var(--accent) 35%,transparent); }
+#league .lrow .r.pos{ width:24px; height:24px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center;
+  background:color-mix(in srgb,var(--fg) 6%,transparent); color:var(--fg-2); font-weight:700; text-align:center; }
+#league .lrow:nth-child(2) .r.pos{ background:linear-gradient(135deg,#f5d36a,#c9992b); color:#2a1f00; }
+#league .lrow .t b{ display:flex; align-items:center; gap:6px; }
+#league .lchip{ font-style:normal; font-family:var(--mono); font-size:8.5px; font-weight:800; letter-spacing:.06em;
+  padding:1px 5px; border-radius:5px; background:color-mix(in srgb,var(--warn) 18%,transparent); color:var(--warn); }
+#league .lrow .p{ font-size:14px; }
+#league .sheet{ display:none; padding:var(--s2) 0 var(--s3); }
+#league .sheet.open{ display:block; animation:fade .2s ease both; }
+.sheetgrid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:5px; }
+.sheetsp{ display:flex; align-items:center; gap:8px; padding:5px 7px; border-radius:9px;
+  background:color-mix(in srgb,var(--fg) 3%,transparent); border:1px solid var(--line-2); min-width:0; }
+.sheetsp.bank{ opacity:.6; }
+.sheetsp.heb{ border-color:color-mix(in srgb,var(--good) 45%,transparent); }
+.sheetsp .sn{ min-width:0; display:flex; flex-direction:column; }
+.sheetsp .sn b{ font-size:var(--t-xs); font-weight:650; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sheetsp .sn span{ font-size:10px; color:var(--fg-3); }
+.lvrij{ border-radius:var(--r1); }
+.wkaart{ border-radius:var(--r2); box-shadow:var(--e1); background-image:var(--glans); }
+.awtopvak{ border-radius:var(--r2); box-shadow:var(--e1); }
 
 /* het zwevende menu: zelfde iconen als de tabbalk */
 .snav button{ display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto auto;
@@ -4639,41 +4810,28 @@ body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .tabpaneel
   
 
   <div class="tabpaneel" data-paneel="leagues">
-  <div class="grid"><section class="card">
-    <h2><span class="dot"></span>Awards
-      <span class="tag">per gameweek en over het hele seizoen</span></h2>
-    <div class="body" id="awseizoenbox"></div>
-    <div class="src" id="src-awseizoen"></div>
-  </section></div>
     <div class="subkeus" id="lgkeus" role="tablist"></div>
     <div class="subvak" data-sub="stand" hidden>
-<div class="grid g2">
-    <section class="card">
-        <h2><span class="dot"></span>Mini-league</h2>
+    <!-- Twee standen en twee awardsblokken stonden onder elkaar; de helft was
+         dubbel. Nu: de stand met de rivalen erin, live ernaast, daaronder
+         effectieve ownership en de wereld, en onderaan de teams naast elkaar. -->
+    <div class="grid g2">
+      <section class="card">
+        <h2><span class="dot"></span>Mini-league <span class="tag" id="mlTag"></span></h2>
         <div class="body" id="league"></div>
         <div class="src" id="src-league"></div>
       </section>
-    <section class="card">
-      <h2><span class="dot"></span>Rivalen in je mini-league</h2>
-      <div class="body" id="rivalen"></div>
-      <div class="src" id="src-rivalen"></div>
-    </section>
-  </div>
-    <div class="grid"><section class="card">
-      <h2><span class="dot"></span>Live <span class="tag">jij tegen je negen rivalen</span></h2>
-      <div class="body" id="livebox"></div>
-      <div class="src" id="src-live"></div>
-    </section></div>
-    <div class="grid"><section class="card">
-      <h2><span class="dot"></span>Awards <span class="tag">wie deed wat</span></h2>
-      <div class="body" id="awardsbox"></div>
-      <div class="src" id="src-awards"></div>
-    </section></div>
+      <section class="card">
+        <h2><span class="dot"></span>Live <span class="tag">jij tegen je negen rivalen</span></h2>
+        <div class="body" id="livebox"></div>
+        <div class="src" id="src-live"></div>
+      </section>
+    </div>
     <div class="grid g2">
       <section class="card">
-        <h2><span class="dot"></span>Mijn mini-league <span class="tag" id="mlTag"></span></h2>
-        <div class="body" id="mlbox"></div>
-        <div class="src" id="src-ml"></div>
+        <h2><span class="dot"></span>Effectieve ownership <span class="tag">je echte risicomaat</span></h2>
+        <div class="body" id="rivalen"></div>
+        <div class="src" id="src-rivalen"></div>
       </section>
       <section class="card">
         <h2><span class="dot"></span>De wereld <span class="tag">waar de massa staat</span></h2>
@@ -4685,6 +4843,20 @@ body[data-vlak]:not([data-vlak="team"]):not([data-vlak="mijnpagina"]) .tabpaneel
       <h2><span class="dot"></span>Rivalen — hun teams naast het jouwe</h2>
       <div class="body" id="rivalen2"></div>
     </section></div>
+    <!-- Deze twee blijven bestaan voor Mijn pagina (die leent de elementen),
+         maar staan hier niet meer in beeld: ze herhaalden wat erboven staat. -->
+    <div hidden>
+      <section class="card"><div class="body" id="mlbox"></div><div class="src" id="src-ml"></div></section>
+      <section class="card"><div class="body" id="awardsbox"></div><div class="src" id="src-awards"></div></section>
+    </div>
+    </div>
+    <div class="subvak" data-sub="awards" hidden>
+  <div class="grid"><section class="card">
+    <h2><span class="dot"></span>Awards
+      <span class="tag">per gameweek en over het hele seizoen</span></h2>
+    <div class="body" id="awseizoenbox"></div>
+    <div class="src" id="src-awseizoen"></div>
+  </section></div>
     </div>
     <div class="subvak" data-sub="archief" hidden>
 <div class="grid"><section class="card">
@@ -4848,7 +5020,19 @@ const VLAKIKOON={team:"shirt",transfers:"wissel",assistent:"vonk",research:"loep
    afkorting stond. Kleur herken je sneller dan drie letters. */
 function clubTegel(t,kl){
   const k=shirtKleur(t);
-  return `<span class="ctegel${kl?" "+kl:""}" style="background:linear-gradient(150deg,${k.hoofd},${k.acc});color:${k.tekst}">${esc(t)}</span>`;
+  return `<i class="ctegel${kl?" "+kl:""}" style="background:linear-gradient(150deg,${k.hoofd},${k.acc});color:${k.tekst}">${esc(t)}</i>`;
+}
+/* Tegel op spelersnaam, voor lijsten die alleen een naam kennen (solver). */
+function naamTegel(naam,kl){
+  const mijn=squadInGW(PLANGW).find(x=>x.n===naam);
+  const p=mijn||D.db.find(x=>x.n===naam);
+  return p?clubTegel(p.t,kl):"";
+}
+/* Portret: foto op een vlak in de clubkleur; zonder foto het clubvlak. */
+function portret(p,kl){
+  const k=shirtKleur(p.t);
+  return `<span class="portret${kl?" "+kl:""}" style="--k1:${k.hoofd};--k2:${k.acc};color:${k.tekst}">${
+    p.code?`<img alt="" decoding="async" draggable="false" src="${spelerFoto(p)}" onerror="this.remove()">`:""}<i>${esc(p.t)}</i></span>`;
 }
 function ik(naam,maat){
   const d=IK[naam]; if(!d) return "";
@@ -5863,8 +6047,8 @@ function solverPaneelBereken(){
         <span class="kost" style="color:var(--fg-3)">${n!=null?n+" vrij":""}</span></div>`;
     }
     return st.acties.map(([u,i])=>`<div class="stap actie"><span class="gwl">GW${st.gw}</span>
-      <span class="wat"><b>${esc(u)}</b><span class="pijl">${ik("pijlRechts",15)}</span><b>${esc(i)}</b></span>
-      <span class="kost">${st.hit?"−4":(st.vrijNa!=null?st.vrijNa+" vrij":"")}</span></div>`).join("");
+      <span class="wat"><span class="wie uit">${naamTegel(u,"klein")}<b>${esc(u)}</b></span><span class="pijl">${ik("pijlRechts",15)}</span><span class="wie in">${naamTegel(i,"klein")}<b>${esc(i)}</b></span></span>
+      <span class="kost${st.hit?" hit":""}">${st.hit?"−4":(st.vrijNa!=null?st.vrijNa+" vrij":"")}</span></div>`).join("");
   }).join("")+`</div>`;
   if(false){
     h+=`<div class="lbl" style="margin:13px 0 6px">Bijna even goed</div>`;
@@ -5880,7 +6064,7 @@ function solverPaneelBereken(){
       in één keer ${spaarPad.acties.length} wissels maken:</p>
       <div style="margin:8px 0">${spaarPad.acties.map(([u,i])=>
         `<div class="stap actie"><span class="gwl">GW${spaarPad.gw}</span>
-         <span class="wat"><b>${esc(u)}</b><span class="pijl">${ik("pijlRechts",15)}</span><b>${esc(i)}</b></span>
+         <span class="wat"><span class="wie uit">${naamTegel(u,"klein")}<b>${esc(u)}</b></span><span class="pijl">${ik("pijlRechts",15)}</span><span class="wie in">${naamTegel(i,"klein")}<b>${esc(i)}</b></span></span>
          <span class="kost">${spaarPad.hit?"−"+spaarPad.hit:""}</span></div>`).join("")}</div>
       <p><b style="color:var(--good)">${spaarPad.punten.toFixed(0)} punten</b> over dezelfde periode,
       tegen ${S.beste.toFixed(0)} als je week voor week wisselt —
@@ -5927,20 +6111,10 @@ function rivalenPaneel(){
       {label:"picks worden publiek",bron:"na de deadline van elke gameweek"}]);
     return;
   }
-  // na de deadline: volledige analyse
-  const mijn=new Set(D.squad.map(p=>p.id));
-  let h=`<div class="scroll"><table><thead><tr><th>#</th><th>Team</th><th>Manager</th>
-    <th style="text-align:right">Totaal</th><th style="text-align:right">GW</th>
-    <th style="text-align:right">Overlap met jou</th><th>Chip</th></tr></thead><tbody>`;
-  L.rijen.forEach(r=>{
-    const ov=r.squad?r.squad.filter(x=>[...mijn].some(id=>D.db.find(d2=>d2.id===id&&d2.n===x.n))).length:0;
-    h+=`<tr${r.ik?' style="background:var(--accent-dim)"':""}>
-      <td class="n">${r.rank}</td><td><b>${esc(r.team)}</b></td><td class="club">${esc(r.manager)}</td>
-      <td class="n"><b>${r.totaal}</b></td><td class="n">${r.gw}</td>
-      <td class="n">${r.squad?ov+"/15":"—"}</td><td>${r.chip?esc(r.chip):"—"}</td></tr>`;});
-  h+="</tbody></table></div>";
+  // na de deadline: effectieve ownership (de stand zelf staat ernaast)
+  let h="";
   if(L.eo&&L.eo.length){
-    h+=`<div class="lbl" style="margin:14px 0 6px">Effectieve ownership binnen je league — GW${L.eo_gw}, ${L.eo_n} teams</div>
+    h+=`<div class="lbl" style="margin:0 0 6px">Binnen je league — GW${L.eo_gw}, ${L.eo_n} teams</div>
       <p style="font-size:12.5px;color:var(--fg-2);margin:0 0 8px">Dit is je échte risicomaat.
       Een speler met hoge EO die scoort kost je niets als jij hem ook hebt; heb je hem niet, dan verlies je van iedereen tegelijk.</p>
       <div class="scroll"><table><thead><tr><th>Speler</th><th>Club</th>
@@ -5952,7 +6126,7 @@ function rivalenPaneel(){
         <td>${e.mijn?'<span class="badge b-c">JA</span>':'<span class="badge" style="color:var(--fg-3)">nee</span>'}</td></tr>`).join("")+
       `</tbody></table></div>`;
   }
-  box.innerHTML=h;
+  box.innerHTML=h||'<div class="empty">Nog geen effectieve ownership berekend.</div>';
   bron("#src-rivalen",[{label:"stand en squads",bron:"FPL API leagues-classic",url:"https://fantasy.premierleague.com/api/leagues-classic/81158/standings/"},
     {label:"effectieve ownership",bron:"berekend uit de picks van alle teams",calc:1}]);
 }
@@ -10486,6 +10660,7 @@ const SUBTABS={
             ["db","Database","alle spelers"],["inzicht","Inzichten","radar & rangen"],
             ["herkomst","Herkomst","waar het vandaan komt"]],
   leagues:[["stand","Stand & live","jouw tien en de wereld"],
+           ["awards","Awards","per week en over het seizoen"],
            ["archief","Archief","wie had wat, wanneer"]],
 };
 function tekenSub(paneel){
@@ -11108,6 +11283,11 @@ function shirtKleur(club){
     return ((n>>16)*299+((n>>8&255))*587+(n&255)*114)/1000>140;};
   return {hoofd:k[0],acc:k[1],tekst:licht(k[0])?"#10102a":"#fff"};
 }
+/* Officiële spelersfoto van de Premier League, op de fotocode uit de FPL API.
+   Geen code (oudere data) of geen foto (nieuwe aanwinst): dan blijft het shirt. */
+function spelerFoto(p,maat){
+  return p.code?`https://resources.premierleague.com/premierleague/photos/players/${maat||"110x140"}/p${p.code}.png`:"";
+}
 function spelerKaart(p,opts){
   const g=PLANGW, o=opts||{};
   const kl=shirtKleur(p.t);
@@ -11123,12 +11303,14 @@ function spelerKaart(p,opts){
   else if(p.status==="d") merken.push(`<span class="merk" style="background:var(--warn);color:#000">?</span>`);
   else if(p.pen===1) merken.push(`<span class="merk" style="background:var(--good);color:#0A0818">P</span>`);
   const band=p.cap?'<span class="band c">C</span>':p.vice?'<span class="band v">V</span>':"";
-  return `<div class="sp${o.actief?" actief":""}${o.gewisseld?" gewisseld":""}" data-pid="${p.id}"
-      style="--acc:${kl.acc};--tekst:${kl.tekst}"
+  return `<div class="sp${o.actief?" actief":""}${o.gewisseld?" gewisseld":""}${p.code?" metfoto":""}" data-pid="${p.id}"
+      style="--acc:${kl.acc};--tekst:${kl.tekst};--hoofd:${kl.hoofd}"
       title="${esc(p.n)} — ${esc(p.t)} · £${p.c.toFixed(1)}m · ${xp.toFixed(1)} punten${p.cpmin?" · "+p.cpmin+"' verwacht":""}${esc(bronTip(p,g))}">
     ${band}${merken.join("")}${rotatieMerk(p.t,g)}
     <span class="xp" style="color:${xpKleur(xp,ENKEL?1:HZ)}">${xp.toFixed(1)}</span>
     <div class="shirt" style="background:${kl.hoofd}">
+      ${p.code?`<img class="foto" alt="" decoding="async" draggable="false"
+        src="${spelerFoto(p)}" onerror="this.closest('.sp').classList.remove('metfoto');this.remove()">`:""}
       <span class="nr">${esc(p.t)}</span></div>
     <div class="naam"><b>${esc(p.n)}</b><span class="duel">${esc(duel)}</span>
       <span class="strook">${strook}</span></div>
@@ -11913,12 +12095,13 @@ function captain(){
   const isC=p=>huidig.cap&&huidig.cap.id===p.id;
   const isV=p=>huidig.vice&&huidig.vice.id===p.id;
   box.innerHTML=scored.slice(0,6).map((s2,i)=>`
-    <div class="cap${isC(s2.p)?" top":""}">
+    <div class="cap${isC(s2.p)?" top":""}" style="--deel:${Math.max(4,Math.round(s2.x/top*100))}">
+      ${portret(s2.p)}
       <div class="nm"><b>${spnm(s2.p)}</b>
         ${isC(s2.p)?'<span class="badge b-c">C</span>':""}${isV(s2.p)?'<span class="badge b-v">V</span>':""}
         ${i===0&&!isC(s2.p)?'<span class="badge" style="color:var(--good)">HOOGSTE xP</span>':""}
         <span>${esc(s2.p.t)} · ${esc(capOnderbouwing(s2.p,g))}</span></div>
-      <div class="stars" title="verhouding tot de beste kandidaat">${sterren(s2.x)}</div>
+      <div class="stars" title="verhouding tot de beste kandidaat"><i class="capbalk"><b></b></i><span>${sterren(s2.x)}</span></div>
       <div class="xp" title="Verwachte punten in GW${g}. Bereik ${s2.p.floor}–${s2.p.ceiling}.">${s2.x.toFixed(1)}
         <small style="display:block;font-size:9.5px;color:var(--fg-3);font-weight:400">${s2.p.floor}–${s2.p.ceiling}</small></div>
       <div class="bandknop">
@@ -12346,21 +12529,23 @@ function chips(){
   if(!L){box.innerHTML='<div class="empty">Geen league-ID.</div>';
     bron("#src-league",[{label:"ids",bron:"state/ids.json"}]);return;}
   let h="";
-  if(L.rijen.length) h+=L.rijen.map((r,i)=>`<div class="lrow${r.ik?" me":""}" data-i="${i}"><div class="r">${r.rank}</div>
-    <div class="t"><b>${esc(r.team)}</b><span>${esc(r.manager)}${r.squad?" · klik voor team":""}</span></div>
+  const CHIPKORT={bboost:"BB","3xc":"TC",wildcard:"WC",freehit:"FH",manager:"AM"};
+  const mijnN=new Set(D.squad.map(p=>p.n));
+  const kop=L.rijen.length?L.rijen[0].totaal:0;
+  if(L.rijen.length) h+=`<div class="lgkopregel"><span>#</span><span>Team</span><span>GW</span><span>Totaal</span></div>`+
+    L.rijen.map((r,i)=>{
+      const ov=r.squad?r.squad.filter(x=>mijnN.has(x.n)).length:null;
+      return `<div class="lrow${r.ik?" me":""}" data-i="${i}">
+    <div class="r pos">${r.rank}</div>
+    <div class="t"><b>${esc(r.team)}${r.chip?`<i class="lchip" title="${esc(r.chip)}">${CHIPKORT[r.chip]||esc(r.chip)}</i>`:""}</b>
+      <span>${esc(r.manager)}${ov!=null?` · ${ov}/15 overlap`:""}${i>0?` · −${kop-r.totaal}`:" · koploper"}</span></div>
     <div class="r">${r.gw}</div><div class="p">${r.totaal}</div></div>
-    <div class="sheet" id="sh${i}"></div>`).join("");
+    <div class="sheet" id="sh${i}"></div>`;}).join("");
   else if(L.nieuw&&L.nieuw.length){
     h+=`<div class="empty" style="text-align:left;padding:0 0 9px">Stand verschijnt zodra GW${D.gw} gespeeld is. ${L.nieuw.length} managers ingeschreven:</div>`;
     h+=L.nieuw.map(r=>`<div class="lrow${r.ik?" me":""}"><div class="r">·</div>
       <div class="t"><b>${esc(r.team||"—")}</b><span>${esc(r.manager||"")}</span></div>
       <div class="r"></div><div class="p">—</div></div>`).join("");}
-  if(L.eo&&L.eo.length){
-    h+=`<div class="sep">Effectieve ownership — GW${L.eo_gw}, ${L.eo_n} teams</div><div class="scroll"><table><thead><tr>
-      <th>Speler</th><th>Club</th><th style="text-align:right">EO</th><th style="text-align:right">Capt</th><th style="text-align:right">Wereld</th></tr></thead><tbody>`;
-    L.eo.forEach(e=>h+=`<tr${e.mijn?' style="color:var(--accent)"':""}><td>${esc(e.n)}</td><td class="club">${esc(e.t)}</td>
-      <td class="n">${e.eo}%</td><td class="n">${e.capt}%</td><td class="n">${e.wereld.toFixed(1)}%</td></tr>`);
-    h+="</tbody></table></div>";}
   box.innerHTML=h;
   box.querySelectorAll(".lrow[data-i]").forEach(el=>el.onclick=()=>{
     const r=L.rijen[+el.dataset.i]; const sh=$("#sh"+el.dataset.i);
@@ -12369,9 +12554,8 @@ function chips(){
     const mij=new Set(D.squad.map(p=>p.id));
     sh.innerHTML=`<div style="font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--fg-3);margin-bottom:5px">
         Team van ${esc(r.manager)}${r.chip?" · chip: "+esc(r.chip):""}</div>`+
-      r.squad.map(x=>`<div class="r" style="${x.bank?"opacity:.55":""}">
-        <span>${esc(x.n)} <span class="club">${esc(x.t)}</span>${x.cap?' <span class="badge b-c">C</span>':""}${x.bank?" <span class='club'>bank</span>":""}</span>
-        <span class="club">£${x.c.toFixed(1)}</span></div>`).join("");
+      `<div class="sheetgrid">`+r.squad.map(x=>`<div class="sheetsp${x.bank?" bank":""}${mij.has((D.db.find(d2=>d2.n===x.n&&d2.t===x.t)||{}).id)?" heb":""}">
+        ${clubTegel(x.t,"klein")}<span class="sn"><b>${esc(x.n)}${x.cap?' <span class="badge b-c">C</span>':""}</b><span>£${x.c.toFixed(1)}m${x.bank?" · bank":""}</span></span></div>`).join("")+`</div>`;
     sh.classList.add("open");});
   bron("#src-league",[{label:"stand en picks",bron:"FPL API leagues-classic",url:"https://fantasy.premierleague.com/api/leagues-classic/81158/standings/"}]);
 })();

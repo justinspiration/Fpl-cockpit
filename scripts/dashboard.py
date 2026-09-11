@@ -140,7 +140,7 @@ def build():
     ids = {}
     p = os.path.join(STATE, "ids.json")
     if os.path.exists(p):
-        ids = json.load(open(p))
+        ids = json.load(open(p, encoding="utf-8"))
     entry_id, league_id = ids.get("entry_id"), ids.get("league_id")
 
     teams = {t["id"]: t for t in bs["teams"]}
@@ -640,6 +640,8 @@ def build():
         op = spelers_opta.get(e["id"])
         db.append({
             "id": e["id"], "n": e["web_name"], "t": club, "tid": e["team"], "p": P,
+            # fotocode van de Premier League zelf; de pagina bouwt er de foto-URL uit
+            "code": e.get("code"),
             "c": e["now_cost"] / 10.0, "tp": e["total_points"],
             "ppg": float(e["points_per_game"] or 0), "p90": round(p90, 2),
             "own": float(e["selected_by_percent"] or 0),
@@ -883,7 +885,7 @@ def build():
     if not squad:
         tp = os.path.join(STATE, "team.json")
         if os.path.exists(tp):
-            tj = json.load(open(tp))
+            tj = json.load(open(tp, encoding="utf-8"))
             # De aanvoerder stond alleen in een `rol`-veld per speler. Wordt het
             # bestand met de hand bijgewerkt en schrijft iemand hem bovenaan als
             # "aanvoerder": "Haaland", dan zag het dashboard geen aanvoerder en
@@ -1090,7 +1092,7 @@ def build():
     snp = os.path.join(STATE, "seizoen_2025_26.json")
     _vorig = {}
     if os.path.exists(snp):
-        _sn = json.load(open(snp))
+        _sn = json.load(open(snp, encoding="utf-8"))
         for pid, r in _sn.get("spelers", {}).items():
             mn = r.get("minutes") or 0
             _vorig[pid] = {
@@ -1124,6 +1126,27 @@ def build():
         d = speler.get("gw") or {}
         v = d.get(g)
         return v if v is not None else (d.get(str(g)) or 0)
+
+    # ── Zware berekeningen hergebruiken ──────────────────────────────────
+    # De verversing bouwt twee keer: eerst het dashboard, dan het nieuws
+    # erbij, dan opnieuw. De tweede keer verandert alleen dat nieuws, maar het
+    # hele optimalisatiewerk werd toch overgedaan — vier minuten die nergens
+    # toe leiden. Dit legt de uitkomst vast onder een vingerafdruk van de
+    # invoer; verandert er iets aan de projecties, de selectie of het budget,
+    # dan wordt er gewoon opnieuw gerekend.
+    import hashlib as _hl
+    _vinger = _hl.sha1(json.dumps({
+        "gw": gw,
+        "squad": sorted(x["id"] for x in squad) if squad else [],
+        "bank": (entry_meta or {}).get("last_deadline_bank"),
+        "proj": _hl.sha1(json.dumps(
+            {str(p["id"]): p["gw"] for p in db}, sort_keys=True).encode()).hexdigest(),
+    }, sort_keys=True).encode()).hexdigest()
+    _cachepad = os.path.join(STATE, "zwaar_cache.json")
+    _cache = _lees("zwaar_cache.json", {}) or {}
+    _hergebruik = _cache.get("_vinger") == _vinger
+    if _hergebruik:
+        print("  Zware berekeningen hergebruikt (invoer ongewijzigd)")
 
     # ---- chipteams: wildcard en free hit ----
     # Twee wezenlijk verschillende vragen:
@@ -1285,7 +1308,12 @@ def build():
             "Wildcard over vijf en acht. Alle regels gelden: 2-5-5-3, maximaal drie "
             "per club, binnen het budget, en alleen spelers met minstens 45 verwachte "
             "minuten die niet geblesseerd of geschorst zijn.")
+    except StopIteration:
+        pass
     except Exception as ex:
+        import traceback
+        print("  LET OP: chipteams mislukt: %s" % str(ex)[:200])
+        traceback.print_exc()
         chipteams = {"fout": str(ex)[:200]}
 
     # ---- beste selectie voor hetzelfde budget, als ijkpunt ----
@@ -1453,26 +1481,6 @@ def build():
             chips_op.append({"naam": c.get("name"), "gw": g,
                              "helft": 1 if g <= 19 else 2})
 
-    # ── Zware berekeningen hergebruiken ──────────────────────────────────
-    # De verversing bouwt twee keer: eerst het dashboard, dan het nieuws
-    # erbij, dan opnieuw. De tweede keer verandert alleen dat nieuws, maar het
-    # hele optimalisatiewerk werd toch overgedaan — vier minuten die nergens
-    # toe leiden. Dit legt de uitkomst vast onder een vingerafdruk van de
-    # invoer; verandert er iets aan de projecties, de selectie of het budget,
-    # dan wordt er gewoon opnieuw gerekend.
-    import hashlib as _hl
-    _vinger = _hl.sha1(json.dumps({
-        "gw": gw,
-        "squad": sorted(x["id"] for x in squad) if squad else [],
-        "bank": (entry_meta or {}).get("last_deadline_bank"),
-        "proj": _hl.sha1(json.dumps(
-            {str(p["id"]): p["gw"] for p in db}, sort_keys=True).encode()).hexdigest(),
-    }, sort_keys=True).encode()).hexdigest()
-    _cachepad = os.path.join(STATE, "zwaar_cache.json")
-    _cache = _lees("zwaar_cache.json", {}) or {}
-    _hergebruik = _cache.get("_vinger") == _vinger
-    if _hergebruik:
-        print("  Zware berekeningen hergebruikt (invoer ongewijzigd)")
 
     ideaal = None
     try:
@@ -1563,7 +1571,11 @@ def build():
     # uitkomst bewaren zodat de tweede bouw (met het nieuws erbij) hem hergebruikt
     if not _hergebruik:
         try:
-            json.dump({"_vinger": _vinger, "ideaal": ideaal, "chipteams": chipteams},
+            # een mislukte uitkomst niet bewaren: dan blijft een fout een
+            # heel uur staan terwijl de volgende ronde hem gewoon had opgelost
+            json.dump({"_vinger": _vinger,
+                       "ideaal": None if isinstance(ideaal, dict) and ideaal.get("fout") else ideaal,
+                       "chipteams": None if isinstance(chipteams, dict) and chipteams.get("fout") else chipteams},
                       open(_cachepad, "w", encoding="utf-8"))
         except Exception:
             pass

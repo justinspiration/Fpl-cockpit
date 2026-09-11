@@ -145,10 +145,13 @@ def voorfilter(db, vanaf, gws, per_positie=45):
     je een dure aankoop elders niet meer financieren. Getest tegen de volledige
     lijst over vier horizonnen: exact dezelfde uitkomst.
     """
+    # `gws` mag een aantal zijn (horizon) of een lijst gameweeks; de
+    # chipteams gaven een lijst door en dat brak op een vergelijking met int.
+    n = len(gws) if isinstance(gws, (list, tuple, set)) else int(gws)
     uit = []
     for pos in FORMATIE:
         lijst = [p for p in db if p["p"] == pos and bruikbaar(p)]
-        lijst.sort(key=lambda p: -opbrengst(p, vanaf, gws))
+        lijst.sort(key=lambda p: -opbrengst(p, vanaf, n))
         beste_per_prijs = {}
         for p in lijst:
             k = int(round(p["c"] * 10))
