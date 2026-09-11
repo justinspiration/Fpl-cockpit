@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-10T17:30:05+00:00",
+ "_opgehaald": "2026-09-11T00:50:41+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -1002,19 +1002,8 @@
   "MUN": {
    "artikel": "2026–27 Manchester United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_United_F.C._season",
-   "gespeeld": 9,
+   "gespeeld": 10,
    "laatste5": [
-    {
-     "datum": "2026-08-12",
-     "opp": "Leeds United",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "soort": "oefen",
-     "toernooi": "Pre-season and friendlies",
-     "neutraal": true
-    },
     {
      "datum": "2026-08-15",
      "opp": "Milan",
@@ -1058,18 +1047,29 @@
      "soort": "officieel",
      "toernooi": "Matches",
      "neutraal": false
+    },
+    {
+     "datum": "2026-09-10",
+     "opp": "Sabah",
+     "thuis": true,
+     "voor": 4,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "League phase",
+     "neutraal": false
     }
    ],
    "vorm": [
-    "G",
     "V",
     "V",
     "W",
-    "G"
+    "G",
+    "W"
    ],
-   "vormpunten": 5,
+   "vormpunten": 7,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "NEW": {
    "artikel": "2026–27 Newcastle United F.C. season",
