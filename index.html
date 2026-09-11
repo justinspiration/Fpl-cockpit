@@ -2615,6 +2615,7 @@ input:focus,select:focus{border-color:var(--accent);
 .ctxnaam{min-width:0}
 .ctxnaam b{display:block;font-size:var(--t-md);font-weight:680;letter-spacing:-.015em}
 .ctxnaam span{font-size:var(--t-xs);color:var(--fg-3)}
+.ctxnaam .ctxgekocht{display:block;margin-top:3px;color:var(--warn);font-weight:600}
 .ctx button.hoofd{font-weight:680;color:var(--accent)}
 .ctx button.hoofd .ik-svg{color:var(--accent)}
 
@@ -3422,7 +3423,7 @@ td .spnm,.nm .spnm,.sgn .spnm{max-width:100%;overflow:hidden;text-overflow:ellip
 .pftab td{padding:5px 6px;border-bottom:1px solid var(--line)}
 .pftab td.n,.pftab th[style*="right"]{text-align:right}
 .pftab tfoot td{border-bottom:none;border-top:1px solid var(--line)}
-.pftab tr.cap td{background:color-mix(in srgb,var(--good) 8%,transparent)}
+.pftab tr.eigen td{background:color-mix(in srgb,var(--good) 8%,transparent)}
 .pftab tr.lopend td{opacity:.75}
 .pftab .club{color:var(--fg-3);font-size:.85em;margin-left:5px}
 .pftab .band{font-size:.7em;margin-left:4px;padding:0 4px;border-radius:4px}
@@ -3809,6 +3810,12 @@ html{ scroll-behavior:smooth; }
 .awrij.gelijk .awleeg{ grid-column:2 / -1; color:var(--fg-3); font-size:var(--t-sm);
   padding:8px 11px; border:1px dashed var(--line); border-radius:var(--r1); }
 .awdet{ display:block; color:var(--fg-3); font-size:var(--t-xs); font-style:normal; }
+/* gedeelde records: elke houder een eigen regel met zijn gameweek */
+.awrecords td{ vertical-align:top; }
+.awhouder{ position:relative; padding:4px 44px 4px 0; }
+.awhouder+.awhouder{ border-top:1px dashed var(--line-2); }
+.awhouder .awgw{ position:absolute; right:0; top:5px; font-family:var(--mono);
+  font-size:var(--t-xs); color:var(--fg-3); font-weight:650; }
 .awscroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
 @media (max-width:760px){
   .awrij{ grid-template-columns:1fr; gap:6px; }
@@ -4134,16 +4141,6 @@ html{ scroll-behavior:smooth; }
       </section>
       </div>
     </div>
-    <div class="subvak" data-sub="signalen" hidden>
-      <div class="grid">
-        <section class="card">
-      <h2><span class="dot"></span>Signalen
-        <span class="tag">data die we hadden, nu gebruikt</span></h2>
-      <div class="body" id="signaalbox"></div>
-      <div class="src" id="src-signaal"></div>
-    </section>
-      </div>
-    </div>
   </div>
   <div class="tabpaneel" data-paneel="research">
     <div class="subkeus" id="rekeus" role="tablist"></div>
@@ -4288,6 +4285,12 @@ html{ scroll-behavior:smooth; }
         <span class="tag">waar sta je tegenover het veld</span></h2>
       <div class="body" id="radar"></div>
       <div class="src" id="src-radar"></div>
+    </section>
+        <section class="card">
+      <h2><span class="dot"></span>Over- en onderprestatie
+        <span class="tag">goals tegenover xG</span></h2>
+      <div class="body" id="signaalbox"></div>
+      <div class="src" id="src-signaal"></div>
     </section>
       </div>
     </div>
@@ -6580,7 +6583,7 @@ function wieVervangt(pid){
   const c=D.db.find(q=>q.id===pid); if(!c) return;
   const N=Math.max(hzVan("transfers"),5);
   const lijst=squadInGW(PLANGW);
-  const bank=(D.entry?D.entry.bank:0)+(D.squad.reduce((a,p)=>a+p.c,0)-lijst.reduce((a,p)=>a+p.c,0));
+  const bank=budgetIn(PLANGW);
   const clubs={}; lijst.forEach(p=>clubs[p.t]=(clubs[p.t]||0)+1);
   const opties=lijst.filter(p=>p.p===c.p)
     .map(p=>({p, betaalbaar:c.c<=bank+p.c, winst:somGW(c,PLANGW,N)-somGW(p,PLANGW,N),
@@ -7242,7 +7245,7 @@ function laadVersie(i){
   const mislukt=[];
   eruit.forEach(p=>{
     const kandidaat=(perPos[p.p]||[]).shift();
-    if(kandidaat) PLAN.transfers[PLANGW].push({uit:p.id,"in":kandidaat.id});
+    if(kandidaat) PLAN.transfers[PLANGW].push(transferRecord(p.id,kandidaat.id));
     else mislukt.push(p.n);
   });
   const over=Object.values(perPos).flat();
@@ -7603,7 +7606,7 @@ aria-checked="${seizoen}"
       <th style="text-align:right">Gewonnen</th><th style="text-align:right">Verloren</th>
       <th style="text-align:right">Saldo</th>
       ${cats.map(c=>`<th style="text-align:right" title="${esc(titels[c]||c)}">${esc((titels[c]||c).slice(0,9))}</th>`).join("")}
-      </tr></thead><tbody>${t.map(r=>`<tr${r.team===D.entry.naam?' class="cap"':""}>
+      </tr></thead><tbody>${t.map(r=>`<tr${r.team===D.entry.naam?' class="eigen"':""}>
         <td>${esc(r.team)}</td>
         <td class="n"><b>${r.gewonnen_totaal}</b></td>
         <td class="n">${r.verloren_totaal}</td>
@@ -7620,17 +7623,20 @@ aria-checked="${seizoen}"
     const R=(A.seizoen&&A.seizoen.records)||[];
     const F=A.feiten||{};
     const groep={}; R.forEach(r=>{(groep[r.titel]=groep[r.titel]||[]).push(r);});
-    h+=`<p class="pfuit">De uitersten van het seizoen, met de gameweek erbij.</p>
-      <div class="awscroll"><table class="pftab"><thead><tr><th>Categorie</th>
-      <th>Beste</th><th style="text-align:right">GW</th>
-      <th>Slechtste</th><th style="text-align:right">GW</th></tr></thead><tbody>${
+    /* Een record kan gedeeld zijn: dezelfde waarde in verschillende
+       gameweeks. Dan staat elke houder op zijn eigen regel, met zijn eigen
+       gameweek — niet alleen wie het als eerste haalde. */
+    const houders=r=>(r&&r.houders&&r.houders.length)?r.houders:(r?[{gw:r.gw,teams:r.teams,detail:r.detail}]:[]);
+    const kant=r=>{ const hs=houders(r); if(!hs.length) return "—";
+      return hs.map(h=>`<div class="awhouder"><b>${esc(h.teams.join(", "))}</b>
+        <i class="awdet">${esc(h.detail)}</i><span class="awgw">GW${h.gw}</span></div>`).join(""); };
+    h+=`<p class="pfuit">De uitersten van het seizoen, met de gameweek erbij.
+      Wordt een record geëvenaard, dan delen ze hem.</p>
+      <div class="awscroll"><table class="pftab awrecords"><thead><tr><th>Categorie</th>
+      <th>Beste</th><th>Slechtste</th></tr></thead><tbody>${
       Object.keys(groep).map(t=>{
         const b=groep[t].find(x=>x.kant==="beste"), s=groep[t].find(x=>x.kant==="slechtste");
-        return `<tr><td><b>${esc(t)}</b></td>
-          <td>${b?esc(b.teams.join(", "))+` <i class="awdet">${esc(b.detail)}</i>`:"—"}</td>
-          <td class="n">${b?b.gw:"—"}</td>
-          <td>${s?esc(s.teams.join(", "))+` <i class="awdet">${esc(s.detail)}</i>`:"—"}</td>
-          <td class="n">${s?s.gw:"—"}</td></tr>`;}).join("")}</tbody></table></div>`;
+        return `<tr><td><b>${esc(t)}</b></td><td>${kant(b)}</td><td>${kant(s)}</td></tr>`;}).join("")}</tbody></table></div>`;
     if(F.chips_beste&&F.chips_beste.length){
       h+=`<h4 style="margin-top:var(--s5)">Chips</h4>
         <p class="pfuit">Wat een chip opleverde, afgezet tegen wat die manager gemiddeld scoort.</p>
@@ -7646,7 +7652,7 @@ aria-checked="${seizoen}"
         <div class="awscroll"><table class="pftab"><thead><tr><th>Team</th>
         <th style="text-align:right">Gemiddeld</th><th style="text-align:right">Beste week</th>
         <th style="text-align:right">Slechtste week</th></tr></thead><tbody>${
-        F.gemiddelde_per_manager.map(r=>`<tr${r.team===D.entry.naam?' class="cap"':""}>
+        F.gemiddelde_per_manager.map(r=>`<tr${r.team===D.entry.naam?' class="eigen"':""}>
           <td>${esc(r.team)}</td><td class="n"><b>${r.gemiddeld}</b></td>
           <td class="n">${r.beste}</td><td class="n">${r.slechtste}</td></tr>`).join("")}
         </tbody></table></div>`;
@@ -9449,8 +9455,25 @@ function ijking(){
       +"speelronde vastgelegd; daarvoor valt er niets te ijken."};
 }
 
-/* Paneel: de vijf signalen naast elkaar, elk met zijn voorbehoud. */
-let SIGNAAL="over";
+/* Over- en onderprestatie: goals tegenover verwachte goals.
+   Dit stond onder "Signalen" bij de assistent, met een drempel van 1200
+   minuten uit het vorige seizoen tegen de minuten van dít seizoen -- daardoor
+   kwam er na drie speelronden niemand doorheen en bleef het vak leeg. Nu twee
+   blikken: dit seizoen (FPL's eigen xG, drempel groeit mee met het aantal
+   gespeelde ronden) en vorig seizoen (Opta, 1200 minuten). */
+let SIGNAAL="nu";
+function overprestatieNu(){
+  const gespeeld=Math.max(1,D.gw-1);
+  const drempel=Math.max(90, Math.round(gespeeld*90*0.5));
+  return D.db.filter(p=>p.sxg!=null&&(p.min||0)>=drempel&&p.p!=="GKP")
+    .map(p=>({p, verschil:(p.sg||0)-p.sxg, xg:p.sxg, goals:p.sg||0, duels:p.min/90, drempel}))
+    .sort((a,b)=>b.verschil-a.verschil);
+}
+function overprestatieVorig(){
+  return D.db.filter(p=>p.oxg!=null&&p.ogxg!=null&&(p.o_min||0)>=1200&&p.p!=="GKP")
+    .map(p=>({p, verschil:p.ogxg, xg:p.oxg, goals:Math.round(p.oxg+p.ogxg), duels:p.o_min/90, drempel:1200}))
+    .sort((a,b)=>b.verschil-a.verschil);
+}
 function signalen(){
   VLAK="inzichten";
   const box=$("#signaalbox"); if(!box) return;
@@ -9458,109 +9481,36 @@ function signalen(){
   const mijn=new Set(squadInGW(G).map(p=>p.id));
   const tegel=p=>{const k=shirtKleur(p.t);
     return `<span class="sgt" style="background:linear-gradient(150deg,${k.hoofd},${k.acc});color:${k.tekst}">${esc(p.t)}</span>`;};
-
-  const tabs=[["over","Over- en onderprestatie"],["bonus","Bonusmagneten"],
-              ["prijs","Prijsdruk"],["markt","Wat de markt zegt"]];
-  let inhoud="";
-
-  if(SIGNAAL==="over"){
-    const r=overprestatie(1200);
-    const boven=r.slice(0,8), onder=r.slice(-8).reverse();
-    inhoud=`<p class="sguit">Goals tegenover verwachte goals over ${esc(SEIZOEN)}, voor spelers met
-      minstens 1200 minuten. Wie ver boven zijn verwachting scoorde had vaak geluk en zakt terug;
-      wie eronder bleef is vaak ondergewaardeerd. <b>Let op de steekproef:</b> twee goals verschil
-      is ruis, acht is een signaal — daarom staat het aantal duels erbij.</p>
-      <div class="sgtwee">
+  const nu=SIGNAAL==="nu";
+  const r=nu?overprestatieNu():overprestatieVorig();
+  const boven=r.filter(x=>x.verschil>0).slice(0,8), onder=r.filter(x=>x.verschil<0).slice(-8).reverse();
+  const drempel=r.length?r[0].drempel:0;
+  const rij=x=>`<div class="sgr${mijn.has(x.p.id)?" mijn":""}" data-sp="${x.p.id}">
+      ${tegel(x.p)}<span class="sgn"><b>${spnm(x.p)}</b><span>${x.duels.toFixed(0)} duels · £${x.p.c.toFixed(1)}m</span></span>
+      <span class="sgw" style="color:${x.verschil>0?"var(--bad)":"var(--good)"}">${x.verschil>0?"+":""}${x.verschil.toFixed(1)}</span>
+      <span class="sgk">${x.goals} goals uit ${x.xg.toFixed(1)} xG</span></div>`;
+  const inhoud=r.length?`<div class="sgtwee">
         <div><h5 style="color:var(--bad)">Scoorde boven verwachting</h5>
-          <span class="sgsub">kans op terugval</span>
-          ${boven.map(x=>`<div class="sgr${mijn.has(x.p.id)?" mijn":""}" data-sp="${x.p.id}">
-            ${tegel(x.p)}<span class="sgn"><b>${spnm(x.p)}</b><span>${x.duels.toFixed(0)} duels</span></span>
-            <span class="sgw" style="color:var(--bad)">+${x.verschil.toFixed(1)}</span>
-            <span class="sgk">${x.p.g} goals uit ${x.p.oxg.toFixed(1)} xG</span></div>`).join("")}</div>
+          <span class="sgsub">kans op terugval</span>${boven.map(rij).join("")||'<div class="empty">niemand</div>'}</div>
         <div><h5 style="color:var(--good)">Bleef onder verwachting</h5>
-          <span class="sgsub">mogelijk ondergewaardeerd</span>
-          ${onder.map(x=>`<div class="sgr${mijn.has(x.p.id)?" mijn":""}" data-sp="${x.p.id}">
-            ${tegel(x.p)}<span class="sgn"><b>${spnm(x.p)}</b><span>${x.duels.toFixed(0)} duels</span></span>
-            <span class="sgw" style="color:var(--good)">${x.verschil.toFixed(1)}</span>
-            <span class="sgk">${x.p.g} goals uit ${x.p.oxg.toFixed(1)} xG</span></div>`).join("")}</div>
-      </div>`;
-  }
-
-  if(SIGNAAL==="bonus"){
-    const r=bonusMagneten(1200).slice(0,14);
-    inhoud=`<p class="sguit">BPS beloont veel meer dan doelpunten: een geslaagde tackle telt 2,
-      een grote kans creëren 3, een redding op de lijn 9, en 90 procent passnauwkeurigheid bij
-      dertig passes levert 6 op. De drie hoogste BPS-scores per duel krijgen 3, 2 en 1 bonuspunt.
-      Wie hier hoog staat pakt punten die nergens in de fixture-kleur zitten.</p>
-      <div class="sglijst">${r.map(x=>`<div class="sgr breed${mijn.has(x.p.id)?" mijn":""}" data-sp="${x.p.id}">
-        ${tegel(x.p)}<span class="sgn"><b>${spnm(x.p)}</b><span>${x.p.p} · £${x.p.c.toFixed(1)}m · ${x.p.own.toFixed(1)}%</span></span>
-        <span class="sgbalk"><i style="width:${Math.min(100,x.bps90/r[0].bps90*100)}%"></i></span>
-        <span class="sgw">${x.bps90.toFixed(0)}<small>BPS/90</small></span>
-        <span class="sgw">${x.bonus90.toFixed(2)}<small>BONUS/90</small></span></div>`).join("")}</div>`;
-  }
-
-  if(SIGNAAL==="prijs"){
-    const r=prijsdruk();
-    const op=r.filter(x=>x.druk>0).slice(0,8), af=r.filter(x=>x.druk<0).slice(0,8);
-    const leeg=!r.length;
-    inhoud=leeg
-      ? `<div class="empty"><b>FPL publiceert deze week nog geen transferaantallen.</b>
-         Zodra de eerste deadline voorbij is staan hier de spelers die het dichtst tegen een
-         prijswijziging aan zitten.</div>`
-      : `<p class="sguit">FPL past prijzen 's nachts aan op basis van netto transfers ten opzichte
-         van het aantal eigenaren. <b>De exacte drempel houdt FPL geheim</b>, dus dit is geen belofte —
-         het is wie er het hardst tegenaan duwt. Voor jouw teamwaarde scheelt het echt geld.</p>
-      <div class="sgtwee">
-        <div><h5 style="color:var(--good)">Duwt omhoog</h5><span class="sgsub">kan stijgen</span>
-          ${op.map(x=>`<div class="sgr${mijn.has(x.p.id)?" mijn":""}" data-sp="${x.p.id}">
-            ${tegel(x.p)}<span class="sgn"><b>${spnm(x.p)}</b><span>£${x.p.c.toFixed(1)}m</span></span>
-            <span class="sgw" style="color:var(--good)">+${x.druk.toFixed(1)}%</span>
-            <span class="sgk">${x.netto.toLocaleString("nl-NL")} netto</span></div>`).join("")}</div>
-        <div><h5 style="color:var(--bad)">Duwt omlaag</h5><span class="sgsub">kan dalen</span>
-          ${af.map(x=>`<div class="sgr${mijn.has(x.p.id)?" mijn":""}" data-sp="${x.p.id}">
-            ${tegel(x.p)}<span class="sgn"><b>${spnm(x.p)}</b><span>£${x.p.c.toFixed(1)}m</span></span>
-            <span class="sgw" style="color:var(--bad)">${x.druk.toFixed(1)}%</span>
-            <span class="sgk">${x.netto.toLocaleString("nl-NL")} netto</span></div>`).join("")}</div>
-      </div>`;
-  }
-
-  if(SIGNAAL==="markt"){
-    const clubs=[...new Set(D.ticker.map(t=>t.team))]
-      .map(c=>({c, m:marktDiepte(c,G)})).filter(x=>x.m);
-    inhoud=clubs.length
-      ? `<p class="sguit">Uit dezelfde bookmakersodds volgt meer dan alleen de clean sheet. De kans
-         dat <b>beide ploegen scoren</b> zegt of een verdediger risico loopt ondanks een makkelijke
-         tegenstander. Het <b>krachtsverschil</b> zegt of je beter een verdediger van de sterke ploeg
-         kunt nemen dan een aanvaller van de zwakke.</p>
-        <div class="scroll"><table class="sgtab"><thead><tr>
-          <th>Club</th><th>Tegen</th><th>xG voor</th><th>xG tegen</th>
-          <th>Beide scoren</th><th>Clean sheet</th><th>Verschil</th></tr></thead><tbody>
-          ${clubs.sort((a,b)=>b.m.overschot-a.m.overschot).map(({c,m})=>{
-            const cel=((D.ticker.find(t=>t.team===c)||{}).cellen||{})[G]||[];
-            const teg=cel[0]?cel[0].opp:"—";
-            const heb=squadInGW(G).some(p=>p.t===c);
-            return `<tr${heb?' class="nu"':""}>
-              <td>${tegel(D.db.find(p=>p.t===c)||{t:c})}${heb?' <span class="badge b-c">JIJ</span>':""}</td>
-              <td>${esc(teg)}${cel[0]&&cel[0].h?" (T)":" (U)"}</td>
-              <td class="n">${m.xgVoor.toFixed(2)}</td>
-              <td class="n">${m.xgTegen.toFixed(2)}</td>
-              <td class="n" style="color:${m.btts>60?"var(--warn)":"var(--fg-2)"}">${m.btts.toFixed(0)}%</td>
-              <td class="n" style="color:${m.cleanSheet>35?"var(--good)":"var(--fg-2)"}">${m.cleanSheet.toFixed(0)}%</td>
-              <td class="n" style="color:${m.overschot>0.6?"var(--good)":m.overschot<-0.6?"var(--bad)":""}">${
-                m.overschot>0?"+":""}${m.overschot.toFixed(2)}</td></tr>`;}).join("")}
-        </tbody></table></div>`
-      : `<div class="empty"><b>Nog geen odds voor deze gameweek.</b>
-         Bookmakers prijzen alleen de eerstvolgende speelronde.</div>`;
-  }
-
-  box.innerHTML=`<div class="sgkeus">${tabs.map(([k,l])=>
-    `<button data-sg="${k}" aria-pressed="${SIGNAAL===k}">${l}</button>`).join("")}</div>${inhoud}`;
+          <span class="sgsub">mogelijk ondergewaardeerd</span>${onder.map(rij).join("")||'<div class="empty">niemand</div>'}</div>
+      </div>`
+    :`<div class="empty"><b>Nog te weinig gespeeld.</b> Zodra spelers ${drempel} minuten hebben staat hier wie boven of onder zijn xG scoort.</div>`;
+  box.innerHTML=`<div class="sgkeus">
+      <button data-sg="nu" aria-pressed="${nu}">Dit seizoen</button>
+      <button data-sg="vorig" aria-pressed="${!nu}">Vorig seizoen</button></div>
+    <p class="sguit">${nu
+      ?`Goals tegenover FPL's verwachte goals over ${esc(SEIZOEN)}, voor spelers met minstens ${drempel} minuten
+        (de helft van wat er tot nu toe te spelen viel). <b>Let op de steekproef:</b> na een paar ronden is één
+        goal verschil nog ruis; daarom staat het aantal duels erbij.`
+      :`Goals tegenover Opta's verwachte goals over 2025/26, voor spelers met minstens 1200 minuten. Wie ver boven
+        zijn verwachting scoorde had vaak geluk en zakt terug; wie eronder bleef is vaak ondergewaardeerd.
+        Twee goals verschil is ruis, acht is een signaal.`}</p>${inhoud}`;
   box.querySelectorAll("[data-sg]").forEach(b=>b.onclick=()=>{SIGNAAL=b.dataset.sg; signalen();});
-  bron("#src-signaal",[
-    {label:"xG, goals boven verwachting",bron:"Opta via theanalyst.com",url:"https://theanalyst.com/competition/premier-league/stats"},
-    {label:"BPS en bonus",bron:"FPL API bootstrap-static",url:"https://fantasy.premierleague.com/api/bootstrap-static/"},
-    {label:"transfers deze gameweek",bron:"FPL API transfers_in_event / transfers_out_event",url:"https://fantasy.premierleague.com/api/bootstrap-static/"},
-    {label:"beide ploegen scoren en krachtsverschil",bron:"afgeleid uit de bookmakersodds",calc:1}]);
+  box.querySelectorAll("[data-sp]").forEach(el=>el.onclick=()=>openProfiel(+el.dataset.sp));
+  bron("#src-signaal",nu
+    ?[{label:"xG en goals dit seizoen",bron:"FPL API bootstrap-static (expected_goals, goals_scored)",url:"https://fantasy.premierleague.com/api/bootstrap-static/"}]
+    :[{label:"xG, goals boven verwachting 2025/26",bron:"Opta via theanalyst.com",url:"https://theanalyst.com/competition/premier-league/stats"}]);
 }
 
 /* ---------- databetrouwbaarheid ---------- */
@@ -9863,6 +9813,18 @@ function laadPlan(){
     const r=localStorage.getItem(SLEUTEL); if(!r) return;
     const p=JSON.parse(r); if(!p) return;
     PLAN={gw:D.gw, transfers:p.transfers||{}, chips:p.chips||{}};
+    /* Oudere plannen kennen de prijs van het moment van invoeren niet. Die
+       krijgen de prijs van nu, zodat ze vanaf hier vastliggen — met de hand
+       terughalen wat de prijs gisteren was kan de pagina niet. */
+    let aangevuld=false;
+    for(const g of Object.keys(PLAN.transfers)){
+      (PLAN.transfers[g]||[]).forEach(t=>{
+        if(t.c_in==null){ const x=D.db.find(q=>q.id===t["in"]); if(x){ t.c_in=x.c; aangevuld=true; } }
+        if(t.c_uit==null){ const x=D.db.find(q=>q.id===t.uit); if(x){ t.c_uit=x.c; aangevuld=true; } }
+        if(!t.op){ t.op=new Date().toISOString().slice(0,10); aangevuld=true; }
+      });
+    }
+    if(aangevuld) setTimeout(bewaarWerk,0);
     BAND={};
     if(p.band&&typeof p.band==="object"){
       for(const g of Object.keys(p.band)){
@@ -9976,7 +9938,8 @@ function squadInGW(g){
     (PLAN.transfers[gg]||[]).forEach(t=>{
       const i=lijst.findIndex(x=>x.id===t.uit);
       const nieuw=D.db.find(x=>x.id===t["in"]);
-      if(i>=0&&nieuw) lijst[i]={...nieuw, slot:lijst[i].slot, cap:lijst[i].cap, vice:lijst[i].vice, gepland:gg};
+      if(i>=0&&nieuw) lijst[i]={...nieuw, slot:lijst[i].slot, cap:lijst[i].cap, vice:lijst[i].vice, gepland:gg,
+        gekocht:(t.c_in!=null?t.c_in:nieuw.c), gekocht_op:t.op||null};
     });
   }
   // handmatige opstellingswissels van deze gameweek toepassen
@@ -10027,6 +9990,17 @@ function zetBand(g,pid,rol){
   markeerVuil(); tekenAlles();
 }
 function geplandeTransfers(g){return PLAN.transfers[g]||[];}
+/* Een transfer onthoudt de prijzen van het moment waarop je hem invoerde.
+
+   Zonder dat rekende het budget met de prijs van vandaag. Palmer erin op
+   £9,6m, de nacht erna stijgt hij naar £9,7m, en de bank toonde £0,1m
+   minder dan FPL zelf — terwijl de aankoop allang rond was. Wat je betaald
+   hebt verandert niet meer; alleen wat je nog moet kopen beweegt mee. */
+function transferRecord(uitId,inId){
+  const uit=D.db.find(x=>x.id===uitId), inn=D.db.find(x=>x.id===inId);
+  return {uit:uitId,"in":inId, c_uit:uit?uit.c:null, c_in:inn?inn.c:null,
+          op:new Date().toISOString().slice(0,10)};
+}
 function planTransfer(g,uitId,inId,forceer){
   // Elke transfer langs dezelfde controle. FPL laat je tijdens het schuiven
   // best in de min staan, maar niet met vier man van een club of met een
@@ -10038,7 +10012,7 @@ function planTransfer(g,uitId,inId,forceer){
   }
   PLAN.transfers[g]=PLAN.transfers[g]||[];
   PLAN.transfers[g]=PLAN.transfers[g].filter(t=>t.uit!==uitId);
-  PLAN.transfers[g].push({uit:uitId,"in":inId});
+  PLAN.transfers[g].push(transferRecord(uitId,inId));
   markeerVuil(); tekenAlles();
   return true;
 }
@@ -10114,9 +10088,9 @@ function paneelTekenen(t){
   else if(t==="prijzen"){ prijzen(); markt(); }
   else if(t==="plan"){ solverPaneel(); }
   else if(t==="assistent"){ tekenSub("assistent");
-    analist(); captain(); droomelftal(); ideaal(); chips(); chipteams(); signalen(); }
+    analist(); captain(); droomelftal(); ideaal(); chips(); chipteams(); }
   else if(t==="research"){ tekenSub("research");
-    profiel(); research(); notities(); standPaneel(); clubs(); dbDraw(); vergelijk(); inzichten(); radar(); herkomst(); }
+    profiel(); research(); notities(); standPaneel(); clubs(); dbDraw(); vergelijk(); inzichten(); radar(); signalen(); herkomst(); }
   else if(t==="overzicht") nieuws();
   else if(t==="leagues"){ tekenSub("leagues"); rivalenPaneel(); leagues(); live(); awards(); awardsPaneel(); leagueArchief(); }
   else if(t==="mijnpagina") mijnpagina();
@@ -10254,8 +10228,7 @@ setTimeout(()=>{ for(const p in SUBTABS){
 } },0);
 const SUBTABS={
   assistent:[["nu","Wat nu","de analist"],["cap","Aanvoerder","je captainkeuze"],
-             ["droom","Droomelftal","het maximum"],["chips","Chips","wanneer inzetten"],
-             ["signalen","Signalen","wat de cijfers roepen"]],
+             ["droom","Droomelftal","het maximum"],["chips","Chips","wanneer inzetten"]],
   /* Speler en Vergelijken staan vooraan: dat zijn de twee waar je het vaakst
      bent. De spelerpagina was een eigen hoofdtabblad, maar dat kostte een van de
      elf plekken in de balk voor iets dat inhoudelijk research is. */
@@ -10312,6 +10285,28 @@ function hitKosten(g){
   if(vrij===Infinity) return 0;
   return Math.max(0,n-vrij)*4;
 }
+/* Wat de geplande transfers tot en met gameweek G netto met je bank doen.
+   Verkoop tegen de prijs van het moment van invoeren, aankoop idem; wat toen
+   niet is vastgelegd (oudere plannen) rekent met de prijs van nu. Loopt
+   dezelfde weg als squadInGW, zodat een transfer die daar niet toegepast
+   wordt (de speler zat er al niet meer in) hier ook niet meetelt. */
+function transferSaldo(g){
+  const ids=new Set(basisSelectie().map(p=>p.id));
+  let saldo=0;
+  for(const gg of D.alle_gws){
+    if(gg>g) break;
+    (PLAN.transfers[gg]||[]).forEach(t=>{
+      const nieuw=D.db.find(x=>x.id===t["in"]);
+      if(!ids.has(t.uit)||!nieuw) return;
+      const oud=D.db.find(x=>x.id===t.uit);
+      const verkoop=t.c_uit!=null?t.c_uit:(oud?oud.c:0);
+      const koop=t.c_in!=null?t.c_in:nieuw.c;
+      saldo+=verkoop-koop;
+      ids.delete(t.uit); ids.add(t["in"]);
+    });
+  }
+  return saldo;
+}
 function budgetIn(g){
   const lijst=squadInGW(g);
   /* De bank kwam uit D.entry.bank, en dat is `last_deadline_bank`: wat er in de
@@ -10322,12 +10317,11 @@ function budgetIn(g){
      dan gaat dat voor. */
   const bank=(D.budget_info&&D.budget_info.bank_nu!=null)
     ? D.budget_info.bank_nu : (D.entry?D.entry.bank:0);
-  const start=D.squad.reduce((a,p)=>a+p.c,0)+bank;
   // spelers die je in deze sessie hebt weggehaald tellen niet meer mee in de kosten,
-  // dus hun waarde komt meteen vrij in de bank
+  // dus hun waarde komt meteen vrij in de bank — tegen wat je ervoor betaalde
   const uit=new Set(LEEG.map(x=>x.id));
-  const kosten=lijst.filter(p=>!uit.has(p.id)).reduce((a,p)=>a+p.c,0);
-  return start-kosten;
+  const vrij=lijst.filter(p=>uit.has(p.id)).reduce((a,p)=>a+(p.gekocht!=null?p.gekocht:p.c),0);
+  return bank+transferSaldo(g)+vrij;
 }
 
 /* ── De geldbalk ───────────────────────────────────────────────────────
@@ -11114,7 +11108,9 @@ function openCtx(pid,x,y){
   m.innerHTML=`<div class="kop">
       <span class="ctxtegel" style="background:linear-gradient(150deg,${kl.hoofd},${kl.acc});color:${kl.tekst}">${esc(p.t)}</span>
       <span class="ctxnaam"><b>${esc(p.n)}</b>
-        <span>${p.p} · £${p.c.toFixed(1)}m · ${xp.toFixed(1)} ptn${p.cpmin?" · "+p.cpmin+"'":""}</span></span></div>
+        <span>${p.p} · £${p.c.toFixed(1)}m · ${xp.toFixed(1)} ptn${p.cpmin?" · "+p.cpmin+"'":""}</span>${
+          p.gekocht!=null&&Math.abs(p.gekocht-p.c)>0.001
+            ?`<span class="ctxgekocht">gekocht voor £${p.gekocht.toFixed(1)}m${p.gekocht_op?" op "+esc(p.gekocht_op):""} — die prijs telt voor je bank</span>`:""}</span></div>
     <button data-a="info" class="hoofd">${ik("oog")}Bekijk zijn spelerpagina</button>
     <button data-a="vgl">${ik("weegschaal")}Vergelijk met…</button>
     <button data-a="uitleg">${ik("info")}Hoe is dit cijfer opgebouwd?</button>
@@ -11294,7 +11290,7 @@ function terugblikPaneel(){
     rijen.map(r=>{
       const xi=r.picks.filter(p=>p.basis).sort((a,b)=>a.slot-b.slot);
       const bnk=r.picks.filter(p=>!p.basis).sort((a,b)=>a.slot-b.slot);
-      const rij=p=>`<tr${p.cap?' class="cap"':""}>
+      const rij=p=>`<tr${p.cap?' class="eigen"':""}>
         <td>${esc(p.n)}<span class="club">${esc(p.t)}</span>${
           p.cap?'<b class="band c">C</b>':p.vice?'<b class="band v">V</b>':""}</td>
         <td>${p.opp?esc(p.opp)+(p.thuis?" (T)":" (U)"):"—"}</td>
@@ -11780,7 +11776,7 @@ function advies(){
   const lijst=squadInGW(PLANGW);
   if(!lijst.length){box.innerHTML='<div class="empty">Geen squad ingelezen.</div>';
     bron("#src-advies",[{label:"—",bron:"state/team.json"}]);return;}
-  const bank=(D.entry?D.entry.bank:0)+ (D.squad.reduce((a,p)=>a+p.c,0)-lijst.reduce((a,p)=>a+p.c,0));
+  const bank=budgetIn(PLANGW);
   const heb=new Set(lijst.map(p=>p.id));
   const clubs={}; lijst.forEach(p=>clubs[p.t]=(clubs[p.t]||0)+1);
   const tr=geplandeTransfers(PLANGW);
@@ -12629,14 +12625,10 @@ function highlights(){
 const BEGRIPPEN=[
   {t:"DefCon",         w:"defcon defensive contribution verdedigende bijdrage tackles",
    naar:()=>gaNaarSub("research","inzicht"), sub:"Inzichten — verdedigende bijdrage"},
-  {t:"Bonusmagneten",  w:"bonus bps bonuspunten",
-   naar:()=>{gaNaarSub("assistent","signalen"); zetSignaal("bonus");}, sub:"Signalen — wie de bonus pakt"},
   {t:"Over- en onderprestatie", w:"overprestatie onderprestatie xg regressie geluk",
-   naar:()=>{gaNaarSub("assistent","signalen"); zetSignaal("over");}, sub:"Signalen — xG tegen werkelijkheid"},
+   naar:()=>gaNaarSub("research","inzicht"), sub:"Research — goals tegenover xG"},
   {t:"Prijsdruk",      w:"prijsdruk prijs stijgers dalers prijswijziging price change",
-   naar:()=>{gaNaarSub("assistent","signalen"); zetSignaal("prijs");}, sub:"Signalen — wie er stijgt of daalt"},
-  {t:"Wat de markt zegt", w:"markt odds bookmaker clean sheet btts krachtsverschil",
-   naar:()=>{gaNaarSub("assistent","signalen"); zetSignaal("markt");}, sub:"Signalen — uit de odds"},
+   naar:()=>gaNaar("prijzen"), sub:"Prijzen — wie er stijgt of daalt"},
   {t:"Rotatiedruk",    w:"rotatie europa champions league europa league rust",
    naar:()=>gaNaar("fixtures"), sub:"Fixtures — Europees programma"},
   {t:"Wildcard",       w:"wildcard chip",
@@ -12685,7 +12677,6 @@ const CLUBNAAM=(D.clubnamen&&Object.keys(D.clubnamen).length)
   ? D.clubnamen
   : Object.fromEntries([...new Set(D.db.map(p=>p.t))].map(c=>[c,c]));
 
-function zetSignaal(k){ SIGNAAL=k; if(typeof signalen==="function") signalen(); }
 let ZOEKMARK=-1;
 function zoekTreffers(q){
   q=q.toLowerCase().trim();
@@ -14039,8 +14030,8 @@ function tekenAlles(){
   // panelen die van de planning afhangen ook bijwerken als ze zichtbaar zijn
   const zichtbaar=n=>{const p=document.querySelector(`[data-paneel="${n}"]`);
     return p&&p.classList.contains("actief");};
-  if(zichtbaar("assistent")){ analist(); captain(); droomelftal(); ideaal(); chips(); chipteams(); signalen(); }
-  if(zichtbaar("research")){ dbDraw(); vergelijk(); inzichten(); radar(); clubs(); standPaneel(); }
+  if(zichtbaar("assistent")){ analist(); captain(); droomelftal(); ideaal(); chips(); chipteams(); }
+  if(zichtbaar("research")){ dbDraw(); vergelijk(); inzichten(); radar(); signalen(); clubs(); standPaneel(); }
   if(zichtbaar("plan")){ solverPaneel(); }
   if(zichtbaar("prijzen")){ prijzen(); markt(); }
   if(zichtbaar("overzicht")) nieuws();

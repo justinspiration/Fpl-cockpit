@@ -202,20 +202,34 @@ def seizoenstand(historie):
             # "hoogste" en "laagste" noemen leest dan verkeerd om — het gaat om
             # de beste en de slechtste prestatie, en welk getal daarbij hoort
             # verschilt per categorie.
+            #
+            # Een record dat geëvenaard wordt, wordt gedeeld. Hier won de
+            # eerste evenaring altijd: Palmer met 13 punten in GW1 bleef staan
+            # terwijl Gibbs-White met precies dezelfde 13 in GW2 nergens te
+            # zien was. Elke houder krijgt nu zijn eigen regel, met de
+            # gameweek en de uitleg erbij; `gw`, `teams` en `detail` blijven de
+            # eerste houder, voor wie de oude velden leest.
             for kant in ("winnaar", "verliezer"):
                 v = r[kant]["waarde"]
                 sleutel = "beste" if kant == "winnaar" else "slechtste"
                 bestaand = records.get((r["sleutel"], sleutel))
+                houder = {"gw": int(gw), "teams": r[kant]["teams"],
+                          "detail": r[kant]["detail"]}
                 if bestaand is None:
-                    beter = True
-                elif r["hoog_is_goed"]:
-                    beter = v > bestaand["waarde"] if kant == "winnaar" else v < bestaand["waarde"]
+                    beter, gelijk = True, False
                 else:
-                    beter = v < bestaand["waarde"] if kant == "winnaar" else v > bestaand["waarde"]
+                    gelijk = v == bestaand["waarde"]
+                    if r["hoog_is_goed"]:
+                        beter = v > bestaand["waarde"] if kant == "winnaar" else v < bestaand["waarde"]
+                    else:
+                        beter = v < bestaand["waarde"] if kant == "winnaar" else v > bestaand["waarde"]
                 if beter:
                     records[(r["sleutel"], sleutel)] = {
                         "gw": int(gw), "waarde": v, "teams": r[kant]["teams"],
-                        "detail": r[kant]["detail"], "titel": r["titel"]}
+                        "detail": r[kant]["detail"], "titel": r["titel"],
+                        "houders": [houder]}
+                elif gelijk:
+                    bestaand.setdefault("houders", []).append(houder)
     tabel = []
     for e in set(list(gewonnen) + list(verloren)):
         w, v = gewonnen[e], verloren[e]
