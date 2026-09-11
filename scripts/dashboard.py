@@ -93,7 +93,10 @@ POS_WEGING = {"FWD": (1.00, 0.00), "MID": (0.75, 0.25),
 # spelers zonder Premier League-historie (promovendi, verse aankopen, langdurig
 # geblesseerden) terug op nul omdat er geen punten-per-90 is om op te bouwen.
 # Het dashboard labelt daarom elke gameweek voorbij Copilots bereik apart.
-CHIPVENSTER = 12
+# Acht gameweeks vooruit: precies zo ver als FPL Copilot reikt. Verder kijken
+# betekende rekenen op cijfers uit het eigen model, en kostte twee derde van
+# de bouwtijd van de chipteams.
+CHIPVENSTER = 8
 
 # Clubkleuren voor de shirts op het veld: [hoofdkleur, accent].
 # Overgenomen van de officiele tenues 26/27.
