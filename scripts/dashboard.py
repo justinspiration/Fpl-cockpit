@@ -1138,18 +1138,39 @@ def build():
     # invoer; verandert er iets aan de projecties, de selectie of het budget,
     # dan wordt er gewoon opnieuw gerekend.
     import hashlib as _hl
+    # De vingerafdruk hing aan de berekende projecties van alle spelers. Die
+    # verschuiven tijdens een speelronde elke minuut een beetje (minuten en
+    # punten van vandaag stromen het eigen model in), waardoor de tweede
+    # bouw van dezelfde ronde nooit de cache raakte en op GitHub in de
+    # tijdslimiet liep. Nu hangt hij aan wat de zware sommen werkelijk
+    # sturen: de gameweek, je selectie en bank, en de INHOUD van de
+    # projectiebronnen (zonder hun ophaalstempel). Verandert Copilot of
+    # Pundit niet, dan worden de sommen ook niet opnieuw gedaan -- ook niet
+    # in de volgende ronde.
+    def _bronvinger(naam):
+        d = _lees(naam, {}) or {}
+        d = {k: v for k, v in d.items() if k not in ("_opgehaald", "opgehaald", "_bijgewerkt")}
+        return _hl.sha1(json.dumps(d, sort_keys=True, default=str).encode()).hexdigest()
     _vinger = _hl.sha1(json.dumps({
         "gw": gw,
         "squad": sorted(x["id"] for x in squad) if squad else [],
         "bank": (entry_meta or {}).get("last_deadline_bank"),
-        "proj": _hl.sha1(json.dumps(
-            {str(p["id"]): p["gw"] for p in db}, sort_keys=True).encode()).hexdigest(),
+        "copilot": _bronvinger("xp_copilot.json"),
+        "pundit": _bronvinger("xp_pundit.json"),
+        "estimator": _bronvinger("xp_estimator.json"),
+        "chipvenster": CHIPVENSTER,
     }, sort_keys=True).encode()).hexdigest()
     _cachepad = os.path.join(STATE, "zwaar_cache.json")
     _cache = _lees("zwaar_cache.json", {}) or {}
     _hergebruik = _cache.get("_vinger") == _vinger
     if _hergebruik:
         print("  Zware berekeningen hergebruikt (invoer ongewijzigd)")
+
+    import time as _tijd
+    _t0 = _tijd.time()
+    def _klok(naam):
+        nonlocal _t0
+        print("  [%3.0fs] %s" % (_tijd.time() - _t0, naam)); _t0 = _tijd.time()
 
     # ---- chipteams: wildcard en free hit ----
     # Twee wezenlijk verschillende vragen:
@@ -1171,7 +1192,9 @@ def build():
         for sleutel, horizon, naam in (("freehit", 1, "Free Hit"),
                                        ("wildcard5", 5, "Wildcard over 5"),
                                        ("wildcard8", 8, "Wildcard over 8")):
-            r = BW.bouw(db, budget_nu, gw, horizon, breedte=40)
+            # Op de hele database met breedte 40 was dit de duurste stap van de
+            # bouw. Voorfilteren geeft dezelfde uitkomst (getest in bouwer.py).
+            r = BW.bouw(BW.voorfilter(db, gw, horizon), budget_nu, gw, horizon, breedte=24)
             if not r:
                 continue
             xp, clubs, ids, kost = r
@@ -1318,6 +1341,7 @@ def build():
         print("  LET OP: chipteams mislukt: %s" % str(ex)[:200])
         traceback.print_exc()
         chipteams = {"fout": str(ex)[:200]}
+    _klok("chipteams" + (" (uit cache)" if _hergebruik and _cache.get("chipteams") else ""))
 
     # ---- beste selectie voor hetzelfde budget, als ijkpunt ----
     # ── Hoeveel vrije transfers heb je werkelijk? ────────────────────────
@@ -1570,22 +1594,15 @@ def build():
         pass
     except Exception as ex:
         ideaal = {"fout": str(ex)[:200]}
+    _klok("ideaal" + (" (uit cache)" if _hergebruik and _cache.get("ideaal") else ""))
 
-    # uitkomst bewaren zodat de tweede bouw (met het nieuws erbij) hem hergebruikt
-    if not _hergebruik:
-        try:
-            # een mislukte uitkomst niet bewaren: dan blijft een fout een
-            # heel uur staan terwijl de volgende ronde hem gewoon had opgelost
-            json.dump({"_vinger": _vinger,
-                       "ideaal": None if isinstance(ideaal, dict) and ideaal.get("fout") else ideaal,
-                       "chipteams": None if isinstance(chipteams, dict) and chipteams.get("fout") else chipteams},
-                      open(_cachepad, "w", encoding="utf-8"))
-        except Exception:
-            pass
 
     # ---- multi-gameweek solver ----
     solverplan = None
     try:
+        if _hergebruik and _cache.get("solverplan"):
+            solverplan = _cache["solverplan"]
+            raise StopIteration
         import solver as SOLVER
         sq = [next(x for x in db if x["id"] == p_["id"]) for p_ in squad] if squad else []
         if len(sq) == 15:
@@ -1603,8 +1620,21 @@ def build():
                           "alt": [{"punten": round(p2["punten"], 1),
                                    "pad": [{"gw": st["gw"], "acties": st["acties"]} for st in p2["pad"]]}
                                   for p2 in paden[1:4]]}
+    except StopIteration:
+        pass
     except Exception as ex:
         solverplan = {"fout": str(ex)[:160]}
+    _klok("solver" + (" (uit cache)" if _hergebruik and _cache.get("solverplan") else ""))
+    # de cache pas hier wegschrijven, mét de solver erin
+    if not _hergebruik:
+        try:
+            json.dump({"_vinger": _vinger,
+                       "ideaal": None if isinstance(ideaal, dict) and ideaal.get("fout") else ideaal,
+                       "chipteams": None if isinstance(chipteams, dict) and chipteams.get("fout") else chipteams,
+                       "solverplan": None if isinstance(solverplan, dict) and solverplan.get("fout") else solverplan},
+                      open(_cachepad, "w", encoding="utf-8"))
+        except Exception:
+            pass
 
     return {
         "gegenereerd": now.isoformat(timespec="seconds"),
