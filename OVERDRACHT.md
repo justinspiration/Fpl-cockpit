@@ -166,7 +166,22 @@ Hoe het sjabloon in elkaar zit sinds september 2026:
 - Assistent "Wat nu": `beslissingen(G)` vóór de signalen van `analyseer()`.
 - Terugblik: league-gemiddelde en hoogste per gameweek komen uit
   `D.archief.gameweeks` (echte punten van alle managers), nooit geschat.
-- Vergelijken: standaard het lopende seizoen zodra er drie ronden zijn;
+- Seizoensplan: `solveJS(squad, bank, gws, vrij, opt)` rekent één
+  strategie door (opt: maxZet, extra = hits, perZet = lat per wissel,
+  wacht, eersteMin, doel). `solverStappen()` draait er vijf (week voor
+  week, doelgericht, sparen & toeslaan, rustig, met hits) plus "niets
+  doen" en `tekenPaden()` tekent de kiezer, de sleutelaankoop en de
+  tijdlijn. Binnenkomers gaan langs dezelfde kwaliteitsvloer als de
+  transferpagina (beschikbaar, >=75 minuten, >=1% eigendom, boven het
+  positiegemiddelde of de goedkoopste met minuten); `UITSLUIT` geldt ook
+  hier. Vooruitblik is altijd vier weken, ook aan het eind van het plan;
+  wie in het plan gehaald is wordt niet meer verkocht. Uitkomst wordt
+  onthouden op `solverSleutel()` (selectie, bank, planning, uitsluitingen).
+- Vergelijken: standaard het lopende seizoen zodra er één ronde is; een
+  opgeslagen seizoenskeuze telt alleen als de gebruiker die zelf zette
+  (`SEIZOEN_VAST`). Arena met rondestand (`winA`/`winB` uit de assen),
+  spelerkiezer per kant (`openKiezer(kant)`, zoeken op naam/club, filters
+  positie/mijn team/volglijst) -- er zijn geen zoekbalken meer in de HTML.
   xG dit seizoen is FPL's `sxg`, vorig seizoen Opta. Ondergrens per-90:
   twee duels.
 - Stijl: alles nieuws staat in de "VISUELE LAAG"-blokken onderaan het

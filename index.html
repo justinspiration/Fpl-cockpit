@@ -5092,7 +5092,136 @@ body::after{ opacity:.06; }
   .padkaart{ flex:0 0 78%; scroll-snap-align:start; }
   .padtijdlijn .stap{ grid-template-columns:44px minmax(0,1fr) auto; }
   .padtijdlijn .stap .kost{ display:none; }
-  .doelwit.padhero .dwfoto img{ height:170px; }
+  .doelwit.padhero .dwfoto{ width:100%; } .doelwit.padhero .dwfoto img{ height:170px; }
+}
+
+/* ══ VISUELE LAAG 8: vergelijken als tweestrijd ═══════════════════════════ */
+.arena{ position:relative; display:grid; grid-template-columns:minmax(0,1fr) 92px minmax(0,1fr); align-items:stretch; gap:0;
+  border-radius:var(--r3); overflow:hidden; border:1px solid var(--line); box-shadow:var(--e3); margin-bottom:var(--s3); min-height:250px; padding-bottom:10px;
+  background:linear-gradient(90deg, color-mix(in srgb,var(--ka) 42%,var(--ink)) 0%, color-mix(in srgb,var(--ka) 14%,var(--card)) 44%,
+                                    color-mix(in srgb,var(--kb) 14%,var(--card)) 56%, color-mix(in srgb,var(--kb) 42%,var(--ink)) 100%); }
+.arena::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.35;
+  background:repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 2px, transparent 2px 14px); }
+.arena::after{ content:""; position:absolute; top:-10%; bottom:-10%; left:50%; width:3px; transform:translateX(-50%) skewX(-14deg); pointer-events:none;
+  background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--fg) 45%,transparent) 30%,color-mix(in srgb,var(--fg) 45%,transparent) 70%,transparent); opacity:.5; }
+.arena-kant{ position:relative; display:grid; grid-template-columns:auto minmax(0,1fr); align-items:end; gap:var(--s3); padding:var(--s4); min-width:0; z-index:1; }
+.arena-kant.rechts{ grid-template-columns:minmax(0,1fr) auto; text-align:right; }
+.arena-kant.rechts .arena-foto{ order:2; } .arena-kant.rechts .arena-tekst{ order:1; align-items:flex-end; }
+.arena-kant.rechts .arena-club{ flex-direction:row-reverse; }
+.arena-kant.rechts .arena-cijfers{ justify-content:flex-end; }
+.arena-kant:not(.metfoto){ grid-template-columns:minmax(0,1fr); }
+.arena-foto{ width:170px; height:190px; display:flex; align-items:flex-end; justify-content:center; overflow:visible; }
+.arena-foto img{ height:215px; width:auto; max-width:none; filter:drop-shadow(0 12px 22px rgba(0,0,0,.55)); margin-bottom:-14px; animation:fade var(--rustig) var(--uit) both; }
+.arena-tekst{ position:relative; z-index:2; display:flex; flex-direction:column; gap:5px; min-width:0; }
+.arena-kies{ align-self:flex-start; display:inline-flex; align-items:center; gap:5px; border:1px solid color-mix(in srgb,var(--fg) 22%,transparent); background:color-mix(in srgb,var(--card) 55%,transparent);
+  color:var(--fg-2); border-radius:99px; padding:4px 10px; font-family:inherit; font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; backdrop-filter:blur(6px);
+  transition:background-color var(--vlot) var(--uit), color var(--vlot) var(--uit), border-color var(--vlot) var(--uit); }
+.arena-kies:hover{ background:var(--accent-dim); color:var(--accent); border-color:var(--accent); }
+.arena-kant.rechts .arena-kies{ align-self:flex-end; }
+.arena-club{ display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:650; letter-spacing:.04em; text-transform:uppercase; color:var(--fg-2); }
+.arena-club em{ font-style:normal; color:var(--warn); }
+.arena-naam{ font-size:clamp(26px,3.6vw,44px); font-weight:800; letter-spacing:-.035em; line-height:.96; text-transform:uppercase; cursor:pointer;
+  background:linear-gradient(180deg,var(--fg) 30%,color-mix(in srgb,var(--fg) 45%,var(--k1))); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.arena-naam:hover{ text-decoration:underline; text-decoration-color:var(--k1); text-underline-offset:4px; }
+.arena-cijfers{ display:flex; gap:var(--s3); flex-wrap:wrap; margin-top:2px; }
+.arena-cijfers span{ display:flex; flex-direction:column; gap:1px; }
+.arena-cijfers b{ font-family:var(--mono); font-size:17px; font-weight:750; letter-spacing:-.02em; line-height:1; }
+.arena-cijfers i{ font-style:normal; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); }
+.arena-kant.leidt .arena-cijfers span:first-child b{ color:var(--good); }
+.arena-lint{ position:absolute; top:14px; left:0; z-index:3; display:inline-flex; align-items:center; gap:4px; padding:4px 10px 4px 12px; border-radius:0 99px 99px 0;
+  background:var(--good); color:var(--ink); font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; box-shadow:0 3px 10px -3px rgba(0,0,0,.6); }
+.arena-kant.rechts .arena-lint{ left:auto; right:0; border-radius:99px 0 0 99px; padding:4px 12px 4px 10px; }
+.arena-water{ position:absolute; bottom:-.3em; z-index:0; font-size:clamp(90px,14vw,180px); font-weight:900; letter-spacing:-.06em; line-height:1;
+  color:color-mix(in srgb,var(--k2) 9%,transparent); pointer-events:none; user-select:none; }
+.arena-kant.links .arena-water{ left:-.05em; } .arena-kant.rechts .arena-water{ right:-.05em; }
+.arena-mid{ position:relative; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:var(--s3) 0; }
+.vsbadge{ position:relative; width:64px; height:64px; display:inline-flex; align-items:center; justify-content:center;
+  clip-path:polygon(50% 0,100% 28%,100% 72%,50% 100%,0 72%,0 28%);
+  background:linear-gradient(135deg,var(--ka) 0 48%,var(--kb) 52% 100%); box-shadow:0 0 0 3px color-mix(in srgb,var(--fg) 12%,transparent); }
+.vsbadge::before{ content:""; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,.35),transparent 45%,rgba(0,0,0,.35)); }
+.vsbadge::after{ content:""; position:absolute; inset:0; background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.45) 48%,transparent 60%); transform:translateX(-120%); animation:vsglans 4s ease-in-out infinite; }
+@keyframes vsglans{ 0%,60%{ transform:translateX(-120%);} 90%,100%{ transform:translateX(120%);} }
+@media (prefers-reduced-motion:reduce){ .vsbadge::after{ animation:none; } }
+.vsbadge span{ position:relative; font-family:var(--mono); font-size:22px; font-weight:900; letter-spacing:-.04em; color:#fff; font-style:italic; text-shadow:0 2px 6px rgba(0,0,0,.6); }
+.vsscore{ display:inline-flex; align-items:baseline; gap:4px; font-family:var(--mono); font-size:24px; font-weight:900; letter-spacing:-.03em; line-height:1; }
+.vsscore i{ font-style:normal; color:var(--fg-3); font-size:16px; }
+.vsscore b.a{ color:color-mix(in srgb,var(--ka) 60%,var(--fg)); } .vsscore b.b{ color:color-mix(in srgb,var(--kb) 60%,var(--fg)); }
+.vsscore-l{ font-size:8.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--fg-3); font-weight:800; margin-top:-3px; }
+.arena-swap{ margin-top:4px; width:34px; height:34px; border-radius:50%; font-size:16px; display:inline-flex; align-items:center; justify-content:center; }
+.arena-balk{ grid-column:1/-1; position:relative; z-index:2; height:8px; margin:0 var(--s4); border-radius:99px; overflow:hidden;
+  background:linear-gradient(90deg,color-mix(in srgb,var(--ka) 35%,transparent),color-mix(in srgb,var(--kb) 35%,transparent)); }
+.arena-balk i{ position:absolute; inset:0; background:linear-gradient(90deg,var(--ka) 0 calc(var(--pa)*1%),var(--kb) calc(var(--pa)*1%) 100%); }
+.arena-balk i::after{ content:""; position:absolute; top:-3px; bottom:-3px; left:calc(var(--pa)*1%); width:3px; transform:translateX(-50%); background:var(--fg); border-radius:2px; }
+.vglseizoen{ margin-bottom:var(--s3); }
+.rondekop{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; margin:var(--s3) 0 6px; }
+.rondekop b{ font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--fg-3); }
+.rondekop .rk{ font-size:var(--t-xs); font-weight:800; text-transform:uppercase; letter-spacing:.06em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.rondekop .rk.a{ text-align:right; } .rondekop .rk.b{ text-align:left; }
+.vgltab.rondes{ border-collapse:separate; border-spacing:0 3px; }
+.vgltab.rondes td{ border:0; background:color-mix(in srgb,var(--fg) 2.5%,transparent); padding:8px 10px; }
+.vgltab.rondes td.l{ border-radius:10px 0 0 10px; } .vgltab.rondes td.r{ border-radius:0 10px 10px 0; }
+.vgltab.rondes tr.kop td{ background:transparent; padding:14px 10px 4px; }
+.vgltab.rondes tr.kop td span{ font-size:9.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--fg-3); font-weight:700; }
+.vgltab.rondes tr.wa td.l{ background:linear-gradient(90deg,color-mix(in srgb,var(--good) 16%,transparent),color-mix(in srgb,var(--good) 5%,transparent)); }
+.vgltab.rondes tr.wb td.r{ background:linear-gradient(270deg,color-mix(in srgb,var(--good) 16%,transparent),color-mix(in srgb,var(--good) 5%,transparent)); }
+.vgltab.rondes td.win .vwaarde{ color:var(--good); font-weight:800; }
+.vgltab.rondes td.win::after{ display:none; }
+.vgltab.rondes td.mid{ position:relative; }
+.vrond{ display:inline-block; width:7px; height:7px; border-radius:50%; margin-left:6px; vertical-align:middle; background:var(--good); box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 22%,transparent); }
+.vgeen{ color:var(--fg-3); font-family:var(--sans,inherit); font-size:11px; }
+.vgluit.uitslag{ position:relative; overflow:hidden; border:1px solid color-mix(in srgb,var(--k1) 45%,var(--line)); border-radius:var(--r2); padding:14px 16px;
+  background:linear-gradient(100deg,color-mix(in srgb,var(--k1) 16%,var(--card)),var(--card) 70%); }
+.uitslagkop{ display:inline-flex; align-items:center; gap:6px; font-size:9.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--fg-2); margin-bottom:6px; }
+.vgluit.uitslag p{ margin:0; line-height:1.55; }
+.vkiezer{ margin-bottom:var(--s3); padding:14px; border-radius:var(--r3); border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line)); background:var(--card); background-image:var(--glans); box-shadow:var(--e2);
+  animation:fade var(--vlot) var(--uit) both; }
+.vkkop{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; }
+.vkkop b{ display:inline-flex; align-items:center; gap:6px; font-size:var(--t-md); }
+.vksluit{ display:inline-flex; align-items:center; gap:4px; border:1px solid var(--line); background:transparent; color:var(--fg-3); border-radius:99px; padding:4px 10px; font-family:inherit; font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; cursor:pointer; }
+.vksluit:hover{ color:var(--fg); border-color:var(--fg-3); }
+.vkzoek{ display:flex; align-items:center; gap:8px; min-height:44px; padding:0 14px; border-radius:12px; border:1px solid var(--line); background:var(--ink-3); color:var(--fg-3); margin-bottom:10px; }
+.vkzoek:focus-within{ border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent); }
+.vkzoek input{ flex:1; min-width:0; border:0; background:transparent; color:var(--fg); font-family:inherit; font-size:var(--t-md); outline:none; padding:0; }
+.vkzoek input::-webkit-search-cancel-button{ -webkit-appearance:none; }
+.vkfilters{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:12px; }
+.vkfilters .seg button{ min-height:30px; padding:0 10px; font-size:11px; }
+.vkraster{ display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:8px; max-height:420px; overflow:auto; padding:2px; }
+.vktegel{ display:grid; grid-template-columns:64px minmax(0,1fr) auto; gap:10px; align-items:center; padding:8px 12px 8px 8px; text-align:left; cursor:pointer;
+  border-radius:var(--r2); border:1px solid var(--line); background:linear-gradient(120deg,color-mix(in srgb,var(--k1) 18%,var(--card)),var(--card) 70%);
+  box-shadow:var(--e1); font-family:inherit; color:var(--fg); transition:transform var(--vlot) var(--veer), box-shadow var(--vlot) var(--uit), border-color var(--vlot) var(--uit); }
+.vktegel:hover{ transform:translateY(-2px); box-shadow:var(--e2); border-color:color-mix(in srgb,var(--accent) 50%,var(--line)); }
+.vktegel.bezig{ opacity:.55; }
+.vktegel .vkt{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+.vktegel .vkt b{ font-size:var(--t-md); font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.vktegel .vkt>span{ font-size:10.5px; color:var(--fg-3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.vktegel .vkc{ display:flex; gap:4px; flex-wrap:wrap; margin-top:2px; }
+.vktegel .vkc i{ font-style:normal; font-family:var(--mono); font-size:9.5px; font-weight:700; padding:2px 6px; border-radius:99px; background:color-mix(in srgb,var(--fg) 7%,transparent); color:var(--fg-2); }
+.vktegel .vkc i.vkmijn{ color:var(--accent-2); background:var(--accent-dim); }
+.vktegel .vkc i.vkfit{ color:var(--warn); background:color-mix(in srgb,var(--warn) 14%,transparent); }
+.vktegel .vkxp{ display:flex; flex-direction:column; align-items:flex-end; }
+.vktegel .vkxp b{ font-family:var(--mono); font-size:16px; font-weight:800; letter-spacing:-.02em; }
+.vktegel .vkxp i{ font-style:normal; font-size:8.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); }
+.vslim{ margin-top:var(--s3); }
+@media(max-width:760px){
+  .arena{ grid-template-columns:1fr; padding-bottom:12px; }
+  .arena::after{ display:none; }
+  .arena-mid{ flex-direction:row; gap:14px; padding:6px var(--s3); }
+  .vsbadge{ width:48px; height:48px; } .vsbadge span{ font-size:16px; }
+  .vsscore-l{ display:none; }
+  .arena-kant,.arena-kant.rechts{ grid-template-columns:auto minmax(0,1fr); text-align:left; }
+  .arena-kant.rechts .arena-foto{ order:0; } .arena-kant.rechts .arena-tekst{ order:1; align-items:flex-start; }
+  .arena-kant.rechts .arena-club{ flex-direction:row; } .arena-kant.rechts .arena-cijfers{ justify-content:flex-start; }
+  .arena-kant.rechts .arena-kies{ align-self:flex-start; }
+  .arena-foto{ width:104px; height:120px; } .arena-foto img{ height:136px; }
+  .arena-naam{ font-size:clamp(22px,7vw,32px); }
+  .arena-water{ font-size:80px; }
+  .arena-kant.rechts .arena-lint{ left:0; right:auto; border-radius:0 99px 99px 0; }
+  .vkraster{ grid-template-columns:1fr; max-height:360px; }
+}
+/* onderdelenkiezer op een smal scherm: de latere regel "flex:1 1 auto; min-width:0"
+   won van de schuivende rij, waardoor negen knoppen over elkaar heen vielen */
+@media(max-width:640px){
+  .subkeus button{ flex:0 0 auto; min-width:96px; }
 }
 
 /* het zwevende menu: zelfde iconen als de tabbalk */
@@ -5466,28 +5595,8 @@ body::after{ opacity:.06; }
       <div class="grid">
         <section class="card">
       <h2><span class="dot"></span>Speler tegen speler
-        <span class="tag">alle assen naast elkaar</span></h2>
+        <span class="tag">wie wint de meeste rondes?</span></h2>
       <div class="body">
-        <!-- Twee zoekbalken, links en rechts, precies zoals koppelZoek() ze
-             verwacht. Hier stonden nog twee keuzelijsten die door niemand
-             gevuld werden: de JS was al omgebouwd naar zoeken, de HTML niet. -->
-        <div class="vglkies">
-          <div class="vglkop">
-            <div class="vzoek vglkant">
-              <input id="vglQA" type="search" autocomplete="off"
-                     placeholder="Zoek de linker speler…" aria-label="Linker speler">
-              <div class="vsug" id="vglSA" hidden></div>
-            </div>
-            <button class="vwissel" id="vglSwap" title="Wissel links en rechts om"
-              aria-label="Wissel links en rechts om">&#8646;</button>
-            <div class="vzoek vglkant">
-              <input id="vglQB" type="search" autocomplete="off"
-                     placeholder="Zoek de rechter speler…" aria-label="Rechter speler">
-              <div class="vsug" id="vglSB" hidden></div>
-            </div>
-          </div>
-          <div class="vslim" id="vglSlim"></div>
-        </div>
         <div id="vglbox"></div>
       </div>
       <div class="src" id="src-vgl"></div>
@@ -7624,7 +7733,11 @@ let VGL=[null,null];
    er genoeg om op te bouwen en zijn de cijfers van vorig jaar vooral nog
    context. Wie het toch anders wil, kiest het in het stuurpaneel of op de
    vergelijkpagina. */
-let SEIZOEN=(D.seizoen&&(D.seizoen.gespeeld||0)>=3&&D.seizoen.live_is)?D.seizoen.live_is:"2025/26";
+/* Standaard het lopende seizoen zodra er een ronde gespeeld is. Een eerder
+   opgeslagen keuze telt alleen als je hem zelf bewust hebt gezet (SEIZOEN_VAST);
+   anders bleef een oude voorkeur voor 2025/26 het hele seizoen hangen. */
+let SEIZOEN=(D.seizoen&&(D.seizoen.gespeeld||0)>=1&&D.seizoen.live_is)?D.seizoen.live_is:"2025/26";
+let SEIZOEN_VAST=false;
 
 /* Haal een historisch veld op in het gekozen seizoen.
    FPL's API draagt maar een seizoen tegelijk: voor de eerste afgeronde gameweek
@@ -7648,7 +7761,8 @@ function seizoenLeeg(){
   return SEIZOEN==="2026/27"&&(S.gespeeld||0)===0;
 }
 
-/* Zoekveld met suggesties, per kant. Vervangt de dropdown zodat je kunt typen. */
+/* De vergelijker begint met je twee sterkste middenvelders; daarna kies je
+   per kant via de kiezer in de arena. */
 function vulVgl(){
   const lijst=squadInGW(PLANGW);
   if(VGL[0]==null&&lijst.length){
@@ -7662,58 +7776,72 @@ function vulVgl(){
       if(ander) VGL[1]=ander.id;
     }
   }
-  [0,1].forEach(i=>koppelZoek(i));
-  zetZoekTekst();
   vergelijk();
 }
-function zetZoekTekst(forceer){
-  // Normaal laten we een veld met focus met rust — anders wist je je eigen
-  // zoekterm terwijl je typt. Na het kiezen van een speler moet de naam er
-  // juist wél in, ook als het veld nog focus heeft.
-  [0,1].forEach(i=>{const inp=$(i?"#vglQB":"#vglQA"); if(!inp) return;
-    const p=D.db.find(x=>x.id===+VGL[i]);
-    if(p&&(forceer||document.activeElement!==inp))
-      inp.value=`${p.n} · ${p.t} · £${p.c.toFixed(1)}`;});
+/* ══════════════════════════════════════════════════════════════════════
+   De spelerkiezer — één paneel voor beide kanten
+   ══════════════════════════════════════════════════════════════════════
+   De twee zoekbalken stonden per ongeluk op display:none sinds de arena
+   erin kwam, en de naam stond er met club en prijs in ("Palmer · CHE ·
+   £9,7") -- niet netjes. Nu opent elke kant hetzelfde paneel: zoeken op
+   naam of club, filteren op positie, je eigen team of je volglijst, en
+   tegels met foto, club, prijs en verwachting. Het zoekveld is altijd leeg
+   als je begint. */
+let KIEZER=null;
+function openKiezer(kant){
+  KIEZER={kant:+kant,q:"",pos:"alle",bron:"alle"};
+  tekenKiezer(true);
 }
-function koppelZoek(kant){
-  const inp=$(kant?"#vglQB":"#vglQA"), box=$(kant?"#vglSB":"#vglSA");
-  if(!inp||inp.dataset.klaar) return;
-  inp.dataset.klaar="1";
-  let markeer=-1;
-  const sluit=()=>{box.hidden=true; markeer=-1;};
-  const teken=()=>{
-    const q=inp.value.toLowerCase().trim();
-    // op naam of club; zonder zoekterm de hoogst geprojecteerde spelers
-    let r=D.db.filter(p=>!q||p.n.toLowerCase().includes(q)||p.t.toLowerCase().includes(q));
-    r.sort((a,b)=>(b.gw[PLANGW]||0)-(a.gw[PLANGW]||0));
-    r=r.slice(0,40);
-    if(!r.length){ box.innerHTML=`<div class="leegtxt" style="padding:10px 12px">Geen speler gevonden.</div>`;
-      box.hidden=false; return; }
-    box.innerHTML=r.map((p,i)=>{const k=shirtKleur(p.t);
-      return `<button data-id="${p.id}" class="${i===markeer?"sel":""}">
-        <span class="tg" style="background:linear-gradient(150deg,${k.hoofd},${k.acc});color:${k.tekst}">${esc(p.t)}</span>
-        <span><b>${esc(p.n)}</b> <span style="color:var(--fg-3)">${p.p} · £${p.c.toFixed(1)}m</span>${
-          p.status!=="a"?' <span class="badge b-doubt">?</span>':""}</span>
-        <span class="mt">${(p.gw[PLANGW]||0).toFixed(1)}</span></button>`;}).join("");
-    box.hidden=false;
-    box.querySelectorAll("[data-id]").forEach(b=>b.onclick=()=>kies(+b.dataset.id));
-  };
-  const kies=id=>{
-    if(VGL[1-kant]===id) VGL[1-kant]=VGL[kant];   // niet twee keer dezelfde
-    VGL[kant]=id; sluit(); zetZoekTekst(true); vergelijk();
-  };
-  inp.oninput=teken;
-  inp.onfocus=()=>{inp.select(); teken();};
-  inp.onblur=()=>setTimeout(sluit,160);
+function sluitKiezer(){ KIEZER=null; const slot=$("#vkiezer"); if(slot){ slot.hidden=true; slot.innerHTML=""; } }
+function kiezerLijst(){
+  const K=KIEZER; if(!K) return [];
+  const mijn=new Set(squadInGW(PLANGW).map(p=>p.id));
+  const q=K.q.toLowerCase().trim();
+  return D.db.filter(p=>{
+    if(q&&!(p.n.toLowerCase().includes(q)||p.t.toLowerCase().includes(q)||clubNaam(p.t).toLowerCase().includes(q))) return false;
+    if(K.pos!=="alle"&&p.p!==K.pos) return false;
+    if(K.bron==="mijn"&&!mijn.has(p.id)) return false;
+    if(K.bron==="watch"&&!WATCH.includes(p.id)) return false;
+    return true;
+  }).sort((a,b)=>somGW(b,PLANGW,5)-somGW(a,PLANGW,5)).slice(0,24);
+}
+function tekenKiezerRaster(){
+  const slot=$("#vkiezer"); const r=slot&&slot.querySelector(".vkraster"); if(!r) return;
+  const K=KIEZER, mijn=new Set(squadInGW(PLANGW).map(p=>p.id));
+  const lijst=kiezerLijst();
+  r.innerHTML=lijst.length?lijst.map((p,i)=>{const k=shirtKleur(p.t);
+    return `<button class="vktegel${p.code?" metfoto":""}${i===0?" eerste":""}${VGL.includes(p.id)?" bezig":""}" data-vkid="${p.id}" style="--k1:${k.hoofd};--k2:${k.acc}">
+      ${portret(p,"groot")}
+      <span class="vkt"><b>${esc(p.n)}</b><span>${esc(clubNaam(p.t))} \u00b7 ${POSNAAM[p.p]||p.p}</span>
+        <span class="vkc"><i>\u00a3${p.c.toFixed(1)}m</i><i>${(p.own||0).toFixed(1)}%</i>${p.status!=="a"?'<i class="vkfit">niet fit</i>':""}${mijn.has(p.id)?'<i class="vkmijn">jouw team</i>':WATCH.includes(p.id)?'<i class="vkmijn">volglijst</i>':""}</span></span>
+      <span class="vkxp"><b>${somGW(p,PLANGW,5).toFixed(1)}</b><i>ptn 5 GW</i></span>
+    </button>`;}).join(""):'<div class="leegtxt" style="padding:14px">Geen speler gevonden.</div>';
+  r.querySelectorAll("[data-vkid]").forEach(b=>b.onclick=()=>{ zetVgl(+b.dataset.vkid,K.kant); });
+}
+function tekenKiezer(focus){
+  const slot=$("#vkiezer"); if(!slot||!KIEZER) return;
+  const K=KIEZER, ander=D.db.find(p=>p.id===+VGL[1-K.kant]);
+  slot.hidden=false;
+  slot.innerHTML=`<div class="vkkop"><b>${ik("wissel",14)} Kies de ${K.kant?"rechter":"linker"} speler</b>
+      <button class="vksluit" data-vksluit>${ik("sluit",12)}sluiten</button></div>
+    <label class="vkzoek">${ik("zoek",15)}<input type="search" placeholder="Zoek op naam of club\u2026" value="${esc(K.q)}" autocomplete="off" spellcheck="false" aria-label="Zoek een speler"></label>
+    <div class="vkfilters">
+      <span class="seg">${["alle","GKP","DEF","MID","FWD"].map(x=>`<button data-vkpos="${x}" aria-pressed="${K.pos===x}">${x==="alle"?"Alle posities":x}</button>`).join("")}</span>
+      <span class="seg">${[["alle","Iedereen"],["mijn","Mijn team"],["watch","Volglijst"]].map(([k,t])=>`<button data-vkbron="${k}" aria-pressed="${K.bron===k}">${t}</button>`).join("")}</span>
+      ${ander&&K.pos!==ander.p?`<button class="repil" data-vkpos="${ander.p}">${ik("weegschaal",12)} zelfde positie als ${esc(ander.n)}</button>`:""}
+    </div>
+    <div class="vkraster"></div>`;
+  tekenKiezerRaster();
+  const inp=slot.querySelector("input");
+  inp.oninput=()=>{ K.q=inp.value; tekenKiezerRaster(); };
   inp.onkeydown=e=>{
-    const knoppen=[...box.querySelectorAll("[data-id]")];
-    if(e.key==="ArrowDown"||e.key==="ArrowUp"){ e.preventDefault();
-      markeer=Math.max(0,Math.min(knoppen.length-1,markeer+(e.key==="ArrowDown"?1:-1)));
-      teken(); box.querySelector(".sel")?.scrollIntoView({block:"nearest"}); }
-    else if(e.key==="Enter"){ e.preventDefault();
-      const b=knoppen[markeer>=0?markeer:0]; if(b) kies(+b.dataset.id); }
-    else if(e.key==="Escape") sluit();
+    if(e.key==="Enter"){ e.preventDefault(); const b=slot.querySelector("[data-vkid]"); if(b) b.click(); }
+    else if(e.key==="Escape") sluitKiezer();
   };
+  slot.querySelectorAll("[data-vkpos]").forEach(b=>b.onclick=()=>{ K.pos=b.dataset.vkpos; tekenKiezer(); slot.querySelector("input").focus(); });
+  slot.querySelectorAll("[data-vkbron]").forEach(b=>b.onclick=()=>{ K.bron=b.dataset.vkbron; tekenKiezer(); slot.querySelector("input").focus(); });
+  slot.querySelector("[data-vksluit]").onclick=sluitKiezer;
+  if(focus){ inp.focus(); slot.scrollIntoView({block:"nearest",behavior:"smooth"}); }
 }
 
 /* Wie is een zinnige tegenhanger? Zelfde positie, vergelijkbare prijs of
@@ -7736,12 +7864,11 @@ function zetVgl(pid,kant){
   pid=+pid;
   if(kant===1){ if(VGL[0]===pid) VGL[0]=VGL[1]; VGL[1]=pid; }
   else { if(VGL[1]===pid) VGL[1]=VGL[0]; VGL[0]=pid; }
-  zetZoekTekst(true);
+  KIEZER=null;
   vergelijk();
 }
 function vergelijk(){
   VLAK="inzichten";
-  [0,1].forEach(i=>koppelZoek(i));
   const box=$("#vglbox"); if(!box) return;
   const a=D.db.find(p=>p.id===+VGL[0]), b=D.db.find(p=>p.id===+VGL[1]);
   if(!a||!b){ box.innerHTML=""; return; }
@@ -7752,25 +7879,17 @@ function vergelijk(){
   const per90=(p,veld)=>{const m=hist(p,"min")||0,d=m/90,v=hist(p,veld);
     return d>=MIN_DUELS&&v!=null?v/d:null;};
   const duels=p=>((hist(p,"min")||0)/90);
-  const kaart=p=>{const k=shirtKleur(p.t);
-    return `<div class="vglkaart" style="--k1:${k.hoofd};--k2:${k.acc};--kt:${k.tekst}">
-      <div class="tegel" style="background:linear-gradient(150deg,${k.hoofd},${k.acc});color:${k.tekst}">${esc(p.t)}</div>
-      <div class="info"><b>${esc(p.n)}</b><span>${p.p} · £${p.c.toFixed(1)}m${
-        p.status!=="a"?" · <span style=\"color:var(--warn)\">niet fit</span>":""}</span></div></div>`;};
-
-  const HIST=SEIZOEN==="2026/27";
-  const geenData=HIST&&D.gw<=1;
   const rijen=[
-    ["kop","Verwachting — FPL Copilot, alle 8 gameweeks"],
+    ["kop","Verwachting \u2014 FPL Copilot, alle 8 gameweeks"],
     ["Punten GW"+G, p=>p.gw[G]||0, 1, 1],
     ["Punten 5 gameweeks", p=>somGW(p,G,5), 1, 1],
-    ["Bodem — plafond in GW"+G, p=>p.floor!=null?`${p.floor}–${p.ceiling}`:"—", 0, 0],
+    ["Bodem \u2014 plafond in GW"+G, p=>p.floor!=null?`${p.floor}\u2013${p.ceiling}`:"\u2014", 0, 0],
     ["Punten per miljoen, deze GW", p=>(p.gw[G]||0)/p.c, 2, 1],
     ["kop","Speeltijd en rol"],
     ["Verwachte minuten GW"+G, p=>p.cpmin!=null?p.cpmin:null, 0, 1],
     ["Starts", p=>hist(p,"st"), 0, 1],
     ["Set pieces", p=>[p.pen===1?"penalty's":"",p.cor===1?"corners":"",p.dfk===1?"vrije trappen":""].filter(Boolean).join(", ")||"geen", 0, 0],
-    ["kop",`Onderliggend spel — per wedstrijd, seizoen ${SEIZOEN}`],
+    ["kop",`Onderliggend spel \u2014 per wedstrijd, seizoen ${SEIZOEN}`],
     // lopend seizoen: FPL's eigen xG (sxg); vorig seizoen: Opta uit de momentopname
     ["Verwachte goals per 90", p=>{const d=duels(p),v=SEIZOEN===(D.seizoen||{}).live_is?p.sxg:hist(p,"oxg"); return d>=MIN_DUELS&&v!=null?v/d:null;}, 2, 1],
     ["Verwachte assists per 90", p=>per90(p,"xa"), 2, 1],
@@ -7779,9 +7898,9 @@ function vergelijk(){
     ["Schoten per 90", p=>{const d=duels(p); return SEIZOEN==="2025/26"&&d>=MIN_DUELS&&p.oshots!=null?p.oshots/d:null;}, 1, 1],
     ["Verwachte goals per schot", p=>SEIZOEN==="2025/26"&&p.oxgs!=null?p.oxgs:null, 2, 1],
     ["Goals boven verwachting", p=>SEIZOEN==="2025/26"&&p.ogxg!=null?p.ogxg:null, 1, 1],
-    ["kop",`Punten uit klein werk — per wedstrijd, seizoen ${SEIZOEN}`],
+    ["kop",`Punten uit klein werk \u2014 per wedstrijd, seizoen ${SEIZOEN}`],
     ["DefCon-acties per 90", p=>{const d=duels(p),v=hist(p,"dc"); return d>=MIN_DUELS&&v!=null?v/d:null;}, 1, 1],
-    ["Drempel voor 2 punten", p=>p.drempel||"—", 0, 0],
+    ["Drempel voor 2 punten", p=>p.drempel||"\u2014", 0, 0],
     ["Bonuspunten per 90", p=>per90(p,"bonus"), 2, 1],
     ["BPS per 90", p=>per90(p,"bps"), 0, 1],
     ["Kaarten per 90", p=>{const d=duels(p); return d>=MIN_DUELS?((hist(p,"geel")||0)+(hist(p,"rood")||0))/d:null;}, 2, -1],
@@ -7794,43 +7913,17 @@ function vergelijk(){
   // cijfers meten iets anders. Dan geen winnaar aanwijzen op die assen.
   const zelfdePositie=a.p===b.p;
   const keeperErbij=(a.p==="GKP")!==(b.p==="GKP");
-  const ka0=shirtKleur(a.t), kb0=shirtKleur(b.t);
-  const heroKaart=(p,kant)=>{const k=shirtKleur(p.t); const wA=somGW(p,G,5);
-    return `<div class="vglhero-kant ${kant}${p.code?" metfoto":""}" style="--k1:${k.hoofd};--k2:${k.acc}">
-      ${p.code?`<div class="vglhero-foto"><img alt="" decoding="async" draggable="false" src="${spelerFoto(p,"500x500")}" data-alt="${fotoAlt(p,spelerFoto(p,"500x500"))}" onerror="fotoFout(this)"></div>`:""}
-      <div class="vglhero-tekst">
-        <span class="vglhero-club">${clubTegel(p.t,"klein")}<span>${esc(clubNaam(p.t))}</span></span>
-        <b class="vglhero-naam">${esc(p.n)}</b>
-        <span class="vglhero-meta">${({GKP:"Keeper",DEF:"Verdediger",MID:"Middenvelder",FWD:"Aanvaller"})[p.p]||p.p} · £${p.c.toFixed(1)}m · ${p.own.toFixed(1)}%${p.status!=="a"?" · <em>niet fit</em>":""}</span>
-        <span class="vglhero-xp"><b>${wA.toFixed(1)}</b><i>punten GW${G}–${Math.min(38,G+4)}</i></span>
-      </div></div>`;};
-  const S0=D.seizoen||{};
-  let h=`<div class="vglhero" style="--ka:${ka0.hoofd};--kb:${kb0.hoofd}">${heroKaart(a,"links")}<div class="vglhero-vs">vs</div>${heroKaart(b,"rechts")}</div>
-    <div class="vglseizoen"><span>Gespeelde cijfers uit</span><span class="pfseiz">${["2026/27","2025/26"].map(x=>
-      `<button data-vs="${x}" aria-pressed="${SEIZOEN===x}"${x===S0.live_is&&(S0.gespeeld||0)===0?" disabled":""}>${x}</button>`).join("")}</span>
-      <i>${SEIZOEN===S0.live_is?`${S0.gespeeld||0} ronden gespeeld — per-90-cijfers zijn nog een kleine steekproef`:"vorig seizoen, momentopname van 14-08-2026"}</i></div>`;
-  if(!zelfdePositie) h+=`<div class="vglwaarschuwing">
-      <b>${esc(a.p)} tegenover ${esc(b.p)}</b>
-      ${keeperErbij
-        ? "Een keeper en een veldspeler laten zich niet op aanvallende cijfers vergelijken. Die regels tonen de waarden wel, maar wijzen geen winnaar aan."
-        : "Verschillende posities: je kunt ze niet tegen elkaar ruilen, en hun cijfers meten deels iets anders. Kijk vooral naar de verwachting bovenaan."}
-    </div>`;
-  if(seizoenLeeg()) h+=`<div class="ins" style="border-color:var(--warn);margin-bottom:10px">
-    <p style="margin:0">Je kijkt naar <b>2026/27</b>, en daar is nog geen bal in geschopt.
-    De verwachtingsblokken hierboven kloppen wel — die komen van Copilot en gaan over de komende duels.
-    Alles wat over gespeelde wedstrijden gaat blijft leeg tot na gameweek 1.
-    Zet hem op 2025/26 om te vergelijken op wat er werkelijk gebeurd is.</p></div>`;
-  h+=`<table class="vgltab"><tbody>`;
-  /* Rijen waar geen van beiden een cijfer heeft (Opta-assen in het lopende
-     seizoen) tonen we niet; een kop zonder rijen eronder ook niet. */
+
+  /* Eerst de rondes uitrekenen, dan pas tekenen: de arena toont de stand. */
   const zichtbaar=rijen.filter(r=>r[0]==="kop"||r[1](a)!=null||r[1](b)!=null);
   const metInhoud=zichtbaar.filter((r,i)=>r[0]!=="kop"||(zichtbaar[i+1]&&zichtbaar[i+1][0]!=="kop"));
+  let winA=0, winB=0, gelijk=0, tabel="";
   metInhoud.forEach(r=>{
-    if(r[0]==="kop"){ h+=`<tr class="kop"><td colspan="3">${esc(r[1])}</td></tr>`; return; }
+    if(r[0]==="kop"){ tabel+=`<tr class="kop"><td colspan="3"><span>${esc(r[1])}</span></td></tr>`; return; }
     const [lbl,fn,dec,rich]=r;
     let va=fn(a), vb=fn(b);
     const num=typeof va==="number"&&typeof vb==="number";
-    const fmt=v=>v==null?'<span style="color:var(--fg-3)">geen data</span>'
+    const fmt=v=>v==null?'<span class="vgeen">geen data</span>'
       :typeof v==="number"?
       (lbl==="Eigendom wereldwijd"?v.toFixed(1)+"%":
        lbl==="Goals boven verwachting"?(v>0?"+":"")+v.toFixed(dec):
@@ -7838,11 +7931,11 @@ function vergelijk(){
     // Op aanvallende assen heeft een vergelijking tussen posities geen betekenis.
     const aanvallend=/goal|assist|schot|afmaak|doelpunt/i.test(lbl);
     const vergelijkbaar=zelfdePositie||!(aanvallend&&keeperErbij);
-    let ka="",kb="";
+    let ka="",kb="",rij="";
     if(!vergelijkbaar){ /* geen winnaar aanwijzen */ }
-    else if(num&&Math.abs(va-vb)<=1e-9){ ka=kb="gelijk"; }
-    else if(!num&&va===vb){ ka=kb="gelijk"; }
-    else if(num&&rich){ const aWint=rich>0?va>vb:va<vb; ka=aWint?"win":""; kb=aWint?"":"win"; }
+    else if(num&&Math.abs(va-vb)<=1e-9){ ka=kb="gelijk"; rij="gelijk"; gelijk++; }
+    else if(!num&&va===vb){ ka=kb="gelijk"; rij="gelijk"; }
+    else if(num&&rich){ const aWint=rich>0?va>vb:va<vb; ka=aWint?"win":""; kb=aWint?"":"win"; rij=aWint?"wa":"wb"; if(aWint) winA++; else winB++; }
     /* Twee balken vanuit het midden: je ziet de verhouding zonder te lezen.
        Alleen bij twee getallen met dezelfde eenheid; tekst blijft tekst. */
     let ba="",bb="";
@@ -7851,38 +7944,96 @@ function vergelijk(){
       if(m>0){ ba=`<i class="vbalk" style="--w:${(Math.abs(va)/m*100).toFixed(0)}"></i>`;
                bb=`<i class="vbalk" style="--w:${(Math.abs(vb)/m*100).toFixed(0)}"></i>`; }
     }
-    h+=`<tr><td class="l ${ka}"><span class="vwaarde">${fmt(va)}</span>${ba}</td><td class="mid">${esc(lbl)}</td>
+    tabel+=`<tr class="${rij}"><td class="l ${ka}"><span class="vwaarde">${fmt(va)}</span>${ba}</td><td class="mid">${esc(lbl)}</td>
       <td class="r ${kb}"><span class="vwaarde">${fmt(vb)}</span>${bb}</td></tr>`;
   });
-  h+=`</tbody></table>`;
 
   const wA=somGW(a,G,5), wB=somGW(b,G,5);
   const verschil=wA-wB, beter=verschil>0?a:b, minder=verschil>0?b:a;
   const dv=Math.abs(verschil), dc=Math.abs(a.c-b.c);
-  h+=`<div class="vgluit"><b>${esc(beter.n)}</b> projecteert over vijf gameweeks
+  const leidt=winA===winB?null:(winA>winB?0:1);
+  const totaal=winA+winB;
+  const pa=totaal?Math.round(winA/totaal*100):50;
+
+  // ── de arena ──
+  const ka0=shirtKleur(a.t), kb0=shirtKleur(b.t);
+  const cijfers=p=>`<div class="arena-cijfers">
+      <span><b>${somGW(p,G,5).toFixed(1)}</b><i>ptn GW${G}\u2013${Math.min(38,G+4)}</i></span>
+      <span><b>\u00a3${p.c.toFixed(1)}m</b><i>prijs</i></span>
+      <span><b>${(p.own||0).toFixed(1)}%</b><i>eigendom</i></span>
+      <span><b>${p.cpmin!=null?p.cpmin+"'":"\u2014"}</b><i>minuten</i></span></div>`;
+  const kant=(p,i)=>{const k=shirtKleur(p.t);
+    return `<div class="arena-kant ${i?"rechts":"links"}${p.code?" metfoto":""}${leidt===i?" leidt":""}" style="--k1:${k.hoofd};--k2:${k.acc}">
+      ${p.code?`<div class="arena-foto"><img alt="" decoding="async" draggable="false" src="${spelerFoto(p,"500x500")}" data-alt="${fotoAlt(p,spelerFoto(p,"500x500"))}" onerror="fotoFout(this)"></div>`:""}
+      <div class="arena-tekst">
+        <button class="arena-kies" data-kieskant="${i}" title="Andere speler kiezen">${ik("wissel",13)}<span>wissel speler</span></button>
+        <span class="arena-club">${clubTegel(p.t,"klein")}<span>${esc(clubNaam(p.t))} \u00b7 ${POSNAAM[p.p]||p.p}${p.status!=="a"?" \u00b7 <em>niet fit</em>":""}</span></span>
+        <b class="arena-naam" data-dwsp="${p.id}">${esc(p.n)}</b>
+        ${cijfers(p)}
+      </div>
+      ${leidt===i?`<span class="arena-lint">${ik("beker",11)} leidt</span>`:""}
+      <span class="arena-water">${esc(p.t)}</span>
+    </div>`;};
+  const S0=D.seizoen||{};
+  let h=`<section class="arena" style="--ka:${ka0.hoofd};--kb:${kb0.hoofd}">
+      ${kant(a,0)}
+      <div class="arena-mid">
+        <div class="vsbadge"><span>VS</span></div>
+        <div class="vsscore" title="rondes gewonnen op de assen hieronder${gelijk?`, ${gelijk} gelijk`:""}"><b class="a">${winA}</b><i>\u2013</i><b class="b">${winB}</b></div>
+        <span class="vsscore-l">rondes</span>
+        <button class="vwissel arena-swap" data-vglswap title="Wissel links en rechts om" aria-label="Wissel links en rechts om">\u21c6</button>
+      </div>
+      ${kant(b,1)}
+      <div class="arena-balk" title="${esc(a.n)} wint ${winA} van de ${totaal} rondes, ${esc(b.n)} ${winB}"><i style="--pa:${pa}"></i></div>
+    </section>
+    <div id="vkiezer" class="vkiezer" hidden></div>
+    <div class="vglseizoen"><span>Gespeelde cijfers uit</span><span class="pfseiz">${["2026/27","2025/26"].map(x=>
+      `<button data-vs="${x}" aria-pressed="${SEIZOEN===x}"${x===S0.live_is&&(S0.gespeeld||0)<1?" disabled":""}>${x}</button>`).join("")}</span>
+      <i>${SEIZOEN===S0.live_is?`${S0.gespeeld||0} ronden gespeeld \u2014 per-90-cijfers zijn nog een kleine steekproef`:"vorig seizoen, momentopname van 14-08-2026"}</i></div>`;
+  if(!zelfdePositie) h+=`<div class="vglwaarschuwing">
+      <b>${esc(a.p)} tegenover ${esc(b.p)}</b>
+      ${keeperErbij
+        ? "Een keeper en een veldspeler laten zich niet op aanvallende cijfers vergelijken. Die regels tonen de waarden wel, maar wijzen geen winnaar aan."
+        : "Verschillende posities: je kunt ze niet tegen elkaar ruilen, en hun cijfers meten deels iets anders. Kijk vooral naar de verwachting bovenaan."}
+    </div>`;
+  if(seizoenLeeg()) h+=`<div class="ins" style="border-color:var(--warn);margin-bottom:10px">
+    <p style="margin:0">Je kijkt naar <b>2026/27</b>, en daar is nog geen bal in geschopt.
+    De verwachtingsblokken hierboven kloppen wel \u2014 die komen van Copilot en gaan over de komende duels.
+    Alles wat over gespeelde wedstrijden gaat blijft leeg tot na gameweek 1.
+    Zet hem op 2025/26 om te vergelijken op wat er werkelijk gebeurd is.</p></div>`;
+  h+=`<div class="rondekop"><span class="rk a">${esc(a.n)}</span><b>De rondes</b><span class="rk b">${esc(b.n)}</span></div>
+    <table class="vgltab rondes"><tbody>${tabel}</tbody></table>`;
+
+  // ── de uitslag ──
+  const kw=shirtKleur(beter.t);
+  h+=`<div class="vgluit uitslag" style="--k1:${kw.hoofd}"><span class="uitslagkop">${ik("beker",13)} Uitslag</span>
+    <p><b>${esc(beter.n)}</b> projecteert over vijf gameweeks
     <b>${dv.toFixed(1)} punt${dv===1?"":"en"}</b> meer dan ${esc(minder.n)}${
-    dc>0.05?` en kost £${dc.toFixed(1)}m ${beter.c>minder.c?"meer":"minder"}`:" bij dezelfde prijs"}.
-    ${dv<1.5?"Dat verschil is kleiner dan de ruis in elk projectiemodel — kies op fixtures, minutenzekerheid of onderbuik."
+    dc>0.05?` en kost \u00a3${dc.toFixed(1)}m ${beter.c>minder.c?"meer":"minder"}`:" bij dezelfde prijs"}${
+    totaal?`; op de assen staat het <b>${leidt==null?`${winA}\u2013${winB}, gelijk`:`${Math.max(winA,winB)}\u2013${Math.min(winA,winB)} voor ${esc(leidt===0?a.n:b.n)}`}</b>`:""}.
+    ${dv<1.5?"Dat verschil is kleiner dan de ruis in elk projectiemodel \u2014 kies op fixtures, minutenzekerheid of onderbuik."
       :beter.c>minder.c?`Per miljoen extra levert dat ${(dv/Math.max(0.1,dc)).toFixed(1)} punt op.`
       :"Goedkoper en hoger geprojecteerd; dat is zelden een moeilijke keuze."}
     ${a.cpmin!=null&&b.cpmin!=null&&Math.abs(a.cpmin-b.cpmin)>=10?` Let op de speeltijd: ${
       a.cpmin>b.cpmin?esc(a.n):esc(b.n)} wordt ${Math.abs(a.cpmin-b.cpmin)} minuten per duel meer verwacht.`:""}
-    ${[a,b].filter(p=>p.status!=="a").map(p=>` <b style="color:var(--warn)">${esc(p.n)} is niet fit gemeld:</b> ${esc(p.news||"geen toelichting")}.`).join("")}</div>`;
-  box.innerHTML=h;
-  box.querySelectorAll("[data-vs]").forEach(b=>b.onclick=()=>{ if(b.disabled) return;
-    SEIZOEN=b.dataset.vs; bewaarInstellingen(); vergelijk(); });
+    ${[a,b].filter(p=>p.status!=="a").map(p=>` <b style="color:var(--warn)">${esc(p.n)} is niet fit gemeld:</b> ${esc(p.news||"geen toelichting")}.`).join("")}</p></div>`;
 
-  const slim=$("#vglSlim");
-  if(slim){
-    const opts=slimmeTegenhangers(a,b.id);
-    slim.innerHTML=`<span class="vsl">Vergelijk ${esc(a.n)} met</span>`+
-      opts.map(o=>`<button data-id="${o.p.id}" title="${esc(o.p.t)} · £${o.p.c.toFixed(1)}m · ${somGW(o.p,PLANGW,hzVan("inzichten")).toFixed(1)} ptn">
-        ${esc(o.p.n)}${o.mijn?' <i class="pt2">jouw team</i>':o.watch?' <i class="pt2">volglijst</i>':""}</button>`).join("");
-    slim.querySelectorAll("[data-id]").forEach(bt=>bt.onclick=()=>zetVgl(+bt.dataset.id,1));
-  }
-  const sw=$("#vglSwap");
-  if(sw) sw.onclick=()=>{ VGL=[VGL[1],VGL[0]];
-    zetZoekTekst(true); vergelijk(); };
+  // ── slimme tegenhangers ──
+  const opts=slimmeTegenhangers(a,b.id);
+  h+=`<div class="vslim"><span class="vsl">Zet ${esc(a.n)} tegenover</span>`+
+      opts.map(o=>`<button data-id="${o.p.id}" title="${esc(o.p.t)} \u00b7 \u00a3${o.p.c.toFixed(1)}m \u00b7 ${somGW(o.p,PLANGW,hzVan("inzichten")).toFixed(1)} ptn">
+        ${esc(o.p.n)}${o.mijn?' <i class="pt2">jouw team</i>':o.watch?' <i class="pt2">volglijst</i>':""}</button>`).join("")+`</div>`;
+  box.innerHTML=h;
+  box.querySelectorAll("[data-vs]").forEach(bt=>bt.onclick=()=>{ if(bt.disabled) return;
+    SEIZOEN=bt.dataset.vs; SEIZOEN_VAST=true; bewaarInstellingen(); vergelijk(); });
+  box.querySelectorAll(".vslim [data-id]").forEach(bt=>bt.onclick=()=>zetVgl(+bt.dataset.id,1));
+  box.querySelectorAll("[data-kieskant]").forEach(bt=>bt.onclick=()=>{
+    if(KIEZER&&KIEZER.kant===+bt.dataset.kieskant){ sluitKiezer(); return; }
+    openKiezer(+bt.dataset.kieskant); });
+  box.querySelectorAll(".arena-naam[data-dwsp]").forEach(bt=>bt.onclick=()=>openProfiel(+bt.dataset.dwsp));
+  const sw=box.querySelector("[data-vglswap]");
+  if(sw) sw.onclick=()=>{ VGL=[VGL[1],VGL[0]]; vergelijk(); };
+  if(KIEZER) tekenKiezer(false);
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -14355,20 +14506,20 @@ function tekenStuur(){
   if(sz){
     sz.innerHTML=["2025/26","2026/27"].map(x=>
       `<button data-s="${x}" aria-pressed="${SEIZOEN===x}"${
-        x==="2026/27"&&D.gw<=3?' disabled title="Nog geen gespeelde gameweeks dit seizoen"':""}>${x}</button>`).join("");
+        x===(D.seizoen||{}).live_is&&((D.seizoen||{}).gespeeld||0)<1?' disabled title="Nog geen gespeelde gameweeks dit seizoen"':""}>${x}</button>`).join("");
     sz.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{
       if(b.disabled) return;
-      SEIZOEN=b.dataset.s; bewaarInstellingen(); tekenAlles(); tekenStuur();});
+      SEIZOEN=b.dataset.s; SEIZOEN_VAST=true; bewaarInstellingen(); tekenAlles(); tekenStuur();});
   }
 }
 const INST="fplcockpit_inst_v1";
 function bewaarInstellingen(){
-  try{ localStorage.setItem(INST,JSON.stringify({hzn:HZN,seizoen:SEIZOEN})); }catch(e){}
+  try{ localStorage.setItem(INST,JSON.stringify({hzn:HZN,seizoen:SEIZOEN,seizoenVast:SEIZOEN_VAST})); }catch(e){}
 }
 function laadInstellingen(){
   try{ const r=JSON.parse(localStorage.getItem(INST)||"null");
     if(r&&r.hzn) Object.keys(HZN).forEach(k=>{ if(r.hzn[k]) HZN[k]=r.hzn[k]; });
-    if(r&&r.seizoen&&!(r.seizoen==="2026/27"&&D.gw<=3)) SEIZOEN=r.seizoen;
+    if(r&&r.seizoen&&r.seizoenVast&&!(r.seizoen===(D.seizoen||{}).live_is&&((D.seizoen||{}).gespeeld||0)<1)){ SEIZOEN=r.seizoen; SEIZOEN_VAST=true; }
   }catch(e){}
 }
 (function(){
