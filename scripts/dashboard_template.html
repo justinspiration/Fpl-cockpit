@@ -5011,6 +5011,89 @@ body::after{ opacity:.06; }
 .clbkaart .clbnaam b{ font-size:var(--t-md); }
 .clbkaart .clbfdr{ border-radius:8px; font-weight:800; }
 
+/* ══ VISUELE LAAG 7: seizoensplan als wegen ═══════════════════════════════ */
+.portret.klein{ width:36px; height:36px; border-radius:10px; } .portret.klein img{ height:42px; }
+.portret.mini{ width:28px; height:28px; border-radius:8px; box-shadow:inset 0 1px 0 rgba(255,255,255,.28), 0 2px 6px -2px rgba(0,0,0,.5); }
+.portret.mini img{ height:33px; top:1px; } .portret.mini i{ font-size:6.5px; }
+.padwacht{ display:flex; align-items:center; gap:12px; padding:22px 16px; color:var(--fg-3); font-size:var(--t-sm); }
+.padwacht b{ color:var(--fg); }
+.padspin{ width:18px; height:18px; border-radius:50%; border:2px solid color-mix(in srgb,var(--t-plan) 25%,transparent); border-top-color:var(--t-plan); animation:padspin .9s linear infinite; }
+@keyframes padspin{ to{ transform:rotate(360deg); } }
+@media (prefers-reduced-motion:reduce){ .padspin{ animation:none; } }
+.padenkop{ display:flex; flex-direction:column; gap:2px; margin-bottom:var(--s3); }
+.padenkop b{ font-size:var(--t-lg); letter-spacing:-.015em; }
+.padenkop span{ font-size:var(--t-xs); color:var(--fg-3); }
+.padkiezer{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:var(--s2); margin-bottom:var(--s3); padding-top:8px; }
+.padkaart{ position:relative; display:flex; flex-direction:column; gap:8px; text-align:left; padding:12px 14px; cursor:pointer; font-family:inherit; color:var(--fg);
+  border-radius:var(--r2); border:1px solid var(--line); background:var(--card); background-image:var(--glans); box-shadow:var(--e1);
+  transition:transform var(--vlot) var(--veer), box-shadow var(--vlot) var(--uit), border-color var(--vlot) var(--uit); }
+.padkaart:hover{ transform:translateY(-2px); box-shadow:var(--e2); }
+.padkaart.gekozen{ border-color:var(--t-plan); box-shadow:0 0 0 2px color-mix(in srgb,var(--t-plan) 35%,transparent), var(--e2);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--t-plan) 16%,var(--card)),var(--card) 70%); }
+.padkaart.rust{ border-style:dashed; background-image:none; }
+.pkbadge{ position:absolute; top:-9px; left:12px; font-size:8.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:3px 8px; border-radius:99px;
+  background:var(--good); color:var(--ink); box-shadow:0 2px 6px -2px rgba(0,0,0,.5); }
+.pknaam{ display:flex; flex-direction:column; gap:1px; }
+.pknaam b{ font-size:var(--t-md); font-weight:750; }
+.pknaam span{ font-size:10.5px; color:var(--fg-3); line-height:1.35; }
+.pkpunten{ display:flex; align-items:baseline; gap:8px; font-family:var(--mono); }
+.pkpunten b{ font-size:30px; font-weight:800; letter-spacing:-.03em; line-height:1; }
+.pkpunten i{ font-style:normal; font-size:13px; font-weight:800; padding:2px 8px; border-radius:99px; }
+.pkpunten i.plus{ color:var(--good); background:color-mix(in srgb,var(--good) 14%,transparent); }
+.pkpunten i.min{ color:var(--bad); background:color-mix(in srgb,var(--bad) 14%,transparent); }
+.pkpunten i.nul{ color:var(--fg-3); background:color-mix(in srgb,var(--fg) 6%,transparent); }
+.pkmeta{ display:flex; gap:6px; flex-wrap:wrap; }
+.pkmeta i{ font-style:normal; font-family:var(--mono); font-size:10px; font-weight:700; padding:3px 8px; border-radius:99px; background:color-mix(in srgb,var(--fg) 6%,transparent); color:var(--fg-2); }
+.pkmeta i.bad{ color:var(--bad); background:color-mix(in srgb,var(--bad) 12%,transparent); }
+.pkkoppen{ display:flex; align-items:center; margin-top:auto; padding-left:2px; }
+.pkkoppen .portret{ margin-right:-8px; border:2px solid var(--card); box-sizing:content-box; }
+.pkkoppen i{ font-style:normal; margin-left:14px; font-family:var(--mono); font-size:10px; color:var(--fg-3); }
+.padzelfde{ display:flex; gap:12px; flex-wrap:wrap; margin:-4px 2px var(--s3); font-size:var(--t-xs); color:var(--fg-3); }
+.padinhoud{ border-radius:var(--r3); border:1px solid color-mix(in srgb,var(--t-plan) 30%,var(--line)); padding:var(--s3); background:color-mix(in srgb,var(--fg) 1.5%,transparent); }
+.padinhoudkop{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin:2px 4px var(--s3); }
+.padinhoudkop b{ font-size:var(--t-lg); }
+.padinhoudkop>span{ font-size:var(--t-xs); color:var(--fg-3); }
+.padinhoudkop .padtotaal{ margin-left:auto; font-family:var(--mono); font-size:var(--t-sm); color:var(--fg-2); }
+.padtotaal b.plus{ color:var(--good); } .padtotaal b.min{ color:var(--bad); }
+.doelwit.padhero{ min-height:210px; margin-bottom:var(--s3); }
+.doelwit.padhero .dwfoto{ width:min(240px,30vw); } .doelwit.padhero .dwfoto img{ height:min(240px,30vw); }
+.doelwit.padhero .dwnaam{ font-size:clamp(24px,3.2vw,38px); }
+.doelwit.padhero .dwwater{ font-size:clamp(100px,18vw,200px); }
+.padtijdlijn .stap{ grid-template-columns:52px minmax(0,1fr) auto auto; }
+.padtijdlijn .stap .wat .wie{ gap:8px; min-width:0; }
+.padtijdlijn .wienaam{ display:flex; flex-direction:column; min-width:0; }
+.padtijdlijn .wienaam b{ font-size:var(--t-sm); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.padtijdlijn .stap .wat .wie.uit .wienaam b{ color:var(--fg-2); text-decoration:line-through; text-decoration-color:color-mix(in srgb,var(--bad) 60%,transparent); }
+.padtijdlijn .wienaam small{ font-size:10px; color:var(--fg-3); white-space:nowrap; }
+.padtijdlijn .stap .pijl{ position:relative; flex:none; }
+.padtijdlijn .stap .pijl i{ position:absolute; top:100%; left:50%; transform:translateX(-50%); margin-top:1px; font-style:normal; font-family:var(--mono); font-size:10px; font-weight:800; color:var(--good); white-space:nowrap; }
+.padtijdlijn .stap .pijl i.min{ color:var(--warn); }
+.padtijdlijn .stap.actie{ padding-top:10px; padding-bottom:14px; }
+.padtijdlijn .stap.actie.gepland{ border-style:dashed; }
+.padtijdlijn .stap.actie.gepland .gwl{ background:var(--fg-3); }
+.padtijdlijn .stap .rtsluit{ position:static; opacity:0; margin-left:auto; transform:none; }
+.padtijdlijn .stap:hover .rtsluit{ opacity:1; }
+@media(hover:none){ .padtijdlijn .stap .rtsluit{ opacity:.8; } }
+.stapdelta{ font-family:var(--mono); font-size:var(--t-xs); font-weight:800; padding:3px 8px; border-radius:99px; white-space:nowrap; min-width:44px; text-align:center; }
+.stapdelta.plus{ color:var(--good); background:color-mix(in srgb,var(--good) 14%,transparent); }
+.stapdelta.min{ color:var(--bad); background:color-mix(in srgb,var(--bad) 14%,transparent); }
+.stapdelta.nul{ color:var(--fg-3); background:color-mix(in srgb,var(--fg) 5%,transparent); }
+.stap.chipweek .wat{ color:var(--t-plan); font-size:var(--t-sm); }
+.padeind{ margin-top:var(--s3); padding-top:var(--s3); border-top:1px solid var(--line-2); }
+.padeindrij{ display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.pes{ display:flex; flex-direction:column; align-items:center; gap:4px; width:66px; cursor:pointer; }
+.pes b{ font-size:9.5px; font-weight:650; color:var(--fg-2); max-width:66px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-align:center; }
+.pes.nieuw .portret{ box-shadow:0 0 0 2px var(--good), 0 4px 10px -4px rgba(0,0,0,.5); }
+.pes.nieuw b{ color:var(--good); }
+.padnotes{ margin-top:var(--s3); }
+@media(max-width:700px){
+  .padkiezer{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; padding:10px 2px 6px; margin:0 -4px var(--s3); -webkit-overflow-scrolling:touch; }
+  .padkaart{ flex:0 0 78%; scroll-snap-align:start; }
+  .padtijdlijn .stap{ grid-template-columns:44px minmax(0,1fr) auto; }
+  .padtijdlijn .stap .kost{ display:none; }
+  .doelwit.padhero .dwfoto{ width:100%; } .doelwit.padhero .dwfoto img{ height:170px; }
+}
+
 /* het zwevende menu: zelfde iconen als de tabbalk */
 .snav button{ display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto auto;
   column-gap:10px; align-items:center; text-align:left; }
@@ -5180,8 +5263,8 @@ body::after{ opacity:.06; }
     </div>
     <div class="subvak" data-sub="plan" hidden>
     <div class="grid"><section class="card">
-      <h2><span class="dot"></span>Transferpad over meerdere gameweeks
-        <span class="tag">solver kijkt 6 gameweeks vooruit</span></h2>
+      <h2><span class="dot"></span>Seizoensplan
+        <span class="tag">meerdere wegen, jij kiest</span></h2>
       <div class="body" id="solverbox"></div>
       <div class="src" id="src-solver"></div>
     </section></div>
@@ -6424,42 +6507,68 @@ function squadLegaal(sq,budget){
    zeldzaam), samen beoordeeld op wat de hele selectie erna oplevert. Een
    financierende verslechtering mag daarin, zolang het geheel wint.
    ══════════════════════════════════════════════════════════════════════ */
-function solveJS(startSquad,startBudget,gws,startVrij){
+function solveJS(startSquad,startBudget,gws,startVrij,opt){
+  /* opt stuurt de strategie:
+       maxZet   hoeveel wissels per gameweek hoogstens (0 = alleen volgen wat al gepland staat)
+       extra    hoeveel daarvan boven je vrije transfers mogen (hits)
+       perZet   wat elke wissel minstens moet opleveren over het venster van vier weken
+       wacht    eerst zoveel gameweeks niets doen (sparen)
+       eersteMin  de eerste batch moet minstens zoveel wissels tellen, anders is het pad ongeldig */
+  opt=opt||{};
+  const MAXZET=opt.maxZet!=null?opt.maxZet:3;
+  const EXTRA=opt.extra||0;
+  const PERZET=opt.perZet!=null?opt.perZet:2.5;
+  const WACHT=opt.wacht||0;
+  const EERSTEMIN=opt.eersteMin||0;
+  const DOEL=opt.doel||null;                       // deze speler zo snel mogelijk binnenhalen
   let sq=startSquad.map(p=>({...p})), budget=startBudget, vrij=startVrij;
-  const pad=[]; let totaal=0, hits=0;
+  const pad=[]; let totaal=0, hits=0, zetten=0, geldig=true;
   const lookahead=4;
+  const verkoop=p=>p.gekocht!=null?p.gekocht:p.c;
 
-  /* Alle zinnige zetten voor één speler: verbeteringen én financierende
-     verslechteringen. Die laatste alleen als ze geld vrijmaken, want anders
-     is het puur verlies. */
-  /* Twee dingen die per gameweek maar één keer hoeven: de somprojectie over
-     het venster, en welke spelers per positie überhaupt in aanmerking komen.
-     Zonder die twee caches werd de hele database van 612 spelers bij elke
-     kandidaatvraag opnieuw gefilterd en gesorteerd — vier seconden per pad. */
-  let WSOM=null, POOL=null, WSLEUTEL=null;
+  /* Twee dingen die per venster maar één keer hoeven: de somprojectie, en
+     wie er per positie überhaupt in aanmerking komt.
+
+     Kwaliteitsvloer — dezelfde lat als de transferpagina. Hier kwam een
+     "Szoboszlai eruit, Clarke erin" uit: rekenkundig klopte het (goedkoop,
+     makkelijk programma), maar Clarke is geen basisspeler die levert en ook
+     niet de goedkoopste optie voor de bank. Een binnenkomer moet daarom:
+       - beschikbaar zijn, minstens 75 verwachte minuten hebben en door
+         minstens 1% van de managers gekozen zijn;
+       - boven het gemiddelde van zijn positie draaien (5% marge), óf de
+         goedkoopste van zijn positie zijn met minstens 60 minuten — dat is
+         de enige bankvuller die je bewust haalt;
+       - niet door jou uitgesloten zijn. */
+  let WSOM=null, POOL=null, WSLEUTEL=null, MINPRIJS=null;
   const bouwCache=(venster)=>{
     const k=venster.join(",");
     if(WSLEUTEL===k) return;
+    if(!MINPRIJS){ MINPRIJS={}; for(const c of D.db){ if(c.status==="a"&&(MINPRIJS[c.p]==null||c.c<MINPRIJS[c.p])) MINPRIJS[c.p]=c.c; } }
     WSLEUTEL=k; WSOM=new Map(); POOL={GKP:[],DEF:[],MID:[],FWD:[]};
+    const n=venster.length||1;
     for(const c of D.db){
       let t=0; for(const gg of venster) t+=c.gw[gg]||0;
       WSOM.set(c.id,t);
-      if(!["i","s","u"].includes(c.status)&&speeltMee(c,45)&&POOL[c.p]) POOL[c.p].push(c);
+      if(!POOL[c.p]||c.status!=="a"||(c.cpmin||0)<75||(c.own||0)<1.0||UITSLUIT.has(c.id)) continue;
+      const boven=t/n>=posDrempel(c.p)*1.05;
+      const bankvuller=c.c<=(MINPRIJS[c.p]||0)+1e-9&&(c.cpmin||0)>=60;
+      if(boven||bankvuller) POOL[c.p].push(c);
     }
     for(const k2 in POOL) POOL[k2].sort((a,b)=>WSOM.get(b.id)-WSOM.get(a.id));
   };
   const wsom=p=>{ const v=WSOM.get(p.id); return v===undefined?0:v; };
+  /* Alle zinnige zetten voor één speler: verbeteringen én financierende
+     verslechteringen. Die laatste alleen als ze geld vrijmaken. */
   const zettenVoor=(squad,uit,ruimte,venster)=>{
     bouwCache(venster);
+    if(uit.p==="GKP"&&uit.status==="a"&&(uit.cpmin||90)>=60) return [];   // keepers alleen bij een probleem
     const have=new Set(squad.map(p=>p.id));
     const clubs={}; squad.forEach(p=>{ if(p.id!==uit.id) clubs[p.t]=(clubs[p.t]||0)+1; });
     const uitW=wsom(uit);
-    const geenKeeperwissel=uit.p==="GKP"&&!["i","s","u","d"].includes(uit.status);
-    if(geenKeeperwissel) return [];
     const uitkomst=[];
     for(const c of POOL[uit.p]){          // al op projectie gesorteerd
       if(have.has(c.id)||c.c>ruimte+1e-9||(clubs[c.t]||0)>=3) continue;
-      const w=wsom(c)-uitW, vrijgeld=uit.c-c.c;
+      const w=wsom(c)-uitW, vrijgeld=verkoop(uit)-c.c;
       if(!(w>0||(vrijgeld>=0.4&&w>-3.5))) continue;
       uitkomst.push({c,w,vrij:vrijgeld});
       if(uitkomst.length>=10) break;      // de lijst is aflopend, dus dit zijn de beste
@@ -6467,269 +6576,460 @@ function solveJS(startSquad,startBudget,gws,startVrij){
     return uitkomst;
   };
 
-  for(let i=0;i<gws.length;i++){
-    const g=gws[i];
-    const venster=gws.slice(i,i+lookahead);
-    bouwCache(venster);
-    const nuScore=venster.reduce((a,x)=>a+besteXI(sq,x),0);
-    const maxZet=Math.max(1,Math.min(3,vrij));
-
-    // beste batch van 1 t/m maxZet wissels, samen beoordeeld
-    let beste=null;
-    const zoek=(squad,bud,gedaan,diepte)=>{
-      if(gedaan.length){
-        const kosten=Math.max(0,gedaan.length-vrij)*4;
-        const score=venster.reduce((a,x)=>a+besteXI(squad,x),0)-kosten;
-        if(!beste||score>beste.score)
-          beste={score,paren:gedaan.map(x=>[x.uit,x.in]),nieuw:squad,nb:bud,
-                 kosten,aantal:gedaan.length};
-      }
-      if(diepte>=maxZet) return;
-      /* Wie komt er in aanmerking om verkocht te worden?
-
-         Dit waren de vijf zwakste spelers. Dat is precies verkeerd om voor
-         een upgrade: je bankspelers ruil je tegen andere bankspelers, terwijl
-         een premium juist gefinancierd wordt door je middenmoot. Gibbs-White
-         stond zevende en O'Reilly achtste — allebei buiten beeld, en dat zijn
-         nou net de twee die je moet verkopen om Palmer te kunnen betalen.
-
-         Nu telt niet hoe zwak iemand is, maar hoeveel er voor hem in de
-         plaats te halen valt met het geld dat er dan is. */
-      const kans=[];
-      for(const p of squad){
-        const opties=zettenVoor(squad,p,bud+p.c,venster);
-        if(!opties.length){ continue; }
-        let beste=-99, meest=0;
-        for(const o of opties){ if(o.w>beste) beste=o.w; if(o.vrij>meest) meest=o.vrij; }
-        kans.push({p, potentie:beste, vrij:meest});
-      }
-      kans.sort((a,b)=>(b.potentie-a.potentie)||(b.vrij-a.vrij));
-      const kansen=kans.slice(0,diepte===0?7:5).map(x=>x.p);
-      for(const uit of kansen){
-        if(gedaan.some(x=>x.inId===uit.id)) continue;   // niet meteen weer weg
-        for(const z of zettenVoor(squad,uit,bud+uit.c,venster)){
-          const nieuwSq=squad.filter(x=>x.id!==uit.id).concat([{...z.c}]);
-          const nb=bud+uit.c-z.c.c;
-          if(!squadLegaal(nieuwSq,nb)) continue;
-          zoek(nieuwSq,nb,gedaan.concat([{uit:uit.n,in:z.c.n,inId:z.c.id}]),diepte+1);
+  /* De batch-zoektocht, laag voor laag: eerst alle enkele wissels, daarvan
+     de beste 24 uitbreiden met een tweede, daarvan de beste 14 met een derde.
+     Een volledige boom (7×10×5×10×5×10 knopen) kostte hier zestien seconden
+     per pad; dit geeft dezelfde toppers in een fractie daarvan, zodat er
+     ruimte is om meerdere strategieën naast elkaar te rekenen. */
+  const zoekBatch=(squad0,bud0,venster,maxN,vrijNu,g,moet)=>{
+    const score=(squad,n)=>{ let t=0; for(const x of venster) t+=besteXI(squad,x); return t-Math.max(0,n-vrijNu)*4; };
+    const breedte=[0,24,14,8];
+    let laag=[{squad:squad0,bud:bud0,moves:[]}];
+    const beste=[], metDoel=[];
+    for(let n=1;n<=maxN;n++){
+      const kandidaten=[];
+      for(const st of laag){
+        /* Wie komt in aanmerking om verkocht te worden? Niet de zwakste, maar
+           wie het meeste oplevert om te vervangen — plus de twee die het
+           meeste geld vrijmaken, want een premium wordt door je middenmoot
+           betaald, niet door je bank. */
+        const kans=[];
+        for(const p of st.squad){
+          if(st.moves.some(m=>m.in.id===p.id)) continue;   // net gehaald, niet meteen weer weg
+          if(p._in!=null&&p.status==="a") continue;          // eerder in dit plan gehaald: geen geschuif
+          const opties=zettenVoor(st.squad,p,st.bud+verkoop(p),venster);
+          if(!opties.length) continue;
+          let top=-99, meest=0;
+          for(const o of opties){ if(o.w>top) top=o.w; if(o.vrij>meest) meest=o.vrij; }
+          kans.push({p,opties,potentie:top,vrij:meest});
+        }
+        kans.sort((a,b)=>(b.potentie-a.potentie)||(b.vrij-a.vrij));
+        const K=n===1?8:5;
+        const kies=kans.slice(0,K);
+        kans.slice().sort((a,b)=>b.vrij-a.vrij).slice(0,2).forEach(x=>{ if(!kies.includes(x)) kies.push(x); });
+        for(const k of kies){
+          for(const z of k.opties.slice(0,n===1?10:6)){
+            const nieuwSq=st.squad.filter(x=>x.id!==k.p.id).concat([{...z.c,_in:g}]);
+            const nb=st.bud+verkoop(k.p)-z.c.c;
+            if(!squadLegaal(nieuwSq,nb)) continue;
+            kandidaten.push({squad:nieuwSq,bud:nb,moves:st.moves.concat([{uit:k.p,in:z.c,w:z.w,n:venster.length}]),score:score(nieuwSq,n)});
+          }
         }
       }
-    };
-    zoek(sq,budget,[],0);
-
-    /* Loont het? Een wissel moet minstens 2 punten over het venster opleveren,
-       want je geeft er een vrije transfer voor op. Zit je op het maximum van
-       vijf, dan raak je die transfer toch kwijt en zakt de drempel. Bij een
-       batch schaalt de eis mee: twee wissels moeten samen meer opbrengen dan
-       één. */
-    const AANMAX=vrij>=5;
-    const perZet=AANMAX?0.5:2.0;
-    const vrijVoor=vrij;
-    if(beste&&beste.score>nuScore+perZet*beste.aantal){
-      totaal+=besteXI(beste.nieuw,g)-beste.kosten; hits+=beste.kosten;
-      vrij=Math.min(5,Math.max(0,vrij-beste.aantal)+1);
-      pad.push({gw:g,acties:beste.paren,hit:beste.kosten,
-                winst:+(beste.score-nuScore).toFixed(1),vrijVoor,vrijNa:vrij});
-      sq=beste.nieuw; budget=beste.nb;
-    } else {
-      totaal+=besteXI(sq,g);
-      const na=Math.min(5,vrij+1);
-      pad.push({gw:g,acties:[],hit:0,vrijVoor,vrijNa:na,
-                verspild:na===vrij&&vrij>=5});
-      vrij=na;
+      if(!kandidaten.length) break;
+      kandidaten.sort((a,b)=>b.score-a.score);
+      const gezien=new Set(); const uniek=[];
+      for(const k of kandidaten){
+        const sig=k.moves.map(m=>m.uit.id+">"+m.in.id).sort().join("|");
+        if(gezien.has(sig)) continue;
+        gezien.add(sig); uniek.push(k);
+        if(uniek.length>=breedte[n]) break;
+      }
+      if(moet){
+        /* Op weg naar een doelwit moeten de financierende zetten overleven,
+           ook al scoren ze zelf laag: de acht die het meeste geld vrijmaken
+           blijven erbij, en de beste batch mét het doelwit wordt onthouden. */
+        kandidaten.slice().sort((a,b)=>b.bud-a.bud).slice(0,8).forEach(k=>{ if(!uniek.includes(k)) uniek.push(k); });
+        metDoel[n]=kandidaten.find(k=>k.moves.some(m=>m.in.id===moet))||null;
+      }
+      beste[n]=uniek[0]; laag=uniek;
     }
+    return moet?metDoel:beste;
+  };
+
+  for(let i=0;i<gws.length;i++){
+    const g=gws[i];
+    /* De vooruitblik is altijd vier weken, ook in de laatste week van het
+       plan. Toen het venster daar kromp tot één gameweek kwam er
+       "Haaland eruit, Isak erin" uit op basis van één speelronde -- geen
+       manager doet dat. Voorbij Copilots bereik rekent het eigen model. */
+    const venster=D.alle_gws.filter(x=>x>=g).slice(0,lookahead);
+    const chip=PLAN.chips[g]||null;
+    const chipVrij=chip==="Wildcard"||chip==="Free Hit";
+    const vrijVoor=vrij;
+    /* Wat al in je planning staat voor deze gameweek gaat vóór. De eerste
+       gameweek zit al in de startselectie; daarna past het pad je geplande
+       transfers toe zoals ze er staan, inclusief wat ze kosten. Zo blijft
+       "Plan dit pad" ook kloppen als je het daarna opnieuw bekijkt. */
+    const vast=i>0?(PLAN.transfers[g]||[]):[];
+    const acties=[];
+    for(const t of vast){
+      const uit=sq.find(x=>x.id===t.uit), inn=D.db.find(x=>x.id===t["in"]);
+      if(!uit||!inn||sq.some(x=>x.id===inn.id)) continue;
+      const cin=t.c_in!=null?t.c_in:inn.c;
+      budget+=verkoop(uit)-cin;
+      sq=sq.filter(x=>x.id!==uit.id).concat([{...inn,gekocht:cin,_in:g}]);
+      acties.push({uit,in:inn,w:0,n:venster.length,gepland:true});
+    }
+    let hit=chipVrij?0:Math.max(0,acties.length-vrij)*4;
+    let vrijOver=chipVrij?vrij:Math.max(0,vrij-acties.length);
+    const nuScore=venster.reduce((a,x)=>a+besteXI(sq,x),0);
+    let batch=null;
+    const wilDoel=DOEL&&!sq.some(x=>x.id===DOEL.id);
+    if(wilDoel&&!chipVrij&&MAXZET>0){
+      /* Doelgericht: de beste batch die het doelwit binnenhaalt, zolang die
+         als geheel minstens de lat van één wissel oplevert. Lukt dat deze
+         week niet, dan wordt er niets anders gedaan -- de transfers zijn
+         voor het doelwit. */
+      const maxN=Math.min(MAXZET,vrijOver+EXTRA);
+      const lat=PERZET*(venster.length/lookahead);
+      if(maxN>=1){
+        const B=zoekBatch(sq,budget,venster,maxN,vrijOver,g,DOEL.id);
+        for(let k=1;k<=maxN;k++){
+          const b=B[k]; if(!b||b.score-nuScore<lat) continue;
+          if(!batch||b.score>batch.score) batch=b;
+        }
+      }
+    } else if(!chipVrij&&i>=WACHT&&MAXZET>0){
+      const maxN=Math.min(MAXZET,vrijOver+EXTRA);
+      if(maxN>=1){
+        const B=zoekBatch(sq,budget,venster,maxN,vrijOver,g);
+        /* Loont het? Elke wissel moet minstens perZet opleveren over het
+           venster — en een tweede wissel moet dat bovenop de beste enkele
+           doen, anders is het geschuif dat een vrije transfer opsoupeert.
+           Sta je op vijf gespaarde transfers, dan raak je er toch een kwijt
+           en zakt de lat voor de eerste wissel. Korter venster aan het eind
+           van het plan: lat schaalt mee. */
+        const lat=PERZET*(venster.length/lookahead);
+        const aanMax=vrijOver>=5;
+        let vorige=nuScore;
+        for(let k=1;k<=maxN;k++){
+          const b=B[k]; if(!b) break;
+          const eis=(k===1&&aanMax)?Math.min(lat,1.0):lat;
+          if(b.score-vorige<eis) break;
+          batch=b; vorige=b.score;
+        }
+        if(i===WACHT&&EERSTEMIN&&(!batch||batch.moves.length<EERSTEMIN)) geldig=false;
+      }
+    }
+    if(batch){
+      /* Per wissel: wat hij in zijn eentje voor je elf zou doen. Het ruwe
+         projectieverschil zei "+0,9" terwijl de nieuwe man je elf in kwam
+         en er een zwakkere uitviel -- de elfwinst is wat je voelt. */
+      const voorSq=sq;
+      batch.moves.forEach(m=>{
+        const alleen=voorSq.filter(x=>x.id!==m.uit.id).concat([m.in]);
+        let t=0; for(const x of venster) t+=besteXI(alleen,x);
+        m.xi=+(t-nuScore).toFixed(1);
+      });
+      sq=batch.squad; budget=batch.bud;
+      hit+=Math.max(0,batch.moves.length-vrijOver)*4;
+      batch.moves.forEach(m=>acties.push(m));
+      vrijOver=Math.max(0,vrijOver-batch.moves.length);
+    }
+    const sc=besteXI(sq,g);
+    totaal+=sc-hit; hits+=hit; zetten+=acties.length;
+    const vrijNa=chipVrij?vrij:Math.min(5,vrijOver+1);
+    pad.push({gw:g,acties,hit,chip,vrijVoor,vrijNa,sc:+sc.toFixed(2),
+              winst:batch?+(batch.score-nuScore).toFixed(1):0,
+              verspild:!chipVrij&&!acties.length&&vrij>=5});
+    vrij=vrijNa;
   }
   /* Waar wordt naartoe gespaard? Een rustweek is pas te begrijpen als je weet
      wat er straks mee gebeurt. */
   for(let i=0;i<pad.length;i++){
-    if(pad[i].acties.length) continue;
-    const volgende=pad.slice(i+1).find(x=>x.acties.length);
+    if(pad[i].acties.length||pad[i].chip) continue;
+    const volgende=pad.slice(i+1).find(x=>x.acties.some(a=>!a.gepland));
     if(volgende) pad[i].spaartVoor={gw:volgende.gw,n:volgende.acties.length,
-                                    wie:volgende.acties.map(a=>a[1])};
+                                    wie:volgende.acties.filter(a=>!a.gepland).map(a=>a.in.n)};
   }
-  return {punten:totaal,hits,pad,eind:sq};
+  return {punten:totaal,hits,zetten,pad,eind:sq,geldig:geldig&&(!DOEL||sq.some(x=>x.id===DOEL.id))};
 }
 /* ---------- seizoensplan: solver + rivalen ---------- */
-/* ---- geheugen voor de solver ----
-   solverPaneelBereken() doet tot vijf beam-searches over je hele selectie en
-   duurde gemeten 18,5 seconden. Die functie wordt aangeroepen vanuit
-   tekenAlles(), dus zolang je op de planpagina stond bevroor ELKE klik het
-   tabblad achttien seconden lang. Dat was de vastloper.
-
-   Twee dingen halen hem weg. Het antwoord wordt onthouden zolang de invoer niet
-   verandert — dezelfde selectie met dezelfde bank en dezelfde geplande
-   transfers geeft immers hetzelfde pad. En de eerste berekening start pas
-   nadat de browser heeft kunnen tekenen, zodat je "berekenen..." ziet in
-   plaats van een dood scherm. */
-let SOLVER_CACHE={sleutel:null,box:null,src:null};
-let SOLVER_BEZIG=false;
+/* ---- geheugen voor het seizoensplan ----
+   De uitkomst wordt onthouden zolang de invoer niet verandert: dezelfde
+   selectie, bank, planning en uitsluitingen geven immers dezelfde wegen.
+   Een klik op een andere weg tekent dus alleen opnieuw. De berekening zelf
+   loopt in stukjes met een tekenbeurt ertussen, zodat het tabblad nooit
+   bevriest en je ziet welke strategie er aan de beurt is. */
+let SOLVER_RES=null, SOLVER_KEUS=null, SOLVER_BEZIG=null;
 function solverSleutel(){
   try{
     return JSON.stringify([PLANGW,
       squadInGW(PLANGW).map(p=>p.id).sort((a,b)=>a-b),
       budgetIn(PLANGW), vrijeTransfers(PLANGW),
-      (geplandeTransfers(PLANGW)||[]).map(t=>[t&&t.uit&&t.uit.id,t&&t.in&&t.in.id]),
-      D.gegenereerd]);
+      PLAN.transfers, PLAN.chips, [...UITSLUIT].sort((a,b)=>a-b), D.gegenereerd]);
   }catch(e){ return null; }
 }
+/* De wegen worden in stukjes berekend, met een tekenbeurt ertussen. Zo zie je
+   welke strategie er aan de beurt is in plaats van een bevroren tabblad, en
+   een klik op een andere weg tekent alleen opnieuw — rekenen is al gedaan. */
 function solverPaneel(){
   VLAK="plan";
   const box=$("#solverbox");
   if(!box) return;
   const sleutel=solverSleutel();
-  if(sleutel&&SOLVER_CACHE.sleutel===sleutel&&SOLVER_CACHE.box!==null){
-    box.innerHTML=SOLVER_CACHE.box;
-    const sb=$("#src-solver");
-    if(sb&&SOLVER_CACHE.src!==null) sb.innerHTML=SOLVER_CACHE.src;
-    return;
-  }
-  if(SOLVER_BEZIG) return;
-  SOLVER_BEZIG=true;
-  box.innerHTML='<div class="empty">Transferpad berekenen\u2026</div>';
-  setTimeout(function(){
-    try{ solverPaneelBereken(); }
-    catch(e){ box.innerHTML='<div class="empty">Transferpad kon niet berekend worden ('+
-                            String(e.message).slice(0,90)+').</div>'; }
-    finally{
-      SOLVER_BEZIG=false;
-      const sb=$("#src-solver");
-      SOLVER_CACHE={sleutel:sleutel,box:box.innerHTML,src:sb?sb.innerHTML:null};
+  if(SOLVER_RES&&SOLVER_RES.sleutel===sleutel){ tekenPaden(box,SOLVER_RES); return; }
+  if(SOLVER_BEZIG===sleutel) return;
+  SOLVER_BEZIG=sleutel;
+  box.innerHTML='<div class="padwacht"><span class="padspin"></span><b>Wegen berekenen\u2026</b><span id="padvoortgang">startpositie</span></div>';
+  const stappen=solverStappen(sleutel);
+  let i=0;
+  const volgende=()=>{
+    if(SOLVER_BEZIG!==sleutel) return;              // planning intussen veranderd: deze reeks stopt
+    try{
+      const st=stappen[i++];
+      if(!st){ SOLVER_BEZIG=null; return; }
+      const vg=$("#padvoortgang"); if(vg) vg.textContent=st.label;
+      const uitkomst=st.doe();
+      if(uitkomst&&uitkomst.klaar){ SOLVER_RES=uitkomst.res; SOLVER_BEZIG=null; tekenPaden(box,SOLVER_RES); return; }
+      setTimeout(volgende,16);
+    }catch(e){
+      SOLVER_BEZIG=null;
+      box.innerHTML='<div class="empty">Seizoensplan kon niet berekend worden ('+String(e.message).slice(0,90)+').</div>';
     }
-  },30);
+  };
+  setTimeout(volgende,30);
 }
-function solverPaneelBereken(){
-  VLAK="plan";
-  const box=$("#solverbox");
-  const basisSquad=squadInGW(PLANGW);
-  if(basisSquad.length!==15){box.innerHTML='<div class="empty">Geen volledige squad.</div>';return;}
-  /* Hoe ver vooruit? Precies tot waar FPL Copilot reikt.
+/* ══════════════════════════════════════════════════════════════════════
+   Seizoensplan — meerdere wegen, jij kiest
+   ══════════════════════════════════════════════════════════════════════
+   Eén "beste pad" is een mening van het rekenwerk. Managers verschillen:
+   de een wil elke week iets doen, de ander spaart voor een grote slag, een
+   derde neemt een hit als die zich terugverdient. Daarom rekent het plan
+   vier strategieën door over hetzelfde venster, tegen dezelfde lat:
 
-     Er stond hier zes gameweeks, willekeurig gekozen. Dat gaf twee problemen:
-     de laatste weken leunden soms al op het eigen model, en het venster was
-     te kort om te zien dat sparen loont — een batch betaalt zich pas terug
-     over de weken erna. Nu loopt het venster tot Copilots laatste gameweek,
-     met acht als bovengrens zodat het rekenwerk behapbaar blijft. */
-  const grens=D.copilot_grens||(PLANGW+7);
-  // Kijk je naar een gameweek voorbij Copilots bereik, dan is dat venster leeg
-  // en stond er "punten over GWundefined–undefined". Dan gewoon acht weken
-  // vooruit met het eigen model, en dat staat er ook bij.
-  let gws=D.alle_gws.filter(g=>g>=PLANGW&&g<=grens).slice(0,8);
-  if(gws.length<2) gws=D.alle_gws.filter(g=>g>=PLANGW).slice(0,8);
-  if(!gws.length){ box.innerHTML='<div class="empty">Het seizoen is afgelopen.</div>'; return; }
-  const bud=budgetIn(PLANGW), vrij=vrijeTransfers(PLANGW);
-  const vrijGetal=vrij===Infinity?5:vrij;
-  const gepland0=geplandeTransfers(PLANGW);
-  /* Het pad begon met je squad ZOALS DIE ER NA JE GEPLANDE TRANSFERS UITZIET,
-     maar met het aantal vrije transfers van vóór die transfers. Had je er al
-     eentje ingepland, dan stelde het plan er nog een voor alsof die ook gratis
-     was — en dat kost je vier punten. De transfers die je al hebt ingepland
-     gaan er dus eerst af. */
-  const vrijNa=Math.max(0,vrijGetal-gepland0.length);
-  const zonder=gws.reduce((a,g)=>a+besteXI(basisSquad,g),0);
-  const R=solveJS(basisSquad,bud,gws,vrijNa);
+     Week voor week    elke week de beste vrije wissel(s), nooit een hit
+     Sparen & toeslaan eerst opsparen, dan in één keer meerdere wissels
+     Rustig            hooguit één wissel per week, alleen bij duidelijke winst
+     Met hits          ook een strafpunt-transfer als die zichzelf ruim terugverdient
 
-  /* Sparen en in één keer toeslaan.
-
-     Het pad hierboven beslist week voor week: loont een wissel nú meer dan
-     twee punten, dan doet hij hem. Wat het niet kan zien is dat drie weken
-     sparen een batch mogelijk maakt die veel meer oplevert — bijvoorbeeld
-     omdat je pas met drie transfers een premium kunt betalen die je met één
-     nooit bereikt.
-
-     Daarom hier de tegenhanger: niets doen tot je er genoeg hebt, en dan in
-     één keer. Beide paden staan naast elkaar, zodat je zelf kunt kiezen in
-     plaats van dat het gereedschap dat voor je doet. */
-  const spaarPad=(()=>{
-    const opties=[];
-    for(let w=1;w<Math.min(5,gws.length);w++){
-      const doelGW=gws[w];
-      const vrijDan=Math.min(5,vrijNa+w);
-      if(vrijDan<2) continue;
-      // punten tot dat moment met je huidige selectie
-      let voor=0; for(let k=0;k<w;k++) voor+=besteXI(basisSquad,gws[k]);
-      const rest=gws.slice(w);
-      const R2=solveJS(basisSquad,bud,rest,vrijDan);
-      const eerste=R2.pad[0];
-      if(!eerste||eerste.acties.length<2) continue;
-      opties.push({gw:doelGW,vrij:vrijDan,punten:voor+R2.punten,
-                   acties:eerste.acties,hit:eerste.hit});
+   Plus "niets doen": wat je huidige selectie oplevert als je alleen doet
+   wat al gepland staat. Komen twee strategieën op hetzelfde pad uit, dan
+   staat dat erbij in plaats van dat er twee keer hetzelfde staat.
+   Alle punten zijn de projecties (Copilot/Pundit/model) van je beste elf per
+   gameweek, aanvoerder dubbel, strafpunten er al af.                       */
+function solverStappen(sleutel){
+  const ctx={sleutel,paden:[]};
+  const stappen=[];
+  const klaarMet=fout=>({klaar:true,res:{sleutel,fout}});
+  stappen.push({label:"startpositie",doe:()=>{
+    const basisSquad=squadInGW(PLANGW);
+    if(basisSquad.length!==15) return klaarMet("Geen volledige squad.");
+    /* Hoe ver vooruit? Precies tot waar FPL Copilot reikt, met acht als
+       bovengrens. Kijk je voorbij dat bereik, dan acht weken op het eigen
+       model — en dat staat er dan bij. */
+    const grens=D.copilot_grens||(PLANGW+7);
+    let gws=D.alle_gws.filter(g=>g>=PLANGW&&g<=grens).slice(0,8);
+    if(gws.length<2) gws=D.alle_gws.filter(g=>g>=PLANGW).slice(0,8);
+    if(!gws.length) return klaarMet("Het seizoen is afgelopen.");
+    const bud=budgetIn(PLANGW), vrij=vrijeTransfers(PLANGW);
+    const vrijGetal=vrij===Infinity?5:vrij;
+    const gepland0=geplandeTransfers(PLANGW);
+    /* Het pad start met je squad zoals die er na je geplande transfers
+       uitziet, met de vrije transfers die je dán nog over hebt. */
+    const vrijNa=Math.max(0,vrijGetal-gepland0.length);
+    Object.assign(ctx,{basisSquad,gws,grens,bud,vrij,vrijNa,gepland0});
+    ctx.basis=solveJS(basisSquad,bud,gws,vrijNa,{maxZet:0});
+    return null;
+  }});
+  const voeg=(sl,naam,uitleg,R)=>{ if(R) ctx.paden.push({sleutel:sl,naam,uitleg,...R}); };
+  const run=o=>solveJS(ctx.basisSquad,ctx.bud,ctx.gws,ctx.vrijNa,o);
+  stappen.push({label:"week voor week",doe:()=>{ if(ctx.fout) return null;
+    voeg("wvw","Week voor week","elke week de beste vrije wissel(s), nooit een hit",run({maxZet:3,extra:0,perZet:2.5})); return null; }});
+  stappen.push({label:"sparen en toeslaan",doe:()=>{
+    /* Eerst kijken of drie opsparen loont (een grote slag), anders twee.
+       Zo verschilt deze weg echt van week-voor-week, die zelf ook al
+       bundelt als dat beter uitkomt. */
+    let best=null, minimaal=0;
+    for(const m of [3,2]){
+      for(let w=1;w<Math.min(5,ctx.gws.length);w++){
+        const R=run({maxZet:3,extra:0,perZet:2.5,wacht:w,eersteMin:m});
+        if(!R.geldig) continue;
+        if(!best||R.punten>best.punten) best=R;
+      }
+      if(best){ minimaal=m; break; }
     }
-    opties.sort((a,b)=>b.punten-a.punten);
-    return opties[0]||null;
+    voeg("sparen","Sparen & toeslaan",minimaal===3?"drie transfers opsparen en dan in één keer een grote slag":"eerst transfers opsparen, dan in één keer meerdere wissels",best); return null; }});
+  stappen.push({label:"doelgericht",doe:()=>{
+    /* De hoogste projectie over het hele venster die je nog niet hebt, langs
+       dezelfde kwaliteitsvloer als de rest. De eerste van de beste vier die
+       binnen het venster écht binnen te halen is, wordt het doelwit. */
+    const heb=new Set(ctx.basisSquad.map(p=>p.id));
+    const somV=p=>ctx.gws.reduce((a,g)=>a+(p.gw[g]||0),0);
+    const kandidaten=D.db.filter(c=>!heb.has(c.id)&&!UITSLUIT.has(c.id)&&c.status==="a"&&(c.cpmin||0)>=75&&(c.own||0)>=1.0
+        &&somV(c)/ctx.gws.length>=posDrempel(c.p)*1.05).sort((a,b)=>somV(b)-somV(a)).slice(0,4);
+    for(const T of kandidaten){
+      const R=run({maxZet:3,extra:0,perZet:2.5,doel:T});
+      if(!R.geldig) continue;
+      voeg("doel","Doelgericht",`haalt ${T.n} zo snel mogelijk binnen, de rest daaromheen`,R);
+      break;
+    }
+    return null; }});
+  stappen.push({label:"rustig",doe:()=>{
+    voeg("rustig","Rustig","hooguit één wissel per week, alleen bij duidelijke winst",run({maxZet:1,extra:0,perZet:4.0})); return null; }});
+  stappen.push({label:"met hits",doe:()=>{
+    voeg("hits","Met hits","ook een strafpunt-transfer als die zichzelf ruim terugverdient",run({maxZet:3,extra:1,perZet:2.5})); return null; }});
+  stappen.push({label:"afronden",doe:()=>{
+    const sig=R=>R.pad.map(st=>st.gw+":"+st.acties.filter(a=>!a.gepland).map(a=>a.uit.id+">"+a.in.id).sort().join(",")).join("|");
+    const basisSig=sig(ctx.basis);
+    const gezien=new Map(); const paden=[]; const zelfde=[];
+    for(const P of ctx.paden){
+      const k=sig(P);
+      if(k===basisSig){ zelfde.push({naam:P.naam,als:"Niets doen"}); continue; }
+      if(gezien.has(k)){ zelfde.push({naam:P.naam,als:gezien.get(k)}); continue; }
+      gezien.set(k,P.naam); paden.push(P);
+    }
+    paden.sort((a,b)=>b.punten-a.punten);
+    paden.forEach(P=>{
+      P.winst=+(P.punten-ctx.basis.punten).toFixed(1);
+      let top=null;
+      const winstVan=a=>a.xi!=null?a.xi:a.w;
+      P.pad.forEach(st=>st.acties.forEach(a=>{ if(!a.gepland&&(!top||winstVan(a)>winstVan(top.a))) top={a,gw:st.gw}; }));
+      P.sleutelaankoop=top;
+    });
+    const niets={sleutel:"niets",naam:"Niets doen",uitleg:ctx.gepland0.length||Object.keys(PLAN.transfers).some(g=>+g>PLANGW)?"alleen wat je al gepland hebt; de lat voor elk pad":"transfers sparen; de lat waar elk pad tegen afgezet wordt",...ctx.basis,winst:0,sleutelaankoop:null};
+    return {klaar:true,res:{sleutel,gws:ctx.gws,grens:ctx.grens,bud:ctx.bud,vrij:ctx.vrij,vrijNa:ctx.vrijNa,gepland0:ctx.gepland0,
+                            basisSquad:ctx.basisSquad,basis:ctx.basis,paden,niets,zelfde}};
+  }});
+  return stappen;
+}
+const POSNAAM={GKP:"Keeper",DEF:"Verdediger",MID:"Middenvelder",FWD:"Aanvaller"};
+const POSVOLG={GKP:0,DEF:1,MID:2,FWD:3};
+function tekenPaden(box,res){
+  VLAK="plan";
+  if(res.fout){ box.innerHTML='<div class="empty">'+esc(res.fout)+'</div>'; return; }
+  const alle=res.paden.concat([res.niets]);
+  if(!alle.some(p=>p.sleutel===SOLVER_KEUS)) SOLVER_KEUS=alle[0].sleutel;
+  const P=alle.find(p=>p.sleutel===SOLVER_KEUS);
+  const gws=res.gws, laatste=gws[gws.length-1];
+  const geld=v=>"£"+v.toFixed(1)+"m";
+
+  // ── de kiezer: elke weg als kaart ──
+  const kaart=(p,i)=>{
+    const koppen=[]; p.pad.forEach(st=>st.acties.forEach(a=>{ if(!a.gepland&&!koppen.some(x=>x.id===a.in.id)) koppen.push(a.in); }));
+    const hoogste=i===0&&p.sleutel!=="niets"&&p.winst>0;
+    return `<button class="padkaart${p.sleutel===SOLVER_KEUS?" gekozen":""}${p.sleutel==="niets"?" rust":""}" role="tab" aria-selected="${p.sleutel===SOLVER_KEUS}" data-kies="${p.sleutel}">
+      ${hoogste?'<span class="pkbadge">hoogste opbrengst</span>':""}
+      <span class="pknaam"><b>${esc(p.naam)}</b><span>${esc(p.uitleg)}</span></span>
+      <span class="pkpunten"><b>${p.punten.toFixed(0)}</b><i class="${p.winst>0.05?"plus":p.winst<-0.05?"min":"nul"}">${p.winst>0?"+":""}${p.winst.toFixed(1)}</i></span>
+      <span class="pkmeta"><i>${p.zetten} transfer${p.zetten===1?"":"s"}</i><i class="${p.hits?"bad":""}">${p.hits?"\u2212"+p.hits+" strafpunten":"geen hits"}</i></span>
+      ${koppen.length?`<span class="pkkoppen">${koppen.slice(0,5).map(q=>portret(q,"mini")).join("")}${koppen.length>5?`<i>+${koppen.length-5}</i>`:""}</span>`:""}
+    </button>`;
+  };
+
+  // ── de sleutelaankoop van de gekozen weg, als speelkaart ──
+  const heroHtml=(()=>{
+    const S=P.sleutelaankoop; if(!S) return "";
+    const a=S.a, p=a.in, k=shirtKleur(p.t), g=S.gw;
+    const rest=gws.filter(x=>x>=g), n=rest.length;
+    const cel=(D.ticker.find(t=>t.team===p.t)||{}).cellen||{};
+    const strook=D.alle_gws.filter(x=>x>=g).slice(0,5).map(gg=>{const cs=cel[gg]||[];
+      return cs.length?`<i class="c${cs[0].fdr}${cs[0].h?"":" uit"}" title="GW${gg}: ${esc(cs[0].opp)} ${cs[0].h?"thuis":"uit"}">${esc(cs[0].h?cs[0].opp:cs[0].opp.toLowerCase())}</i>`:'<i class="e"></i>';}).join("");
+    return `<section class="doelwit padhero${p.code?" metfoto":""}" style="--k1:${k.hoofd};--k2:${k.acc}">
+      <div class="dwtekst">
+        <span class="dwkop">Sleutelaankoop van dit pad \u00b7 GW${g}</span>
+        <span class="dwclub">${clubTegel(p.t,"klein")}<span>${esc(clubNaam(p.t))} \u00b7 ${POSNAAM[p.p]||p.p}</span></span>
+        <b class="dwnaam">${esc(p.n)}</b>
+        <div class="dwcijfers">
+          <span><b>${somGW(p,g,n).toFixed(1)}</b><i>punten GW${g}\u2013${rest[n-1]}</i></span>
+          <span><b>${geld(p.c)}</b><i>prijs</i></span>
+          <span><b>${p.cpmin?p.cpmin+"'":"\u2014"}</b><i>verwacht per duel</i></span>
+          <span><b>${(p.own||0).toFixed(1)}%</b><i>eigendom</i></span>
+        </div>
+        <div class="dwstrook">${strook}</div>
+        <div class="dwwissel">${portret(a.uit)}<span class="dwwt"><i>eruit in GW${g}</i><b>${esc(a.uit.n)}</b><span>${somGW(a.uit,g,n).toFixed(1)} punten \u00b7 ${geld(verkoopPrijsVan(a.uit))}</span></span>
+          <span class="dwplus">+${(a.xi!=null?a.xi:a.w).toFixed(1)}</span>
+          <span class="dwwt rechts"><i>erin</i><b>${esc(p.n)}</b><span>winst voor je elf over de ${a.n||4} weken erna</span></span></div>
+        <div class="dwacties">
+          <button class="rtplan" data-padplan="${P.sleutel}">${ik("vink",14)}Plan dit pad</button>
+          <button class="rtsluit dwsluit" data-sluit="${p.id}">${ik("sluit",12)}niet mijn type</button>
+          <button class="knop" data-dwsp="${p.id}">${ik("oog",14)}Spelerpagina</button>
+        </div>
+      </div>
+      ${p.code?`<div class="dwfoto"><img alt="" decoding="async" draggable="false" src="${spelerFoto(p,"500x500")}" data-alt="${fotoAlt(p,spelerFoto(p,"500x500"))}" onerror="fotoFout(this)"></div>`:""}
+      <span class="dwwater">${esc(p.t)}</span>
+    </section>`;
   })();
-  const S={gws,basis:+zonder.toFixed(1),beste:+R.punten.toFixed(1),
-           winst:+(R.punten-zonder).toFixed(1),hits:R.hits,pad:R.pad,alt:[]};
-  const gepland=gepland0;
-  const zetten=S.pad.reduce((a,st)=>a+st.acties.length,0);
-  let h="";
-  if(gepland.length||Object.keys(PLAN.chips).length){
-    h+=`<div class="ins" style="border-color:var(--t-plan);margin-bottom:11px">
-      <h4><span class="tagje">jouw planning telt mee</span></h4>
-      <p>Dit pad start vanaf <b>gameweek ${PLANGW}</b> met je squad zoals die er dan uitziet:
-      ${gepland.length?`inclusief ${gepland.length} geplande transfer${gepland.length>1?"s":""} in GW${PLANGW}`:"zonder geplande transfers"}${
-      gepland.length?` — die ${gepland.length===1?"is":"zijn"} van je vrije transfers afgetrokken, dus je hebt er nog <b>${vrijNa}</b> over${
-        vrijNa===0?" en elke extra wissel in GW"+PLANGW+" kost 4 punten":""}`:""}${
-      Object.keys(PLAN.chips).length?`, en je chipplan (${Object.entries(PLAN.chips).map(([g,c])=>`GW${g}: ${esc(c)}`).join(", ")})`:""}.
-      Wijzig je iets in je team, dan herberekent dit pad zich meteen.</p></div>`;
-  }
-  h+=`<div class="vgl">
-    <div class="vak"><div class="lbl">Niets doen vanaf GW${PLANGW}</div>
-      <div class="grt">${S.basis.toFixed(0)}</div>
-      <div class="toe">punten over GW${S.gws[0]}–${S.gws[S.gws.length-1]} met je huidige opstelling</div></div>
-    <div class="vak win"><div class="lbl">Beste transferpad</div>
-      <div class="grt" style="color:var(--good)">${S.beste.toFixed(0)}</div>
-      <div class="toe">${zetten} transfer${zetten===1?"":"s"}${S.hits?`, ${S.hits} strafpunten betaald`:", geen strafpunten"}
-        · <b style="color:var(--good)">+${S.winst.toFixed(1)} punten</b></div></div></div>`;
-  h+=`<div style="margin-bottom:9px">`+S.pad.map(st=>{
+
+  // ── de tijdlijn: per gameweek wat er gebeurt en wat het oplevert ──
+  const basisPad=res.basis.pad;
+  const rijen=P.pad.map((st,i)=>{
+    const b=basisPad[i]; const delta=b?st.sc-b.sc:0;
+    const deltaHtml=P.sleutel==="niets"
+      ?`<span class="stapdelta nul" title="GW${st.gw}: ${st.sc.toFixed(1)} punten met je huidige selectie">${st.sc.toFixed(0)}</span>`
+      :`<span class="stapdelta ${delta>0.05?"plus":delta<-0.05?"min":"nul"}" title="GW${st.gw}: ${st.sc.toFixed(1)} punten tegen ${b?b.sc.toFixed(1):"\u2014"} als je niets doet${st.winst?`; deze wissels samen +${st.winst.toFixed(1)} over de vier weken erna`:""}">${delta>0?"+":""}${delta.toFixed(1)}</span>`;
+    if(st.chip) return `<div class="stap rust chipweek"><span class="gwl">GW${st.gw}</span>
+        <span class="wat">${esc(st.chip)} gepland \u2014 deze week laat het plan met rust${st.chip==="Wildcard"?"; de beste wildcard-selectie staat onder Assistent \u203a Chipteams":""}</span>
+        ${deltaHtml}<span class="kost" style="color:var(--fg-3)">${st.vrijNa} vrij</span></div>`;
     if(!st.acties.length){
-      const n=st.vrijNa!=null?st.vrijNa:null;
+      const n=st.vrijNa;
       if(st.verspild) return `<div class="stap rust verspild"><span class="gwl">GW${st.gw}</span>
-        <span class="wat" style="color:var(--warn)">Je zit op het maximum van 5 opgespaarde transfers —
-          de transfer van deze week vervalt</span>
-        <span class="kost" style="color:var(--warn)">−1 vrij</span></div>`;
+        <span class="wat" style="color:var(--warn)">Je zit op het maximum van 5 opgespaarde transfers \u2014 de transfer van deze week vervalt</span>
+        ${deltaHtml}<span class="kost" style="color:var(--warn)">\u22121 vrij</span></div>`;
       const doel=st.spaartVoor;
       return `<div class="stap rust"><span class="gwl">GW${st.gw}</span>
-        <span class="wat" style="color:var(--fg-3)">Bewaar je transfer${
-          n!=null?` — dan heb je er ${n}`:""}${n===5?" en zit je aan het maximum":""}${
+        <span class="wat" style="color:var(--fg-3)">Bewaar je transfer \u2014 dan heb je er ${n}${n===5?" en zit je aan het maximum":""}${
           doel?`<i class="spaardoel">sparen voor GW${doel.gw}: ${doel.wie.map(esc).join(" + ")}</i>`:""}</span>
-        <span class="kost" style="color:var(--fg-3)">${n!=null?n+" vrij":""}</span></div>`;
+        ${deltaHtml}<span class="kost" style="color:var(--fg-3)">${n} vrij</span></div>`;
     }
-    return st.acties.map(([u,i])=>`<div class="stap actie"><span class="gwl">GW${st.gw}</span>
-      <span class="wat"><span class="wie uit">${naamTegel(u,"klein")}<b>${esc(u)}</b></span><span class="pijl">${ik("pijlRechts",15)}</span><span class="wie in">${naamTegel(i,"klein")}<b>${esc(i)}</b></span></span>
-      <span class="kost${st.hit?" hit":""}">${st.hit?"−4":(st.vrijNa!=null?st.vrijNa+" vrij":"")}</span></div>`).join("");
-  }).join("")+`</div>`;
-  if(false){
-    h+=`<div class="lbl" style="margin:13px 0 6px">Bijna even goed</div>`;
-    S.alt.forEach(a=>{
-      const z=a.pad.flatMap(st=>st.acties.map(([u,i])=>`GW${st.gw} ${u}→${i}`));
-      h+=`<div style="font-size:12px;color:var(--fg-2);padding:5px 0;border-bottom:1px solid var(--line-2)">
-        <span style="font-family:var(--mono);color:var(--fg)">${a.punten.toFixed(1)}</span> — ${esc(z.join(" · ")||"niets doen")}</div>`;});
+    return st.acties.map((a,j)=>`<div class="stap actie${a.gepland?" gepland":""}"><span class="gwl">GW${st.gw}</span>
+      <span class="wat">
+        <span class="wie uit">${portret(a.uit,"klein")}<span class="wienaam"><b>${esc(a.uit.n)}</b><small>${geld(verkoopPrijsVan(a.uit))}${a.uit.cpmin?` \u00b7 ${a.uit.cpmin}'`:""}</small></span></span>
+        <span class="pijl" title="${a.gepland?"staat al in je planning":(a.xi!=null?a.xi:a.w)<0?"levert zelf minder op, maar maakt geld vrij voor de andere wissel":`winst voor je elf over de ${a.n||4} weken erna, deze wissel alleen`}">${ik("pijlRechts",15)}${a.gepland?"":(()=>{const v=a.xi!=null?a.xi:a.w; return `<i class="${v<0?"min":""}">${v>0?"+":v<0?"\u2212":"\u00b1"}${Math.abs(v).toFixed(1)}</i>`;})()}</span>
+        <span class="wie in">${portret(a.in,"klein")}<span class="wienaam"><b>${esc(a.in.n)}</b><small>${geld(a.in.c)}${a.in.cpmin?` \u00b7 ${a.in.cpmin}'`:""}${a.gepland?" \u00b7 al gepland":""}</small></span></span>
+        ${a.gepland?"":`<button class="rtsluit" data-sluit="${a.in.id}" title="${esc(a.in.n)} nooit meer voorstellen">${ik("sluit",12)}sluit uit</button>`}
+      </span>
+      ${j===0?deltaHtml:"<span></span>"}
+      ${j===0?`<span class="kost${st.hit?" hit":""}">${st.hit?"\u2212"+st.hit:(st.vrijNa+" vrij")}</span>`:"<span></span>"}</div>`).join("");
+  });
+
+  // ── de selectie aan het eind van de weg ──
+  const nieuwIds=new Set(); P.pad.forEach(st=>st.acties.forEach(a=>nieuwIds.add(a.in.id)));
+  const eind=P.eind.slice().sort((a,b)=>(POSVOLG[a.p]-POSVOLG[b.p])||(somGW(b,gws[0],gws.length)-somGW(a,gws[0],gws.length)));
+  const eindHtml=`<div class="padeind"><div class="lbl">Je selectie na dit pad \u00b7 GW${laatste}${nieuwIds.size?` \u00b7 <span style="color:var(--good)">${nieuwIds.size} nieuw</span>`:""}</div>
+    <div class="padeindrij">${eind.map(p=>`<span class="pes${nieuwIds.has(p.id)?" nieuw":""}" data-dwsp="${p.id}" title="${esc(p.n)} \u00b7 ${esc(p.t)} \u00b7 ${geld(p.c)}">${portret(p,"klein")}<b>${esc(p.n)}</b></span>`).join("")}</div></div>`;
+
+  const uitgesloten=[...UITSLUIT].map(id=>D.db.find(p=>p.id===id)).filter(Boolean);
+  let h=`<section class="paden">
+    <div class="padenkop"><b>Wegen naar GW${laatste}</b>
+      <span>${gws.length} gameweeks vanaf GW${gws[0]} \u00b7 ${res.vrij===Infinity?"onbeperkt":res.vrijNa} vrije transfer${res.vrijNa===1?"":"s"} \u00b7 ${geld(res.bud)} in de bank \u00b7 punten = je beste elf per week, aanvoerder dubbel, strafpunten er al af</span></div>`;
+  if(res.gepland0.length||Object.keys(PLAN.chips).length){
+    h+=`<div class="ins" style="border-color:var(--t-plan);margin-bottom:11px">
+      <h4><span class="tagje">jouw planning telt mee</span></h4>
+      <p>Elke weg start vanaf <b>gameweek ${PLANGW}</b> met je squad zoals die er dan uitziet:
+      ${res.gepland0.length?`inclusief ${res.gepland0.length} geplande transfer${res.gepland0.length>1?"s":""} in GW${PLANGW}`:"zonder geplande transfers"}${
+      res.gepland0.length?` \u2014 die ${res.gepland0.length===1?"is":"zijn"} van je vrije transfers afgetrokken, dus je hebt er nog <b>${res.vrijNa}</b> over${
+        res.vrijNa===0?" en elke extra wissel in GW"+PLANGW+" kost 4 punten":""}`:""}${
+      Object.keys(PLAN.chips).length?`, en je chipplan (${Object.entries(PLAN.chips).map(([g,c])=>`GW${g}: ${esc(c)}`).join(", ")})`:""}.
+      Wijzig je iets in je team, dan rekenen alle wegen zich meteen opnieuw.</p></div>`;
   }
-  if(spaarPad&&spaarPad.punten>S.beste+1.0){
-    h+=`<div class="ins" style="border-color:var(--good);margin:11px 0">
-      <h4><span class="tagje" style="background:var(--good-vlak)">of: sparen en in één keer toeslaan</span></h4>
-      <p>Doe je tot <b>GW${spaarPad.gw}</b> niets, dan heb je er <b>${spaarPad.vrij}</b> staan en kun je
-      in één keer ${spaarPad.acties.length} wissels maken:</p>
-      <div style="margin:8px 0">${spaarPad.acties.map(([u,i])=>
-        `<div class="stap actie"><span class="gwl">GW${spaarPad.gw}</span>
-         <span class="wat"><span class="wie uit">${naamTegel(u,"klein")}<b>${esc(u)}</b></span><span class="pijl">${ik("pijlRechts",15)}</span><span class="wie in">${naamTegel(i,"klein")}<b>${esc(i)}</b></span></span>
-         <span class="kost">${spaarPad.hit?"−"+spaarPad.hit:""}</span></div>`).join("")}</div>
-      <p><b style="color:var(--good)">${spaarPad.punten.toFixed(0)} punten</b> over dezelfde periode,
-      tegen ${S.beste.toFixed(0)} als je week voor week wisselt —
-      <b style="color:var(--good)">+${(spaarPad.punten-S.beste).toFixed(1)}</b>.
-      Sparen loont hier omdat je met ${spaarPad.vrij} transfers tegelijk spelers kunt betalen
-      die met één per week buiten bereik blijven.</p></div>`;
-  }
-  if(S.gws[S.gws.length-1]>grens)
-    h+=`<div class="bronlet">${ik("info",13)}<span>Dit venster loopt tot GW${S.gws[S.gws.length-1]},
-      voorbij het bereik van FPL Copilot (GW${grens}). Vanaf daar rekent het dashboard zelf.</span></div>`;
-  h+=`<div class="legend"><span>De solver kijkt ${S.gws.length} gameweeks vooruit en respecteert de transferregels:
-    1 gratis per week, maximaal 5 sparen, −4 per extra.</span>
-    <span>Soms is niets doen de beste zet — dat zie je hierboven terug.</span></div>`;
+  h+=`<div class="padkiezer" role="tablist">${alle.map(kaart).join("")}</div>`;
+  if(res.zelfde.length) h+=`<div class="padzelfde">${res.zelfde.map(z=>`<span>${esc(z.naam)} komt uit op hetzelfde als <b>${esc(z.als)}</b></span>`).join("")}</div>`;
+  h+=`<div class="padinhoud">
+    <div class="padinhoudkop"><b>${esc(P.naam)}</b><span>${esc(P.uitleg)}</span>
+      <span class="padtotaal">${P.punten.toFixed(0)} punten${P.sleutel!=="niets"?` \u00b7 <b class="${P.winst>=0?"plus":"min"}">${P.winst>0?"+":""}${P.winst.toFixed(1)}</b> t.o.v. niets doen`:` over GW${gws[0]}\u2013${laatste}`}</span></div>
+    ${heroHtml}
+    ${P.sleutel==="niets"?`<p class="rtuitleg" style="padding:0 4px 10px">Dit is de lat. ${res.paden[0]?`De beste weg levert <b style="color:var(--good)">+${res.paden[0].winst.toFixed(1)}</b> punt meer op over GW${gws[0]}\u2013${laatste}. Is dat weinig, dan is sparen de betere zet: een gespaarde transfer is volgende week meer waard.`:"Geen enkele wissel haalt de lat \u2014 met deze selectie is sparen de beste zet."}</p>`:""}
+    <div class="padtijdlijn">${rijen.join("")}</div>
+    ${eindHtml}
+  </div>`;
+  if(uitgesloten.length) h+=`<div class="rtuitgesloten"><span>Uitgesloten:</span>${uitgesloten.map(p=>`<button data-terug="${p.id}">${esc(p.n)} ${ik("sluit",10)}</button>`).join("")}</div>`;
+  if(laatste>res.grens)
+    h+=`<div class="bronlet" style="margin-top:10px">${ik("info",13)}<span>Dit venster loopt tot GW${laatste}, voorbij het bereik van FPL Copilot (GW${res.grens}). Vanaf daar rekent het dashboard zelf.</span></div>`;
+  h+=`<div class="legend padnotes"><span>Elke weg respecteert de transferregels: 1 gratis per week, maximaal 5 sparen, \u22124 per extra. Binnenkomers zijn beschikbare basisspelers (\u226575 verwachte minuten, \u22651% eigendom) die boven het gemiddelde van hun positie draaien; wie je uitsluit komt in geen enkele weg meer voor.</span>
+    <span>Winst per wissel = wat je beste elf erdoor wint over de vier weken erna; het getal per gameweek is het verschil met niets doen.</span></div></section>`;
   box.innerHTML=h;
+  box.querySelectorAll("[data-kies]").forEach(b=>b.onclick=()=>{ SOLVER_KEUS=b.dataset.kies; tekenPaden(box,res); });
+  box.querySelectorAll("[data-dwsp]").forEach(b=>b.onclick=e=>{ if(e.target.closest("[data-sluit],[data-padplan]")) return; openProfiel(+b.dataset.dwsp); });
+  box.querySelectorAll("[data-sluit]").forEach(b=>b.onclick=e=>{ e.stopPropagation(); sluitUit(+b.dataset.sluit,true); });
+  box.querySelectorAll("[data-terug]").forEach(b=>b.onclick=()=>sluitUit(+b.dataset.terug,false));
+  box.querySelectorAll("[data-padplan]").forEach(b=>b.onclick=()=>{
+    const Q=alle.find(x=>x.sleutel===b.dataset.padplan); if(!Q) return;
+    let n=0;
+    Q.pad.forEach(st=>st.acties.forEach(a=>{
+      if(a.gepland) return;
+      PLAN.transfers[st.gw]=(PLAN.transfers[st.gw]||[]).filter(t=>t.uit!==a.uit.id);
+      PLAN.transfers[st.gw].push(transferRecord(a.uit.id,a.in.id)); n++;
+    }));
+    if(!n) return;
+    markeerVuil();
+    statusUit(`Weg "${Q.naam}" gepland: ${n} transfer${n===1?"":"s"} in je planning gezet`,true);
+    tekenAlles();
+  });
   bron("#src-solver",[
     {label:"verwachte punten per speler",bron:"FPL Copilot",url:"https://fplcopilot.com/expected-points"},
-    {label:"transferregels",bron:"officiële FPL-regels",url:"https://fantasy.premierleague.com/help/rules"},
+    {label:"transferregels",bron:"offici\u00eble FPL-regels",url:"https://fantasy.premierleague.com/help/rules"},
     {label:"berekening",bron:"live in je browser, op basis van je actuele planning",calc:1}]);
 }
 
@@ -8923,7 +9223,7 @@ const BLOKKEN=[
   {id:"prijzen",   naam:"Prijzen",          hint:"stijgers & dalers",    breed:1, bron:"#prijzen"},
   {id:"markt",     naam:"Transfermarkt",    hint:"meest gekocht",        breed:1, bron:"#marktbox"},
   {id:"chips",     naam:"Chipplanner",      hint:"alle 38 gameweeks",    breed:2, bron:"#chips"},
-  {id:"solver",    naam:"Transferpad",      hint:"meerdere gameweeks",   breed:2, bron:"#solverbox"},
+  {id:"solver",    naam:"Seizoensplan",     hint:"wegen door de komende gameweeks", breed:2, bron:"#solverbox"},
   {id:"vergelijk", naam:"Speler tegen speler", hint:"alle assen",        breed:2, bron:"#vglbox"},
   {id:"league",    naam:"Mini-league",      hint:"jouw tien",            breed:1, bron:"#mlbox"},
   {id:"wereld",    naam:"De wereld",        hint:"waar de massa zit",    breed:1, bron:"#wereldbox"},
@@ -13095,7 +13395,7 @@ const UITS="fplcockpit_uitsluit_v1";
 let UITSLUIT=new Set();
 try{ UITSLUIT=new Set(JSON.parse(localStorage.getItem(UITS)||"[]").filter(id=>D.db.some(p=>p.id===id))); }catch(e){}
 function bewaarUitsluit(){ try{ localStorage.setItem(UITS,JSON.stringify([...UITSLUIT])); }catch(e){} }
-function sluitUit(id,aan){ if(aan) UITSLUIT.add(id); else UITSLUIT.delete(id); bewaarUitsluit(); advies(); if(typeof analist==="function") analist(); }
+function sluitUit(id,aan){ if(aan) UITSLUIT.add(id); else UITSLUIT.delete(id); bewaarUitsluit(); advies(); if(typeof analist==="function") analist(); if($("#solverbox")) solverPaneel(); }
 
 function transferRoutes(g,N){
   const lijst=squadInGW(g), bank=budgetIn(g), vrij=vrijeTransfers(g);
