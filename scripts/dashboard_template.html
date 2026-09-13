@@ -5293,6 +5293,14 @@ body::after{ opacity:.06; }
 .dwacties .pfinsigne{ min-height:34px; padding:0 12px; }
 @media(max-width:700px){ .doelwit.caphero .dwfoto{ width:100%; } .doelwit.caphero .dwfoto img{ height:170px; } }
 
+/* seizoensarchief: foto's en clubvlakken in de tabellen, rijen als kaarten */
+.arsp{ display:inline-flex; align-items:center; gap:8px; }
+#archiefbox table{ border-collapse:separate; border-spacing:0 3px; }
+#archiefbox tbody td{ background:color-mix(in srgb,var(--fg) 2.5%,transparent); border:0; padding:6px 9px; }
+#archiefbox tbody td:first-child{ border-radius:9px 0 0 9px; }
+#archiefbox tbody td:last-child{ border-radius:0 9px 9px 0; }
+#archiefbox tbody tr:hover td{ background:color-mix(in srgb,var(--accent) 8%,transparent); }
+
 /* het zwevende menu: zelfde iconen als de tabbalk */
 .snav button{ display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto auto;
   column-gap:10px; align-items:center; text-align:left; }
@@ -15377,8 +15385,8 @@ function leagueArchief(){
         <th style="text-align:right">Punten per basisplek</th></tr></thead><tbody>
       ${rijen.map(r=>{const sp=D.db.find(q=>q.id===r.id);
         return `<tr>
-          <td>${sp?spnm(sp):esc(r.n)}</td>
-          <td class="club">${esc(r.t)}</td>
+          <td><span class="arsp">${sp?portret(sp,"mini"):clubTegel(r.t,"klein")}${sp?spnm(sp):esc(r.n)}</span></td>
+          <td class="club">${clubTegel(r.t,"klein")}</td>
           <td><span class="pos">${r.p}</span></td>
           <td class="n" style="font-weight:650">${r.eig.toFixed(0)}%</td>
           <td><span class="arbalk"><i style="width:${(r.eig/mx*100).toFixed(0)}%"></i></span></td>
@@ -15404,7 +15412,7 @@ function leagueArchief(){
         <th style="text-align:right">Punten totaal</th><th style="text-align:right">Gemiddeld</th>
         <th>In welke gameweeks</th></tr></thead><tbody>
       ${rijen.map(r=>{const sp=D.db.find(q=>q.id===r.id);
-        return `<tr><td>${sp?spnm(sp):esc(r.n)}</td><td class="club">${esc(r.t)}</td>
+        return `<tr><td><span class="arsp">${sp?portret(sp,"mini"):clubTegel(r.t,"klein")}${sp?spnm(sp):esc(r.n)}</span></td><td class="club">${clubTegel(r.t,"klein")}</td>
           <td class="n">${r.keer}×</td><td class="n">${r.pt}</td>
           <td class="n" style="font-weight:650">${r.gem.toFixed(1)}</td>
           <td class="club">${r.weken.sort((a,b)=>a-b).map(w=>"GW"+w).join(", ")}</td></tr>`;}).join("")}

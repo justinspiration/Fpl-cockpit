@@ -184,5 +184,24 @@ Hoe het sjabloon in elkaar zit sinds september 2026:
   positie/mijn team/volglijst) -- er zijn geen zoekbalken meer in de HTML.
   xG dit seizoen is FPL's `sxg`, vorig seizoen Opta. Ondergrens per-90:
   twee duels.
+- Spelerpagina: `profielIn()` bouwt de spelerskaart -- rang (`percentiel`
+  binnen `pctGroep`), radar (zes assen, percentiel binnen positie),
+  insignes en vormstrip komen allemaal uit bestaande velden; niets wordt
+  geschat. In de lade (`.ladeinhoud`) is het radar verborgen.
+- Aanvoerder: `captain()` zet de beste kandidaat als speelkaart
+  (`.doelwit.caphero`) boven de lijst.
+- Kwaliteitsvloer: `voldoetVloer(c,g,N)` is de enige definitie van "mag
+  hij voorgesteld worden" (transfers, seizoensplan, voorstellen, kansen).
+- Pundit: `predicted_points` is het cijfer ALS HIJ START; dashboard.py
+  vermenigvuldigt met `start_pct` per gameweek (`_pundit_verwacht`).
+  Zonder die stap stond Ait-Nouri (0% start) met 25 punten over 5 GW boven
+  Saka. De cache-vingerafdruk heeft een `versie`-veld; hoog dat op als de
+  projecties anders berekend worden.
+- Minutendrempels in de inzichten schalen met het seizoen (`MINLAT`),
+  net als de over/onderprestatie; 1200 vaste minuten laat alles leeg.
 - Stijl: alles nieuws staat in de "VISUELE LAAG"-blokken onderaan het
   stijlblok, in volgorde. Nieuwe pagina's krijgen daar hun eigen blok.
+- Lokale preview: `bouw_lokaal.py` en `serveer.py` staan in de scratchpad
+  van de sessie (pad in `.claude/launch.json`, niet in git); zijn ze weg,
+  dan zijn het twintig regels (render_web aanroepen; SimpleHTTPRequestHandler
+  op 8765 met Cache-Control: no-store).
