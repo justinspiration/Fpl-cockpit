@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-13T17:04:40+00:00",
+ "_opgehaald": "2026-09-13T18:47:52+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -946,18 +946,8 @@
   "MCI": {
    "artikel": "2026–27 Manchester City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_City_F.C._season",
-   "gespeeld": 8,
+   "gespeeld": 9,
    "laatste5": [
-    {
-     "datum": "2026-08-16",
-     "opp": "Arsenal",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 3,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "Final"
-    },
     {
      "datum": "2026-08-23",
      "opp": "Bournemouth",
@@ -997,35 +987,34 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "1"
+    },
+    {
+     "datum": "2026-09-13",
+     "opp": "Manchester United",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "4"
     }
    ],
    "vorm": [
-    "V",
+    "W",
     "W",
     "W",
     "W",
     "W"
    ],
-   "vormpunten": 12,
+   "vormpunten": 15,
    "vormmax": 15,
    "oefen": 0
   },
   "MUN": {
    "artikel": "2026–27 Manchester United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_United_F.C._season",
-   "gespeeld": 10,
+   "gespeeld": 11,
    "laatste5": [
-    {
-     "datum": "2026-08-15",
-     "opp": "Milan",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 4,
-     "uit": "V",
-     "soort": "oefen",
-     "toernooi": "Pre-season and friendlies",
-     "neutraal": true
-    },
     {
      "datum": "2026-08-22",
      "opp": "Hull City",
@@ -1069,18 +1058,29 @@
      "soort": "officieel",
      "toernooi": "League phase",
      "neutraal": false
+    },
+    {
+     "datum": "2026-09-13",
+     "opp": "Manchester City",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "Matches",
+     "neutraal": false
     }
    ],
    "vorm": [
     "V",
-    "V",
     "W",
     "G",
-    "W"
+    "W",
+    "V"
    ],
    "vormpunten": 7,
    "vormmax": 15,
-   "oefen": 1
+   "oefen": 0
   },
   "NEW": {
    "artikel": "2026–27 Newcastle United F.C. season",
