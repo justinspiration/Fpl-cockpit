@@ -1405,13 +1405,42 @@ def build():
         # we je aankoopprijzen moeten kennen — dus dat lezen we af bij FPL.
         # Zo blijft het kloppen ook als prijzen 's nachts bewegen: beide kanten
         # schuiven dan mee.
-        if _bf.get("bank") is not None and _huidig is not None:
+        # De handmatig afgelezen bank uit team.json verslaat de API alleen zolang
+        # er sinds het aflezen geen deadline is verstreken. Daarna is
+        # last_deadline_bank van de API het hardere getal: dat is precies de bank
+        # bij die deadline, mét de transfers die je toen deed. Hier stond de
+        # bank op £0,2m van 4 september terwijl FPL na de GW4-deadline £1,7m
+        # meldde -- en dan vindt de transferpagina geen enkele route.
+        _laatste_deadline = None
+        try:
+            for _e in bs.get("events", []):
+                _d = datetime.fromisoformat(_e["deadline_time"].replace("Z", "+00:00"))
+                if _d <= now and (_laatste_deadline is None or _d > _laatste_deadline):
+                    _laatste_deadline = _d
+        except Exception:
+            _laatste_deadline = None
+        _bf_vers = True
+        if _bf.get("gezien_op") and _laatste_deadline is not None:
+            try:
+                _bf_vers = datetime.fromisoformat(str(_bf["gezien_op"])[:10]).date() >= _laatste_deadline.date()
+            except ValueError:
+                _bf_vers = True
+        if _bf.get("bank") is not None and _huidig is not None and _bf_vers:
             budget_info.update({
                 "bank_nu": float(_bf["bank"]),
                 "totaal": round(_huidig + float(_bf["bank"]), 1),
                 "gezien_op": _bf.get("gezien_op"),
                 "bron": "selectie plus de bank die FPL toont (%s)" % _bf.get("gezien_op", "?"),
                 "uitleg": _bf.get("_uitleg"),
+            })
+        elif _huidig is not None and entry_meta.get("last_deadline_bank") is not None:
+            budget_info.update({
+                "bank_nu": round(_bank, 1),
+                "totaal": round(_huidig + _bank, 1),
+                "gezien_op": _laatste_deadline.date().isoformat() if _laatste_deadline else None,
+                "bron": "selectie plus de bank bij de laatste deadline (FPL API last_deadline_bank)",
+                "uitleg": ("team.json droeg een oudere bank (%s); sinds die datum is er een deadline "
+                           "verstreken, dus telt het API-bedrag." % _bf.get("gezien_op", "?")) if _bf.get("bank") is not None else None,
             })
         elif _bf.get("totaal"):
             budget_info.update({

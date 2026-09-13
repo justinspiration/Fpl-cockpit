@@ -4797,6 +4797,221 @@ body::after{ opacity:.06; }
 .pfhero-foto img,.vglhero-foto img{ animation:fade var(--rustig) var(--uit) both; }
 @media (prefers-reduced-motion:reduce){ .sp.metfoto .foto,.tbsp .tbfoto img,.portret img,.pfhero-foto img,.vglhero-foto img{ animation:none; } }
 
+/* ── MOBIEL VELD: vijf kaarten passen naast elkaar ──────────────────── */
+@media(max-width:640px){
+  .grasmat{ padding:22px 4px 10px; }
+  .linie{ gap:4px; margin-bottom:12px; flex-wrap:nowrap; }
+  .sp{ width:calc(20% - 3.2px); min-width:0; max-width:none; flex:0 1 auto; }
+  .sp .shirt,.sp.metfoto .shirt,.sp:not(.metfoto) .shirt{ height:58px; border-radius:9px 9px 4px 4px; }
+  .sp.metfoto .foto{ height:70px; top:2px; }
+  .sp .naam{ padding:4px 3px 5px; border-radius:0 0 8px 8px; }
+  .sp .naam b{ font-size:9.5px; letter-spacing:-.02em; }
+  .sp .naam .duel{ font-size:8px; letter-spacing:0; }
+  .sp .strook{ margin-top:2px; gap:2px; }
+  .sp .strook i{ width:9px; height:3px; }
+  .sp .xp{ top:3px; right:3px; font-size:9.5px; padding:1px 5px; border-radius:6px; }
+  .sp .band{ top:-5px; left:-5px; min-width:18px; height:18px; font-size:8.5px; }
+  .sp .merk{ font-size:8px; }
+  .sp .nr,.sp.metfoto .nr{ font-size:7.5px; padding:1px 4px; left:3px; bottom:3px; }
+  .sp:not(.metfoto) .shirt .nr{ font-size:11px; }
+  .bankvak{ margin:6px 4px; padding:14px 4px 8px; }
+  .bankrij2{ gap:4px; flex-wrap:nowrap; }
+  .bankslot{ width:calc(25% - 3px); }
+  .bankslot .sp{ width:100%; }
+}
+
+/* ── TRANSFERS: hoofddoelwit als speelkaart ─────────────────────────── */
+.doelwit{ position:relative; display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:stretch; min-height:260px;
+  margin-bottom:var(--s4); border-radius:var(--r3); overflow:hidden; border:1px solid color-mix(in srgb,var(--k1) 45%,var(--line)); box-shadow:var(--e3);
+  background:
+    radial-gradient(60% 120% at 100% 50%, color-mix(in srgb,var(--k1) 55%,transparent), transparent 70%),
+    linear-gradient(100deg, color-mix(in srgb,var(--k1) 38%,var(--ink)) 0%, color-mix(in srgb,var(--k1) 18%,var(--card)) 45%, var(--card) 100%); }
+.doelwit::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.35;
+  background:repeating-linear-gradient(135deg, rgba(255,255,255,.035) 0 2px, transparent 2px 14px); mask-image:linear-gradient(90deg,#000 30%,transparent 80%); }
+.doelwit:not(.metfoto){ grid-template-columns:1fr; min-height:0; }
+.dwtekst{ position:relative; z-index:3; padding:var(--s4) var(--s5) var(--s4); display:flex; flex-direction:column; gap:10px; min-width:0; }
+.dwkop{ display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--fg); }
+.dwkop::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--good); box-shadow:0 0 0 4px color-mix(in srgb,var(--good) 30%,transparent); animation:dwpuls 2.2s ease-in-out infinite; }
+@keyframes dwpuls{ 0%,100%{ box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 30%,transparent);} 50%{ box-shadow:0 0 0 7px color-mix(in srgb,var(--good) 10%,transparent);} }
+@media (prefers-reduced-motion:reduce){ .dwkop::before{ animation:none; } }
+.dwclub{ display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:650; letter-spacing:.04em; text-transform:uppercase; color:var(--fg-2); }
+.dwnaam{ font-size:clamp(28px,4vw,46px); font-weight:800; letter-spacing:-.035em; line-height:.95; text-transform:uppercase;
+  background:linear-gradient(180deg,var(--fg) 30%,color-mix(in srgb,var(--fg) 45%,var(--k1))); -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow:none; }
+.dwcijfers{ display:flex; gap:var(--s4); flex-wrap:wrap; }
+.dwcijfers span{ display:flex; flex-direction:column; gap:1px; }
+.dwcijfers b{ font-family:var(--mono); font-size:20px; font-weight:750; letter-spacing:-.02em; line-height:1; }
+.dwcijfers i{ font-style:normal; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); }
+.dwstrook{ display:flex; gap:3px; }
+.dwstrook i{ min-width:34px; height:20px; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-style:normal; font-size:9.5px; font-weight:700; color:#fff; }
+.dwstrook i.uit{ opacity:.75; } .dwstrook i.e{ background:transparent; border:1px dashed var(--line); }
+.dwwissel{ display:grid; grid-template-columns:46px minmax(0,1fr) auto minmax(0,1fr); gap:10px; align-items:center; padding:10px 12px; border-radius:var(--r2);
+  background:color-mix(in srgb,var(--card) 70%,transparent); border:1px solid var(--line); backdrop-filter:blur(8px); max-width:560px; }
+.dwwt{ display:flex; flex-direction:column; min-width:0; }
+.dwwt i{ font-style:normal; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); }
+.dwwt b{ font-size:var(--t-sm); font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.dwwt span{ font-size:10.5px; color:var(--fg-3); }
+.dwwt.rechts{ text-align:right; }
+.dwplus{ font-family:var(--mono); font-size:16px; font-weight:800; color:var(--good); padding:4px 9px; border-radius:99px; background:color-mix(in srgb,var(--good) 14%,transparent); white-space:nowrap; }
+.dwacties{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:auto; }
+.dwacties .rtsluit{ position:static; opacity:1; transform:none; min-height:34px; padding:0 12px; font-size:10px; }
+.dwacties .knop{ min-height:34px; border-radius:9px; display:inline-flex; align-items:center; gap:6px; }
+.dwfoto{ position:relative; z-index:2; width:min(320px,34vw); align-self:end; display:flex; align-items:flex-end; justify-content:center; }
+.dwfoto img{ display:block; height:min(320px,34vw); width:auto; max-width:none; margin-bottom:-2px; filter:drop-shadow(-12px 10px 24px rgba(0,0,0,.5)); animation:fade var(--rustig) var(--uit) both; }
+.dwwater{ position:absolute; right:-.1em; bottom:-.28em; z-index:1; font-size:clamp(120px,22vw,260px); font-weight:900; letter-spacing:-.06em; line-height:1;
+  color:color-mix(in srgb,var(--k2) 10%,transparent); pointer-events:none; user-select:none; }
+.dwrij{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:var(--s2); margin-bottom:var(--s4); }
+.dwmini{ display:grid; grid-template-columns:64px minmax(0,1fr); gap:10px; align-items:center; padding:8px 12px 8px 8px; text-align:left; cursor:pointer;
+  border-radius:var(--r2); border:1px solid var(--line); background:linear-gradient(120deg,color-mix(in srgb,var(--k1) 22%,var(--card)),var(--card) 70%);
+  box-shadow:var(--e1); font-family:inherit; color:var(--fg); transition:transform var(--vlot) var(--veer), box-shadow var(--vlot) var(--uit); }
+.dwmini:hover{ transform:translateY(-2px); box-shadow:var(--e2); }
+.dwmini .dwmt{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+.dwmini .dwmt i{ font-style:normal; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); }
+.dwmini .dwmt b{ font-size:var(--t-md); font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.dwmini .dwmt span{ font-size:10.5px; color:var(--fg-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+@media(max-width:700px){
+  .doelwit{ grid-template-columns:1fr; }
+  .dwfoto{ width:100%; justify-content:flex-end; }
+  .dwfoto img{ height:190px; }
+  .dwtekst{ padding:var(--s4); }
+  .dwnaam{ font-size:clamp(26px,8vw,36px); }
+  .dwwissel{ grid-template-columns:40px minmax(0,1fr) auto minmax(0,1fr); gap:6px; padding:8px; }
+}
+
+/* ── DATABASE: van saaie tabel naar leesbare rijen ───────────────────── */
+#db{ border-spacing:0 4px; }
+#db thead th{ padding:8px 8px; background:color-mix(in srgb,var(--card) 96%,transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+#db thead th[data-sort]{ cursor:pointer; }
+#db thead th[aria-sort] { color:var(--accent); }
+#db tbody td{ padding:7px 8px; font-size:12.5px; }
+#db tbody td:first-child{ padding-left:6px; }
+#db tbody tr td:nth-child(2){ font-weight:650; }
+#db tbody td.n b,#db tbody td b{ font-weight:750; }
+#db tbody tr:hover td{ background:color-mix(in srgb,var(--accent) 9%,transparent); }
+#db .spnm{ font-size:13px; font-weight:680; }
+#db td.est{ color:var(--fg-3); }
+#db .badge{ vertical-align:middle; }
+.dbclub .ctegel{ box-shadow:none; }
+#db tbody tr.mijn td{ background:color-mix(in srgb,var(--good) 8%,transparent); }
+.filters{ gap:8px; }
+.filters .seg button{ min-height:32px; border-radius:8px; }
+
+/* ── CHIPPLANNER ─────────────────────────────────────────────────────── */
+.chiphelft{ margin-bottom:var(--s5); }
+.chiphelftkop{ display:flex; flex-direction:column; gap:2px; margin-bottom:var(--s3); }
+.chiphelftkop b{ font-size:var(--t-lg); letter-spacing:-.015em; }
+.chiphelftkop span{ font-size:var(--t-xs); color:var(--fg-3); }
+.chipraster{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:var(--s3); margin-bottom:var(--s3); }
+.chipkaart{ display:flex; flex-direction:column; gap:10px; padding:12px 14px 14px; border-radius:var(--r2); border:1px solid var(--line);
+  background:var(--card); background-image:var(--glans); box-shadow:var(--e1); min-width:0; }
+.chipkaart>header{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.chipkaart>header b{ font-size:var(--t-md); font-weight:700; }
+.chipik{ width:30px; height:30px; border-radius:9px; display:inline-flex; align-items:center; justify-content:center; color:var(--t-plan);
+  background:color-mix(in srgb,var(--t-plan) 14%,transparent); flex:none; }
+.chipstatus{ margin-left:auto; font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; padding:3px 8px; border-radius:99px;
+  background:color-mix(in srgb,var(--good) 14%,transparent); color:var(--good); }
+.chipkaart.gebruikt{ opacity:.72; }
+.chipkaart.gebruikt .chipstatus{ background:color-mix(in srgb,var(--fg) 8%,transparent); color:var(--fg-3); }
+.chipkaart.gebruikt .chipik{ background:color-mix(in srgb,var(--fg) 8%,transparent); color:var(--fg-3); }
+.chipkaart.gepland .chipstatus{ background:color-mix(in srgb,var(--warn) 18%,transparent); color:var(--warn); }
+.chipadvies{ display:grid; grid-template-columns:46px minmax(0,1fr); gap:10px; align-items:center; padding:8px 10px; border-radius:var(--r1);
+  background:color-mix(in srgb,var(--fg) 3%,transparent); border:1px solid var(--line-2); }
+.chipcijfer{ width:46px; height:46px; border-radius:12px; display:inline-flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:13px; font-weight:800;
+  background:color-mix(in srgb,var(--good) 14%,transparent); color:var(--good); }
+.chiptxt{ display:flex; flex-direction:column; gap:1px; min-width:0; }
+.chiptxt i{ font-style:normal; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); }
+.chiptxt b{ font-size:var(--t-sm); font-weight:700; }
+.chiptxt span{ font-size:10.5px; color:var(--fg-2); }
+.chipuit{ margin:0; font-size:var(--t-xs); color:var(--fg-3); line-height:1.5; }
+.chipbalkkop{ display:flex; justify-content:space-between; gap:var(--s3); font-size:var(--t-xs); color:var(--fg-3); margin:var(--s2) 0 6px; flex-wrap:wrap; }
+.chipbalk2{ display:flex; gap:3px; align-items:flex-end; height:92px; padding:8px 10px 0; border-radius:var(--r2); background:color-mix(in srgb,var(--fg) 3%,transparent); border:1px solid var(--line-2); overflow-x:auto; }
+.chipkol{ position:relative; flex:1 0 22px; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:3px; min-width:22px; }
+.chipkol i{ width:100%; max-width:22px; border-radius:5px 5px 2px 2px; background:linear-gradient(180deg,var(--accent-2,var(--accent)),var(--accent)); display:block; }
+.chipkol.best i{ background:linear-gradient(180deg,#5fe3b0,var(--good)); }
+.chipkol.voorbij i{ background:color-mix(in srgb,var(--fg) 14%,transparent); }
+.chipkol b{ font-family:var(--mono); font-size:8.5px; color:var(--fg-3); font-weight:600; }
+.chipkol em{ position:absolute; top:-2px; left:50%; transform:translateX(-50%); font-style:normal; font-family:var(--mono); font-size:7.5px; font-weight:800;
+  padding:1px 4px; border-radius:5px; background:var(--warn); color:#000; }
+.chipkol em.pl{ background:transparent; color:var(--warn); border:1px dashed var(--warn); }
+.chipvoet{ margin:0; font-size:var(--t-xs); color:var(--fg-3); line-height:1.5; }
+
+/* ── DROOMELFTAL: kaarten met foto ───────────────────────────────────── */
+.drkaart{ width:104px; padding:0 0 6px; overflow:hidden; border-radius:12px; }
+.drkaart .shirt{ display:none; }
+.drkaart .drfoto{ position:relative; display:block; width:100%; height:66px; overflow:hidden; border-radius:11px 11px 0 0; margin-bottom:4px;
+  background:linear-gradient(180deg,var(--k1),color-mix(in srgb,var(--k1) 70%,#000)); }
+.drkaart .drfoto .drshirt{ position:absolute; inset:0; opacity:.25; }
+.drkaart .drfoto img{ position:absolute; left:50%; top:3px; transform:translateX(-50%); height:80px; width:auto; max-width:none; filter:drop-shadow(0 4px 6px rgba(0,0,0,.45)); animation:fotoIn var(--rustig) var(--uit) both; }
+.drkaart .drfoto .drclub{ position:absolute; left:5px; bottom:4px; font-style:normal; font-family:var(--mono); font-size:8px; font-weight:800; letter-spacing:.06em; padding:1px 5px; border-radius:5px; background:rgba(10,8,20,.55); color:#fff; }
+.drkaart:not(.metfoto) .drfoto .drclub{ left:50%; bottom:auto; top:50%; transform:translate(-50%,-50%); font-size:13px; background:transparent; }
+.drkaart .drfoto .drcap{ position:absolute; top:4px; right:4px; width:18px; height:18px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-style:normal;
+  font-family:var(--mono); font-size:9px; font-weight:800; background:var(--accent-vlak); color:#fff; box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 35%,transparent); }
+.drkaart b{ padding:0 6px; }
+.drkaart .drmeta,.drkaart .pt,.drkaart .drfix,.drkaart .drstart{ padding-left:6px; padding-right:6px; }
+.drkaart .pt{ font-family:var(--mono); font-weight:800; font-size:14px; }
+.drkaart .pt .perm{ font-size:8.5px; color:var(--fg-3); font-weight:600; margin-left:4px; letter-spacing:.04em; }
+.drkaart .vink{ top:auto; bottom:6px; right:6px; }
+.drmeters .drm{ border-radius:var(--r2); box-shadow:var(--e1); background-image:var(--glans); }
+@media(max-width:640px){ .drlinie{ gap:4px; flex-wrap:nowrap; } .drkaart{ width:calc(20% - 3.2px); min-width:0; } .drkaart .drfoto{ height:52px; } .drkaart .drfoto img{ height:62px; } .drkaart b{ font-size:9.5px; } }
+
+/* ══ VISUELE LAAG 6: rotatiedruk, zoeken, inzichten ══════════════════════ */
+/* rotatiedruk: tabel als rooster, cellen als chips */
+.rottab{ border-collapse:separate; border-spacing:0 4px; }
+.rottab thead th{ font-size:9.5px; letter-spacing:.09em; text-align:center; }
+.rottab thead th:first-child,.rottab thead th:nth-child(2){ text-align:left; }
+.rottab tbody td{ background:color-mix(in srgb,var(--fg) 2.5%,transparent); border:0; padding:7px 8px; text-align:center; }
+.rottab tbody td:first-child{ border-radius:10px 0 0 10px; text-align:left; white-space:nowrap; }
+.rottab tbody td:last-child{ border-radius:0 10px 10px 0; }
+.rottab tbody tr.ik td{ background:color-mix(in srgb,var(--accent) 10%,transparent); }
+.rottab tbody tr:hover td{ background:color-mix(in srgb,var(--accent) 7%,transparent); }
+.rottab .rtg{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:9px; font-family:var(--mono); font-size:9.5px; font-weight:800;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28), 0 1px 3px rgba(0,0,0,.25); vertical-align:middle; margin-right:6px; }
+.rottab .rtoer{ text-align:left; font-size:var(--t-xs); color:var(--fg-3); white-space:nowrap; }
+.rottab .rleeg{ color:color-mix(in srgb,var(--fg) 18%,transparent); }
+.rottab .rcel{ display:inline-flex; align-items:center; justify-content:center; min-width:38px; height:24px; padding:0 8px; border-radius:7px; font-family:var(--mono); font-size:10.5px; font-weight:750;
+  background:color-mix(in srgb,var(--rc,var(--fg-3)) 16%,transparent); color:var(--rc,var(--fg-2)); border:1px solid color-mix(in srgb,var(--rc,var(--fg-3)) 35%,transparent); }
+.rotuit{ color:var(--fg-2); }
+
+/* zoeken buiten het dashboard: bronnen als tegels */
+.rezoek{ display:flex; flex-direction:column; gap:6px; margin-bottom:var(--s3); }
+.rezoek input{ min-height:42px; border-radius:12px; font-size:var(--t-md); padding:0 14px; }
+.rehint{ font-size:var(--t-xs); color:var(--fg-3); }
+.resnel{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:var(--s4); }
+.relbl{ font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); font-weight:700; }
+.repil{ border:1px solid var(--line); background:var(--card); color:var(--fg-2); border-radius:99px; padding:5px 11px; cursor:pointer; font-family:inherit; font-size:var(--t-xs); font-weight:650;
+  transition:background-color var(--vlot) var(--uit), color var(--vlot) var(--uit), border-color var(--vlot) var(--uit); }
+.repil:hover{ background:var(--accent-dim); color:var(--accent); border-color:var(--accent); }
+.regroepen{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:var(--s3); }
+.regroep{ padding:12px 14px 14px; border-radius:var(--r2); border:1px solid var(--line); background:var(--card); background-image:var(--glans); box-shadow:var(--e1); }
+.regroep h5,.regroep>b{ display:block; margin:0 0 8px; font-size:var(--t-sm); font-weight:700; }
+.rebronnen{ display:flex; flex-direction:column; gap:5px; }
+.rebron{ display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:var(--r1); background:color-mix(in srgb,var(--fg) 3%,transparent); border:1px solid var(--line-2);
+  text-decoration:none; color:var(--fg); transition:border-color var(--vlot) var(--uit), transform var(--snel) var(--uit); }
+.rebron:hover{ border-color:color-mix(in srgb,var(--accent) 45%,transparent); transform:translateX(2px); }
+.rebron b{ font-size:var(--t-sm); font-weight:650; }
+.rebron span{ font-size:10.5px; color:var(--fg-3); }
+.reuit{ color:var(--fg-3); font-size:var(--t-xs); }
+#notitiebox textarea{ border-radius:12px; min-height:140px; padding:12px; font-size:var(--t-sm); line-height:1.55; }
+
+/* inzichten: de infoblokken als kaarten, tabellen als rijen */
+.ins{ border-radius:var(--r2); box-shadow:var(--e1); background-image:var(--glans); border:1px solid var(--line); padding:14px 16px; margin-bottom:var(--s3); }
+.ins h4{ display:flex; align-items:center; gap:8px; margin:0 0 8px; font-size:var(--t-md); }
+.ins .tagje{ border-radius:99px; font-size:9px; letter-spacing:.1em; padding:3px 8px; }
+.ins p{ color:var(--fg-2); line-height:1.55; }
+#inzichten table,#radar table{ border-collapse:separate; border-spacing:0 3px; }
+#inzichten tbody td,#radar tbody td{ background:color-mix(in srgb,var(--fg) 2.5%,transparent); border:0; padding:7px 9px; }
+#inzichten tbody td:first-child,#radar tbody td:first-child{ border-radius:9px 0 0 9px; }
+#inzichten tbody td:last-child,#radar tbody td:last-child{ border-radius:0 9px 9px 0; }
+#inzichten tbody tr:hover td,#radar tbody tr:hover td{ background:color-mix(in srgb,var(--accent) 8%,transparent); }
+#inzichten .pos,#radar .pos{ font-size:9px; padding:2px 6px; border-radius:99px; background:color-mix(in srgb,var(--fg) 7%,transparent); font-weight:700; letter-spacing:.06em; }
+
+/* clubs: kaarten met een diepere hover en de clubstreep als linkerrand */
+.clbraster{ gap:var(--s3); }
+.clbkaart{ padding:var(--s3) var(--s3) var(--s3) calc(var(--s3) + 6px); }
+.clbkaart .clbstreep{ width:6px; border-radius:var(--r2) 0 0 var(--r2); }
+.clbkaart .clbnaam b{ font-size:var(--t-md); }
+.clbkaart .clbfdr{ border-radius:8px; font-weight:800; }
+
 /* het zwevende menu: zelfde iconen als de tabbalk */
 .snav button{ display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto auto;
   column-gap:10px; align-items:center; text-align:left; }
@@ -7980,7 +8195,7 @@ function droomAnalyse(spelers,mijn,mijnIds,elf,set,mijnPunt){
   </div>`;
 }
 
-let DROOMHZ=8;
+let DROOMHZ=1;   // standaard deze gameweek: het beste Free Hit-team
 function droomelftal(){
   const box=$("#droombox"); if(!box) return;
   const I=D.ideaal;
@@ -8043,12 +8258,15 @@ function droomelftal(){
   const kaartje=p=>{const k=shirtKleur(p.t); const heb=mijnIds.has(p.id);
     const cel=((D.ticker.find(t=>t.team===p.t)||{}).cellen||{})[PLANGW]||[];
     const tegen=cel.length?(cel[0].h?cel[0].opp:cel[0].opp.toLowerCase()):"—";
-    return `<button class="drkaart${heb?" heb":""}" data-sp="${p.id}"
-        title="${esc(p.n)} — ${esc(p.t)} · £${p.c.toFixed(1)}m · ${punt(p).toFixed(1)} punten · ${(punt(p)/p.c).toFixed(1)} punten per miljoen${heb?" · zit al in jouw team":""}">
-      <span class="shirt" style="background:linear-gradient(155deg,${k.hoofd},${k.acc});color:${k.tekst}">${esc(p.t)}</span>
+    const isCap=elf&&elf.cap&&elf.cap.id===p.id;
+    return `<button class="drkaart${heb?" heb":""}${p.code?" metfoto":""}${isCap?" cap":""}" data-sp="${p.id}" style="--k1:${k.hoofd};--k2:${k.acc}"
+        title="${esc(p.n)} — ${esc(p.t)} · £${p.c.toFixed(1)}m · ${punt(p).toFixed(1)} punten${DROOMHZ>1?" over "+DROOMHZ+" GW":" in GW"+PLANGW}${heb?" · zit al in jouw team":""}">
+      <span class="drfoto"><span class="drshirt" style="background:linear-gradient(155deg,${k.hoofd},${k.acc})"></span>${
+        p.code?`<img alt="" decoding="async" draggable="false" src="${spelerFoto(p,"110x140")}" data-alt="${fotoAlt(p,spelerFoto(p,"110x140"))}" onerror="fotoFout(this)">`:""}
+        <i class="drclub">${esc(p.t)}</i>${isCap?'<i class="drcap">C</i>':""}</span>
       <b>${esc(p.n)}</b>
       <span class="drmeta"><span class="pr">£${p.c.toFixed(1)}m</span><span class="teg">${esc(tegen)}</span></span>
-      <span class="pt">${punt(p).toFixed(1)}<i class="perm">${(punt(p)/p.c).toFixed(1)}/m</i></span>
+      <span class="pt">${(DROOMHZ===1?(p.gw[PLANGW]||0):punt(p)).toFixed(1)}<i class="perm">${DROOMHZ===1?"GW"+PLANGW:DROOMHZ+" GW"}</i></span>
       ${DROOMHZ>1?`<span class="drstart${(startTel[p.id]||0)===wekenIn?" vast":((startTel[p.id]||0)*2<wekenIn?" weinig":"")}"
         title="Zou in ${startTel[p.id]||0} van de ${wekenIn} gameweeks in de basis staan">${startTel[p.id]||0}/${wekenIn}</span>`:""}
       <span class="drfix">${fixStrip(p)}</span>
@@ -8064,17 +8282,16 @@ function droomelftal(){
       <span class="drper">GW${PLANGW}${DROOMHZ>1?`–${tot}`:""} · budget £${I._budget}m</span>
     </div>
     <div class="drmeters">
-      <div class="drm"><b>${set.xp.toFixed(1)}</b><small>MAXIMUM HAALBAAR</small></div>
-      <div class="drm"><b>${mijnPunt.toFixed(1)}</b><small>JOUW VIJFTIEN</small></div>
-      <div class="drm ${set.xp-mijnPunt<=0?"goed":""}"><b>${Math.abs(set.xp-mijnPunt).toFixed(1)}</b>
-        <small>${set.xp-mijnPunt>0?"PUNTEN ERONDER":"PUNTEN ERBOVEN"}</small></div>
+      <div class="drm"><b>${set.xp.toFixed(1)}</b><small>${DROOMHZ===1?"BESTE ELF, GW"+PLANGW:"BESTE ELF, "+DROOMHZ+" GW"}</small></div>
+      <div class="drm"><b>${mijnPunt.toFixed(1)}</b><small>JOUW ELF</small></div>
+      <div class="drm ${set.xp-mijnPunt<=0?"goed":""}"><b>${set.xp-mijnPunt>=0?"+":"−"}${Math.abs(set.xp-mijnPunt).toFixed(1)}</b>
+        <small>${DROOMHZ===1?"WAT EEN FREE HIT ZOU OPLEVEREN":"VERSCHIL"}</small></div>
       <div class="drm"><b>${gedeeld}<small class="van">/15</small></b><small>DIE JE AL HEBT</small></div>
     </div>
     ${elf?`<div class="drveld">${linies}
       <div class="drbank"><span class="btitel">BANK</span>
         <div class="drlinie">${elf.bank.map(kaartje).join("")}</div></div>
     </div>
-    ${droomAnalyse(spelers,mijn,mijnIds,elf,set,mijnPunt)}
     ${(()=>{const mids=elf.xi.filter(x=>x.p==="MID").length;
       if(mids>=3) return "";
       return `<div class="drwaarschuw">${ik("info",14)}<span><b>Let op de opbouw.</b>
@@ -8082,8 +8299,8 @@ function droomelftal(){
         de verdedigers leveren hier meer op per miljoen — maar het is kwetsbaar: één blessure of
         rotatie en je hebt geen bruikbare vervanger op het middenveld. De bouwer kent geen
         blessurerisico en geen rotatie, dus dit soort opbouw ziet hij als gratis.</span></div>`;})()}
-    <p class="druit">Opstelling voor <b>GW${PLANGW}</b>: <b>${elf.formatie}</b>, aanvoerder
-      <b>${esc(elf.cap.n)}</b> (${(elf.cap.gw[PLANGW]||0).toFixed(1)} punten deze gameweek).
+    <p class="druit">${DROOMHZ===1?`Dit is het team dat je met een <b>Free Hit</b> in GW${PLANGW} zou neerzetten: de beste vijftien voor £${I._budget}m, alleen deze week telt.`:`De beste vijftien om <b>${DROOMHZ} gameweeks</b> vast te houden (een Wildcard-blik); het veld toont de opstelling voor GW${PLANGW}.`}
+      Opstelling <b>${elf.formatie}</b>, aanvoerder <b>${esc(elf.cap.n)}</b> (${(elf.cap.gw[PLANGW]||0).toFixed(1)} punten deze gameweek).
       ${DROOMHZ>1?`Over GW${PLANGW}–${tot} wisselt die opstelling mee: ${
         formaties.map(([f,n])=>`<b>${f}</b> in ${n} week${n>1?"en":""}`).join(", ")}.
       Het getal op elk kaartje is het totaal over de hele periode; het bolletje ernaast zegt in
@@ -9868,6 +10085,11 @@ function chipteams(){
     box.innerHTML=`<div class="empty"><b>Geen chipteams berekend.</b>${
       C&&C.fout?` ${esc(C.fout)}`:""}</div>`; return;
   }
+  // Een chip die deze seizoenshelft al op is, is geen keuze meer: dan opent
+  // het vak op de andere, en de knop van de gebruikte krijgt dat te zien.
+  const wcOp=chipOp("Wildcard",PLANGW), fhOp=chipOp("Free Hit",PLANGW);
+  if(wcOp&&!fhOp&&CHIPKEUS!=="freehit") CHIPKEUS="freehit";
+  if(fhOp&&!wcOp&&CHIPKEUS==="freehit") CHIPKEUS="wildcard5";
   const soort=CHIPKEUS==="freehit"?"freehit":"wildcard";
   const rijen=(W[soort]||[]).map(x=>({...x,winst:+(x.chip-x.eigen).toFixed(1)}));
   if(!rijen.length){ box.innerHTML='<div class="empty"><b>Geen tijdstippen berekend.</b></div>'; return; }
@@ -9884,13 +10106,16 @@ function chipteams(){
   const onzeker=gekozen.zeker!=="copilot";
 
   const kaartje=p=>{const k=shirtKleur(p.t); const heb=mijnIds.has(p.id);
-    return `<button class="drkaart${heb?" heb":""}${p.id===t.cap?" cap":""}" data-sp="${p.id}"
+    const d=D.db.find(x=>x.id===p.id)||{};
+    return `<button class="drkaart${heb?" heb":""}${p.id===t.cap?" cap":""}${d.code?" metfoto":""}" data-sp="${p.id}" style="--k1:${k.hoofd};--k2:${k.acc}"
         title="${esc(p.n)} — ${esc(p.t)} · £${p.c.toFixed(1)}m · ${p.xp.toFixed(1)} punten in GW${gekozen.gw}">
-      <span class="shirt" style="background:linear-gradient(155deg,${k.hoofd},${k.acc});color:${k.tekst}">${esc(p.t)}</span>
+      <span class="drfoto"><span class="drshirt" style="background:linear-gradient(155deg,${k.hoofd},${k.acc})"></span>${
+        d.code?`<img alt="" decoding="async" draggable="false" src="${spelerFoto(d,"110x140")}" data-alt="${fotoAlt(d,spelerFoto(d,"110x140"))}" onerror="fotoFout(this)">`:""}
+        <i class="drclub">${esc(p.t)}</i>${p.id===t.cap?'<i class="drcap">C</i>':""}</span>
       <b>${esc(p.n)}</b>
-      <span class="pr">£${p.c.toFixed(1)}m</span>
-      <span class="pt">${p.xp.toFixed(1)}</span>
-      ${p.id===t.cap?'<i class="capm">C</i>':heb?'<i class="vink">✓</i>':""}</button>`;};
+      <span class="drmeta"><span class="pr">£${p.c.toFixed(1)}m</span></span>
+      <span class="pt">${p.xp.toFixed(1)}<i class="perm">GW${gekozen.gw}</i></span>
+      ${heb?'<i class="vink">✓</i>':""}</button>`;};
 
   const basis=spelers.filter(p=>p.basis);
   const bank=spelers.filter(p=>!p.basis);
@@ -9900,10 +10125,10 @@ function chipteams(){
 
   box.innerHTML=`
     <div class="ctkeus">
-      <button data-ct="freehit" aria-pressed="${soort==="freehit"}">
-        <b>Free Hit</b><span>één gameweek</span></button>
-      <button data-ct="wildcard5" aria-pressed="${soort==="wildcard"}">
-        <b>Wildcard</b><span>vijf gameweeks</span></button>
+      <button data-ct="freehit" aria-pressed="${soort==="freehit"}" class="${fhOp?"chipop":""}">
+        <b>Free Hit</b><span>${fhOp?`gebruikt in GW${chipGebruiktIn("Free Hit")[0].gw}`:"één gameweek"}</span></button>
+      <button data-ct="wildcard5" aria-pressed="${soort==="wildcard"}" class="${wcOp?"chipop":""}">
+        <b>Wildcard</b><span>${wcOp?`gebruikt in GW${chipGebruiktIn("Wildcard")[0].gw} · tweede vanaf GW20`:"vijf gameweeks"}</span></button>
     </div>
 
     <div class="ctwanneer">
@@ -12952,16 +13177,39 @@ function transferRoutes(g,N){
   };
   const basisElf=elf(lijst);
   const naWissels=moves=>lijst.map(p=>{ const m=moves.find(x=>x.uit.id===p.id); return m?{...m.in,slot:p.slot}:p; });
-  const pool=D.db.filter(c=>!heb.has(c.id)&&!UITSLUIT.has(c.id)&&c.status==="a"&&(c.cpmin||0)>=60);
-  const ruw=[];
-  lijst.forEach(cur=>{
-    if(cur.p==="GKP"&&cur.status==="a"&&(cur.cpmin||90)>=60) return;   // keepers alleen bij een probleem
-    pool.filter(c=>c.p===cur.p).forEach(c=>{
-      const r=waarde(c)-waarde(cur);
-      if(r<=0.3) return;
-      ruw.push({uit:cur,in:c,ruw:r,kost:c.c-verkoop(cur)});
+  /* Kwaliteitsvloer. Een route als "Szoboszlai eruit, een goedkope
+     promovendus erin" klopte rekenkundig (makkelijk programma, veel
+     minuten) maar is niet wat een goede manager doet. Daarom:
+       - een binnenkomer moet zelf boven het positiegemiddelde zitten,
+         minstens 75 verwachte minuten hebben en door minstens 1,5% van
+         de managers gekozen zijn (dat filtert de tijdelijke uitschieters
+         eruit die alleen het model ziet);
+       - wie boven zijn positiegemiddelde draait verkoop je alleen als de
+         route daar echt wat voor terugkrijgt: minstens 1,2 punt per week
+         over de periode. Onder het gemiddelde, geblesseerd of amper
+         speeltijd: dan mag elke verbetering. */
+  const drempel=P=>posDrempel(P);
+  const goed=p=>p.status==="a"&&(p.cpmin||0)>=60&&waarde(p)/N>=drempel(p.p);
+  const pool=D.db.filter(c=>!heb.has(c.id)&&!UITSLUIT.has(c.id)&&c.status==="a"
+    &&(c.cpmin||0)>=75&&(c.own||0)>=1.0&&waarde(c)/N>=drempel(c.p)*1.05);
+  const verzamel=streng=>{
+    const uit=[];
+    lijst.forEach(cur=>{
+      if(cur.p==="GKP"&&cur.status==="a"&&(cur.cpmin||90)>=60) return;   // keepers alleen bij een probleem
+      const vast=goed(cur);
+      pool.filter(c=>c.p===cur.p).forEach(c=>{
+        const r=waarde(c)-waarde(cur);
+        if(r<=(vast&&streng?Math.max(1.5,0.7*N):0.3)) return;
+        uit.push({uit:cur,in:c,ruw:r,kost:c.c-verkoop(cur)});
+      });
     });
-  });
+    return uit;
+  };
+  /* Eerst streng (goede spelers alleen voor echte winst). Levert dat niets
+     op, dan toch de beste wissels tonen, met het label dat ze klein zijn:
+     je wilt de wegen zien, ook als het antwoord "sparen" is. */
+  let ruw=verzamel(true), zwak=false;
+  if(!ruw.length){ ruw=verzamel(false); zwak=true; }
   ruw.sort((a,b)=>b.ruw-a.ruw);
   const zetten=ruw.slice(0,220).map(m=>({...m, winst:elf(naWissels([m]))-basisElf})).filter(m=>m.winst>0.3);
   zetten.sort((a,b)=>b.winst-a.winst);
@@ -12998,7 +13246,16 @@ function transferRoutes(g,N){
   const gezien=new Set(); const routes=[];
   R.filter(Boolean).forEach(r=>{ const k=r.moves.map(m=>m.uit.id+">"+m.in.id).sort().join("|"); if(!gezien.has(k)){ gezien.add(k); routes.push(r); } });
   routes.forEach(r=>r.netto=r.winst-r.hit);
-  return {routes, vrij, bank, N, enkel:enkel.slice(0,10)};
+  // een route die na strafpunten minder dan een punt overhoudt is geen weg, dat is ruis
+  const gefilterd=routes.filter((r,i)=>i===0||r.netto>=1.0);
+  routes.length=0; routes.push(...gefilterd);
+  /* Doelwitten: per positie de beste enkele wissel, ontdubbeld op speler.
+     Het hoofddoelwit is de binnenkomer van de beste route. */
+  const perPos={};
+  enkel.forEach(m=>{ const P=m.in.p; if(!perPos[P]||m.winst>perPos[P].winst) perPos[P]=m; });
+  const doelwitten=["GKP","DEF","MID","FWD"].map(P=>perPos[P]).filter(Boolean);
+  const hoofd=routes[0]?routes[0].moves.slice().sort((a,b)=>b.winst-a.winst)[0]:(enkel[0]||null);
+  return {routes, vrij, bank, N, enkel:enkel.slice(0,10), doelwitten, hoofd, zwak};
 }
 
 function tekenRoutes(g,N){
@@ -13025,13 +13282,54 @@ function tekenRoutes(g,N){
       <span class="rtwinst nul">0<small>netto</small></span></header>
       <p class="rtuitleg">${R.routes[0]?`De beste route levert ${R.routes[0].netto.toFixed(1)} punt meer op over ${per}. Is dat minder dan zo'n 4 punten, dan is wachten meestal de betere zet: een gespaarde transfer is volgende week meer waard.`:"Er is geen wissel gevonden die meer oplevert dan wat je hebt."}</p></article>`;
   const uitgesloten=[...UITSLUIT].map(id=>D.db.find(p=>p.id===id)).filter(Boolean);
+  /* Het hoofddoelwit als speelkaart: foto groot, clubkleur, de wissel die
+     hem binnenhaalt, en waarom (programma, minuten, eigendom). */
+  const hoofdHtml=(()=>{
+    const m=R.hoofd; if(!m) return "";
+    const p=m.in, k=shirtKleur(p.t);
+    const cel=(D.ticker.find(t=>t.team===p.t)||{}).cellen||{};
+    const strook=D.alle_gws.filter(x=>x>=g).slice(0,5).map(gg=>{const cs=cel[gg]||[];
+      return cs.length?`<i class="c${cs[0].fdr}${cs[0].h?"":" uit"}" title="GW${gg}: ${esc(cs[0].opp)} ${cs[0].h?"thuis":"uit"}">${esc(cs[0].h?cs[0].opp:cs[0].opp.toLowerCase())}</i>`:'<i class="e"></i>';}).join("");
+    const route=R.routes.find(r=>r.moves.some(x=>x.in.id===p.id))||R.routes[0];
+    return `<section class="doelwit${p.code?" metfoto":""}" style="--k1:${k.hoofd};--k2:${k.acc}">
+      <div class="dwtekst">
+        <span class="dwkop">Volgende transferdoelwit</span>
+        <span class="dwclub">${clubTegel(p.t,"klein")}<span>${esc(clubNaam(p.t))} · ${({GKP:"Keeper",DEF:"Verdediger",MID:"Middenvelder",FWD:"Aanvaller"})[p.p]||p.p}</span></span>
+        <b class="dwnaam">${esc(p.n)}</b>
+        <div class="dwcijfers">
+          <span><b>${somGW(p,g,N).toFixed(1)}</b><i>punten ${per}</i></span>
+          <span><b>£${p.c.toFixed(1)}m</b><i>prijs</i></span>
+          <span><b>${p.cpmin?p.cpmin+"'":"—"}</b><i>verwacht per duel</i></span>
+          <span><b>${(p.own||0).toFixed(1)}%</b><i>eigendom</i></span>
+        </div>
+        <div class="dwstrook">${strook}</div>
+        <div class="dwwissel">${portret(m.uit)}<span class="dwwt"><i>eruit</i><b>${esc(m.uit.n)}</b><span>${somGW(m.uit,g,N).toFixed(1)} punten · £${verkoopPrijsVan(m.uit).toFixed(1)}m</span></span>
+          <span class="dwplus">+${m.winst.toFixed(1)}</span>
+          <span class="dwwt rechts"><i>erin</i><b>${esc(p.n)}</b><span>${m.kost>0?"kost £"+m.kost.toFixed(1)+"m extra":"levert £"+Math.abs(m.kost).toFixed(1)+"m op"}</span></span></div>
+        <div class="dwacties">
+          <button class="rtplan" data-plan="${route?route.sleutel:""}">${ik("vink",14)}Haal hem binnen</button>
+          <button class="rtsluit dwsluit" data-sluit="${p.id}">${ik("sluit",12)}niet mijn type</button>
+          <button class="knop" data-dwsp="${p.id}">${ik("oog",14)}Spelerpagina</button>
+        </div>
+      </div>
+      ${p.code?`<div class="dwfoto"><img alt="" decoding="async" draggable="false" src="${spelerFoto(p,"500x500")}" data-alt="${fotoAlt(p,spelerFoto(p,"500x500"))}" onerror="fotoFout(this)"></div>`:""}
+      <span class="dwwater">${esc(p.t)}</span>
+    </section>`;
+  })();
+  const doelwittenHtml=R.doelwitten.length?`<div class="dwrij">${R.doelwitten.map(m=>{const p=m.in,k=shirtKleur(p.t);
+    return `<button class="dwmini${p.code?" metfoto":""}" data-dwsp="${p.id}" style="--k1:${k.hoofd};--k2:${k.acc}" title="${esc(m.uit.n)} eruit, ${esc(p.n)} erin: +${m.winst.toFixed(1)} over ${per}">
+      ${portret(p,"groot")}<span class="dwmt"><i>${({GKP:"Keeper",DEF:"Verdediger",MID:"Middenvelder",FWD:"Aanvaller"})[p.p]}</i><b>${esc(p.n)}</b>
+      <span>voor ${esc(m.uit.n)} · +${m.winst.toFixed(1)} · £${p.c.toFixed(1)}m</span></span></button>`;}).join("")}</div>`:"";
   return `<section class="routes">
-    <div class="routeskop"><b>Routes voor ${per}</b><span>${R.vrij===Infinity?"onbeperkt":R.vrij} vrije transfer${R.vrij===1?"":"s"} · £${R.bank.toFixed(1)}m in de bank · winst = projectie nieuw − projectie huidig, strafpunten er al af</span></div>
+    ${hoofdHtml}${doelwittenHtml}
+    <div class="routeskop"><b>Routes voor ${per}</b><span>${R.vrij===Infinity?"onbeperkt":R.vrij} vrije transfer${R.vrij===1?"":"s"} · £${R.bank.toFixed(1)}m in de bank · winst = wat je beste elf erdoor wint, strafpunten er al af${R.zwak?" · <em>geen wissel haalt de lat; dit is wat er wél te halen valt</em>":""}</span></div>
     <div class="routegrid">${R.routes.map(routeHtml).join("")}${niets}</div>
     ${uitgesloten.length?`<div class="rtuitgesloten"><span>Uitgesloten:</span>${uitgesloten.map(p=>`<button data-terug="${p.id}">${esc(p.n)} ${ik("sluit",10)}</button>`).join("")}</div>`:""}
   </section>`;
 }
+function verkoopPrijsVan(p){ return p.gekocht!=null?p.gekocht:p.c; }
 function koppelRoutes(box,g,N){
+  box.querySelectorAll("[data-dwsp]").forEach(b=>b.onclick=e=>{ if(e.target.closest("[data-sluit],[data-plan]")) return; openProfiel(+b.dataset.dwsp); });
   box.querySelectorAll("[data-sluit]").forEach(b=>b.onclick=e=>{ e.stopPropagation(); sluitUit(+b.dataset.sluit,true); });
   box.querySelectorAll("[data-terug]").forEach(b=>b.onclick=()=>sluitUit(+b.dataset.terug,false));
   box.querySelectorAll("[data-plan]").forEach(b=>b.onclick=()=>{
@@ -13170,11 +13468,11 @@ function advies(){
       if(best&&best.w>0) vrij.push({cur,...best,tm:transferTiming(cur,best.c,PLANGW,Math.max(N2,6))});
     });
     vrij.sort((a,b)=>b.w-a.w);
-    box.innerHTML=`<div class="empty"><b>Advies: laat staan.</b>
+    box.innerHTML=tekenRoutes(PLANGW,N2)+`<div class="empty"><b>Per speler: niemand hoeft weg.</b>
       Iedereen draait op of boven het niveau van zijn positie over
       ${N2===1?`gameweek ${PLANGW}`:`GW${PLANGW}–${Math.min(38,PLANGW+N2-1)}`},
-      en niemand is geblesseerd of twijfelachtig. Een vrije transfer is meer waard
-      dan een halve punt: bewaar hem tot er iets gebeurt.</div>
+      en niemand is geblesseerd of twijfelachtig. De routes hierboven laten zien wat
+      een wissel tóch zou opleveren; onder de ~4 punten is sparen de betere zet.</div>
       ${vrij.length?`<div class="kansen"><h4>Wat er wél mogelijk zou zijn</h4>
         <p>Niet aangeraden, maar dit is de beste ruil per speler over
           ${N2===1?`gameweek ${PLANGW}`:`${N2} gameweeks`}. Het beste moment staat erbij —
@@ -13191,6 +13489,7 @@ function advies(){
         </div>`).join("")}</div>`:""}`;
     box.querySelectorAll(".kansen .doe").forEach(b=>b.onclick=()=>{
       planTransfer(PLANGW,+b.dataset.uit,+b.dataset["in"]); tekenAlles();});
+    koppelRoutes(box,PLANGW,N2);
     tekenHzSeg();
     bron("#src-advies",[{label:"vergelijking",bron:"expected points van FPL Copilot",url:"https://fplcopilot.com/expected-points"}]);
     return;
@@ -13317,52 +13616,79 @@ function chips(){
   const box=$("#chips");
   const liveSq=squadInGW(PLANGW);
   if(!liveSq.length){box.innerHTML='<div class="empty">Geen squad.</div>';return;}
-  const xi=liveSq.filter(p=>p.slot<=11&&p.p!=="GKP");
-  const beste=xi.slice().sort((a,b)=>proj(b,38)-proj(a,38))[0];
   const H1=D.helften.een, H2=D.helften.twee;
+  const gebruikt=D.chips_gebruikt||[];
+  const CT=D.chipteams&&!D.chipteams.fout?D.chipteams:null;
+  const NAAM={wildcard:"Wildcard",freehit:"Free Hit",bboost:"Bench Boost","3xc":"Triple Captain"};
+  const PLANNAAM={"Wildcard":"wildcard","Free Hit":"freehit","Bench Boost":"bboost","Triple Captain":"3xc"};
+  const gepland=Object.entries(PLAN.chips||{}).map(([g,n])=>({gw:+g,code:PLANNAAM[n]||n}));
 
-  function analyse(gws,label,deadline){
+  /* Per gameweek wat elke chip zou opleveren, op je eigen selectie zoals die
+     nu staat (Bench Boost, Triple Captain) of op de doorgerekende chipteams
+     (Free Hit, Wildcard). Alles komt uit projecties die elders al staan. */
+  const bbWaarde=g=>liveSq.filter(p=>p.slot>11).reduce((a,p)=>a+projGW(p,g),0);
+  const tcKand=g=>liveSq.filter(p=>p.p!=="GKP").map(p=>({p,x:projGW(p,g)})).sort((a,b)=>b.x-a.x)[0];
+  const fhRij=g=>((CT&&CT.wanneer&&CT.wanneer.freehit)||[]).find(r=>r.gw===g);
+  const wcRij=g=>((CT&&CT.wanneer&&CT.wanneer.wildcard)||[]).find(r=>r.gw===g);
+
+  function helft(gws,nr,label,uitleg){
     if(!gws.length) return "";
-    // Triple Captain: hoogste enkele gameweek van je sterkste speler binnen deze helft
-    let tc=null;
-    if(beste){
-      const o=gws.map(g=>{
-        const cs=((D.ticker.find(t=>t.team===beste.t)||{}).cellen||{})[g]||[];
-        return {g,x:projGW(beste,g),opp:cs.map(c=>c.opp+" ("+(c.h?"T":"U")+")").join(", "),
-                xg:cs.reduce((a,c)=>a+c.xg,0)};}).filter(o=>o.opp).sort((a,b)=>b.x-a.x);
-      if(o.length) tc={b:o[0],alt:o.slice(1,3)};
-    }
-    // Bench Boost: gameweek waarin alle 15 samen het meest opleveren
-    const bbs=gws.map(g=>({g,x:liveSq.reduce((a,p)=>a+projGW(p,g),0)}));
-    const bb=bbs.slice().sort((a,b)=>b.x-a.x)[0];
-    const lo=Math.min(...bbs.map(b=>b.x)),hi=Math.max(...bbs.map(b=>b.x));
-    let h=`<div style="margin-bottom:6px"><span class="lbl">${esc(label)}</span>
-      <span style="font-size:11px;color:var(--fg-3);margin-left:8px">GW${gws[0]}–${gws[gws.length-1]} · ${esc(deadline)}</span></div>`;
-    if(tc) h+=`<div class="rec"><div class="t">Triple Captain</div>
-      <div class="d"><b>GW${tc.b.g}</b> op ${esc(beste.n)} — ${esc(tc.b.opp)} · team-xG ${tc.b.xg.toFixed(2)} · ${tc.b.x.toFixed(1)} ptn</div>
-      ${tc.alt.length?`<div class="alt">Alternatief: ${tc.alt.map(o=>"GW"+o.g+" ("+o.x.toFixed(1)+")").join(" · ")}</div>`:""}</div>`;
-    if(bb) h+=`<div class="rec"><div class="t">Bench Boost</div>
-      <div class="d"><b>GW${bb.g}</b> — alle 15 samen ${bb.x.toFixed(1)} ptn</div></div>`;
-    h+='<div style="max-height:170px;overflow-y:auto;margin:4px 0 10px">';
-    bbs.forEach(b=>{const pct=hi>lo?((b.x-lo)/(hi-lo)*84+10):50;
-      const col=b.x>=lo+(hi-lo)*.72?"var(--f1)":b.x>=lo+(hi-lo)*.45?"var(--f2)":b.x>=lo+(hi-lo)*.25?"var(--f3)":"var(--f4)";
-      h+=`<div class="chiprow${bb&&b.g===bb.g?" best":""}"><span class="gw">GW${b.g}</span>
-        <span class="bar"><i style="width:${pct.toFixed(0)}%;background:${col}"></i></span>
-        <span class="sc">${b.x.toFixed(0)}</span></div>`;});
-    return h+'</div>';
+    const toekomst=gws.filter(g=>g>=PLANGW);
+    const status=code=>{
+      const u=gebruikt.find(c=>c.naam===code&&c.helft===nr);
+      if(u) return {k:"gebruikt",t:`Gebruikt in GW${u.gw}`};
+      const pl=gepland.find(c=>c.code===code&&helftVan(c.gw)===nr);
+      if(pl) return {k:"gepland",t:`Gepland voor GW${pl.gw}`};
+      return {k:"vrij",t:"Beschikbaar"};
+    };
+    const kaart=(code,icoon,advies)=>{const st=status(code);
+      return `<article class="chipkaart ${st.k}"><header><span class="chipik">${ik(icoon,16)}</span><b>${NAAM[code]}</b>
+        <span class="chipstatus">${esc(st.t)}</span></header>${st.k==="gebruikt"?`<p class="chipuit">Deze seizoenshelft niet meer in te zetten${nr===1?"; de tweede set komt vrij na GW19":""}.</p>`:advies}</article>`;};
+    // Triple Captain: beste week van je sterkste speler in deze helft
+    const tcOpt=toekomst.map(g=>{const k=tcKand(g); return k?{g,p:k.p,x:k.x}:null;}).filter(Boolean).sort((a,b)=>b.x-a.x);
+    const tc=tcOpt[0];
+    const tcHtml=tc?`<div class="chipadvies">${portret(tc.p)}<span class="chiptxt"><i>Beste week</i><b>GW${tc.g} · ${esc(tc.p.n)}</b>
+        <span>+${tc.x.toFixed(1)} extra (derde keer ${tc.x.toFixed(1)})${tcOpt[1]?` · daarna GW${tcOpt[1].g} (${tcOpt[1].x.toFixed(1)})`:""}</span></span></div>`
+      :`<p class="chipuit">Geen projectie voor deze helft.</p>`;
+    // Bench Boost: week waarin je bank het meest oplevert
+    const bbOpt=toekomst.map(g=>({g,x:bbWaarde(g)})).sort((a,b)=>b.x-a.x);
+    const bb=bbOpt[0];
+    const bbHtml=bb?`<div class="chipadvies"><span class="chipcijfer">+${bb.x.toFixed(1)}</span><span class="chiptxt"><i>Beste week</i><b>GW${bb.g}</b>
+        <span>je bank levert dan ${bb.x.toFixed(1)} punten${bbOpt[1]?` · daarna GW${bbOpt[1].g} (${bbOpt[1].x.toFixed(1)})`:""}</span></span></div>`
+      :`<p class="chipuit">Geen projectie voor deze helft.</p>`;
+    // Free Hit en Wildcard: uit de doorgerekende chipteams (winst t.o.v. je eigen elf)
+    const fhOpt=toekomst.map(g=>{const r=fhRij(g); return r?{g,w:r.chip-r.eigen,r}:null;}).filter(Boolean).sort((a,b)=>b.w-a.w);
+    const fh=fhOpt[0];
+    const fhHtml=fh?`<div class="chipadvies"><span class="chipcijfer">+${fh.w.toFixed(1)}</span><span class="chiptxt"><i>Beste week</i><b>GW${fh.g}</b>
+        <span>beste Free Hit-elf ${fh.r.chip.toFixed(1)} tegenover jouw ${fh.r.eigen.toFixed(1)}${fh.r.zeker!=="copilot"?" · eigen model":""}</span></span></div>`
+      :`<p class="chipuit">Chipteams zijn nog niet doorgerekend voor deze helft.</p>`;
+    const wcOpt=toekomst.map(g=>{const r=wcRij(g); return r?{g,w:r.chip-r.eigen,r}:null;}).filter(Boolean).sort((a,b)=>b.w-a.w);
+    const wc=wcOpt[0];
+    const wcHtml=wc?`<div class="chipadvies"><span class="chipcijfer">+${wc.w.toFixed(1)}</span><span class="chiptxt"><i>Beste week</i><b>GW${wc.g}</b>
+        <span>over GW${wc.r.venster?wc.r.venster.join("–"):wc.g}: ${wc.r.chip.toFixed(1)} tegenover jouw ${wc.r.eigen.toFixed(1)}</span></span></div>`
+      :`<p class="chipuit">Chipteams zijn nog niet doorgerekend voor deze helft.</p>`;
+    // de weekbalk: bankwaarde per gameweek, gespeeld grijs, gebruikt gemarkeerd
+    const alle=gws.map(g=>({g,x:bbWaarde(g)}));
+    const hi=Math.max(1,...alle.map(b=>b.x));
+    const balk=`<div class="chipbalk2">${alle.map(b=>{const u=gebruikt.find(c=>c.gw===b.g);
+      const pl=gepland.find(c=>c.gw===b.g);
+      return `<span class="chipkol${b.g<PLANGW?" voorbij":""}${bb&&b.g===bb.g?" best":""}" title="GW${b.g}: bank ${b.x.toFixed(1)} punten${u?" · "+NAAM[u.naam]+" gebruikt":""}${pl?" · "+NAAM[pl.code]+" gepland":""}">
+        <i style="height:${Math.max(4,b.x/hi*100).toFixed(0)}%"></i><b>${b.g}</b>${u?`<em>${({bboost:"BB","3xc":"TC",wildcard:"WC",freehit:"FH"})[u.naam]||"•"}</em>`:pl?`<em class="pl">${({bboost:"BB","3xc":"TC",wildcard:"WC",freehit:"FH"})[pl.code]||"•"}</em>`:""}</span>`;}).join("")}</div>`;
+    return `<section class="chiphelft"><div class="chiphelftkop"><b>${esc(label)}</b><span>${esc(uitleg)}</span></div>
+      <div class="chipraster">
+        ${kaart("wildcard","wissel",wcHtml)}${kaart("freehit","vonk",fhHtml)}${kaart("bboost","raster",bbHtml)}${kaart("3xc","beker",tcHtml)}
+      </div>
+      <div class="chipbalkkop"><span>Wat je bank per gameweek oplevert</span><span>hoger = betere Bench Boost-week · grijs = gespeeld</span></div>${balk}
+    </section>`;
   }
-  let h=analyse(H1,"Eerste set chips","vervalt bij de GW19-deadline, za 2 jan 2027 13:30 GMT");
-  h+=`<div style="height:1px;background:var(--line);margin:12px 0"></div>`;
-  h+=analyse(H2,"Tweede set chips","wordt bijgevuld vanaf GW20, loopt tot GW38");
-  [`Je krijgt twee volledige sets: Wildcard, Free Hit, Bench Boost en Triple Captain in elke seizoenshelft. De eerste set is NIET overdraagbaar naar de tweede helft.`,
-   `Blanks en doubles staan nog niet in het schema — die ontstaan pas door bekerduels vanaf ongeveer december. Free Hit en de tweede Wildcard daarom bewaren tot dat beeld er is.`,
-   `Bench Boost loont alleen als je hele bank speelt. Kijk naar de bankprojecties in je squad voordat je hem inzet.`
-  ].forEach(n=>h+=`<div class="note">${esc(n)}</div>`);
+  let h=helft(H1,1,"Eerste set","GW1–19 · vervalt bij de deadline van GW19 (za 2 jan 2027 14:30)");
+  h+=helft(H2,2,"Tweede set","GW20–38 · vier verse chips, blanks en doubles ontstaan pas rond december");
+  h+=`<p class="chipvoet">Bench Boost en Triple Captain rekenen op je selectie zoals die nu staat; Free Hit en Wildcard op de doorgerekende chipteams (bouwer.py). Alles is een bovengrens uit projecties, geen belofte.</p>`;
   box.innerHTML=h;
   bron("#src-chips",[
-    {label:"fixtures",bron:"FPL API /fixtures/",url:"https://fantasy.premierleague.com/api/fixtures/"},
-    {label:"xG per duel",bron:"Opta xGF/xGA",url:"https://theanalyst.com/competition/premier-league/table"},
-    {label:"vensterkeuze",bron:"projectie per gameweek",calc:1}]);
+    {label:"gebruikte chips",bron:"FPL API /entry/{id}/history/ (chips)",url:"https://fantasy.premierleague.com/api/entry/258669/history/"},
+    {label:"projecties per gameweek",bron:"FPL Copilot / Pundit / eigen model",url:"https://fplcopilot.com/expected-points"},
+    {label:"chipteams per gameweek",bron:"bouwer.py",calc:1}]);
 }
 
 /* ---------- mini-league ---------- */
