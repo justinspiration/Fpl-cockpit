@@ -412,6 +412,21 @@ def build():
     # speelt. Dan meet je zuiver de schaal. Zo gemeten liggen de bronnen 0,86 tot
     # 0,92 uit elkaar over alle posities — bescheiden en consistent, precies wat
     # een schaalverschil hoort te zijn.
+    # Pundits `predicted_points` is het cijfer ALS HIJ START; de startkans
+    # staat er los naast (`start_pct`). Gemeten over 349 spelers die Copilot
+    # ook kent (GW5): voor spelers met een startkans onder 15% lag Pundit
+    # ruw 7,96 keer zo hoog als Copilot, vermenigvuldigd met de startkans
+    # 1,16 keer -- en voor vaste starters 1,08 tegen 1,07. Het ruwe cijfer
+    # gaf Ait-Nouri (startkans 0%, Copilot 0,2) 5,97 punten en zette hem
+    # boven Saka in de database. Verwachte punten = punten-als-hij-start
+    # maal startkans, per gameweek.
+    def _pundit_verwacht(pd0, g):
+        xp = float((pd0.get("xp") or {}).get(str(g), 0.0) or 0.0)
+        st = (pd0.get("start") or {}).get(str(g))
+        if st is None:
+            return xp
+        return xp * max(0.0, min(1.0, float(st)))
+
     ff_ratio = {}
     if pundit.get("spelers"):
         import statistics as _st
@@ -426,7 +441,7 @@ def build():
             if not _gedeeld:
                 continue
             _h = sum(float(_cp["gw"][g - cp_start]) for g in _gedeeld)
-            _f = sum(float(_pd["xp"][str(g)]) for g in _gedeeld)
+            _f = sum(_pundit_verwacht(_pd, g) for g in _gedeeld)
             if _h <= 4 or _f <= 4:
                 continue
             _cpmin = (_cp.get("mn") or [0])[0] or 0
@@ -588,7 +603,7 @@ def build():
                 if 0 <= _i < len(cp["gw"]):
                     w["FPL Copilot"] = round(float(cp["gw"][_i]), 2)
             if pd0 and str(g) in (pd0.get("xp") or {}):
-                w["Pundit"] = round(float(pd0["xp"][str(g)]), 3)
+                w["Pundit"] = round(_pundit_verwacht(pd0, g), 3)
             if eigen_gw.get(g) is not None:
                 w["eigen model"] = round(float(eigen_gw[g]), 3)
             if w:
@@ -1159,6 +1174,7 @@ def build():
         "pundit": _bronvinger("xp_pundit.json"),
         "estimator": _bronvinger("xp_estimator.json"),
         "chipvenster": CHIPVENSTER,
+        "versie": 2,          # Pundit maal startkans (13-09-2026)
     }, sort_keys=True).encode()).hexdigest()
     _cachepad = os.path.join(STATE, "zwaar_cache.json")
     _cache = _lees("zwaar_cache.json", {}) or {}
