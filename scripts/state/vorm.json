@@ -2,11 +2,76 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-13T12:52:01+00:00",
- "_mislukt": [
-  "ARS (geen uitslagen)"
- ],
+ "_opgehaald": "2026-09-13T16:13:39+00:00",
+ "_mislukt": [],
  "clubs": {
+  "ARS": {
+   "artikel": "2026–27 Arsenal F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Arsenal_F.C._season",
+   "gespeeld": 10,
+   "laatste5": [
+    {
+     "datum": "2026-08-21",
+     "opp": "Coventry City",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "1"
+    },
+    {
+     "datum": "2026-08-31",
+     "opp": "Aston Villa",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "2"
+    },
+    {
+     "datum": "2026-09-06",
+     "opp": "Chelsea",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "3"
+    },
+    {
+     "datum": "2026-09-09",
+     "opp": "Napoli",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "1"
+    },
+    {
+     "datum": "2026-09-12",
+     "opp": "Sunderland",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "4"
+    }
+   ],
+   "vorm": [
+    "W",
+    "W",
+    "W",
+    "W",
+    "W"
+   ],
+   "vormpunten": 15,
+   "vormmax": 15,
+   "oefen": 0
+  },
   "AVL": {
    "artikel": "2026–27 Aston Villa F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Aston_Villa_F.C._season",
@@ -211,18 +276,8 @@
   "BHA": {
    "artikel": "2026–27 Brighton & Hove Albion F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brighton_%26_Hove_Albion_F.C._season",
-   "gespeeld": 9,
+   "gespeeld": 10,
    "laatste5": [
-    {
-     "datum": "2026-08-20",
-     "opp": "Tromsø",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 0,
-     "uit": "G",
-     "soort": "officieel",
-     "toernooi": "First leg"
-    },
     {
      "datum": "2026-08-23",
      "opp": "Aston Villa",
@@ -262,16 +317,26 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "3"
+    },
+    {
+     "datum": "2026-09-13",
+     "opp": "Coventry City",
+     "thuis": false,
+     "voor": 5,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "4"
     }
    ],
    "vorm": [
-    "G",
     "W",
     "W",
     "V",
-    "G"
+    "G",
+    "W"
    ],
-   "vormpunten": 8,
+   "vormpunten": 10,
    "vormmax": 15,
    "oefen": 0
   },
@@ -345,18 +410,8 @@
   "COV": {
    "artikel": "2026–27 Coventry City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Coventry_City_F.C._season",
-   "gespeeld": 8,
+   "gespeeld": 9,
    "laatste5": [
-    {
-     "datum": "2026-08-14",
-     "opp": "Monaco",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-21",
      "opp": "Arsenal",
@@ -396,18 +451,28 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "3"
+    },
+    {
+     "datum": "2026-09-13",
+     "opp": "Brighton & Hove Albion",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 5,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "4"
     }
    ],
    "vorm": [
-    "W",
     "V",
     "W",
+    "V",
     "V",
     "V"
    ],
-   "vormpunten": 6,
+   "vormpunten": 3,
    "vormmax": 15,
-   "oefen": 1
+   "oefen": 0
   },
   "CRY": {
    "artikel": "2026–27 Crystal Palace F.C. season",
