@@ -1,14 +1,3606 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-09-13 22:36:50",
- "_copilot_bijgewerkt": "Updated just now",
+ "_opgehaald": "2026-09-14 00:09:39",
+ "_copilot_bijgewerkt": "Updated an hour ago",
  "_copilot_moment": null,
  "_start_gw": 5,
  "_horizon": 8,
  "_overgeslagen": [
   {
+   "n": "Raya",
+   "pos": "DEF"
+  },
+  {
+   "n": "Donnarumma",
+   "pos": "DEF"
+  },
+  {
+   "n": "Kinsky",
+   "pos": "DEF"
+  },
+  {
+   "n": "Suzuki",
+   "pos": "DEF"
+  },
+  {
+   "n": "Kelleher",
+   "pos": "DEF"
+  },
+  {
+   "n": "Horníček",
+   "pos": "DEF"
+  },
+  {
+   "n": "Trafford",
+   "pos": "DEF"
+  },
+  {
+   "n": "Lammens",
+   "pos": "DEF"
+  },
+  {
+   "n": "Pickford",
+   "pos": "DEF"
+  },
+  {
+   "n": "A.Becker",
+   "pos": "DEF"
+  },
+  {
+   "n": "Verbruggen",
+   "pos": "DEF"
+  },
+  {
+   "n": "Leno",
+   "pos": "DEF"
+  },
+  {
+   "n": "Petrović",
+   "pos": "DEF"
+  },
+  {
+   "n": "Rushworth",
+   "pos": "DEF"
+  },
+  {
+   "n": "Benitez",
+   "pos": "DEF"
+  },
+  {
+   "n": "Sels",
+   "pos": "DEF"
+  },
+  {
+   "n": "Roefs",
+   "pos": "DEF"
+  },
+  {
+   "n": "Tzolakis",
+   "pos": "DEF"
+  },
+  {
+   "n": "Scherpen",
+   "pos": "DEF"
+  },
+  {
+   "n": "Martinez",
+   "pos": "DEF"
+  },
+  {
+   "n": "Henderson",
+   "pos": "DEF"
+  },
+  {
+   "n": "Pope",
+   "pos": "DEF"
+  },
+  {
+   "n": "Dubravka",
+   "pos": "DEF"
+  },
+  {
+   "n": "Darlow",
+   "pos": "DEF"
+  },
+  {
+   "n": "M.Bizot",
+   "pos": "DEF"
+  },
+  {
+   "n": "Mamardashvili",
+   "pos": "DEF"
+  },
+  {
+   "n": "Arrizabalaga",
+   "pos": "DEF"
+  },
+  {
+   "n": "Meslier",
+   "pos": "DEF"
+  },
+  {
+   "n": "Rulli",
+   "pos": "DEF"
+  },
+  {
+   "n": "Ellborg",
+   "pos": "DEF"
+  },
+  {
+   "n": "Jaouen",
+   "pos": "DEF"
+  },
+  {
+   "n": "Bettinelli",
+   "pos": "DEF"
+  },
+  {
+   "n": "Travers",
+   "pos": "DEF"
+  },
+  {
+   "n": "Woodman",
+   "pos": "DEF"
+  },
+  {
+   "n": "John",
+   "pos": "DEF"
+  },
+  {
+   "n": "Steele",
+   "pos": "DEF"
+  },
+  {
+   "n": "Penders",
+   "pos": "DEF"
+  },
+  {
+   "n": "Valdimarsson",
+   "pos": "DEF"
+  },
+  {
+   "n": "Lecomte",
+   "pos": "DEF"
+  },
+  {
+   "n": "Gillespie",
+   "pos": "DEF"
+  },
+  {
+   "n": "Di Gregorio",
+   "pos": "DEF"
+  },
+  {
+   "n": "Bentley",
+   "pos": "DEF"
+  },
+  {
+   "n": "Wilson",
+   "pos": "DEF"
+  },
+  {
+   "n": "Davies",
+   "pos": "DEF"
+  },
+  {
+   "n": "Austin",
+   "pos": "DEF"
+  },
+  {
+   "n": "Walton",
+   "pos": "DEF"
+  },
+  {
+   "n": "King",
+   "pos": "DEF"
+  },
+  {
+   "n": "Forster",
+   "pos": "DEF"
+  },
+  {
+   "n": "Matthews",
+   "pos": "DEF"
+  },
+  {
+   "n": "Cairns",
+   "pos": "DEF"
+  },
+  {
+   "n": "Benda",
+   "pos": "DEF"
+  },
+  {
+   "n": "Button",
+   "pos": "DEF"
+  },
+  {
+   "n": "Palmer",
+   "pos": "DEF"
+  },
+  {
+   "n": "Dennis",
+   "pos": "DEF"
+  },
+  {
+   "n": "Sánchez",
+   "pos": "DEF"
+  },
+  {
+   "n": "Jörgensen",
+   "pos": "DEF"
+  },
+  {
+   "n": "Dovin",
+   "pos": "DEF"
+  },
+  {
+   "n": "McNally",
+   "pos": "DEF"
+  },
+  {
+   "n": "Butland",
+   "pos": "DEF"
+  },
+  {
+   "n": "Cartwright",
+   "pos": "DEF"
+  },
+  {
+   "n": "Lo-Tutala",
+   "pos": "DEF"
+  },
+  {
+   "n": "Perri",
+   "pos": "DEF"
+  },
+  {
+   "n": "Pecsi",
+   "pos": "DEF"
+  },
+  {
+   "n": "Jaros",
+   "pos": "DEF"
+  },
+  {
+   "n": "Bayindir",
+   "pos": "DEF"
+  },
+  {
+   "n": "Heaton",
+   "pos": "DEF"
+  },
+  {
+   "n": "Vicario",
+   "pos": "DEF"
+  },
+  {
+   "n": "Phillips",
+   "pos": "DEF"
+  },
+  {
+   "n": "Patterson",
+   "pos": "DEF"
+  },
+  {
+   "n": "Van Oevelen",
+   "pos": "DEF"
+  },
+  {
+   "n": "Gabriel",
+   "pos": "MID"
+  },
+  {
+   "n": "Hall",
+   "pos": "MID"
+  },
+  {
+   "n": "Calafiori",
+   "pos": "MID"
+  },
+  {
+   "n": "Gvardiol",
+   "pos": "MID"
+  },
+  {
+   "n": "Konsa",
+   "pos": "MID"
+  },
+  {
+   "n": "Mukiele",
+   "pos": "MID"
+  },
+  {
+   "n": "Khalaili",
+   "pos": "MID"
+  },
+  {
+   "n": "Guéhi",
+   "pos": "MID"
+  },
+  {
+   "n": "De Cuyper",
+   "pos": "MID"
+  },
+  {
+   "n": "Muharemović",
+   "pos": "MID"
+  },
+  {
+   "n": "White",
+   "pos": "MID"
+  },
+  {
+   "n": "Raya",
+   "pos": "MID"
+  },
+  {
+   "n": "Silva",
+   "pos": "MID"
+  },
+  {
+   "n": "Schuster",
+   "pos": "MID"
+  },
+  {
+   "n": "Wan-Bissaka",
+   "pos": "MID"
+  },
+  {
+   "n": "Matheus N.",
+   "pos": "MID"
+  },
+  {
+   "n": "Van Hecke",
+   "pos": "MID"
+  },
+  {
+   "n": "Richards",
+   "pos": "MID"
+  },
+  {
+   "n": "Van de Ven",
+   "pos": "MID"
+  },
+  {
+   "n": "Virgil",
+   "pos": "MID"
+  },
+  {
+   "n": "Tarkowski",
+   "pos": "MID"
+  },
+  {
+   "n": "Murillo",
+   "pos": "MID"
+  },
+  {
+   "n": "Justin",
+   "pos": "MID"
+  },
+  {
+   "n": "Martinez",
+   "pos": "MID"
+  },
+  {
+   "n": "Truffert",
+   "pos": "MID"
+  },
+  {
+   "n": "Robertson",
+   "pos": "MID"
+  },
+  {
+   "n": "Vuskovic",
+   "pos": "MID"
+  },
+  {
+   "n": "Rúben",
+   "pos": "MID"
+  },
+  {
+   "n": "Thiaw",
+   "pos": "MID"
+  },
+  {
+   "n": "Branthwaite",
+   "pos": "MID"
+  },
+  {
+   "n": "Diomande",
+   "pos": "MID"
+  },
+  {
+   "n": "Donnarumma",
+   "pos": "MID"
+  },
+  {
+   "n": "Elvedi",
+   "pos": "MID"
+  },
+  {
+   "n": "Botman",
+   "pos": "MID"
+  },
+  {
+   "n": "Dalot",
+   "pos": "MID"
+  },
+  {
+   "n": "Pinnock",
+   "pos": "MID"
+  },
+  {
+   "n": "N.Williams",
+   "pos": "MID"
+  },
+  {
+   "n": "Ajer",
+   "pos": "MID"
+  },
+  {
+   "n": "Jacquet",
+   "pos": "MID"
+  },
+  {
+   "n": "Kinsky",
+   "pos": "MID"
+  },
+  {
+   "n": "Egan",
+   "pos": "MID"
+  },
+  {
+   "n": "Suzuki",
+   "pos": "MID"
+  },
+  {
+   "n": "Kelleher",
+   "pos": "MID"
+  },
+  {
+   "n": "Horníček",
+   "pos": "MID"
+  },
+  {
+   "n": "Robinson",
+   "pos": "MID"
+  },
+  {
+   "n": "Trafford",
+   "pos": "MID"
+  },
+  {
+   "n": "Mykolenko",
+   "pos": "MID"
+  },
+  {
+   "n": "Ballard",
+   "pos": "MID"
+  },
+  {
+   "n": "Lammens",
+   "pos": "MID"
+  },
+  {
+   "n": "Hill",
+   "pos": "MID"
+  },
+  {
+   "n": "Pickford",
+   "pos": "MID"
+  },
+  {
+   "n": "A.Becker",
+   "pos": "MID"
+  },
+  {
+   "n": "O'Shea",
+   "pos": "MID"
+  },
+  {
+   "n": "Lacroix",
+   "pos": "MID"
+  },
+  {
+   "n": "Verbruggen",
+   "pos": "MID"
+  },
+  {
+   "n": "Davis",
+   "pos": "MID"
+  },
+  {
+   "n": "Leno",
+   "pos": "MID"
+  },
+  {
+   "n": "Lindelöf",
+   "pos": "MID"
+  },
+  {
+   "n": "Petrović",
+   "pos": "MID"
+  },
+  {
+   "n": "Mitchell",
+   "pos": "MID"
+  },
+  {
+   "n": "Rushworth",
+   "pos": "MID"
+  },
+  {
+   "n": "Benitez",
+   "pos": "MID"
+  },
+  {
+   "n": "Sels",
+   "pos": "MID"
+  },
+  {
+   "n": "Colwill",
+   "pos": "MID"
+  },
+  {
+   "n": "Maguire",
+   "pos": "MID"
+  },
+  {
+   "n": "Roefs",
+   "pos": "MID"
+  },
+  {
+   "n": "Gudmundsson",
+   "pos": "MID"
+  },
+  {
+   "n": "Diop",
+   "pos": "MID"
+  },
+  {
+   "n": "Tzolakis",
+   "pos": "MID"
+  },
+  {
+   "n": "Scherpen",
+   "pos": "MID"
+  },
+  {
+   "n": "Gusto",
+   "pos": "MID"
+  },
+  {
+   "n": "F.Kadıoğlu",
+   "pos": "MID"
+  },
+  {
+   "n": "Dunk",
+   "pos": "MID"
+  },
+  {
+   "n": "Bassey",
+   "pos": "MID"
+  },
+  {
+   "n": "Martinez",
+   "pos": "MID"
+  },
+  {
+   "n": "van Ewijk",
+   "pos": "MID"
+  },
+  {
+   "n": "Aina",
+   "pos": "MID"
+  },
+  {
+   "n": "Danso",
+   "pos": "MID"
+  },
+  {
+   "n": "Castagne",
+   "pos": "MID"
+  },
+  {
+   "n": "Ajayi",
+   "pos": "MID"
+  },
+  {
+   "n": "Greaves",
+   "pos": "MID"
+  },
+  {
+   "n": "Giles",
+   "pos": "MID"
+  },
+  {
+   "n": "Amenda",
+   "pos": "MID"
+  },
+  {
+   "n": "Boscagli",
+   "pos": "MID"
+  },
+  {
+   "n": "Meunier",
+   "pos": "MID"
+  },
+  {
+   "n": "Smith",
+   "pos": "MID"
+  },
+  {
+   "n": "Araujo",
+   "pos": "MID"
+  },
+  {
+   "n": "Munoz",
+   "pos": "MID"
+  },
+  {
+   "n": "Mings",
+   "pos": "MID"
+  },
+  {
    "n": "Angulo",
    "pos": "MID"
+  },
+  {
+   "n": "Hickey",
+   "pos": "MID"
+  },
+  {
+   "n": "Kerkez",
+   "pos": "MID"
+  },
+  {
+   "n": "Dedić",
+   "pos": "MID"
+  },
+  {
+   "n": "Mendy",
+   "pos": "MID"
+  },
+  {
+   "n": "Bogle",
+   "pos": "MID"
+  },
+  {
+   "n": "Coyle",
+   "pos": "MID"
+  },
+  {
+   "n": "Hato",
+   "pos": "MID"
+  },
+  {
+   "n": "Maatsen",
+   "pos": "MID"
+  },
+  {
+   "n": "Pedro Porro",
+   "pos": "MID"
+  },
+  {
+   "n": "Khusanov",
+   "pos": "MID"
+  },
+  {
+   "n": "Bijol",
+   "pos": "MID"
+  },
+  {
+   "n": "Kayode",
+   "pos": "MID"
+  },
+  {
+   "n": "Milenković",
+   "pos": "MID"
+  },
+  {
+   "n": "Canvot",
+   "pos": "MID"
+  },
+  {
+   "n": "Jair Cunha",
+   "pos": "MID"
+  },
+  {
+   "n": "Shaw",
+   "pos": "MID"
+  },
+  {
+   "n": "Cash",
+   "pos": "MID"
+  },
+  {
+   "n": "Tomiyasu",
+   "pos": "MID"
+  },
+  {
+   "n": "Chavarria",
+   "pos": "MID"
+  },
+  {
+   "n": "Andersen",
+   "pos": "MID"
+  },
+  {
+   "n": "Acheampong",
+   "pos": "MID"
+  },
+  {
+   "n": "Frimpong",
+   "pos": "MID"
+  },
+  {
+   "n": "J.Timber",
+   "pos": "MID"
+  },
+  {
+   "n": "O'Reilly",
+   "pos": "MID"
+  },
+  {
+   "n": "Pau",
+   "pos": "MID"
+  },
+  {
+   "n": "Tsimikas",
+   "pos": "MID"
+  },
+  {
+   "n": "Hume",
+   "pos": "MID"
+  },
+  {
+   "n": "Herrington",
+   "pos": "MID"
+  },
+  {
+   "n": "Udogie",
+   "pos": "MID"
+  },
+  {
+   "n": "Burn",
+   "pos": "MID"
+  },
+  {
+   "n": "Keane",
+   "pos": "MID"
+  },
+  {
+   "n": "Rodon",
+   "pos": "MID"
+  },
+  {
+   "n": "Diouf",
+   "pos": "MID"
+  },
+  {
+   "n": "Pope",
+   "pos": "MID"
+  },
+  {
+   "n": "Dubravka",
+   "pos": "MID"
+  },
+  {
+   "n": "Tete",
+   "pos": "MID"
+  },
+  {
+   "n": "Sessegnon",
+   "pos": "MID"
+  },
+  {
+   "n": "Hincapie",
+   "pos": "MID"
+  },
+  {
+   "n": "Senesi",
+   "pos": "MID"
+  },
+  {
+   "n": "Costinha",
+   "pos": "MID"
+  },
+  {
+   "n": "Svoboda",
+   "pos": "MID"
+  },
+  {
+   "n": "James",
+   "pos": "MID"
+  },
+  {
+   "n": "Mazraoui",
+   "pos": "MID"
+  },
+  {
+   "n": "Mosquera",
+   "pos": "MID"
+  },
+  {
+   "n": "Lewis",
+   "pos": "MID"
+  },
+  {
+   "n": "Darlow",
+   "pos": "MID"
+  },
+  {
+   "n": "Struijk",
+   "pos": "MID"
+  },
+  {
+   "n": "M.Bizot",
+   "pos": "MID"
+  },
+  {
+   "n": "Ouattara",
+   "pos": "MID"
+  },
+  {
+   "n": "O'Brien",
+   "pos": "MID"
+  },
+  {
+   "n": "J.Cuenca",
+   "pos": "MID"
+  },
+  {
+   "n": "Heaven",
+   "pos": "MID"
+  },
+  {
+   "n": "Dasilva",
+   "pos": "MID"
+  },
+  {
+   "n": "Ruggeri",
+   "pos": "MID"
+  },
+  {
+   "n": "Tosin",
+   "pos": "MID"
+  },
+  {
+   "n": "Diakité",
+   "pos": "MID"
+  },
+  {
+   "n": "Mamardashvili",
+   "pos": "MID"
+  },
+  {
+   "n": "Anselmino",
+   "pos": "MID"
+  },
+  {
+   "n": "Arrizabalaga",
+   "pos": "MID"
+  },
+  {
+   "n": "O'Nien",
+   "pos": "MID"
+  },
+  {
+   "n": "Yoro",
+   "pos": "MID"
+  },
+  {
+   "n": "Byfield",
+   "pos": "MID"
+  },
+  {
+   "n": "Rowswell",
+   "pos": "MID"
+  },
+  {
+   "n": "Lucky",
+   "pos": "MID"
+  },
+  {
+   "n": "Davies",
+   "pos": "MID"
+  },
+  {
+   "n": "Rowe",
+   "pos": "MID"
+  },
+  {
+   "n": "Meslier",
+   "pos": "MID"
+  },
+  {
+   "n": "Mingueza",
+   "pos": "MID"
+  },
+  {
+   "n": "Ji-soo",
+   "pos": "MID"
+  },
+  {
+   "n": "Amass",
+   "pos": "MID"
+  },
+  {
+   "n": "Lienou",
+   "pos": "MID"
+  },
+  {
+   "n": "Rulli",
+   "pos": "MID"
+  },
+  {
+   "n": "Hadjam",
+   "pos": "MID"
+  },
+  {
+   "n": "A.García",
+   "pos": "MID"
+  },
+  {
+   "n": "Braithwaite",
+   "pos": "MID"
+  },
+  {
+   "n": "O.Richards",
+   "pos": "MID"
+  },
+  {
+   "n": "Vitor Reis",
+   "pos": "MID"
+  },
+  {
+   "n": "Bidwell",
+   "pos": "MID"
+  },
+  {
+   "n": "Latibeaudiere",
+   "pos": "MID"
+  },
+  {
+   "n": "Ellborg",
+   "pos": "MID"
+  },
+  {
+   "n": "Sanchez",
+   "pos": "MID"
+  },
+  {
+   "n": "Jaouen",
+   "pos": "MID"
+  },
+  {
+   "n": "Furlong",
+   "pos": "MID"
+  },
+  {
+   "n": "Methalie",
+   "pos": "MID"
+  },
+  {
+   "n": "Netz",
+   "pos": "MID"
+  },
+  {
+   "n": "Soler",
+   "pos": "MID"
+  },
+  {
+   "n": "Coppola",
+   "pos": "MID"
+  },
+  {
+   "n": "Schär",
+   "pos": "MID"
+  },
+  {
+   "n": "Bettinelli",
+   "pos": "MID"
+  },
+  {
+   "n": "Aït-Nouri",
+   "pos": "MID"
+  },
+  {
+   "n": "Kipré",
+   "pos": "MID"
+  },
+  {
+   "n": "Alderete",
+   "pos": "MID"
+  },
+  {
+   "n": "Travers",
+   "pos": "MID"
+  },
+  {
+   "n": "Woodman",
+   "pos": "MID"
+  },
+  {
+   "n": "John",
+   "pos": "MID"
+  },
+  {
+   "n": "Steele",
+   "pos": "MID"
+  },
+  {
+   "n": "McCarthy",
+   "pos": "MID"
+  },
+  {
+   "n": "Penders",
+   "pos": "MID"
+  },
+  {
+   "n": "Valdimarsson",
+   "pos": "MID"
+  },
+  {
+   "n": "McNair",
+   "pos": "MID"
+  },
+  {
+   "n": "Lecomte",
+   "pos": "MID"
+  },
+  {
+   "n": "Gillespie",
+   "pos": "MID"
+  },
+  {
+   "n": "Di Gregorio",
+   "pos": "MID"
+  },
+  {
+   "n": "Bentley",
+   "pos": "MID"
+  },
+  {
+   "n": "Wilson",
+   "pos": "MID"
+  },
+  {
+   "n": "Davies",
+   "pos": "MID"
+  },
+  {
+   "n": "Austin",
+   "pos": "MID"
+  },
+  {
+   "n": "Walton",
+   "pos": "MID"
+  },
+  {
+   "n": "King",
+   "pos": "MID"
+  },
+  {
+   "n": "Forster",
+   "pos": "MID"
+  },
+  {
+   "n": "Matthews",
+   "pos": "MID"
+  },
+  {
+   "n": "Cairns",
+   "pos": "MID"
+  },
+  {
+   "n": "Henry",
+   "pos": "MID"
+  },
+  {
+   "n": "Benda",
+   "pos": "MID"
+  },
+  {
+   "n": "Targett",
+   "pos": "MID"
+  },
+  {
+   "n": "Button",
+   "pos": "MID"
+  },
+  {
+   "n": "Palmer",
+   "pos": "MID"
+  },
+  {
+   "n": "Livramento",
+   "pos": "MID"
+  },
+  {
+   "n": "Saliba",
+   "pos": "MID"
+  },
+  {
+   "n": "Digne",
+   "pos": "MID"
+  },
+  {
+   "n": "Nedeljkovic",
+   "pos": "MID"
+  },
+  {
+   "n": "Dennis",
+   "pos": "MID"
+  },
+  {
+   "n": "Milosavljević",
+   "pos": "MID"
+  },
+  {
+   "n": "J.Araujo",
+   "pos": "MID"
+  },
+  {
+   "n": "Collins",
+   "pos": "MID"
+  },
+  {
+   "n": "Van den Berg",
+   "pos": "MID"
+  },
+  {
+   "n": "Henderson",
+   "pos": "MID"
+  },
+  {
+   "n": "Igor",
+   "pos": "MID"
+  },
+  {
+   "n": "Wieffer",
+   "pos": "MID"
+  },
+  {
+   "n": "Sánchez",
+   "pos": "MID"
+  },
+  {
+   "n": "Jörgensen",
+   "pos": "MID"
+  },
+  {
+   "n": "Chalobah",
+   "pos": "MID"
+  },
+  {
+   "n": "B.Badiashile",
+   "pos": "MID"
+  },
+  {
+   "n": "M.Sarr",
+   "pos": "MID"
+  },
+  {
+   "n": "Palestra",
+   "pos": "MID"
+  },
+  {
+   "n": "Disasi",
+   "pos": "MID"
+  },
+  {
+   "n": "Dovin",
+   "pos": "MID"
+  },
+  {
+   "n": "Kitching",
+   "pos": "MID"
+  },
+  {
+   "n": "Kesler-Hayden",
+   "pos": "MID"
+  },
+  {
+   "n": "Woolfenden",
+   "pos": "MID"
+  },
+  {
+   "n": "Brau",
+   "pos": "MID"
+  },
+  {
+   "n": "Sosa",
+   "pos": "MID"
+  },
+  {
+   "n": "Chadi Riad",
+   "pos": "MID"
+  },
+  {
+   "n": "Cardines",
+   "pos": "MID"
+  },
+  {
+   "n": "Patterson",
+   "pos": "MID"
+  },
+  {
+   "n": "Aznou",
+   "pos": "MID"
+  },
+  {
+   "n": "McNally",
+   "pos": "MID"
+  },
+  {
+   "n": "Butland",
+   "pos": "MID"
+  },
+  {
+   "n": "Cartwright",
+   "pos": "MID"
+  },
+  {
+   "n": "Lo-Tutala",
+   "pos": "MID"
+  },
+  {
+   "n": "Hughes",
+   "pos": "MID"
+  },
+  {
+   "n": "Drameh",
+   "pos": "MID"
+  },
+  {
+   "n": "Jacob",
+   "pos": "MID"
+  },
+  {
+   "n": "Johnson",
+   "pos": "MID"
+  },
+  {
+   "n": "Perri",
+   "pos": "MID"
+  },
+  {
+   "n": "Bornauw",
+   "pos": "MID"
+  },
+  {
+   "n": "Pecsi",
+   "pos": "MID"
+  },
+  {
+   "n": "Jaros",
+   "pos": "MID"
+  },
+  {
+   "n": "Gomez",
+   "pos": "MID"
+  },
+  {
+   "n": "Bradley",
+   "pos": "MID"
+  },
+  {
+   "n": "Leoni",
+   "pos": "MID"
+  },
+  {
+   "n": "Ramsay",
+   "pos": "MID"
+  },
+  {
+   "n": "Alleyne",
+   "pos": "MID"
+  },
+  {
+   "n": "Phillips",
+   "pos": "MID"
+  },
+  {
+   "n": "Bayindir",
+   "pos": "MID"
+  },
+  {
+   "n": "Heaton",
+   "pos": "MID"
+  },
+  {
+   "n": "De Ligt",
+   "pos": "MID"
+  },
+  {
+   "n": "Fredricson",
+   "pos": "MID"
+  },
+  {
+   "n": "A.Murphy",
+   "pos": "MID"
+  },
+  {
+   "n": "Morato",
+   "pos": "MID"
+  },
+  {
+   "n": "Savona",
+   "pos": "MID"
+  },
+  {
+   "n": "Abbott",
+   "pos": "MID"
+  },
+  {
+   "n": "Bindon",
+   "pos": "MID"
+  },
+  {
+   "n": "Vicario",
+   "pos": "MID"
+  },
+  {
+   "n": "Romero",
+   "pos": "MID"
+  },
+  {
+   "n": "Spence",
+   "pos": "MID"
+  },
+  {
+   "n": "Phillips",
+   "pos": "MID"
+  },
+  {
+   "n": "Souza",
+   "pos": "MID"
+  },
+  {
+   "n": "Patterson",
+   "pos": "MID"
+  },
+  {
+   "n": "Reinildo",
+   "pos": "MID"
+  },
+  {
+   "n": "Seelt",
+   "pos": "MID"
+  },
+  {
+   "n": "Hjelde",
+   "pos": "MID"
+  },
+  {
+   "n": "Masuaku",
+   "pos": "MID"
+  },
+  {
+   "n": "Van Oevelen",
+   "pos": "MID"
+  },
+  {
+   "n": "Shahar",
+   "pos": "MID"
+  },
+  {
+   "n": "De Fougerolles",
+   "pos": "MID"
+  },
+  {
+   "n": "Saka",
+   "pos": "FWD"
+  },
+  {
+   "n": "B.Fernandes",
+   "pos": "FWD"
+  },
+  {
+   "n": "Palmer",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mbeumo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gabriel",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ødegaard",
+   "pos": "FWD"
+  },
+  {
+   "n": "Szoboszlai",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tavernier",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rogers",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gibbs-White",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hall",
+   "pos": "FWD"
+  },
+  {
+   "n": "Wirtz",
+   "pos": "FWD"
+  },
+  {
+   "n": "Groß",
+   "pos": "FWD"
+  },
+  {
+   "n": "Calafiori",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dewsbury-Hall",
+   "pos": "FWD"
+  },
+  {
+   "n": "Schade",
+   "pos": "FWD"
+  },
+  {
+   "n": "Enciso",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gvardiol",
+   "pos": "FWD"
+  },
+  {
+   "n": "Sávio",
+   "pos": "FWD"
+  },
+  {
+   "n": "Konsa",
+   "pos": "FWD"
+  },
+  {
+   "n": "Stach",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mukiele",
+   "pos": "FWD"
+  },
+  {
+   "n": "Khalaili",
+   "pos": "FWD"
+  },
+  {
+   "n": "E.Le Fée",
+   "pos": "FWD"
+  },
+  {
+   "n": "Palacios",
+   "pos": "FWD"
+  },
+  {
+   "n": "Neto",
+   "pos": "FWD"
+  },
+  {
+   "n": "Guéhi",
+   "pos": "FWD"
+  },
+  {
+   "n": "De Cuyper",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cunha",
+   "pos": "FWD"
+  },
+  {
+   "n": "Janelt",
+   "pos": "FWD"
+  },
+  {
+   "n": "Muharemović",
+   "pos": "FWD"
+  },
+  {
+   "n": "White",
+   "pos": "FWD"
+  },
+  {
+   "n": "M.Sangaré",
+   "pos": "FWD"
+  },
+  {
+   "n": "James",
+   "pos": "FWD"
+  },
+  {
+   "n": "Barnes",
+   "pos": "FWD"
+  },
+  {
+   "n": "Scott",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rayan",
+   "pos": "FWD"
+  },
+  {
+   "n": "Enzo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Thomas",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gomez",
+   "pos": "FWD"
+  },
+  {
+   "n": "Raya",
+   "pos": "FWD"
+  },
+  {
+   "n": "Silva",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rashford",
+   "pos": "FWD"
+  },
+  {
+   "n": "King",
+   "pos": "FWD"
+  },
+  {
+   "n": "Anderson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ndiaye",
+   "pos": "FWD"
+  },
+  {
+   "n": "Semenyo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Xhaka",
+   "pos": "FWD"
+  },
+  {
+   "n": "Schlager",
+   "pos": "FWD"
+  },
+  {
+   "n": "Schuster",
+   "pos": "FWD"
+  },
+  {
+   "n": "Charles",
+   "pos": "FWD"
+  },
+  {
+   "n": "Wan-Bissaka",
+   "pos": "FWD"
+  },
+  {
+   "n": "Muñoz",
+   "pos": "FWD"
+  },
+  {
+   "n": "Matheus N.",
+   "pos": "FWD"
+  },
+  {
+   "n": "Van Hecke",
+   "pos": "FWD"
+  },
+  {
+   "n": "Richards",
+   "pos": "FWD"
+  },
+  {
+   "n": "Van de Ven",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dorgu",
+   "pos": "FWD"
+  },
+  {
+   "n": "Fofana",
+   "pos": "FWD"
+  },
+  {
+   "n": "Virgil",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tarkowski",
+   "pos": "FWD"
+  },
+  {
+   "n": "Murillo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Justin",
+   "pos": "FWD"
+  },
+  {
+   "n": "Martinez",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mainoo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rice",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ayari",
+   "pos": "FWD"
+  },
+  {
+   "n": "Truffert",
+   "pos": "FWD"
+  },
+  {
+   "n": "Robertson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tzolis",
+   "pos": "FWD"
+  },
+  {
+   "n": "Vuskovic",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rúben",
+   "pos": "FWD"
+  },
+  {
+   "n": "Thiaw",
+   "pos": "FWD"
+  },
+  {
+   "n": "Branthwaite",
+   "pos": "FWD"
+  },
+  {
+   "n": "Diomande",
+   "pos": "FWD"
+  },
+  {
+   "n": "McAtee",
+   "pos": "FWD"
+  },
+  {
+   "n": "Donnarumma",
+   "pos": "FWD"
+  },
+  {
+   "n": "Elvedi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Botman",
+   "pos": "FWD"
+  },
+  {
+   "n": "McGinn",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dalot",
+   "pos": "FWD"
+  },
+  {
+   "n": "Garner",
+   "pos": "FWD"
+  },
+  {
+   "n": "Pinnock",
+   "pos": "FWD"
+  },
+  {
+   "n": "N.Williams",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ajer",
+   "pos": "FWD"
+  },
+  {
+   "n": "Jacquet",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kinsky",
+   "pos": "FWD"
+  },
+  {
+   "n": "Egan",
+   "pos": "FWD"
+  },
+  {
+   "n": "Suzuki",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kelleher",
+   "pos": "FWD"
+  },
+  {
+   "n": "Belloumi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tanaka",
+   "pos": "FWD"
+  },
+  {
+   "n": "Elanga",
+   "pos": "FWD"
+  },
+  {
+   "n": "Horníček",
+   "pos": "FWD"
+  },
+  {
+   "n": "Robinson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cherki",
+   "pos": "FWD"
+  },
+  {
+   "n": "Trafford",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mykolenko",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ballard",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lammens",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hill",
+   "pos": "FWD"
+  },
+  {
+   "n": "Pickford",
+   "pos": "FWD"
+  },
+  {
+   "n": "A.Becker",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kluivert",
+   "pos": "FWD"
+  },
+  {
+   "n": "O'Shea",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lacroix",
+   "pos": "FWD"
+  },
+  {
+   "n": "Verbruggen",
+   "pos": "FWD"
+  },
+  {
+   "n": "Davis",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ndoye",
+   "pos": "FWD"
+  },
+  {
+   "n": "Leno",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rudoni",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lindelöf",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lewis-Potter",
+   "pos": "FWD"
+  },
+  {
+   "n": "Petrović",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mitchell",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rushworth",
+   "pos": "FWD"
+  },
+  {
+   "n": "Benitez",
+   "pos": "FWD"
+  },
+  {
+   "n": "Sels",
+   "pos": "FWD"
+  },
+  {
+   "n": "Colwill",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tonali",
+   "pos": "FWD"
+  },
+  {
+   "n": "Maguire",
+   "pos": "FWD"
+  },
+  {
+   "n": "Roefs",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ampadu",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gudmundsson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Diop",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gakpo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tzolakis",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hinshelwood",
+   "pos": "FWD"
+  },
+  {
+   "n": "Scherpen",
+   "pos": "FWD"
+  },
+  {
+   "n": "Barkley",
+   "pos": "FWD"
+  },
+  {
+   "n": "Armstrong",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gusto",
+   "pos": "FWD"
+  },
+  {
+   "n": "F.Kadıoğlu",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dunk",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kamada",
+   "pos": "FWD"
+  },
+  {
+   "n": "Sadiki",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bassey",
+   "pos": "FWD"
+  },
+  {
+   "n": "Adams",
+   "pos": "FWD"
+  },
+  {
+   "n": "Martinez",
+   "pos": "FWD"
+  },
+  {
+   "n": "van Ewijk",
+   "pos": "FWD"
+  },
+  {
+   "n": "Aina",
+   "pos": "FWD"
+  },
+  {
+   "n": "Slater",
+   "pos": "FWD"
+  },
+  {
+   "n": "Yalcouyé",
+   "pos": "FWD"
+  },
+  {
+   "n": "Buendía",
+   "pos": "FWD"
+  },
+  {
+   "n": "Iwobi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Wharton",
+   "pos": "FWD"
+  },
+  {
+   "n": "Danso",
+   "pos": "FWD"
+  },
+  {
+   "n": "Castagne",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kamara",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tielemans",
+   "pos": "FWD"
+  },
+  {
+   "n": "George",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dasilva",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ajayi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Willock",
+   "pos": "FWD"
+  },
+  {
+   "n": "Johnson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Greaves",
+   "pos": "FWD"
+  },
+  {
+   "n": "Giles",
+   "pos": "FWD"
+  },
+  {
+   "n": "Amenda",
+   "pos": "FWD"
+  },
+  {
+   "n": "Grimes",
+   "pos": "FWD"
+  },
+  {
+   "n": "Boscagli",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bobb",
+   "pos": "FWD"
+  },
+  {
+   "n": "Meunier",
+   "pos": "FWD"
+  },
+  {
+   "n": "Smith",
+   "pos": "FWD"
+  },
+  {
+   "n": "Araujo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Munoz",
+   "pos": "FWD"
+  },
+  {
+   "n": "Okafor",
+   "pos": "FWD"
+  },
+  {
+   "n": "Berge",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gray",
+   "pos": "FWD"
+  },
+  {
+   "n": "L.Miley",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lavia",
+   "pos": "FWD"
+  },
+  {
+   "n": "N.Gonzalez",
+   "pos": "FWD"
+  },
+  {
+   "n": "Yeremy",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mings",
+   "pos": "FWD"
+  },
+  {
+   "n": "Henderson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lukić",
+   "pos": "FWD"
+  },
+  {
+   "n": "Angulo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hickey",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kerkez",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dedić",
+   "pos": "FWD"
+  },
+  {
+   "n": "George Hemmings",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mendy",
+   "pos": "FWD"
+  },
+  {
+   "n": "Onyeka",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bentancur",
+   "pos": "FWD"
+  },
+  {
+   "n": "Fatawu",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bogle",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mason-Clark",
+   "pos": "FWD"
+  },
+  {
+   "n": "Anthony",
+   "pos": "FWD"
+  },
+  {
+   "n": "Clarke",
+   "pos": "FWD"
+  },
+  {
+   "n": "Crooks",
+   "pos": "FWD"
+  },
+  {
+   "n": "Damsgaard",
+   "pos": "FWD"
+  },
+  {
+   "n": "Coyle",
+   "pos": "FWD"
+  },
+  {
+   "n": "Caicedo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hato",
+   "pos": "FWD"
+  },
+  {
+   "n": "Maatsen",
+   "pos": "FWD"
+  },
+  {
+   "n": "Fernandes",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tel",
+   "pos": "FWD"
+  },
+  {
+   "n": "O.Dango",
+   "pos": "FWD"
+  },
+  {
+   "n": "Jensen",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mac Allister",
+   "pos": "FWD"
+  },
+  {
+   "n": "Maeda",
+   "pos": "FWD"
+  },
+  {
+   "n": "Stroud",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lewis-Skelly",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gravenberch",
+   "pos": "FWD"
+  },
+  {
+   "n": "Pedro Porro",
+   "pos": "FWD"
+  },
+  {
+   "n": "Khusanov",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bijol",
+   "pos": "FWD"
+  },
+  {
+   "n": "Aaronson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kayode",
+   "pos": "FWD"
+  },
+  {
+   "n": "Milenković",
+   "pos": "FWD"
+  },
+  {
+   "n": "Palacios",
+   "pos": "FWD"
+  },
+  {
+   "n": "Canvot",
+   "pos": "FWD"
+  },
+  {
+   "n": "Jair Cunha",
+   "pos": "FWD"
+  },
+  {
+   "n": "Yarmoliuk",
+   "pos": "FWD"
+  },
+  {
+   "n": "Shaw",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cash",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tomiyasu",
+   "pos": "FWD"
+  },
+  {
+   "n": "Röhl",
+   "pos": "FWD"
+  },
+  {
+   "n": "Chavarria",
+   "pos": "FWD"
+  },
+  {
+   "n": "Andersen",
+   "pos": "FWD"
+  },
+  {
+   "n": "Acheampong",
+   "pos": "FWD"
+  },
+  {
+   "n": "Alysson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bruno G.",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gourna-Douath",
+   "pos": "FWD"
+  },
+  {
+   "n": "Frimpong",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kudus",
+   "pos": "FWD"
+  },
+  {
+   "n": "J.Timber",
+   "pos": "FWD"
+  },
+  {
+   "n": "O'Reilly",
+   "pos": "FWD"
+  },
+  {
+   "n": "Yirenkyi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Pau",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gallagher",
+   "pos": "FWD"
+  },
+  {
+   "n": "J.Ramsey",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tchaouna",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tsimikas",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hume",
+   "pos": "FWD"
+  },
+  {
+   "n": "Baleba",
+   "pos": "FWD"
+  },
+  {
+   "n": "Grealish",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cho",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hackney",
+   "pos": "FWD"
+  },
+  {
+   "n": "Steur",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ngumoha",
+   "pos": "FWD"
+  },
+  {
+   "n": "Herrington",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cook",
+   "pos": "FWD"
+  },
+  {
+   "n": "Merino",
+   "pos": "FWD"
+  },
+  {
+   "n": "Eze",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mitoma",
+   "pos": "FWD"
+  },
+  {
+   "n": "Goretzka",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gruev",
+   "pos": "FWD"
+  },
+  {
+   "n": "Udogie",
+   "pos": "FWD"
+  },
+  {
+   "n": "J.Murphy",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bergvall",
+   "pos": "FWD"
+  },
+  {
+   "n": "Núñez",
+   "pos": "FWD"
+  },
+  {
+   "n": "Burn",
+   "pos": "FWD"
+  },
+  {
+   "n": "Manzambi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Keane",
+   "pos": "FWD"
+  },
+  {
+   "n": "Philogene",
+   "pos": "FWD"
+  },
+  {
+   "n": "Barco",
+   "pos": "FWD"
+  },
+  {
+   "n": "Christie",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rodon",
+   "pos": "FWD"
+  },
+  {
+   "n": "Smith Rowe",
+   "pos": "FWD"
+  },
+  {
+   "n": "Zubimendi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Diouf",
+   "pos": "FWD"
+  },
+  {
+   "n": "Brooks",
+   "pos": "FWD"
+  },
+  {
+   "n": "Yohanna",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kevin",
+   "pos": "FWD"
+  },
+  {
+   "n": "Pope",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dubravka",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tete",
+   "pos": "FWD"
+  },
+  {
+   "n": "Garnacho",
+   "pos": "FWD"
+  },
+  {
+   "n": "Osman",
+   "pos": "FWD"
+  },
+  {
+   "n": "Estêvão",
+   "pos": "FWD"
+  },
+  {
+   "n": "Torp",
+   "pos": "FWD"
+  },
+  {
+   "n": "Sessegnon",
+   "pos": "FWD"
+  },
+  {
+   "n": "Maddison",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hincapie",
+   "pos": "FWD"
+  },
+  {
+   "n": "McNeil",
+   "pos": "FWD"
+  },
+  {
+   "n": "Andrey Santos",
+   "pos": "FWD"
+  },
+  {
+   "n": "Senesi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Costinha",
+   "pos": "FWD"
+  },
+  {
+   "n": "I.Sangaré",
+   "pos": "FWD"
+  },
+  {
+   "n": "Svoboda",
+   "pos": "FWD"
+  },
+  {
+   "n": "James",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gozo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hughes",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bouaddi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Guessand",
+   "pos": "FWD"
+  },
+  {
+   "n": "McAteer",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mazraoui",
+   "pos": "FWD"
+  },
+  {
+   "n": "Madueke",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mosquera",
+   "pos": "FWD"
+  },
+  {
+   "n": "Iroegbunam",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ömür",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lewis",
+   "pos": "FWD"
+  },
+  {
+   "n": "Nyoni",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gannon-Doak",
+   "pos": "FWD"
+  },
+  {
+   "n": "Darlow",
+   "pos": "FWD"
+  },
+  {
+   "n": "Florentino",
+   "pos": "FWD"
+  },
+  {
+   "n": "Struijk",
+   "pos": "FWD"
+  },
+  {
+   "n": "Sakamoto",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dowman",
+   "pos": "FWD"
+  },
+  {
+   "n": "M.Bizot",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ouattara",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hamer",
+   "pos": "FWD"
+  },
+  {
+   "n": "O'Brien",
+   "pos": "FWD"
+  },
+  {
+   "n": "Wilson",
+   "pos": "FWD"
+  },
+  {
+   "n": "J.Cuenca",
+   "pos": "FWD"
+  },
+  {
+   "n": "Heaven",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kovačić",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mount",
+   "pos": "FWD"
+  },
+  {
+   "n": "McAidoo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dasilva",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ruggeri",
+   "pos": "FWD"
+  },
+  {
+   "n": "McConnell",
+   "pos": "FWD"
+  },
+  {
+   "n": "Carvalho",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gittens",
+   "pos": "FWD"
+  },
+  {
+   "n": "J.Fletcher",
+   "pos": "FWD"
+  },
+  {
+   "n": "O'Riley",
+   "pos": "FWD"
+  },
+  {
+   "n": "Olusesi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bamba",
+   "pos": "FWD"
+  },
+  {
+   "n": "Burrowes",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bendito Mantato",
+   "pos": "FWD"
+  },
+  {
+   "n": "Williams-Barnett",
+   "pos": "FWD"
+  },
+  {
+   "n": "Fletcher",
+   "pos": "FWD"
+  },
+  {
+   "n": "Drakes-Thomas",
+   "pos": "FWD"
+  },
+  {
+   "n": "Zepa",
+   "pos": "FWD"
+  },
+  {
+   "n": "Doucouré",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cresswell",
+   "pos": "FWD"
+  },
+  {
+   "n": "Oriola",
+   "pos": "FWD"
+  },
+  {
+   "n": "Shepherd",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ahoka",
+   "pos": "FWD"
+  },
+  {
+   "n": "Koumas",
+   "pos": "FWD"
+  },
+  {
+   "n": "Matusiwa",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mehmeti",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tosin",
+   "pos": "FWD"
+  },
+  {
+   "n": "Jocelin.T",
+   "pos": "FWD"
+  },
+  {
+   "n": "Diakité",
+   "pos": "FWD"
+  },
+  {
+   "n": "Endo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Reed",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lacey",
+   "pos": "FWD"
+  },
+  {
+   "n": "Quenda",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dowell",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mamardashvili",
+   "pos": "FWD"
+  },
+  {
+   "n": "Talbi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tóth.A",
+   "pos": "FWD"
+  },
+  {
+   "n": "Anselmino",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hjertø-Dahl",
+   "pos": "FWD"
+  },
+  {
+   "n": "Arrizabalaga",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lerma",
+   "pos": "FWD"
+  },
+  {
+   "n": "Zambrano",
+   "pos": "FWD"
+  },
+  {
+   "n": "O'Nien",
+   "pos": "FWD"
+  },
+  {
+   "n": "Yoro",
+   "pos": "FWD"
+  },
+  {
+   "n": "Touré",
+   "pos": "FWD"
+  },
+  {
+   "n": "Byfield",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rigg",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rowswell",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lucky",
+   "pos": "FWD"
+  },
+  {
+   "n": "Alcaraz",
+   "pos": "FWD"
+  },
+  {
+   "n": "Davies",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rowe",
+   "pos": "FWD"
+  },
+  {
+   "n": "Meslier",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mingueza",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dibling",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ji-soo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Amass",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lienou",
+   "pos": "FWD"
+  },
+  {
+   "n": "Longstaff",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rulli",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hadjam",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gelhardt",
+   "pos": "FWD"
+  },
+  {
+   "n": "Yates",
+   "pos": "FWD"
+  },
+  {
+   "n": "A.García",
+   "pos": "FWD"
+  },
+  {
+   "n": "Braithwaite",
+   "pos": "FWD"
+  },
+  {
+   "n": "O.Richards",
+   "pos": "FWD"
+  },
+  {
+   "n": "Vitor Reis",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bidwell",
+   "pos": "FWD"
+  },
+  {
+   "n": "Latibeaudiere",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ellborg",
+   "pos": "FWD"
+  },
+  {
+   "n": "Sanchez",
+   "pos": "FWD"
+  },
+  {
+   "n": "Jaouen",
+   "pos": "FWD"
+  },
+  {
+   "n": "Furlong",
+   "pos": "FWD"
+  },
+  {
+   "n": "Methalie",
+   "pos": "FWD"
+  },
+  {
+   "n": "Netz",
+   "pos": "FWD"
+  },
+  {
+   "n": "Soler",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hudson-Odoi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Coppola",
+   "pos": "FWD"
+  },
+  {
+   "n": "Schär",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bettinelli",
+   "pos": "FWD"
+  },
+  {
+   "n": "Aït-Nouri",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kipré",
+   "pos": "FWD"
+  },
+  {
+   "n": "Alderete",
+   "pos": "FWD"
+  },
+  {
+   "n": "Travers",
+   "pos": "FWD"
+  },
+  {
+   "n": "Woodman",
+   "pos": "FWD"
+  },
+  {
+   "n": "John",
+   "pos": "FWD"
+  },
+  {
+   "n": "Steele",
+   "pos": "FWD"
+  },
+  {
+   "n": "McCarthy",
+   "pos": "FWD"
+  },
+  {
+   "n": "Penders",
+   "pos": "FWD"
+  },
+  {
+   "n": "Valdimarsson",
+   "pos": "FWD"
+  },
+  {
+   "n": "McNair",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lecomte",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gillespie",
+   "pos": "FWD"
+  },
+  {
+   "n": "Di Gregorio",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bentley",
+   "pos": "FWD"
+  },
+  {
+   "n": "Wilson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Davies",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gomes",
+   "pos": "FWD"
+  },
+  {
+   "n": "Austin",
+   "pos": "FWD"
+  },
+  {
+   "n": "Walton",
+   "pos": "FWD"
+  },
+  {
+   "n": "King",
+   "pos": "FWD"
+  },
+  {
+   "n": "Forster",
+   "pos": "FWD"
+  },
+  {
+   "n": "Matthews",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cairns",
+   "pos": "FWD"
+  },
+  {
+   "n": "Henry",
+   "pos": "FWD"
+  },
+  {
+   "n": "Benda",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dominguez",
+   "pos": "FWD"
+  },
+  {
+   "n": "Targett",
+   "pos": "FWD"
+  },
+  {
+   "n": "Button",
+   "pos": "FWD"
+  },
+  {
+   "n": "Palmer",
+   "pos": "FWD"
+  },
+  {
+   "n": "Phillips",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bogarde",
+   "pos": "FWD"
+  },
+  {
+   "n": "Livramento",
+   "pos": "FWD"
+  },
+  {
+   "n": "Saliba",
+   "pos": "FWD"
+  },
+  {
+   "n": "Martinelli",
+   "pos": "FWD"
+  },
+  {
+   "n": "Nørgaard",
+   "pos": "FWD"
+  },
+  {
+   "n": "Nwaneri",
+   "pos": "FWD"
+  },
+  {
+   "n": "Fábio Vieira",
+   "pos": "FWD"
+  },
+  {
+   "n": "Nelson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Digne",
+   "pos": "FWD"
+  },
+  {
+   "n": "Nedeljkovic",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bailey",
+   "pos": "FWD"
+  },
+  {
+   "n": "Onana",
+   "pos": "FWD"
+  },
+  {
+   "n": "Iling Jr",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dennis",
+   "pos": "FWD"
+  },
+  {
+   "n": "Milosavljević",
+   "pos": "FWD"
+  },
+  {
+   "n": "J.Araujo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Adli",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kroupi.Jr",
+   "pos": "FWD"
+  },
+  {
+   "n": "Collins",
+   "pos": "FWD"
+  },
+  {
+   "n": "Van den Berg",
+   "pos": "FWD"
+  },
+  {
+   "n": "Milambo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Henderson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Igor",
+   "pos": "FWD"
+  },
+  {
+   "n": "Minteh",
+   "pos": "FWD"
+  },
+  {
+   "n": "Buonanotte",
+   "pos": "FWD"
+  },
+  {
+   "n": "Wieffer",
+   "pos": "FWD"
+  },
+  {
+   "n": "Howell",
+   "pos": "FWD"
+  },
+  {
+   "n": "Watson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Sánchez",
+   "pos": "FWD"
+  },
+  {
+   "n": "Jörgensen",
+   "pos": "FWD"
+  },
+  {
+   "n": "Chalobah",
+   "pos": "FWD"
+  },
+  {
+   "n": "B.Badiashile",
+   "pos": "FWD"
+  },
+  {
+   "n": "M.Sarr",
+   "pos": "FWD"
+  },
+  {
+   "n": "Palestra",
+   "pos": "FWD"
+  },
+  {
+   "n": "Disasi",
+   "pos": "FWD"
+  },
+  {
+   "n": "D.Essugo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Dovin",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kitching",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kesler-Hayden",
+   "pos": "FWD"
+  },
+  {
+   "n": "Woolfenden",
+   "pos": "FWD"
+  },
+  {
+   "n": "Brau",
+   "pos": "FWD"
+  },
+  {
+   "n": "Eccles",
+   "pos": "FWD"
+  },
+  {
+   "n": "Borges Rodrigues",
+   "pos": "FWD"
+  },
+  {
+   "n": "Andrews",
+   "pos": "FWD"
+  },
+  {
+   "n": "Sosa",
+   "pos": "FWD"
+  },
+  {
+   "n": "Chadi Riad",
+   "pos": "FWD"
+  },
+  {
+   "n": "Sarr",
+   "pos": "FWD"
+  },
+  {
+   "n": "Devenny",
+   "pos": "FWD"
+  },
+  {
+   "n": "Esse",
+   "pos": "FWD"
+  },
+  {
+   "n": "M.França",
+   "pos": "FWD"
+  },
+  {
+   "n": "J.Rak-Sakyi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cardines",
+   "pos": "FWD"
+  },
+  {
+   "n": "Patterson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Aznou",
+   "pos": "FWD"
+  },
+  {
+   "n": "McNally",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cairney",
+   "pos": "FWD"
+  },
+  {
+   "n": "Butland",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cartwright",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lo-Tutala",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hughes",
+   "pos": "FWD"
+  },
+  {
+   "n": "Drameh",
+   "pos": "FWD"
+  },
+  {
+   "n": "Jacob",
+   "pos": "FWD"
+  },
+  {
+   "n": "Millar",
+   "pos": "FWD"
+  },
+  {
+   "n": "Matazo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kamara",
+   "pos": "FWD"
+  },
+  {
+   "n": "Akintola",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gyabi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Johnson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Burns",
+   "pos": "FWD"
+  },
+  {
+   "n": "Taylor",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ogbene",
+   "pos": "FWD"
+  },
+  {
+   "n": "Szmodics",
+   "pos": "FWD"
+  },
+  {
+   "n": "Perri",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bornauw",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gnonto",
+   "pos": "FWD"
+  },
+  {
+   "n": "Harrison",
+   "pos": "FWD"
+  },
+  {
+   "n": "Pecsi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Jaros",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gomez",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bradley",
+   "pos": "FWD"
+  },
+  {
+   "n": "Leoni",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ramsay",
+   "pos": "FWD"
+  },
+  {
+   "n": "Chiesa",
+   "pos": "FWD"
+  },
+  {
+   "n": "C.Jones",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bajcetic",
+   "pos": "FWD"
+  },
+  {
+   "n": "Elliott",
+   "pos": "FWD"
+  },
+  {
+   "n": "Alleyne",
+   "pos": "FWD"
+  },
+  {
+   "n": "Foden",
+   "pos": "FWD"
+  },
+  {
+   "n": "Doku",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rodrigo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Reijnders",
+   "pos": "FWD"
+  },
+  {
+   "n": "Echeverri",
+   "pos": "FWD"
+  },
+  {
+   "n": "Phillips",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mukasa",
+   "pos": "FWD"
+  },
+  {
+   "n": "Monga",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bayindir",
+   "pos": "FWD"
+  },
+  {
+   "n": "Heaton",
+   "pos": "FWD"
+  },
+  {
+   "n": "De Ligt",
+   "pos": "FWD"
+  },
+  {
+   "n": "Fredricson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Amad",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ugarte",
+   "pos": "FWD"
+  },
+  {
+   "n": "Collyer",
+   "pos": "FWD"
+  },
+  {
+   "n": "A.Murphy",
+   "pos": "FWD"
+  },
+  {
+   "n": "Joelinton",
+   "pos": "FWD"
+  },
+  {
+   "n": "Morato",
+   "pos": "FWD"
+  },
+  {
+   "n": "Savona",
+   "pos": "FWD"
+  },
+  {
+   "n": "Abbott",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bindon",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hutchinson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bakwa",
+   "pos": "FWD"
+  },
+  {
+   "n": "Vicario",
+   "pos": "FWD"
+  },
+  {
+   "n": "Romero",
+   "pos": "FWD"
+  },
+  {
+   "n": "Spence",
+   "pos": "FWD"
+  },
+  {
+   "n": "Phillips",
+   "pos": "FWD"
+  },
+  {
+   "n": "Souza",
+   "pos": "FWD"
+  },
+  {
+   "n": "Xavi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Odobert",
+   "pos": "FWD"
+  },
+  {
+   "n": "P.M.Sarr",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kulusevski",
+   "pos": "FWD"
+  },
+  {
+   "n": "Moore",
+   "pos": "FWD"
+  },
+  {
+   "n": "Patterson",
+   "pos": "FWD"
+  },
+  {
+   "n": "Reinildo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Seelt",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hjelde",
+   "pos": "FWD"
+  },
+  {
+   "n": "Masuaku",
+   "pos": "FWD"
+  },
+  {
+   "n": "Diarra",
+   "pos": "FWD"
+  },
+  {
+   "n": "Adingra",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mundle",
+   "pos": "FWD"
+  },
+  {
+   "n": "Van Oevelen",
+   "pos": "FWD"
+  },
+  {
+   "n": "Morita",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mudryk",
+   "pos": "FWD"
+  },
+  {
+   "n": "Humphreys",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lynch",
+   "pos": "FWD"
+  },
+  {
+   "n": "Shahar",
+   "pos": "FWD"
+  },
+  {
+   "n": "De Fougerolles",
+   "pos": "FWD"
+  },
+  {
+   "n": "Cozier-Duberry",
+   "pos": "FWD"
   },
   {
    "n": "Palacios",
@@ -24,11 +3616,11 @@
  "_methode": "Automatisch opgehaald met copilot_ophalen.js via Chrome DevTools Protocol. Per positiefilter uitgelezen; de telling per filter moet overeenkomen met wat de site meldt, anders breekt het script af. Dubbele naam+positie wordt opgelost via het clubfilter. Koppeling aan FPL-id door copilot_verwerk.py: naam plus positie, daarna clubfilter, daarna uitsluiting.",
  "_telling": {
   "GKP": 70,
-  "DEF": 207,
-  "MID": 276,
-  "FWD": 73
+  "DEF": 277,
+  "MID": 553,
+  "FWD": 626
  },
- "_dekking": "623 van 658 FPL-spelers",
+ "_dekking": "625 van 658 FPL-spelers",
  "_zonder_copilot": [
   {
    "n": "Harwood-Bellis",
@@ -118,7 +3710,7 @@
    "n": "Palacios",
    "t": "FUL",
    "p": "MID",
-   "prijs": 5.5
+   "prijs": 5.4
   },
   {
    "n": "Larsson",
@@ -155,12 +3747,6 @@
    "t": "HUL",
    "p": "DEF",
    "prijs": 4.0
-  },
-  {
-   "n": "Thomas",
-   "t": "HUL",
-   "p": "MID",
-   "prijs": 5.5
   },
   {
    "n": "Mouzakitis",
@@ -227,12 +3813,6 @@
    "t": "SUN",
    "p": "MID",
    "prijs": 5.0
-  },
-  {
-   "n": "Fofana",
-   "t": "SUN",
-   "p": "MID",
-   "prijs": 5.5
   },
   {
    "n": "J.Angulo",
@@ -2642,6 +6222,31 @@
     88
    ]
   },
+  "419": {
+   "n": "Martinez",
+   "t": "MUN",
+   "p": "DEF",
+   "gw": [
+    3.3,
+    3.2,
+    3.6,
+    3.7,
+    3.4,
+    3.8,
+    3.8,
+    3.6
+   ],
+   "mn": [
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88
+   ]
+  },
   "61": {
    "n": "Truffert",
    "t": "BOU",
@@ -3430,31 +7035,6 @@
     2.9,
     2,
     3
-   ],
-   "mn": [
-    88,
-    88,
-    88,
-    88,
-    88,
-    88,
-    88,
-    88
-   ]
-  },
-  "419": {
-   "n": "Martinez",
-   "t": "MUN",
-   "p": "DEF",
-   "gw": [
-    2.6,
-    3.1,
-    3.1,
-    3.1,
-    2.4,
-    3.2,
-    2.1,
-    3.3
    ],
    "mn": [
     88,
@@ -5892,6 +9472,31 @@
     null
    ]
   },
+  "507": {
+   "n": "Phillips",
+   "t": "TOT",
+   "p": "DEF",
+   "gw": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.2,
+    0,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
   "450": {
    "n": "Livramento",
    "t": "NEW",
@@ -6967,31 +10572,6 @@
     null
    ]
   },
-  "507": {
-   "n": "Phillips",
-   "t": "TOT",
-   "p": "DEF",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
   "511": {
    "n": "Souza",
    "t": "TOT",
@@ -7692,6 +11272,31 @@
     84
    ]
   },
+  "343": {
+   "n": "James",
+   "t": "LEE",
+   "p": "MID",
+   "gw": [
+    3.5,
+    3.4,
+    3.9,
+    4.3,
+    3.7,
+    4.5,
+    4.6,
+    4
+   ],
+   "mn": [
+    87,
+    87,
+    87,
+    87,
+    87,
+    87,
+    87,
+    87
+   ]
+  },
   "453": {
    "n": "Barnes",
    "t": "NEW",
@@ -7790,6 +11395,31 @@
     76,
     76,
     76
+   ]
+  },
+  "642": {
+   "n": "Thomas",
+   "t": "HUL",
+   "p": "MID",
+   "gw": [
+    3.4,
+    3.7,
+    3.5,
+    3.9,
+    4.5,
+    3.8,
+    4,
+    3.7
+   ],
+   "mn": [
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88
    ]
   },
   "127": {
@@ -8017,6 +11647,31 @@
     84
    ]
   },
+  "377": {
+   "n": "Munoz",
+   "t": "LIV",
+   "p": "MID",
+   "gw": [
+    4.8,
+    3.8,
+    2.9,
+    4.2,
+    3.6,
+    3,
+    3.3,
+    3.7
+   ],
+   "mn": [
+    85,
+    85,
+    85,
+    85,
+    85,
+    85,
+    85,
+    85
+   ]
+  },
   "415": {
    "n": "Dorgu",
    "t": "MUN",
@@ -8040,6 +11695,31 @@
     81,
     81,
     81
+   ]
+  },
+  "646": {
+   "n": "Fofana",
+   "t": "SUN",
+   "p": "MID",
+   "gw": [
+    3.3,
+    3.1,
+    3.7,
+    3.9,
+    3.4,
+    4,
+    4,
+    3.6
+   ],
+   "mn": [
+    85,
+    85,
+    85,
+    85,
+    85,
+    85,
+    85,
+    85
    ]
   },
   "432": {
@@ -8817,6 +12497,31 @@
     66
    ]
   },
+  "103": {
+   "n": "Dasilva",
+   "t": "BRE",
+   "p": "MID",
+   "gw": [
+    2.4,
+    2.6,
+    2.5,
+    3,
+    3.3,
+    2.7,
+    3,
+    2.6
+   ],
+   "mn": [
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88
+   ]
+  },
   "460": {
    "n": "Willock",
    "t": "NEW",
@@ -8915,31 +12620,6 @@
     63,
     63,
     63
-   ]
-  },
-  "377": {
-   "n": "Munoz",
-   "t": "LIV",
-   "p": "MID",
-   "gw": [
-    2.7,
-    2.4,
-    2.7,
-    2.6,
-    2.5,
-    2.7,
-    2.6,
-    2.6
-   ],
-   "mn": [
-    62,
-    62,
-    62,
-    62,
-    62,
-    62,
-    62,
-    62
    ]
   },
   "336": {
@@ -9115,6 +12795,31 @@
     55,
     55,
     55
+   ]
+  },
+  "101": {
+   "n": "Henderson",
+   "t": "CHE",
+   "p": "MID",
+   "gw": [
+    0,
+    0,
+    3,
+    3.2,
+    3,
+    2.9,
+    3.6,
+    3.9
+   ],
+   "mn": [
+    null,
+    null,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88
    ]
   },
   "267": {
@@ -10717,31 +14422,6 @@
     11
    ]
   },
-  "343": {
-   "n": "James",
-   "t": "LEE",
-   "p": "MID",
-   "gw": [
-    0.6,
-    0.4,
-    0.5,
-    0.6,
-    0.5,
-    0.6,
-    0.5,
-    0.6
-   ],
-   "mn": [
-    7,
-    7,
-    7,
-    7,
-    7,
-    7,
-    7,
-    7
-   ]
-  },
   "595": {
    "n": "Gozo",
    "t": "CRY",
@@ -11165,31 +14845,6 @@
     2,
     2,
     2
-   ]
-  },
-  "103": {
-   "n": "Dasilva",
-   "t": "BRE",
-   "p": "MID",
-   "gw": [
-    0,
-    0.4,
-    0.4,
-    0.5,
-    0.5,
-    0.4,
-    0.5,
-    0.4
-   ],
-   "mn": [
-    null,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5
    ]
   },
   "378": {
@@ -12242,6 +15897,31 @@
     null
    ]
   },
+  "408": {
+   "n": "Phillips",
+   "t": "MCI",
+   "p": "MID",
+   "gw": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.2,
+    0,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
   "35": {
    "n": "Bogarde",
    "t": "AVL",
@@ -12520,31 +16200,6 @@
   "99": {
    "n": "Milambo",
    "t": "BRE",
-   "p": "MID",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
-  "101": {
-   "n": "Henderson",
-   "t": "CHE",
    "p": "MID",
    "gw": [
     0,
@@ -13394,31 +17049,6 @@
   },
   "407": {
    "n": "Echeverri",
-   "t": "MCI",
-   "p": "MID",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
-  "408": {
-   "n": "Phillips",
    "t": "MCI",
    "p": "MID",
    "gw": [
@@ -14542,6 +18172,31 @@
     27
    ]
   },
+  "108": {
+   "n": "Wilson",
+   "t": "BRE",
+   "p": "FWD",
+   "gw": [
+    1.8,
+    1.3,
+    1.6,
+    1.6,
+    1.5,
+    1.7,
+    1.4,
+    1.7
+   ],
+   "mn": [
+    33,
+    33,
+    33,
+    33,
+    33,
+    33,
+    33,
+    33
+   ]
+  },
   "125": {
    "n": "Georginio",
    "t": "BHA",
@@ -14999,31 +18654,6 @@
    "gw": [
     0.5,
     0.3,
-    0.4,
-    0.4,
-    0.4,
-    0.4,
-    0.4,
-    0.4
-   ],
-   "mn": [
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2
-   ]
-  },
-  "108": {
-   "n": "Wilson",
-   "t": "BRE",
-   "p": "FWD",
-   "gw": [
-    0.4,
-    0.4,
     0.4,
     0.4,
     0.4,
