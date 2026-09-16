@@ -295,9 +295,12 @@ def main():
         managers = blok.get("managers") or []
         if len(managers) < 2:
             continue
-        if gw in historie and historie[gw].get("managers") == len(managers):
+        stempel = blok.get("opgehaald")
+        if (gw in historie and historie[gw].get("managers") == len(managers)
+                and historie[gw].get("opgehaald") == stempel):
             continue                       # al gedaan en niets veranderd
-        historie[gw] = {"gw": int(gw), "managers": len(managers),
+        historie[gw] = {"gw": int(gw), "managers": len(managers), "opgehaald": stempel,
+                        "voorlopig": bool(blok.get("voorlopig")),
                         "categorieen": uitslag(int(gw), managers)}
         nieuw += 1
     uit = {"bron": "state/league_archief.json (FPL API picks + live punten)",

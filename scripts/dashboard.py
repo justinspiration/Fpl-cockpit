@@ -420,8 +420,28 @@ def build():
     # gaf Ait-Nouri (startkans 0%, Copilot 0,2) 5,97 punten en zette hem
     # boven Saka in de database. Verwachte punten = punten-als-hij-start
     # maal startkans, per gameweek.
+    # Een gameweek waarin Pundit voor (vrijwel) iedereen startkans 0 meldt is
+    # geen informatie maar een lege pagina aan hun kant: op 16-09-2026 stond
+    # GW5 voor alle 374 spelers op 0,0 en kwam daardoor elke speler op 0 xP.
+    # Zo'n gameweek telt niet mee -- de andere bronnen dragen dan alleen.
+    _pundit_kapot = set()
+    for _g in range(int(pundit.get("vanaf_gw") or 0), int(pundit.get("tot_gw") or -1) + 1):
+        _st = [(v.get("start") or {}).get(str(_g)) for v in pundit.get("spelers", {}).values()]
+        _st = [float(x) for x in _st if x is not None]
+        if _st and sum(1 for x in _st if x > 0) < 0.15 * len(_st):
+            _pundit_kapot.add(_g)
+    if _pundit_kapot:
+        print("  Pundit: startkansen ontbreken voor GW%s -- die gameweek(s) niet meegerekend"
+              % ",".join(str(x) for x in sorted(_pundit_kapot)))
+
     def _pundit_verwacht(pd0, g):
-        xp = float((pd0.get("xp") or {}).get(str(g), 0.0) or 0.0)
+        """Verwachte punten volgens Pundit, of None als die gameweek onbruikbaar is."""
+        if int(g) in _pundit_kapot:
+            return None
+        xp = (pd0.get("xp") or {}).get(str(g))
+        if xp is None:
+            return None
+        xp = float(xp)
         st = (pd0.get("start") or {}).get(str(g))
         if st is None:
             return xp
@@ -437,7 +457,7 @@ def build():
             if not _cp or not _pd:
                 continue
             _gs = [cp_start + i for i in range(len(_cp["gw"]))]
-            _gedeeld = [g for g in _gs if str(g) in (_pd.get("xp") or {})]
+            _gedeeld = [g for g in _gs if _pundit_verwacht(_pd, g) is not None]
             if not _gedeeld:
                 continue
             _h = sum(float(_cp["gw"][g - cp_start]) for g in _gedeeld)
@@ -565,9 +585,9 @@ def build():
         # Pundit, die hem als apart veld publiceert (`start_pct`) in plaats van
         # hem in het puntencijfer te verstoppen.
         ff_kans = None
-        if pd0:
+        if pd0 and alle_gws and alle_gws[0] not in _pundit_kapot:
             _k = pd0.get("start") or {}
-            ff_kans = _k.get(str(alle_gws[0])) if alle_gws else None
+            ff_kans = _k.get(str(alle_gws[0]))
         if cp:
             bron_proj = "FPL Copilot"
             for i, v in enumerate(cp["gw"]):
@@ -602,7 +622,7 @@ def build():
                 _i = g - cp_start
                 if 0 <= _i < len(cp["gw"]):
                     w["FPL Copilot"] = round(float(cp["gw"][_i]), 2)
-            if pd0 and str(g) in (pd0.get("xp") or {}):
+            if pd0 and _pundit_verwacht(pd0, g) is not None:
                 w["Pundit"] = round(_pundit_verwacht(pd0, g), 3)
             if eigen_gw.get(g) is not None:
                 w["eigen model"] = round(float(eigen_gw[g]), 3)
@@ -823,7 +843,10 @@ def build():
                 op_schaal["eigen model"] = round(w["eigen model"] * e_sch, 2)
             if not op_schaal:
                 continue
-            if niet_speler and "Pundit" in op_schaal:
+            if False and niet_speler and "Pundit" in op_schaal:
+                # Uitgezet: één bron alleen laten spreken maakte elke speler
+                # 0,0 toen Pundit voor een hele gameweek startkans 0 meldde.
+                # Pundit is al maal startkans; het gemiddelde zakt vanzelf.
                 d0["gw"][_sleutel(g)] = op_schaal["Pundit"]
             else:
                 gem = BRONNEN.meng(op_schaal, GEWICHT)
@@ -844,8 +867,8 @@ def build():
             eerste = toon.get(str(alle_gws[0])) or list(toon.values())[0]
             d0["projbron"] = "%d bronnen: %s" % (len(eerste), ", ".join(sorted(eerste)))
         if niet_speler:
-            d0["bronstrijd"] = ("Pundit: startkans %.0f%% — die bron gevolgd, "
-                                "niet gemiddeld" % (kans * 100))
+            d0["bronstrijd"] = ("Pundit: startkans %.0f%% -- zijn cijfer weegt daardoor "
+                                "vrijwel niets mee" % (kans * 100))
             gevolgd_n += 1
         elif strijd_tekst:
             d0["bronstrijd"] = strijd_tekst
@@ -1174,7 +1197,7 @@ def build():
         "pundit": _bronvinger("xp_pundit.json"),
         "estimator": _bronvinger("xp_estimator.json"),
         "chipvenster": CHIPVENSTER,
-        "versie": 2,          # Pundit maal startkans (13-09-2026)
+        "versie": 3,          # Pundit maal startkans, kapotte gameweeks overgeslagen (16-09-2026)
     }, sort_keys=True).encode()).hexdigest()
     _cachepad = os.path.join(STATE, "zwaar_cache.json")
     _cache = _lees("zwaar_cache.json", {}) or {}

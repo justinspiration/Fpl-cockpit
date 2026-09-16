@@ -37,6 +37,12 @@ UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) fpl-cockpit
 PAD = os.path.join(STATE, "league_archief.json")
 
 
+try:                                   # Windows-console: geen crash op een minteken
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
+
 def get(url):
     try:
         return json.load(urllib.request.urlopen(
@@ -99,7 +105,23 @@ def main():
     el = {e["id"]: {"n": e["web_name"], "t": sn[e["team"]],
                     "p": pos[e["element_type"]], "c": e["now_cost"] / 10.0}
           for e in bs["elements"]}
-    klaar = [e["id"] for e in bs["events"] if e.get("finished")]
+    # FPL zet `finished` op een gameweek pas na de datacontrole, vaak een of
+    # twee dagen na het laatste duel. De awards waren daardoor te laat. Een
+    # gameweek telt hier al zodra elk duel afgelopen is en de bonus verwerkt
+    # (`finished` per duel in /fixtures/). Zo'n ronde wordt als voorlopig
+    # bewaard en opnieuw opgehaald zodra FPL hem officieel afsluit, zodat
+    # eventuele correcties uit de datacontrole alsnog meekomen.
+    officieel = {e["id"] for e in bs["events"] if e.get("finished")}
+    now = datetime.now(timezone.utc)
+    klaar = sorted(officieel)
+    for e in bs["events"]:
+        if e["id"] in officieel or not e.get("deadline_time"):
+            continue
+        if datetime.fromisoformat(e["deadline_time"].replace("Z", "+00:00")) > now:
+            continue
+        fx = get("%s/fixtures/?event=%d" % (BASE, e["id"])) or []
+        if fx and all(f.get("finished") for f in fx):
+            klaar.append(e["id"])
     if not klaar:
         print("Nog geen afgeronde gameweek — het archief blijft leeg tot na GW1.")
         A = laad()
@@ -119,12 +141,14 @@ def main():
     nieuw = 0
     for g in klaar:
         sleutel = str(g)
-        if sleutel in A["gameweeks"]:
+        bewaard = A["gameweeks"].get(sleutel)
+        if bewaard and not (bewaard.get("voorlopig") and g in officieel):
             continue                      # al bewaard; niet opnieuw ophalen
         live = get("%s/event/%d/live/" % (BASE, g)) or {}
         punten = {e["id"]: e["stats"]["total_points"] for e in live.get("elements", [])}
         minuten = {e["id"]: e["stats"]["minutes"] for e in live.get("elements", [])}
-        rij = {"managers": [], "opgehaald": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+        rij = {"managers": [], "opgehaald": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+               "voorlopig": g not in officieel}
         for m in managers:
             pk = get("%s/entry/%s/event/%d/picks/" % (BASE, m["entry"], g))
             if not pk:
