@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-09-16 17:17:08",
- "_copilot_bijgewerkt": "Updated an hour ago",
- "_copilot_moment": null,
+ "_opgehaald": "2026-09-16 20:06:00",
+ "_copilot_bijgewerkt": "Updated 4 hours ago",
+ "_copilot_moment": "2026-09-16 16:06:00",
  "_start_gw": 5,
  "_horizon": 8,
  "_overgeslagen": [
@@ -2163,6 +2163,10 @@
    "pos": "FWD"
   },
   {
+   "n": "Onyeka",
+   "pos": "FWD"
+  },
+  {
    "n": "Sarr",
    "pos": "FWD"
   },
@@ -2224,10 +2228,6 @@
   },
   {
    "n": "Palacios",
-   "pos": "FWD"
-  },
-  {
-   "n": "Onyeka",
    "pos": "FWD"
   },
   {
@@ -13053,6 +13053,31 @@
     63
    ]
   },
+  "104": {
+   "n": "Onyeka",
+   "t": "COV",
+   "p": "MID",
+   "gw": [
+    2.9,
+    2.5,
+    2.2,
+    1.9,
+    1.9,
+    1.8,
+    1.9,
+    1.8
+   ],
+   "mn": [
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60
+   ]
+  },
   "208": {
    "n": "Sarr",
    "t": "CRY",
@@ -13351,31 +13376,6 @@
     47,
     47,
     47
-   ]
-  },
-  "104": {
-   "n": "Onyeka",
-   "t": "COV",
-   "p": "MID",
-   "gw": [
-    1,
-    1.3,
-    1.5,
-    1.9,
-    1.9,
-    1.8,
-    1.9,
-    1.8
-   ],
-   "mn": [
-    26,
-    38,
-    50,
-    60,
-    60,
-    60,
-    60,
-    60
    ]
   },
   "246": {
@@ -17658,8 +17658,8 @@
    "t": "CHE",
    "p": "FWD",
    "gw": [
-    4.7,
-    5.3,
+    3.3,
+    4.6,
     4.9,
     5.3,
     5,
@@ -17668,8 +17668,8 @@
     4.8
    ],
    "mn": [
-    88,
-    88,
+    57,
+    73,
     88,
     88,
     88,
