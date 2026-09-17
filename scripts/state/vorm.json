@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-17T20:34:15+00:00",
+ "_opgehaald": "2026-09-17T21:20:29+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -142,18 +142,8 @@
   "BOU": {
    "artikel": "2026–27 AFC Bournemouth season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_AFC_Bournemouth_season",
-   "gespeeld": 10,
+   "gespeeld": 11,
    "laatste5": [
-    {
-     "datum": "2026-08-23",
-     "opp": "Manchester City",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "1"
-    },
     {
      "datum": "2026-08-29",
      "opp": "Everton",
@@ -193,16 +183,26 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "4"
+    },
+    {
+     "datum": "2026-09-17",
+     "opp": "Real Sociedad",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "1"
     }
    ],
    "vorm": [
-    "V",
     "G",
     "G",
     "W",
-    "G"
+    "G",
+    "W"
    ],
-   "vormpunten": 6,
+   "vormpunten": 9,
    "vormmax": 15,
    "oefen": 0
   },
@@ -477,18 +477,8 @@
   "CRY": {
    "artikel": "2026–27 Crystal Palace F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Crystal_Palace_F.C._season",
-   "gespeeld": 6,
+   "gespeeld": 7,
    "laatste5": [
-    {
-     "datum": "2026-07-28",
-     "opp": "Lens",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 3,
-     "uit": "V",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-08-07",
      "opp": "Fulham",
@@ -528,18 +518,28 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "4"
+    },
+    {
+     "datum": "2026-09-17",
+     "opp": "Lech Poznań",
+     "thuis": true,
+     "voor": 4,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "1"
     }
    ],
    "vorm": [
+    "W",
+    "W",
+    "W",
     "V",
-    "W",
-    "W",
-    "W",
-    "V"
+    "W"
    ],
-   "vormpunten": 9,
+   "vormpunten": 12,
    "vormmax": 15,
-   "oefen": 2
+   "oefen": 1
   },
   "EVE": {
    "artikel": "2026–27 Everton F.C. season",
