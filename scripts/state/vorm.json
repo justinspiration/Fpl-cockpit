@@ -2,24 +2,14 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-19T14:24:14+00:00",
+ "_opgehaald": "2026-09-19T16:49:13+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
    "artikel": "2026–27 Arsenal F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Arsenal_F.C._season",
-   "gespeeld": 11,
+   "gespeeld": 12,
    "laatste5": [
-    {
-     "datum": "2026-08-31",
-     "opp": "Aston Villa",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "2"
-    },
     {
      "datum": "2026-09-06",
      "opp": "Chelsea",
@@ -59,6 +49,16 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "3rd Round"
+    },
+    {
+     "datum": "2026-09-19",
+     "opp": "Brighton & Hove Albion",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "5"
     }
    ],
    "vorm": [
@@ -66,9 +66,9 @@
     "W",
     "W",
     "W",
-    "W"
+    "V"
    ],
-   "vormpunten": 15,
+   "vormpunten": 12,
    "vormmax": 15,
    "oefen": 0
   },
@@ -276,18 +276,8 @@
   "BHA": {
    "artikel": "2026–27 Brighton & Hove Albion F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brighton_%26_Hove_Albion_F.C._season",
-   "gespeeld": 11,
+   "gespeeld": 12,
    "laatste5": [
-    {
-     "datum": "2026-08-27",
-     "opp": "Tromsø",
-     "thuis": true,
-     "voor": 4,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "Second leg"
-    },
     {
      "datum": "2026-08-30",
      "opp": "Chelsea",
@@ -327,12 +317,22 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Third round"
+    },
+    {
+     "datum": "2026-09-19",
+     "opp": "Arsenal",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "5"
     }
    ],
    "vorm": [
-    "W",
     "V",
     "G",
+    "W",
     "W",
     "W"
    ],
@@ -544,18 +544,8 @@
   "EVE": {
    "artikel": "2026–27 Everton F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Everton_F.C._season",
-   "gespeeld": 6,
+   "gespeeld": 7,
    "laatste5": [
-    {
-     "datum": "2026-08-26",
-     "opp": "Preston North End",
-     "thuis": false,
-     "voor": 4,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "Second round"
-    },
     {
      "datum": "2026-08-29",
      "opp": "Bournemouth",
@@ -595,13 +585,23 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Third round"
+    },
+    {
+     "datum": "2026-09-19",
+     "opp": "Ipswich Town",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "5"
     }
    ],
    "vorm": [
+    "G",
+    "G",
+    "G",
     "W",
-    "G",
-    "G",
-    "G",
     "W"
    ],
    "vormpunten": 9,
@@ -678,18 +678,8 @@
   "HUL": {
    "artikel": "2026–27 Hull City A.F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Hull_City_A.F.C._season",
-   "gespeeld": 11,
+   "gespeeld": 12,
    "laatste5": [
-    {
-     "datum": "2026-08-25",
-     "opp": "Stoke City",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "soort": "officieel",
-     "toernooi": "Second round"
-    },
     {
      "datum": "2026-08-29",
      "opp": "Coventry City",
@@ -729,34 +719,34 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "4"
+    },
+    {
+     "datum": "2026-09-19",
+     "opp": "Newcastle United",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "5"
     }
    ],
    "vorm": [
-    "G",
     "W",
     "G",
     "V",
-    "G"
+    "G",
+    "V"
    ],
-   "vormpunten": 6,
+   "vormpunten": 5,
    "vormmax": 15,
    "oefen": 0
   },
   "IPS": {
    "artikel": "2026–27 Ipswich Town F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Ipswich_Town_F.C._season",
-   "gespeeld": 11,
+   "gespeeld": 12,
    "laatste5": [
-    {
-     "datum": "2026-08-25",
-     "opp": "Leicester City",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "Second round"
-    },
     {
      "datum": "2026-08-30",
      "opp": "Manchester United",
@@ -796,16 +786,26 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "Third round"
+    },
+    {
+     "datum": "2026-09-19",
+     "opp": "Everton",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "5"
     }
    ],
    "vorm": [
-    "W",
     "V",
     "V",
     "W",
+    "V",
     "V"
    ],
-   "vormpunten": 6,
+   "vormpunten": 3,
    "vormmax": 15,
    "oefen": 0
   },
@@ -1085,18 +1085,8 @@
   "NEW": {
    "artikel": "2026–27 Newcastle United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Newcastle_United_F.C._season",
-   "gespeeld": 11,
+   "gespeeld": 12,
    "laatste5": [
-    {
-     "datum": "2026-08-26",
-     "opp": "West Bromwich Albion",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 2,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "Second round"
-    },
     {
      "datum": "2026-08-29",
      "opp": "Tottenham Hotspur",
@@ -1136,14 +1126,24 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "4"
+    },
+    {
+     "datum": "2026-09-19",
+     "opp": "Hull City",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "5"
     }
    ],
    "vorm": [
     "W",
-    "W",
     "G",
     "W",
-    "V"
+    "V",
+    "W"
    ],
    "vormpunten": 10,
    "vormmax": 15,
