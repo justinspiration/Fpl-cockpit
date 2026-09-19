@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-09-19T18:00:14+00:00",
+ "_opgehaald": "2026-09-19T19:36:13+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -410,18 +410,8 @@
   "COV": {
    "artikel": "2026–27 Coventry City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Coventry_City_F.C._season",
-   "gespeeld": 10,
+   "gespeeld": 11,
    "laatste5": [
-    {
-     "datum": "2026-08-25",
-     "opp": "Plymouth Argyle",
-     "thuis": false,
-     "voor": 4,
-     "tegen": 2,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "Second round"
-    },
     {
      "datum": "2026-08-29",
      "opp": "Hull City",
@@ -461,14 +451,24 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "Third round"
+    },
+    {
+     "datum": "2026-09-19",
+     "opp": "Nottingham Forest",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "5"
     }
    ],
    "vorm": [
-    "W",
     "V",
     "V",
     "V",
-    "V"
+    "V",
+    "W"
    ],
    "vormpunten": 3,
    "vormmax": 15,
@@ -1152,18 +1152,8 @@
   "NFO": {
    "artikel": "2026–27 Nottingham Forest F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Nottingham_Forest_F.C._season",
-   "gespeeld": 14,
+   "gespeeld": 15,
    "laatste5": [
-    {
-     "datum": "2026-08-22",
-     "opp": "Leeds United",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "1"
-    },
     {
      "datum": "2026-08-25",
      "opp": "Leeds United",
@@ -1203,14 +1193,24 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "4"
+    },
+    {
+     "datum": "2026-09-19",
+     "opp": "Coventry City",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "5"
     }
    ],
    "vorm": [
     "V",
-    "V",
     "G",
     "G",
-    "W"
+    "W",
+    "V"
    ],
    "vormpunten": 5,
    "vormmax": 15,
