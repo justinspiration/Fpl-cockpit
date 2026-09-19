@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-09-19 10:53:57",
- "_copilot_bijgewerkt": "Updated 3 hours ago",
- "_copilot_moment": "2026-09-19 07:53:57",
+ "_opgehaald": "2026-09-19 13:25:46",
+ "_copilot_bijgewerkt": "Updated 5 hours ago",
+ "_copilot_moment": "2026-09-19 08:25:46",
  "_start_gw": 6,
  "_horizon": 8,
  "_overgeslagen": [
@@ -2263,10 +2263,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Alysson",
-   "pos": "FWD"
-  },
-  {
    "n": "Frimpong",
    "pos": "FWD"
   },
@@ -2276,6 +2272,10 @@
   },
   {
    "n": "O.Dango",
+   "pos": "FWD"
+  },
+  {
+   "n": "Alysson",
    "pos": "FWD"
   },
   {
@@ -13396,31 +13396,6 @@
     34
    ]
   },
-  "52": {
-   "n": "Alysson",
-   "t": "AVL",
-   "p": "MID",
-   "gw": [
-    1.4,
-    1.3,
-    1.3,
-    1.5,
-    1.3,
-    1.5,
-    1.4,
-    1.4
-   ],
-   "mn": [
-    30,
-    30,
-    30,
-    30,
-    30,
-    30,
-    30,
-    30
-   ]
-  },
   "131": {
    "n": "Baleba",
    "t": "MUN",
@@ -13469,6 +13444,31 @@
     24,
     24,
     24
+   ]
+  },
+  "52": {
+   "n": "Alysson",
+   "t": "AVL",
+   "p": "MID",
+   "gw": [
+    1,
+    1.3,
+    1.3,
+    1.5,
+    1.3,
+    1.5,
+    1.4,
+    1.4
+   ],
+   "mn": [
+    19,
+    25,
+    30,
+    30,
+    30,
+    30,
+    30,
+    30
    ]
   },
   "452": {
