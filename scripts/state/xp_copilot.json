@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-09-20 16:01:02",
- "_copilot_bijgewerkt": "Updated 14 hours ago",
- "_copilot_moment": "2026-09-20 02:01:02",
+ "_opgehaald": "2026-09-20 17:40:31",
+ "_copilot_bijgewerkt": "Updated 15 hours ago",
+ "_copilot_moment": "2026-09-20 02:40:31",
  "_start_gw": 6,
  "_horizon": 8,
  "_overgeslagen": [
@@ -616,6 +616,10 @@
   },
   {
    "n": "Ajayi",
+   "pos": "MID"
+  },
+  {
+   "n": "Reinildo",
    "pos": "MID"
   },
   {
@@ -1359,10 +1363,6 @@
    "pos": "MID"
   },
   {
-   "n": "Reinildo",
-   "pos": "MID"
-  },
-  {
    "n": "Seelt",
    "pos": "MID"
   },
@@ -2020,6 +2020,10 @@
   },
   {
    "n": "Ajayi",
+   "pos": "FWD"
+  },
+  {
+   "n": "Reinildo",
    "pos": "FWD"
   },
   {
@@ -3536,10 +3540,6 @@
   },
   {
    "n": "Patterson",
-   "pos": "FWD"
-  },
-  {
-   "n": "Reinildo",
    "pos": "FWD"
   },
   {
@@ -7251,6 +7251,31 @@
     88
    ]
   },
+  "536": {
+   "n": "Reinildo",
+   "t": "SUN",
+   "p": "DEF",
+   "gw": [
+    3,
+    2.5,
+    3.3,
+    3,
+    2.6,
+    2.6,
+    3,
+    2
+   ],
+   "mn": [
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88
+   ]
+  },
   "541": {
    "n": "Meunier",
    "t": "SUN",
@@ -10604,31 +10629,6 @@
   "511": {
    "n": "Souza",
    "t": "TOT",
-   "p": "DEF",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
-  "536": {
-   "n": "Reinildo",
-   "t": "SUN",
    "p": "DEF",
    "gw": [
     0,
