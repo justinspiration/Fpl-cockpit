@@ -1,6 +1,6 @@
 {
  "_bron": "UEFA-speelkalenders 2026/27 via Wikipedia, opgehaald 15-08-2026. Champions League en Europa League met exacte speeldagen; Conference League als benadering op donderdagen, omdat UEFA de losse speeldagen daarvan nog niet per matchday publiceert.",
- "_opgehaald": "2026-09-21T11:05:30+00:00",
+ "_opgehaald": "2026-09-21T17:01:42+00:00",
  "_uitleg": "Rustdagen = het aantal dagen tussen het Europese duel en het competitieduel van die gameweek. 3 of minder is krap, 4 is normaal, 5 of meer is ruim. 'europa_erna' betekent dat er kort NA de gameweek een Europees duel staat, wat ook op de opstelling drukt.",
  "_waarschuwing": "Dit zegt welke clubs onder druk staan, niet wie er gerouleerd wordt. Vaste krachten spelen vrijwel altijd; het risico zit bij de tweede linie. Persconferenties staan in het nieuwsoverzicht.",
  "clubs": {
@@ -295,54 +295,6 @@
     "zwaarte": "mogelijk krap",
     "pl_datum": "2026-11-07"
    },
-   "BHA": {
-    "rustdagen": 2,
-    "rustdagen_max": 2,
-    "toernooi": "Conference League",
-    "exact": false,
-    "zwaarte": "krap",
-    "pl_datum": "2026-11-07"
-   },
-   "CRY": {
-    "rustdagen": 2,
-    "rustdagen_max": 2,
-    "toernooi": "Europa League",
-    "exact": true,
-    "zwaarte": "krap",
-    "pl_datum": "2026-11-07"
-   },
-   "LIV": {
-    "rustdagen": 3,
-    "rustdagen_max": 4,
-    "toernooi": "Champions League",
-    "exact": true,
-    "zwaarte": "mogelijk krap",
-    "pl_datum": "2026-11-07"
-   },
-   "BOU": {
-    "rustdagen": 2,
-    "rustdagen_max": 2,
-    "toernooi": "Europa League",
-    "exact": true,
-    "zwaarte": "krap",
-    "pl_datum": "2026-11-07"
-   },
-   "MUN": {
-    "rustdagen": 3,
-    "rustdagen_max": 4,
-    "toernooi": "Champions League",
-    "exact": true,
-    "zwaarte": "mogelijk krap",
-    "pl_datum": "2026-11-07"
-   },
-   "AVL": {
-    "rustdagen": 3,
-    "rustdagen_max": 4,
-    "toernooi": "Champions League",
-    "exact": true,
-    "zwaarte": "mogelijk krap",
-    "pl_datum": "2026-11-07"
-   },
    "MCI": {
     "rustdagen": 3,
     "rustdagen_max": 4,
@@ -351,49 +303,81 @@
     "zwaarte": "mogelijk krap",
     "pl_datum": "2026-11-07"
    },
-   "SUN": {
-    "rustdagen": 2,
-    "rustdagen_max": 2,
+   "BHA": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-08"
+   },
+   "CRY": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
     "toernooi": "Europa League",
     "exact": true,
     "zwaarte": "krap",
-    "pl_datum": "2026-11-07"
+    "pl_datum": "2026-11-08"
+   },
+   "LIV": {
+    "rustdagen": 4,
+    "rustdagen_max": 5,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-08"
+   },
+   "BOU": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-08"
+   },
+   "SUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-08"
+   },
+   "MUN": {
+    "rustdagen": 4,
+    "rustdagen_max": 5,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-08"
+   },
+   "AVL": {
+    "rustdagen": 4,
+    "rustdagen_max": 5,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-08"
    }
   },
   "11": {
    "BHA": {
-    "rustdagen": 2,
-    "rustdagen_max": 2,
+    "rustdagen": 3,
+    "rustdagen_max": 3,
     "toernooi": "Conference League",
     "exact": false,
     "zwaarte": "krap",
-    "pl_datum": "2026-11-21"
-   },
-   "AVL": {
-    "rustdagen": null,
-    "toernooi": "Champions League",
-    "exact": true,
-    "zwaarte": "normaal",
-    "pl_datum": "2026-11-21",
-    "europa_erna": 3
-   },
-   "LIV": {
-    "rustdagen": null,
-    "toernooi": "Champions League",
-    "exact": true,
-    "zwaarte": "normaal",
-    "pl_datum": "2026-11-21",
-    "europa_erna": 3
-   },
-   "MUN": {
-    "rustdagen": null,
-    "toernooi": "Champions League",
-    "exact": true,
-    "zwaarte": "normaal",
-    "pl_datum": "2026-11-21",
-    "europa_erna": 3
+    "pl_datum": "2026-11-22"
    },
    "MCI": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-21",
+    "europa_erna": 3
+   },
+   "AVL": {
     "rustdagen": null,
     "toernooi": "Champions League",
     "exact": true,
@@ -408,55 +392,31 @@
     "zwaarte": "normaal",
     "pl_datum": "2026-11-21",
     "europa_erna": 3
+   },
+   "LIV": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-22",
+    "europa_erna": 2
+   },
+   "MUN": {
+    "rustdagen": null,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "mogelijk krap",
+    "pl_datum": "2026-11-22",
+    "europa_erna": 2
    }
   },
   "12": {
-   "ARS": {
+   "MUN": {
     "rustdagen": 3,
     "rustdagen_max": 4,
     "toernooi": "Champions League",
     "exact": true,
     "zwaarte": "mogelijk krap",
-    "pl_datum": "2026-11-28"
-   },
-   "MCI": {
-    "rustdagen": 3,
-    "rustdagen_max": 4,
-    "toernooi": "Champions League",
-    "exact": true,
-    "zwaarte": "mogelijk krap",
-    "pl_datum": "2026-11-28"
-   },
-   "BHA": {
-    "rustdagen": 2,
-    "rustdagen_max": 2,
-    "toernooi": "Conference League",
-    "exact": false,
-    "zwaarte": "krap",
-    "pl_datum": "2026-11-28"
-   },
-   "CRY": {
-    "rustdagen": 2,
-    "rustdagen_max": 2,
-    "toernooi": "Europa League",
-    "exact": true,
-    "zwaarte": "krap",
-    "pl_datum": "2026-11-28"
-   },
-   "LIV": {
-    "rustdagen": 3,
-    "rustdagen_max": 4,
-    "toernooi": "Champions League",
-    "exact": true,
-    "zwaarte": "mogelijk krap",
-    "pl_datum": "2026-11-28"
-   },
-   "BOU": {
-    "rustdagen": 2,
-    "rustdagen_max": 2,
-    "toernooi": "Europa League",
-    "exact": true,
-    "zwaarte": "krap",
     "pl_datum": "2026-11-28"
    },
    "AVL": {
@@ -467,21 +427,61 @@
     "zwaarte": "mogelijk krap",
     "pl_datum": "2026-11-28"
    },
-   "MUN": {
-    "rustdagen": 3,
-    "rustdagen_max": 4,
+   "LIV": {
+    "rustdagen": 4,
+    "rustdagen_max": 5,
     "toernooi": "Champions League",
     "exact": true,
-    "zwaarte": "mogelijk krap",
-    "pl_datum": "2026-11-28"
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-29"
    },
-   "SUN": {
-    "rustdagen": 2,
-    "rustdagen_max": 2,
+   "BHA": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Conference League",
+    "exact": false,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-29"
+   },
+   "CRY": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
     "toernooi": "Europa League",
     "exact": true,
     "zwaarte": "krap",
-    "pl_datum": "2026-11-28"
+    "pl_datum": "2026-11-29"
+   },
+   "BOU": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-29"
+   },
+   "SUN": {
+    "rustdagen": 3,
+    "rustdagen_max": 3,
+    "toernooi": "Europa League",
+    "exact": true,
+    "zwaarte": "krap",
+    "pl_datum": "2026-11-29"
+   },
+   "ARS": {
+    "rustdagen": 4,
+    "rustdagen_max": 5,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-29"
+   },
+   "MCI": {
+    "rustdagen": 4,
+    "rustdagen_max": 5,
+    "toernooi": "Champions League",
+    "exact": true,
+    "zwaarte": "normaal",
+    "pl_datum": "2026-11-29"
    }
   },
   "13": {
