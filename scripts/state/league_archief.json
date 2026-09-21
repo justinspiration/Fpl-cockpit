@@ -6741,6 +6741,1692 @@
     }
    ],
    "opgehaald": "2026-09-15T14:59:15+00:00"
+  },
+  "5": {
+   "managers": [
+    {
+     "entry": 718133,
+     "team": "BigBoss Carrick",
+     "manager": "Roy Van Den Akker",
+     "ik": false,
+     "chip": null,
+     "punten": 57,
+     "straf": 0,
+     "transfers": 1,
+     "waarde": 101.6,
+     "bank": 0.4,
+     "cap": 411,
+     "vice": 399,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 496,
+       "n": "Kinsky",
+       "t": "TOT",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 449,
+       "n": "Hall",
+       "t": "NEW",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 13,
+       "min": 90
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 31,
+       "n": "Konsa",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 154,
+       "n": "Palmer",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 15,
+       "n": "Ødegaard",
+       "t": "ARS",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 72
+      },
+      {
+       "id": 399,
+       "n": "Cherki",
+       "t": "MCI",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 8,
+       "min": 84
+      },
+      {
+       "id": 40,
+       "n": "Rogers",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 124,
+       "n": "Groß",
+       "t": "BHA",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 14,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": true,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 464,
+       "n": "Wissa",
+       "t": "NEW",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 0,
+       "min": 90
+      },
+      {
+       "id": 109,
+       "n": "Verbruggen",
+       "t": "BHA",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 165,
+       "n": "João Pedro",
+       "t": "CHE",
+       "p": "FWD",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 115,
+       "n": "De Cuyper",
+       "t": "BHA",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 204,
+       "n": "Mitchell",
+       "t": "CRY",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 7,
+       "min": 90
+      }
+     ]
+    },
+    {
+     "entry": 7783945,
+     "team": "Change Name",
+     "manager": "Aron Knibbe",
+     "ik": false,
+     "chip": null,
+     "punten": 51,
+     "straf": 0,
+     "transfers": 0,
+     "waarde": 101.8,
+     "bank": 0.1,
+     "cap": 411,
+     "vice": 480,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 1,
+       "n": "Raya",
+       "t": "ARS",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 31,
+       "n": "Konsa",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 449,
+       "n": "Hall",
+       "t": "NEW",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 13,
+       "min": 90
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 154,
+       "n": "Palmer",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 480,
+       "n": "Gibbs-White",
+       "t": "NFO",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 236,
+       "n": "Dewsbury-Hall",
+       "t": "EVE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 3,
+       "min": 90
+      },
+      {
+       "id": 40,
+       "n": "Rogers",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 124,
+       "n": "Groß",
+       "t": "BHA",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 14,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": true,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 464,
+       "n": "Wissa",
+       "t": "NEW",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 0,
+       "min": 90
+      },
+      {
+       "id": 623,
+       "n": "Bentley",
+       "t": "COV",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 115,
+       "n": "De Cuyper",
+       "t": "BHA",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 165,
+       "n": "João Pedro",
+       "t": "CHE",
+       "p": "FWD",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 586,
+       "n": "Mendy",
+       "t": "HUL",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      }
+     ]
+    },
+    {
+     "entry": 217359,
+     "team": "Frimpingpong",
+     "manager": "Jarno Walberg",
+     "ik": false,
+     "chip": "wildcard",
+     "punten": 36,
+     "straf": 0,
+     "transfers": 0,
+     "waarde": 100.6,
+     "bank": 0.1,
+     "cap": 411,
+     "vice": 480,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 1,
+       "n": "Raya",
+       "t": "ARS",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 445,
+       "n": "Thiaw",
+       "t": "NEW",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 4,
+       "min": 90
+      },
+      {
+       "id": 201,
+       "n": "Muñoz",
+       "t": "NFO",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 82
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 391,
+       "n": "Gvardiol",
+       "t": "MCI",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 4,
+       "min": 90
+      },
+      {
+       "id": 154,
+       "n": "Palmer",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 480,
+       "n": "Gibbs-White",
+       "t": "NFO",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 427,
+       "n": "Mbeumo",
+       "t": "MUN",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": true,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 464,
+       "n": "Wissa",
+       "t": "NEW",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 0,
+       "min": 90
+      },
+      {
+       "id": 249,
+       "n": "Barry",
+       "t": "EVE",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 302,
+       "n": "Button",
+       "t": "IPS",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 68,
+       "n": "Tavernier",
+       "t": "BOU",
+       "p": "MID",
+       "basis": false,
+       "cap": false,
+       "pt": 2,
+       "min": 74
+      },
+      {
+       "id": 98,
+       "n": "Janelt",
+       "t": "BRE",
+       "p": "MID",
+       "basis": false,
+       "cap": false,
+       "pt": 3,
+       "min": 90
+      },
+      {
+       "id": 31,
+       "n": "Konsa",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      }
+     ]
+    },
+    {
+     "entry": 802270,
+     "team": "Win Porro Favor",
+     "manager": "Rafael Blees",
+     "ik": false,
+     "chip": "wildcard",
+     "punten": 40,
+     "straf": 0,
+     "transfers": 0,
+     "waarde": 100.7,
+     "bank": 0.3,
+     "cap": 480,
+     "vice": 411,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 1,
+       "n": "Raya",
+       "t": "ARS",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 391,
+       "n": "Gvardiol",
+       "t": "MCI",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 4,
+       "min": 90
+      },
+      {
+       "id": 449,
+       "n": "Hall",
+       "t": "NEW",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 13,
+       "min": 90
+      },
+      {
+       "id": 499,
+       "n": "Pedro Porro",
+       "t": "TOT",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 18
+      },
+      {
+       "id": 201,
+       "n": "Muñoz",
+       "t": "NFO",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 82
+      },
+      {
+       "id": 368,
+       "n": "Szoboszlai",
+       "t": "LIV",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 80
+      },
+      {
+       "id": 15,
+       "n": "Ødegaard",
+       "t": "ARS",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 72
+      },
+      {
+       "id": 480,
+       "n": "Gibbs-White",
+       "t": "NFO",
+       "p": "MID",
+       "basis": true,
+       "cap": true,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 239,
+       "n": "Garner",
+       "t": "EVE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 3,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 346,
+       "n": "Calvert-Lewin",
+       "t": "LEE",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 301,
+       "n": "Palmer",
+       "t": "IPS",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 124,
+       "n": "Groß",
+       "t": "BHA",
+       "p": "MID",
+       "basis": false,
+       "cap": false,
+       "pt": 14,
+       "min": 90
+      },
+      {
+       "id": 165,
+       "n": "João Pedro",
+       "t": "CHE",
+       "p": "FWD",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      }
+     ]
+    },
+    {
+     "entry": 423890,
+     "team": "Max's Monsters",
+     "manager": "Max Voorthuijsen",
+     "ik": false,
+     "chip": "bboost",
+     "punten": 61,
+     "straf": 0,
+     "transfers": 1,
+     "waarde": 101.1,
+     "bank": 1.4,
+     "cap": 411,
+     "vice": 464,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 1,
+       "n": "Raya",
+       "t": "ARS",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 31,
+       "n": "Konsa",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 334,
+       "n": "Muharemović",
+       "t": "LEE",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 229,
+       "n": "Tarkowski",
+       "t": "EVE",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 14,
+       "min": 90
+      },
+      {
+       "id": 368,
+       "n": "Szoboszlai",
+       "t": "LIV",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 80
+      },
+      {
+       "id": 154,
+       "n": "Palmer",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 480,
+       "n": "Gibbs-White",
+       "t": "NFO",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": true,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 464,
+       "n": "Wissa",
+       "t": "NEW",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 0,
+       "min": 90
+      },
+      {
+       "id": 346,
+       "n": "Calvert-Lewin",
+       "t": "LEE",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 497,
+       "n": "Dubravka",
+       "t": "TOT",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 94,
+       "n": "Schade",
+       "t": "BRE",
+       "p": "MID",
+       "basis": false,
+       "cap": false,
+       "pt": 9,
+       "min": 90
+      },
+      {
+       "id": 565,
+       "n": "M.Sangaré",
+       "t": "BRE",
+       "p": "MID",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 21
+      },
+      {
+       "id": 173,
+       "n": "Thomas",
+       "t": "COV",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 9,
+       "min": 90
+      }
+     ]
+    },
+    {
+     "entry": 354683,
+     "team": "Youpi Kroupi",
+     "manager": "Youp Van Gelder",
+     "ik": false,
+     "chip": null,
+     "punten": 37,
+     "straf": 0,
+     "transfers": 1,
+     "waarde": 100.5,
+     "bank": 2.0,
+     "cap": 411,
+     "vice": 426,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 496,
+       "n": "Kinsky",
+       "t": "TOT",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 87,
+       "n": "Ajer",
+       "t": "BRE",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 7,
+       "min": 90
+      },
+      {
+       "id": 31,
+       "n": "Konsa",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 426,
+       "n": "B.Fernandes",
+       "t": "MUN",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 368,
+       "n": "Szoboszlai",
+       "t": "LIV",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 80
+      },
+      {
+       "id": 565,
+       "n": "M.Sangaré",
+       "t": "BRE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 0,
+       "min": 21
+      },
+      {
+       "id": 40,
+       "n": "Rogers",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": true,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 346,
+       "n": "Calvert-Lewin",
+       "t": "LEE",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 249,
+       "n": "Barry",
+       "t": "EVE",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 412,
+       "n": "Lammens",
+       "t": "MUN",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 4,
+       "min": 90
+      },
+      {
+       "id": 542,
+       "n": "E.Le Fée",
+       "t": "SUN",
+       "p": "MID",
+       "basis": false,
+       "cap": false,
+       "pt": 5,
+       "min": 90
+      },
+      {
+       "id": 173,
+       "n": "Thomas",
+       "t": "COV",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 9,
+       "min": 90
+      },
+      {
+       "id": 532,
+       "n": "Ballard",
+       "t": "SUN",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      }
+     ]
+    },
+    {
+     "entry": 474518,
+     "team": "Jonkies Iceboyss",
+     "manager": "Wessel Jonker",
+     "ik": false,
+     "chip": null,
+     "punten": 53,
+     "straf": 0,
+     "transfers": 0,
+     "waarde": 101.1,
+     "bank": 0.0,
+     "cap": 411,
+     "vice": 154,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 467,
+       "n": "Sels",
+       "t": "NFO",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 229,
+       "n": "Tarkowski",
+       "t": "EVE",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 14,
+       "min": 90
+      },
+      {
+       "id": 31,
+       "n": "Konsa",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 453,
+       "n": "Barnes",
+       "t": "NEW",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 9,
+       "min": 90
+      },
+      {
+       "id": 154,
+       "n": "Palmer",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 15,
+       "n": "Ødegaard",
+       "t": "ARS",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 72
+      },
+      {
+       "id": 40,
+       "n": "Rogers",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 368,
+       "n": "Szoboszlai",
+       "t": "LIV",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 80
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": true,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 249,
+       "n": "Barry",
+       "t": "EVE",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 109,
+       "n": "Verbruggen",
+       "t": "BHA",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 165,
+       "n": "João Pedro",
+       "t": "CHE",
+       "p": "FWD",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 173,
+       "n": "Thomas",
+       "t": "COV",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 9,
+       "min": 90
+      },
+      {
+       "id": 504,
+       "n": "Vuskovic",
+       "t": "BHA",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 8,
+       "min": 90
+      }
+     ]
+    },
+    {
+     "entry": 258669,
+     "team": "Reijning Champion",
+     "manager": "Mark Flekken met de F",
+     "ik": true,
+     "chip": null,
+     "punten": 52,
+     "straf": 0,
+     "transfers": 1,
+     "waarde": 101.5,
+     "bank": 3.2,
+     "cap": 411,
+     "vice": 399,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 496,
+       "n": "Kinsky",
+       "t": "TOT",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 449,
+       "n": "Hall",
+       "t": "NEW",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 13,
+       "min": 90
+      },
+      {
+       "id": 31,
+       "n": "Konsa",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 427,
+       "n": "Mbeumo",
+       "t": "MUN",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 94,
+       "n": "Schade",
+       "t": "BRE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 9,
+       "min": 90
+      },
+      {
+       "id": 399,
+       "n": "Cherki",
+       "t": "MCI",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 8,
+       "min": 84
+      },
+      {
+       "id": 154,
+       "n": "Palmer",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 368,
+       "n": "Szoboszlai",
+       "t": "LIV",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 80
+      },
+      {
+       "id": 464,
+       "n": "Wissa",
+       "t": "NEW",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 0,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": true,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 109,
+       "n": "Verbruggen",
+       "t": "BHA",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 115,
+       "n": "De Cuyper",
+       "t": "BHA",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 277,
+       "n": "Egan",
+       "t": "HUL",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 1,
+       "min": 77
+      },
+      {
+       "id": 321,
+       "n": "Walle Egeli",
+       "t": "IPS",
+       "p": "FWD",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      }
+     ]
+    },
+    {
+     "entry": 1725885,
+     "team": "FC Karel",
+     "manager": "Sem Smit",
+     "ik": false,
+     "chip": "freehit",
+     "punten": 52,
+     "straf": 0,
+     "transfers": 0,
+     "waarde": 100.7,
+     "bank": 0.0,
+     "cap": 411,
+     "vice": 397,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 226,
+       "n": "Pickford",
+       "t": "EVE",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 8,
+       "min": 90
+      },
+      {
+       "id": 391,
+       "n": "Gvardiol",
+       "t": "MCI",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 4,
+       "min": 90
+      },
+      {
+       "id": 469,
+       "n": "N.Williams",
+       "t": "NFO",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 40,
+       "n": "Rogers",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 397,
+       "n": "Semenyo",
+       "t": "MCI",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 17,
+       "min": 90
+      },
+      {
+       "id": 480,
+       "n": "Gibbs-White",
+       "t": "NFO",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 427,
+       "n": "Mbeumo",
+       "t": "MUN",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": true,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 346,
+       "n": "Calvert-Lewin",
+       "t": "LEE",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 464,
+       "n": "Wissa",
+       "t": "NEW",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 0,
+       "min": 90
+      },
+      {
+       "id": 496,
+       "n": "Kinsky",
+       "t": "TOT",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 242,
+       "n": "George",
+       "t": "EVE",
+       "p": "MID",
+       "basis": false,
+       "cap": false,
+       "pt": 1,
+       "min": 11
+      },
+      {
+       "id": 175,
+       "n": "van Ewijk",
+       "t": "COV",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 305,
+       "n": "Davis",
+       "t": "IPS",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      }
+     ]
+    },
+    {
+     "entry": 42910,
+     "team": "DemioVanGaalsArmy",
+     "manager": "Demio Walberg",
+     "ik": false,
+     "chip": null,
+     "punten": 33,
+     "straf": 0,
+     "transfers": 0,
+     "waarde": 100.7,
+     "bank": 0.1,
+     "cap": 411,
+     "vice": 480,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 567,
+       "n": "Horníček",
+       "t": "NEW",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 3,
+       "min": 90
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 31,
+       "n": "Konsa",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 474,
+       "n": "Jair Cunha",
+       "t": "NFO",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
+       "id": 277,
+       "n": "Egan",
+       "t": "HUL",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 77
+      },
+      {
+       "id": 368,
+       "n": "Szoboszlai",
+       "t": "LIV",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 80
+      },
+      {
+       "id": 154,
+       "n": "Palmer",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 12,
+       "n": "Saka",
+       "t": "ARS",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 80
+      },
+      {
+       "id": 480,
+       "n": "Gibbs-White",
+       "t": "NFO",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": true,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 249,
+       "n": "Barry",
+       "t": "EVE",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 497,
+       "n": "Dubravka",
+       "t": "TOT",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 165,
+       "n": "João Pedro",
+       "t": "CHE",
+       "p": "FWD",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 51,
+       "n": "George Hemmings",
+       "t": "AVL",
+       "p": "MID",
+       "basis": false,
+       "cap": false,
+       "pt": 1,
+       "min": 18
+      },
+      {
+       "id": 504,
+       "n": "Vuskovic",
+       "t": "BHA",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 8,
+       "min": 90
+      }
+     ]
+    }
+   ],
+   "opgehaald": "2026-09-21T10:40:29+00:00",
+   "voorlopig": true
   }
  },
  "prestatie": {
@@ -6783,9 +8469,19 @@
    "cap": 154,
    "cap_punten": 5,
    "beste_cap": 15
+  },
+  "5": {
+   "werkelijk": 52,
+   "straf": 0,
+   "beste_uit_eigen_15": 69,
+   "gemist_door_opstelling": 17,
+   "chip": null,
+   "cap": 411,
+   "cap_punten": 6,
+   "beste_cap": 13
   }
  },
- "_bijgewerkt": "2026-09-21T05:27:24+00:00",
- "_afgerond": 4,
+ "_bijgewerkt": "2026-09-21T10:40:32+00:00",
+ "_afgerond": 5,
  "_managers": 10
 }
