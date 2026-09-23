@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-09-23 06:38:45",
- "_copilot_bijgewerkt": "Updated 2 hours ago",
- "_copilot_moment": "2026-09-23 04:38:45",
+ "_opgehaald": "2026-09-23 12:06:30",
+ "_copilot_bijgewerkt": "Updated 8 hours ago",
+ "_copilot_moment": "2026-09-23 04:06:30",
  "_start_gw": 6,
  "_horizon": 8,
  "_overgeslagen": [
@@ -1527,6 +1527,10 @@
    "pos": "FWD"
   },
   {
+   "n": "Schade",
+   "pos": "FWD"
+  },
+  {
    "n": "Cherki",
    "pos": "FWD"
   },
@@ -1612,10 +1616,6 @@
   },
   {
    "n": "Van Hecke",
-   "pos": "FWD"
-  },
-  {
-   "n": "Schade",
    "pos": "FWD"
   },
   {
@@ -11429,6 +11429,31 @@
     88
    ]
   },
+  "94": {
+   "n": "Schade",
+   "t": "BRE",
+   "p": "MID",
+   "gw": [
+    4.7,
+    4.6,
+    5.1,
+    4.9,
+    4.2,
+    4.8,
+    4.2,
+    3.8
+   ],
+   "mn": [
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88
+   ]
+  },
   "399": {
    "n": "Cherki",
    "t": "MCI",
@@ -11777,31 +11802,6 @@
     86,
     86,
     86
-   ]
-  },
-  "94": {
-   "n": "Schade",
-   "t": "BRE",
-   "p": "MID",
-   "gw": [
-    4.1,
-    4,
-    4.5,
-    4.3,
-    3.7,
-    4.2,
-    3.7,
-    3.4
-   ],
-   "mn": [
-    77,
-    77,
-    77,
-    77,
-    77,
-    77,
-    77,
-    77
    ]
   },
   "460": {
