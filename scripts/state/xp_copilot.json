@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-09-24 12:14:00",
- "_copilot_bijgewerkt": "Updated 8 hours ago",
- "_copilot_moment": "2026-09-24 04:14:00",
+ "_opgehaald": "2026-09-24 15:02:13",
+ "_copilot_bijgewerkt": "Updated 11 hours ago",
+ "_copilot_moment": "2026-09-24 04:02:13",
  "_start_gw": 6,
  "_horizon": 8,
  "_overgeslagen": [
@@ -1571,10 +1571,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Semenyo",
-   "pos": "FWD"
-  },
-  {
    "n": "Gomez",
    "pos": "FWD"
   },
@@ -1620,6 +1616,10 @@
   },
   {
    "n": "Lacroix",
+   "pos": "FWD"
+  },
+  {
+   "n": "Semenyo",
    "pos": "FWD"
   },
   {
@@ -11579,31 +11579,6 @@
     84
    ]
   },
-  "397": {
-   "n": "Semenyo",
-   "t": "MCI",
-   "p": "MID",
-   "gw": [
-    3.7,
-    4.9,
-    4,
-    4.3,
-    4.1,
-    4.6,
-    3.2,
-    4.5
-   ],
-   "mn": [
-    88,
-    88,
-    88,
-    88,
-    88,
-    88,
-    88,
-    88
-   ]
-  },
   "127": {
    "n": "Gomez",
    "t": "BHA",
@@ -11827,6 +11802,31 @@
     81,
     81,
     81
+   ]
+  },
+  "397": {
+   "n": "Semenyo",
+   "t": "MCI",
+   "p": "MID",
+   "gw": [
+    2.6,
+    4.3,
+    4,
+    4.3,
+    4.1,
+    4.6,
+    3.2,
+    4.5
+   ],
+   "mn": [
+    59,
+    74,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88
    ]
   },
   "542": {
