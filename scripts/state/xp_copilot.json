@@ -1,6 +1,6 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-09-27 21:36:33",
+ "_opgehaald": "2026-09-27 22:05:47",
  "_copilot_bijgewerkt": "Updated just now",
  "_copilot_moment": null,
  "_start_gw": 6,
@@ -1515,10 +1515,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Gakpo",
-   "pos": "FWD"
-  },
-  {
    "n": "Hall",
    "pos": "FWD"
   },
@@ -1540,6 +1536,10 @@
   },
   {
    "n": "Gvardiol",
+   "pos": "FWD"
+  },
+  {
+   "n": "Gakpo",
    "pos": "FWD"
   },
   {
@@ -11379,31 +11379,6 @@
     84
    ]
   },
-  "367": {
-   "n": "Gakpo",
-   "t": "LIV",
-   "p": "MID",
-   "gw": [
-    4.3,
-    4.4,
-    4.9,
-    4,
-    4.7,
-    4.8,
-    4.6,
-    5.5
-   ],
-   "mn": [
-    84,
-    84,
-    84,
-    84,
-    84,
-    84,
-    84,
-    84
-   ]
-  },
   "480": {
    "n": "Gibbs-White",
    "t": "NFO",
@@ -11477,6 +11452,31 @@
     83,
     83,
     83
+   ]
+  },
+  "367": {
+   "n": "Gakpo",
+   "t": "LIV",
+   "p": "MID",
+   "gw": [
+    3,
+    3.9,
+    4.9,
+    4,
+    4.7,
+    4.8,
+    4.6,
+    5.5
+   ],
+   "mn": [
+    59,
+    74,
+    84,
+    84,
+    84,
+    84,
+    84,
+    84
    ]
   },
   "399": {
