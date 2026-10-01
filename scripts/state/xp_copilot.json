@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-10-01 18:51:53",
- "_copilot_bijgewerkt": "Updated 16 hours ago",
- "_copilot_moment": "2026-10-01 02:51:53",
+ "_opgehaald": "2026-10-01 20:30:10",
+ "_copilot_bijgewerkt": "Updated 18 hours ago",
+ "_copilot_moment": "2026-10-01 02:30:10",
  "_start_gw": 6,
  "_horizon": 8,
  "_overgeslagen": [
@@ -539,10 +539,6 @@
    "pos": "MID"
   },
   {
-   "n": "Mykolenko",
-   "pos": "MID"
-  },
-  {
    "n": "Egan",
    "pos": "MID"
   },
@@ -596,6 +592,10 @@
   },
   {
    "n": "Mfuni",
+   "pos": "MID"
+  },
+  {
+   "n": "Mykolenko",
    "pos": "MID"
   },
   {
@@ -1963,10 +1963,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Mykolenko",
-   "pos": "FWD"
-  },
-  {
    "n": "Egan",
    "pos": "FWD"
   },
@@ -2056,6 +2052,10 @@
   },
   {
    "n": "Mfuni",
+   "pos": "FWD"
+  },
+  {
+   "n": "Mykolenko",
    "pos": "FWD"
   },
   {
@@ -6969,31 +6969,6 @@
     88
    ]
   },
-  "233": {
-   "n": "Mykolenko",
-   "t": "EVE",
-   "p": "DEF",
-   "gw": [
-    4,
-    2.9,
-    2.3,
-    2.8,
-    3.9,
-    2.8,
-    2.9,
-    3
-   ],
-   "mn": [
-    88,
-    88,
-    88,
-    88,
-    88,
-    88,
-    88,
-    88
-   ]
-  },
   "277": {
    "n": "Egan",
    "t": "HUL",
@@ -7242,6 +7217,31 @@
     84,
     84,
     84
+   ]
+  },
+  "233": {
+   "n": "Mykolenko",
+   "t": "EVE",
+   "p": "DEF",
+   "gw": [
+    2.8,
+    2.6,
+    2.3,
+    2.8,
+    3.9,
+    2.8,
+    2.9,
+    3
+   ],
+   "mn": [
+    59,
+    74,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88
    ]
   },
   "114": {
