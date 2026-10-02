@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-10-02 18:41:40",
- "_copilot_bijgewerkt": "Updated 16 hours ago",
- "_copilot_moment": "2026-10-02 02:41:40",
+ "_opgehaald": "2026-10-02 20:41:51",
+ "_copilot_bijgewerkt": "Updated 18 hours ago",
+ "_copilot_moment": "2026-10-02 02:41:51",
  "_start_gw": 6,
  "_horizon": 8,
  "_overgeslagen": [
@@ -1911,6 +1911,10 @@
    "pos": "FWD"
   },
   {
+   "n": "Tzolis",
+   "pos": "FWD"
+  },
+  {
    "n": "A.Becker",
    "pos": "FWD"
   },
@@ -1960,10 +1964,6 @@
   },
   {
    "n": "Egan",
-   "pos": "FWD"
-  },
-  {
-   "n": "Tzolis",
    "pos": "FWD"
   },
   {
@@ -12669,6 +12669,31 @@
     88
    ]
   },
+  "557": {
+   "n": "Tzolis",
+   "t": "ARS",
+   "p": "MID",
+   "gw": [
+    3.3,
+    3.2,
+    3.4,
+    2.9,
+    3.6,
+    3.1,
+    2.9,
+    3
+   ],
+   "mn": [
+    77,
+    77,
+    77,
+    77,
+    77,
+    77,
+    77,
+    77
+   ]
+  },
   "345": {
    "n": "Tanaka",
    "t": "LEE",
@@ -12692,31 +12717,6 @@
     68,
     68,
     68
-   ]
-  },
-  "557": {
-   "n": "Tzolis",
-   "t": "ARS",
-   "p": "MID",
-   "gw": [
-    2.5,
-    3,
-    3.4,
-    2.9,
-    3.6,
-    3.1,
-    2.9,
-    3
-   ],
-   "mn": [
-    58,
-    73,
-    77,
-    77,
-    77,
-    77,
-    77,
-    77
    ]
   },
   "244": {
