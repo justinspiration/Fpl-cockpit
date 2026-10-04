@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-10-04 18:47:49",
- "_copilot_bijgewerkt": "Updated 6 hours ago",
- "_copilot_moment": "2026-10-04 12:47:49",
+ "_opgehaald": "2026-10-04 21:19:49",
+ "_copilot_bijgewerkt": "Updated just now",
+ "_copilot_moment": null,
  "_start_gw": 6,
  "_horizon": 8,
  "_overgeslagen": [
@@ -1471,6 +1471,10 @@
    "pos": "FWD"
   },
   {
+   "n": "Cherki",
+   "pos": "FWD"
+  },
+  {
    "n": "Mbeumo",
    "pos": "FWD"
   },
@@ -1524,10 +1528,6 @@
   },
   {
    "n": "De Cuyper",
-   "pos": "FWD"
-  },
-  {
-   "n": "Cherki",
    "pos": "FWD"
   },
   {
@@ -11169,6 +11169,31 @@
     88
    ]
   },
+  "399": {
+   "n": "Cherki",
+   "t": "MCI",
+   "p": "MID",
+   "gw": [
+    4.9,
+    6.8,
+    5.6,
+    6,
+    5.5,
+    6.4,
+    4.2,
+    6.1
+   ],
+   "mn": [
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88,
+    88
+   ]
+  },
   "427": {
    "n": "Mbeumo",
    "t": "MUN",
@@ -11442,31 +11467,6 @@
     83,
     83,
     83
-   ]
-  },
-  "399": {
-   "n": "Cherki",
-   "t": "MCI",
-   "p": "MID",
-   "gw": [
-    3.8,
-    5.2,
-    4.3,
-    4.6,
-    4.2,
-    4.9,
-    3.3,
-    4.7
-   ],
-   "mn": [
-    68,
-    68,
-    68,
-    68,
-    68,
-    68,
-    68,
-    68
    ]
   },
   "367": {
