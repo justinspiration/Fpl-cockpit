@@ -1,6 +1,6 @@
 {
  "_bron": "publieke RSS-feeds",
- "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 11 extra gevonden, 15 ingebakken (573 KB).",
+ "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 12 extra gevonden, 16 ingebakken (584 KB).",
  "_feeds": [
   {
    "naam": "Fantasy Football Scout",
@@ -33,7 +33,7 @@
    "soort": "nl"
   }
  ],
- "_opgehaald": "2026-10-05T01:05:28+00:00",
+ "_opgehaald": "2026-10-05T01:28:52+00:00",
  "_methode": "Berichten uit de laatste 10 dagen, gescoord op blessure- en opstellingswoorden, op vermelde spelers (zwaarder als ze in de selectie zitten) en op versheid. Onder de 5 punten valt af.",
  "_mislukt": [],
  "_aantal": 64,
@@ -46,7 +46,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-05T00:30:00+00:00",
-   "score": 34.9,
+   "score": 34.8,
    "signalen": [
     "injured",
     "team news"
@@ -107,7 +107,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-03T10:30:00+00:00",
-   "score": 27.6,
+   "score": 27.5,
    "signalen": [
     "injury",
     "return",
@@ -297,7 +297,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-04T08:45:00+00:00",
-   "score": 15.3,
+   "score": 15.2,
    "signalen": [
     "team news"
    ],
@@ -314,7 +314,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-04T08:05:00+00:00",
-   "score": 15.2,
+   "score": 15.1,
    "signalen": [
     "team news"
    ],
@@ -355,7 +355,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-03T17:55:00+00:00",
-   "score": 12.8,
+   "score": 12.7,
    "signalen": [
     "team news"
    ],
@@ -396,7 +396,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-04T16:01:41+00:00",
-   "score": 12.5,
+   "score": 12.4,
    "signalen": [
     "deal"
    ],
@@ -431,35 +431,9 @@
    "beeld_scherp": true
   },
   {
-   "titel": "Let there be blanks instead of Manchester City’s name on trophies: there was no honour there | Jonathan Wilson",
-   "link": "https://www.theguardian.com/football/2026/oct/03/blank-instead-manchester-city-name-trophies-premier-league",
-   "beeld": "",
-   "samenvatting": "<p>The spaces can stand both as a rebuke to an era of greed but also a tribute to the Premier League’s hunt for justice</p><p>At half-time in the 2014 League Cup final, Sunderland led Manchester City 1-0. Yaya Touré equalised with a casually brilliant 30-yard ",
-   "bron": "The Guardian",
-   "soort": "algemeen",
-   "datum": "2026-10-03T19:00:08+00:00",
-   "score": 11.0,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Wilson",
-     "t": "LEE",
-     "p": "MID",
-     "mijn": false
-    },
-    {
-     "n": "Touré",
-     "t": "NEW",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://i.guim.co.uk/img/media/cf4bbf1472e23618e18462482e3df24b8968025c/781_0_2665_2131/master/2665.jpg?width=140&quality=85&auto=format&fit=max&s=7901046ccd2612d3c9714595b2ca3688"
-  },
-  {
    "titel": "Sir Alex Ferguson admits he was terrified by Old Trafford return after brain hemorrhage",
    "link": "https://talksport.com/football/4619955/alex-ferguson-health-update-brain-hemorrhage-man-united/",
-   "beeld": "",
+   "beeld": "data:image/jpeg;base64,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",
    "samenvatting": "",
    "bron": "talkSPORT",
    "soort": "geruchten",
@@ -481,7 +455,10 @@
      "p": "GKP",
      "mijn": false
     }
-   ]
+   ],
+   "beeld_bron": "https://talksport.com/wp-content/uploads/2025/04/NINTCHDBPICT000990008455.jpg?strip=all&quality=100&w=1920&h=1080&crop=1",
+   "beeld_breedte": 340,
+   "beeld_scherp": true
   },
   {
    "titel": "Shock and awe &#8211; Zlatan, Thiago Silva and Sol Campbell in greatest Premier League free transfers",
@@ -511,6 +488,32 @@
    ]
   },
   {
+   "titel": "Let there be blanks instead of Manchester City’s name on trophies: there was no honour there | Jonathan Wilson",
+   "link": "https://www.theguardian.com/football/2026/oct/03/blank-instead-manchester-city-name-trophies-premier-league",
+   "beeld": "",
+   "samenvatting": "<p>The spaces can stand both as a rebuke to an era of greed but also a tribute to the Premier League’s hunt for justice</p><p>At half-time in the 2014 League Cup final, Sunderland led Manchester City 1-0. Yaya Touré equalised with a casually brilliant 30-yard ",
+   "bron": "The Guardian",
+   "soort": "algemeen",
+   "datum": "2026-10-03T19:00:08+00:00",
+   "score": 10.9,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Wilson",
+     "t": "LEE",
+     "p": "MID",
+     "mijn": false
+    },
+    {
+     "n": "Touré",
+     "t": "NEW",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://i.guim.co.uk/img/media/cf4bbf1472e23618e18462482e3df24b8968025c/781_0_2665_2131/master/2665.jpg?width=140&quality=85&auto=format&fit=max&s=7901046ccd2612d3c9714595b2ca3688"
+  },
+  {
    "titel": "Big Numbers: 25 stand-out stats for FPL Gameweek 6",
    "link": "https://www.fantasyfootballscout.co.uk/2026/10/03/big-numbers-25-stand-out-stats-for-fpl-gameweek-6",
    "beeld": "",
@@ -518,7 +521,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-03T05:00:00+00:00",
-   "score": 10.7,
+   "score": 10.6,
    "signalen": [
     "team news"
    ],
@@ -532,7 +535,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-04T17:14:00+00:00",
-   "score": 10.7,
+   "score": 10.6,
    "signalen": [
     "red card"
    ],
@@ -547,7 +550,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-04T16:59:55+00:00",
-   "score": 10.7,
+   "score": 10.6,
    "signalen": [],
    "spelers": [
     {
@@ -566,7 +569,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-04T22:05:00+00:00",
-   "score": 10.5,
+   "score": 10.4,
    "signalen": [
     "comeback"
    ],
@@ -581,7 +584,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-04T21:55:00+00:00",
-   "score": 10.5,
+   "score": 10.4,
    "signalen": [
     "penalty"
    ],
@@ -665,20 +668,6 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/bbbea72166af3bcd2f1e849afc85f51b3156866c/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=60bbd0ec664efa8671603a3fcfa0316e"
   },
   {
-   "titel": "Summer Man City arrival teases return to old club days after club found guilty of financial breaches",
-   "link": "https://talksport.com/football/4624296/man-city-transfer-iliman-ndiaye-marseille/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-04T18:50:47+00:00",
-   "score": 10.0,
-   "signalen": [
-    "return"
-   ],
-   "spelers": []
-  },
-  {
    "titel": "NFL results: Maye fires Patriots past Bills as Rams comeback downs Eagles",
    "link": "https://www.skysports.com/nfl/live-blog/12040/13595110/nfl-2026-results-and-highlights-drake-maye-fires-new-england-patriots-past-buffalo-bills-as-los-angeles-rams-clinch-late-comeback-win",
    "beeld": "",
@@ -694,6 +683,20 @@
    "beeld_bron": "https://e0.365dm.com/26/10/1920x1080/skysports-drake-maye-new-england-patriots_7368319.jpg?20261004221717"
   },
   {
+   "titel": "Summer Man City arrival teases return to old club days after club found guilty of financial breaches",
+   "link": "https://talksport.com/football/4624296/man-city-transfer-iliman-ndiaye-marseille/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-10-04T18:50:47+00:00",
+   "score": 9.9,
+   "signalen": [
+    "return"
+   ],
+   "spelers": []
+  },
+  {
    "titel": "Russell 'beyond disappointment' as Wolff 'massively annoyed' by engine failure",
    "link": "https://www.skysports.com/f1/news/12040/13594862/george-russell-mercedes-boss-toto-wolff-massively-annoyed-by-bahrain-gp-unreliability-with-driver-now-beyond-disappointment",
    "beeld": "",
@@ -701,7 +704,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-04T11:50:00+00:00",
-   "score": 9.8,
+   "score": 9.7,
    "signalen": [],
    "spelers": [
     {
@@ -712,22 +715,6 @@
     }
    ],
    "beeld_bron": "https://e0.365dm.com/26/10/1920x1080/skysports-f1-george-russell_7367102.jpg?20261004144736"
-  },
-  {
-   "titel": "Papers: Ronaldo to make Portugal return",
-   "link": "https://www.skysports.com/football/news/12040/13595152/cristiano-ronaldo-to-make-portugal-return-in-2027-paper-talk",
-   "beeld": "",
-   "samenvatting": "The top stories and transfer rumours from Monday's newspapers...",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-10-03T23:00:00+00:00",
-   "score": 9.7,
-   "signalen": [
-    "return",
-    "transfer"
-   ],
-   "spelers": [],
-   "beeld_bron": "https://e2.365dm.com/26/08/1920x1080/skysports-paper-talk-football_7317647.jpg?20260809160824"
   },
   {
    "titel": "Folarin Balogun makes Premier League transfer admission after Everton move collapsed",
@@ -742,6 +729,22 @@
     "transfer"
    ],
    "spelers": []
+  },
+  {
+   "titel": "Papers: Ronaldo to make Portugal return",
+   "link": "https://www.skysports.com/football/news/12040/13595152/cristiano-ronaldo-to-make-portugal-return-in-2027-paper-talk",
+   "beeld": "",
+   "samenvatting": "The top stories and transfer rumours from Monday's newspapers...",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-10-03T23:00:00+00:00",
+   "score": 9.6,
+   "signalen": [
+    "return",
+    "transfer"
+   ],
+   "spelers": [],
+   "beeld_bron": "https://e2.365dm.com/26/08/1920x1080/skysports-paper-talk-football_7317647.jpg?20260809160824"
   },
   {
    "titel": "Gutted Arsenal star forced off pitch with worrying hamstring injury",
@@ -808,7 +811,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-03T16:03:43+00:00",
-   "score": 8.5,
+   "score": 8.4,
    "signalen": [
     "manager"
    ],
@@ -846,27 +849,6 @@
     }
    ],
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e204/live/e4b301c0-bd86-11f1-ab03-fd866f8788d0.png"
-  },
-  {
-   "titel": "Alex Iwobi lands unexpected managerial role alongside Fulham contract",
-   "link": "https://talksport.com/football/4621806/alex-iwobi-baller-league-manager-fulham/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-03T13:04:00+00:00",
-   "score": 8.0,
-   "signalen": [
-    "manager"
-   ],
-   "spelers": [
-    {
-     "n": "Iwobi",
-     "t": "FUL",
-     "p": "MID",
-     "mijn": false
-    }
-   ]
   },
   {
    "titel": "Arsenal handed injury boost as superstar&#8217;s return pencilled in after 126 days out",
@@ -944,6 +926,27 @@
    "spelers": []
   },
   {
+   "titel": "Alex Iwobi lands unexpected managerial role alongside Fulham contract",
+   "link": "https://talksport.com/football/4621806/alex-iwobi-baller-league-manager-fulham/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-10-03T13:04:00+00:00",
+   "score": 7.9,
+   "signalen": [
+    "manager"
+   ],
+   "spelers": [
+    {
+     "n": "Iwobi",
+     "t": "FUL",
+     "p": "MID",
+     "mijn": false
+    }
+   ]
+  },
+  {
    "titel": "Mardle: Humphries can do it against anyone from any position",
    "link": "https://www.skysports.com/darts/news/12040/13595177/luke-humphries-wayne-mardle-says-world-grand-prix-champion-has-put-down-a-marker-ahead-of-world-championship-this-christmas",
    "beeld": "",
@@ -951,36 +954,10 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-04T22:30:00+00:00",
-   "score": 7.6,
+   "score": 7.5,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://e0.365dm.com/26/10/1920x1080/skysports-luke-humphries-world-grand-prix-darts_7368359.jpg?20261004230344"
-  },
-  {
-   "titel": "Republic of Ireland draw with Israel in second Nations League meeting",
-   "link": "https://www.skysports.com/football/republic-of-ireland-vs-israel/report/554064",
-   "beeld": "",
-   "samenvatting": "The Republic of Ireland drew 1-1 with Israel in the second controversial Nations League fixture between the sides.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-10-04T21:51:00+00:00",
-   "score": 7.5,
-   "signalen": [],
-   "spelers": [],
-   "beeld_bron": "https://e0.365dm.com/26/10/1920x1080/skysports-ireland-israel_7368307.jpg?20261004215623"
-  },
-  {
-   "titel": "'Harry Potter did well, didn't he!?' - Humphries savours Grand Prix success",
-   "link": "https://www.skysports.com/darts/live-blog/12040/13595086/world-grand-prix-darts-final-luke-humphries-beats-gerwyn-price-6-4-after-epic-comeback-from-3-0-down-in-leicester",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-10-04T21:50:00+00:00",
-   "score": 7.5,
-   "signalen": [],
-   "spelers": [],
-   "beeld_bron": "https://e0.365dm.com/26/10/1920x1080/skysports-luke-humphries-world-grand-prix-darts_7366111.jpg?20261001222459"
   },
   {
    "titel": "Daryz retains Arc crown with dazzling display",
@@ -996,6 +973,32 @@
    ],
    "spelers": [],
    "beeld_bron": "https://e2.365dm.com/26/10/1920x1080/skysports-daryz-racing_7368058.jpg?20261004154359"
+  },
+  {
+   "titel": "Republic of Ireland draw with Israel in second Nations League meeting",
+   "link": "https://www.skysports.com/football/republic-of-ireland-vs-israel/report/554064",
+   "beeld": "",
+   "samenvatting": "The Republic of Ireland drew 1-1 with Israel in the second controversial Nations League fixture between the sides.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-10-04T21:51:00+00:00",
+   "score": 7.4,
+   "signalen": [],
+   "spelers": [],
+   "beeld_bron": "https://e0.365dm.com/26/10/1920x1080/skysports-ireland-israel_7368307.jpg?20261004215623"
+  },
+  {
+   "titel": "'Harry Potter did well, didn't he!?' - Humphries savours Grand Prix success",
+   "link": "https://www.skysports.com/darts/live-blog/12040/13595086/world-grand-prix-darts-final-luke-humphries-beats-gerwyn-price-6-4-after-epic-comeback-from-3-0-down-in-leicester",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-10-04T21:50:00+00:00",
+   "score": 7.4,
+   "signalen": [],
+   "spelers": [],
+   "beeld_bron": "https://e0.365dm.com/26/10/1920x1080/skysports-luke-humphries-world-grand-prix-darts_7366111.jpg?20261001222459"
   },
   {
    "titel": "Criminal or saviour? Rui Pinto abandoned by Portuguese authorities after Manchester City leaks",
@@ -1105,7 +1108,7 @@
    "bron": "Voetbal International",
    "soort": "nl",
    "datum": "2026-10-04T21:09:39+02:00",
-   "score": 7.0,
+   "score": 6.9,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://webp.vi.cdn.pxr.nl/news/2026/10/04/3a0d3cd394e550fb54f275be3b742aa7a2393a22.jpg?width=1200"
@@ -1118,7 +1121,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-04T18:30:00+00:00",
-   "score": 6.9,
+   "score": 6.8,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/skysports-wales-denmark_7368286.jpg?20261004213032"
@@ -1131,7 +1134,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-04T17:00:00+00:00",
-   "score": 6.7,
+   "score": 6.6,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/skysports-australia-test-cricket_7367899.jpg?20261004121216"
@@ -1144,7 +1147,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-10-03T11:12:48+00:00",
-   "score": 6.7,
+   "score": 6.6,
    "signalen": [
     "available",
     "return"
@@ -1160,7 +1163,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-04T16:24:00+00:00",
-   "score": 6.6,
+   "score": 6.5,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/image_7368081.jpg?20261004162445"
@@ -1173,7 +1176,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-04T15:18:00+00:00",
-   "score": 6.4,
+   "score": 6.3,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://e2.365dm.com/26/10/1920x1080/skysports-novak-djokovic-tennis_7368018.jpg?20261004145734"
@@ -1199,7 +1202,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-04T12:57:27+00:00",
-   "score": 6.0,
+   "score": 5.9,
    "signalen": [],
    "spelers": []
   }
