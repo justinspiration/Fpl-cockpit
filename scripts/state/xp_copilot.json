@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-10-08 22:03:26",
+ "_opgehaald": "2026-10-08 22:26:11",
  "_copilot_bijgewerkt": "Updated 4 hours ago",
- "_copilot_moment": "2026-10-08 18:03:26",
+ "_copilot_moment": "2026-10-08 18:26:11",
  "_start_gw": 6,
  "_horizon": 8,
  "_overgeslagen": [
@@ -811,11 +811,11 @@
    "pos": "MID"
   },
   {
-   "n": "Keane",
+   "n": "Dedić",
    "pos": "MID"
   },
   {
-   "n": "Livramento",
+   "n": "Keane",
    "pos": "MID"
   },
   {
@@ -832,6 +832,10 @@
   },
   {
    "n": "Tsimikas",
+   "pos": "MID"
+  },
+  {
+   "n": "Livramento",
    "pos": "MID"
   },
   {
@@ -1444,10 +1448,6 @@
   },
   {
    "n": "Van Oevelen",
-   "pos": "MID"
-  },
-  {
-   "n": "Dedić",
    "pos": "MID"
   },
   {
@@ -2531,6 +2531,10 @@
    "pos": "FWD"
   },
   {
+   "n": "Dedić",
+   "pos": "FWD"
+  },
+  {
    "n": "Eze",
    "pos": "FWD"
   },
@@ -2551,10 +2555,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Livramento",
-   "pos": "FWD"
-  },
-  {
    "n": "Pivas",
    "pos": "FWD"
   },
@@ -2572,6 +2572,10 @@
   },
   {
    "n": "Tsimikas",
+   "pos": "FWD"
+  },
+  {
+   "n": "Livramento",
    "pos": "FWD"
   },
   {
@@ -3784,10 +3788,6 @@
   },
   {
    "n": "Mudryk",
-   "pos": "FWD"
-  },
-  {
-   "n": "Dedić",
    "pos": "FWD"
   },
   {
@@ -8344,6 +8344,31 @@
     14
    ]
   },
+  "593": {
+   "n": "Dedić",
+   "t": "NEW",
+   "p": "DEF",
+   "gw": [
+    0.9,
+    0.8,
+    0.8,
+    0.8,
+    0.8,
+    0.7,
+    0.7,
+    0.7
+   ],
+   "mn": [
+    17,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16
+   ]
+  },
   "231": {
    "n": "Keane",
    "t": "EVE",
@@ -8367,31 +8392,6 @@
     13,
     13,
     13
-   ]
-  },
-  "450": {
-   "n": "Livramento",
-   "t": "NEW",
-   "p": "DEF",
-   "gw": [
-    0.8,
-    0.8,
-    0.8,
-    0.8,
-    0.7,
-    0.7,
-    0.6,
-    0.7
-   ],
-   "mn": [
-    15,
-    17,
-    17,
-    17,
-    17,
-    17,
-    17,
-    17
    ]
   },
   "663": {
@@ -8492,6 +8492,31 @@
     13,
     13,
     13
+   ]
+  },
+  "450": {
+   "n": "Livramento",
+   "t": "NEW",
+   "p": "DEF",
+   "gw": [
+    0.3,
+    0.5,
+    0.7,
+    0.8,
+    0.7,
+    0.7,
+    0.6,
+    0.7
+   ],
+   "mn": [
+    8,
+    12,
+    16,
+    17,
+    17,
+    17,
+    17,
+    17
    ]
   },
   "119": {
@@ -10997,31 +11022,6 @@
   "540": {
    "n": "Masuaku",
    "t": "SUN",
-   "p": "DEF",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
-  "593": {
-   "n": "Dedić",
-   "t": "NEW",
    "p": "DEF",
    "gw": [
     0,
@@ -19719,6 +19719,31 @@
     null
    ]
   },
+  "465": {
+   "n": "Osula",
+   "t": "NEW",
+   "p": "FWD",
+   "gw": [
+    0.2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "mn": [
+    3,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
   "27": {
    "n": "G.Jesus",
    "t": "ARS",
@@ -20221,31 +20246,6 @@
   },
   "463": {
    "n": "Woltemade",
-   "t": "NEW",
-   "p": "FWD",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
-  "465": {
-   "n": "Osula",
    "t": "NEW",
    "p": "FWD",
    "gw": [
