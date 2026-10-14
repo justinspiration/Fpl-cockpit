@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-10-14T19:20:43+00:00",
+ "_opgehaald": "2026-10-14T22:37:36+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -75,18 +75,8 @@
   "AVL": {
    "artikel": "2026–27 Aston Villa F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Aston_Villa_F.C._season",
-   "gespeeld": 17,
+   "gespeeld": 18,
    "laatste5": [
-    {
-     "datum": "2026-09-16",
-     "opp": "Coventry City",
-     "thuis": false,
-     "voor": 3,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "Third round"
-    },
     {
      "datum": "2026-09-19",
      "opp": "Tottenham Hotspur",
@@ -126,14 +116,24 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "6"
+    },
+    {
+     "datum": "2026-10-14",
+     "opp": "Fenerbahçe",
+     "thuis": true,
+     "voor": 6,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
     "W",
     "W",
     "W",
-    "W",
-    "G"
+    "G",
+    "W"
    ],
    "vormpunten": 13,
    "vormmax": 15,
@@ -946,18 +946,8 @@
   "MCI": {
    "artikel": "2026–27 Manchester City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_City_F.C._season",
-   "gespeeld": 12,
+   "gespeeld": 13,
    "laatste5": [
-    {
-     "datum": "2026-09-08",
-     "opp": "Porto",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "1"
-    },
     {
      "datum": "2026-09-13",
      "opp": "Manchester United",
@@ -997,6 +987,16 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "6"
+    },
+    {
+     "datum": "2026-10-14",
+     "opp": "Paris Saint-Germain",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 4,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "2"
     }
    ],
    "vorm": [
@@ -1004,9 +1004,9 @@
     "W",
     "W",
     "W",
-    "W"
+    "V"
    ],
-   "vormpunten": 15,
+   "vormpunten": 12,
    "vormmax": 15,
    "oefen": 0
   },
