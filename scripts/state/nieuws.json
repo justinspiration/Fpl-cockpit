@@ -1,6 +1,6 @@
 {
  "_bron": "publieke RSS-feeds",
- "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 7 extra gevonden, 13 ingebakken (648 KB).",
+ "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 7 extra gevonden, 14 ingebakken (662 KB).",
  "_feeds": [
   {
    "naam": "Fantasy Football Scout",
@@ -33,10 +33,10 @@
    "soort": "nl"
   }
  ],
- "_opgehaald": "2026-10-17T17:45:57+00:00",
+ "_opgehaald": "2026-10-17T18:36:07+00:00",
  "_methode": "Berichten uit de laatste 10 dagen, gescoord op blessure- en opstellingswoorden, op vermelde spelers (zwaarder als ze in de selectie zitten) en op versheid. Onder de 5 punten valt af.",
  "_mislukt": [],
- "_aantal": 107,
+ "_aantal": 105,
  "berichten": [
   {
    "titel": "3pm team news: Szoboszlai + Isak start, six Man City changes, Schade a sub",
@@ -46,7 +46,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-17T13:35:00+00:00",
-   "score": 37.3,
+   "score": 37.2,
    "signalen": [
     "team news"
    ],
@@ -82,7 +82,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-17T10:35:00+00:00",
-   "score": 28.8,
+   "score": 28.7,
    "signalen": [
     "team news"
    ],
@@ -118,7 +118,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-17T16:24:33+00:00",
-   "score": 28.8,
+   "score": 28.6,
    "signalen": [
     "injury"
    ],
@@ -148,7 +148,7 @@
    "bron": "Voetbal International",
    "soort": "nl",
    "datum": "2026-10-17T18:18:45+02:00",
-   "score": 26.8,
+   "score": 26.6,
    "signalen": [
     "comeback"
    ],
@@ -178,7 +178,7 @@
    "bron": "Voetbal International",
    "soort": "nl",
    "datum": "2026-10-17T17:12:05+02:00",
-   "score": 26.6,
+   "score": 26.4,
    "signalen": [
     "blessure",
     "manager"
@@ -215,7 +215,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-16T17:10:00+00:00",
-   "score": 25.9,
+   "score": 25.8,
    "signalen": [
     "team news"
    ],
@@ -235,11 +235,11 @@
    "titel": "Haaland helps Maresca achieve record start as Manchester City defeat Ipswich",
    "link": "https://www.theguardian.com/football/2026/oct/17/manchester-city-ipswich-premier-league-match-report",
    "beeld": "",
-   "samenvatting": "<p>There have been few winners in Manchester City’s guilty verdict, except highly paid lawyers and the inflatable fruit industry. The fans have suffered, being forced to question everything they have been told, while being labelled “cheats” but they were able ",
+   "samenvatting": "<p>There have been few winners in Manchester City’s guilty verdict, except highly paid lawyers and the inflatable fruit industry. The fans have suffered, being forced to question everything they have been told, while being labelled “cheats”, but they were able",
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-10-17T16:08:40+00:00",
-   "score": 25.7,
+   "score": 25.6,
    "signalen": [
     "manager"
    ],
@@ -260,6 +260,42 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/dcbea5b8c80b5e9fcc86681d1a40730aea4179d2/203_0_3883_3106/master/3883.jpg?width=140&quality=85&auto=format&fit=max&s=3b30a69c91f2c26d93c6be74965a3dd0"
   },
   {
+   "titel": "Jacquet was 'cute and clever' for his part in Yarmoliuk red - Andrews",
+   "link": "https://www.skysports.com/football/news/12040/13600414/brentford-liverpool-were-cute-and-clever-says-keith-andrews-after-his-side-ended-defeat-with-nine-men",
+   "beeld": "data:image/jpeg;base64,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",
+   "samenvatting": "Brentford head coach Keith Andrews felt Jeremy Jacquet was \"cute and clever\" for his role in Yehor Yarmoliuk's red card in the 2-1 defeat to Liverpool.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-10-17T18:45:00+00:00",
+   "score": 24.0,
+   "signalen": [
+    "red card"
+   ],
+   "spelers": [
+    {
+     "n": "Yarmoliuk",
+     "t": "BRE",
+     "p": "MID",
+     "mijn": false
+    },
+    {
+     "n": "Andrews",
+     "t": "COV",
+     "p": "MID",
+     "mijn": false
+    },
+    {
+     "n": "Jacquet",
+     "t": "LIV",
+     "p": "DEF",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://e2.365dm.com/26/10/1920x1080/skysports-yehor-yarmoliuk-brentford_7379310.jpg?20261017183614",
+   "beeld_breedte": 340,
+   "beeld_scherp": true
+  },
+  {
    "titel": "Neto double at Everton leads Chelsea to victory marred by Martínez head injury",
    "link": "https://www.theguardian.com/football/2026/oct/17/everton-chelsea-premier-league-match-report",
    "beeld": "",
@@ -267,7 +303,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-10-17T13:53:13+00:00",
-   "score": 23.4,
+   "score": 23.2,
    "signalen": [
     "injury",
     "return"
@@ -296,7 +332,7 @@
    "bron": "Voetbal International",
    "soort": "nl",
    "datum": "2026-10-17T19:21:00+02:00",
-   "score": 22.9,
+   "score": 22.8,
    "signalen": [
     "blessure",
     "manager"
@@ -327,7 +363,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-16T13:36:09+00:00",
-   "score": 22.3,
+   "score": 22.2,
    "signalen": [
     "captain",
     "knee",
@@ -354,7 +390,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-16T12:30:00+00:00",
-   "score": 22.1,
+   "score": 22.0,
    "signalen": [
     "injury",
     "press conference",
@@ -373,7 +409,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-17T17:14:21+00:00",
-   "score": 21.9,
+   "score": 21.8,
    "signalen": [
     "manager",
     "red card"
@@ -404,7 +440,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-17T16:15:00+00:00",
-   "score": 21.7,
+   "score": 21.6,
    "signalen": [
     "team news"
    ],
@@ -428,7 +464,7 @@
    "bron": "Voetbal International",
    "soort": "nl",
    "datum": "2026-10-17T16:21:14+02:00",
-   "score": 20.4,
+   "score": 20.3,
    "signalen": [
     "blessure"
    ],
@@ -451,34 +487,6 @@
    "beeld_scherp": true
   },
   {
-   "titel": "Isak completes Liverpool’s comeback win as Brentford finish with nine",
-   "link": "https://www.theguardian.com/football/2026/oct/17/brentford-liverpool-premier-league-match-report",
-   "beeld": "",
-   "samenvatting": "<p>If this truly was the turning point for Liverpool’s spluttering forwards then they will owe a big debt of gratitude to Yehor Yarmolyuk. Brentford were 1-0 up when their midfielder saw red for a butt on Jérémy Jacquet just before half-time.</p><p>While Andon",
-   "bron": "The Guardian",
-   "soort": "algemeen",
-   "datum": "2026-10-17T16:21:40+00:00",
-   "score": 18.8,
-   "signalen": [
-    "comeback"
-   ],
-   "spelers": [
-    {
-     "n": "Jacquet",
-     "t": "LIV",
-     "p": "DEF",
-     "mijn": false
-    },
-    {
-     "n": "Isak",
-     "t": "LIV",
-     "p": "FWD",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://i.guim.co.uk/img/media/13bfa18f3c2ccaeebfd9ef3836adbe0a74f3d7ef/179_119_1997_1598/master/1997.jpg?width=140&quality=85&auto=format&fit=max&s=16be0085c3751bdff72e123e4ac08538"
-  },
-  {
    "titel": "FPL Rate My Team surgery with five-time top 1k finisher Tom Freeman",
    "link": "https://www.fantasyfootballscout.co.uk/2026/10/16/fpl-rate-my-team-surgery-with-five-time-top-1k-finisher-tom-freeman-100",
    "beeld": "data:image/jpeg;base64,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",
@@ -486,7 +494,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-16T15:15:00+00:00",
-   "score": 18.6,
+   "score": 18.4,
    "signalen": [
     "surgery",
     "team news"
@@ -504,7 +512,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-10-16T18:07:45+00:00",
-   "score": 18.1,
+   "score": 17.9,
    "signalen": [
     "lineup",
     "team news"
@@ -527,7 +535,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-16T11:00:00+00:00",
-   "score": 17.9,
+   "score": 17.7,
    "signalen": [
     "captain",
     "team news",
@@ -543,7 +551,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-17T14:42:46+00:00",
-   "score": 17.5,
+   "score": 17.4,
    "signalen": [
     "manager"
    ],
@@ -585,7 +593,7 @@
    ]
   },
   {
-   "titel": "Premier League LIVE: Aston Villa lead Newcastle, Man City win but Haaland injury worry, Liverpool beat Brentford",
+   "titel": "Premier League LIVE: Aston Villa beat Newcastle, Man City win but Haaland injury worry, Liverpool beat Brentford",
    "link": "https://talksport.com/football/4518020/premier-league-live-today-stats-schedule-games-results-winners/",
    "beeld": "",
    "samenvatting": "",
@@ -613,7 +621,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-17T16:56:12+00:00",
-   "score": 16.9,
+   "score": 16.7,
    "signalen": [
     "injury"
    ],
@@ -628,6 +636,29 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e95d/live/063a3f60-ca49-11f1-9a39-31b474234113.jpg"
   },
   {
+   "titel": "Isak completes Liverpool’s comeback win as Brentford finish with nine",
+   "link": "https://www.theguardian.com/football/2026/oct/17/brentford-liverpool-premier-league-match-report",
+   "beeld": "",
+   "samenvatting": "<p>If Liverpool’s spluttering forwards end up remembering this as the day when their luck turned then they will owe a big debt of gratitude to Yehor Yarmolyuk. This was a game with a very clear before and after.</p><p>Andoni Iraola will hope surviving one of t",
+   "bron": "The Guardian",
+   "soort": "algemeen",
+   "datum": "2026-10-17T16:21:40+00:00",
+   "score": 16.6,
+   "signalen": [
+    "comeback",
+    "manager"
+   ],
+   "spelers": [
+    {
+     "n": "Isak",
+     "t": "LIV",
+     "p": "FWD",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://i.guim.co.uk/img/media/13bfa18f3c2ccaeebfd9ef3836adbe0a74f3d7ef/179_119_1997_1598/master/1997.jpg?width=140&quality=85&auto=format&fit=max&s=16be0085c3751bdff72e123e4ac08538"
+  },
+  {
    "titel": "Frimpong zeven minuten na invalbeurt al naar de kant bij Liverpool",
    "link": "https://www.vi.nl/nieuws/frimpong-zeven-minuten-na-invalbeurt-al-naar-de-kant-bij-liverpool",
    "beeld": "",
@@ -635,7 +666,7 @@
    "bron": "Voetbal International",
    "soort": "nl",
    "datum": "2026-10-17T17:36:00+02:00",
-   "score": 16.6,
+   "score": 16.5,
    "signalen": [
     "blessure"
    ],
@@ -657,7 +688,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-17T08:45:00+00:00",
-   "score": 16.5,
+   "score": 16.4,
    "signalen": [
     "team news"
    ],
@@ -671,7 +702,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-16T08:39:18+00:00",
-   "score": 16.5,
+   "score": 16.3,
    "signalen": [
     "injury",
     "surgery"
@@ -718,7 +749,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-17T17:15:00+00:00",
-   "score": 15.9,
+   "score": 15.8,
    "signalen": [],
    "spelers": [
     {
@@ -744,7 +775,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-10-17T16:08:39+00:00",
-   "score": 15.7,
+   "score": 15.6,
    "signalen": [],
    "spelers": [
     {
@@ -763,21 +794,6 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/0da0d2bf73b16cd9472cf2009a8c6617ad0448a4/308_0_2510_2008/master/2510.jpg?width=140&quality=85&auto=format&fit=max&s=09ecc2905e63fcc065e1ca04b2e83ee2"
   },
   {
-   "titel": "Who is the best captain for FPL Gameweek 7?",
-   "link": "https://www.fantasyfootballscout.co.uk/2026/10/16/who-is-the-best-captain-for-fpl-gameweek-7-5",
-   "beeld": "",
-   "samenvatting": "We consult the Opta stats, Rate My Team and more The post Who is the best captain for FPL Gameweek 7? appeared first on Best FPL Tips, Advice, Team News, Picks, and Statistics from Fantasy Football Scout.",
-   "bron": "Fantasy Football Scout",
-   "soort": "fpl",
-   "datum": "2026-10-16T09:45:00+00:00",
-   "score": 14.7,
-   "signalen": [
-    "captain",
-    "team news"
-   ],
-   "spelers": []
-  },
-  {
    "titel": "Erling Haaland told he must leave Man City for Premier League rivals in January",
    "link": "https://talksport.com/football/4647245/erling-haaland-man-city-arsenal-transfer-january/",
    "beeld": "",
@@ -785,7 +801,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-16T10:05:47+00:00",
-   "score": 14.7,
+   "score": 14.6,
    "signalen": [],
    "spelers": [
     {
@@ -797,6 +813,21 @@
    ]
   },
   {
+   "titel": "Who is the best captain for FPL Gameweek 7?",
+   "link": "https://www.fantasyfootballscout.co.uk/2026/10/16/who-is-the-best-captain-for-fpl-gameweek-7-5",
+   "beeld": "",
+   "samenvatting": "We consult the Opta stats, Rate My Team and more The post Who is the best captain for FPL Gameweek 7? appeared first on Best FPL Tips, Advice, Team News, Picks, and Statistics from Fantasy Football Scout.",
+   "bron": "Fantasy Football Scout",
+   "soort": "fpl",
+   "datum": "2026-10-16T09:45:00+00:00",
+   "score": 14.5,
+   "signalen": [
+    "captain",
+    "team news"
+   ],
+   "spelers": []
+  },
+  {
    "titel": "FPL General’s Gameweek 7 team reveal",
    "link": "https://www.fantasyfootballscout.co.uk/2026/10/16/fpl-generals-gameweek-7-team-reveal-2",
    "beeld": "",
@@ -804,11 +835,32 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-16T21:00:00+00:00",
-   "score": 14.5,
+   "score": 14.4,
    "signalen": [
     "team news"
    ],
    "spelers": []
+  },
+  {
+   "titel": "Ainsley Maitland-Niles among multiple Premier League stars who refuse to take the knee",
+   "link": "https://talksport.com/football/4650028/everton-ainsley-maitland-niles-knee-chelsea/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-10-17T12:24:45+00:00",
+   "score": 14.0,
+   "signalen": [
+    "knee"
+   ],
+   "spelers": [
+    {
+     "n": "Maitland-Niles",
+     "t": "EVE",
+     "p": "DEF",
+     "mijn": false
+    }
+   ]
   },
   {
    "titel": "Man City's Maresca 'very happy' after Ipswich win",
@@ -818,7 +870,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-17T17:08:01+00:00",
-   "score": 13.9,
+   "score": 13.8,
    "signalen": [
     "manager"
    ],
@@ -840,7 +892,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-16T16:30:00+00:00",
-   "score": 13.8,
+   "score": 13.6,
    "signalen": [
     "team news"
    ],
@@ -854,7 +906,7 @@
    "bron": "Voetbal International",
    "soort": "nl",
    "datum": "2026-10-17T16:26:42+02:00",
-   "score": 13.4,
+   "score": 13.3,
    "signalen": [
     "captain"
    ],
@@ -869,14 +921,14 @@
    "beeld_bron": "https://webp.vi.cdn.pxr.nl/news/2026/10/17/dcd6afb0077be1c651eb682b03c42fbc864e5940.jpg?width=1200"
   },
   {
-   "titel": "Liverpool suffer cruel double injury blow in cagey Brentford clash",
-   "link": "https://talksport.com/football/4650442/dominik-szoboszlai-injury-liverpool-brentford/",
+   "titel": "Andoni Iraola gives worrying update as Liverpool suffer double injury blow at Brentford",
+   "link": "https://talksport.com/football/4650442/dominik-szoboszlai-jeremie-frimpong-injury-update-liverpool-brentford/",
    "beeld": "",
    "samenvatting": "",
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-17T14:47:59+00:00",
-   "score": 12.5,
+   "score": 12.4,
    "signalen": [
     "injury"
    ],
@@ -890,7 +942,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-16T07:30:00+00:00",
-   "score": 12.3,
+   "score": 12.1,
    "signalen": [
     "team news"
    ],
@@ -916,6 +968,26 @@
    ]
   },
   {
+   "titel": "Uitgerekend man van het moment Manzambi helpt Villa aan zege op Newcastle",
+   "link": "https://www.vi.nl/nieuws/uitgerekend-man-van-het-moment-manzambi-helpt-villa-aan-zege-op-newcastle",
+   "beeld": "",
+   "samenvatting": "In de middenmoot van de Premier League heeft Aston Villa zaterdag een zwaarbevochten zege geboekt op Newcastle United. Uitgerekend Johan Manzambi maakte de enige goal.",
+   "bron": "Voetbal International",
+   "soort": "nl",
+   "datum": "2026-10-17T20:30:00+02:00",
+   "score": 12.0,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Manzambi",
+     "t": "AVL",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://webp.vi.cdn.pxr.nl/news/2026/10/17/a20eb3aed19ad94d9ab5629a50804ce958dc0813.jpg?width=1200"
+  },
+  {
    "titel": "Sorry Derby beaten at home by Stoke",
    "link": "https://www.skysports.com/football/derby-county-vs-stoke-city/report/560621",
    "beeld": "",
@@ -923,7 +995,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-17T17:15:00+00:00",
-   "score": 11.9,
+   "score": 11.8,
    "signalen": [],
    "spelers": [
     {
@@ -943,7 +1015,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-17T17:15:00+00:00",
-   "score": 11.9,
+   "score": 11.8,
    "signalen": [],
    "spelers": [
     {
@@ -956,6 +1028,25 @@
    "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/skysports-liam-millar-birmingham_7379038.jpg?20261017160814"
   },
   {
+   "titel": "Enzo Maresca&#8217;s eerie prediction comes true as Man City boss makes Premier League history",
+   "link": "https://talksport.com/football/4650604/phil-foden-scores-enzo-maresca-man-city-history/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-10-17T17:25:53+00:00",
+   "score": 11.8,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Enzo",
+     "t": "MCI",
+     "p": "MID",
+     "mijn": false
+    }
+   ]
+  },
+  {
    "titel": "Premier League: 10 things to look out for this weekend",
    "link": "https://www.theguardian.com/football/2026/oct/16/premier-league-10-things-to-look-out-for-this-weekend",
    "beeld": "",
@@ -963,7 +1054,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-10-15T23:01:44+00:00",
-   "score": 11.9,
+   "score": 11.7,
    "signalen": [
     "out for",
     "rest"
@@ -979,25 +1070,6 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/9715176d9862ff937010b6d6e3a0093ce5eee2c8/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=bcddecdd531239a19d5f93291ba6ec21"
   },
   {
-   "titel": "Enzo Maresca&#8217;s eerie prediction comes true as Man City boss makes Premier League history",
-   "link": "https://talksport.com/football/4650604/phil-foden-scores-enzo-maresca-man-city-history/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-17T17:25:53+00:00",
-   "score": 11.9,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Enzo",
-     "t": "MCI",
-     "p": "MID",
-     "mijn": false
-    }
-   ]
-  },
-  {
    "titel": "Chelsea's Martinez taken to hospital for 'precautionary tests'",
    "link": "https://www.bbc.co.uk/sport/football/articles/c6rryqq00yp4o?at_medium=RSS&at_campaign=rss",
    "beeld": "",
@@ -1005,7 +1077,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-17T16:02:31+00:00",
-   "score": 11.7,
+   "score": 11.6,
    "signalen": [],
    "spelers": [
     {
@@ -1025,7 +1097,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-17T15:10:13+00:00",
-   "score": 11.6,
+   "score": 11.4,
    "signalen": [],
    "spelers": [
     {
@@ -1044,7 +1116,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-17T14:21:32+00:00",
-   "score": 11.4,
+   "score": 11.3,
    "signalen": [
     "ban"
    ],
@@ -1058,7 +1130,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-17T13:39:16+00:00",
-   "score": 11.3,
+   "score": 11.2,
    "signalen": [],
    "spelers": [
     {
@@ -1078,7 +1150,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-17T13:19:02+00:00",
-   "score": 11.3,
+   "score": 11.1,
    "signalen": [],
    "spelers": [
     {
@@ -1146,7 +1218,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-17T17:15:00+00:00",
-   "score": 10.9,
+   "score": 10.8,
    "signalen": [
     "comeback"
    ],
@@ -1161,54 +1233,12 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-17T16:50:00+00:00",
-   "score": 10.8,
+   "score": 10.7,
    "signalen": [
     "return"
    ],
    "spelers": [],
    "beeld_bron": "https://e0.365dm.com/26/10/1920x1080/skysports-ayoub-mouloua-aberdeen_7379197.jpg?20261017173307"
-  },
-  {
-   "titel": "Everton player refuses to take the knee before Chelsea clash",
-   "link": "https://talksport.com/football/4650028/everton-ainsley-maitland-niles-knee-chelsea/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-17T12:24:45+00:00",
-   "score": 10.1,
-   "signalen": [
-    "knee"
-   ],
-   "spelers": []
-  },
-  {
-   "titel": "Man Utd a circus after Martinez comments - Keane",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c3n04gy12r91o?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Lisandro Martinez's outburst shows Manchester United are in \"chaos\", says former captain Roy Keane.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-10-15T10:57:15+00:00",
-   "score": 10,
-   "signalen": [
-    "captain"
-   ],
-   "spelers": [
-    {
-     "n": "Martinez",
-     "t": "MUN",
-     "p": "DEF",
-     "mijn": false
-    },
-    {
-     "n": "Keane",
-     "t": "EVE",
-     "p": "DEF",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4964/live/e36c9e90-c888-11f1-bc2e-018d645d8d21.jpg"
   },
   {
    "titel": "Transfer notebook: Thomas Frank lined up for Premier League return after eight months out",
@@ -1240,7 +1270,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-17T17:15:00+00:00",
-   "score": 9.9,
+   "score": 9.8,
    "signalen": [
     "rest"
    ],
@@ -1255,7 +1285,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-17T16:48:52+00:00",
-   "score": 9.8,
+   "score": 9.7,
    "signalen": [
     "manager"
    ],
@@ -1270,7 +1300,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-17T14:53:23+00:00",
-   "score": 9.5,
+   "score": 9.4,
    "signalen": [
     "manager"
    ],
@@ -1285,7 +1315,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-16T20:45:57+00:00",
-   "score": 9.5,
+   "score": 9.4,
    "signalen": [
     "manager",
     "sack"
@@ -1323,32 +1353,13 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-16T21:47:52+00:00",
-   "score": 8.7,
+   "score": 8.5,
    "signalen": [],
    "spelers": [
     {
      "n": "Barcola",
      "t": "LIV",
      "p": "MID",
-     "mijn": false
-    }
-   ]
-  },
-  {
-   "titel": "Why Arsenal were forced to take team photo without William Saliba as Mikel Arteta issues re-take update",
-   "link": "https://talksport.com/football/4649344/arsenal-team-photo-missing-william-saliba-explained-mikel-arteta/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-16T18:12:26+00:00",
-   "score": 8.1,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Saliba",
-     "t": "ARS",
-     "p": "DEF",
      "mijn": false
     }
    ]
