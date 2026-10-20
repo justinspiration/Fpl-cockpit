@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-10-20 06:35:01",
- "_copilot_bijgewerkt": "Updated 3 hours ago",
- "_copilot_moment": "2026-10-20 03:35:01",
+ "_opgehaald": "2026-10-20 10:00:02",
+ "_copilot_bijgewerkt": "Updated an hour ago",
+ "_copilot_moment": null,
  "_start_gw": 8,
  "_horizon": 8,
  "_overgeslagen": [
@@ -511,15 +511,15 @@
    "pos": "MID"
   },
   {
-   "n": "Matheus N.",
-   "pos": "MID"
-  },
-  {
    "n": "White",
    "pos": "MID"
   },
   {
    "n": "Kerkez",
+   "pos": "MID"
+  },
+  {
+   "n": "Matheus N.",
    "pos": "MID"
   },
   {
@@ -1459,15 +1459,15 @@
    "pos": "MID"
   },
   {
+   "n": "Cherki",
+   "pos": "FWD"
+  },
+  {
    "n": "Palmer",
    "pos": "FWD"
   },
   {
    "n": "Saka",
-   "pos": "FWD"
-  },
-  {
-   "n": "Cherki",
    "pos": "FWD"
   },
   {
@@ -1887,10 +1887,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Matheus N.",
-   "pos": "FWD"
-  },
-  {
    "n": "White",
    "pos": "FWD"
   },
@@ -1900,6 +1896,10 @@
   },
   {
    "n": "Ampadu",
+   "pos": "FWD"
+  },
+  {
+   "n": "Matheus N.",
    "pos": "FWD"
   },
   {
@@ -6673,31 +6673,6 @@
     64
    ]
   },
-  "389": {
-   "n": "Matheus N.",
-   "t": "MCI",
-   "p": "DEF",
-   "gw": [
-    2.1,
-    2.6,
-    3.3,
-    3.6,
-    2.5,
-    3.6,
-    3,
-    3.1
-   ],
-   "mn": [
-    56,
-    67,
-    81,
-    81,
-    81,
-    81,
-    81,
-    81
-   ]
-  },
   "10": {
    "n": "White",
    "t": "ARS",
@@ -6746,6 +6721,31 @@
     82,
     82,
     82
+   ]
+  },
+  "389": {
+   "n": "Matheus N.",
+   "t": "MCI",
+   "p": "DEF",
+   "gw": [
+    2,
+    2.6,
+    3.3,
+    3.6,
+    2.5,
+    3.6,
+    3,
+    3.1
+   ],
+   "mn": [
+    52,
+    66,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81
    ]
   },
   "536": {
@@ -11098,6 +11098,31 @@
     null
    ]
   },
+  "399": {
+   "n": "Cherki",
+   "t": "MCI",
+   "p": "MID",
+   "gw": [
+    6.3,
+    6.4,
+    6,
+    7,
+    4.4,
+    6.3,
+    5.9,
+    6.1
+   ],
+   "mn": [
+    85,
+    85,
+    85,
+    85,
+    85,
+    85,
+    85,
+    85
+   ]
+  },
   "154": {
    "n": "Palmer",
    "t": "CHE",
@@ -11136,31 +11161,6 @@
     5.4,
     5.5,
     6.1
-   ],
-   "mn": [
-    78,
-    78,
-    78,
-    78,
-    78,
-    78,
-    78,
-    78
-   ]
-  },
-  "399": {
-   "n": "Cherki",
-   "t": "MCI",
-   "p": "MID",
-   "gw": [
-    5.8,
-    5.9,
-    5.5,
-    6.4,
-    4.1,
-    5.8,
-    5.4,
-    5.6
    ],
    "mn": [
     78,
