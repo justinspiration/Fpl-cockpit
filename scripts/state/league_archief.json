@@ -10122,19 +10122,15 @@
      "manager": "Roy Van Den Akker",
      "ik": false,
      "chip": "3xc",
-     "punten": 74,
+     "punten": 83,
      "straf": 0,
      "transfers": 2,
      "waarde": 103.1,
      "bank": 0.1,
      "cap": 411,
      "vice": 115,
-     "autosub_uit": [
-      399
-     ],
-     "autosub_in": [
-      496
-     ],
+     "autosub_uit": [],
+     "autosub_in": [],
      "picks": [
       {
        "id": 109,
@@ -10144,16 +10140,6 @@
        "basis": true,
        "cap": false,
        "pt": 6,
-       "min": 90
-      },
-      {
-       "id": 112,
-       "n": "Van Hecke",
-       "t": "TOT",
-       "p": "DEF",
-       "basis": true,
-       "cap": false,
-       "pt": 4,
        "min": 90
       },
       {
@@ -10177,6 +10163,26 @@
        "min": 90
       },
       {
+       "id": 112,
+       "n": "Van Hecke",
+       "t": "TOT",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 4,
+       "min": 90
+      },
+      {
+       "id": 31,
+       "n": "Konsa",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 9,
+       "min": 90
+      },
+      {
        "id": 154,
        "n": "Palmer",
        "t": "CHE",
@@ -10185,16 +10191,6 @@
        "cap": false,
        "pt": 2,
        "min": 90
-      },
-      {
-       "id": 399,
-       "n": "Cherki",
-       "t": "MCI",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 0,
-       "min": 0
       },
       {
        "id": 124,
@@ -10227,16 +10223,6 @@
        "min": 90
       },
       {
-       "id": 165,
-       "n": "João Pedro",
-       "t": "CHE",
-       "p": "FWD",
-       "basis": true,
-       "cap": false,
-       "pt": 2,
-       "min": 90
-      },
-      {
        "id": 569,
        "n": "Gonzalo",
        "t": "FUL",
@@ -10245,6 +10231,16 @@
        "cap": false,
        "pt": 2,
        "min": 84
+      },
+      {
+       "id": 165,
+       "n": "João Pedro",
+       "t": "CHE",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 90
       },
       {
        "id": 496,
@@ -10257,14 +10253,14 @@
        "min": 90
       },
       {
-       "id": 31,
-       "n": "Konsa",
-       "t": "ARS",
-       "p": "DEF",
+       "id": 399,
+       "n": "Cherki",
+       "t": "MCI",
+       "p": "MID",
        "basis": false,
        "cap": false,
-       "pt": 9,
-       "min": 90
+       "pt": 0,
+       "min": 0
       },
       {
        "id": 15,
@@ -11309,12 +11305,8 @@
      "bank": 0.5,
      "cap": 411,
      "vice": 399,
-     "autosub_uit": [
-      399
-     ],
-     "autosub_in": [
-      109
-     ],
+     "autosub_uit": [],
+     "autosub_in": [],
      "picks": [
       {
        "id": 496,
@@ -11337,13 +11329,13 @@
        "min": 90
       },
       {
-       "id": 449,
-       "n": "Hall",
-       "t": "NEW",
+       "id": 31,
+       "n": "Konsa",
+       "t": "ARS",
        "p": "DEF",
        "basis": true,
        "cap": false,
-       "pt": 4,
+       "pt": 9,
        "min": 90
       },
       {
@@ -11357,43 +11349,13 @@
        "min": 90
       },
       {
-       "id": 31,
-       "n": "Konsa",
-       "t": "ARS",
+       "id": 449,
+       "n": "Hall",
+       "t": "NEW",
        "p": "DEF",
        "basis": true,
        "cap": false,
-       "pt": 9,
-       "min": 90
-      },
-      {
-       "id": 427,
-       "n": "Mbeumo",
-       "t": "MUN",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 8,
-       "min": 90
-      },
-      {
-       "id": 399,
-       "n": "Cherki",
-       "t": "MCI",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 0,
-       "min": 0
-      },
-      {
-       "id": 154,
-       "n": "Palmer",
-       "t": "CHE",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 2,
+       "pt": 4,
        "min": 90
       },
       {
@@ -11407,13 +11369,33 @@
        "min": 90
       },
       {
-       "id": 464,
-       "n": "Wissa",
-       "t": "NEW",
-       "p": "FWD",
+       "id": 427,
+       "n": "Mbeumo",
+       "t": "MUN",
+       "p": "MID",
        "basis": true,
        "cap": false,
-       "pt": 1,
+       "pt": 8,
+       "min": 90
+      },
+      {
+       "id": 94,
+       "n": "Schade",
+       "t": "BRE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 0,
+       "min": 45
+      },
+      {
+       "id": 154,
+       "n": "Palmer",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
        "min": 90
       },
       {
@@ -11427,6 +11409,16 @@
        "min": 90
       },
       {
+       "id": 464,
+       "n": "Wissa",
+       "t": "NEW",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 1,
+       "min": 90
+      },
+      {
        "id": 109,
        "n": "Verbruggen",
        "t": "BHA",
@@ -11437,14 +11429,14 @@
        "min": 90
       },
       {
-       "id": 94,
-       "n": "Schade",
-       "t": "BRE",
+       "id": 399,
+       "n": "Cherki",
+       "t": "MCI",
        "p": "MID",
        "basis": false,
        "cap": false,
        "pt": 0,
-       "min": 45
+       "min": 0
       },
       {
        "id": 277,
@@ -11474,19 +11466,15 @@
      "manager": "Demio Walberg",
      "ik": false,
      "chip": null,
-     "punten": 68,
+     "punten": 72,
      "straf": 0,
      "transfers": 0,
      "waarde": 101.3,
      "bank": 1.1,
      "cap": 411,
      "vice": 165,
-     "autosub_uit": [
-      480
-     ],
-     "autosub_in": [
-      277
-     ],
+     "autosub_uit": [],
+     "autosub_in": [],
      "picks": [
       {
        "id": 567,
@@ -11529,24 +11517,24 @@
        "min": 90
       },
       {
-       "id": 480,
-       "n": "Gibbs-White",
-       "t": "NFO",
-       "p": "MID",
+       "id": 277,
+       "n": "Egan",
+       "t": "HUL",
+       "p": "DEF",
        "basis": true,
        "cap": false,
-       "pt": 0,
-       "min": 0
+       "pt": 4,
+       "min": 90
       },
       {
-       "id": 12,
-       "n": "Saka",
-       "t": "ARS",
+       "id": 124,
+       "n": "Groß",
+       "t": "BHA",
        "p": "MID",
        "basis": true,
        "cap": false,
-       "pt": 3,
-       "min": 90
+       "pt": 5,
+       "min": 70
       },
       {
        "id": 154,
@@ -11559,14 +11547,14 @@
        "min": 90
       },
       {
-       "id": 124,
-       "n": "Groß",
-       "t": "BHA",
+       "id": 12,
+       "n": "Saka",
+       "t": "ARS",
        "p": "MID",
        "basis": true,
        "cap": false,
-       "pt": 5,
-       "min": 70
+       "pt": 3,
+       "min": 90
       },
       {
        "id": 411,
@@ -11609,14 +11597,14 @@
        "min": 0
       },
       {
-       "id": 277,
-       "n": "Egan",
-       "t": "HUL",
-       "p": "DEF",
+       "id": 480,
+       "n": "Gibbs-White",
+       "t": "NFO",
+       "p": "MID",
        "basis": false,
        "cap": false,
-       "pt": 4,
-       "min": 90
+       "pt": 0,
+       "min": 0
       },
       {
        "id": 474,
@@ -11809,8 +11797,8 @@
      ]
     }
    ],
-   "opgehaald": "2026-10-20T10:00:15+00:00",
-   "voorlopig": true
+   "opgehaald": "2026-10-20T17:32:06+00:00",
+   "voorlopig": false
   }
  },
  "prestatie": {
@@ -11885,7 +11873,7 @@
    "beste_cap": 13
   }
  },
- "_bijgewerkt": "2026-10-20T15:02:15+00:00",
+ "_bijgewerkt": "2026-10-20T17:32:08+00:00",
  "_afgerond": 7,
  "_managers": 10
 }
