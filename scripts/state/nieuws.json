@@ -33,10 +33,10 @@
    "soort": "nl"
   }
  ],
- "_opgehaald": "2026-10-23T05:35:02+00:00",
+ "_opgehaald": "2026-10-23T07:39:58+00:00",
  "_methode": "Berichten uit de laatste 10 dagen, gescoord op blessure- en opstellingswoorden, op vermelde spelers (zwaarder als ze in de selectie zitten) en op versheid. Onder de 5 punten valt af.",
  "_mislukt": [],
- "_aantal": 92,
+ "_aantal": 94,
  "berichten": [
   {
    "titel": "FPL notes: Saka injury “doesn’t look good” + not much rotation",
@@ -46,7 +46,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-22T02:40:00+00:00",
-   "score": 38.5,
+   "score": 38.2,
    "signalen": [
     "injury",
     "rotation",
@@ -78,7 +78,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-22T10:45:00+00:00",
-   "score": 34.9,
+   "score": 34.5,
    "signalen": [
     "team news"
    ],
@@ -114,7 +114,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-23T01:15:00+00:00",
-   "score": 29.3,
+   "score": 28.9,
    "signalen": [
     "team news"
    ],
@@ -138,7 +138,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-22T11:14:18+00:00",
-   "score": 28.9,
+   "score": 28.6,
    "signalen": [
     "available",
     "doubt",
@@ -206,7 +206,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-22T13:00:00+00:00",
-   "score": 22.2,
+   "score": 21.9,
    "signalen": [
     "injury",
     "manager",
@@ -225,7 +225,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-10-22T23:01:52+00:00",
-   "score": 21.9,
+   "score": 21.6,
    "signalen": [
     "out for",
     "rest"
@@ -284,7 +284,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-21T14:15:00+00:00",
-   "score": 20.4,
+   "score": 20.1,
    "signalen": [
     "injury",
     "team news"
@@ -309,7 +309,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-22T17:45:00+00:00",
-   "score": 20.0,
+   "score": 19.7,
    "signalen": [
     "team news"
    ],
@@ -333,7 +333,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-21T22:51:56+00:00",
-   "score": 19.9,
+   "score": 19.5,
    "signalen": [
     "injury"
    ],
@@ -421,7 +421,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-22T21:25:00+00:00",
-   "score": 16.6,
+   "score": 16.3,
    "signalen": [
     "team news"
    ],
@@ -492,7 +492,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-22T15:05:00+00:00",
-   "score": 15.6,
+   "score": 15.2,
    "signalen": [
     "team news"
    ],
@@ -506,11 +506,33 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-22T12:59:18+00:00",
-   "score": 15.2,
+   "score": 14.9,
    "signalen": [
     "team news"
    ],
    "spelers": []
+  },
+  {
+   "titel": "LeBron reacts to Trump criticism as Sixers complete huge comeback",
+   "link": "https://www.skysports.com/nba/news/12040/13602548/lebron-james-donald-trump-accuses-philadelphia-76ers-star-of-moving-during-national-anthem-before-nba-season-opener",
+   "beeld": "",
+   "samenvatting": "Donald Trump lashed out at NBA superstar LeBron James on Thursday for what he called disrespectful behaviour during the playing of the national anthem.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-10-23T06:51:00+00:00",
+   "score": 14.9,
+   "signalen": [
+    "comeback"
+   ],
+   "spelers": [
+    {
+     "n": "James",
+     "t": "LEE",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://e0.365dm.com/26/10/1920x1080/skysports-james-sixers_7384280.jpg?20261023070005"
   },
   {
    "titel": "PL Predictions: Delap's Ipswich reunion to get feisty",
@@ -520,7 +542,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-22T23:30:00+00:00",
-   "score": 15.0,
+   "score": 14.6,
    "signalen": [],
    "spelers": [
     {
@@ -537,44 +559,6 @@
     }
    ],
    "beeld_bron": "https://e2.365dm.com/26/08/1920x1080/skysports-premier-league-predictions_7326761.jpg?20260820172933"
-  },
-  {
-   "titel": "Palace latest: Sage chuffed for Mateta after goal on return to line-up",
-   "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-10-22T23:30:00+00:00",
-   "score": 14.0,
-   "signalen": [
-    "return"
-   ],
-   "spelers": [
-    {
-     "n": "Mateta",
-     "t": "CRY",
-     "p": "FWD",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://e2.365dm.com/26/08/1920x1080/skysports-crystal-palace-club_7326697.jpg?20260820165235"
-  },
-  {
-   "titel": "Fabian Hurzeler not interested in Man United job if Michael Carrick is sacked",
-   "link": "https://talksport.com/football/4660428/fabian-hurzeler-not-interested-manchester-united-michael-carrick/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-22T11:34:25+00:00",
-   "score": 14.0,
-   "signalen": [
-    "rest",
-    "rested",
-    "sack"
-   ],
-   "spelers": []
   },
   {
    "titel": "Reece James forced to undergo surgery as Chelsea star suffers another injury",
@@ -599,6 +583,44 @@
    ]
   },
   {
+   "titel": "Fabian Hurzeler not interested in Man United job if Michael Carrick is sacked",
+   "link": "https://talksport.com/football/4660428/fabian-hurzeler-not-interested-manchester-united-michael-carrick/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-10-22T11:34:25+00:00",
+   "score": 13.7,
+   "signalen": [
+    "rest",
+    "rested",
+    "sack"
+   ],
+   "spelers": []
+  },
+  {
+   "titel": "Palace latest: Sage chuffed for Mateta after goal on return to line-up",
+   "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-10-22T23:30:00+00:00",
+   "score": 13.6,
+   "signalen": [
+    "return"
+   ],
+   "spelers": [
+    {
+     "n": "Mateta",
+     "t": "CRY",
+     "p": "FWD",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://e2.365dm.com/26/08/1920x1080/skysports-crystal-palace-club_7326697.jpg?20260820165235"
+  },
+  {
    "titel": "Graeme Souness warned he could damage reputation as pundit over Bukayo Saka cheat claims",
    "link": "https://talksport.com/football/4658065/graeme-souness-damaged-reputation-bukayo-saka-cheat/",
    "beeld": "",
@@ -606,7 +628,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-21T14:27:47+00:00",
-   "score": 13.5,
+   "score": 13.1,
    "signalen": [],
    "spelers": [
     {
@@ -625,7 +647,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-21T23:00:00+00:00",
-   "score": 12.9,
+   "score": 12.6,
    "signalen": [
     "team news"
    ],
@@ -639,26 +661,31 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-21T23:00:00+00:00",
-   "score": 12.9,
+   "score": 12.6,
    "signalen": [
     "team news"
    ],
    "spelers": []
   },
   {
-   "titel": "Verstappen criticises 'unacceptable' COTA surface amid concerns over injury",
-   "link": "https://www.skysports.com/f1/news/12040/13602372/max-verstappen-red-bull-driver-hits-out-at-unacceptable-bumpy-united-states-gp-surface-at-cota-amid-safety-concerns",
+   "titel": "Signs of life finally for Wirtz, but Liverpool still need more from playmaker",
+   "link": "https://www.skysports.com/football/news/12040/13602355/florian-wirtz-is-finally-showing-signs-of-life-at-liverpool-but-andoni-iraola-still-needs-more-from-his-116m-playmaker",
    "beeld": "",
-   "samenvatting": "Max Verstappen revealed concerns over the state of his spine as he unleashed a scathing criticism of the \"out of control\" bumpy track surface at Circuit of The Americas.",
+   "samenvatting": "Florian Wirtz produced one of his most impressive displays in a Liverpool shirt last weekend at Brentford, but Andoni Iraola needs his No 10 to keep sparkling with the Reds now facing three crucial tests at home that will tell us a lot more about where his gam",
    "bron": "Sky Sports",
    "soort": "algemeen",
-   "datum": "2026-10-23T00:00:00+00:00",
+   "datum": "2026-10-23T08:00:00+00:00",
    "score": 12.1,
-   "signalen": [
-    "injury"
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Wirtz",
+     "t": "LIV",
+     "p": "MID",
+     "mijn": false
+    }
    ],
-   "spelers": [],
-   "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/skysports-max-verstappen-red-bull_7384210.jpg?20261023000829"
+   "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/skysports-premier-league-liverpool_7383847.jpg?20261022162835"
   },
   {
    "titel": "Liverpool come from behind to beat nine-man Brentford",
@@ -687,48 +714,6 @@
     }
    ],
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d2c2/live/26507ec0-ca50-11f1-bc2e-018d645d8d21.jpg"
-  },
-  {
-   "titel": "Mbeumo offers Carrick solace as Man Utd winless run goes on",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c699zmgmx9vzo?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Michael Carrick said he had his headphones on this week so didn't hear the noise around Manchester United, but a 1-1 draw at Leeds means it is six games without a win.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-10-18T17:24:45+00:00",
-   "score": 12,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Mbeumo",
-     "t": "MUN",
-     "p": "MID",
-     "mijn": true
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5f58/live/5e6a76a0-cb25-11f1-a64c-550be9e3c66b.jpg"
-  },
-  {
-   "titel": "'Need to move on together' - Fernandes to remain captain despite Carrick criticism",
-   "link": "https://www.skysports.com/watch/video/13602411/bruno-fernandes-to-remain-captain-despite-clash-with-michael-carrick",
-   "beeld": "",
-   "samenvatting": "Rob Dorsett and Alan Pardew give their thoughts on Bruno Fernandes remaining Manchester United captain despite him calling out Michael Carrick’s tactical approach against Como.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-10-22T17:44:00+00:00",
-   "score": 12.0,
-   "signalen": [
-    "captain"
-   ],
-   "spelers": [
-    {
-     "n": "Fernandes",
-     "t": "TOT",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/skysports-football-manchester-united_7383950.jpg?20261022174649"
   },
   {
    "titel": "Thomas Tuchel&#8217;s long-time assistant Anthony Barry could land Premier League job",
@@ -807,7 +792,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-21T16:35:00+00:00",
-   "score": 11.8,
+   "score": 11.5,
    "signalen": [
     "team news"
    ],
@@ -821,7 +806,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-22T10:15:28+00:00",
-   "score": 11.8,
+   "score": 11.4,
    "signalen": [
     "transfer"
    ],
@@ -842,7 +827,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-22T15:41:33+00:00",
-   "score": 11.7,
+   "score": 11.3,
    "signalen": [
     "deal"
    ],
@@ -856,6 +841,21 @@
    ]
   },
   {
+   "titel": "Reporter Notebook: No panic stations at Sunderland despite tough start",
+   "link": "https://www.skysports.com/football/news/12040/13602265/sunderland-reporter-notebook-no-panic-for-regis-le-bris-side-despite-sitting-bottom-of-premier-league-table",
+   "beeld": "",
+   "samenvatting": "It's certainly been a different start to the season for Sunderland compared to last year, when they flew out of the traps on their Premier League return and went months without a home league defeat.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-10-23T08:00:00+00:00",
+   "score": 11.1,
+   "signalen": [
+    "return"
+   ],
+   "spelers": [],
+   "beeld_bron": "https://e2.365dm.com/26/10/1920x1080/skysports-premier-league-reporter-notebook_7383785.jpg?20261022152751"
+  },
+  {
    "titel": "How to follow Manchester United vs Bournemouth on talkSPORT plus team news as Michael Carrick hangs onto job",
    "link": "https://talksport.com/football/4660691/where-to-watch-manchester-united-vs-bournemouth-carrick/",
    "beeld": "",
@@ -863,7 +863,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-22T14:26:17+00:00",
-   "score": 11.5,
+   "score": 11.1,
    "signalen": [
     "team news"
    ],
@@ -877,7 +877,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-22T13:02:05+00:00",
-   "score": 11.2,
+   "score": 10.9,
    "signalen": [
     "team news"
    ],
@@ -891,7 +891,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-22T23:50:00+00:00",
-   "score": 11.0,
+   "score": 10.7,
    "signalen": [],
    "spelers": [
     {
@@ -911,7 +911,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-22T22:00:00+00:00",
-   "score": 10.7,
+   "score": 10.4,
    "signalen": [],
    "spelers": [
     {
@@ -931,7 +931,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-22T22:00:00+00:00",
-   "score": 10.7,
+   "score": 10.4,
    "signalen": [],
    "spelers": [
     {
@@ -951,7 +951,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-22T21:40:00+00:00",
-   "score": 10.7,
+   "score": 10.3,
    "signalen": [],
    "spelers": [
     {
@@ -962,64 +962,6 @@
     }
    ],
    "beeld_bron": "https://e2.365dm.com/26/10/1920x1080/skysports-lewis-hamilton-ferrari_7384150.jpg?20261022213730"
-  },
-  {
-   "titel": "Dominant Sunderland punished as Bengtsson earns Lech draw",
-   "link": "https://www.skysports.com/football/lech-poznan-vs-sunderland/report/577787",
-   "beeld": "",
-   "samenvatting": "Timur Tutierov's first Sunderland goal was not enough to earn the victory they deserved in Poland as their wastefulness was punished in a 1-1 draw at lowly Lech Poznan.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-10-22T19:45:00+00:00",
-   "score": 10.4,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Tutierov",
-     "t": "SUN",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/skysports-sunderland-luke-onien_7384012.jpg?20261022184123"
-  },
-  {
-   "titel": "Troy Deeney: Michael Carrick allowed Bruno Fernandes to disrespect him with this costly mistake",
-   "link": "https://talksport.com/football/4661619/troy-deeney-man-utd-michael-carrick-bruno-fernandes-interview/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-22T19:12:47+00:00",
-   "score": 10.3,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Fernandes",
-     "t": "TOT",
-     "p": "MID",
-     "mijn": false
-    }
-   ]
-  },
-  {
-   "titel": "Lisandro Martinez and £50m player get brutal 2/10 ratings as Man United squad slated for nightmare start",
-   "link": "https://talksport.com/football/4661443/man-utd-player-ratings-analysis/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-22T17:39:20+00:00",
-   "score": 10.0,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Martinez",
-     "t": "MUN",
-     "p": "DEF",
-     "mijn": false
-    }
-   ]
   },
   {
    "titel": "Duncan Ferguson reveals text to Premier League boss for transfer help after surprise management return",
@@ -1059,6 +1001,59 @@
    "spelers": []
   },
   {
+   "titel": "Troy Deeney: Michael Carrick allowed Bruno Fernandes to disrespect him with this costly mistake",
+   "link": "https://talksport.com/football/4661619/troy-deeney-man-utd-michael-carrick-bruno-fernandes-interview/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-10-22T19:12:47+00:00",
+   "score": 9.9,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Fernandes",
+     "t": "TOT",
+     "p": "MID",
+     "mijn": false
+    }
+   ]
+  },
+  {
+   "titel": "Pionier in het paradijs",
+   "link": "https://www.vi.nl/pro/toen-arnold-muhren-nederlanders-populair-maakte-in-engeland",
+   "beeld": "",
+   "samenvatting": "Ruim veertig jaar geleden was het Engelse topvoetbal nog niet bezoedeld door buitenlandse miljarden. Het was de tijd dat elke club kans had op succes. Modale clubs als Nottingham Forest en Aston Villa konden kampioen en Europa Cup I-winnaar worden. In 1978 wer",
+   "bron": "Voetbal International",
+   "soort": "nl",
+   "datum": "2026-10-23T09:00:00+02:00",
+   "score": 9.9,
+   "signalen": [
+    "rest"
+   ],
+   "spelers": [],
+   "beeld_bron": "https://webp.vi.cdn.pxr.nl/news/2026/10/19/d98c587e4ebd2e04775b4eeb2e1edd1d9b33c70c.jpg?width=1200"
+  },
+  {
+   "titel": "Lisandro Martinez and £50m player get brutal 2/10 ratings as Man United squad slated for nightmare start",
+   "link": "https://talksport.com/football/4661443/man-utd-player-ratings-analysis/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-10-22T17:39:20+00:00",
+   "score": 9.7,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Martinez",
+     "t": "MUN",
+     "p": "DEF",
+     "mijn": false
+    }
+   ]
+  },
+  {
    "titel": "Brentford latest: Andrews ready for trip to 'very impressive' Hull on Sunday",
    "link": "https://www.skysports.com/football/live-blog/12040/13279280/brentford-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
    "beeld": "",
@@ -1066,7 +1061,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-22T17:01:00+00:00",
-   "score": 9.9,
+   "score": 9.6,
    "signalen": [],
    "spelers": [
     {
@@ -1086,27 +1081,12 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-21T21:11:50+00:00",
-   "score": 9.6,
+   "score": 9.3,
    "signalen": [
     "manager",
     "out for"
    ],
    "spelers": []
-  },
-  {
-   "titel": "Papers: Man Utd draw up five-man shortlist to replace Carrick",
-   "link": "https://www.skysports.com/football/news/12040/13602435/manchester-united-draw-up-five-man-shortlist-to-replace-michael-carrick-paper-talk",
-   "beeld": "",
-   "samenvatting": "The top stories and transfer rumours from Friday's newspapers...",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-10-22T18:49:00+00:00",
-   "score": 9.2,
-   "signalen": [
-    "transfer"
-   ],
-   "spelers": [],
-   "beeld_bron": "https://e2.365dm.com/26/08/1920x1080/skysports-paper-talk-football_7317647.jpg?20260809160824"
   },
   {
    "titel": "Liverpool players in 'delicate' situation with 'demanding' schedule - Iraola",
@@ -1197,19 +1177,19 @@
    ]
   },
   {
-   "titel": "'A lot of points to play for' | Celtic's O'Neill still confident of EL progession",
-   "link": "https://www.skysports.com/watch/video/13602514/celtic-martin-oneill-confident-of-europa-league-progression-despite-celta-vigo-defeat-a-lot-of-points-to-play-for",
+   "titel": "Papers: Man Utd draw up five-man shortlist to replace Carrick",
+   "link": "https://www.skysports.com/football/news/12040/13602435/manchester-united-draw-up-five-man-shortlist-to-replace-michael-carrick-paper-talk",
    "beeld": "",
-   "samenvatting": "Celtic manager Martin O'Neill believes they can still progress in the Europa League despite Celta Vigo inflicting their third straight defeat in this season's tournament.",
+   "samenvatting": "The top stories and transfer rumours from Friday's newspapers...",
    "bron": "Sky Sports",
    "soort": "algemeen",
-   "datum": "2026-10-22T22:44:00+00:00",
+   "datum": "2026-10-22T18:49:00+00:00",
    "score": 8.9,
    "signalen": [
-    "manager"
+    "transfer"
    ],
    "spelers": [],
-   "beeld_bron": "https://e2.365dm.com/26/10/1920x1080/skysports-celtic-martin-oneill_7384187.jpg?20261022225517"
+   "beeld_bron": "https://e2.365dm.com/26/08/1920x1080/skysports-paper-talk-football_7317647.jpg?20260809160824"
   },
   {
    "titel": "Kyle Walker urges Marcus Rashford to adapt to new position to get in England side",
@@ -1219,7 +1199,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-22T09:32:38+00:00",
-   "score": 8.7,
+   "score": 8.3,
    "signalen": [],
    "spelers": [
     {
@@ -1231,20 +1211,6 @@
    ]
   },
   {
-   "titel": "&#8216;No messing about&#8217; &#8211; Ex-Premier League manager is the perfect successor to Michael Carrick at Manchester United",
-   "link": "https://talksport.com/football/4661626/man-united-next-manager-eddie-howe-michael-carrick/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-22T20:41:05+00:00",
-   "score": 8.5,
-   "signalen": [
-    "manager"
-   ],
-   "spelers": []
-  },
-  {
    "titel": "Fernandes rounds on Carrick after Man Utd humiliation",
    "link": "https://www.bbc.co.uk/sport/football/articles/cq74pjn80x4wo?at_medium=RSS&at_campaign=rss",
    "beeld": "",
@@ -1252,7 +1218,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-21T19:59:30+00:00",
-   "score": 8.4,
+   "score": 8.1,
    "signalen": [
     "captain"
    ],
@@ -1267,31 +1233,17 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b893/live/0c5d23f0-cda3-11f1-a307-df5709f146ff.jpg"
   },
   {
-   "titel": "Hrgovic on course for title defence in Croatia before Dubois unification",
-   "link": "https://www.skysports.com/boxing/news/12040/13602405/filip-hrgovic-on-course-for-title-defence-against-frank-sanchez-in-croatia-before-a-unification-with-daniel-dubois",
+   "titel": "Jaissle needs some wins to quieten down the noise at Newcastle",
+   "link": "https://www.skysports.com/football/news/12040/13602481/newcastle-united-reporter-notebook-matthias-jaissle-needs-some-wins-to-quieten-down-the-noise-on-tyneside",
    "beeld": "",
-   "samenvatting": "Filip Hrgovic's hopes of a world title unification fight with Daniel Dubois are on hold as plans are being explored for a homecoming fight in early 2027.",
+   "samenvatting": "In his latest Reporter Notebook, Sky Sports News' Keith Downie looks into what is going wrong at Newcastle United.",
    "bron": "Sky Sports",
    "soort": "algemeen",
-   "datum": "2026-10-23T06:00:00+00:00",
+   "datum": "2026-10-23T08:00:00+00:00",
    "score": 8.1,
    "signalen": [],
    "spelers": [],
-   "beeld_bron": "https://e0.365dm.com/26/08/1920x1080/skysports-filip-hrgovic-moses-itauma_7335409.jpg?20260830081809"
-  },
-  {
-   "titel": "Trent Alexander-Arnold would have to join a different club from Liverpool to seal Premier League return",
-   "link": "https://talksport.com/football/4659893/trent-alexander-arnold-real-madrid-premier-league-return-liverpool/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-22T11:53:23+00:00",
-   "score": 8.1,
-   "signalen": [
-    "return"
-   ],
-   "spelers": []
+   "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/skysports-matthias-jaissle_7375510.jpg?20261012233326"
   },
   {
    "titel": "Webb backs VAR over Botman challenge on Jackson",
@@ -1314,6 +1266,71 @@
     }
    ],
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b0b4/live/e800cc90-cc81-11f1-bed8-c51b95c602ec.jpg"
+  },
+  {
+   "titel": "Evanilson swivels his hips to seal Bournemouth win against 10-man Sunderland",
+   "link": "https://www.theguardian.com/football/2026/oct/18/bournemouth-sunderland-premier-league-match-report",
+   "beeld": "",
+   "samenvatting": "<p>Bournemouth’s, and Marco Rose’s, wait for a Premier League win is over. Sunderland, locked in the bottom three, are becoming this season’s object lesson in travelling too far, too fast.</p><p>Once Kevin Danso was dismissed in the 17th minute for the denial ",
+   "bron": "The Guardian",
+   "soort": "algemeen",
+   "datum": "2026-10-18T15:19:30+00:00",
+   "score": 8,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Evanilson",
+     "t": "BOU",
+     "p": "FWD",
+     "mijn": false
+    },
+    {
+     "n": "Danso",
+     "t": "SUN",
+     "p": "DEF",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://i.guim.co.uk/img/media/42888225105c0a91a8fb048e4c39899295ceab8c/711_0_3750_3000/master/3750.jpg?width=140&quality=85&auto=format&fit=max&s=1c681dac39d69b6343977230e4c9f820"
+  },
+  {
+   "titel": "Gómez halfway-line wondergoal sparks Brighton’s 5-0 thrashing of sorry Crystal Palace",
+   "link": "https://www.theguardian.com/football/2026/oct/18/brighton-crystal-palace-premier-league-match-report",
+   "beeld": "",
+   "samenvatting": "<p>At last, Fabian Hürzeler has the scalp that matters most to all Brighton fans and in humiliating fashion. Diego Gómez’s breathtaking goal-of-the-season contender from the halfway line, à la David Beckham, was the highlight of another hugely impressive perfo",
+   "bron": "The Guardian",
+   "soort": "algemeen",
+   "datum": "2026-10-18T15:06:49+00:00",
+   "score": 8,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Gomez",
+     "t": "LIV",
+     "p": "DEF",
+     "mijn": false
+    },
+    {
+     "n": "David",
+     "t": "BHA",
+     "p": "FWD",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://i.guim.co.uk/img/media/84a7288ef086a56942b4250164cefff00f63da88/530_0_3769_3015/master/3769.jpg?width=140&quality=85&auto=format&fit=max&s=1c1c4d68eb7e9c5f6c9476cc7baed6c9"
+  },
+  {
+   "titel": "Van risée tot reuzendoder: Bournemouth symboliseert Engelse hegemonie",
+   "link": "https://www.vi.nl/nieuws/van-risee-tot-reuzendoder-bournemouth-symboliseert-engelse-hegemonie",
+   "beeld": "",
+   "samenvatting": "Op 25 oktober 2008 verloor AFC Bournemouth thuis van Lincoln City, in een tijd dat de club het faillissement en degradatie uit de League Two maar nipt kon afwenden. Achttien jaar later vernederden The Cherries één van de grootste clubs van Europa op Dean Court",
+   "bron": "Voetbal International",
+   "soort": "nl",
+   "datum": "2026-10-23T08:57:41+02:00",
+   "score": 7.9,
+   "signalen": [],
+   "spelers": [],
+   "beeld_bron": "https://webp.vi.cdn.pxr.nl/news/2026/10/23/ec562e743c819b6d90d581323c3877117c022c04.jpg?width=1200"
   }
  ]
 }
