@@ -1,302 +1,2390 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-10-24 14:29:34",
+ "_opgehaald": "2026-10-24 14:52:22",
  "_copilot_bijgewerkt": "Updated just now",
  "_copilot_moment": null,
  "_start_gw": 9,
  "_horizon": 8,
  "_overgeslagen": [
   {
-   "n": "Raya",
-   "pos": "DEF"
+   "n": "Haaland",
+   "pos": "GKP"
   },
   {
-   "n": "Donnarumma",
-   "pos": "DEF"
+   "n": "B.Fernandes",
+   "pos": "GKP"
   },
   {
-   "n": "Verbruggen",
-   "pos": "DEF"
+   "n": "Mbeumo",
+   "pos": "GKP"
   },
   {
-   "n": "Trafford",
-   "pos": "DEF"
+   "n": "Groß",
+   "pos": "GKP"
   },
   {
-   "n": "Petrović",
-   "pos": "DEF"
+   "n": "Gabriel",
+   "pos": "GKP"
   },
   {
-   "n": "Suzuki",
-   "pos": "DEF"
+   "n": "Dewsbury-Hall",
+   "pos": "GKP"
   },
   {
-   "n": "A.Becker",
-   "pos": "DEF"
+   "n": "Gibbs-White",
+   "pos": "GKP"
   },
   {
-   "n": "Roefs",
-   "pos": "DEF"
+   "n": "João Pedro",
+   "pos": "GKP"
   },
   {
-   "n": "Penders",
-   "pos": "DEF"
+   "n": "Rogers",
+   "pos": "GKP"
   },
   {
-   "n": "Kelleher",
-   "pos": "DEF"
+   "n": "Isak",
+   "pos": "GKP"
   },
   {
-   "n": "Lammens",
-   "pos": "DEF"
+   "n": "Cherki",
+   "pos": "GKP"
   },
   {
-   "n": "Kinsky",
-   "pos": "DEF"
+   "n": "Manzambi",
+   "pos": "GKP"
   },
   {
-   "n": "Pickford",
-   "pos": "DEF"
+   "n": "Barry",
+   "pos": "GKP"
   },
   {
-   "n": "Sels",
-   "pos": "DEF"
+   "n": "Ødegaard",
+   "pos": "GKP"
   },
   {
-   "n": "Leno",
-   "pos": "DEF"
+   "n": "Vuskovic",
+   "pos": "GKP"
   },
   {
-   "n": "Horníček",
-   "pos": "DEF"
+   "n": "Neto",
+   "pos": "GKP"
   },
   {
-   "n": "Tzolakis",
-   "pos": "DEF"
+   "n": "Doku",
+   "pos": "GKP"
   },
   {
-   "n": "Rushworth",
-   "pos": "DEF"
+   "n": "Calafiori",
+   "pos": "GKP"
   },
   {
-   "n": "Walton",
-   "pos": "DEF"
+   "n": "Mukiele",
+   "pos": "GKP"
   },
   {
-   "n": "Benitez",
-   "pos": "DEF"
+   "n": "De Cuyper",
+   "pos": "GKP"
+  },
+  {
+   "n": "Foden",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ndiaye",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gomez",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rayan",
+   "pos": "GKP"
+  },
+  {
+   "n": "Barnes",
+   "pos": "GKP"
+  },
+  {
+   "n": "Evanilson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tavernier",
+   "pos": "GKP"
+  },
+  {
+   "n": "Silva",
+   "pos": "GKP"
+  },
+  {
+   "n": "Thiago",
+   "pos": "GKP"
+  },
+  {
+   "n": "Muharemović",
+   "pos": "GKP"
+  },
+  {
+   "n": "N.Jackson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Van Hecke",
+   "pos": "GKP"
+  },
+  {
+   "n": "Wirtz",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hall",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lacroix",
+   "pos": "GKP"
+  },
+  {
+   "n": "Enciso",
+   "pos": "GKP"
+  },
+  {
+   "n": "Schade",
+   "pos": "GKP"
+  },
+  {
+   "n": "Barcola",
+   "pos": "GKP"
+  },
+  {
+   "n": "Muñoz",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tarkowski",
+   "pos": "GKP"
+  },
+  {
+   "n": "Wissa",
+   "pos": "GKP"
+  },
+  {
+   "n": "E.Le Fée",
+   "pos": "GKP"
+  },
+  {
+   "n": "Konsa",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kostoulas",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rice",
+   "pos": "GKP"
+  },
+  {
+   "n": "Virgil",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hill",
+   "pos": "GKP"
+  },
+  {
+   "n": "Guéhi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gonzalo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Truffert",
+   "pos": "GKP"
+  },
+  {
+   "n": "Murillo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rudoni",
+   "pos": "GKP"
+  },
+  {
+   "n": "Solanke",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ayari",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kudus",
+   "pos": "GKP"
+  },
+  {
+   "n": "Thomas",
+   "pos": "GKP"
+  },
+  {
+   "n": "Xhaka",
+   "pos": "GKP"
+  },
+  {
+   "n": "Iwobi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Stach",
+   "pos": "GKP"
+  },
+  {
+   "n": "Branthwaite",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gakpo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Calvert-Lewin",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mac Allister",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ajer",
+   "pos": "GKP"
+  },
+  {
+   "n": "Jacquet",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tonali",
+   "pos": "GKP"
+  },
+  {
+   "n": "Palacios",
+   "pos": "GKP"
+  },
+  {
+   "n": "Khalaili",
+   "pos": "GKP"
+  },
+  {
+   "n": "Delap",
+   "pos": "GKP"
+  },
+  {
+   "n": "N.Williams",
+   "pos": "GKP"
+  },
+  {
+   "n": "Botman",
+   "pos": "GKP"
+  },
+  {
+   "n": "Schlager",
+   "pos": "GKP"
+  },
+  {
+   "n": "Marmoush",
+   "pos": "GKP"
+  },
+  {
+   "n": "McAtee",
+   "pos": "GKP"
+  },
+  {
+   "n": "Enzo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Janelt",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mykolenko",
+   "pos": "GKP"
+  },
+  {
+   "n": "Garner",
+   "pos": "GKP"
+  },
+  {
+   "n": "Justin",
+   "pos": "GKP"
+  },
+  {
+   "n": "Belloumi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Richards",
+   "pos": "GKP"
+  },
+  {
+   "n": "Elvedi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lewis-Potter",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lindelöf",
+   "pos": "GKP"
+  },
+  {
+   "n": "Maguire",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rúben",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bogle",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tielemans",
+   "pos": "GKP"
+  },
+  {
+   "n": "Robinson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Buendía",
+   "pos": "GKP"
+  },
+  {
+   "n": "Van de Ven",
+   "pos": "GKP"
+  },
+  {
+   "n": "Amad",
+   "pos": "GKP"
+  },
+  {
+   "n": "White",
+   "pos": "GKP"
+  },
+  {
+   "n": "Christie",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ampadu",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kerkez",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kayode",
+   "pos": "GKP"
+  },
+  {
+   "n": "Dalot",
+   "pos": "GKP"
+  },
+  {
+   "n": "Havertz",
+   "pos": "GKP"
+  },
+  {
+   "n": "Anthony",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hinshelwood",
+   "pos": "GKP"
+  },
+  {
+   "n": "Thiaw",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mitchell",
+   "pos": "GKP"
+  },
+  {
+   "n": "F.Kadıoğlu",
+   "pos": "GKP"
+  },
+  {
+   "n": "O'Shea",
+   "pos": "GKP"
+  },
+  {
+   "n": "McGinn",
+   "pos": "GKP"
+  },
+  {
+   "n": "Colwill",
+   "pos": "GKP"
+  },
+  {
+   "n": "Andrés",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kamara",
+   "pos": "GKP"
+  },
+  {
+   "n": "Boscagli",
+   "pos": "GKP"
+  },
+  {
+   "n": "Matheus N.",
+   "pos": "GKP"
+  },
+  {
+   "n": "Affengruber",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gudmundsson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Wharton",
+   "pos": "GKP"
+  },
+  {
+   "n": "L.Miley",
+   "pos": "GKP"
+  },
+  {
+   "n": "Davis",
+   "pos": "GKP"
+  },
+  {
+   "n": "Pinnock",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kamada",
+   "pos": "GKP"
+  },
+  {
+   "n": "Charles",
+   "pos": "GKP"
+  },
+  {
+   "n": "Armstrong",
+   "pos": "GKP"
+  },
+  {
+   "n": "Milenković",
+   "pos": "GKP"
+  },
+  {
+   "n": "O'Reilly",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mings",
+   "pos": "GKP"
+  },
+  {
+   "n": "Thomas-Asante",
+   "pos": "GKP"
+  },
+  {
+   "n": "Reinildo",
+   "pos": "GKP"
+  },
+  {
+   "n": "McBurnie",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bobb",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tanaka",
+   "pos": "GKP"
+  },
+  {
+   "n": "Smith",
+   "pos": "GKP"
+  },
+  {
+   "n": "Diop",
+   "pos": "GKP"
+  },
+  {
+   "n": "Canvot",
+   "pos": "GKP"
+  },
+  {
+   "n": "Cunha",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bassey",
+   "pos": "GKP"
+  },
+  {
+   "n": "Egan",
+   "pos": "GKP"
+  },
+  {
+   "n": "Caicedo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Emersonn",
+   "pos": "GKP"
+  },
+  {
+   "n": "Grealish",
+   "pos": "GKP"
+  },
+  {
+   "n": "Acheampong",
+   "pos": "GKP"
+  },
+  {
+   "n": "Sadiki",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hume",
+   "pos": "GKP"
+  },
+  {
+   "n": "Grimes",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gray",
+   "pos": "GKP"
+  },
+  {
+   "n": "Dunk",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ndoye",
+   "pos": "GKP"
+  },
+  {
+   "n": "Berge",
+   "pos": "GKP"
+  },
+  {
+   "n": "Adams",
+   "pos": "GKP"
+  },
+  {
+   "n": "Timber",
+   "pos": "GKP"
+  },
+  {
+   "n": "Dasilva",
+   "pos": "GKP"
+  },
+  {
+   "n": "Cash",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gvardiol",
+   "pos": "GKP"
+  },
+  {
+   "n": "Castagne",
+   "pos": "GKP"
+  },
+  {
+   "n": "Yeremy",
+   "pos": "GKP"
+  },
+  {
+   "n": "N.Gonzalez",
+   "pos": "GKP"
+  },
+  {
+   "n": "van Ewijk",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gomes",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mateta",
+   "pos": "GKP"
+  },
+  {
+   "n": "Willock",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kroupi.Jr",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ouattara",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ajayi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Minteh",
+   "pos": "GKP"
+  },
+  {
+   "n": "Joelinton",
+   "pos": "GKP"
+  },
+  {
+   "n": "Scott",
+   "pos": "GKP"
+  },
+  {
+   "n": "Strand Larsen",
+   "pos": "GKP"
+  },
+  {
+   "n": "Robertson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kluivert",
+   "pos": "GKP"
+  },
+  {
+   "n": "Anderson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Slater",
+   "pos": "GKP"
+  },
+  {
+   "n": "Maddison",
+   "pos": "GKP"
+  },
+  {
+   "n": "Maitland-Niles",
+   "pos": "GKP"
+  },
+  {
+   "n": "Röhl",
+   "pos": "GKP"
+  },
+  {
+   "n": "Jair Cunha",
+   "pos": "GKP"
+  },
+  {
+   "n": "Saka",
+   "pos": "GKP"
+  },
+  {
+   "n": "Yoro",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gravenberch",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hato",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lerma",
+   "pos": "GKP"
+  },
+  {
+   "n": "O.Dango",
+   "pos": "GKP"
+  },
+  {
+   "n": "Madueke",
+   "pos": "GKP"
+  },
+  {
+   "n": "Thomas",
+   "pos": "GKP"
+  },
+  {
+   "n": "Pedro Porro",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mainoo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Barkley",
+   "pos": "GKP"
+  },
+  {
+   "n": "Awoniyi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bruno G.",
+   "pos": "GKP"
+  },
+  {
+   "n": "Fatawu",
+   "pos": "GKP"
+  },
+  {
+   "n": "Baleba",
+   "pos": "GKP"
+  },
+  {
+   "n": "J.Timber",
+   "pos": "GKP"
+  },
+  {
+   "n": "Damsgaard",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rashford",
+   "pos": "GKP"
+  },
+  {
+   "n": "Osula",
+   "pos": "GKP"
+  },
+  {
+   "n": "Danso",
+   "pos": "GKP"
+  },
+  {
+   "n": "Brobbey",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gallagher",
+   "pos": "GKP"
+  },
+  {
+   "n": "Sávio",
+   "pos": "GKP"
+  },
+  {
+   "n": "Okafor",
+   "pos": "GKP"
+  },
+  {
+   "n": "Cherif",
+   "pos": "GKP"
+  },
+  {
+   "n": "Nketiah",
+   "pos": "GKP"
+  },
+  {
+   "n": "Schuster",
+   "pos": "GKP"
+  },
+  {
+   "n": "Struijk",
+   "pos": "GKP"
+  },
+  {
+   "n": "Van den Berg",
+   "pos": "GKP"
+  },
+  {
+   "n": "Coyle",
+   "pos": "GKP"
+  },
+  {
+   "n": "M.Sangaré",
+   "pos": "GKP"
+  },
+  {
+   "n": "Merino",
+   "pos": "GKP"
+  },
+  {
+   "n": "Araujo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Maatsen",
+   "pos": "GKP"
+  },
+  {
+   "n": "Fernandez-Pardo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gyökeres",
+   "pos": "GKP"
+  },
+  {
+   "n": "Clarke",
+   "pos": "GKP"
+  },
+  {
+   "n": "Touré",
+   "pos": "GKP"
+  },
+  {
+   "n": "Munoz",
+   "pos": "GKP"
+  },
+  {
+   "n": "Florentino",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tzolis",
+   "pos": "GKP"
+  },
+  {
+   "n": "Yalcouyé",
+   "pos": "GKP"
+  },
+  {
+   "n": "Johnson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bouaddi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Nmecha",
+   "pos": "GKP"
+  },
+  {
+   "n": "Cook",
+   "pos": "GKP"
+  },
+  {
+   "n": "George",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gelhardt",
+   "pos": "GKP"
+  },
+  {
+   "n": "Fernandes",
+   "pos": "GKP"
+  },
+  {
+   "n": "Giles",
+   "pos": "GKP"
+  },
+  {
+   "n": "Flemming",
+   "pos": "GKP"
+  },
+  {
+   "n": "Georginio",
+   "pos": "GKP"
+  },
+  {
+   "n": "Meunier",
+   "pos": "GKP"
+  },
+  {
+   "n": "Yirenkyi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Jensen",
+   "pos": "GKP"
+  },
+  {
+   "n": "Andrey Santos",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ngumoha",
+   "pos": "GKP"
+  },
+  {
+   "n": "Philogene",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tosin",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bentancur",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hudson-Odoi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Wan-Bissaka",
+   "pos": "GKP"
+  },
+  {
+   "n": "Sakamoto",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mbaye",
+   "pos": "GKP"
+  },
+  {
+   "n": "N.Angulo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Maeda",
+   "pos": "GKP"
+  },
+  {
+   "n": "Eze",
+   "pos": "GKP"
+  },
+  {
+   "n": "Sessegnon",
+   "pos": "GKP"
+  },
+  {
+   "n": "Diarra",
+   "pos": "GKP"
+  },
+  {
+   "n": "J.Murphy",
+   "pos": "GKP"
+  },
+  {
+   "n": "Yarmoliuk",
+   "pos": "GKP"
+  },
+  {
+   "n": "Isidor",
+   "pos": "GKP"
+  },
+  {
+   "n": "Diouf",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ahanor",
+   "pos": "GKP"
+  },
+  {
+   "n": "Collins",
+   "pos": "GKP"
+  },
+  {
+   "n": "Dedić",
+   "pos": "GKP"
+  },
+  {
+   "n": "Disasi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Nyoni",
+   "pos": "GKP"
+  },
+  {
+   "n": "Goretzka",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mazraoui",
+   "pos": "GKP"
+  },
+  {
+   "n": "Elanga",
+   "pos": "GKP"
+  },
+  {
+   "n": "Khusanov",
+   "pos": "GKP"
+  },
+  {
+   "n": "Alderete",
+   "pos": "GKP"
+  },
+  {
+   "n": "Diomande",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mason-Clark",
+   "pos": "GKP"
+  },
+  {
+   "n": "Chavarria",
+   "pos": "GKP"
+  },
+  {
+   "n": "Koumas",
+   "pos": "GKP"
+  },
+  {
+   "n": "Fofana",
+   "pos": "GKP"
+  },
+  {
+   "n": "Crooks",
+   "pos": "GKP"
+  },
+  {
+   "n": "Alysson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Onyeka",
+   "pos": "GKP"
+  },
+  {
+   "n": "McNeil",
+   "pos": "GKP"
+  },
+  {
+   "n": "Aaronson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hickey",
+   "pos": "GKP"
+  },
+  {
+   "n": "Wood",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mendy",
+   "pos": "GKP"
+  },
+  {
+   "n": "George Hemmings",
+   "pos": "GKP"
+  },
+  {
+   "n": "Dorgu",
+   "pos": "GKP"
+  },
+  {
+   "n": "Zubimendi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kovačić",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rigg",
+   "pos": "GKP"
+  },
+  {
+   "n": "Iroegbunam",
+   "pos": "GKP"
+  },
+  {
+   "n": "Pau",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mitoma",
+   "pos": "GKP"
+  },
+  {
+   "n": "Senesi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Herrington",
+   "pos": "GKP"
+  },
+  {
+   "n": "Fofana",
+   "pos": "GKP"
+  },
+  {
+   "n": "Cho",
+   "pos": "GKP"
+  },
+  {
+   "n": "Morita",
+   "pos": "GKP"
   },
   {
    "n": "Henderson",
-   "pos": "DEF"
+   "pos": "GKP"
   },
   {
-   "n": "Scherpen",
-   "pos": "DEF"
+   "n": "Sarr",
+   "pos": "GKP"
   },
   {
-   "n": "Dubravka",
-   "pos": "DEF"
+   "n": "Hincapie",
+   "pos": "GKP"
   },
   {
-   "n": "M.Bizot",
-   "pos": "DEF"
+   "n": "James",
+   "pos": "GKP"
   },
   {
-   "n": "Pope",
-   "pos": "DEF"
+   "n": "Wieffer",
+   "pos": "GKP"
   },
   {
-   "n": "Darlow",
-   "pos": "DEF"
+   "n": "Norton-Cuffy",
+   "pos": "GKP"
   },
   {
-   "n": "John",
-   "pos": "DEF"
+   "n": "Adli",
+   "pos": "GKP"
   },
   {
-   "n": "Ellborg",
-   "pos": "DEF"
+   "n": "Akpom",
+   "pos": "GKP"
   },
   {
-   "n": "Mamardashvili",
-   "pos": "DEF"
+   "n": "Palestra",
+   "pos": "GKP"
   },
   {
-   "n": "Rulli",
-   "pos": "DEF"
+   "n": "Aina",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lewis-Skelly",
+   "pos": "GKP"
+  },
+  {
+   "n": "Larsson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rodon",
+   "pos": "GKP"
+  },
+  {
+   "n": "O'Nien",
+   "pos": "GKP"
+  },
+  {
+   "n": "Keane",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rodríguez",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hackney",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mount",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gusto",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ahoka",
+   "pos": "GKP"
+  },
+  {
+   "n": "Welbeck",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tel",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lavia",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kulusevski",
+   "pos": "GKP"
+  },
+  {
+   "n": "I.Sangaré",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gomez",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gourna-Douath",
+   "pos": "GKP"
+  },
+  {
+   "n": "Palacios",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tutierov",
+   "pos": "GKP"
+  },
+  {
+   "n": "Vaz",
+   "pos": "GKP"
+  },
+  {
+   "n": "De Ligt",
+   "pos": "GKP"
+  },
+  {
+   "n": "Greaves",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gannon-Doak",
+   "pos": "GKP"
+  },
+  {
+   "n": "Burn",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kevin",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bahoya",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tomiyasu",
+   "pos": "GKP"
+  },
+  {
+   "n": "Simms",
+   "pos": "GKP"
+  },
+  {
+   "n": "Stroud",
+   "pos": "GKP"
+  },
+  {
+   "n": "Andersen",
+   "pos": "GKP"
+  },
+  {
+   "n": "Steur",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tete",
+   "pos": "GKP"
+  },
+  {
+   "n": "Estêvão",
+   "pos": "GKP"
+  },
+  {
+   "n": "Cairney",
+   "pos": "GKP"
+  },
+  {
+   "n": "Livramento",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ekitiké",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bijol",
+   "pos": "GKP"
+  },
+  {
+   "n": "Muniz",
+   "pos": "GKP"
+  },
+  {
+   "n": "Methalie",
+   "pos": "GKP"
+  },
+  {
+   "n": "James",
+   "pos": "GKP"
+  },
+  {
+   "n": "Brooks",
+   "pos": "GKP"
+  },
+  {
+   "n": "Zirkzee",
+   "pos": "GKP"
+  },
+  {
+   "n": "O'Brien",
+   "pos": "GKP"
+  },
+  {
+   "n": "Chilwell",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bergvall",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mfuni",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ballard",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tchaouna",
+   "pos": "GKP"
+  },
+  {
+   "n": "Longstaff",
+   "pos": "GKP"
+  },
+  {
+   "n": "Costinha",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hadjam",
+   "pos": "GKP"
+  },
+  {
+   "n": "Matusiwa",
+   "pos": "GKP"
+  },
+  {
+   "n": "Madjo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Endo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Barco",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hamer",
+   "pos": "GKP"
+  },
+  {
+   "n": "Quenda",
+   "pos": "GKP"
   },
   {
    "n": "Wilson",
-   "pos": "DEF"
+   "pos": "GKP"
   },
   {
-   "n": "Arrizabalaga",
-   "pos": "DEF"
+   "n": "Schär",
+   "pos": "GKP"
   },
   {
-   "n": "Meslier",
-   "pos": "DEF"
+   "n": "Hughes",
+   "pos": "GKP"
   },
   {
-   "n": "Di Gregorio",
-   "pos": "DEF"
+   "n": "Núñez",
+   "pos": "GKP"
   },
   {
-   "n": "Travers",
-   "pos": "DEF"
+   "n": "Mosquera",
+   "pos": "GKP"
   },
   {
-   "n": "Cairns",
-   "pos": "DEF"
+   "n": "Frimpong",
+   "pos": "GKP"
   },
   {
-   "n": "Austin",
-   "pos": "DEF"
+   "n": "Garnacho",
+   "pos": "GKP"
   },
   {
-   "n": "Zetterer",
-   "pos": "DEF"
+   "n": "Ángel",
+   "pos": "GKP"
   },
   {
-   "n": "Steele",
-   "pos": "DEF"
+   "n": "Smith Rowe",
+   "pos": "GKP"
   },
   {
-   "n": "Valdimarsson",
-   "pos": "DEF"
+   "n": "Torp",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kalimuendo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Netz",
+   "pos": "GKP"
+  },
+  {
+   "n": "Heaven",
+   "pos": "GKP"
+  },
+  {
+   "n": "Allan",
+   "pos": "GKP"
+  },
+  {
+   "n": "Dominguez",
+   "pos": "GKP"
+  },
+  {
+   "n": "Jocelin.T",
+   "pos": "GKP"
+  },
+  {
+   "n": "Azeez",
+   "pos": "GKP"
+  },
+  {
+   "n": "Dowman",
+   "pos": "GKP"
+  },
+  {
+   "n": "Jebbison",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tsimikas",
+   "pos": "GKP"
+  },
+  {
+   "n": "Osman",
+   "pos": "GKP"
+  },
+  {
+   "n": "Chiesa",
+   "pos": "GKP"
+  },
+  {
+   "n": "Diakité",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bradley",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ferguson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Tzimas",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gruev",
+   "pos": "GKP"
+  },
+  {
+   "n": "J.Angulo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Talbi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Svoboda",
+   "pos": "GKP"
+  },
+  {
+   "n": "Alcaraz",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bard",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kesler-Hayden",
+   "pos": "GKP"
+  },
+  {
+   "n": "Milambo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Aït-Nouri",
+   "pos": "GKP"
+  },
+  {
+   "n": "Yohanna",
+   "pos": "GKP"
+  },
+  {
+   "n": "J.Cuenca",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bamba",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lewis",
+   "pos": "GKP"
+  },
+  {
+   "n": "Milosavljević",
+   "pos": "GKP"
+  },
+  {
+   "n": "Matazo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Dibling",
+   "pos": "GKP"
+  },
+  {
+   "n": "David",
+   "pos": "GKP"
+  },
+  {
+   "n": "Abraham",
+   "pos": "GKP"
+  },
+  {
+   "n": "Leoni",
+   "pos": "GKP"
+  },
+  {
+   "n": "Nørgaard",
+   "pos": "GKP"
+  },
+  {
+   "n": "Guessand",
+   "pos": "GKP"
+  },
+  {
+   "n": "Chadi Riad",
+   "pos": "GKP"
+  },
+  {
+   "n": "McAteer",
+   "pos": "GKP"
+  },
+  {
+   "n": "Emegha",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bogarde",
+   "pos": "GKP"
+  },
+  {
+   "n": "Henry",
+   "pos": "GKP"
+  },
+  {
+   "n": "McConnell",
+   "pos": "GKP"
+  },
+  {
+   "n": "J.Ramsey",
+   "pos": "GKP"
+  },
+  {
+   "n": "Cresswell",
+   "pos": "GKP"
+  },
+  {
+   "n": "McNair",
+   "pos": "GKP"
+  },
+  {
+   "n": "Taylor",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mehmeti",
+   "pos": "GKP"
+  },
+  {
+   "n": "Osorio",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gozo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Yates",
+   "pos": "GKP"
+  },
+  {
+   "n": "Williams-Barnett",
+   "pos": "GKP"
+  },
+  {
+   "n": "Olusesi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gittens",
+   "pos": "GKP"
+  },
+  {
+   "n": "Furlong",
+   "pos": "GKP"
+  },
+  {
+   "n": "Harwood-Bellis",
+   "pos": "GKP"
+  },
+  {
+   "n": "Vitor Reis",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gboho",
+   "pos": "GKP"
+  },
+  {
+   "n": "Latibeaudiere",
+   "pos": "GKP"
+  },
+  {
+   "n": "Anselmino",
+   "pos": "GKP"
+  },
+  {
+   "n": "Soler",
+   "pos": "GKP"
+  },
+  {
+   "n": "Salia",
+   "pos": "GKP"
+  },
+  {
+   "n": "Graham",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hjertø-Dahl",
+   "pos": "GKP"
+  },
+  {
+   "n": "Amass",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lucky",
+   "pos": "GKP"
+  },
+  {
+   "n": "McAidoo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Wilson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mingueza",
+   "pos": "GKP"
+  },
+  {
+   "n": "Walle Egeli",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lacey",
+   "pos": "GKP"
+  },
+  {
+   "n": "Zambrano",
+   "pos": "GKP"
+  },
+  {
+   "n": "Carvalho",
+   "pos": "GKP"
+  },
+  {
+   "n": "Samba",
+   "pos": "GKP"
+  },
+  {
+   "n": "J.Fletcher",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mouzakitis",
+   "pos": "GKP"
+  },
+  {
+   "n": "Fletcher",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bendito Mantato",
+   "pos": "GKP"
+  },
+  {
+   "n": "O'Riley",
+   "pos": "GKP"
+  },
+  {
+   "n": "Danns",
+   "pos": "GKP"
+  },
+  {
+   "n": "Nicoll-Jazuli",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bidwell",
+   "pos": "GKP"
+  },
+  {
+   "n": "Doucouré",
+   "pos": "GKP"
+  },
+  {
+   "n": "Nunes",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kusi-Asare",
+   "pos": "GKP"
+  },
+  {
+   "n": "Drakes-Thomas",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rowe",
+   "pos": "GKP"
+  },
+  {
+   "n": "Dowell",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ibrahim",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ömür",
+   "pos": "GKP"
+  },
+  {
+   "n": "Thompson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Shepherd",
+   "pos": "GKP"
+  },
+  {
+   "n": "Byfield",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mills",
+   "pos": "GKP"
+  },
+  {
+   "n": "Oriola",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rowswell",
+   "pos": "GKP"
+  },
+  {
+   "n": "Burrowes",
+   "pos": "GKP"
+  },
+  {
+   "n": "Zepa",
+   "pos": "GKP"
+  },
+  {
+   "n": "Braithwaite",
+   "pos": "GKP"
+  },
+  {
+   "n": "Miley",
+   "pos": "GKP"
+  },
+  {
+   "n": "O.Richards",
+   "pos": "GKP"
+  },
+  {
+   "n": "Reed",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lienou",
+   "pos": "GKP"
+  },
+  {
+   "n": "McCarthy",
+   "pos": "GKP"
+  },
+  {
+   "n": "Pivas",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ji-soo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Coppola",
+   "pos": "GKP"
   },
   {
    "n": "King",
-   "pos": "DEF"
+   "pos": "GKP"
   },
   {
-   "n": "Balcombe",
-   "pos": "DEF"
+   "n": "Fredrick",
+   "pos": "GKP"
   },
   {
-   "n": "Lecomte",
-   "pos": "DEF"
+   "n": "Kipré",
+   "pos": "GKP"
   },
   {
-   "n": "Benda",
-   "pos": "DEF"
-  },
-  {
-   "n": "Bentley",
-   "pos": "DEF"
-  },
-  {
-   "n": "Button",
-   "pos": "DEF"
+   "n": "Tóth.A",
+   "pos": "GKP"
   },
   {
    "n": "Palmer",
-   "pos": "DEF"
+   "pos": "GKP"
   },
   {
-   "n": "Forster",
-   "pos": "DEF"
-  },
-  {
-   "n": "Gillespie",
-   "pos": "DEF"
+   "n": "Mundle",
+   "pos": "GKP"
   },
   {
    "n": "Davies",
-   "pos": "DEF"
+   "pos": "GKP"
   },
   {
-   "n": "Woodman",
-   "pos": "DEF"
+   "n": "Furo",
+   "pos": "GKP"
   },
   {
-   "n": "Bettinelli",
-   "pos": "DEF"
+   "n": "Dasilva",
+   "pos": "GKP"
   },
   {
-   "n": "Wright",
-   "pos": "DEF"
+   "n": "Saliba",
+   "pos": "GKP"
   },
   {
-   "n": "Jaros",
-   "pos": "DEF"
+   "n": "Martinelli",
+   "pos": "GKP"
   },
   {
-   "n": "Heaton",
-   "pos": "DEF"
+   "n": "Nwaneri",
+   "pos": "GKP"
   },
   {
-   "n": "Matthews",
-   "pos": "DEF"
+   "n": "Fábio Vieira",
+   "pos": "GKP"
+  },
+  {
+   "n": "Nelson",
+   "pos": "GKP"
+  },
+  {
+   "n": "G.Jesus",
+   "pos": "GKP"
   },
   {
    "n": "Martinez",
-   "pos": "DEF"
+   "pos": "GKP"
   },
   {
-   "n": "Dennis",
-   "pos": "DEF"
+   "n": "Digne",
+   "pos": "GKP"
+  },
+  {
+   "n": "A.García",
+   "pos": "GKP"
+  },
+  {
+   "n": "Nedeljkovic",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bailey",
+   "pos": "GKP"
+  },
+  {
+   "n": "Onana",
+   "pos": "GKP"
+  },
+  {
+   "n": "Iling Jr",
+   "pos": "GKP"
+  },
+  {
+   "n": "Watkins",
+   "pos": "GKP"
+  },
+  {
+   "n": "J.Araujo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Enes Ünal",
+   "pos": "GKP"
+  },
+  {
+   "n": "Igor",
+   "pos": "GKP"
+  },
+  {
+   "n": "Buonanotte",
+   "pos": "GKP"
+  },
+  {
+   "n": "Howell",
+   "pos": "GKP"
+  },
+  {
+   "n": "Watson",
+   "pos": "GKP"
   },
   {
    "n": "Sánchez",
-   "pos": "DEF"
+   "pos": "GKP"
   },
   {
-   "n": "Jörgensen",
-   "pos": "DEF"
+   "n": "Chalobah",
+   "pos": "GKP"
   },
   {
-   "n": "Dovin",
-   "pos": "DEF"
+   "n": "B.Badiashile",
+   "pos": "GKP"
   },
   {
-   "n": "McNally",
-   "pos": "DEF"
+   "n": "M.Sarr",
+   "pos": "GKP"
   },
   {
-   "n": "Butland",
-   "pos": "DEF"
+   "n": "D.Essugo",
+   "pos": "GKP"
   },
   {
-   "n": "Cartwright",
-   "pos": "DEF"
+   "n": "Marc Guiu",
+   "pos": "GKP"
   },
   {
-   "n": "Lo-Tutala",
-   "pos": "DEF"
+   "n": "Mheuka",
+   "pos": "GKP"
   },
   {
-   "n": "Perri",
-   "pos": "DEF"
+   "n": "Kitching",
+   "pos": "GKP"
   },
   {
-   "n": "Pecsi",
-   "pos": "DEF"
+   "n": "Woolfenden",
+   "pos": "GKP"
   },
   {
-   "n": "Bayindir",
-   "pos": "DEF"
+   "n": "Brau",
+   "pos": "GKP"
   },
   {
-   "n": "Jaouen",
-   "pos": "DEF"
+   "n": "Amenda",
+   "pos": "GKP"
   },
   {
-   "n": "Vicario",
-   "pos": "DEF"
+   "n": "Eccles",
+   "pos": "GKP"
+  },
+  {
+   "n": "Borges Rodrigues",
+   "pos": "GKP"
+  },
+  {
+   "n": "Andrews",
+   "pos": "GKP"
+  },
+  {
+   "n": "Wright",
+   "pos": "GKP"
+  },
+  {
+   "n": "Markelo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bassette",
+   "pos": "GKP"
+  },
+  {
+   "n": "Sosa",
+   "pos": "GKP"
+  },
+  {
+   "n": "Devenny",
+   "pos": "GKP"
+  },
+  {
+   "n": "Esse",
+   "pos": "GKP"
+  },
+  {
+   "n": "M.França",
+   "pos": "GKP"
+  },
+  {
+   "n": "J.Rak-Sakyi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Cardines",
+   "pos": "GKP"
+  },
+  {
+   "n": "Uche",
+   "pos": "GKP"
+  },
+  {
+   "n": "Aznou",
+   "pos": "GKP"
+  },
+  {
+   "n": "Beto",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lukić",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hughes",
+   "pos": "GKP"
+  },
+  {
+   "n": "Drameh",
+   "pos": "GKP"
+  },
+  {
+   "n": "Jacob",
+   "pos": "GKP"
+  },
+  {
+   "n": "Millar",
+   "pos": "GKP"
+  },
+  {
+   "n": "Kamara",
+   "pos": "GKP"
+  },
+  {
+   "n": "Akintola",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gyabi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Destan",
+   "pos": "GKP"
+  },
+  {
+   "n": "Burstow",
+   "pos": "GKP"
+  },
+  {
+   "n": "Johnson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Burns",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ogbene",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hirst",
+   "pos": "GKP"
+  },
+  {
+   "n": "Szmodics",
+   "pos": "GKP"
+  },
+  {
+   "n": "Al-Hamadi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bornauw",
+   "pos": "GKP"
+  },
+  {
+   "n": "Gnonto",
+   "pos": "GKP"
+  },
+  {
+   "n": "Harrison",
+   "pos": "GKP"
+  },
+  {
+   "n": "Piroe",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mateo Joseph",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ramsay",
+   "pos": "GKP"
+  },
+  {
+   "n": "Szoboszlai",
+   "pos": "GKP"
+  },
+  {
+   "n": "C.Jones",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bajcetic",
+   "pos": "GKP"
+  },
+  {
+   "n": "Elliott",
+   "pos": "GKP"
+  },
+  {
+   "n": "Alleyne",
+   "pos": "GKP"
+  },
+  {
+   "n": "Semenyo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Rodrigo",
+   "pos": "GKP"
+  },
+  {
+   "n": "Reijnders",
+   "pos": "GKP"
+  },
+  {
+   "n": "Echeverri",
+   "pos": "GKP"
   },
   {
    "n": "Phillips",
-   "pos": "DEF"
+   "pos": "GKP"
+  },
+  {
+   "n": "Mukasa",
+   "pos": "GKP"
+  },
+  {
+   "n": "Monga",
+   "pos": "GKP"
+  },
+  {
+   "n": "Shaw",
+   "pos": "GKP"
+  },
+  {
+   "n": "Fredricson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ugarte",
+   "pos": "GKP"
+  },
+  {
+   "n": "Collyer",
+   "pos": "GKP"
+  },
+  {
+   "n": "Šeško",
+   "pos": "GKP"
+  },
+  {
+   "n": "Obi",
+   "pos": "GKP"
+  },
+  {
+   "n": "A.Murphy",
+   "pos": "GKP"
+  },
+  {
+   "n": "Woltemade",
+   "pos": "GKP"
+  },
+  {
+   "n": "Neave",
+   "pos": "GKP"
+  },
+  {
+   "n": "Morato",
+   "pos": "GKP"
+  },
+  {
+   "n": "Savona",
+   "pos": "GKP"
+  },
+  {
+   "n": "Abbott",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bindon",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hutchinson",
+   "pos": "GKP"
+  },
+  {
+   "n": "Bakwa",
+   "pos": "GKP"
+  },
+  {
+   "n": "Igor Jesus",
+   "pos": "GKP"
+  },
+  {
+   "n": "Romero",
+   "pos": "GKP"
+  },
+  {
+   "n": "Spence",
+   "pos": "GKP"
+  },
+  {
+   "n": "Udogie",
+   "pos": "GKP"
+  },
+  {
+   "n": "Phillips",
+   "pos": "GKP"
+  },
+  {
+   "n": "Souza",
+   "pos": "GKP"
+  },
+  {
+   "n": "Xavi",
+   "pos": "GKP"
+  },
+  {
+   "n": "Odobert",
+   "pos": "GKP"
+  },
+  {
+   "n": "P.M.Sarr",
+   "pos": "GKP"
+  },
+  {
+   "n": "Moore",
+   "pos": "GKP"
+  },
+  {
+   "n": "Richarlison",
+   "pos": "GKP"
+  },
+  {
+   "n": "Scarlett",
+   "pos": "GKP"
   },
   {
    "n": "Patterson",
-   "pos": "DEF"
+   "pos": "GKP"
   },
   {
-   "n": "Van Oevelen",
-   "pos": "DEF"
+   "n": "Seelt",
+   "pos": "GKP"
+  },
+  {
+   "n": "Hjelde",
+   "pos": "GKP"
+  },
+  {
+   "n": "Masuaku",
+   "pos": "GKP"
+  },
+  {
+   "n": "Adingra",
+   "pos": "GKP"
+  },
+  {
+   "n": "Targett",
+   "pos": "GKP"
+  },
+  {
+   "n": "Mudryk",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ruggeri",
+   "pos": "GKP"
+  },
+  {
+   "n": "Humphreys",
+   "pos": "GKP"
+  },
+  {
+   "n": "Lynch",
+   "pos": "GKP"
+  },
+  {
+   "n": "Shahar",
+   "pos": "GKP"
+  },
+  {
+   "n": "De Fougerolles",
+   "pos": "GKP"
+  },
+  {
+   "n": "Cozier-Duberry",
+   "pos": "GKP"
+  },
+  {
+   "n": "Ansah",
+   "pos": "GKP"
   },
   {
    "n": "Gabriel",
@@ -343,10 +2431,6 @@
    "pos": "MID"
   },
   {
-   "n": "Raya",
-   "pos": "MID"
-  },
-  {
    "n": "Konsa",
    "pos": "MID"
   },
@@ -379,15 +2463,7 @@
    "pos": "MID"
   },
   {
-   "n": "Donnarumma",
-   "pos": "MID"
-  },
-  {
    "n": "Jacquet",
-   "pos": "MID"
-  },
-  {
-   "n": "Verbruggen",
    "pos": "MID"
   },
   {
@@ -403,38 +2479,6 @@
    "pos": "MID"
   },
   {
-   "n": "Trafford",
-   "pos": "MID"
-  },
-  {
-   "n": "Petrović",
-   "pos": "MID"
-  },
-  {
-   "n": "Suzuki",
-   "pos": "MID"
-  },
-  {
-   "n": "A.Becker",
-   "pos": "MID"
-  },
-  {
-   "n": "Roefs",
-   "pos": "MID"
-  },
-  {
-   "n": "Penders",
-   "pos": "MID"
-  },
-  {
-   "n": "Kelleher",
-   "pos": "MID"
-  },
-  {
-   "n": "Lammens",
-   "pos": "MID"
-  },
-  {
    "n": "Mykolenko",
    "pos": "MID"
   },
@@ -443,19 +2487,11 @@
    "pos": "MID"
   },
   {
-   "n": "Kinsky",
-   "pos": "MID"
-  },
-  {
    "n": "Richards",
    "pos": "MID"
   },
   {
    "n": "Elvedi",
-   "pos": "MID"
-  },
-  {
-   "n": "Pickford",
    "pos": "MID"
   },
   {
@@ -475,19 +2511,11 @@
    "pos": "MID"
   },
   {
-   "n": "Sels",
-   "pos": "MID"
-  },
-  {
    "n": "Robinson",
    "pos": "MID"
   },
   {
    "n": "Van de Ven",
-   "pos": "MID"
-  },
-  {
-   "n": "Leno",
    "pos": "MID"
   },
   {
@@ -515,10 +2543,6 @@
    "pos": "MID"
   },
   {
-   "n": "Horníček",
-   "pos": "MID"
-  },
-  {
    "n": "F.Kadıoğlu",
    "pos": "MID"
   },
@@ -535,10 +2559,6 @@
    "pos": "MID"
   },
   {
-   "n": "Tzolakis",
-   "pos": "MID"
-  },
-  {
    "n": "Matheus N.",
    "pos": "MID"
   },
@@ -548,10 +2568,6 @@
   },
   {
    "n": "Gudmundsson",
-   "pos": "MID"
-  },
-  {
-   "n": "Rushworth",
    "pos": "MID"
   },
   {
@@ -623,10 +2639,6 @@
    "pos": "MID"
   },
   {
-   "n": "Walton",
-   "pos": "MID"
-  },
-  {
    "n": "van Ewijk",
    "pos": "MID"
   },
@@ -672,10 +2684,6 @@
   },
   {
    "n": "J.Timber",
-   "pos": "MID"
-  },
-  {
-   "n": "Benitez",
    "pos": "MID"
   },
   {
@@ -795,10 +2803,6 @@
    "pos": "MID"
   },
   {
-   "n": "Henderson",
-   "pos": "MID"
-  },
-  {
    "n": "Hincapie",
    "pos": "MID"
   },
@@ -903,10 +2907,6 @@
    "pos": "MID"
   },
   {
-   "n": "Scherpen",
-   "pos": "MID"
-  },
-  {
    "n": "Hadjam",
    "pos": "MID"
   },
@@ -947,10 +2947,6 @@
    "pos": "MID"
   },
   {
-   "n": "Dubravka",
-   "pos": "MID"
-  },
-  {
    "n": "Svoboda",
    "pos": "MID"
   },
@@ -960,10 +2956,6 @@
   },
   {
    "n": "Kesler-Hayden",
-   "pos": "MID"
-  },
-  {
-   "n": "M.Bizot",
    "pos": "MID"
   },
   {
@@ -991,31 +2983,11 @@
    "pos": "MID"
   },
   {
-   "n": "Pope",
-   "pos": "MID"
-  },
-  {
    "n": "Henry",
    "pos": "MID"
   },
   {
-   "n": "Darlow",
-   "pos": "MID"
-  },
-  {
-   "n": "John",
-   "pos": "MID"
-  },
-  {
    "n": "McNair",
-   "pos": "MID"
-  },
-  {
-   "n": "Ellborg",
-   "pos": "MID"
-  },
-  {
-   "n": "Mamardashvili",
    "pos": "MID"
   },
   {
@@ -1024,10 +2996,6 @@
   },
   {
    "n": "Harwood-Bellis",
-   "pos": "MID"
-  },
-  {
-   "n": "Rulli",
    "pos": "MID"
   },
   {
@@ -1055,19 +3023,7 @@
    "pos": "MID"
   },
   {
-   "n": "Wilson",
-   "pos": "MID"
-  },
-  {
-   "n": "Arrizabalaga",
-   "pos": "MID"
-  },
-  {
    "n": "Mingueza",
-   "pos": "MID"
-  },
-  {
-   "n": "Meslier",
    "pos": "MID"
   },
   {
@@ -1075,15 +3031,7 @@
    "pos": "MID"
   },
   {
-   "n": "Di Gregorio",
-   "pos": "MID"
-  },
-  {
    "n": "Rowe",
-   "pos": "MID"
-  },
-  {
-   "n": "Travers",
    "pos": "MID"
   },
   {
@@ -1107,19 +3055,7 @@
    "pos": "MID"
   },
   {
-   "n": "Cairns",
-   "pos": "MID"
-  },
-  {
-   "n": "Austin",
-   "pos": "MID"
-  },
-  {
    "n": "McCarthy",
-   "pos": "MID"
-  },
-  {
-   "n": "Zetterer",
    "pos": "MID"
   },
   {
@@ -1131,19 +3067,7 @@
    "pos": "MID"
   },
   {
-   "n": "Steele",
-   "pos": "MID"
-  },
-  {
    "n": "Coppola",
-   "pos": "MID"
-  },
-  {
-   "n": "Valdimarsson",
-   "pos": "MID"
-  },
-  {
-   "n": "King",
    "pos": "MID"
   },
   {
@@ -1151,55 +3075,7 @@
    "pos": "MID"
   },
   {
-   "n": "Balcombe",
-   "pos": "MID"
-  },
-  {
-   "n": "Lecomte",
-   "pos": "MID"
-  },
-  {
-   "n": "Benda",
-   "pos": "MID"
-  },
-  {
    "n": "Kipré",
-   "pos": "MID"
-  },
-  {
-   "n": "Bentley",
-   "pos": "MID"
-  },
-  {
-   "n": "Button",
-   "pos": "MID"
-  },
-  {
-   "n": "Palmer",
-   "pos": "MID"
-  },
-  {
-   "n": "Forster",
-   "pos": "MID"
-  },
-  {
-   "n": "Gillespie",
-   "pos": "MID"
-  },
-  {
-   "n": "Davies",
-   "pos": "MID"
-  },
-  {
-   "n": "Woodman",
-   "pos": "MID"
-  },
-  {
-   "n": "Bettinelli",
-   "pos": "MID"
-  },
-  {
-   "n": "Wright",
    "pos": "MID"
   },
   {
@@ -1207,23 +3083,7 @@
    "pos": "MID"
   },
   {
-   "n": "Jaros",
-   "pos": "MID"
-  },
-  {
-   "n": "Heaton",
-   "pos": "MID"
-  },
-  {
-   "n": "Matthews",
-   "pos": "MID"
-  },
-  {
    "n": "Saliba",
-   "pos": "MID"
-  },
-  {
-   "n": "Martinez",
    "pos": "MID"
   },
   {
@@ -1239,23 +3099,11 @@
    "pos": "MID"
   },
   {
-   "n": "Dennis",
-   "pos": "MID"
-  },
-  {
    "n": "J.Araujo",
    "pos": "MID"
   },
   {
    "n": "Igor",
-   "pos": "MID"
-  },
-  {
-   "n": "Sánchez",
-   "pos": "MID"
-  },
-  {
-   "n": "Jörgensen",
    "pos": "MID"
   },
   {
@@ -1268,10 +3116,6 @@
   },
   {
    "n": "M.Sarr",
-   "pos": "MID"
-  },
-  {
-   "n": "Dovin",
    "pos": "MID"
   },
   {
@@ -1307,22 +3151,6 @@
    "pos": "MID"
   },
   {
-   "n": "McNally",
-   "pos": "MID"
-  },
-  {
-   "n": "Butland",
-   "pos": "MID"
-  },
-  {
-   "n": "Cartwright",
-   "pos": "MID"
-  },
-  {
-   "n": "Lo-Tutala",
-   "pos": "MID"
-  },
-  {
    "n": "Hughes",
    "pos": "MID"
   },
@@ -1339,15 +3167,7 @@
    "pos": "MID"
   },
   {
-   "n": "Perri",
-   "pos": "MID"
-  },
-  {
    "n": "Bornauw",
-   "pos": "MID"
-  },
-  {
-   "n": "Pecsi",
    "pos": "MID"
   },
   {
@@ -1359,23 +3179,11 @@
    "pos": "MID"
   },
   {
-   "n": "Phillips",
-   "pos": "MID"
-  },
-  {
-   "n": "Bayindir",
-   "pos": "MID"
-  },
-  {
    "n": "Shaw",
    "pos": "MID"
   },
   {
    "n": "Fredricson",
-   "pos": "MID"
-  },
-  {
-   "n": "Jaouen",
    "pos": "MID"
   },
   {
@@ -1399,10 +3207,6 @@
    "pos": "MID"
   },
   {
-   "n": "Vicario",
-   "pos": "MID"
-  },
-  {
    "n": "Romero",
    "pos": "MID"
   },
@@ -1423,10 +3227,6 @@
    "pos": "MID"
   },
   {
-   "n": "Patterson",
-   "pos": "MID"
-  },
-  {
    "n": "Seelt",
    "pos": "MID"
   },
@@ -1436,10 +3236,6 @@
   },
   {
    "n": "Masuaku",
-   "pos": "MID"
-  },
-  {
-   "n": "Van Oevelen",
    "pos": "MID"
   },
   {
@@ -1595,10 +3391,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Raya",
-   "pos": "FWD"
-  },
-  {
    "n": "E.Le Fée",
    "pos": "FWD"
   },
@@ -1675,15 +3467,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Donnarumma",
-   "pos": "FWD"
-  },
-  {
    "n": "Jacquet",
-   "pos": "FWD"
-  },
-  {
-   "n": "Verbruggen",
    "pos": "FWD"
   },
   {
@@ -1711,43 +3495,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Trafford",
-   "pos": "FWD"
-  },
-  {
-   "n": "Petrović",
-   "pos": "FWD"
-  },
-  {
-   "n": "Suzuki",
-   "pos": "FWD"
-  },
-  {
-   "n": "A.Becker",
-   "pos": "FWD"
-  },
-  {
-   "n": "Roefs",
-   "pos": "FWD"
-  },
-  {
-   "n": "Penders",
-   "pos": "FWD"
-  },
-  {
    "n": "McAtee",
    "pos": "FWD"
   },
   {
-   "n": "Kelleher",
-   "pos": "FWD"
-  },
-  {
    "n": "Enzo",
-   "pos": "FWD"
-  },
-  {
-   "n": "Lammens",
    "pos": "FWD"
   },
   {
@@ -1767,10 +3519,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Kinsky",
-   "pos": "FWD"
-  },
-  {
    "n": "Belloumi",
    "pos": "FWD"
   },
@@ -1784,10 +3532,6 @@
   },
   {
    "n": "Lewis-Potter",
-   "pos": "FWD"
-  },
-  {
-   "n": "Pickford",
    "pos": "FWD"
   },
   {
@@ -1815,10 +3559,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Sels",
-   "pos": "FWD"
-  },
-  {
    "n": "Tielemans",
    "pos": "FWD"
   },
@@ -1836,10 +3576,6 @@
   },
   {
    "n": "Amad",
-   "pos": "FWD"
-  },
-  {
-   "n": "Leno",
    "pos": "FWD"
   },
   {
@@ -1883,10 +3619,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Horníček",
-   "pos": "FWD"
-  },
-  {
    "n": "F.Kadıoğlu",
    "pos": "FWD"
   },
@@ -1915,10 +3647,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Tzolakis",
-   "pos": "FWD"
-  },
-  {
    "n": "Matheus N.",
    "pos": "FWD"
   },
@@ -1936,10 +3664,6 @@
   },
   {
    "n": "L.Miley",
-   "pos": "FWD"
-  },
-  {
-   "n": "Rushworth",
    "pos": "FWD"
   },
   {
@@ -1968,10 +3692,6 @@
   },
   {
    "n": "O'Reilly",
-   "pos": "FWD"
-  },
-  {
-   "n": "Grealish",
    "pos": "FWD"
   },
   {
@@ -2016,6 +3736,10 @@
   },
   {
    "n": "Caicedo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Grealish",
    "pos": "FWD"
   },
   {
@@ -2072,10 +3796,6 @@
   },
   {
    "n": "Castagne",
-   "pos": "FWD"
-  },
-  {
-   "n": "Walton",
    "pos": "FWD"
   },
   {
@@ -2219,10 +3939,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Benitez",
-   "pos": "FWD"
-  },
-  {
    "n": "Damsgaard",
    "pos": "FWD"
   },
@@ -2303,15 +4019,19 @@
    "pos": "FWD"
   },
   {
-   "n": "Bouaddi",
-   "pos": "FWD"
-  },
-  {
    "n": "Johnson",
    "pos": "FWD"
   },
   {
+   "n": "Bouaddi",
+   "pos": "FWD"
+  },
+  {
    "n": "Cook",
+   "pos": "FWD"
+  },
+  {
+   "n": "George",
    "pos": "FWD"
   },
   {
@@ -2324,10 +4044,6 @@
   },
   {
    "n": "Giles",
-   "pos": "FWD"
-  },
-  {
-   "n": "George",
    "pos": "FWD"
   },
   {
@@ -2551,10 +4267,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Henderson",
-   "pos": "FWD"
-  },
-  {
    "n": "Sarr",
    "pos": "FWD"
   },
@@ -2607,15 +4319,15 @@
    "pos": "FWD"
   },
   {
+   "n": "Hackney",
+   "pos": "FWD"
+  },
+  {
    "n": "Mount",
    "pos": "FWD"
   },
   {
    "n": "Gusto",
-   "pos": "FWD"
-  },
-  {
-   "n": "Hackney",
    "pos": "FWD"
   },
   {
@@ -2763,10 +4475,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Scherpen",
-   "pos": "FWD"
-  },
-  {
    "n": "Hadjam",
    "pos": "FWD"
   },
@@ -2883,10 +4591,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Dubravka",
-   "pos": "FWD"
-  },
-  {
    "n": "Gruev",
    "pos": "FWD"
   },
@@ -2899,19 +4603,15 @@
    "pos": "FWD"
   },
   {
+   "n": "Alcaraz",
+   "pos": "FWD"
+  },
+  {
    "n": "Bard",
    "pos": "FWD"
   },
   {
    "n": "Kesler-Hayden",
-   "pos": "FWD"
-  },
-  {
-   "n": "Alcaraz",
-   "pos": "FWD"
-  },
-  {
-   "n": "M.Bizot",
    "pos": "FWD"
   },
   {
@@ -2947,11 +4647,15 @@
    "pos": "FWD"
   },
   {
+   "n": "Dibling",
+   "pos": "FWD"
+  },
+  {
    "n": "Leoni",
    "pos": "FWD"
   },
   {
-   "n": "Dibling",
+   "n": "Nørgaard",
    "pos": "FWD"
   },
   {
@@ -2963,15 +4667,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Nørgaard",
-   "pos": "FWD"
-  },
-  {
    "n": "McAteer",
-   "pos": "FWD"
-  },
-  {
-   "n": "Pope",
    "pos": "FWD"
   },
   {
@@ -2983,19 +4679,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Darlow",
-   "pos": "FWD"
-  },
-  {
    "n": "McConnell",
    "pos": "FWD"
   },
   {
    "n": "J.Ramsey",
-   "pos": "FWD"
-  },
-  {
-   "n": "John",
    "pos": "FWD"
   },
   {
@@ -3015,10 +4703,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Ellborg",
-   "pos": "FWD"
-  },
-  {
    "n": "Osorio",
    "pos": "FWD"
   },
@@ -3035,10 +4719,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Mamardashvili",
-   "pos": "FWD"
-  },
-  {
    "n": "Olusesi",
    "pos": "FWD"
   },
@@ -3052,10 +4732,6 @@
   },
   {
    "n": "Harwood-Bellis",
-   "pos": "FWD"
-  },
-  {
-   "n": "Rulli",
    "pos": "FWD"
   },
   {
@@ -3079,6 +4755,10 @@
    "pos": "FWD"
   },
   {
+   "n": "Graham",
+   "pos": "FWD"
+  },
+  {
    "n": "Hjertø-Dahl",
    "pos": "FWD"
   },
@@ -3092,14 +4772,6 @@
   },
   {
    "n": "McAidoo",
-   "pos": "FWD"
-  },
-  {
-   "n": "Wilson",
-   "pos": "FWD"
-  },
-  {
-   "n": "Arrizabalaga",
    "pos": "FWD"
   },
   {
@@ -3131,19 +4803,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Meslier",
-   "pos": "FWD"
-  },
-  {
    "n": "Fletcher",
    "pos": "FWD"
   },
   {
    "n": "Bendito Mantato",
-   "pos": "FWD"
-  },
-  {
-   "n": "Graham",
    "pos": "FWD"
   },
   {
@@ -3171,19 +4835,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Di Gregorio",
-   "pos": "FWD"
-  },
-  {
    "n": "Rowe",
    "pos": "FWD"
   },
   {
    "n": "Dowell",
-   "pos": "FWD"
-  },
-  {
-   "n": "Travers",
    "pos": "FWD"
   },
   {
@@ -3247,23 +4903,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Cairns",
-   "pos": "FWD"
-  },
-  {
-   "n": "Austin",
-   "pos": "FWD"
-  },
-  {
    "n": "McCarthy",
-   "pos": "FWD"
-  },
-  {
-   "n": "Phillips",
-   "pos": "FWD"
-  },
-  {
-   "n": "Zetterer",
    "pos": "FWD"
   },
   {
@@ -3275,19 +4915,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Steele",
-   "pos": "FWD"
-  },
-  {
    "n": "Coppola",
-   "pos": "FWD"
-  },
-  {
-   "n": "Valdimarsson",
-   "pos": "FWD"
-  },
-  {
-   "n": "King",
    "pos": "FWD"
   },
   {
@@ -3295,23 +4923,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Balcombe",
-   "pos": "FWD"
-  },
-  {
-   "n": "Lecomte",
-   "pos": "FWD"
-  },
-  {
-   "n": "Benda",
-   "pos": "FWD"
-  },
-  {
    "n": "Kipré",
-   "pos": "FWD"
-  },
-  {
-   "n": "Bentley",
    "pos": "FWD"
   },
   {
@@ -3319,51 +4931,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Button",
-   "pos": "FWD"
-  },
-  {
-   "n": "Palmer",
-   "pos": "FWD"
-  },
-  {
    "n": "Mundle",
    "pos": "FWD"
   },
   {
-   "n": "Forster",
-   "pos": "FWD"
-  },
-  {
-   "n": "Gillespie",
-   "pos": "FWD"
-  },
-  {
-   "n": "Davies",
-   "pos": "FWD"
-  },
-  {
-   "n": "Woodman",
-   "pos": "FWD"
-  },
-  {
-   "n": "Bettinelli",
-   "pos": "FWD"
-  },
-  {
    "n": "Dasilva",
-   "pos": "FWD"
-  },
-  {
-   "n": "Jaros",
-   "pos": "FWD"
-  },
-  {
-   "n": "Heaton",
-   "pos": "FWD"
-  },
-  {
-   "n": "Matthews",
    "pos": "FWD"
   },
   {
@@ -3384,10 +4956,6 @@
   },
   {
    "n": "Nelson",
-   "pos": "FWD"
-  },
-  {
-   "n": "Martinez",
    "pos": "FWD"
   },
   {
@@ -3415,10 +4983,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Dennis",
-   "pos": "FWD"
-  },
-  {
    "n": "J.Araujo",
    "pos": "FWD"
   },
@@ -3439,14 +5003,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Sánchez",
-   "pos": "FWD"
-  },
-  {
-   "n": "Jörgensen",
-   "pos": "FWD"
-  },
-  {
    "n": "Chalobah",
    "pos": "FWD"
   },
@@ -3460,10 +5016,6 @@
   },
   {
    "n": "D.Essugo",
-   "pos": "FWD"
-  },
-  {
-   "n": "Dovin",
    "pos": "FWD"
   },
   {
@@ -3492,10 +5044,6 @@
   },
   {
    "n": "Andrews",
-   "pos": "FWD"
-  },
-  {
-   "n": "Wright",
    "pos": "FWD"
   },
   {
@@ -3531,23 +5079,7 @@
    "pos": "FWD"
   },
   {
-   "n": "McNally",
-   "pos": "FWD"
-  },
-  {
    "n": "Lukić",
-   "pos": "FWD"
-  },
-  {
-   "n": "Butland",
-   "pos": "FWD"
-  },
-  {
-   "n": "Cartwright",
-   "pos": "FWD"
-  },
-  {
-   "n": "Lo-Tutala",
    "pos": "FWD"
   },
   {
@@ -3595,10 +5127,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Perri",
-   "pos": "FWD"
-  },
-  {
    "n": "Bornauw",
    "pos": "FWD"
   },
@@ -3608,10 +5136,6 @@
   },
   {
    "n": "Harrison",
-   "pos": "FWD"
-  },
-  {
-   "n": "Pecsi",
    "pos": "FWD"
   },
   {
@@ -3667,10 +5191,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Bayindir",
-   "pos": "FWD"
-  },
-  {
    "n": "Shaw",
    "pos": "FWD"
   },
@@ -3684,10 +5204,6 @@
   },
   {
    "n": "Collyer",
-   "pos": "FWD"
-  },
-  {
-   "n": "Jaouen",
    "pos": "FWD"
   },
   {
@@ -3716,10 +5232,6 @@
   },
   {
    "n": "Bakwa",
-   "pos": "FWD"
-  },
-  {
-   "n": "Vicario",
    "pos": "FWD"
   },
   {
@@ -3759,10 +5271,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Patterson",
-   "pos": "FWD"
-  },
-  {
    "n": "Seelt",
    "pos": "FWD"
   },
@@ -3776,10 +5284,6 @@
   },
   {
    "n": "Adingra",
-   "pos": "FWD"
-  },
-  {
-   "n": "Van Oevelen",
    "pos": "FWD"
   },
   {
@@ -3827,10 +5331,10 @@
  ],
  "_methode": "Automatisch opgehaald met copilot_ophalen.js via Chrome DevTools Protocol. Per positiefilter uitgelezen; de telling per filter moet overeenkomen met wat de site meldt, anders breekt het script af. Dubbele naam+positie wordt opgelost via het clubfilter. Koppeling aan FPL-id door copilot_verwerk.py: naam plus positie, daarna clubfilter, daarna uitsluiting.",
  "_telling": {
-  "GKP": 73,
-  "DEF": 290,
-  "MID": 589,
-  "FWD": 668
+  "GKP": 668,
+  "DEF": 217,
+  "MID": 516,
+  "FWD": 595
  },
  "_dekking": "666 van 668 FPL-spelers",
  "_zonder_copilot": [
@@ -3848,6 +5352,31 @@
   }
  ],
  "spelers": {
+  "301": {
+   "n": "Palmer",
+   "t": "IPS",
+   "p": "GKP",
+   "gw": [
+    6.6,
+    6.1,
+    6.4,
+    5.9,
+    7.4,
+    6,
+    4.9,
+    6.8
+   ],
+   "mn": [
+    86,
+    86,
+    86,
+    86,
+    86,
+    86,
+    86,
+    86
+   ]
+  },
   "1": {
    "n": "Raya",
    "t": "ARS",
@@ -4173,6 +5702,56 @@
     88
    ]
   },
+  "198": {
+   "n": "Henderson",
+   "t": "CRY",
+   "p": "GKP",
+   "gw": [
+    3.2,
+    3.2,
+    3.2,
+    3.1,
+    3.5,
+    3.1,
+    2.8,
+    3.3
+   ],
+   "mn": [
+    83,
+    83,
+    83,
+    83,
+    83,
+    83,
+    83,
+    83
+   ]
+  },
+  "228": {
+   "n": "King",
+   "t": "EVE",
+   "p": "GKP",
+   "gw": [
+    3.2,
+    3.5,
+    2.7,
+    3.4,
+    3.1,
+    3.3,
+    3.5,
+    3.1
+   ],
+   "mn": [
+    67,
+    67,
+    67,
+    67,
+    67,
+    67,
+    67,
+    67
+   ]
+  },
   "467": {
    "n": "Sels",
    "t": "NFO",
@@ -4323,6 +5902,31 @@
     76
    ]
   },
+  "28": {
+   "n": "Martinez",
+   "t": "CHE",
+   "p": "GKP",
+   "gw": [
+    1.2,
+    2,
+    2.1,
+    2.5,
+    2.2,
+    3,
+    2.7,
+    1.8
+   ],
+   "mn": [
+    45,
+    57,
+    71,
+    71,
+    70,
+    70,
+    70,
+    70
+   ]
+  },
   "199": {
    "n": "Benitez",
    "t": "CRY",
@@ -4348,29 +5952,54 @@
     54
    ]
   },
-  "198": {
-   "n": "Henderson",
-   "t": "CRY",
+  "172": {
+   "n": "Wilson",
+   "t": "COV",
    "p": "GKP",
    "gw": [
-    0.4,
-    0.4,
+    1.8,
+    1.6,
+    1.3,
+    1.4,
     1,
     1.3,
-    1.2,
-    1.3,
-    1.3,
-    1.4
+    1.1,
+    1.2
    ],
    "mn": [
-    13,
-    13,
-    28,
+    45,
+    37,
     32,
-    36,
-    36,
-    36,
-    36
+    26,
+    23,
+    23,
+    23,
+    23
+   ]
+  },
+  "355": {
+   "n": "Davies",
+   "t": "LIV",
+   "p": "GKP",
+   "gw": [
+    1,
+    0.8,
+    0.9,
+    0.8,
+    0.7,
+    0.6,
+    0.8,
+    0.5
+   ],
+   "mn": [
+    17,
+    17,
+    15,
+    15,
+    13,
+    13,
+    13,
+    13
    ]
   },
   "564": {
@@ -4396,6 +6025,31 @@
     12,
     12,
     13
+   ]
+  },
+  "140": {
+   "n": "Sánchez",
+   "t": "CHE",
+   "p": "GKP",
+   "gw": [
+    0.4,
+    0.3,
+    0.4,
+    0.3,
+    0.3,
+    0.4,
+    0.3,
+    0.4
+   ],
+   "mn": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
    ]
   },
   "497": {
@@ -4576,31 +6230,6 @@
   "587": {
    "n": "Rulli",
    "t": "MCI",
-   "p": "GKP",
-   "gw": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2
-   ]
-  },
-  "172": {
-   "n": "Wilson",
-   "t": "COV",
    "p": "GKP",
    "gw": [
     0.1,
@@ -4873,31 +6502,6 @@
     1
    ]
   },
-  "228": {
-   "n": "King",
-   "t": "EVE",
-   "p": "GKP",
-   "gw": [
-    0.1,
-    0.1,
-    0,
-    0.1,
-    0.1,
-    0.1,
-    0,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
-   ]
-  },
   "661": {
    "n": "Balcombe",
    "t": "BRE",
@@ -5023,31 +6627,6 @@
     1
    ]
   },
-  "301": {
-   "n": "Palmer",
-   "t": "IPS",
-   "p": "GKP",
-   "gw": [
-    0,
-    0.1,
-    0,
-    0.1,
-    0.1,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
-   ]
-  },
   "58": {
    "n": "Forster",
    "t": "BOU",
@@ -5096,31 +6675,6 @@
     1,
     1,
     1
-   ]
-  },
-  "355": {
-   "n": "Davies",
-   "t": "LIV",
-   "p": "GKP",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    1,
-    null,
-    null,
-    null,
-    null,
-    1,
-    null,
-    null
    ]
   },
   "352": {
@@ -5273,59 +6827,9 @@
     null
    ]
   },
-  "28": {
-   "n": "Martinez",
-   "t": "CHE",
-   "p": "GKP",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
   "59": {
    "n": "Dennis",
    "t": "BOU",
-   "p": "GKP",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
-  "140": {
-   "n": "Sánchez",
-   "t": "CHE",
    "p": "GKP",
    "gw": [
     0,
@@ -5376,6 +6880,31 @@
   "171": {
    "n": "Dovin",
    "t": "COV",
+   "p": "GKP",
+   "gw": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "mn": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "530": {
+   "n": "Patterson",
+   "t": "SUN",
    "p": "GKP",
    "gw": [
     0,
@@ -5601,31 +7130,6 @@
   "494": {
    "n": "Vicario",
    "t": "TOT",
-   "p": "GKP",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
-  "530": {
-   "n": "Patterson",
-   "t": "SUN",
    "p": "GKP",
    "gw": [
     0,
@@ -9898,31 +11402,6 @@
     1
    ]
   },
-  "507": {
-   "n": "Phillips",
-   "t": "TOT",
-   "p": "DEF",
-   "gw": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
-   ]
-  },
   "663": {
    "n": "Pivas",
    "t": "NEW",
@@ -10875,6 +12354,31 @@
   },
   "506": {
    "n": "Udogie",
+   "t": "TOT",
+   "p": "DEF",
+   "gw": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "mn": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "507": {
+   "n": "Phillips",
    "t": "TOT",
    "p": "DEF",
    "gw": [
@@ -12548,31 +14052,6 @@
     78
    ]
   },
-  "238": {
-   "n": "Grealish",
-   "t": "EVE",
-   "p": "MID",
-   "gw": [
-    2.8,
-    3.2,
-    2.7,
-    2.9,
-    2.8,
-    2.9,
-    2.6,
-    2.8
-   ],
-   "mn": [
-    70,
-    70,
-    70,
-    70,
-    70,
-    70,
-    70,
-    70
-   ]
-  },
   "264": {
    "n": "Bobb",
    "t": "FUL",
@@ -12671,6 +14150,31 @@
     84,
     84,
     84
+   ]
+  },
+  "238": {
+   "n": "Grealish",
+   "t": "EVE",
+   "p": "MID",
+   "gw": [
+    1.8,
+    2.6,
+    2.7,
+    2.9,
+    2.8,
+    2.9,
+    2.6,
+    2.8
+   ],
+   "mn": [
+    46,
+    58,
+    70,
+    70,
+    70,
+    70,
+    70,
+    70
    ]
   },
   "545": {
@@ -13188,8 +14692,8 @@
     2.3
    ],
    "mn": [
-    64,
-    64,
+    65,
+    65,
     64,
     64,
     64,
@@ -13748,6 +15252,31 @@
     27
    ]
   },
+  "209": {
+   "n": "Johnson",
+   "t": "EVE",
+   "p": "MID",
+   "gw": [
+    1.8,
+    2,
+    1.6,
+    1.7,
+    1.7,
+    1.8,
+    1.6,
+    1.7
+   ],
+   "mn": [
+    40,
+    38,
+    37,
+    37,
+    37,
+    37,
+    37,
+    37
+   ]
+  },
   "616": {
    "n": "Bouaddi",
    "t": "MCI",
@@ -13773,31 +15302,6 @@
     48
    ]
   },
-  "209": {
-   "n": "Johnson",
-   "t": "EVE",
-   "p": "MID",
-   "gw": [
-    1.7,
-    2,
-    1.6,
-    1.7,
-    1.7,
-    1.8,
-    1.6,
-    1.7
-   ],
-   "mn": [
-    37,
-    37,
-    37,
-    37,
-    37,
-    37,
-    37,
-    37
-   ]
-  },
   "71": {
    "n": "Cook",
    "t": "BOU",
@@ -13821,6 +15325,31 @@
     49,
     49,
     49
+   ]
+  },
+  "242": {
+   "n": "George",
+   "t": "EVE",
+   "p": "MID",
+   "gw": [
+    1.8,
+    2,
+    1.6,
+    1.7,
+    1.6,
+    1.8,
+    1.6,
+    1.6
+   ],
+   "mn": [
+    40,
+    39,
+    37,
+    37,
+    37,
+    37,
+    37,
+    37
    ]
   },
   "340": {
@@ -13871,31 +15400,6 @@
     40,
     40,
     40
-   ]
-  },
-  "242": {
-   "n": "George",
-   "t": "EVE",
-   "p": "MID",
-   "gw": [
-    1.7,
-    2,
-    1.6,
-    1.7,
-    1.6,
-    1.8,
-    1.6,
-    1.6
-   ],
-   "mn": [
-    37,
-    37,
-    37,
-    37,
-    37,
-    37,
-    37,
-    37
    ]
   },
   "575": {
@@ -14923,6 +16427,31 @@
     16
    ]
   },
+  "247": {
+   "n": "Hackney",
+   "t": "EVE",
+   "p": "MID",
+   "gw": [
+    1,
+    1.1,
+    0.9,
+    0.9,
+    0.9,
+    1,
+    0.9,
+    0.9
+   ],
+   "mn": [
+    19,
+    19,
+    18,
+    18,
+    18,
+    18,
+    18,
+    18
+   ]
+  },
   "430": {
    "n": "Mount",
    "t": "MUN",
@@ -14946,31 +16475,6 @@
     16,
     16,
     16
-   ]
-  },
-  "247": {
-   "n": "Hackney",
-   "t": "EVE",
-   "p": "MID",
-   "gw": [
-    0.9,
-    1,
-    0.9,
-    0.9,
-    0.9,
-    1,
-    0.9,
-    0.9
-   ],
-   "mn": [
-    18,
-    18,
-    18,
-    18,
-    18,
-    18,
-    18,
-    18
    ]
   },
   "613": {
@@ -15929,7 +17433,7 @@
    "p": "MID",
    "gw": [
     0.3,
-    0.3,
+    0.4,
     0.2,
     0.3,
     0.3,
@@ -15938,8 +17442,8 @@
     0.3
    ],
    "mn": [
-    4,
-    4,
+    5,
+    5,
     4,
     4,
     4,
@@ -16053,7 +17557,32 @@
    "t": "EVE",
    "p": "MID",
    "gw": [
+    0.4,
+    0.3,
     0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+   ],
+   "mn": [
+    7,
+    5,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "21": {
+   "n": "Nørgaard",
+   "t": "EVE",
+   "p": "MID",
+   "gw": [
+    0.3,
     0.3,
     0.2,
     0.2,
@@ -16065,12 +17594,12 @@
    "mn": [
     4,
     4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
    ]
   },
   "42": {
@@ -16090,31 +17619,6 @@
    "mn": [
     6,
     5,
-    3,
-    3,
-    3,
-    3,
-    3,
-    3
-   ]
-  },
-  "21": {
-   "n": "Nørgaard",
-   "t": "EVE",
-   "p": "MID",
-   "gw": [
-    0.2,
-    0.2,
-    0.2,
-    0.2,
-    0.2,
-    0.2,
-    0.2,
-    0.2
-   ],
-   "mn": [
-    3,
-    3,
     3,
     3,
     3,
@@ -16473,6 +17977,31 @@
     1
    ]
   },
+  "654": {
+   "n": "Graham",
+   "t": "EVE",
+   "p": "MID",
+   "gw": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
   "574": {
    "n": "Hjertø-Dahl",
    "t": "HUL",
@@ -16715,31 +18244,6 @@
    "mn": [
     2,
     2,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
-   ]
-  },
-  "654": {
-   "n": "Graham",
-   "t": "EVE",
-   "p": "MID",
-   "gw": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
     1,
     1,
     1,
@@ -17134,31 +18638,6 @@
     0.1,
     0.1,
     0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
-   ]
-  },
-  "408": {
-   "n": "Phillips",
-   "t": "MCI",
-   "p": "MID",
-   "gw": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0,
     0.1,
     0.1
    ],
@@ -18100,6 +19579,31 @@
   },
   "407": {
    "n": "Echeverri",
+   "t": "MCI",
+   "p": "MID",
+   "gw": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "mn": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "408": {
+   "n": "Phillips",
    "t": "MCI",
    "p": "MID",
    "gw": [
@@ -19873,31 +21377,6 @@
     1
    ]
   },
-  "193": {
-   "n": "Wright",
-   "t": "COV",
-   "p": "FWD",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-   ]
-  },
   "27": {
    "n": "G.Jesus",
    "t": "ARS",
@@ -20001,6 +21480,31 @@
   "169": {
    "n": "Mheuka",
    "t": "CHE",
+   "p": "FWD",
+   "gw": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "mn": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "193": {
+   "n": "Wright",
+   "t": "COV",
    "p": "FWD",
    "gw": [
     0,
