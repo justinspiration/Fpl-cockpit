@@ -1,6 +1,6 @@
 {
  "_bron": "publieke RSS-feeds",
- "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 12 extra gevonden, 14 ingebakken (624 KB).",
+ "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 13 extra gevonden, 14 ingebakken (628 KB).",
  "_feeds": [
   {
    "naam": "Fantasy Football Scout",
@@ -33,7 +33,7 @@
    "soort": "nl"
   }
  ],
- "_opgehaald": "2026-10-27T00:01:28+00:00",
+ "_opgehaald": "2026-10-27T00:14:51+00:00",
  "_methode": "Berichten uit de laatste 10 dagen, gescoord op blessure- en opstellingswoorden, op vermelde spelers (zwaarder als ze in de selectie zitten) en op versheid. Onder de 5 punten valt af.",
  "_mislukt": [],
  "_aantal": 93,
@@ -118,7 +118,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-25T23:55:00+00:00",
-   "score": 30.0,
+   "score": 29.9,
    "signalen": [
     "team news"
    ],
@@ -215,7 +215,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-26T14:12:43+00:00",
-   "score": 27.4,
+   "score": 27.3,
    "signalen": [
     "red card",
     "suspension"
@@ -331,7 +331,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-10-26T14:15:00+00:00",
-   "score": 24.4,
+   "score": 24.3,
    "signalen": [
     "team news"
    ],
@@ -427,7 +427,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-10-25T16:40:07+00:00",
-   "score": 21.8,
+   "score": 21.7,
    "signalen": [
     "penalty"
    ],
@@ -520,34 +520,9 @@
    "beeld_scherp": true
   },
   {
-   "titel": "Fearnley retires injured to give Fery victory at Vienna Open",
-   "link": "https://www.skysports.com/tennis/news/12040/13604099/jacob-fearnley-retires-hurt-against-arthur-fery-at-vienna-open-as-harriet-dart-extends-winning-run",
-   "beeld": "data:image/jpeg;base64,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",
-   "samenvatting": "Jacob Fearnley retired with an injury after losing 5-1 in the first set against Arthur Fery to give his fellow countryman a place in the second round at the Vienna Open.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-10-26T17:20:00+00:00",
-   "score": 20.9,
-   "signalen": [
-    "injured",
-    "injury"
-   ],
-   "spelers": [
-    {
-     "n": "Jacob",
-     "t": "HUL",
-     "p": "DEF",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://e2.365dm.com/26/09/1920x1080/skysports-arthur-fery-tennis_7338317.jpg?20260902002640",
-   "beeld_breedte": 340,
-   "beeld_scherp": true
-  },
-  {
    "titel": "FPL notes: Thomas injury update + why he didn’t get a clean sheet",
    "link": "https://www.fantasyfootballscout.co.uk/2026/10/25/fpl-notes-thomas-injury-update-why-he-didnt-get-a-clean-sheet",
-   "beeld": "",
+   "beeld": "data:image/jpeg;base64,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",
    "samenvatting": "Fantasy takeaways from Coventry 0-1 Fulham The post FPL notes: Thomas injury update + why he didn’t get a clean sheet appeared first on Best FPL Tips, Advice, Team News, Picks, and Statistics from Fantasy Football Scout.",
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
@@ -564,7 +539,33 @@
      "p": "MID",
      "mijn": false
     }
-   ]
+   ],
+   "beeld_bron": "https://cdn.fantasyfootballscout.co.uk/wp-content/uploads/2026/10/fpl-notes-thomas-injury-update-why-he-didnt-get-clean-sheet-points.jpg",
+   "beeld_breedte": 340,
+   "beeld_scherp": true
+  },
+  {
+   "titel": "Fearnley retires injured to give Fery victory at Vienna Open",
+   "link": "https://www.skysports.com/tennis/news/12040/13604099/jacob-fearnley-retires-hurt-against-arthur-fery-at-vienna-open-as-harriet-dart-extends-winning-run",
+   "beeld": "",
+   "samenvatting": "Jacob Fearnley retired with an injury after losing 5-1 in the first set against Arthur Fery to give his fellow countryman a place in the second round at the Vienna Open.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-10-26T17:20:00+00:00",
+   "score": 20.8,
+   "signalen": [
+    "injured",
+    "injury"
+   ],
+   "spelers": [
+    {
+     "n": "Jacob",
+     "t": "HUL",
+     "p": "DEF",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://e2.365dm.com/26/09/1920x1080/skysports-arthur-fery-tennis_7338317.jpg?20260902002640"
   },
   {
    "titel": "Should Palmer have been sent off earlier than he was?",
@@ -718,7 +719,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-10-26T23:20:00+00:00",
-   "score": 15.9,
+   "score": 15.8,
    "signalen": [
     "ankle",
     "surgery"
@@ -734,7 +735,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-10-25T15:58:26+00:00",
-   "score": 14.7,
+   "score": 14.6,
    "signalen": [],
    "spelers": [
     {
@@ -766,7 +767,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-25T13:43:27+00:00",
-   "score": 14.3,
+   "score": 14.2,
    "signalen": [],
    "spelers": [
     {
@@ -827,7 +828,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-10-25T17:56:06+00:00",
-   "score": 13.0,
+   "score": 12.9,
    "signalen": [
     "captain"
    ],
@@ -1184,25 +1185,6 @@
    ]
   },
   {
-   "titel": "Heroes and Villains: Marc Guehi is a shadow of himself &#8211; Man City are defensively crap",
-   "link": "https://talksport.com/football/4666929/heroes-and-villains-nicolas-jackson-marc-guehi/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-26T08:09:36+00:00",
-   "score": 9.4,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Guéhi",
-     "t": "MCI",
-     "p": "DEF",
-     "mijn": false
-    }
-   ]
-  },
-  {
    "titel": "Pressure intensifies on Carrick as Man Utd lose to Bournemouth",
    "link": "https://www.bbc.co.uk/sport/football/videos/cq0mepm1d774o?at_medium=RSS&at_campaign=rss",
    "beeld": "",
@@ -1223,6 +1205,25 @@
     }
    ],
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ff84/live/5c216630-d0a5-11f1-93e1-3b657b665bcf.jpg"
+  },
+  {
+   "titel": "Heroes and Villains: Marc Guehi is a shadow of himself &#8211; Man City are defensively crap",
+   "link": "https://talksport.com/football/4666929/heroes-and-villains-nicolas-jackson-marc-guehi/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-10-26T08:09:36+00:00",
+   "score": 9.3,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Guéhi",
+     "t": "MCI",
+     "p": "DEF",
+     "mijn": false
+    }
+   ]
   },
   {
    "titel": "James Maddison suffers devastating injury blow as Tottenham secure historic win at Chelsea",
@@ -1391,22 +1392,10 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-10-26T10:37:37+00:00",
-   "score": 7.8,
+   "score": 7.7,
    "signalen": [
     "manager"
    ],
-   "spelers": []
-  },
-  {
-   "titel": "Eddie Howe told to take Man United job on one huge condition",
-   "link": "https://talksport.com/football/4669738/eddie-howe-man-united-manager-job/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-10-26T21:30:04+00:00",
-   "score": 7.6,
-   "signalen": [],
    "spelers": []
   },
   {
@@ -1421,6 +1410,18 @@
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/skysports-yamal-cubarsi_7388268.jpg?20261026211853"
+  },
+  {
+   "titel": "Eddie Howe told to take Man United job on one huge condition",
+   "link": "https://talksport.com/football/4669738/eddie-howe-man-united-manager-job/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-10-26T21:30:04+00:00",
+   "score": 7.5,
+   "signalen": [],
+   "spelers": []
   }
  ]
 }
