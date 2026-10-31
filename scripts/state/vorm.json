@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-10-31T15:44:16+00:00",
+ "_opgehaald": "2026-10-31T18:46:30+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -142,18 +142,8 @@
   "BOU": {
    "artikel": "2026–27 AFC Bournemouth season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_AFC_Bournemouth_season",
-   "gespeeld": 18,
+   "gespeeld": 19,
    "laatste5": [
-    {
-     "datum": "2026-10-15",
-     "opp": "Sturm Graz",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "2"
-    },
     {
      "datum": "2026-10-18",
      "opp": "Sunderland",
@@ -193,6 +183,16 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Fourth round"
+    },
+    {
+     "datum": "2026-10-31",
+     "opp": "Leeds United",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "9"
     }
    ],
    "vorm": [
@@ -209,18 +209,8 @@
   "BRE": {
    "artikel": "2026–27 Brentford F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brentford_F.C._season",
-   "gespeeld": 18,
+   "gespeeld": 19,
    "laatste5": [
-    {
-     "datum": "2026-10-02",
-     "opp": "Norwich City",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "soort": "oefen",
-     "toernooi": "Friendly"
-    },
     {
      "datum": "2026-10-10",
      "opp": "Aston Villa",
@@ -260,34 +250,34 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "Fourth round"
+    },
+    {
+     "datum": "2026-10-31",
+     "opp": "Nottingham Forest",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "9"
     }
    ],
    "vorm": [
     "G",
-    "G",
     "V",
     "G",
-    "V"
+    "V",
+    "W"
    ],
-   "vormpunten": 3,
+   "vormpunten": 5,
    "vormmax": 15,
-   "oefen": 1
+   "oefen": 0
   },
   "BHA": {
    "artikel": "2026–27 Brighton & Hove Albion F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brighton_%26_Hove_Albion_F.C._season",
-   "gespeeld": 18,
+   "gespeeld": 19,
    "laatste5": [
-    {
-     "datum": "2026-10-15",
-     "opp": "Kauno Žalgiris",
-     "thuis": true,
-     "voor": 4,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "1"
-    },
     {
      "datum": "2026-10-18",
      "opp": "Crystal Palace",
@@ -327,14 +317,24 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "Fourth round"
+    },
+    {
+     "datum": "2026-10-31",
+     "opp": "Manchester City",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "9"
     }
    ],
    "vorm": [
     "W",
-    "W",
     "G",
     "V",
-    "G"
+    "G",
+    "W"
    ],
    "vormpunten": 8,
    "vormmax": 15,
@@ -410,18 +410,8 @@
   "COV": {
    "artikel": "2026–27 Coventry City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Coventry_City_F.C._season",
-   "gespeeld": 14,
+   "gespeeld": 15,
    "laatste5": [
-    {
-     "datum": "2026-09-16",
-     "opp": "Aston Villa",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 3,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "Third round"
-    },
     {
      "datum": "2026-09-19",
      "opp": "Nottingham Forest",
@@ -461,16 +451,26 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "8"
+    },
+    {
+     "datum": "2026-10-31",
+     "opp": "Sunderland",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "9"
     }
    ],
    "vorm": [
-    "V",
     "W",
     "W",
     "V",
-    "V"
+    "V",
+    "W"
    ],
-   "vormpunten": 6,
+   "vormpunten": 9,
    "vormmax": 15,
    "oefen": 0
   },
@@ -678,18 +678,8 @@
   "HUL": {
    "artikel": "2026–27 Hull City A.F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Hull_City_A.F.C._season",
-   "gespeeld": 15,
+   "gespeeld": 16,
    "laatste5": [
-    {
-     "datum": "2026-09-12",
-     "opp": "Chelsea",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "soort": "officieel",
-     "toernooi": "4"
-    },
     {
      "datum": "2026-09-19",
      "opp": "Newcastle United",
@@ -729,13 +719,23 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "8"
+    },
+    {
+     "datum": "2026-10-31",
+     "opp": "Ipswich Town",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "9"
     }
    ],
    "vorm": [
-    "G",
     "V",
     "G",
     "V",
+    "G",
     "G"
    ],
    "vormpunten": 3,
@@ -745,18 +745,8 @@
   "IPS": {
    "artikel": "2026–27 Ipswich Town F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Ipswich_Town_F.C._season",
-   "gespeeld": 15,
+   "gespeeld": 16,
    "laatste5": [
-    {
-     "datum": "2026-09-15",
-     "opp": "Arsenal",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 4,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "Third round"
-    },
     {
      "datum": "2026-09-19",
      "opp": "Everton",
@@ -796,34 +786,34 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "8"
+    },
+    {
+     "datum": "2026-10-31",
+     "opp": "Hull City",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "9"
     }
    ],
    "vorm": [
     "V",
-    "V",
     "W",
     "V",
+    "G",
     "G"
    ],
-   "vormpunten": 4,
+   "vormpunten": 5,
    "vormmax": 15,
    "oefen": 0
   },
   "LEE": {
    "artikel": "2026–27 Leeds United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Leeds_United_F.C._season",
-   "gespeeld": 16,
+   "gespeeld": 17,
    "laatste5": [
-    {
-     "datum": "2026-09-14",
-     "opp": "Newcastle United",
-     "thuis": true,
-     "voor": 4,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "4"
-    },
     {
      "datum": "2026-09-20",
      "opp": "Crystal Palace",
@@ -863,16 +853,26 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "8"
+    },
+    {
+     "datum": "2026-10-31",
+     "opp": "Bournemouth",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "9"
     }
    ],
    "vorm": [
-    "W",
     "G",
     "V",
     "G",
-    "G"
+    "G",
+    "V"
    ],
-   "vormpunten": 6,
+   "vormpunten": 3,
    "vormmax": 15,
    "oefen": 0
   },
@@ -946,18 +946,8 @@
   "MCI": {
    "artikel": "2026–27 Manchester City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_City_F.C._season",
-   "gespeeld": 17,
+   "gespeeld": 18,
    "laatste5": [
-    {
-     "datum": "2026-10-14",
-     "opp": "Paris Saint-Germain",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 4,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "2"
-    },
     {
      "datum": "2026-10-17",
      "opp": "Ipswich Town",
@@ -997,14 +987,24 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "Fourth round"
+    },
+    {
+     "datum": "2026-10-31",
+     "opp": "Brighton & Hove Albion",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "9"
     }
    ],
    "vorm": [
-    "V",
     "W",
     "W",
     "V",
-    "G"
+    "G",
+    "V"
    ],
    "vormpunten": 7,
    "vormmax": 15,
@@ -1152,18 +1152,8 @@
   "NFO": {
    "artikel": "2026–27 Nottingham Forest F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Nottingham_Forest_F.C._season",
-   "gespeeld": 18,
+   "gespeeld": 19,
    "laatste5": [
-    {
-     "datum": "2026-09-12",
-     "opp": "Aston Villa",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "4"
-    },
     {
      "datum": "2026-09-19",
      "opp": "Coventry City",
@@ -1203,16 +1193,26 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "8"
+    },
+    {
+     "datum": "2026-10-31",
+     "opp": "Brentford",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "9"
     }
    ],
    "vorm": [
-    "W",
     "V",
     "V",
     "V",
-    "G"
+    "G",
+    "V"
    ],
-   "vormpunten": 4,
+   "vormpunten": 1,
    "vormmax": 15,
    "oefen": 0
   },
@@ -1286,18 +1286,8 @@
   "SUN": {
    "artikel": "2026–27 Sunderland A.F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Sunderland_A.F.C._season",
-   "gespeeld": 18,
+   "gespeeld": 19,
    "laatste5": [
-    {
-     "datum": "2026-10-15",
-     "opp": "Torreense",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "2"
-    },
     {
      "datum": "2026-10-18",
      "opp": "Bournemouth",
@@ -1337,16 +1327,26 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "Fourth round"
+    },
+    {
+     "datum": "2026-10-31",
+     "opp": "Coventry City",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "9"
     }
    ],
    "vorm": [
-    "W",
     "V",
     "G",
     "G",
-    "W"
+    "W",
+    "V"
    ],
-   "vormpunten": 8,
+   "vormpunten": 5,
    "vormmax": 15,
    "oefen": 0
   }
