@@ -13830,7 +13830,7 @@
      "manager": "Aron Knibbe",
      "ik": false,
      "chip": null,
-     "punten": 54,
+     "punten": 55,
      "straf": 0,
      "transfers": 2,
      "waarde": 104.0,
@@ -13993,6 +13993,174 @@
      ]
     },
     {
+     "entry": 354683,
+     "team": "Youpi Kroupi",
+     "manager": "Youp Van Gelder",
+     "ik": false,
+     "chip": null,
+     "punten": 63,
+     "straf": 0,
+     "transfers": 3,
+     "waarde": 102.6,
+     "bank": 3.5,
+     "cap": 411,
+     "vice": 40,
+     "autosub_uit": [],
+     "autosub_in": [],
+     "picks": [
+      {
+       "id": 1,
+       "n": "Raya",
+       "t": "ARS",
+       "p": "GKP",
+       "basis": true,
+       "cap": false,
+       "pt": 5,
+       "min": 90
+      },
+      {
+       "id": 115,
+       "n": "De Cuyper",
+       "t": "BHA",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 9,
+       "min": 71
+      },
+      {
+       "id": 566,
+       "n": "Silva",
+       "t": "BOU",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 8,
+       "min": 90
+      },
+      {
+       "id": 4,
+       "n": "Gabriel",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": true,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      },
+      {
+       "id": 98,
+       "n": "Janelt",
+       "t": "BRE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 5,
+       "min": 90
+      },
+      {
+       "id": 40,
+       "n": "Rogers",
+       "t": "CHE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 9,
+       "min": 90
+      },
+      {
+       "id": 94,
+       "n": "Schade",
+       "t": "BRE",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 3,
+       "min": 83
+      },
+      {
+       "id": 68,
+       "n": "Tavernier",
+       "t": "BOU",
+       "p": "MID",
+       "basis": true,
+       "cap": false,
+       "pt": 3,
+       "min": 90
+      },
+      {
+       "id": 411,
+       "n": "Haaland",
+       "t": "MCI",
+       "p": "FWD",
+       "basis": true,
+       "cap": true,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 166,
+       "n": "N.Jackson",
+       "t": "AVL",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 9,
+       "min": 90
+      },
+      {
+       "id": 569,
+       "n": "Gonzalo",
+       "t": "FUL",
+       "p": "FWD",
+       "basis": true,
+       "cap": false,
+       "pt": 2,
+       "min": 86
+      },
+      {
+       "id": 251,
+       "n": "Lecomte",
+       "t": "FUL",
+       "p": "GKP",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 124,
+       "n": "Groß",
+       "t": "BHA",
+       "p": "MID",
+       "basis": false,
+       "cap": false,
+       "pt": 2,
+       "min": 90
+      },
+      {
+       "id": 173,
+       "n": "Thomas",
+       "t": "COV",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 0,
+       "min": 0
+      },
+      {
+       "id": 8,
+       "n": "Calafiori",
+       "t": "ARS",
+       "p": "DEF",
+       "basis": false,
+       "cap": false,
+       "pt": 6,
+       "min": 90
+      }
+     ]
+    },
+    {
      "entry": 802270,
      "team": "Win Porro Favor",
      "manager": "Rafael Blees",
@@ -14143,174 +14311,6 @@
        "n": "João Pedro",
        "t": "CHE",
        "p": "FWD",
-       "basis": false,
-       "cap": false,
-       "pt": 0,
-       "min": 0
-      },
-      {
-       "id": 8,
-       "n": "Calafiori",
-       "t": "ARS",
-       "p": "DEF",
-       "basis": false,
-       "cap": false,
-       "pt": 6,
-       "min": 90
-      }
-     ]
-    },
-    {
-     "entry": 354683,
-     "team": "Youpi Kroupi",
-     "manager": "Youp Van Gelder",
-     "ik": false,
-     "chip": null,
-     "punten": 54,
-     "straf": 0,
-     "transfers": 3,
-     "waarde": 102.6,
-     "bank": 3.5,
-     "cap": 411,
-     "vice": 40,
-     "autosub_uit": [],
-     "autosub_in": [],
-     "picks": [
-      {
-       "id": 1,
-       "n": "Raya",
-       "t": "ARS",
-       "p": "GKP",
-       "basis": true,
-       "cap": false,
-       "pt": 5,
-       "min": 90
-      },
-      {
-       "id": 115,
-       "n": "De Cuyper",
-       "t": "BHA",
-       "p": "DEF",
-       "basis": true,
-       "cap": false,
-       "pt": 9,
-       "min": 71
-      },
-      {
-       "id": 566,
-       "n": "Silva",
-       "t": "BOU",
-       "p": "DEF",
-       "basis": true,
-       "cap": false,
-       "pt": 8,
-       "min": 90
-      },
-      {
-       "id": 4,
-       "n": "Gabriel",
-       "t": "ARS",
-       "p": "DEF",
-       "basis": true,
-       "cap": false,
-       "pt": 6,
-       "min": 90
-      },
-      {
-       "id": 98,
-       "n": "Janelt",
-       "t": "BRE",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 5,
-       "min": 90
-      },
-      {
-       "id": 40,
-       "n": "Rogers",
-       "t": "CHE",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 9,
-       "min": 90
-      },
-      {
-       "id": 94,
-       "n": "Schade",
-       "t": "BRE",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 3,
-       "min": 83
-      },
-      {
-       "id": 68,
-       "n": "Tavernier",
-       "t": "BOU",
-       "p": "MID",
-       "basis": true,
-       "cap": false,
-       "pt": 3,
-       "min": 90
-      },
-      {
-       "id": 411,
-       "n": "Haaland",
-       "t": "MCI",
-       "p": "FWD",
-       "basis": true,
-       "cap": true,
-       "pt": 2,
-       "min": 90
-      },
-      {
-       "id": 166,
-       "n": "N.Jackson",
-       "t": "AVL",
-       "p": "FWD",
-       "basis": true,
-       "cap": false,
-       "pt": 9,
-       "min": 90
-      },
-      {
-       "id": 569,
-       "n": "Gonzalo",
-       "t": "FUL",
-       "p": "FWD",
-       "basis": true,
-       "cap": false,
-       "pt": 2,
-       "min": 86
-      },
-      {
-       "id": 251,
-       "n": "Lecomte",
-       "t": "FUL",
-       "p": "GKP",
-       "basis": false,
-       "cap": false,
-       "pt": 0,
-       "min": 0
-      },
-      {
-       "id": 124,
-       "n": "Groß",
-       "t": "BHA",
-       "p": "MID",
-       "basis": false,
-       "cap": false,
-       "pt": 2,
-       "min": 90
-      },
-      {
-       "id": 173,
-       "n": "Thomas",
-       "t": "COV",
-       "p": "DEF",
        "basis": false,
        "cap": false,
        "pt": 0,
@@ -15169,8 +15169,8 @@
      ]
     }
    ],
-   "opgehaald": "2026-11-03T10:03:26+00:00",
-   "voorlopig": true
+   "opgehaald": "2026-11-03T18:03:11+00:00",
+   "voorlopig": false
   }
  },
  "prestatie": {
@@ -15265,7 +15265,7 @@
    "beste_cap": 9
   }
  },
- "_bijgewerkt": "2026-11-03T10:46:47+00:00",
+ "_bijgewerkt": "2026-11-03T18:03:13+00:00",
  "_afgerond": 9,
  "_managers": 10
 }
