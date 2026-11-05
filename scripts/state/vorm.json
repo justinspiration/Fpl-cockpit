@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-11-05T18:43:10+00:00",
+ "_opgehaald": "2026-11-05T22:16:25+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -142,18 +142,8 @@
   "BOU": {
    "artikel": "2026–27 AFC Bournemouth season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_AFC_Bournemouth_season",
-   "gespeeld": 19,
+   "gespeeld": 20,
    "laatste5": [
-    {
-     "datum": "2026-10-18",
-     "opp": "Sunderland",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "7"
-    },
     {
      "datum": "2026-10-22",
      "opp": "Milan",
@@ -193,6 +183,16 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "9"
+    },
+    {
+     "datum": "2026-11-05",
+     "opp": "Sparta Prague",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "4"
     }
    ],
    "vorm": [
@@ -276,18 +276,8 @@
   "BHA": {
    "artikel": "2026–27 Brighton & Hove Albion F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Brighton_%26_Hove_Albion_F.C._season",
-   "gespeeld": 19,
+   "gespeeld": 20,
    "laatste5": [
-    {
-     "datum": "2026-10-18",
-     "opp": "Crystal Palace",
-     "thuis": true,
-     "voor": 5,
-     "tegen": 0,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "7"
-    },
     {
      "datum": "2026-10-22",
      "opp": "Jablonec",
@@ -327,13 +317,23 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "9"
+    },
+    {
+     "datum": "2026-11-05",
+     "opp": "Getafe",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "3"
     }
    ],
    "vorm": [
-    "W",
     "G",
     "V",
     "G",
+    "W",
     "W"
    ],
    "vormpunten": 8,
@@ -477,18 +477,8 @@
   "CRY": {
    "artikel": "2026–27 Crystal Palace F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Crystal_Palace_F.C._season",
-   "gespeeld": 18,
+   "gespeeld": 19,
    "laatste5": [
-    {
-     "datum": "2026-10-18",
-     "opp": "Brighton & Hove Albion",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 5,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "7"
-    },
     {
      "datum": "2026-10-22",
      "opp": "Beşiktaş",
@@ -528,16 +518,26 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "9"
+    },
+    {
+     "datum": "2026-11-05",
+     "opp": "TSG Hoffenheim",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "4"
     }
    ],
    "vorm": [
-    "V",
     "G",
     "V",
     "W",
-    "V"
+    "V",
+    "G"
    ],
-   "vormpunten": 4,
+   "vormpunten": 5,
    "vormmax": 15,
    "oefen": 0
   },
@@ -1286,18 +1286,8 @@
   "SUN": {
    "artikel": "2026–27 Sunderland A.F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Sunderland_A.F.C._season",
-   "gespeeld": 19,
+   "gespeeld": 20,
    "laatste5": [
-    {
-     "datum": "2026-10-18",
-     "opp": "Bournemouth",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 2,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "7"
-    },
     {
      "datum": "2026-10-22",
      "opp": "Lech Poznań",
@@ -1337,13 +1327,23 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "9"
+    },
+    {
+     "datum": "2026-11-05",
+     "opp": "Dinamo Zagreb",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "4"
     }
    ],
    "vorm": [
-    "V",
     "G",
     "G",
     "W",
+    "V",
     "V"
    ],
    "vormpunten": 5,
