@@ -2,24 +2,14 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-11-07T16:38:41+00:00",
+ "_opgehaald": "2026-11-07T20:30:07+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
    "artikel": "2026–27 Arsenal F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Arsenal_F.C._season",
-   "gespeeld": 20,
+   "gespeeld": 21,
    "laatste5": [
-    {
-     "datum": "2026-10-21",
-     "opp": "Bayern Munich",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "soort": "officieel",
-     "toernooi": "3"
-    },
     {
      "datum": "2026-10-24",
      "opp": "Everton",
@@ -59,16 +49,26 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "4"
+    },
+    {
+     "datum": "2026-11-07",
+     "opp": "Hull City",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "10"
     }
    ],
    "vorm": [
-    "G",
     "W",
     "G",
+    "W",
     "W",
     "W"
    ],
-   "vormpunten": 11,
+   "vormpunten": 13,
    "vormmax": 15,
    "oefen": 0
   },
@@ -611,18 +611,8 @@
   "FUL": {
    "artikel": "2026–27 Fulham F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Fulham_F.C._season",
-   "gespeeld": 18,
+   "gespeeld": 19,
    "laatste5": [
-    {
-     "datum": "2026-10-10",
-     "opp": "Ipswich Town",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "6"
-    },
     {
      "datum": "2026-10-17",
      "opp": "Hull City",
@@ -662,34 +652,34 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "9"
+    },
+    {
+     "datum": "2026-11-07",
+     "opp": "Newcastle United",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "10"
     }
    ],
    "vorm": [
-    "V",
     "W",
     "W",
     "V",
+    "G",
     "G"
    ],
-   "vormpunten": 7,
+   "vormpunten": 8,
    "vormmax": 15,
    "oefen": 0
   },
   "HUL": {
    "artikel": "2026–27 Hull City A.F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Hull_City_A.F.C._season",
-   "gespeeld": 16,
+   "gespeeld": 17,
    "laatste5": [
-    {
-     "datum": "2026-09-19",
-     "opp": "Newcastle United",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "5"
-    },
     {
      "datum": "2026-10-11",
      "opp": "Everton",
@@ -729,14 +719,24 @@
      "uit": "G",
      "soort": "officieel",
      "toernooi": "9"
+    },
+    {
+     "datum": "2026-11-07",
+     "opp": "Arsenal",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "10"
     }
    ],
    "vorm": [
-    "V",
     "G",
     "V",
     "G",
-    "G"
+    "G",
+    "V"
    ],
    "vormpunten": 3,
    "vormmax": 15,
@@ -946,18 +946,8 @@
   "MCI": {
    "artikel": "2026–27 Manchester City F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Manchester_City_F.C._season",
-   "gespeeld": 19,
+   "gespeeld": 20,
    "laatste5": [
-    {
-     "datum": "2026-10-20",
-     "opp": "AEK Athens",
-     "thuis": true,
-     "voor": 5,
-     "tegen": 1,
-     "uit": "W",
-     "soort": "officieel",
-     "toernooi": "3"
-    },
     {
      "datum": "2026-10-24",
      "opp": "Aston Villa",
@@ -997,16 +987,26 @@
      "uit": "W",
      "soort": "officieel",
      "toernooi": "4"
+    },
+    {
+     "datum": "2026-11-07",
+     "opp": "Nottingham Forest",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "10"
     }
    ],
    "vorm": [
-    "W",
     "V",
     "G",
     "V",
-    "W"
+    "W",
+    "V"
    ],
-   "vormpunten": 7,
+   "vormpunten": 4,
    "vormmax": 15,
    "oefen": 0
   },
@@ -1085,18 +1085,8 @@
   "NEW": {
    "artikel": "2026–27 Newcastle United F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Newcastle_United_F.C._season",
-   "gespeeld": 17,
+   "gespeeld": 18,
    "laatste5": [
-    {
-     "datum": "2026-10-12",
-     "opp": "Coventry City",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 4,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "6"
-    },
     {
      "datum": "2026-10-17",
      "opp": "Aston Villa",
@@ -1136,34 +1126,34 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "9"
+    },
+    {
+     "datum": "2026-11-07",
+     "opp": "Fulham",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "soort": "officieel",
+     "toernooi": "10"
     }
    ],
    "vorm": [
     "V",
-    "V",
     "W",
     "V",
-    "V"
+    "V",
+    "G"
    ],
-   "vormpunten": 3,
+   "vormpunten": 4,
    "vormmax": 15,
    "oefen": 0
   },
   "NFO": {
    "artikel": "2026–27 Nottingham Forest F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Nottingham_Forest_F.C._season",
-   "gespeeld": 19,
+   "gespeeld": 20,
    "laatste5": [
-    {
-     "datum": "2026-09-19",
-     "opp": "Coventry City",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "5"
-    },
     {
      "datum": "2026-10-11",
      "opp": "Crystal Palace",
@@ -1203,16 +1193,26 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "9"
+    },
+    {
+     "datum": "2026-11-07",
+     "opp": "Manchester City",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "10"
     }
    ],
    "vorm": [
     "V",
     "V",
-    "V",
     "G",
-    "V"
+    "V",
+    "W"
    ],
-   "vormpunten": 1,
+   "vormpunten": 4,
    "vormmax": 15,
    "oefen": 0
   },
