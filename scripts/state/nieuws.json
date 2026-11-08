@@ -1,6 +1,6 @@
 {
  "_bron": "publieke RSS-feeds",
- "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 10 extra gevonden, 13 ingebakken (541 KB).",
+ "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 10 extra gevonden, 13 ingebakken (542 KB).",
  "_feeds": [
   {
    "naam": "Fantasy Football Scout",
@@ -33,10 +33,10 @@
    "soort": "nl"
   }
  ],
- "_opgehaald": "2026-11-08T19:20:53+00:00",
+ "_opgehaald": "2026-11-08T21:16:30+00:00",
  "_methode": "Berichten uit de laatste 10 dagen, gescoord op blessure- en opstellingswoorden, op vermelde spelers (zwaarder als ze in de selectie zitten) en op versheid. Onder de 5 punten valt af.",
  "_mislukt": [],
- "_aantal": 101,
+ "_aantal": 115,
  "berichten": [
   {
    "titel": "FPL notes: Arteta’s plan for Saliba, Rice “fine” + Belloumi injury",
@@ -46,7 +46,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-08T11:45:00+00:00",
-   "score": 33.7,
+   "score": 33.4,
    "signalen": [
     "injury",
     "team news"
@@ -83,7 +83,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-07T17:20:00+00:00",
-   "score": 31.7,
+   "score": 31.3,
    "signalen": [
     "rest",
     "team news"
@@ -114,7 +114,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-07T14:40:00+00:00",
-   "score": 29.2,
+   "score": 28.9,
    "signalen": [
     "team news"
    ],
@@ -144,7 +144,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-08T13:30:00+00:00",
-   "score": 29.0,
+   "score": 28.7,
    "signalen": [
     "team news"
    ],
@@ -180,7 +180,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-07T21:15:00+00:00",
-   "score": 27.3,
+   "score": 27.0,
    "signalen": [
     "injury",
     "team news"
@@ -211,7 +211,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-11-06T22:03:48+00:00",
-   "score": 26.5,
+   "score": 26.1,
    "signalen": [
     "comeback",
     "transfer"
@@ -277,7 +277,7 @@
    "bron": "Voetbal International",
    "soort": "nl",
    "datum": "2026-11-08T19:35:10+01:00",
-   "score": 23.9,
+   "score": 23.6,
    "signalen": [
     "blessure",
     "comeback"
@@ -301,6 +301,40 @@
    "beeld_scherp": true
   },
   {
+   "titel": "Dorgu rescues point for Manchester United in eight-goal thriller against Aston Villa",
+   "link": "https://www.theguardian.com/football/2026/nov/08/manchester-united-aston-villa-premier-league-match-report",
+   "beeld": "",
+   "samenvatting": "<p>Does this late, late comeback draw keep Michael Carrick in his job? He urged United to back up their breathless Roma comeback victory on Tuesday by building momentum and they did, kind of, by avoiding defeat.</p><p>Patrick Dorgu’s 96th-minute equaliser went",
+   "bron": "The Guardian",
+   "soort": "algemeen",
+   "datum": "2026-11-08T18:54:23+00:00",
+   "score": 22.6,
+   "signalen": [
+    "comeback"
+   ],
+   "spelers": [
+    {
+     "n": "Suzuki",
+     "t": "AVL",
+     "p": "GKP",
+     "mijn": false
+    },
+    {
+     "n": "Lammens",
+     "t": "MUN",
+     "p": "GKP",
+     "mijn": false
+    },
+    {
+     "n": "Dorgu",
+     "t": "MUN",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://i.guim.co.uk/img/media/0aa088aa46fa510182e5835b6b1d067143e90c4f/325_0_3707_2967/master/3707.jpg?width=140&quality=85&auto=format&fit=max&s=aade0e16a816760ff2cb4902ebca9c02"
+  },
+  {
    "titel": "Man Utd v Aston Villa team news: Tielemans starts",
    "link": "https://www.fantasyfootballscout.co.uk/2026/11/08/man-utd-v-aston-villa-team-news-tielemans-starts",
    "beeld": "data:image/jpeg;base64,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",
@@ -308,7 +342,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-08T16:15:00+00:00",
-   "score": 21.5,
+   "score": 21.2,
    "signalen": [
     "team news"
    ],
@@ -332,7 +366,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-07T11:40:00+00:00",
-   "score": 20.7,
+   "score": 20.4,
    "signalen": [
     "team news"
    ],
@@ -355,14 +389,66 @@
    "beeld_scherp": true
   },
   {
-   "titel": "Evanilson launches eighth straight Bournemouth win at blundering Ipswich",
+   "titel": "Brighton breeze past 10-man Brentford to move up to second",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cry836l4q56po?at_medium=RSS&at_campaign=rss",
+   "beeld": "data:image/jpeg;base64,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",
+   "samenvatting": "Diego Gomez's long-range strike fires Brighton to a 2-0 over Brentford, who saw Igor Thiago be shown a straight red card, as Fabian Hurzeler's side move up to second in the Premier League.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-08T20:00:21+00:00",
+   "score": 19.8,
+   "signalen": [
+    "red card"
+   ],
+   "spelers": [
+    {
+     "n": "Thiago",
+     "t": "BRE",
+     "p": "FWD",
+     "mijn": false
+    },
+    {
+     "n": "Gomez",
+     "t": "LIV",
+     "p": "DEF",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8967/live/b01c8b60-dbaa-11f1-a701-fddedf244c16.jpg",
+   "beeld_breedte": 240,
+   "beeld_scherp": false
+  },
+  {
+   "titel": "Bournemouth beat Ipswich to extend winning streak",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cmx23rll2w0qo?at_medium=RSS&at_campaign=rss",
+   "beeld": "data:image/jpeg;base64,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",
+   "samenvatting": "Evanilson scores for the fifth Premier League game in a row as Bournemouth's impressive winning streak continued with a controlled victory over Ipswich.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-08T19:59:53+00:00",
+   "score": 19.8,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Evanilson",
+     "t": "BOU",
+     "p": "FWD",
+     "mijn": true
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2f40/live/739a24b0-dba3-11f1-a701-fddedf244c16.jpg",
+   "beeld_breedte": 240,
+   "beeld_scherp": false
+  },
+  {
+   "titel": "Evanilson ignites eighth straight Bournemouth win at blundering Ipswich",
    "link": "https://www.theguardian.com/football/2026/nov/08/ipswich-bournemouth-premier-league-match-report",
    "beeld": "",
-   "samenvatting": "<p>Another Evanilson goal helped fire Marco Rose’s Bournemouth to an eighth straight victory with a hard-fought 2-1 win at Ipswich.</p><p>Evanilson failed to score in his first six appearances of the season but found the net for a fifth consecutive Premier Lea",
+   "samenvatting": "<p>Marco Rose paid tribute to his Bournemouth side after a hard‑fought 2-1 victory at Ipswich equalled the club’s record of eight consecutive wins.</p><p>Evanilson got the ball rolling after five minutes, scoring for a fifth successive Premier League match. Wi",
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-11-08T16:14:31+00:00",
-   "score": 19.5,
+   "score": 19.2,
    "signalen": [],
    "spelers": [
     {
@@ -412,7 +498,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-08T18:50:00+00:00",
-   "score": 17.9,
+   "score": 17.6,
    "signalen": [
     "team news"
    ],
@@ -429,7 +515,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-11-07T14:34:21+00:00",
-   "score": 17.2,
+   "score": 16.9,
    "signalen": [
     "ban",
     "manager"
@@ -453,12 +539,12 @@
   {
    "titel": "Was Leeds' Bogle lucky to escape red card?",
    "link": "https://www.bbc.co.uk/sport/football/videos/c6lyl7qvq8ejo?at_medium=RSS&at_campaign=rss",
-   "beeld": "data:image/jpeg;base64,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",
+   "beeld": "",
    "samenvatting": "Match of the Day's Steph Houghton and Danny Murphy assess whether a challenge from Leeds United's Jayden Bogle on Tottenham's Mathys Tel was worthy of a red card.",
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-08T00:00:26+00:00",
-   "score": 16.8,
+   "score": 16.5,
    "signalen": [
     "red card"
    ],
@@ -476,19 +562,17 @@
      "mijn": false
     }
    ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/16a1/live/ae222e20-dafe-11f1-b441-2b33b063138f.jpg",
-   "beeld_breedte": 240,
-   "beeld_scherp": false
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/16a1/live/ae222e20-dafe-11f1-b441-2b33b063138f.jpg"
   },
   {
    "titel": "Failed to deal with Brobbey - player ratings for Sunderland v Chelsea",
    "link": "https://www.bbc.co.uk/sport/football/articles/c94g1n4pzev3o?at_medium=RSS&at_campaign=rss",
-   "beeld": "data:image/jpeg;base64,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",
+   "beeld": "",
    "samenvatting": "Enzo Le Fee's penalty is the difference as Sunderland climb off the bottom of the table but how did the players rate against Chelsea?",
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-08T16:13:36+00:00",
-   "score": 16.5,
+   "score": 16.2,
    "signalen": [
     "deal",
     "penalty"
@@ -501,19 +585,38 @@
      "mijn": false
     }
    ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/414a/live/54cb1080-db8a-11f1-ab1c-6b6075dcdfe1.jpg",
-   "beeld_breedte": 240,
-   "beeld_scherp": false
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/414a/live/54cb1080-db8a-11f1-ab1c-6b6075dcdfe1.jpg"
   },
   {
-   "titel": "Wirtz provides quality to seal Liverpool win over lacklustre Crystal Palace",
+   "titel": "Why Unai Emery left Old Trafford pitch during game amid red card confusion",
+   "link": "https://talksport.com/football/4693872/unai-emery-man-utd-aston-villa-red-card/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-11-08T19:19:41+00:00",
+   "score": 15.7,
+   "signalen": [
+    "red card"
+   ],
+   "spelers": [
+    {
+     "n": "Trafford",
+     "t": "LEE",
+     "p": "GKP",
+     "mijn": false
+    }
+   ]
+  },
+  {
+   "titel": "Wirtz provides quality as Liverpool leave Crystal Palace propping up table",
    "link": "https://www.theguardian.com/football/2026/nov/08/crystal-palace-liverpool-premier-league-match-report",
    "beeld": "",
-   "samenvatting": "<p>It was the moment when Liverpool knew they would win here in south London and so move on from the Premier League loss to Arsenal at Anfield last Sunday and the one in midweek at Fenerbahce in the Champions League.</p><p>Florian Wirtz had timed his run as Li",
+   "samenvatting": "<p>It was the moment when ­Liverpool knew they would win here in south London and so move on from the ­Premier League defeat against ­Arsenal at Anfield last Sunday and the one in midweek at Fenerbahce in the Champions League.</p><p>Florian Wirtz had timed his",
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-11-08T16:16:18+00:00",
-   "score": 15.5,
+   "score": 15.2,
    "signalen": [],
    "spelers": [
     {
@@ -539,7 +642,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-08T14:46:00+00:00",
-   "score": 15.2,
+   "score": 14.9,
    "signalen": [],
    "spelers": [
     {
@@ -558,28 +661,6 @@
    "beeld_bron": "https://e2.365dm.com/26/11/1920x1080/skysports-goal-liverpool_7400965.jpg?20261108144949"
   },
   {
-   "titel": "Dorgu rescues point for Manchester United in eight-goal thriller against Aston Villa",
-   "link": "https://www.theguardian.com/football/2026/nov/08/manchester-united-aston-villa-premier-league-match-report",
-   "beeld": "",
-   "samenvatting": "<p>Does this late, late comeback draw keep Michael Carrick in his job? He urged United to back Tuesday’s breathless Roma comeback victory by building momentum and they did – kind of, by avoiding defeat.</p><p>Patrick Dorgu’s 96th-minute equaliser went off his ",
-   "bron": "The Guardian",
-   "soort": "algemeen",
-   "datum": "2026-11-08T18:54:23+00:00",
-   "score": 14.9,
-   "signalen": [
-    "comeback"
-   ],
-   "spelers": [
-    {
-     "n": "Dorgu",
-     "t": "MUN",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://i.guim.co.uk/img/media/cc286f76b106b1405721751101d7dcbb6bca0f11/494_0_3862_3089/master/3862.jpg?width=140&quality=85&auto=format&fit=max&s=b8c286e13201536f293de21a9aa7d79c"
-  },
-  {
    "titel": "Premier League news: Arteta insists Rice isn’t playing too many games",
    "link": "https://www.theguardian.com/football/2026/nov/06/premier-league-news-manchester-united-baleba-manchester-city-donnarumma-arsenal-arteta-rice",
    "beeld": "",
@@ -587,7 +668,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-11-06T23:09:22+00:00",
-   "score": 14.6,
+   "score": 14.3,
    "signalen": [
     "manager"
    ],
@@ -614,48 +695,6 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/dc0e13580f340b16850cb2a86796c3da7f4e42d0/395_325_2118_1693/master/2118.jpg?width=140&quality=85&auto=format&fit=max&s=3777b8d245daa83d72e50aff37d71245"
   },
   {
-   "titel": "FPL Gameweek 10: Saturday’s goals, assists, bonus + DefCon points",
-   "link": "https://www.fantasyfootballscout.co.uk/2026/11/07/fpl-gameweek-10-saturdays-goals-assists-bonus-defcon-points-2",
-   "beeld": "",
-   "samenvatting": "Rounding up the day's FPL numbers The post FPL Gameweek 10: Saturday’s goals, assists, bonus + DefCon points appeared first on Best FPL Tips, Advice, Team News, Picks, and Statistics from Fantasy Football Scout.",
-   "bron": "Fantasy Football Scout",
-   "soort": "fpl",
-   "datum": "2026-11-07T19:45:00+00:00",
-   "score": 14.1,
-   "signalen": [
-    "team news"
-   ],
-   "spelers": []
-  },
-  {
-   "titel": "Delightful Delap and outfought Anderson - Forest v Man City player ratings",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c8wy9512p2yvo?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "How Nottingham Forest and Manchester City's players rated following their Premier League match at the City Ground.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-07T19:26:31+00:00",
-   "score": 14.0,
-   "signalen": [
-    "rest"
-   ],
-   "spelers": [
-    {
-     "n": "Anderson",
-     "t": "MCI",
-     "p": "MID",
-     "mijn": false
-    },
-    {
-     "n": "Delap",
-     "t": "NFO",
-     "p": "FWD",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/84ec/live/ac5b64c0-dae6-11f1-a701-fddedf244c16.jpg"
-  },
-  {
    "titel": "Chelsea star Emi Martinez permanently disfigured from injury and still requires surgery",
    "link": "https://talksport.com/football/4679371/chelsea-emi-martinez-injury-finger-world-cup-surgery/",
    "beeld": "",
@@ -678,6 +717,92 @@
    ]
   },
   {
+   "titel": "Palace consider replacing Sage with Frank among contenders",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c623dpeey3e4o?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Crystal Palace manager Pierre Sage is in serious danger of losing his job, with Thomas Frank among the contenders to replace him.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-08T20:49:40+00:00",
+   "score": 13.9,
+   "signalen": [
+    "manager"
+   ],
+   "spelers": [
+    {
+     "n": "Thomas",
+     "t": "HUL",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/82df/live/76bb35a0-dbb5-11f1-93e1-3b657b665bcf.jpg"
+  },
+  {
+   "titel": "FPL Gameweek 10: Saturday’s goals, assists, bonus + DefCon points",
+   "link": "https://www.fantasyfootballscout.co.uk/2026/11/07/fpl-gameweek-10-saturdays-goals-assists-bonus-defcon-points-2",
+   "beeld": "",
+   "samenvatting": "Rounding up the day's FPL numbers The post FPL Gameweek 10: Saturday’s goals, assists, bonus + DefCon points appeared first on Best FPL Tips, Advice, Team News, Picks, and Statistics from Fantasy Football Scout.",
+   "bron": "Fantasy Football Scout",
+   "soort": "fpl",
+   "datum": "2026-11-07T19:45:00+00:00",
+   "score": 13.7,
+   "signalen": [
+    "team news"
+   ],
+   "spelers": []
+  },
+  {
+   "titel": "Delightful Delap and outfought Anderson - Forest v Man City player ratings",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c8wy9512p2yvo?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "How Nottingham Forest and Manchester City's players rated following their Premier League match at the City Ground.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-07T19:26:31+00:00",
+   "score": 13.7,
+   "signalen": [
+    "rest"
+   ],
+   "spelers": [
+    {
+     "n": "Anderson",
+     "t": "MCI",
+     "p": "MID",
+     "mijn": false
+    },
+    {
+     "n": "Delap",
+     "t": "NFO",
+     "p": "FWD",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/84ec/live/ac5b64c0-dae6-11f1-a701-fddedf244c16.jpg"
+  },
+  {
+   "titel": "'Frustrated and disappointed' - Emery on Man Utd draw",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c9dr812v01lzo?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Aston Villa manager Unai Emery was a frustrated figure after his side surrendered a two goal lead against Manchester United twice, leaving Old Trafford with a point from their 4-4 draw.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-08T19:39:24+00:00",
+   "score": 13.7,
+   "signalen": [
+    "manager"
+   ],
+   "spelers": [
+    {
+     "n": "Trafford",
+     "t": "LEE",
+     "p": "GKP",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d367/live/1f25a4c0-dbaa-11f1-a701-fddedf244c16.jpg"
+  },
+  {
    "titel": "Diego Gómez hits another stunner as Brighton beat 10-man Brentford to go second",
    "link": "https://www.theguardian.com/football/2026/nov/08/brighton-brentford-premier-league-match-report",
    "beeld": "",
@@ -685,7 +810,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-11-08T16:17:32+00:00",
-   "score": 13.5,
+   "score": 13.2,
    "signalen": [
     "manager"
    ],
@@ -715,26 +840,6 @@
    "spelers": []
   },
   {
-   "titel": "Leeds condemn racist abuse of Bogle after Tel incident",
-   "link": "https://www.bbc.co.uk/sport/football/articles/ck5yn1zzyr2jo?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Leeds United condemn the \"disgusting\" online racist abuse directed towards defender Jayden Bogle following Saturday's 1-0 win against Tottenham.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-08T19:12:01+00:00",
-   "score": 12.0,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Bogle",
-     "t": "LEE",
-     "p": "DEF",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/680c/live/40978c40-dba0-11f1-81e8-61c133a2b43c.jpg"
-  },
-  {
    "titel": "Evanilson scores again as Bournemouth beat Leeds",
    "link": "https://www.bbc.co.uk/sport/football/videos/c6zxj1vzwx1xo?at_medium=RSS&at_campaign=rss",
    "beeld": "",
@@ -755,6 +860,85 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8ae1/live/c3c33b70-d55e-11f1-b441-2b33b063138f.jpg"
   },
   {
+   "titel": "Man Utd score twice in stoppage time to share points in eight-goal thriller",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cqj6jldpl2gyo?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Manchester United twice come back from two goals down to earn a point against Aston Villa in an eight-goal thriller at Old Trafford, although they will go into the international break in the Premier League relegation zone.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-08T20:01:16+00:00",
+   "score": 11.8,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Trafford",
+     "t": "LEE",
+     "p": "GKP",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4f78/live/514a5d20-dba9-11f1-93e1-3b657b665bcf.jpg"
+  },
+  {
+   "titel": "Damning stat from 1/10 Diogo Dalot shows Man United are no longer a serious football club",
+   "link": "https://talksport.com/football/4693930/damning-stat-diogo-dalot-man-utd-player-ratings/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-11-08T20:04:55+00:00",
+   "score": 11.8,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Dalot",
+     "t": "MUN",
+     "p": "DEF",
+     "mijn": false
+    }
+   ]
+  },
+  {
+   "titel": "Leeds condemn racist abuse of Bogle after Tel incident",
+   "link": "https://www.bbc.co.uk/sport/football/articles/ck5yn1zzyr2jo?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Leeds United condemn the \"disgusting\" online racist abuse directed towards defender Jayden Bogle following Saturday's 1-0 win against Tottenham.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-08T19:12:01+00:00",
+   "score": 11.7,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Bogle",
+     "t": "LEE",
+     "p": "DEF",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/680c/live/40978c40-dba0-11f1-81e8-61c133a2b43c.jpg"
+  },
+  {
+   "titel": "Villa boss Emery explains why he went down tunnel before full-time",
+   "link": "https://www.skysports.com/football/news/12040/13609937/unai-emery-aston-villa-boss-reveals-why-he-went-down-old-trafford-tunnel-before-full-time-in-eight-goal-thriller-at-man-utd",
+   "beeld": "",
+   "samenvatting": "A prickly Unai Emery claimed he headed down the Old Trafford tunnel after Manchester United's late equaliser against his Aston Villa side because he thought the match was about to end.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-11-08T19:25:00+00:00",
+   "score": 11.7,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Trafford",
+     "t": "LEE",
+     "p": "GKP",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://e2.365dm.com/26/11/1920x1080/skysports-unai-emery-aston-villa_7401498.jpg?20261108193125"
+  },
+  {
    "titel": "Dorgu makes dramatic impact - Man Utd v Aston Villa ratings",
    "link": "https://www.bbc.co.uk/sport/football/articles/cwj34k7k54veo?at_medium=RSS&at_campaign=rss",
    "beeld": "",
@@ -762,7 +946,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-08T18:46:45+00:00",
-   "score": 11.9,
+   "score": 11.6,
    "signalen": [],
    "spelers": [
     {
@@ -775,26 +959,6 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6507/live/8fdebc40-dba2-11f1-93e1-3b657b665bcf.jpg"
   },
   {
-   "titel": "Man Utd score two in stoppage-time to salvage 4-4 draw with Villa",
-   "link": "https://www.skysports.com/football/manchester-united-vs-aston-villa/report/559541",
-   "beeld": "",
-   "samenvatting": "Manchester United scored twice in stoppage-time to salvage an incredible 4-4 draw with Aston Villa at Old Trafford that still leaves them in the relegation zone.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-11-08T18:30:00+00:00",
-   "score": 11.9,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Trafford",
-     "t": "LEE",
-     "p": "GKP",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://e0.365dm.com/26/11/1920x1080/skysports-patrick-dorgu-man-utd_7401391.jpg?20261108184410"
-  },
-  {
    "titel": "Leeds condemn disgusting racist abuse aimed at defender Jayden Bogle",
    "link": "https://talksport.com/football/4693570/leeds-jayden-bogle-racist-abuse-statement-tottenham/",
    "beeld": "",
@@ -802,7 +966,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-11-08T19:00:25+00:00",
-   "score": 11.9,
+   "score": 11.6,
    "signalen": [],
    "spelers": [
     {
@@ -821,7 +985,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-11-08T18:36:01+00:00",
-   "score": 11.9,
+   "score": 11.6,
    "signalen": [],
    "spelers": [
     {
@@ -840,7 +1004,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-08T00:00:09+00:00",
-   "score": 11.8,
+   "score": 11.5,
    "signalen": [
     "penalty"
    ],
@@ -855,6 +1019,26 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8601/live/81888e60-dafc-11f1-93e1-3b657b665bcf.jpg"
   },
   {
+   "titel": "Man Utd score two in stoppage-time to salvage 4-4 draw with Villa",
+   "link": "https://www.skysports.com/football/manchester-united-vs-aston-villa/report/559541",
+   "beeld": "",
+   "samenvatting": "Manchester United scored twice in stoppage-time to salvage an incredible 4-4 draw with Aston Villa at Old Trafford that still leaves them in the relegation zone.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-11-08T18:30:00+00:00",
+   "score": 11.5,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "Trafford",
+     "t": "LEE",
+     "p": "GKP",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://e0.365dm.com/26/11/1920x1080/skysports-patrick-dorgu-man-utd_7401391.jpg?20261108184410"
+  },
+  {
    "titel": "Keith Andrews post-match interview - Brighton v Brentford",
    "link": "https://www.bbc.co.uk/sport/football/videos/cm9qz85eqrrqo?at_medium=RSS&at_campaign=rss",
    "beeld": "",
@@ -862,7 +1046,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-08T17:43:00+00:00",
-   "score": 11.7,
+   "score": 11.4,
    "signalen": [],
    "spelers": [
     {
@@ -882,7 +1066,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-07T16:35:26+00:00",
-   "score": 11.5,
+   "score": 11.2,
    "signalen": [
     "red card"
    ],
@@ -904,7 +1088,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-08T15:19:00+00:00",
-   "score": 11.3,
+   "score": 11.0,
    "signalen": [],
    "spelers": [
     {
@@ -940,6 +1124,36 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/ee7c2b03da707865b8025e1eacefffd085a6e9a1/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=ba9faaa1ea6a2f22c9760fc34d684fab"
   },
   {
+   "titel": "Strijdbare Carrick wil van geen wijken weten na wéér puntenverlies",
+   "link": "https://www.vi.nl/nieuws/strijdbare-carrick-wil-van-geen-wijken-weten-na-weer-puntenverlies",
+   "beeld": "",
+   "samenvatting": "Er kan op twee manieren naar het resultaat van Manchester United tegen Aston Villa gekeken worden: de getoonde veerkracht bij de comeback kan bewonderd worden, anderzijds is er nu acht keer op rij puntenverlies geleden in de Premier League. Michael Carrick was",
+   "bron": "Voetbal International",
+   "soort": "nl",
+   "datum": "2026-11-08T21:31:00+01:00",
+   "score": 10.9,
+   "signalen": [
+    "comeback"
+   ],
+   "spelers": [],
+   "beeld_bron": "https://webp.vi.cdn.pxr.nl/news/2026/11/08/5e2ba7dfdd9b476342d9948e35aa6e69ea06ff68.jpg?width=1200"
+  },
+  {
+   "titel": "Struggling Sunderland beat Chelsea to move off bottom of Premier League",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c64g1nj4v4rmo?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Sunderland held on to their first Premier League win since August as Enzo le Fee's penalty help the hosts sink Chelsea at the Stadium of Light.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-08T19:58:31+00:00",
+   "score": 10.8,
+   "signalen": [
+    "penalty"
+   ],
+   "spelers": [],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d0cb/live/72a12510-dbab-11f1-a701-fddedf244c16.jpg"
+  },
+  {
    "titel": "Scot Prem latest: Aberdeen won't rush Robinson decision",
    "link": "https://www.skysports.com/football/live-blog/12040/13176154/scottish-premiership-news-transfers-rumours-gossip-and-more",
    "beeld": "",
@@ -947,7 +1161,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-08T12:00:00+00:00",
-   "score": 10.8,
+   "score": 10.5,
    "signalen": [],
    "spelers": [
     {
@@ -967,7 +1181,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-08T11:30:00+00:00",
-   "score": 10.7,
+   "score": 10.4,
    "signalen": [
     "ban"
    ],
@@ -982,100 +1196,12 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-11-08T16:16:34+00:00",
-   "score": 10.5,
+   "score": 10.2,
    "signalen": [
     "penalty"
    ],
    "spelers": [],
    "beeld_bron": "https://i.guim.co.uk/img/media/3af2f1b92a97f12785b61aabdc522fe2f1de8b48/77_0_2140_1711/master/2140.jpg?width=140&quality=85&auto=format&fit=max&s=7dec08707150e9e39a7a28424b65abf7"
-  },
-  {
-   "titel": "Glasner glee and Delap double - win could be lift-off for Forest",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cvy0red8yl69o?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Oliver Glasner's celebrations and two goals for Liam Delap bode well for a Nottingham Forest team looking to kick on after their first home Premier League win of the season.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-07T21:42:59+00:00",
-   "score": 10.4,
-   "signalen": [
-    "rest"
-   ],
-   "spelers": [
-    {
-     "n": "Delap",
-     "t": "NFO",
-     "p": "FWD",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b02e/live/2eec51e0-daf8-11f1-b9a2-091c4f802785.jpg"
-  },
-  {
-   "titel": "Enzo Maresca rues Manchester City’s lack of desire after defeat at Nottingham Forest",
-   "link": "https://www.theguardian.com/football/2026/nov/07/enzo-maresca-nottingham-forest-manchester-city-premier-league",
-   "beeld": "",
-   "samenvatting": "<ul><li><p>‘You need desire and intensity … we didn’t match them’</p></li><li><p>City have now lost three successive league matches</p></li></ul><p>Enzo Maresca blamed his side’s lack of desire and the way they were outgunned in duels for a third successive Pr",
-   "bron": "The Guardian",
-   "soort": "algemeen",
-   "datum": "2026-11-07T21:17:41+00:00",
-   "score": 10.3,
-   "signalen": [
-    "rest"
-   ],
-   "spelers": [
-    {
-     "n": "Enzo",
-     "t": "MCI",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://i.guim.co.uk/img/media/264856c56aee9666ecf30b071ce1800e7af190d6/661_0_3303_2643/master/3303.jpg?width=140&quality=85&auto=format&fit=max&s=fb5b516fc418998845815010ee700dce"
-  },
-  {
-   "titel": "Maresca looking to understand Man City's 'lack of intensity'",
-   "link": "https://www.bbc.co.uk/sport/football/videos/cmly0d6r6pggo?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Enzo Maresca feels his side \"lacked intensity\" as Manchester City suffered their third Premier League defeat in a row, losing 3-1 to Nottingham Forest at the City Ground.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-07T20:42:23+00:00",
-   "score": 10.2,
-   "signalen": [
-    "rest"
-   ],
-   "spelers": [
-    {
-     "n": "Enzo",
-     "t": "MCI",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2493/live/ae3a8830-daea-11f1-93e1-3b657b665bcf.jpg"
-  },
-  {
-   "titel": "Delap double inspires Forest to stunning win over Man City",
-   "link": "https://www.bbc.co.uk/sport/football/videos/crp3gewxj77eo?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Liam Delap scores a superb double as Nottingham Forest stun Manchester City 3-1 for their first Premier League win at the City Ground this season.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-07T20:02:25+00:00",
-   "score": 10.1,
-   "signalen": [
-    "rest"
-   ],
-   "spelers": [
-    {
-     "n": "Delap",
-     "t": "NFO",
-     "p": "FWD",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3af7/live/d780fef0-dae4-11f1-a701-fddedf244c16.jpg"
   },
   {
    "titel": "The idiot’s guide to Gameweek 10 of FPL 2026/27",
@@ -1115,6 +1241,28 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9230/live/038f60d0-d564-11f1-93e1-3b657b665bcf.jpg"
   },
   {
+   "titel": "Enzo Maresca rues Manchester City’s lack of desire after defeat at Nottingham Forest",
+   "link": "https://www.theguardian.com/football/2026/nov/07/enzo-maresca-nottingham-forest-manchester-city-premier-league",
+   "beeld": "",
+   "samenvatting": "<ul><li><p>‘You need desire and intensity … we didn’t match them’</p></li><li><p>City have now lost three successive league matches</p></li></ul><p>Enzo Maresca blamed his side’s lack of desire and the way they were outgunned in duels for a third successive Pr",
+   "bron": "The Guardian",
+   "soort": "algemeen",
+   "datum": "2026-11-07T21:17:41+00:00",
+   "score": 10.0,
+   "signalen": [
+    "rest"
+   ],
+   "spelers": [
+    {
+     "n": "Enzo",
+     "t": "MCI",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://i.guim.co.uk/img/media/264856c56aee9666ecf30b071ce1800e7af190d6/661_0_3303_2643/master/3303.jpg?width=140&quality=85&auto=format&fit=max&s=fb5b516fc418998845815010ee700dce"
+  },
+  {
    "titel": "Premier League team news: predicted lineups for the weekend action",
    "link": "https://www.theguardian.com/football/2026/nov/06/premier-league-team-news-predicted-lineups-for-the-weekend-action",
    "beeld": "",
@@ -1131,6 +1279,50 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/88abdde0c3dcf239bd407ec2936ca22e1af89179/791_126_2080_1664/master/2080.jpg?width=140&quality=85&auto=format&fit=max&s=fbc68ebd9882d3b214fb6511c80922a5"
   },
   {
+   "titel": "Maresca looking to understand Man City's 'lack of intensity'",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cmly0d6r6pggo?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Enzo Maresca feels his side \"lacked intensity\" as Manchester City suffered their third Premier League defeat in a row, losing 3-1 to Nottingham Forest at the City Ground.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-07T20:42:23+00:00",
+   "score": 9.9,
+   "signalen": [
+    "rest"
+   ],
+   "spelers": [
+    {
+     "n": "Enzo",
+     "t": "MCI",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2493/live/ae3a8830-daea-11f1-93e1-3b657b665bcf.jpg"
+  },
+  {
+   "titel": "Delap double inspires Forest to stunning win over Man City",
+   "link": "https://www.bbc.co.uk/sport/football/videos/crp3gewxj77eo?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Liam Delap scores a superb double as Nottingham Forest stun Manchester City 3-1 for their first Premier League win at the City Ground this season.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-07T20:02:25+00:00",
+   "score": 9.8,
+   "signalen": [
+    "rest"
+   ],
+   "spelers": [
+    {
+     "n": "Delap",
+     "t": "NFO",
+     "p": "FWD",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3af7/live/d780fef0-dae4-11f1-a701-fddedf244c16.jpg"
+  },
+  {
    "titel": "Borthwick and Itoje reject reports of England squad rift - 'Not accurate'",
    "link": "https://www.skysports.com/rugby-union/news/12040/13609859/steve-borthwick-and-maro-itoje-reject-reports-of-friction-between-england-head-coach-and-players-after-australia-win",
    "beeld": "",
@@ -1138,7 +1330,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-08T17:34:00+00:00",
-   "score": 9.7,
+   "score": 9.4,
    "signalen": [
     "captain"
    ],
@@ -1153,7 +1345,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-08T17:50:00+00:00",
-   "score": 9.7,
+   "score": 9.4,
    "signalen": [
     "rest"
    ],
@@ -1168,7 +1360,7 @@
    "bron": "The Guardian",
    "soort": "algemeen",
    "datum": "2026-11-07T17:00:54+00:00",
-   "score": 9.6,
+   "score": 9.3,
    "signalen": [
     "manager"
    ],
@@ -1219,179 +1411,6 @@
     {
      "n": "Lacroix",
      "t": "CHE",
-     "p": "DEF",
-     "mijn": false
-    }
-   ]
-  },
-  {
-   "titel": "Daniel Farke post-match interview - Leeds v Spurs",
-   "link": "https://www.bbc.co.uk/sport/football/videos/ck62yp50glv3o?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Leeds manager Daniel Farke speaking after his side beat Tottenham Hotspur.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-08T12:23:16+00:00",
-   "score": 8.8,
-   "signalen": [
-    "manager"
-   ],
-   "spelers": [],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/abef/live/310c5810-dabe-11f1-a701-fddedf244c16.jpg"
-  },
-  {
-   "titel": "Maresca's dream start turns into nightmare as title hopes hit",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cm93z0l03n8vo?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Enzo Maresca left the City Ground with chants of \"can we play you every week?\" ringing in his ears, as Manchester City's dream start turns into a nightmare.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-07T20:54:12+00:00",
-   "score": 8.3,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Enzo",
-     "t": "MCI",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4f6a/live/bd923d40-daf0-11f1-827e-c7e7ee102257.jpg"
-  },
-  {
-   "titel": "Leeds beat Spurs to end five-game winless run",
-   "link": "https://www.bbc.co.uk/sport/football/videos/ckz7x4jlypq3o?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Noah Okafor scores the only goal of the game to give Leeds United their first win since the 14th of September, as Tottenham are beaten 1-0 at Elland Road in the Premier League.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-07T19:59:34+00:00",
-   "score": 8.1,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Okafor",
-     "t": "LEE",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c54a/live/5ed07bd0-dac5-11f1-b441-2b33b063138f.jpg"
-  },
-  {
-   "titel": "Muniz strike denies Newcastle and Jaissle much-needed win",
-   "link": "https://www.bbc.co.uk/sport/football/videos/cm2d69p2x3g7o?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Rodrigo Muniz scores his first goal since the opening day of last season as Fulham deny Newcastle and head coach Matthias Jaissle a much-needed win at Craven Cottage.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-07T19:59:37+00:00",
-   "score": 8.1,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Muniz",
-     "t": "FUL",
-     "p": "FWD",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c5f2/live/c2b20ec0-dade-11f1-93e1-3b657b665bcf.jpg"
-  },
-  {
-   "titel": "Everton hold off Newcastle to move into seventh",
-   "link": "https://www.bbc.co.uk/sport/football/videos/cq5ynd70vlx3o?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Thierno Barry scores against Newcastle United for the second time in five days as his Everton side earn a narrow win at St James' Park in the Premier League.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-02T22:44:30+00:00",
-   "score": 8,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "James",
-     "t": "LEE",
-     "p": "MID",
-     "mijn": false
-    },
-    {
-     "n": "Barry",
-     "t": "EVE",
-     "p": "FWD",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ff55/live/2bdf6810-d76b-11f1-a701-fddedf244c16.jpg"
-  },
-  {
-   "titel": "Man Utd making it 'hard on ourselves' - Carrick",
-   "link": "https://www.bbc.co.uk/sport/football/videos/c6rmyg80pk3wo?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
-   "samenvatting": "Manchester United head coach Michael Carrick admits his side \"made it hard on themselves\" after they twice came back from two goals down to earn a 4-4 draw at home to Aston Villa.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-08T19:13:46+00:00",
-   "score": 8.0,
-   "signalen": [],
-   "spelers": [],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/464b/live/95b255f0-dba7-11f1-a701-fddedf244c16.jpg"
-  },
-  {
-   "titel": "Premier League top scorers 2026-27: who is leading race for the golden boot?",
-   "link": "https://www.theguardian.com/football/2026/sep/10/premier-league-top-scorers-2026-27-race-for-golden-boot",
-   "beeld": "",
-   "samenvatting": "<p>Find out which of the English top-flight’s sharp shooters are firing their way up the goalscoring charts</p> <a href=\"https://www.theguardian.com/football/2026/sep/10/premier-league-top-scorers-2026-27-race-for-golden-boot\">Continue reading...</a>",
-   "bron": "The Guardian",
-   "soort": "algemeen",
-   "datum": "2026-11-08T19:08:17+00:00",
-   "score": 8.0,
-   "signalen": [],
-   "spelers": [],
-   "beeld_bron": "https://i.guim.co.uk/img/media/40b7b1808df6c3e98d36d8442f913e5fc67060ab/167_0_3880_3104/master/3880.jpg?width=140&quality=85&auto=format&fit=max&s=651a9d8350c5d9ddd2680cd57e3359ac"
-  },
-  {
-   "titel": "Heroes and Villains: Lisandro Martinez&#8217;s Man United career could be over but Estevao proved his Chelsea future is bright",
-   "link": "https://talksport.com/football/4681518/heroes-and-villains-lisandro-martinez-estevao-roberto-de-zerbi/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-11-02T08:01:00+00:00",
-   "score": 8,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "Martinez",
-     "t": "MUN",
-     "p": "DEF",
-     "mijn": false
-    },
-    {
-     "n": "Estêvão",
-     "t": "CHE",
-     "p": "MID",
-     "mijn": false
-    }
-   ]
-  },
-  {
-   "titel": "Lisandro Martinez red card was &#8216;mutinous&#8217; as call made for him to never play for Man United again",
-   "link": "https://talksport.com/football/4681112/lisandro-martinez-red-card-man-utd-chelsea-premier-league/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-11-01T20:05:58+00:00",
-   "score": 8,
-   "signalen": [
-    "red card"
-   ],
-   "spelers": [
-    {
-     "n": "Martinez",
-     "t": "MUN",
      "p": "DEF",
      "mijn": false
     }
