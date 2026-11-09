@@ -2,35 +2,25 @@
  "_bron": "FPL API /fixtures/ — de eindstanden van de afgeronde wedstrijden",
  "_methode": "De stand is opgeteld uit de eindstanden in /fixtures/: 3 punten voor winst, 1 voor gelijk. Gelijk in punten wordt gescheiden op doelsaldo, dan op doelpunten voor, precies zoals de Premier League het doet. Vorm is de laatste vijf competitieduels.",
  "_oefen": "Niet opgenomen. De FPL-API kent alleen competitieduels, en de gratis bronnen voor oefenwedstrijden bleken onbetrouwbaar: een wedstrijd per club, een verouderde clublijst, 12 van de 20 clubs koppelbaar en een uitslag die niet klopte. Zie de toelichting boven in stand.py.",
- "_opgehaald": "2026-11-09T07:55:29+00:00",
- "_gespeeld": 90,
+ "_opgehaald": "2026-11-09T12:06:22+00:00",
+ "_gespeeld": 100,
  "tabel": [
   {
-   "gespeeld": 9,
-   "winst": 8,
+   "gespeeld": 10,
+   "winst": 9,
    "gelijk": 0,
    "verlies": 1,
-   "voor": 14,
+   "voor": 15,
    "tegen": 5,
-   "punten": 24,
+   "punten": 27,
    "vorm": [
-    "V",
+    "W",
     "W",
     "W",
     "W",
     "W"
    ],
    "duels": [
-    {
-     "gw": 2,
-     "opp": "AVL",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 0,
-     "uit": "W",
-     "datum": "2026-08-31",
-     "soort": "competitie"
-    },
     {
      "gw": 3,
      "opp": "CHE",
@@ -100,145 +90,41 @@
      "uit": "W",
      "datum": "2026-11-01",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "HUL",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "datum": "2026-11-07",
+     "soort": "competitie"
     }
    ],
    "naam": "Arsenal",
    "kort": "ARS",
-   "saldo": 9,
-   "vormpunten": 12,
+   "saldo": 10,
+   "vormpunten": 15,
    "vormmax": 15,
    "positie": 1
   },
   {
-   "gespeeld": 9,
+   "gespeeld": 10,
    "winst": 7,
-   "gelijk": 0,
-   "verlies": 2,
-   "voor": 20,
-   "tegen": 10,
-   "punten": 21,
-   "vorm": [
-    "W",
-    "W",
-    "W",
-    "V",
-    "V"
-   ],
-   "duels": [
-    {
-     "gw": 2,
-     "opp": "CRY",
-     "thuis": false,
-     "voor": 4,
-     "tegen": 1,
-     "uit": "W",
-     "datum": "2026-08-28",
-     "soort": "competitie"
-    },
-    {
-     "gw": 3,
-     "opp": "COV",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 0,
-     "uit": "W",
-     "datum": "2026-09-05",
-     "soort": "competitie"
-    },
-    {
-     "gw": 4,
-     "opp": "MUN",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 0,
-     "uit": "W",
-     "datum": "2026-09-13",
-     "soort": "competitie"
-    },
-    {
-     "gw": 5,
-     "opp": "SUN",
-     "thuis": true,
-     "voor": 5,
-     "tegen": 3,
-     "uit": "W",
-     "datum": "2026-09-20",
-     "soort": "competitie"
-    },
-    {
-     "gw": 6,
-     "opp": "LIV",
-     "thuis": false,
-     "voor": 3,
-     "tegen": 0,
-     "uit": "W",
-     "datum": "2026-10-11",
-     "soort": "competitie"
-    },
-    {
-     "gw": 7,
-     "opp": "IPS",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 2,
-     "uit": "W",
-     "datum": "2026-10-17",
-     "soort": "competitie"
-    },
-    {
-     "gw": 8,
-     "opp": "AVL",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
-     "datum": "2026-10-24",
-     "soort": "competitie"
-    },
-    {
-     "gw": 9,
-     "opp": "BHA",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "datum": "2026-10-31",
-     "soort": "competitie"
-    }
-   ],
-   "naam": "Man City",
-   "kort": "MCI",
-   "saldo": 10,
-   "vormpunten": 9,
-   "vormmax": 15,
-   "positie": 2
-  },
-  {
-   "gespeeld": 9,
-   "winst": 6,
    "gelijk": 1,
    "verlies": 2,
-   "voor": 24,
+   "voor": 26,
    "tegen": 7,
-   "punten": 19,
+   "punten": 22,
    "vorm": [
     "W",
     "W",
-    "W",
     "V",
+    "W",
     "W"
    ],
    "duels": [
-    {
-     "gw": 2,
-     "opp": "CHE",
-     "thuis": false,
-     "voor": 3,
-     "tegen": 4,
-     "uit": "V",
-     "datum": "2026-08-30",
-     "soort": "competitie"
-    },
     {
      "gw": 3,
      "opp": "LEE",
@@ -308,23 +194,137 @@
      "uit": "W",
      "datum": "2026-10-31",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "BRE",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "datum": "2026-11-08",
+     "soort": "competitie"
     }
    ],
    "naam": "Brighton",
    "kort": "BHA",
-   "saldo": 17,
+   "saldo": 19,
    "vormpunten": 12,
+   "vormmax": 15,
+   "positie": 2
+  },
+  {
+   "gespeeld": 10,
+   "winst": 7,
+   "gelijk": 0,
+   "verlies": 3,
+   "voor": 21,
+   "tegen": 13,
+   "punten": 21,
+   "vorm": [
+    "W",
+    "W",
+    "V",
+    "V",
+    "V"
+   ],
+   "duels": [
+    {
+     "gw": 3,
+     "opp": "COV",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "datum": "2026-09-05",
+     "soort": "competitie"
+    },
+    {
+     "gw": 4,
+     "opp": "MUN",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "datum": "2026-09-13",
+     "soort": "competitie"
+    },
+    {
+     "gw": 5,
+     "opp": "SUN",
+     "thuis": true,
+     "voor": 5,
+     "tegen": 3,
+     "uit": "W",
+     "datum": "2026-09-20",
+     "soort": "competitie"
+    },
+    {
+     "gw": 6,
+     "opp": "LIV",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 0,
+     "uit": "W",
+     "datum": "2026-10-11",
+     "soort": "competitie"
+    },
+    {
+     "gw": 7,
+     "opp": "IPS",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 2,
+     "uit": "W",
+     "datum": "2026-10-17",
+     "soort": "competitie"
+    },
+    {
+     "gw": 8,
+     "opp": "AVL",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-10-24",
+     "soort": "competitie"
+    },
+    {
+     "gw": 9,
+     "opp": "BHA",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "datum": "2026-10-31",
+     "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "NFO",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 3,
+     "uit": "V",
+     "datum": "2026-11-07",
+     "soort": "competitie"
+    }
+   ],
+   "naam": "Man City",
+   "kort": "MCI",
+   "saldo": 8,
+   "vormpunten": 6,
    "vormmax": 15,
    "positie": 3
   },
   {
-   "gespeeld": 9,
+   "gespeeld": 10,
    "winst": 5,
-   "gelijk": 1,
-   "verlies": 3,
-   "voor": 19,
-   "tegen": 15,
-   "punten": 16,
+   "gelijk": 3,
+   "verlies": 2,
+   "voor": 14,
+   "tegen": 10,
+   "punten": 18,
    "vorm": [
     "V",
     "W",
@@ -333,120 +333,6 @@
     "W"
    ],
    "duels": [
-    {
-     "gw": 2,
-     "opp": "BHA",
-     "thuis": true,
-     "voor": 4,
-     "tegen": 3,
-     "uit": "W",
-     "datum": "2026-08-30",
-     "soort": "competitie"
-    },
-    {
-     "gw": 3,
-     "opp": "ARS",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
-     "datum": "2026-09-06",
-     "soort": "competitie"
-    },
-    {
-     "gw": 4,
-     "opp": "HUL",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "datum": "2026-09-12",
-     "soort": "competitie"
-    },
-    {
-     "gw": 5,
-     "opp": "BRE",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 3,
-     "uit": "V",
-     "datum": "2026-09-18",
-     "soort": "competitie"
-    },
-    {
-     "gw": 6,
-     "opp": "BOU",
-     "thuis": true,
-     "voor": 5,
-     "tegen": 1,
-     "uit": "W",
-     "datum": "2026-10-10",
-     "soort": "competitie"
-    },
-    {
-     "gw": 7,
-     "opp": "EVE",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 0,
-     "uit": "W",
-     "datum": "2026-10-17",
-     "soort": "competitie"
-    },
-    {
-     "gw": 8,
-     "opp": "TOT",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 2,
-     "uit": "V",
-     "datum": "2026-10-24",
-     "soort": "competitie"
-    },
-    {
-     "gw": 9,
-     "opp": "MUN",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 0,
-     "uit": "W",
-     "datum": "2026-10-31",
-     "soort": "competitie"
-    }
-   ],
-   "naam": "Chelsea",
-   "kort": "CHE",
-   "saldo": 4,
-   "vormpunten": 9,
-   "vormmax": 15,
-   "positie": 4
-  },
-  {
-   "gespeeld": 9,
-   "winst": 4,
-   "gelijk": 3,
-   "verlies": 2,
-   "voor": 11,
-   "tegen": 9,
-   "punten": 15,
-   "vorm": [
-    "W",
-    "V",
-    "W",
-    "W",
-    "V"
-   ],
-   "duels": [
-    {
-     "gw": 2,
-     "opp": "NFO",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "datum": "2026-08-29",
-     "soort": "competitie"
-    },
     {
      "gw": 3,
      "opp": "IPS",
@@ -516,55 +402,55 @@
      "uit": "V",
      "datum": "2026-11-01",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "CRY",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "datum": "2026-11-08",
+     "soort": "competitie"
     }
    ],
    "naam": "Liverpool",
    "kort": "LIV",
-   "saldo": 2,
+   "saldo": 4,
    "vormpunten": 9,
    "vormmax": 15,
-   "positie": 5
+   "positie": 4
   },
   {
-   "gespeeld": 9,
-   "winst": 3,
-   "gelijk": 5,
-   "verlies": 1,
-   "voor": 16,
-   "tegen": 9,
-   "punten": 14,
+   "gespeeld": 10,
+   "winst": 5,
+   "gelijk": 1,
+   "verlies": 4,
+   "voor": 19,
+   "tegen": 16,
+   "punten": 16,
    "vorm": [
     "W",
-    "G",
+    "W",
     "V",
-    "G",
-    "W"
+    "W",
+    "V"
    ],
    "duels": [
     {
-     "gw": 2,
-     "opp": "LEE",
+     "gw": 3,
+     "opp": "ARS",
      "thuis": false,
      "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-08-30",
-     "soort": "competitie"
-    },
-    {
-     "gw": 3,
-     "opp": "SUN",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-09-05",
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-09-06",
      "soort": "competitie"
     },
     {
      "gw": 4,
-     "opp": "BOU",
-     "thuis": false,
+     "opp": "HUL",
+     "thuis": true,
      "voor": 2,
      "tegen": 2,
      "uit": "G",
@@ -573,88 +459,88 @@
     },
     {
      "gw": 5,
-     "opp": "CHE",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 0,
-     "uit": "W",
+     "opp": "BRE",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 3,
+     "uit": "V",
      "datum": "2026-09-18",
      "soort": "competitie"
     },
     {
      "gw": 6,
-     "opp": "AVL",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
+     "opp": "BOU",
+     "thuis": true,
+     "voor": 5,
+     "tegen": 1,
+     "uit": "W",
      "datum": "2026-10-10",
      "soort": "competitie"
     },
     {
      "gw": 7,
-     "opp": "LIV",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
+     "opp": "EVE",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
      "datum": "2026-10-17",
      "soort": "competitie"
     },
     {
      "gw": 8,
-     "opp": "HUL",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-10-25",
+     "opp": "TOT",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-10-24",
      "soort": "competitie"
     },
     {
      "gw": 9,
-     "opp": "NFO",
+     "opp": "MUN",
      "thuis": true,
      "voor": 2,
      "tegen": 0,
      "uit": "W",
      "datum": "2026-10-31",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "SUN",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "datum": "2026-11-08",
+     "soort": "competitie"
     }
    ],
-   "naam": "Brentford",
-   "kort": "BRE",
-   "saldo": 7,
-   "vormpunten": 8,
+   "naam": "Chelsea",
+   "kort": "CHE",
+   "saldo": 3,
+   "vormpunten": 9,
    "vormmax": 15,
-   "positie": 6
+   "positie": 5
   },
   {
-   "gespeeld": 9,
-   "winst": 3,
+   "gespeeld": 10,
+   "winst": 4,
    "gelijk": 4,
    "verlies": 2,
-   "voor": 9,
-   "tegen": 9,
-   "punten": 13,
+   "voor": 12,
+   "tegen": 10,
+   "punten": 16,
    "vorm": [
-    "W",
     "G",
     "V",
     "V",
+    "W",
     "W"
    ],
    "duels": [
-    {
-     "gw": 2,
-     "opp": "BOU",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-08-29",
-     "soort": "competitie"
-    },
     {
      "gw": 3,
      "opp": "MUN",
@@ -724,41 +610,41 @@
      "uit": "W",
      "datum": "2026-11-02",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "COV",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "datum": "2026-11-06",
+     "soort": "competitie"
     }
    ],
    "naam": "Everton",
    "kort": "EVE",
-   "saldo": 0,
+   "saldo": 2,
    "vormpunten": 7,
    "vormmax": 15,
-   "positie": 7
+   "positie": 6
   },
   {
-   "gespeeld": 9,
-   "winst": 3,
+   "gespeeld": 10,
+   "winst": 4,
    "gelijk": 3,
    "verlies": 3,
-   "voor": 14,
-   "tegen": 13,
-   "punten": 12,
+   "voor": 16,
+   "tegen": 14,
+   "punten": 15,
    "vorm": [
     "V",
-    "V",
+    "W",
     "W",
     "W",
     "W"
    ],
    "duels": [
-    {
-     "gw": 2,
-     "opp": "EVE",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-08-29",
-     "soort": "competitie"
-    },
     {
      "gw": 3,
      "opp": "NEW",
@@ -828,41 +714,353 @@
      "uit": "W",
      "datum": "2026-10-31",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "IPS",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "datum": "2026-11-08",
+     "soort": "competitie"
     }
    ],
    "naam": "Bournemouth",
    "kort": "BOU",
-   "saldo": 1,
-   "vormpunten": 9,
+   "saldo": 2,
+   "vormpunten": 12,
+   "vormmax": 15,
+   "positie": 7
+  },
+  {
+   "gespeeld": 10,
+   "winst": 3,
+   "gelijk": 5,
+   "verlies": 2,
+   "voor": 16,
+   "tegen": 11,
+   "punten": 14,
+   "vorm": [
+    "G",
+    "V",
+    "G",
+    "W",
+    "V"
+   ],
+   "duels": [
+    {
+     "gw": 3,
+     "opp": "SUN",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-09-05",
+     "soort": "competitie"
+    },
+    {
+     "gw": 4,
+     "opp": "BOU",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "datum": "2026-09-12",
+     "soort": "competitie"
+    },
+    {
+     "gw": 5,
+     "opp": "CHE",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 0,
+     "uit": "W",
+     "datum": "2026-09-18",
+     "soort": "competitie"
+    },
+    {
+     "gw": 6,
+     "opp": "AVL",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "datum": "2026-10-10",
+     "soort": "competitie"
+    },
+    {
+     "gw": 7,
+     "opp": "LIV",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-10-17",
+     "soort": "competitie"
+    },
+    {
+     "gw": 8,
+     "opp": "HUL",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-10-25",
+     "soort": "competitie"
+    },
+    {
+     "gw": 9,
+     "opp": "NFO",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 0,
+     "uit": "W",
+     "datum": "2026-10-31",
+     "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "BHA",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-11-08",
+     "soort": "competitie"
+    }
+   ],
+   "naam": "Brentford",
+   "kort": "BRE",
+   "saldo": 5,
+   "vormpunten": 5,
    "vormmax": 15,
    "positie": 8
   },
   {
-   "gespeeld": 9,
+   "gespeeld": 10,
    "winst": 3,
-   "gelijk": 3,
-   "verlies": 3,
+   "gelijk": 5,
+   "verlies": 2,
    "voor": 10,
-   "tegen": 10,
-   "punten": 12,
+   "tegen": 8,
+   "punten": 14,
    "vorm": [
     "V",
     "G",
-    "W",
-    "W",
+    "G",
+    "V",
     "W"
    ],
    "duels": [
     {
-     "gw": 2,
+     "gw": 3,
+     "opp": "BHA",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-09-05",
+     "soort": "competitie"
+    },
+    {
+     "gw": 4,
      "opp": "NEW",
      "thuis": true,
+     "voor": 4,
+     "tegen": 1,
+     "uit": "W",
+     "datum": "2026-09-14",
+     "soort": "competitie"
+    },
+    {
+     "gw": 5,
+     "opp": "CRY",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "datum": "2026-09-20",
+     "soort": "competitie"
+    },
+    {
+     "gw": 6,
+     "opp": "ARS",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-10-10",
+     "soort": "competitie"
+    },
+    {
+     "gw": 7,
+     "opp": "MUN",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-10-18",
+     "soort": "competitie"
+    },
+    {
+     "gw": 8,
+     "opp": "SUN",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "datum": "2026-10-25",
+     "soort": "competitie"
+    },
+    {
+     "gw": 9,
+     "opp": "BOU",
+     "thuis": false,
      "voor": 0,
      "tegen": 2,
      "uit": "V",
-     "datum": "2026-08-29",
+     "datum": "2026-10-31",
      "soort": "competitie"
     },
+    {
+     "gw": 10,
+     "opp": "TOT",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "datum": "2026-11-07",
+     "soort": "competitie"
+    }
+   ],
+   "naam": "Leeds",
+   "kort": "LEE",
+   "saldo": 2,
+   "vormpunten": 5,
+   "vormmax": 15,
+   "positie": 9
+  },
+  {
+   "gespeeld": 10,
+   "winst": 3,
+   "gelijk": 4,
+   "verlies": 3,
+   "voor": 14,
+   "tegen": 17,
+   "punten": 13,
+   "vorm": [
+    "G",
+    "W",
+    "W",
+    "G",
+    "G"
+   ],
+   "duels": [
+    {
+     "gw": 3,
+     "opp": "HUL",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "datum": "2026-09-05",
+     "soort": "competitie"
+    },
+    {
+     "gw": 4,
+     "opp": "NFO",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-09-12",
+     "soort": "competitie"
+    },
+    {
+     "gw": 5,
+     "opp": "TOT",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 2,
+     "uit": "W",
+     "datum": "2026-09-19",
+     "soort": "competitie"
+    },
+    {
+     "gw": 6,
+     "opp": "BRE",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "datum": "2026-10-10",
+     "soort": "competitie"
+    },
+    {
+     "gw": 7,
+     "opp": "NEW",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "datum": "2026-10-17",
+     "soort": "competitie"
+    },
+    {
+     "gw": 8,
+     "opp": "MCI",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 1,
+     "uit": "W",
+     "datum": "2026-10-24",
+     "soort": "competitie"
+    },
+    {
+     "gw": 9,
+     "opp": "FUL",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-10-31",
+     "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "MUN",
+     "thuis": false,
+     "voor": 4,
+     "tegen": 4,
+     "uit": "G",
+     "datum": "2026-11-08",
+     "soort": "competitie"
+    }
+   ],
+   "naam": "Aston Villa",
+   "kort": "AVL",
+   "saldo": -3,
+   "vormpunten": 9,
+   "vormmax": 15,
+   "positie": 10
+  },
+  {
+   "gespeeld": 10,
+   "winst": 3,
+   "gelijk": 3,
+   "verlies": 4,
+   "voor": 10,
+   "tegen": 11,
+   "punten": 12,
+   "vorm": [
+    "G",
+    "W",
+    "W",
+    "W",
+    "V"
+   ],
+   "duels": [
     {
      "gw": 3,
      "opp": "NFO",
@@ -932,353 +1130,41 @@
      "uit": "W",
      "datum": "2026-10-31",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "LEE",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "datum": "2026-11-07",
+     "soort": "competitie"
     }
    ],
    "naam": "Spurs",
    "kort": "TOT",
-   "saldo": 0,
+   "saldo": -1,
    "vormpunten": 10,
-   "vormmax": 15,
-   "positie": 9
-  },
-  {
-   "gespeeld": 9,
-   "winst": 3,
-   "gelijk": 3,
-   "verlies": 3,
-   "voor": 10,
-   "tegen": 13,
-   "punten": 12,
-   "vorm": [
-    "W",
-    "G",
-    "W",
-    "W",
-    "G"
-   ],
-   "duels": [
-    {
-     "gw": 2,
-     "opp": "ARS",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "datum": "2026-08-31",
-     "soort": "competitie"
-    },
-    {
-     "gw": 3,
-     "opp": "HUL",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 0,
-     "uit": "G",
-     "datum": "2026-09-05",
-     "soort": "competitie"
-    },
-    {
-     "gw": 4,
-     "opp": "NFO",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
-     "datum": "2026-09-12",
-     "soort": "competitie"
-    },
-    {
-     "gw": 5,
-     "opp": "TOT",
-     "thuis": false,
-     "voor": 3,
-     "tegen": 2,
-     "uit": "W",
-     "datum": "2026-09-19",
-     "soort": "competitie"
-    },
-    {
-     "gw": 6,
-     "opp": "BRE",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "datum": "2026-10-10",
-     "soort": "competitie"
-    },
-    {
-     "gw": 7,
-     "opp": "NEW",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 0,
-     "uit": "W",
-     "datum": "2026-10-17",
-     "soort": "competitie"
-    },
-    {
-     "gw": 8,
-     "opp": "MCI",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 1,
-     "uit": "W",
-     "datum": "2026-10-24",
-     "soort": "competitie"
-    },
-    {
-     "gw": 9,
-     "opp": "FUL",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-10-31",
-     "soort": "competitie"
-    }
-   ],
-   "naam": "Aston Villa",
-   "kort": "AVL",
-   "saldo": -3,
-   "vormpunten": 11,
-   "vormmax": 15,
-   "positie": 10
-  },
-  {
-   "gespeeld": 9,
-   "winst": 2,
-   "gelijk": 5,
-   "verlies": 2,
-   "voor": 11,
-   "tegen": 10,
-   "punten": 11,
-   "vorm": [
-    "V",
-    "G",
-    "V",
-    "G",
-    "G"
-   ],
-   "duels": [
-    {
-     "gw": 2,
-     "opp": "COV",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 0,
-     "uit": "W",
-     "datum": "2026-08-29",
-     "soort": "competitie"
-    },
-    {
-     "gw": 3,
-     "opp": "AVL",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 0,
-     "uit": "G",
-     "datum": "2026-09-05",
-     "soort": "competitie"
-    },
-    {
-     "gw": 4,
-     "opp": "CHE",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "datum": "2026-09-12",
-     "soort": "competitie"
-    },
-    {
-     "gw": 5,
-     "opp": "NEW",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
-     "datum": "2026-09-19",
-     "soort": "competitie"
-    },
-    {
-     "gw": 6,
-     "opp": "EVE",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "datum": "2026-10-11",
-     "soort": "competitie"
-    },
-    {
-     "gw": 7,
-     "opp": "FUL",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "datum": "2026-10-17",
-     "soort": "competitie"
-    },
-    {
-     "gw": 8,
-     "opp": "BRE",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-10-25",
-     "soort": "competitie"
-    },
-    {
-     "gw": 9,
-     "opp": "IPS",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "datum": "2026-10-31",
-     "soort": "competitie"
-    }
-   ],
-   "naam": "Hull City",
-   "kort": "HUL",
-   "saldo": 1,
-   "vormpunten": 3,
    "vormmax": 15,
    "positie": 11
   },
   {
-   "gespeeld": 9,
-   "winst": 2,
-   "gelijk": 5,
-   "verlies": 2,
-   "voor": 9,
-   "tegen": 8,
-   "punten": 11,
-   "vorm": [
-    "G",
-    "V",
-    "G",
-    "G",
-    "V"
-   ],
-   "duels": [
-    {
-     "gw": 2,
-     "opp": "BRE",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-08-30",
-     "soort": "competitie"
-    },
-    {
-     "gw": 3,
-     "opp": "BHA",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-09-05",
-     "soort": "competitie"
-    },
-    {
-     "gw": 4,
-     "opp": "NEW",
-     "thuis": true,
-     "voor": 4,
-     "tegen": 1,
-     "uit": "W",
-     "datum": "2026-09-14",
-     "soort": "competitie"
-    },
-    {
-     "gw": 5,
-     "opp": "CRY",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 0,
-     "uit": "G",
-     "datum": "2026-09-20",
-     "soort": "competitie"
-    },
-    {
-     "gw": 6,
-     "opp": "ARS",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 2,
-     "uit": "V",
-     "datum": "2026-10-10",
-     "soort": "competitie"
-    },
-    {
-     "gw": 7,
-     "opp": "MUN",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-10-18",
-     "soort": "competitie"
-    },
-    {
-     "gw": 8,
-     "opp": "SUN",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 0,
-     "uit": "G",
-     "datum": "2026-10-25",
-     "soort": "competitie"
-    },
-    {
-     "gw": 9,
-     "opp": "BOU",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 2,
-     "uit": "V",
-     "datum": "2026-10-31",
-     "soort": "competitie"
-    }
-   ],
-   "naam": "Leeds",
-   "kort": "LEE",
-   "saldo": 1,
-   "vormpunten": 3,
-   "vormmax": 15,
-   "positie": 12
-  },
-  {
-   "gespeeld": 9,
+   "gespeeld": 10,
    "winst": 3,
-   "gelijk": 2,
+   "gelijk": 3,
    "verlies": 4,
-   "voor": 12,
-   "tegen": 15,
-   "punten": 11,
+   "voor": 13,
+   "tegen": 16,
+   "punten": 12,
    "vorm": [
-    "W",
     "V",
     "V",
     "W",
-    "V"
+    "V",
+    "G"
    ],
    "duels": [
-    {
-     "gw": 2,
-     "opp": "TOT",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 0,
-     "uit": "W",
-     "datum": "2026-08-29",
-     "soort": "competitie"
-    },
     {
      "gw": 3,
      "opp": "BOU",
@@ -1348,41 +1234,145 @@
      "uit": "V",
      "datum": "2026-11-02",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "FUL",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-11-07",
+     "soort": "competitie"
     }
    ],
    "naam": "Newcastle",
    "kort": "NEW",
    "saldo": -3,
-   "vormpunten": 6,
+   "vormpunten": 4,
+   "vormmax": 15,
+   "positie": 12
+  },
+  {
+   "gespeeld": 10,
+   "winst": 2,
+   "gelijk": 5,
+   "verlies": 3,
+   "voor": 11,
+   "tegen": 11,
+   "punten": 11,
+   "vorm": [
+    "G",
+    "V",
+    "G",
+    "G",
+    "V"
+   ],
+   "duels": [
+    {
+     "gw": 3,
+     "opp": "AVL",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "datum": "2026-09-05",
+     "soort": "competitie"
+    },
+    {
+     "gw": 4,
+     "opp": "CHE",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "datum": "2026-09-12",
+     "soort": "competitie"
+    },
+    {
+     "gw": 5,
+     "opp": "NEW",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-09-19",
+     "soort": "competitie"
+    },
+    {
+     "gw": 6,
+     "opp": "EVE",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "datum": "2026-10-11",
+     "soort": "competitie"
+    },
+    {
+     "gw": 7,
+     "opp": "FUL",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "datum": "2026-10-17",
+     "soort": "competitie"
+    },
+    {
+     "gw": 8,
+     "opp": "BRE",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-10-25",
+     "soort": "competitie"
+    },
+    {
+     "gw": 9,
+     "opp": "IPS",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "datum": "2026-10-31",
+     "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "ARS",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "datum": "2026-11-07",
+     "soort": "competitie"
+    }
+   ],
+   "naam": "Hull City",
+   "kort": "HUL",
+   "saldo": 0,
+   "vormpunten": 3,
    "vormmax": 15,
    "positie": 13
   },
   {
-   "gespeeld": 9,
+   "gespeeld": 10,
    "winst": 3,
    "gelijk": 2,
-   "verlies": 4,
-   "voor": 14,
-   "tegen": 18,
+   "verlies": 5,
+   "voor": 15,
+   "tegen": 20,
    "punten": 11,
    "vorm": [
-    "V",
     "W",
     "V",
     "G",
-    "G"
+    "G",
+    "V"
    ],
    "duels": [
-    {
-     "gw": 2,
-     "opp": "MUN",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 5,
-     "uit": "V",
-     "datum": "2026-08-30",
-     "soort": "competitie"
-    },
     {
      "gw": 3,
      "opp": "LIV",
@@ -1452,41 +1442,41 @@
      "uit": "G",
      "datum": "2026-10-31",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "BOU",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-11-08",
+     "soort": "competitie"
     }
    ],
    "naam": "Ipswich Town",
    "kort": "IPS",
-   "saldo": -4,
+   "saldo": -5,
    "vormpunten": 5,
    "vormmax": 15,
    "positie": 14
   },
   {
-   "gespeeld": 9,
+   "gespeeld": 10,
    "winst": 2,
-   "gelijk": 3,
+   "gelijk": 4,
    "verlies": 4,
-   "voor": 9,
-   "tegen": 11,
-   "punten": 9,
+   "voor": 10,
+   "tegen": 12,
+   "punten": 10,
    "vorm": [
-    "G",
     "V",
     "W",
     "W",
+    "G",
     "G"
    ],
    "duels": [
-    {
-     "gw": 2,
-     "opp": "SUN",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "datum": "2026-08-30",
-     "soort": "competitie"
-    },
     {
      "gw": 3,
      "opp": "CRY",
@@ -1555,6 +1545,16 @@
      "tegen": 1,
      "uit": "G",
      "datum": "2026-10-31",
+     "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "NEW",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-11-07",
      "soort": "competitie"
     }
    ],
@@ -1566,343 +1566,21 @@
    "positie": 15
   },
   {
-   "gespeeld": 9,
-   "winst": 3,
-   "gelijk": 0,
-   "verlies": 6,
+   "gespeeld": 10,
+   "winst": 2,
+   "gelijk": 3,
+   "verlies": 5,
    "voor": 9,
-   "tegen": 16,
+   "tegen": 13,
    "punten": 9,
    "vorm": [
-    "W",
-    "W",
     "V",
+    "V",
+    "G",
     "V",
     "W"
    ],
    "duels": [
-    {
-     "gw": 2,
-     "opp": "HUL",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "datum": "2026-08-29",
-     "soort": "competitie"
-    },
-    {
-     "gw": 3,
-     "opp": "MCI",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "datum": "2026-09-05",
-     "soort": "competitie"
-    },
-    {
-     "gw": 4,
-     "opp": "BHA",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 5,
-     "uit": "V",
-     "datum": "2026-09-13",
-     "soort": "competitie"
-    },
-    {
-     "gw": 5,
-     "opp": "NFO",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 0,
-     "uit": "W",
-     "datum": "2026-09-19",
-     "soort": "competitie"
-    },
-    {
-     "gw": 6,
-     "opp": "NEW",
-     "thuis": true,
-     "voor": 4,
-     "tegen": 1,
-     "uit": "W",
-     "datum": "2026-10-12",
-     "soort": "competitie"
-    },
-    {
-     "gw": 7,
-     "opp": "TOT",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 3,
-     "uit": "V",
-     "datum": "2026-10-19",
-     "soort": "competitie"
-    },
-    {
-     "gw": 8,
-     "opp": "FUL",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "datum": "2026-10-24",
-     "soort": "competitie"
-    },
-    {
-     "gw": 9,
-     "opp": "SUN",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 1,
-     "uit": "W",
-     "datum": "2026-10-31",
-     "soort": "competitie"
-    }
-   ],
-   "naam": "Coventry City",
-   "kort": "COV",
-   "saldo": -7,
-   "vormpunten": 9,
-   "vormmax": 15,
-   "positie": 16
-  },
-  {
-   "gespeeld": 9,
-   "winst": 1,
-   "gelijk": 4,
-   "verlies": 4,
-   "voor": 10,
-   "tegen": 15,
-   "punten": 7,
-   "vorm": [
-    "G",
-    "G",
-    "G",
-    "V",
-    "V"
-   ],
-   "duels": [
-    {
-     "gw": 2,
-     "opp": "IPS",
-     "thuis": true,
-     "voor": 5,
-     "tegen": 2,
-     "uit": "W",
-     "datum": "2026-08-30",
-     "soort": "competitie"
-    },
-    {
-     "gw": 3,
-     "opp": "EVE",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "datum": "2026-09-06",
-     "soort": "competitie"
-    },
-    {
-     "gw": 4,
-     "opp": "MCI",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "datum": "2026-09-13",
-     "soort": "competitie"
-    },
-    {
-     "gw": 5,
-     "opp": "FUL",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-09-20",
-     "soort": "competitie"
-    },
-    {
-     "gw": 6,
-     "opp": "TOT",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-10-10",
-     "soort": "competitie"
-    },
-    {
-     "gw": 7,
-     "opp": "LEE",
-     "thuis": false,
-     "voor": 1,
-     "tegen": 1,
-     "uit": "G",
-     "datum": "2026-10-18",
-     "soort": "competitie"
-    },
-    {
-     "gw": 8,
-     "opp": "BOU",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 3,
-     "uit": "V",
-     "datum": "2026-10-25",
-     "soort": "competitie"
-    },
-    {
-     "gw": 9,
-     "opp": "CHE",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 2,
-     "uit": "V",
-     "datum": "2026-10-31",
-     "soort": "competitie"
-    }
-   ],
-   "naam": "Man Utd",
-   "kort": "MUN",
-   "saldo": -5,
-   "vormpunten": 3,
-   "vormmax": 15,
-   "positie": 17
-  },
-  {
-   "gespeeld": 9,
-   "winst": 2,
-   "gelijk": 1,
-   "verlies": 6,
-   "voor": 9,
-   "tegen": 21,
-   "punten": 7,
-   "vorm": [
-    "G",
-    "W",
-    "V",
-    "V",
-    "V"
-   ],
-   "duels": [
-    {
-     "gw": 2,
-     "opp": "MCI",
-     "thuis": true,
-     "voor": 1,
-     "tegen": 4,
-     "uit": "V",
-     "datum": "2026-08-28",
-     "soort": "competitie"
-    },
-    {
-     "gw": 3,
-     "opp": "FUL",
-     "thuis": false,
-     "voor": 3,
-     "tegen": 2,
-     "uit": "W",
-     "datum": "2026-09-05",
-     "soort": "competitie"
-    },
-    {
-     "gw": 4,
-     "opp": "IPS",
-     "thuis": true,
-     "voor": 2,
-     "tegen": 3,
-     "uit": "V",
-     "datum": "2026-09-12",
-     "soort": "competitie"
-    },
-    {
-     "gw": 5,
-     "opp": "LEE",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 0,
-     "uit": "G",
-     "datum": "2026-09-20",
-     "soort": "competitie"
-    },
-    {
-     "gw": 6,
-     "opp": "NFO",
-     "thuis": true,
-     "voor": 3,
-     "tegen": 1,
-     "uit": "W",
-     "datum": "2026-10-11",
-     "soort": "competitie"
-    },
-    {
-     "gw": 7,
-     "opp": "BHA",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 5,
-     "uit": "V",
-     "datum": "2026-10-18",
-     "soort": "competitie"
-    },
-    {
-     "gw": 8,
-     "opp": "NEW",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 2,
-     "uit": "V",
-     "datum": "2026-10-25",
-     "soort": "competitie"
-    },
-    {
-     "gw": 9,
-     "opp": "TOT",
-     "thuis": false,
-     "voor": 0,
-     "tegen": 2,
-     "uit": "V",
-     "datum": "2026-10-31",
-     "soort": "competitie"
-    }
-   ],
-   "naam": "Crystal Palace",
-   "kort": "CRY",
-   "saldo": -12,
-   "vormpunten": 4,
-   "vormmax": 15,
-   "positie": 18
-  },
-  {
-   "gespeeld": 9,
-   "winst": 1,
-   "gelijk": 3,
-   "verlies": 5,
-   "voor": 6,
-   "tegen": 12,
-   "punten": 6,
-   "vorm": [
-    "V",
-    "V",
-    "V",
-    "G",
-    "V"
-   ],
-   "duels": [
-    {
-     "gw": 2,
-     "opp": "LIV",
-     "thuis": false,
-     "voor": 2,
-     "tegen": 2,
-     "uit": "G",
-     "datum": "2026-08-29",
-     "soort": "competitie"
-    },
     {
      "gw": 3,
      "opp": "TOT",
@@ -1972,41 +1650,249 @@
      "uit": "V",
      "datum": "2026-10-31",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "MCI",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "datum": "2026-11-07",
+     "soort": "competitie"
     }
    ],
    "naam": "Nott'm Forest",
    "kort": "NFO",
-   "saldo": -6,
-   "vormpunten": 1,
+   "saldo": -4,
+   "vormpunten": 4,
    "vormmax": 15,
-   "positie": 19
+   "positie": 16
   },
   {
-   "gespeeld": 9,
-   "winst": 1,
-   "gelijk": 2,
-   "verlies": 6,
-   "voor": 7,
-   "tegen": 17,
-   "punten": 5,
+   "gespeeld": 10,
+   "winst": 3,
+   "gelijk": 0,
+   "verlies": 7,
+   "voor": 10,
+   "tegen": 19,
+   "punten": 9,
    "vorm": [
+    "W",
     "V",
     "V",
-    "V",
-    "G",
+    "W",
     "V"
    ],
    "duels": [
     {
-     "gw": 2,
-     "opp": "FUL",
+     "gw": 3,
+     "opp": "MCI",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "datum": "2026-09-05",
+     "soort": "competitie"
+    },
+    {
+     "gw": 4,
+     "opp": "BHA",
      "thuis": true,
+     "voor": 0,
+     "tegen": 5,
+     "uit": "V",
+     "datum": "2026-09-13",
+     "soort": "competitie"
+    },
+    {
+     "gw": 5,
+     "opp": "NFO",
+     "thuis": false,
      "voor": 1,
      "tegen": 0,
      "uit": "W",
-     "datum": "2026-08-30",
+     "datum": "2026-09-19",
      "soort": "competitie"
     },
+    {
+     "gw": 6,
+     "opp": "NEW",
+     "thuis": true,
+     "voor": 4,
+     "tegen": 1,
+     "uit": "W",
+     "datum": "2026-10-12",
+     "soort": "competitie"
+    },
+    {
+     "gw": 7,
+     "opp": "TOT",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 3,
+     "uit": "V",
+     "datum": "2026-10-19",
+     "soort": "competitie"
+    },
+    {
+     "gw": 8,
+     "opp": "FUL",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "datum": "2026-10-24",
+     "soort": "competitie"
+    },
+    {
+     "gw": 9,
+     "opp": "SUN",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "datum": "2026-10-31",
+     "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "EVE",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 3,
+     "uit": "V",
+     "datum": "2026-11-06",
+     "soort": "competitie"
+    }
+   ],
+   "naam": "Coventry City",
+   "kort": "COV",
+   "saldo": -9,
+   "vormpunten": 6,
+   "vormmax": 15,
+   "positie": 17
+  },
+  {
+   "gespeeld": 10,
+   "winst": 1,
+   "gelijk": 5,
+   "verlies": 4,
+   "voor": 14,
+   "tegen": 19,
+   "punten": 8,
+   "vorm": [
+    "G",
+    "G",
+    "V",
+    "V",
+    "G"
+   ],
+   "duels": [
+    {
+     "gw": 3,
+     "opp": "EVE",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 2,
+     "uit": "G",
+     "datum": "2026-09-06",
+     "soort": "competitie"
+    },
+    {
+     "gw": 4,
+     "opp": "MCI",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 1,
+     "uit": "V",
+     "datum": "2026-09-13",
+     "soort": "competitie"
+    },
+    {
+     "gw": 5,
+     "opp": "FUL",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-09-20",
+     "soort": "competitie"
+    },
+    {
+     "gw": 6,
+     "opp": "TOT",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-10-10",
+     "soort": "competitie"
+    },
+    {
+     "gw": 7,
+     "opp": "LEE",
+     "thuis": false,
+     "voor": 1,
+     "tegen": 1,
+     "uit": "G",
+     "datum": "2026-10-18",
+     "soort": "competitie"
+    },
+    {
+     "gw": 8,
+     "opp": "BOU",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 3,
+     "uit": "V",
+     "datum": "2026-10-25",
+     "soort": "competitie"
+    },
+    {
+     "gw": 9,
+     "opp": "CHE",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-10-31",
+     "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "AVL",
+     "thuis": true,
+     "voor": 4,
+     "tegen": 4,
+     "uit": "G",
+     "datum": "2026-11-08",
+     "soort": "competitie"
+    }
+   ],
+   "naam": "Man Utd",
+   "kort": "MUN",
+   "saldo": -5,
+   "vormpunten": 3,
+   "vormmax": 15,
+   "positie": 18
+  },
+  {
+   "gespeeld": 10,
+   "winst": 2,
+   "gelijk": 2,
+   "verlies": 6,
+   "voor": 8,
+   "tegen": 17,
+   "punten": 8,
+   "vorm": [
+    "V",
+    "V",
+    "G",
+    "V",
+    "W"
+   ],
+   "duels": [
     {
      "gw": 3,
      "opp": "BRE",
@@ -2076,12 +1962,126 @@
      "uit": "V",
      "datum": "2026-10-31",
      "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "CHE",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 0,
+     "uit": "W",
+     "datum": "2026-11-08",
+     "soort": "competitie"
     }
    ],
    "naam": "Sunderland",
    "kort": "SUN",
-   "saldo": -10,
-   "vormpunten": 1,
+   "saldo": -9,
+   "vormpunten": 4,
+   "vormmax": 15,
+   "positie": 19
+  },
+  {
+   "gespeeld": 10,
+   "winst": 2,
+   "gelijk": 1,
+   "verlies": 7,
+   "voor": 10,
+   "tegen": 24,
+   "punten": 7,
+   "vorm": [
+    "W",
+    "V",
+    "V",
+    "V",
+    "V"
+   ],
+   "duels": [
+    {
+     "gw": 3,
+     "opp": "FUL",
+     "thuis": false,
+     "voor": 3,
+     "tegen": 2,
+     "uit": "W",
+     "datum": "2026-09-05",
+     "soort": "competitie"
+    },
+    {
+     "gw": 4,
+     "opp": "IPS",
+     "thuis": true,
+     "voor": 2,
+     "tegen": 3,
+     "uit": "V",
+     "datum": "2026-09-12",
+     "soort": "competitie"
+    },
+    {
+     "gw": 5,
+     "opp": "LEE",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 0,
+     "uit": "G",
+     "datum": "2026-09-20",
+     "soort": "competitie"
+    },
+    {
+     "gw": 6,
+     "opp": "NFO",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 1,
+     "uit": "W",
+     "datum": "2026-10-11",
+     "soort": "competitie"
+    },
+    {
+     "gw": 7,
+     "opp": "BHA",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 5,
+     "uit": "V",
+     "datum": "2026-10-18",
+     "soort": "competitie"
+    },
+    {
+     "gw": 8,
+     "opp": "NEW",
+     "thuis": true,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-10-25",
+     "soort": "competitie"
+    },
+    {
+     "gw": 9,
+     "opp": "TOT",
+     "thuis": false,
+     "voor": 0,
+     "tegen": 2,
+     "uit": "V",
+     "datum": "2026-10-31",
+     "soort": "competitie"
+    },
+    {
+     "gw": 10,
+     "opp": "LIV",
+     "thuis": true,
+     "voor": 1,
+     "tegen": 3,
+     "uit": "V",
+     "datum": "2026-11-08",
+     "soort": "competitie"
+    }
+   ],
+   "naam": "Crystal Palace",
+   "kort": "CRY",
+   "saldo": -14,
+   "vormpunten": 3,
    "vormmax": 15,
    "positie": 20
   }
