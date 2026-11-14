@@ -1,6 +1,6 @@
 {
  "_bron": "publieke RSS-feeds",
- "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 11 extra gevonden, 15 ingebakken (512 KB).",
+ "_beeld": "Uit de feed waar die het meegeeft, aangevuld met de og:image van het artikel zelf. De afbeeldingen zijn verkleind en in de pagina ingebakken als data-URI, omdat een gepubliceerd artifact geen externe hosts mag laden. Deze keer 11 extra gevonden, 15 ingebakken (515 KB).",
  "_feeds": [
   {
    "naam": "Fantasy Football Scout",
@@ -33,10 +33,10 @@
    "soort": "nl"
   }
  ],
- "_opgehaald": "2026-11-14T00:05:03+00:00",
+ "_opgehaald": "2026-11-14T03:17:39+00:00",
  "_methode": "Berichten uit de laatste 10 dagen, gescoord op blessure- en opstellingswoorden, op vermelde spelers (zwaarder als ze in de selectie zitten) en op versheid. Onder de 5 punten valt af.",
  "_mislukt": [],
- "_aantal": 75,
+ "_aantal": 74,
  "berichten": [
   {
    "titel": "Manzambi injury latest after Switzerland withdrawal",
@@ -46,7 +46,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-12T11:00:00+00:00",
-   "score": 20.8,
+   "score": 20.3,
    "signalen": [
     "injury",
     "team news"
@@ -71,7 +71,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-13T22:00:00+00:00",
-   "score": 17.7,
+   "score": 17.1,
    "signalen": [
     "team news"
    ],
@@ -88,7 +88,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-12T14:00:00+00:00",
-   "score": 17.3,
+   "score": 16.8,
    "signalen": [
     "manager",
     "sack",
@@ -107,7 +107,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-13T16:00:00+00:00",
-   "score": 16.7,
+   "score": 16.1,
    "signalen": [
     "team news"
    ],
@@ -124,7 +124,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-13T11:30:00+00:00",
-   "score": 15.9,
+   "score": 15.4,
    "signalen": [
     "team news"
    ],
@@ -175,7 +175,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-12T10:55:00+00:00",
-   "score": 14.8,
+   "score": 14.3,
    "signalen": [
     "sack",
     "team news"
@@ -193,7 +193,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-11-12T21:47:39+00:00",
-   "score": 14.6,
+   "score": 14.1,
    "signalen": [
     "ban",
     "comeback"
@@ -218,7 +218,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-12T23:45:00+00:00",
-   "score": 13.9,
+   "score": 13.4,
    "signalen": [
     "team news"
    ],
@@ -235,7 +235,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-13T09:55:01+00:00",
-   "score": 13.6,
+   "score": 13.1,
    "signalen": [
     "captain",
     "deal"
@@ -260,7 +260,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-13T22:53:17+00:00",
-   "score": 12.8,
+   "score": 12.3,
    "signalen": [
     "fitness",
     "manager"
@@ -278,7 +278,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-12T16:00:00+00:00",
-   "score": 12.7,
+   "score": 12.1,
    "signalen": [
     "team news"
    ],
@@ -295,7 +295,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-12T15:30:00+00:00",
-   "score": 12.6,
+   "score": 12.0,
    "signalen": [
     "team news"
    ],
@@ -312,7 +312,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-12T15:28:33+00:00",
-   "score": 12.6,
+   "score": 12.0,
    "signalen": [
     "team news"
    ],
@@ -320,30 +320,6 @@
    "beeld_bron": "https://cdn.fantasyfootballscout.co.uk/wp-content/uploads/2026/05/when-will-fpl-launch-for-2026-27.jpg",
    "beeld_breedte": 340,
    "beeld_scherp": true
-  },
-  {
-   "titel": "How Ferguson-inspired Pochettino can succeed where Carrick failed at Man Utd",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cm2kljzkw77ko?at_medium=RSS&at_campaign=rss",
-   "beeld": "data:image/jpeg;base64,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",
-   "samenvatting": "With Mauricio Pochettino set to become Man Utd manager, we analyse if he can clear the tactical hurdles others haven't.",
-   "bron": "BBC Sport",
-   "soort": "algemeen",
-   "datum": "2026-11-13T12:09:48+00:00",
-   "score": 12.0,
-   "signalen": [
-    "manager"
-   ],
-   "spelers": [
-    {
-     "n": "Ferguson",
-     "t": "BHA",
-     "p": "FWD",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f043/live/468fa2e0-dddf-11f1-b465-b9821c2582d4.jpg",
-   "beeld_breedte": 240,
-   "beeld_scherp": false
   },
   {
    "titel": "Brighton breeze past 10-man Brentford to move up to second",
@@ -378,7 +354,7 @@
   {
    "titel": "Bournemouth beat Ipswich to extend winning streak",
    "link": "https://www.bbc.co.uk/sport/football/videos/cmx23rll2w0qo?at_medium=RSS&at_campaign=rss",
-   "beeld": "",
+   "beeld": "data:image/jpeg;base64,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",
    "samenvatting": "Evanilson scores for the fifth Premier League game in a row as Bournemouth's impressive winning streak continued with a controlled victory over Ipswich.",
    "bron": "BBC Sport",
    "soort": "algemeen",
@@ -393,7 +369,9 @@
      "mijn": true
     }
    ],
-   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2f40/live/739a24b0-dba3-11f1-a701-fddedf244c16.jpg"
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/2f40/live/739a24b0-dba3-11f1-a701-fddedf244c16.jpg",
+   "beeld_breedte": 240,
+   "beeld_scherp": false
   },
   {
    "titel": "Evanilson ignites eighth straight Bournemouth win at blundering Ipswich",
@@ -438,6 +416,28 @@
    ]
   },
   {
+   "titel": "How Ferguson-inspired Pochettino can succeed where Carrick failed at Man Utd",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cm2kljzkw77ko?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "With Mauricio Pochettino set to become Man Utd manager, we analyse if he can clear the tactical hurdles others haven't.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-13T12:09:48+00:00",
+   "score": 11.5,
+   "signalen": [
+    "manager"
+   ],
+   "spelers": [
+    {
+     "n": "Ferguson",
+     "t": "BHA",
+     "p": "FWD",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f043/live/468fa2e0-dddf-11f1-b465-b9821c2582d4.jpg"
+  },
+  {
    "titel": "Sofascore Nations League Fantasy: Round 5 Scout Picks",
    "link": "https://www.fantasyfootballscout.co.uk/2026/11/12/sofascore-nations-league-fantasy-round-5-scout-picks",
    "beeld": "",
@@ -445,7 +445,7 @@
    "bron": "Fantasy Football Scout",
    "soort": "fpl",
    "datum": "2026-11-12T10:30:00+00:00",
-   "score": 11.7,
+   "score": 11.2,
    "signalen": [
     "team news"
    ],
@@ -459,7 +459,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-13T22:18:00+00:00",
-   "score": 11.7,
+   "score": 11.2,
    "signalen": [],
    "spelers": [
     {
@@ -479,7 +479,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-13T22:14:00+00:00",
-   "score": 11.7,
+   "score": 11.2,
    "signalen": [],
    "spelers": [
     {
@@ -492,26 +492,6 @@
    "beeld_bron": "https://e2.365dm.com/26/11/1920x1080/skysports-netherlands-nations-league_7406126.jpg?20261113221316"
   },
   {
-   "titel": "McGinn double seals win for ragged Scotland",
-   "link": "https://www.skysports.com/football/scotland-vs-north-macedonia/report/554098",
-   "beeld": "",
-   "samenvatting": "John McGinn's double rescued Scotland as they toiled to a 2-1 win over North Macedonia to keep their Nations League promotion hopes alive.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-11-13T21:35:00+00:00",
-   "score": 11.6,
-   "signalen": [],
-   "spelers": [
-    {
-     "n": "McGinn",
-     "t": "AVL",
-     "p": "MID",
-     "mijn": false
-    }
-   ],
-   "beeld_bron": "https://e0.365dm.com/26/11/1920x1080/skysports-john-mcginn-scotland_7406088.jpg?20261113211951"
-  },
-  {
    "titel": "Ravens quarterback Jackson to miss up to 10 weeks with thumb injury",
    "link": "https://www.skysports.com/nfl/news/12040/13611953/nfl-baltimore-ravens-quarterback-lamar-jackson-to-miss-up-to-10-weeks-with-broken-and-dislocated-thumb",
    "beeld": "",
@@ -519,27 +499,12 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-13T15:47:00+00:00",
-   "score": 11.6,
+   "score": 11.1,
    "signalen": [
     "injury"
    ],
    "spelers": [],
    "beeld_bron": "https://e2.365dm.com/26/09/1920x1080/skysports-lamar-jackson-colts_7350721.jpg?20260913185129"
-  },
-  {
-   "titel": "Michael Carrick tipped for instant Premier League return after Man United sacking",
-   "link": "https://talksport.com/football/4705196/michael-carrick-crystal-palace-manager-sacked-man-united/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-11-13T09:05:41+00:00",
-   "score": 11.5,
-   "signalen": [
-    "return",
-    "sack"
-   ],
-   "spelers": []
   },
   {
    "titel": "Chelsea staff warned over Fantasy Premier League use",
@@ -558,6 +523,41 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/824c/live/4f7c8740-dc33-11f1-958b-3f65a8ba2dc3.jpg"
   },
   {
+   "titel": "McGinn double seals win for ragged Scotland",
+   "link": "https://www.skysports.com/football/scotland-vs-north-macedonia/report/554098",
+   "beeld": "",
+   "samenvatting": "John McGinn's double rescued Scotland as they toiled to a 2-1 win over North Macedonia to keep their Nations League promotion hopes alive.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-11-13T21:35:00+00:00",
+   "score": 11.0,
+   "signalen": [],
+   "spelers": [
+    {
+     "n": "McGinn",
+     "t": "AVL",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://e0.365dm.com/26/11/1920x1080/skysports-john-mcginn-scotland_7406088.jpg?20261113211951"
+  },
+  {
+   "titel": "Michael Carrick tipped for instant Premier League return after Man United sacking",
+   "link": "https://talksport.com/football/4705196/michael-carrick-crystal-palace-manager-sacked-man-united/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-11-13T09:05:41+00:00",
+   "score": 11.0,
+   "signalen": [
+    "return",
+    "sack"
+   ],
+   "spelers": []
+  },
+  {
    "titel": "Papers: Man Utd eyeing move for Como star Paz",
    "link": "https://www.skysports.com/football/news/12040/13611965/man-utd-transfer-news-como-star-nico-paz-emerges-as-target-ahead-of-summer-transfer-window-paper-talk",
    "beeld": "",
@@ -565,7 +565,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-13T22:51:00+00:00",
-   "score": 10.8,
+   "score": 10.3,
    "signalen": [
     "transfer"
    ],
@@ -580,7 +580,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-11-13T22:31:02+00:00",
-   "score": 10.7,
+   "score": 10.2,
    "signalen": [
     "transfer"
    ],
@@ -594,7 +594,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-11-13T16:27:26+00:00",
-   "score": 10.7,
+   "score": 10.2,
    "signalen": [],
    "spelers": [
     {
@@ -613,7 +613,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-13T13:00:00+00:00",
-   "score": 10.2,
+   "score": 9.6,
    "signalen": [],
    "spelers": [
     {
@@ -633,7 +633,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-11-13T12:06:22+00:00",
-   "score": 10.0,
+   "score": 9.5,
    "signalen": [
     "deal",
     "manager"
@@ -648,7 +648,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-11-13T10:44:08+00:00",
-   "score": 9.8,
+   "score": 9.2,
    "signalen": [],
    "spelers": [
     {
@@ -667,7 +667,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-12T10:21:29+00:00",
-   "score": 8.7,
+   "score": 8.2,
    "signalen": [
     "deal",
     "manager",
@@ -675,35 +675,6 @@
    ],
    "spelers": [],
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e373/live/dbd80f70-de86-11f1-b88b-3f1671ea859d.jpg"
-  },
-  {
-   "titel": "‘Few problems’ &#8211; Key Chelsea star sparks new concern amid injury-hit season",
-   "link": "https://talksport.com/football/4704925/moises-caicedo-injury-update-return-chelsea-ecuador/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-11-12T21:29:11+00:00",
-   "score": 8.6,
-   "signalen": [
-    "injury"
-   ],
-   "spelers": []
-  },
-  {
-   "titel": "July Flower fancied for Handicap gold at Cheltenham",
-   "link": "https://www.skysports.com/racing/news/12040/13611848/cheltenham-tips-july-flower-fancied-for-handicap-gold-at-prestbury-park",
-   "beeld": "",
-   "samenvatting": "Ahead of the start of Cheltenham's November meeting, the Weekend Winners panel offered their top tips for a potentially informative Saturday at Prestbury Park.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-11-13T13:30:00+00:00",
-   "score": 8.2,
-   "signalen": [
-    "rest"
-   ],
-   "spelers": [],
-   "beeld_bron": "https://e1.365dm.com/26/09/1920x1080/skysports-weekend-winners-racing_7347813.png?20260911103256"
   },
   {
    "titel": "Premier League: 10 talking points from the weekend’s action",
@@ -758,6 +729,20 @@
    "beeld_bron": "https://i.guim.co.uk/img/media/c43b7a633b7fb9b801887562874dfd92bc1dd12c/977_0_4883_3907/master/4883.jpg?width=140&quality=85&auto=format&fit=max&s=ea803d7b7b56781d8c2d1f4b5c2011d0"
   },
   {
+   "titel": "‘Few problems’ &#8211; Key Chelsea star sparks new concern amid injury-hit season",
+   "link": "https://talksport.com/football/4704925/moises-caicedo-injury-update-return-chelsea-ecuador/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-11-12T21:29:11+00:00",
+   "score": 8.0,
+   "signalen": [
+    "injury"
+   ],
+   "spelers": []
+  },
+  {
    "titel": "Why Unai Emery left Old Trafford pitch during game amid red card confusion",
    "link": "https://talksport.com/football/4693872/unai-emery-man-utd-aston-villa-red-card/",
    "beeld": "",
@@ -779,6 +764,34 @@
    ]
   },
   {
+   "titel": "July Flower fancied for Handicap gold at Cheltenham",
+   "link": "https://www.skysports.com/racing/news/12040/13611848/cheltenham-tips-july-flower-fancied-for-handicap-gold-at-prestbury-park",
+   "beeld": "",
+   "samenvatting": "Ahead of the start of Cheltenham's November meeting, the Weekend Winners panel offered their top tips for a potentially informative Saturday at Prestbury Park.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-11-13T13:30:00+00:00",
+   "score": 7.7,
+   "signalen": [
+    "rest"
+   ],
+   "spelers": [],
+   "beeld_bron": "https://e1.365dm.com/26/09/1920x1080/skysports-weekend-winners-racing_7347813.png?20260911103256"
+  },
+  {
+   "titel": "WTA Finals: Svitolina defeats Sabalenka to reach semi-finals",
+   "link": "https://www.skysports.com/tennis/news/12040/13612096/wta-finals-elina-svitolina-defeats-aryna-sabalenka-to-reach-semi-finals-as-mirra-andreeva-overwhelms-diana-shnaider",
+   "beeld": "",
+   "samenvatting": "Elina Svitolina defeated Aryna Sabalenka over three compelling sets to reach the semi-finals of the WTA Finals in Indian Wells.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-11-13T23:43:00+00:00",
+   "score": 7.4,
+   "signalen": [],
+   "spelers": [],
+   "beeld_bron": "https://e1.365dm.com/26/11/1920x1080/skysports-elina-svitolina-karolina-muchova_7406212.jpg?20261113233529"
+  },
+  {
    "titel": "Crystal Palace sack boss Sage after 16 games",
    "link": "https://www.bbc.co.uk/sport/football/articles/cv5y18lkk87do?at_medium=RSS&at_campaign=rss",
    "beeld": "",
@@ -786,7 +799,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-12T17:15:20+00:00",
-   "score": 7.9,
+   "score": 7.3,
    "signalen": [
     "manager",
     "sack"
@@ -802,10 +815,23 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-13T22:51:00+00:00",
-   "score": 7.8,
+   "score": 7.3,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://e1.365dm.com/26/11/1920x1080/skysports-hye-jin-choi-the-annika_7406201.jpg?20261113232107"
+  },
+  {
+   "titel": "France put injuries behind them to stun Springboks",
+   "link": "https://www.skysports.com/rugby-union/france-vs-south-africa/report/111688",
+   "beeld": "",
+   "samenvatting": "France put a raft of injuries behind them to withstand huge pressure and defeat South Africa 21-19 in a stunning Nations Championship victory in Paris.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-11-13T22:28:00+00:00",
+   "score": 7.2,
+   "signalen": [],
+   "spelers": [],
+   "beeld_bron": "https://e1.365dm.com/26/11/1920x1080/skysports-aaron-grandidier-nkanang_7406144.jpg?20261113222456"
   },
   {
    "titel": "Grealish apologises for absence after breach of discipline",
@@ -815,7 +841,7 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-12T22:10:13+00:00",
-   "score": 7.7,
+   "score": 7.1,
    "signalen": [],
    "spelers": [
     {
@@ -826,59 +852,6 @@
     }
    ],
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6ba4/live/6d670f60-dedf-11f1-a75a-dbf83836672c.jpg"
-  },
-  {
-   "titel": "France put injuries behind them to stun Springboks",
-   "link": "https://www.skysports.com/rugby-union/france-vs-south-africa/report/111688",
-   "beeld": "",
-   "samenvatting": "France put a raft of injuries behind them to withstand huge pressure and defeat South Africa 21-19 in a stunning Nations Championship victory in Paris.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-11-13T22:28:00+00:00",
-   "score": 7.7,
-   "signalen": [],
-   "spelers": [],
-   "beeld_bron": "https://e1.365dm.com/26/11/1920x1080/skysports-aaron-grandidier-nkanang_7406144.jpg?20261113222456"
-  },
-  {
-   "titel": "Pochettino expected to lead US in Nations League games before Manchester United move",
-   "link": "https://www.theguardian.com/football/2026/nov/12/mauricio-pochettino-manchester-united-usmnt-nations-league",
-   "beeld": "",
-   "samenvatting": "<ul><li><p>USMNT coach agreed framework of a deal with United</p></li><li><p>United have made contact with US federation</p></li><li><p>Balogun: ‘I’d like to keep things the way they are’</p></li><li><p><a href=\"https://www.theguardian.com/football/live/2026/n",
-   "bron": "The Guardian",
-   "soort": "algemeen",
-   "datum": "2026-11-12T14:57:56+00:00",
-   "score": 7.5,
-   "signalen": [
-    "deal",
-    "sack"
-   ],
-   "spelers": [],
-   "beeld_bron": "https://i.guim.co.uk/img/media/890140e0e4f6bfab67bf2aaaa0ea3048508b9206/418_0_2542_2034/master/2542.jpg?width=140&quality=85&auto=format&fit=max&s=72dd9632fc59241cabcd18f6ecac2a76"
-  },
-  {
-   "titel": "Manchester United star sent home from international duty to hand Mauricio Pochettino instant blow",
-   "link": "https://talksport.com/football/4707232/patrick-dorgu-withdraws-denmark-mauricio-pochettino-manchester-united/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-11-13T20:29:47+00:00",
-   "score": 7.4,
-   "signalen": [],
-   "spelers": []
-  },
-  {
-   "titel": "&#8216;Average player, failed coach, weak link&#8217; &#8211; Gabby Agbonlahor fires back at The Overlap",
-   "link": "https://talksport.com/football/4707041/gabby-agbonlahor-gary-neville-jamie-carragher-roy-keane-overlap/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-11-13T19:17:01+00:00",
-   "score": 7.2,
-   "signalen": [],
-   "spelers": []
   },
   {
    "titel": "Shirt pull on Isak should have been penalty - panel",
@@ -925,19 +898,6 @@
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8601/live/81888e60-dafc-11f1-93e1-3b657b665bcf.jpg"
   },
   {
-   "titel": "Riley determined to prove himself a world champion in waiting",
-   "link": "https://www.skysports.com/boxing/news/12040/13612006/viddal-riley-determined-to-prove-himself-a-world-champion-in-waiting-in-european-title-fight-against-seydi-coupe",
-   "beeld": "",
-   "samenvatting": "Viddal Riley will put himself on a path to a cruiserweight world title shot, if he can defend the European championship against Seydi Coupe on Saturday.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-11-13T17:53:00+00:00",
-   "score": 7.0,
-   "signalen": [],
-   "spelers": [],
-   "beeld_bron": "https://e1.365dm.com/25/05/1920x1080/skysports-viddal-riley-boxing_6908248.jpg?20250506164612"
-  },
-  {
    "titel": "Top 10 Manchester United signings of the Alex Ferguson era",
    "link": "https://talksport.com/football/4689769/top-10-manchester-united-signings-alex-ferguson-era/",
    "beeld": "",
@@ -959,6 +919,59 @@
    ]
   },
   {
+   "titel": "Pochettino expected to lead US in Nations League games before Manchester United move",
+   "link": "https://www.theguardian.com/football/2026/nov/12/mauricio-pochettino-manchester-united-usmnt-nations-league",
+   "beeld": "",
+   "samenvatting": "<ul><li><p>USMNT coach agreed framework of a deal with United</p></li><li><p>United have made contact with US federation</p></li><li><p>Balogun: ‘I’d like to keep things the way they are’</p></li><li><p><a href=\"https://www.theguardian.com/football/live/2026/n",
+   "bron": "The Guardian",
+   "soort": "algemeen",
+   "datum": "2026-11-12T14:57:56+00:00",
+   "score": 6.9,
+   "signalen": [
+    "deal",
+    "sack"
+   ],
+   "spelers": [],
+   "beeld_bron": "https://i.guim.co.uk/img/media/890140e0e4f6bfab67bf2aaaa0ea3048508b9206/418_0_2542_2034/master/2542.jpg?width=140&quality=85&auto=format&fit=max&s=72dd9632fc59241cabcd18f6ecac2a76"
+  },
+  {
+   "titel": "Manchester United star sent home from international duty to hand Mauricio Pochettino instant blow",
+   "link": "https://talksport.com/football/4707232/patrick-dorgu-withdraws-denmark-mauricio-pochettino-manchester-united/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-11-13T20:29:47+00:00",
+   "score": 6.9,
+   "signalen": [],
+   "spelers": []
+  },
+  {
+   "titel": "&#8216;Average player, failed coach, weak link&#8217; &#8211; Gabby Agbonlahor fires back at The Overlap",
+   "link": "https://talksport.com/football/4707041/gabby-agbonlahor-gary-neville-jamie-carragher-roy-keane-overlap/",
+   "beeld": "",
+   "samenvatting": "",
+   "bron": "talkSPORT",
+   "soort": "geruchten",
+   "datum": "2026-11-13T19:17:01+00:00",
+   "score": 6.7,
+   "signalen": [],
+   "spelers": []
+  },
+  {
+   "titel": "Riley determined to prove himself a world champion in waiting",
+   "link": "https://www.skysports.com/boxing/news/12040/13612006/viddal-riley-determined-to-prove-himself-a-world-champion-in-waiting-in-european-title-fight-against-seydi-coupe",
+   "beeld": "",
+   "samenvatting": "Viddal Riley will put himself on a path to a cruiserweight world title shot, if he can defend the European championship against Seydi Coupe on Saturday.",
+   "bron": "Sky Sports",
+   "soort": "algemeen",
+   "datum": "2026-11-13T17:53:00+00:00",
+   "score": 6.4,
+   "signalen": [],
+   "spelers": [],
+   "beeld_bron": "https://e1.365dm.com/25/05/1920x1080/skysports-viddal-riley-boxing_6908248.jpg?20250506164612"
+  },
+  {
    "titel": "Two Manchester United players can thrive under Mauricio Pochettino &#8211; look what he did with Dele Alli",
    "link": "https://talksport.com/football/4706451/manchester-united-mauricio-pochettino-dele-alli-rashford-mainoo/",
    "beeld": "",
@@ -966,7 +979,7 @@
    "bron": "talkSPORT",
    "soort": "geruchten",
    "datum": "2026-11-13T16:56:47+00:00",
-   "score": 6.8,
+   "score": 6.3,
    "signalen": [],
    "spelers": []
   },
@@ -978,7 +991,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-13T16:12:00+00:00",
-   "score": 6.7,
+   "score": 6.2,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://e1.365dm.com/26/11/1920x1080/skysports-dupont-france-rugby_7406060.jpg?20261113203811"
@@ -991,10 +1004,76 @@
    "bron": "BBC Sport",
    "soort": "algemeen",
    "datum": "2026-11-13T15:28:06+00:00",
-   "score": 6.6,
+   "score": 6.0,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/fcb8/live/8a5ea400-df72-11f1-b844-3146c4983677.png"
+  },
+  {
+   "titel": "Assessing the reasons for Man City's decline in form under Maresca",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cw30e0yz0p04o?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "The ongoing international break gives manager Enzo Maresca much-needed time to fix the growing issues in his Man City squad.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-11T11:47:09+00:00",
+   "score": 6,
+   "signalen": [
+    "manager"
+   ],
+   "spelers": [
+    {
+     "n": "Enzo",
+     "t": "MCI",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4c72/live/a41350a0-dcfa-11f1-9ef0-4b5930e2f80e.jpg"
+  },
+  {
+   "titel": "Delap double inspires Forest to stunning win over Man City",
+   "link": "https://www.bbc.co.uk/sport/football/videos/crp3gewxj77eo?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Liam Delap scores a superb double as Nottingham Forest stun Manchester City 3-1 for their first Premier League win at the City Ground this season.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-07T20:02:25+00:00",
+   "score": 6,
+   "signalen": [
+    "rest"
+   ],
+   "spelers": [
+    {
+     "n": "Delap",
+     "t": "NFO",
+     "p": "FWD",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3af7/live/d780fef0-dae4-11f1-a701-fddedf244c16.jpg"
+  },
+  {
+   "titel": "'Frustrated and disappointed' - Emery on Man Utd draw",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c9dr812v01lzo?at_medium=RSS&at_campaign=rss",
+   "beeld": "",
+   "samenvatting": "Aston Villa manager Unai Emery was a frustrated figure after his side surrendered a two goal lead against Manchester United twice, leaving Old Trafford with a point from their 4-4 draw.",
+   "bron": "BBC Sport",
+   "soort": "algemeen",
+   "datum": "2026-11-08T19:39:24+00:00",
+   "score": 6,
+   "signalen": [
+    "manager"
+   ],
+   "spelers": [
+    {
+     "n": "Trafford",
+     "t": "LEE",
+     "p": "GKP",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d367/live/1f25a4c0-dbaa-11f1-a701-fddedf244c16.jpg"
   },
   {
    "titel": "England respond to Jones' mind games ahead of Japan match",
@@ -1004,7 +1083,7 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-13T15:07:00+00:00",
-   "score": 6.5,
+   "score": 6.0,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://e1.365dm.com/26/05/1920x1080/skysports-eddie-jones-2025_7247557.jpg?20260513140054"
@@ -1017,87 +1096,54 @@
    "bron": "Sky Sports",
    "soort": "algemeen",
    "datum": "2026-11-13T15:00:00+00:00",
-   "score": 6.5,
+   "score": 6.0,
    "signalen": [],
    "spelers": [],
    "beeld_bron": "https://e2.365dm.com/26/11/1920x1080/skysports-mauricio-pochettinp_7405898.jpg?20261113153009"
   },
   {
-   "titel": "Pochettino left in tears on leaving US job - 'Most difficult decision'",
-   "link": "https://www.skysports.com/watch/video/13611928/mauricio-pochettino-left-in-tears-on-leaving-us-job-most-difficult-decision",
+   "titel": "Meeting of two lost souls: can Pochettino make it work at Manchester United? | Barney Ronay",
+   "link": "https://www.theguardian.com/football/2026/nov/11/mauricio-pochettino-manchester-united-old-trafford-manager",
    "beeld": "",
-   "samenvatting": "New Manchester United boss Mauricio Pochettino was very emotional when thanking the US Soccer Federation.",
-   "bron": "Sky Sports",
+   "samenvatting": "<p>Manager has been hurt by experiences at elite clubs but several players at Old Trafford could fit his playing style</p><p>Welcome, Mauricio, to the meat grinder. Or rather, welcome back. We’ve been expecting you. There is nothing surprising in the news Manc",
+   "bron": "The Guardian",
    "soort": "algemeen",
-   "datum": "2026-11-13T14:49:00+00:00",
-   "score": 6.5,
-   "signalen": [],
-   "spelers": [],
-   "beeld_bron": "https://e0.365dm.com/26/11/1920x1080/skysports-pochettino-man-utd_7405890.jpg?20261113150042"
-  },
-  {
-   "titel": "Jonbon records Shloer Chase hat-trick at Cheltenham",
-   "link": "https://www.skysports.com/racing/news/12040/13611929/cheltenham-jonbon-records-shloer-chase-hat-trick-for-nicky-henderson",
-   "beeld": "",
-   "samenvatting": "Harry Cobden made his first ride on Jonbon in public a successful one as the odds-on favourite landed a third Shloer Chase in gritty fashion at Cheltenham.",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-11-13T14:46:00+00:00",
-   "score": 6.4,
-   "signalen": [],
-   "spelers": [],
-   "beeld_bron": "https://e1.365dm.com/26/11/1920x1080/skysports-jonbon-racing_7405880.jpg?20261113145202"
-  },
-  {
-   "titel": "Palace latest: Eagles hold further Frank talks",
-   "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "Sky Sports",
-   "soort": "algemeen",
-   "datum": "2026-11-13T14:25:00+00:00",
-   "score": 6.4,
-   "signalen": [],
-   "spelers": [],
-   "beeld_bron": "https://e1.365dm.com/26/10/1920x1080/skysports-crystal-palace-transfer_7386995.jpg?20261025174919"
-  },
-  {
-   "titel": "New Man United boss Mauricio Pochettino breaks down in tears over &#8216;most difficult decision of his career&#8217;",
-   "link": "https://talksport.com/football/4706572/man-united-manager-mauricio-pochettino-tears-usa/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-11-13T14:43:19+00:00",
-   "score": 6.4,
-   "signalen": [],
-   "spelers": []
-  },
-  {
-   "titel": "Man City to avoid imminent sanctions hearing with appeal to conclude first",
-   "link": "https://talksport.com/football/4706395/man-city-premier-league-sanctions-hearing-appeal-date/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-11-13T14:18:19+00:00",
-   "score": 6.4,
-   "signalen": [],
-   "spelers": []
-  },
-  {
-   "titel": "Manchester United told to raid Premier League with four-man transfer list including &#8216;genius&#8217;",
-   "link": "https://talksport.com/football/4704818/man-utd-transfer-list-palmer-branthwaite-silva-kadioglu/",
-   "beeld": "",
-   "samenvatting": "",
-   "bron": "talkSPORT",
-   "soort": "geruchten",
-   "datum": "2026-11-12T20:17:41+00:00",
-   "score": 6.4,
+   "datum": "2026-11-11T21:10:31+00:00",
+   "score": 6,
    "signalen": [
-    "transfer"
+    "manager"
    ],
-   "spelers": []
+   "spelers": [
+    {
+     "n": "Trafford",
+     "t": "LEE",
+     "p": "GKP",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://i.guim.co.uk/img/media/44d7d263c31cab4914ec6deab195542e4a6a5c03/538_0_6524_5220/master/6524.jpg?width=140&quality=85&auto=format&fit=max&s=a482d657d67f4be7a9d3ec3aaf7b6c04"
+  },
+  {
+   "titel": "Manchester City’s weaknesses under Enzo Maresca are being exposed",
+   "link": "https://www.theguardian.com/football/2026/nov/09/manchester-city-enzo-maresca-premier-league",
+   "beeld": "",
+   "samenvatting": "<p>After three straight defeats, City’s manager says he will use the international break to reassess. Their problems may go beyond tactics</p><ul><li><p><a href=\"https://ablink.editorial.theguardian.com/ss/c/u001.HesXJ57d0x1owJZ-aZPL3dMFWr92HeUFQk2v_wBSJ_UtgE-",
+   "bron": "The Guardian",
+   "soort": "algemeen",
+   "datum": "2026-11-09T16:30:13+00:00",
+   "score": 6,
+   "signalen": [
+    "manager"
+   ],
+   "spelers": [
+    {
+     "n": "Enzo",
+     "t": "MCI",
+     "p": "MID",
+     "mijn": false
+    }
+   ],
+   "beeld_bron": "https://i.guim.co.uk/img/media/b133b75a4f8ea4aba670cc67dd8a4a7d2315133d/0_0_5000_4000/master/5000.jpg?width=140&quality=85&auto=format&fit=max&s=9c5d66f7b30851a87398473bfa46afbf"
   }
  ]
 }
