@@ -1,6 +1,6 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-11-22 18:02:27",
+ "_opgehaald": "2026-11-22 18:30:24",
  "_copilot_bijgewerkt": "Updated just now",
  "_copilot_moment": null,
  "_start_gw": 12,
@@ -1691,15 +1691,15 @@
    "pos": "FWD"
   },
   {
+   "n": "Mac Allister",
+   "pos": "FWD"
+  },
+  {
    "n": "Kerkez",
    "pos": "FWD"
   },
   {
    "n": "Martinez",
-   "pos": "FWD"
-  },
-  {
-   "n": "Mac Allister",
    "pos": "FWD"
   },
   {
@@ -1879,10 +1879,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Barcola",
-   "pos": "FWD"
-  },
-  {
    "n": "O'Shea",
    "pos": "FWD"
   },
@@ -1992,6 +1988,10 @@
   },
   {
    "n": "O'Reilly",
+   "pos": "FWD"
+  },
+  {
+   "n": "Barcola",
    "pos": "FWD"
   },
   {
@@ -2975,11 +2975,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Onana",
+   "n": "Soler",
    "pos": "FWD"
   },
   {
-   "n": "Soler",
+   "n": "Onana",
    "pos": "FWD"
   },
   {
@@ -12354,31 +12354,6 @@
     75
    ]
   },
-  "627": {
-   "n": "Barcola",
-   "t": "LIV",
-   "p": "MID",
-   "gw": [
-    3,
-    2.8,
-    2.4,
-    3.3,
-    3.2,
-    3.4,
-    3,
-    3.3
-   ],
-   "mn": [
-    56,
-    48,
-    49,
-    56,
-    55,
-    56,
-    57,
-    51
-   ]
-  },
   "399": {
    "n": "Cherki",
    "t": "MCI",
@@ -12677,6 +12652,31 @@
     58,
     61,
     68
+   ]
+  },
+  "627": {
+   "n": "Barcola",
+   "t": "LIV",
+   "p": "MID",
+   "gw": [
+    2.8,
+    2.6,
+    2.3,
+    3,
+    2.9,
+    3.1,
+    2.7,
+    3.1
+   ],
+   "mn": [
+    56,
+    48,
+    49,
+    56,
+    55,
+    56,
+    57,
+    51
    ]
   },
   "101": {
@@ -14359,7 +14359,7 @@
    "t": "LIV",
    "p": "MID",
    "gw": [
-    1.2,
+    1.3,
     2.1,
     1.9,
     1.5,
