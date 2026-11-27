@@ -1,8 +1,8 @@
 {
  "_bron": "FPL Copilot — https://fplcopilot.com/expected-points",
- "_opgehaald": "2026-11-26 23:48:14",
- "_copilot_bijgewerkt": "Updated an hour ago",
- "_copilot_moment": null,
+ "_opgehaald": "2026-11-27 04:32:13",
+ "_copilot_bijgewerkt": "Updated 2 hours ago",
+ "_copilot_moment": "2026-11-27 02:32:13",
  "_start_gw": 12,
  "_horizon": 8,
  "_overgeslagen": [
@@ -27,10 +27,6 @@
    "pos": "DEF"
   },
   {
-   "n": "Lammens",
-   "pos": "DEF"
-  },
-  {
    "n": "Sels",
    "pos": "DEF"
   },
@@ -39,7 +35,7 @@
    "pos": "DEF"
   },
   {
-   "n": "Kinsky",
+   "n": "Lammens",
    "pos": "DEF"
   },
   {
@@ -47,15 +43,19 @@
    "pos": "DEF"
   },
   {
+   "n": "Kinsky",
+   "pos": "DEF"
+  },
+  {
    "n": "Roefs",
    "pos": "DEF"
   },
   {
-   "n": "Kelleher",
+   "n": "Leno",
    "pos": "DEF"
   },
   {
-   "n": "Leno",
+   "n": "Kelleher",
    "pos": "DEF"
   },
   {
@@ -115,11 +115,11 @@
    "pos": "DEF"
   },
   {
-   "n": "Bettinelli",
+   "n": "Rulli",
    "pos": "DEF"
   },
   {
-   "n": "Rulli",
+   "n": "Bettinelli",
    "pos": "DEF"
   },
   {
@@ -127,7 +127,7 @@
    "pos": "DEF"
   },
   {
-   "n": "Benda",
+   "n": "Forster",
    "pos": "DEF"
   },
   {
@@ -135,23 +135,7 @@
    "pos": "DEF"
   },
   {
-   "n": "John",
-   "pos": "DEF"
-  },
-  {
-   "n": "Ellborg",
-   "pos": "DEF"
-  },
-  {
-   "n": "Forster",
-   "pos": "DEF"
-  },
-  {
-   "n": "Travers",
-   "pos": "DEF"
-  },
-  {
-   "n": "Di Gregorio",
+   "n": "Benda",
    "pos": "DEF"
   },
   {
@@ -159,11 +143,23 @@
    "pos": "DEF"
   },
   {
-   "n": "Wilson",
+   "n": "Di Gregorio",
    "pos": "DEF"
   },
   {
-   "n": "Bentley",
+   "n": "John",
+   "pos": "DEF"
+  },
+  {
+   "n": "Travers",
+   "pos": "DEF"
+  },
+  {
+   "n": "Ellborg",
+   "pos": "DEF"
+  },
+  {
+   "n": "Wilson",
    "pos": "DEF"
   },
   {
@@ -172,6 +168,10 @@
   },
   {
    "n": "Zetterer",
+   "pos": "DEF"
+  },
+  {
+   "n": "Bentley",
    "pos": "DEF"
   },
   {
@@ -191,19 +191,19 @@
    "pos": "DEF"
   },
   {
-   "n": "Mamardashvili",
-   "pos": "DEF"
-  },
-  {
-   "n": "Gillespie",
-   "pos": "DEF"
-  },
-  {
    "n": "Kaiser",
    "pos": "DEF"
   },
   {
+   "n": "Mamardashvili",
+   "pos": "DEF"
+  },
+  {
    "n": "Pope",
+   "pos": "DEF"
+  },
+  {
+   "n": "Gillespie",
    "pos": "DEF"
   },
   {
@@ -235,11 +235,11 @@
    "pos": "DEF"
   },
   {
-   "n": "Meslier",
+   "n": "Lecomte",
    "pos": "DEF"
   },
   {
-   "n": "Lecomte",
+   "n": "Meslier",
    "pos": "DEF"
   },
   {
@@ -359,6 +359,10 @@
    "pos": "MID"
   },
   {
+   "n": "Murillo",
+   "pos": "MID"
+  },
+  {
    "n": "J.Timber",
    "pos": "MID"
   },
@@ -367,15 +371,7 @@
    "pos": "MID"
   },
   {
-   "n": "Murillo",
-   "pos": "MID"
-  },
-  {
    "n": "A.Becker",
-   "pos": "MID"
-  },
-  {
-   "n": "Branthwaite",
    "pos": "MID"
   },
   {
@@ -383,7 +379,7 @@
    "pos": "MID"
   },
   {
-   "n": "Hall",
+   "n": "Branthwaite",
    "pos": "MID"
   },
   {
@@ -399,6 +395,10 @@
    "pos": "MID"
   },
   {
+   "n": "Hall",
+   "pos": "MID"
+  },
+  {
    "n": "Donnarumma",
    "pos": "MID"
   },
@@ -407,7 +407,7 @@
    "pos": "MID"
   },
   {
-   "n": "Elvedi",
+   "n": "Truffert",
    "pos": "MID"
   },
   {
@@ -415,7 +415,7 @@
    "pos": "MID"
   },
   {
-   "n": "Truffert",
+   "n": "Elvedi",
    "pos": "MID"
   },
   {
@@ -427,15 +427,7 @@
    "pos": "MID"
   },
   {
-   "n": "Lammens",
-   "pos": "MID"
-  },
-  {
    "n": "Sels",
-   "pos": "MID"
-  },
-  {
-   "n": "Richards",
    "pos": "MID"
   },
   {
@@ -443,11 +435,19 @@
    "pos": "MID"
   },
   {
-   "n": "Kinsky",
+   "n": "Richards",
+   "pos": "MID"
+  },
+  {
+   "n": "Lammens",
    "pos": "MID"
   },
   {
    "n": "Suzuki",
+   "pos": "MID"
+  },
+  {
+   "n": "Kinsky",
    "pos": "MID"
   },
   {
@@ -467,10 +467,6 @@
    "pos": "MID"
   },
   {
-   "n": "Kelleher",
-   "pos": "MID"
-  },
-  {
    "n": "Leno",
    "pos": "MID"
   },
@@ -479,11 +475,15 @@
    "pos": "MID"
   },
   {
-   "n": "Rúben",
+   "n": "Kelleher",
    "pos": "MID"
   },
   {
    "n": "Pickford",
+   "pos": "MID"
+  },
+  {
+   "n": "Rúben",
    "pos": "MID"
   },
   {
@@ -527,19 +527,15 @@
    "pos": "MID"
   },
   {
-   "n": "Cash",
-   "pos": "MID"
-  },
-  {
    "n": "Dunk",
    "pos": "MID"
   },
   {
-   "n": "Burn",
+   "n": "Cash",
    "pos": "MID"
   },
   {
-   "n": "Maatsen",
+   "n": "Burn",
    "pos": "MID"
   },
   {
@@ -551,15 +547,19 @@
    "pos": "MID"
   },
   {
+   "n": "Maatsen",
+   "pos": "MID"
+  },
+  {
+   "n": "Gvardiol",
+   "pos": "MID"
+  },
+  {
    "n": "Tzolakis",
    "pos": "MID"
   },
   {
    "n": "Matheus N.",
-   "pos": "MID"
-  },
-  {
-   "n": "Gvardiol",
    "pos": "MID"
   },
   {
@@ -575,15 +575,11 @@
    "pos": "MID"
   },
   {
-   "n": "Mitchell",
-   "pos": "MID"
-  },
-  {
    "n": "Martinez",
    "pos": "MID"
   },
   {
-   "n": "Colwill",
+   "n": "Mitchell",
    "pos": "MID"
   },
   {
@@ -591,11 +587,11 @@
    "pos": "MID"
   },
   {
-   "n": "Diop",
+   "n": "Colwill",
    "pos": "MID"
   },
   {
-   "n": "Pau",
+   "n": "Diop",
    "pos": "MID"
   },
   {
@@ -603,11 +599,15 @@
    "pos": "MID"
   },
   {
-   "n": "Thiaw",
+   "n": "Pau",
    "pos": "MID"
   },
   {
    "n": "Henderson",
+   "pos": "MID"
+  },
+  {
+   "n": "Thiaw",
    "pos": "MID"
   },
   {
@@ -616,6 +616,10 @@
   },
   {
    "n": "Acheampong",
+   "pos": "MID"
+  },
+  {
+   "n": "Bassey",
    "pos": "MID"
   },
   {
@@ -628,10 +632,6 @@
   },
   {
    "n": "Hume",
-   "pos": "MID"
-  },
-  {
-   "n": "Bassey",
    "pos": "MID"
   },
   {
@@ -655,11 +655,11 @@
    "pos": "MID"
   },
   {
-   "n": "Tarkowski",
+   "n": "Ajayi",
    "pos": "MID"
   },
   {
-   "n": "Ajayi",
+   "n": "Tarkowski",
    "pos": "MID"
   },
   {
@@ -667,11 +667,11 @@
    "pos": "MID"
   },
   {
-   "n": "Sessegnon",
+   "n": "Walton",
    "pos": "MID"
   },
   {
-   "n": "Walton",
+   "n": "Sessegnon",
    "pos": "MID"
   },
   {
@@ -699,15 +699,15 @@
    "pos": "MID"
   },
   {
-   "n": "Mfuni",
-   "pos": "MID"
-  },
-  {
    "n": "Davis",
    "pos": "MID"
   },
   {
    "n": "Chavarria",
+   "pos": "MID"
+  },
+  {
+   "n": "Mfuni",
    "pos": "MID"
   },
   {
@@ -815,11 +815,11 @@
    "pos": "MID"
   },
   {
-   "n": "Hickey",
+   "n": "White",
    "pos": "MID"
   },
   {
-   "n": "White",
+   "n": "Hickey",
    "pos": "MID"
   },
   {
@@ -859,11 +859,11 @@
    "pos": "MID"
   },
   {
-   "n": "Greaves",
+   "n": "Furlong",
    "pos": "MID"
   },
   {
-   "n": "Furlong",
+   "n": "Greaves",
    "pos": "MID"
   },
   {
@@ -879,11 +879,11 @@
    "pos": "MID"
   },
   {
-   "n": "Danso",
+   "n": "Netz",
    "pos": "MID"
   },
   {
-   "n": "Netz",
+   "n": "Danso",
    "pos": "MID"
   },
   {
@@ -891,11 +891,11 @@
    "pos": "MID"
   },
   {
-   "n": "Tomiyasu",
+   "n": "Lacroix",
    "pos": "MID"
   },
   {
-   "n": "Lacroix",
+   "n": "Tomiyasu",
    "pos": "MID"
   },
   {
@@ -971,11 +971,11 @@
    "pos": "MID"
   },
   {
-   "n": "Davies",
+   "n": "Ballard",
    "pos": "MID"
   },
   {
-   "n": "Ballard",
+   "n": "Davies",
    "pos": "MID"
   },
   {
@@ -1019,11 +1019,11 @@
    "pos": "MID"
   },
   {
-   "n": "Ruggeri",
+   "n": "Leoni",
    "pos": "MID"
   },
   {
-   "n": "Leoni",
+   "n": "Ruggeri",
    "pos": "MID"
   },
   {
@@ -1059,11 +1059,11 @@
    "pos": "MID"
   },
   {
-   "n": "Penders",
+   "n": "Latibeaudiere",
    "pos": "MID"
   },
   {
-   "n": "Latibeaudiere",
+   "n": "Penders",
    "pos": "MID"
   },
   {
@@ -1079,11 +1079,11 @@
    "pos": "MID"
   },
   {
-   "n": "Rowswell",
+   "n": "Byfield",
    "pos": "MID"
   },
   {
-   "n": "Byfield",
+   "n": "Rowswell",
    "pos": "MID"
   },
   {
@@ -1095,15 +1095,15 @@
    "pos": "MID"
   },
   {
-   "n": "Rowe",
-   "pos": "MID"
-  },
-  {
    "n": "Benitez",
    "pos": "MID"
   },
   {
    "n": "J.Araujo",
+   "pos": "MID"
+  },
+  {
+   "n": "Rowe",
    "pos": "MID"
   },
   {
@@ -1151,11 +1151,11 @@
    "pos": "MID"
   },
   {
-   "n": "Bettinelli",
+   "n": "Rulli",
    "pos": "MID"
   },
   {
-   "n": "Rulli",
+   "n": "Bettinelli",
    "pos": "MID"
   },
   {
@@ -1163,7 +1163,7 @@
    "pos": "MID"
   },
   {
-   "n": "Benda",
+   "n": "Forster",
    "pos": "MID"
   },
   {
@@ -1171,19 +1171,11 @@
    "pos": "MID"
   },
   {
-   "n": "John",
+   "n": "Benda",
    "pos": "MID"
   },
   {
-   "n": "Ellborg",
-   "pos": "MID"
-  },
-  {
-   "n": "Forster",
-   "pos": "MID"
-  },
-  {
-   "n": "Travers",
+   "n": "King",
    "pos": "MID"
   },
   {
@@ -1191,7 +1183,15 @@
    "pos": "MID"
   },
   {
-   "n": "King",
+   "n": "John",
+   "pos": "MID"
+  },
+  {
+   "n": "Travers",
+   "pos": "MID"
+  },
+  {
+   "n": "Ellborg",
    "pos": "MID"
   },
   {
@@ -1203,15 +1203,15 @@
    "pos": "MID"
   },
   {
-   "n": "Bentley",
-   "pos": "MID"
-  },
-  {
    "n": "Dubravka",
    "pos": "MID"
   },
   {
    "n": "Zetterer",
+   "pos": "MID"
+  },
+  {
+   "n": "Bentley",
    "pos": "MID"
   },
   {
@@ -1231,15 +1231,11 @@
    "pos": "MID"
   },
   {
-   "n": "Mamardashvili",
-   "pos": "MID"
-  },
-  {
-   "n": "Gillespie",
-   "pos": "MID"
-  },
-  {
    "n": "Kaiser",
+   "pos": "MID"
+  },
+  {
+   "n": "Mamardashvili",
    "pos": "MID"
   },
   {
@@ -1247,7 +1243,15 @@
    "pos": "MID"
   },
   {
+   "n": "Gillespie",
+   "pos": "MID"
+  },
+  {
    "n": "Balcombe",
+   "pos": "MID"
+  },
+  {
+   "n": "Woolfenden",
    "pos": "MID"
   },
   {
@@ -1256,10 +1260,6 @@
   },
   {
    "n": "Button",
-   "pos": "MID"
-  },
-  {
-   "n": "Woolfenden",
    "pos": "MID"
   },
   {
@@ -1279,11 +1279,11 @@
    "pos": "MID"
   },
   {
-   "n": "Meslier",
+   "n": "Lecomte",
    "pos": "MID"
   },
   {
-   "n": "Lecomte",
+   "n": "Meslier",
    "pos": "MID"
   },
   {
@@ -1507,11 +1507,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Gibbs-White",
+   "n": "Szoboszlai",
    "pos": "FWD"
   },
   {
-   "n": "Szoboszlai",
+   "n": "Gibbs-White",
    "pos": "FWD"
   },
   {
@@ -1535,11 +1535,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Doku",
+   "n": "Groß",
    "pos": "FWD"
   },
   {
-   "n": "Groß",
+   "n": "Doku",
    "pos": "FWD"
   },
   {
@@ -1567,11 +1567,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Enciso",
+   "n": "Muharemović",
    "pos": "FWD"
   },
   {
-   "n": "Muharemović",
+   "n": "Enciso",
    "pos": "FWD"
   },
   {
@@ -1611,15 +1611,19 @@
    "pos": "FWD"
   },
   {
-   "n": "Rice",
-   "pos": "FWD"
-  },
-  {
    "n": "Anderson",
    "pos": "FWD"
   },
   {
+   "n": "Rice",
+   "pos": "FWD"
+  },
+  {
    "n": "E.Le Fée",
+   "pos": "FWD"
+  },
+  {
+   "n": "Murillo",
    "pos": "FWD"
   },
   {
@@ -1631,19 +1635,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Murillo",
-   "pos": "FWD"
-  },
-  {
    "n": "A.Becker",
-   "pos": "FWD"
-  },
-  {
-   "n": "Branthwaite",
-   "pos": "FWD"
-  },
-  {
-   "n": "Dewsbury-Hall",
    "pos": "FWD"
   },
   {
@@ -1655,7 +1647,15 @@
    "pos": "FWD"
   },
   {
+   "n": "Branthwaite",
+   "pos": "FWD"
+  },
+  {
    "n": "Mac Allister",
+   "pos": "FWD"
+  },
+  {
+   "n": "Thomas",
    "pos": "FWD"
   },
   {
@@ -1667,15 +1667,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Thomas",
+   "n": "Dewsbury-Hall",
    "pos": "FWD"
   },
   {
    "n": "Kudus",
-   "pos": "FWD"
-  },
-  {
-   "n": "Hall",
    "pos": "FWD"
   },
   {
@@ -1691,6 +1687,10 @@
    "pos": "FWD"
   },
   {
+   "n": "Hall",
+   "pos": "FWD"
+  },
+  {
    "n": "Donnarumma",
    "pos": "FWD"
   },
@@ -1699,11 +1699,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Sávio",
+   "n": "Truffert",
    "pos": "FWD"
   },
   {
-   "n": "Elvedi",
+   "n": "Sávio",
    "pos": "FWD"
   },
   {
@@ -1711,7 +1711,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Truffert",
+   "n": "Elvedi",
    "pos": "FWD"
   },
   {
@@ -1731,15 +1731,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Lammens",
-   "pos": "FWD"
-  },
-  {
    "n": "Sels",
-   "pos": "FWD"
-  },
-  {
-   "n": "Richards",
    "pos": "FWD"
   },
   {
@@ -1755,7 +1747,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Kinsky",
+   "n": "Richards",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lammens",
    "pos": "FWD"
   },
   {
@@ -1763,11 +1759,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Mykolenko",
+   "n": "Kinsky",
    "pos": "FWD"
   },
   {
-   "n": "Ajer",
+   "n": "Mykolenko",
    "pos": "FWD"
   },
   {
@@ -1775,7 +1771,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Roefs",
+   "n": "Ajer",
    "pos": "FWD"
   },
   {
@@ -1783,19 +1779,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Armstrong",
-   "pos": "FWD"
-  },
-  {
-   "n": "McAtee",
+   "n": "Roefs",
    "pos": "FWD"
   },
   {
    "n": "Milenković",
-   "pos": "FWD"
-  },
-  {
-   "n": "Kelleher",
    "pos": "FWD"
   },
   {
@@ -1807,15 +1795,19 @@
    "pos": "FWD"
   },
   {
+   "n": "McAtee",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kelleher",
+   "pos": "FWD"
+  },
+  {
    "n": "Janelt",
    "pos": "FWD"
   },
   {
-   "n": "Rúben",
-   "pos": "FWD"
-  },
-  {
-   "n": "Neto",
+   "n": "Armstrong",
    "pos": "FWD"
   },
   {
@@ -1823,7 +1815,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Barcola",
+   "n": "Rúben",
    "pos": "FWD"
   },
   {
@@ -1835,7 +1827,19 @@
    "pos": "FWD"
   },
   {
+   "n": "Barcola",
+   "pos": "FWD"
+  },
+  {
+   "n": "Neto",
+   "pos": "FWD"
+  },
+  {
    "n": "Cunha",
+   "pos": "FWD"
+  },
+  {
+   "n": "Stach",
    "pos": "FWD"
   },
   {
@@ -1851,15 +1855,15 @@
    "pos": "FWD"
   },
   {
+   "n": "Ayari",
+   "pos": "FWD"
+  },
+  {
    "n": "Schlager",
    "pos": "FWD"
   },
   {
-   "n": "Stach",
-   "pos": "FWD"
-  },
-  {
-   "n": "Ayari",
+   "n": "Palacios",
    "pos": "FWD"
   },
   {
@@ -1871,15 +1875,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Guéhi",
-   "pos": "FWD"
-  },
-  {
-   "n": "Palacios",
-   "pos": "FWD"
-  },
-  {
    "n": "Kamada",
+   "pos": "FWD"
+  },
+  {
+   "n": "Guéhi",
    "pos": "FWD"
   },
   {
@@ -1903,10 +1903,6 @@
    "pos": "FWD"
   },
   {
-   "n": "King",
-   "pos": "FWD"
-  },
-  {
    "n": "Dalot",
    "pos": "FWD"
   },
@@ -1915,11 +1911,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Manzambi",
-   "pos": "FWD"
-  },
-  {
-   "n": "Cash",
+   "n": "King",
    "pos": "FWD"
   },
   {
@@ -1927,11 +1919,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Burn",
+   "n": "Cash",
    "pos": "FWD"
   },
   {
-   "n": "Maatsen",
+   "n": "Manzambi",
    "pos": "FWD"
   },
   {
@@ -1939,7 +1931,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Fofana",
+   "n": "Burn",
    "pos": "FWD"
   },
   {
@@ -1951,11 +1943,7 @@
    "pos": "FWD"
   },
   {
-   "n": "George",
-   "pos": "FWD"
-  },
-  {
-   "n": "Scott",
+   "n": "Fofana",
    "pos": "FWD"
   },
   {
@@ -1963,15 +1951,11 @@
    "pos": "FWD"
   },
   {
+   "n": "Maatsen",
+   "pos": "FWD"
+  },
+  {
    "n": "Iwobi",
-   "pos": "FWD"
-  },
-  {
-   "n": "Tzolakis",
-   "pos": "FWD"
-  },
-  {
-   "n": "Matheus N.",
    "pos": "FWD"
   },
   {
@@ -1979,11 +1963,27 @@
    "pos": "FWD"
   },
   {
-   "n": "O'Shea",
+   "n": "Tzolakis",
+   "pos": "FWD"
+  },
+  {
+   "n": "Scott",
    "pos": "FWD"
   },
   {
    "n": "Tanaka",
+   "pos": "FWD"
+  },
+  {
+   "n": "Matheus N.",
+   "pos": "FWD"
+  },
+  {
+   "n": "George",
+   "pos": "FWD"
+  },
+  {
+   "n": "O'Shea",
    "pos": "FWD"
   },
   {
@@ -1995,15 +1995,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Rushworth",
-   "pos": "FWD"
-  },
-  {
    "n": "Bobb",
    "pos": "FWD"
   },
   {
-   "n": "Mitchell",
+   "n": "Rushworth",
    "pos": "FWD"
   },
   {
@@ -2011,7 +2007,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Colwill",
+   "n": "Mitchell",
    "pos": "FWD"
   },
   {
@@ -2019,7 +2015,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Damsgaard",
+   "n": "Colwill",
    "pos": "FWD"
   },
   {
@@ -2027,7 +2023,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Pau",
+   "n": "Damsgaard",
    "pos": "FWD"
   },
   {
@@ -2043,6 +2039,14 @@
    "pos": "FWD"
   },
   {
+   "n": "Pau",
+   "pos": "FWD"
+  },
+  {
+   "n": "Henderson",
+   "pos": "FWD"
+  },
+  {
    "n": "Thiaw",
    "pos": "FWD"
   },
@@ -2051,11 +2055,15 @@
    "pos": "FWD"
   },
   {
-   "n": "Henderson",
+   "n": "Meunier",
    "pos": "FWD"
   },
   {
-   "n": "Meunier",
+   "n": "Willock",
+   "pos": "FWD"
+  },
+  {
+   "n": "Acheampong",
    "pos": "FWD"
   },
   {
@@ -2067,27 +2075,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Slater",
-   "pos": "FWD"
-  },
-  {
-   "n": "Adams",
-   "pos": "FWD"
-  },
-  {
    "n": "Caicedo",
-   "pos": "FWD"
-  },
-  {
-   "n": "Acheampong",
-   "pos": "FWD"
-  },
-  {
-   "n": "Lindelöf",
-   "pos": "FWD"
-  },
-  {
-   "n": "Wan-Bissaka",
    "pos": "FWD"
   },
   {
@@ -2095,15 +2083,19 @@
    "pos": "FWD"
   },
   {
-   "n": "Willock",
+   "n": "Adams",
    "pos": "FWD"
   },
   {
-   "n": "Ndoye",
+   "n": "Slater",
    "pos": "FWD"
   },
   {
-   "n": "Hume",
+   "n": "Bassey",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lindelöf",
    "pos": "FWD"
   },
   {
@@ -2111,7 +2103,15 @@
    "pos": "FWD"
   },
   {
-   "n": "Bassey",
+   "n": "Ndoye",
+   "pos": "FWD"
+  },
+  {
+   "n": "Wan-Bissaka",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hume",
    "pos": "FWD"
   },
   {
@@ -2135,7 +2135,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Maddison",
+   "n": "Sadiki",
    "pos": "FWD"
   },
   {
@@ -2143,11 +2143,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Anthony",
+   "n": "Maddison",
    "pos": "FWD"
   },
   {
-   "n": "Sadiki",
+   "n": "Anthony",
    "pos": "FWD"
   },
   {
@@ -2167,11 +2167,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Tarkowski",
-   "pos": "FWD"
-  },
-  {
-   "n": "Ajayi",
+   "n": "Alysson",
    "pos": "FWD"
   },
   {
@@ -2179,11 +2175,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Alysson",
+   "n": "Ajayi",
    "pos": "FWD"
   },
   {
-   "n": "O'Nien",
+   "n": "Tarkowski",
    "pos": "FWD"
   },
   {
@@ -2191,23 +2187,11 @@
    "pos": "FWD"
   },
   {
+   "n": "O'Nien",
+   "pos": "FWD"
+  },
+  {
    "n": "Sakamoto",
-   "pos": "FWD"
-  },
-  {
-   "n": "Gallagher",
-   "pos": "FWD"
-  },
-  {
-   "n": "Hinshelwood",
-   "pos": "FWD"
-  },
-  {
-   "n": "Sessegnon",
-   "pos": "FWD"
-  },
-  {
-   "n": "Tzolis",
    "pos": "FWD"
   },
   {
@@ -2215,11 +2199,23 @@
    "pos": "FWD"
   },
   {
+   "n": "Gallagher",
+   "pos": "FWD"
+  },
+  {
+   "n": "Sessegnon",
+   "pos": "FWD"
+  },
+  {
    "n": "Boscagli",
    "pos": "FWD"
   },
   {
-   "n": "Estêvão",
+   "n": "Hinshelwood",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tzolis",
    "pos": "FWD"
   },
   {
@@ -2228,6 +2224,10 @@
   },
   {
    "n": "Yeremy",
+   "pos": "FWD"
+  },
+  {
+   "n": "Estêvão",
    "pos": "FWD"
   },
   {
@@ -2243,19 +2243,15 @@
    "pos": "FWD"
   },
   {
-   "n": "Eze",
-   "pos": "FWD"
-  },
-  {
    "n": "Van de Ven",
    "pos": "FWD"
   },
   {
-   "n": "Khalaili",
+   "n": "Eze",
    "pos": "FWD"
   },
   {
-   "n": "Mfuni",
+   "n": "Khalaili",
    "pos": "FWD"
   },
   {
@@ -2267,15 +2263,19 @@
    "pos": "FWD"
   },
   {
+   "n": "Mfuni",
+   "pos": "FWD"
+  },
+  {
    "n": "Robertson",
    "pos": "FWD"
   },
   {
-   "n": "Tonali",
+   "n": "Amad",
    "pos": "FWD"
   },
   {
-   "n": "Amad",
+   "n": "Tonali",
    "pos": "FWD"
   },
   {
@@ -2303,11 +2303,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Dorgu",
+   "n": "Longstaff",
    "pos": "FWD"
   },
   {
-   "n": "Longstaff",
+   "n": "Dorgu",
    "pos": "FWD"
   },
   {
@@ -2335,11 +2335,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Keane",
+   "n": "Röhl",
    "pos": "FWD"
   },
   {
-   "n": "Röhl",
+   "n": "Keane",
    "pos": "FWD"
   },
   {
@@ -2355,15 +2355,15 @@
    "pos": "FWD"
   },
   {
+   "n": "Minteh",
+   "pos": "FWD"
+  },
+  {
    "n": "Munoz",
    "pos": "FWD"
   },
   {
    "n": "Livramento",
-   "pos": "FWD"
-  },
-  {
-   "n": "Minteh",
    "pos": "FWD"
   },
   {
@@ -2379,15 +2379,15 @@
    "pos": "FWD"
   },
   {
+   "n": "Yarmoliuk",
+   "pos": "FWD"
+  },
+  {
    "n": "Mbaye",
    "pos": "FWD"
   },
   {
    "n": "Botman",
-   "pos": "FWD"
-  },
-  {
-   "n": "Yarmoliuk",
    "pos": "FWD"
   },
   {
@@ -2399,7 +2399,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Tel",
+   "n": "Jensen",
    "pos": "FWD"
   },
   {
@@ -2407,7 +2407,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Jensen",
+   "n": "Tel",
    "pos": "FWD"
   },
   {
@@ -2431,11 +2431,15 @@
    "pos": "FWD"
   },
   {
+   "n": "Stroud",
+   "pos": "FWD"
+  },
+  {
    "n": "Rodon",
    "pos": "FWD"
   },
   {
-   "n": "Stroud",
+   "n": "Dasilva",
    "pos": "FWD"
   },
   {
@@ -2443,7 +2447,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Dasilva",
+   "n": "Maeda",
    "pos": "FWD"
   },
   {
@@ -2452,10 +2456,6 @@
   },
   {
    "n": "Egan",
-   "pos": "FWD"
-  },
-  {
-   "n": "Maeda",
    "pos": "FWD"
   },
   {
@@ -2471,15 +2471,19 @@
    "pos": "FWD"
   },
   {
-   "n": "J.Ramsey",
-   "pos": "FWD"
-  },
-  {
    "n": "Bergvall",
    "pos": "FWD"
   },
   {
+   "n": "J.Ramsey",
+   "pos": "FWD"
+  },
+  {
    "n": "Barkley",
+   "pos": "FWD"
+  },
+  {
+   "n": "Wieffer",
    "pos": "FWD"
   },
   {
@@ -2491,14 +2495,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Wieffer",
-   "pos": "FWD"
-  },
-  {
-   "n": "N.Angulo",
-   "pos": "FWD"
-  },
-  {
    "n": "Gray",
    "pos": "FWD"
   },
@@ -2507,7 +2503,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Johnson",
+   "n": "N.Angulo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Steur",
    "pos": "FWD"
   },
   {
@@ -2515,11 +2515,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Gboho",
+   "n": "Johnson",
    "pos": "FWD"
   },
   {
-   "n": "Steur",
+   "n": "Gboho",
    "pos": "FWD"
   },
   {
@@ -2551,11 +2551,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Grealish",
+   "n": "Giles",
    "pos": "FWD"
   },
   {
-   "n": "Giles",
+   "n": "Grealish",
    "pos": "FWD"
   },
   {
@@ -2563,11 +2563,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Yates",
+   "n": "Amenda",
    "pos": "FWD"
   },
   {
-   "n": "Amenda",
+   "n": "Yates",
    "pos": "FWD"
   },
   {
@@ -2579,11 +2579,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Hickey",
+   "n": "White",
    "pos": "FWD"
   },
   {
-   "n": "White",
+   "n": "Hickey",
    "pos": "FWD"
   },
   {
@@ -2591,11 +2591,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Adli",
+   "n": "Gomes",
    "pos": "FWD"
   },
   {
-   "n": "Gomes",
+   "n": "Adli",
    "pos": "FWD"
   },
   {
@@ -2615,11 +2615,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Koumas",
+   "n": "Williams-Barnett",
    "pos": "FWD"
   },
   {
-   "n": "Williams-Barnett",
+   "n": "Koumas",
    "pos": "FWD"
   },
   {
@@ -2631,11 +2631,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Andrey Santos",
+   "n": "Quenda",
    "pos": "FWD"
   },
   {
-   "n": "Quenda",
+   "n": "Andrey Santos",
    "pos": "FWD"
   },
   {
@@ -2651,11 +2651,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Tosin",
+   "n": "Touré",
    "pos": "FWD"
   },
   {
-   "n": "Touré",
+   "n": "Tosin",
    "pos": "FWD"
   },
   {
@@ -2671,11 +2671,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Greaves",
+   "n": "Furlong",
    "pos": "FWD"
   },
   {
-   "n": "Furlong",
+   "n": "Greaves",
    "pos": "FWD"
   },
   {
@@ -2703,11 +2703,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Danso",
+   "n": "Netz",
    "pos": "FWD"
   },
   {
-   "n": "Netz",
+   "n": "Danso",
    "pos": "FWD"
   },
   {
@@ -2715,15 +2715,15 @@
    "pos": "FWD"
   },
   {
-   "n": "Rigg",
-   "pos": "FWD"
-  },
-  {
    "n": "Diakité",
    "pos": "FWD"
   },
   {
-   "n": "Tomiyasu",
+   "n": "Rigg",
+   "pos": "FWD"
+  },
+  {
+   "n": "Lacroix",
    "pos": "FWD"
   },
   {
@@ -2731,7 +2731,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Lacroix",
+   "n": "Tomiyasu",
    "pos": "FWD"
   },
   {
@@ -2763,19 +2763,15 @@
    "pos": "FWD"
   },
   {
-   "n": "Kulusevski",
-   "pos": "FWD"
-  },
-  {
    "n": "Mingueza",
    "pos": "FWD"
   },
   {
-   "n": "Gomez",
+   "n": "Kulusevski",
    "pos": "FWD"
   },
   {
-   "n": "Kovačić",
+   "n": "Gomez",
    "pos": "FWD"
   },
   {
@@ -2784,6 +2780,10 @@
   },
   {
    "n": "Diomande",
+   "pos": "FWD"
+  },
+  {
+   "n": "Kovačić",
    "pos": "FWD"
   },
   {
@@ -2811,15 +2811,19 @@
    "pos": "FWD"
   },
   {
-   "n": "Tchaouna",
-   "pos": "FWD"
-  },
-  {
    "n": "Browne",
    "pos": "FWD"
   },
   {
+   "n": "Tchaouna",
+   "pos": "FWD"
+  },
+  {
    "n": "Bard",
+   "pos": "FWD"
+  },
+  {
+   "n": "Tsimikas",
    "pos": "FWD"
   },
   {
@@ -2831,19 +2835,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Tsimikas",
-   "pos": "FWD"
-  },
-  {
-   "n": "Garnacho",
-   "pos": "FWD"
-  },
-  {
    "n": "Chiesa",
-   "pos": "FWD"
-  },
-  {
-   "n": "Hudson-Odoi",
    "pos": "FWD"
   },
   {
@@ -2851,11 +2843,19 @@
    "pos": "FWD"
   },
   {
-   "n": "Hjertø-Dahl",
+   "n": "Garnacho",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hudson-Odoi",
    "pos": "FWD"
   },
   {
    "n": "Dibling",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hjertø-Dahl",
    "pos": "FWD"
   },
   {
@@ -2931,11 +2931,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Hughes",
+   "n": "Xavi",
    "pos": "FWD"
   },
   {
-   "n": "Xavi",
+   "n": "Hughes",
    "pos": "FWD"
   },
   {
@@ -2943,15 +2943,15 @@
    "pos": "FWD"
   },
   {
-   "n": "Methalie",
-   "pos": "FWD"
-  },
-  {
    "n": "Kevin",
    "pos": "FWD"
   },
   {
-   "n": "McAidoo",
+   "n": "Methalie",
+   "pos": "FWD"
+  },
+  {
+   "n": "Coppola",
    "pos": "FWD"
   },
   {
@@ -2959,11 +2959,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Gyabi",
+   "n": "McAidoo",
    "pos": "FWD"
   },
   {
-   "n": "Coppola",
+   "n": "Gyabi",
    "pos": "FWD"
   },
   {
@@ -2975,7 +2975,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Davies",
+   "n": "Tutierov",
    "pos": "FWD"
   },
   {
@@ -2983,19 +2983,19 @@
    "pos": "FWD"
   },
   {
-   "n": "Tutierov",
-   "pos": "FWD"
-  },
-  {
    "n": "Jocelin.T",
    "pos": "FWD"
   },
   {
-   "n": "Hato",
+   "n": "Davies",
    "pos": "FWD"
   },
   {
    "n": "Rashford",
+   "pos": "FWD"
+  },
+  {
+   "n": "Hato",
    "pos": "FWD"
   },
   {
@@ -3039,11 +3039,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Gozo",
+   "n": "J.Cuenca",
    "pos": "FWD"
   },
   {
-   "n": "J.Cuenca",
+   "n": "Gozo",
    "pos": "FWD"
   },
   {
@@ -3079,19 +3079,19 @@
    "pos": "FWD"
   },
   {
-   "n": "Aït-Nouri",
-   "pos": "FWD"
-  },
-  {
    "n": "Odobert",
    "pos": "FWD"
   },
   {
-   "n": "Ruggeri",
+   "n": "Aït-Nouri",
    "pos": "FWD"
   },
   {
    "n": "Leoni",
+   "pos": "FWD"
+  },
+  {
+   "n": "Ruggeri",
    "pos": "FWD"
   },
   {
@@ -3167,11 +3167,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Penders",
+   "n": "Latibeaudiere",
    "pos": "FWD"
   },
   {
-   "n": "Latibeaudiere",
+   "n": "Penders",
    "pos": "FWD"
   },
   {
@@ -3179,11 +3179,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Ji-soo",
+   "n": "Dowell",
    "pos": "FWD"
   },
   {
-   "n": "Dowell",
+   "n": "Ji-soo",
    "pos": "FWD"
   },
   {
@@ -3191,15 +3191,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Rowswell",
-   "pos": "FWD"
-  },
-  {
    "n": "Byfield",
    "pos": "FWD"
   },
   {
-   "n": "Ömür",
+   "n": "Rowswell",
    "pos": "FWD"
   },
   {
@@ -3207,11 +3203,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Lienou",
+   "n": "Ömür",
    "pos": "FWD"
   },
   {
-   "n": "Rowe",
+   "n": "Lienou",
    "pos": "FWD"
   },
   {
@@ -3220,6 +3216,10 @@
   },
   {
    "n": "J.Araujo",
+   "pos": "FWD"
+  },
+  {
+   "n": "Rowe",
    "pos": "FWD"
   },
   {
@@ -3239,11 +3239,11 @@
    "pos": "FWD"
   },
   {
-   "n": "McCarthy",
+   "n": "McConnell",
    "pos": "FWD"
   },
   {
-   "n": "McConnell",
+   "n": "McCarthy",
    "pos": "FWD"
   },
   {
@@ -3271,10 +3271,6 @@
    "pos": "FWD"
   },
   {
-   "n": "Butland",
-   "pos": "FWD"
-  },
-  {
    "n": "Drakes-Thomas",
    "pos": "FWD"
   },
@@ -3283,11 +3279,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Olusesi",
+   "n": "Butland",
    "pos": "FWD"
   },
   {
-   "n": "Bidwell",
+   "n": "Olusesi",
    "pos": "FWD"
   },
   {
@@ -3296,6 +3292,10 @@
   },
   {
    "n": "Burrowes",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bidwell",
    "pos": "FWD"
   },
   {
@@ -3319,19 +3319,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Shepherd",
-   "pos": "FWD"
-  },
-  {
    "n": "Nunes",
-   "pos": "FWD"
-  },
-  {
-   "n": "Zepa",
-   "pos": "FWD"
-  },
-  {
-   "n": "Mills",
    "pos": "FWD"
   },
   {
@@ -3339,11 +3327,15 @@
    "pos": "FWD"
   },
   {
-   "n": "Miley",
+   "n": "Shepherd",
    "pos": "FWD"
   },
   {
-   "n": "Bettinelli",
+   "n": "Mills",
+   "pos": "FWD"
+  },
+  {
+   "n": "Miley",
    "pos": "FWD"
   },
   {
@@ -3351,7 +3343,23 @@
    "pos": "FWD"
   },
   {
+   "n": "Zepa",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bettinelli",
+   "pos": "FWD"
+  },
+  {
    "n": "Steele",
+   "pos": "FWD"
+  },
+  {
+   "n": "Forster",
+   "pos": "FWD"
+  },
+  {
+   "n": "Valdimarsson",
    "pos": "FWD"
   },
   {
@@ -3363,7 +3371,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Valdimarsson",
+   "n": "King",
+   "pos": "FWD"
+  },
+  {
+   "n": "Di Gregorio",
    "pos": "FWD"
   },
   {
@@ -3371,15 +3383,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Ellborg",
-   "pos": "FWD"
-  },
-  {
    "n": "Bendito Mantato",
-   "pos": "FWD"
-  },
-  {
-   "n": "Forster",
    "pos": "FWD"
   },
   {
@@ -3391,11 +3395,7 @@
    "pos": "FWD"
   },
   {
-   "n": "Di Gregorio",
-   "pos": "FWD"
-  },
-  {
-   "n": "King",
+   "n": "Ellborg",
    "pos": "FWD"
   },
   {
@@ -3407,15 +3407,15 @@
    "pos": "FWD"
   },
   {
-   "n": "Bentley",
-   "pos": "FWD"
-  },
-  {
    "n": "Dubravka",
    "pos": "FWD"
   },
   {
    "n": "Zetterer",
+   "pos": "FWD"
+  },
+  {
+   "n": "Bentley",
    "pos": "FWD"
   },
   {
@@ -3435,6 +3435,10 @@
    "pos": "FWD"
   },
   {
+   "n": "Kaiser",
+   "pos": "FWD"
+  },
+  {
    "n": "Eccles",
    "pos": "FWD"
   },
@@ -3443,19 +3447,19 @@
    "pos": "FWD"
   },
   {
-   "n": "Gillespie",
-   "pos": "FWD"
-  },
-  {
-   "n": "Kaiser",
-   "pos": "FWD"
-  },
-  {
    "n": "Pope",
    "pos": "FWD"
   },
   {
+   "n": "Gillespie",
+   "pos": "FWD"
+  },
+  {
    "n": "Balcombe",
+   "pos": "FWD"
+  },
+  {
+   "n": "Woolfenden",
    "pos": "FWD"
   },
   {
@@ -3464,10 +3468,6 @@
   },
   {
    "n": "Button",
-   "pos": "FWD"
-  },
-  {
-   "n": "Woolfenden",
    "pos": "FWD"
   },
   {
@@ -3491,11 +3491,11 @@
    "pos": "FWD"
   },
   {
-   "n": "Meslier",
+   "n": "Lecomte",
    "pos": "FWD"
   },
   {
-   "n": "Lecomte",
+   "n": "Meslier",
    "pos": "FWD"
   },
   {
@@ -3912,7 +3912,7 @@
     1.8,
     2.7,
     3.5,
-    3.9,
+    4,
     4,
     4,
     3.9,
@@ -3938,7 +3938,7 @@
     3.9,
     3.3,
     3.7,
-    3.5,
+    3.6,
     3.8,
     3.3,
     3.8
@@ -3959,14 +3959,14 @@
    "t": "BHA",
    "p": "GKP",
    "gw": [
-    3.9,
+    3.8,
     3.3,
-    3.6,
-    3.9,
+    3.7,
+    4,
     4,
     3.5,
     3.3,
-    3.5
+    3.6
    ],
    "mn": [
     89,
@@ -3984,11 +3984,11 @@
    "t": "CHE",
    "p": "GKP",
    "gw": [
-    3.3,
+    3.4,
     3.7,
     3.3,
     2.7,
-    3.5,
+    3.4,
     3.8,
     3.7,
     3.7
@@ -4011,7 +4011,7 @@
    "gw": [
     2.9,
     3.6,
-    3.4,
+    3.3,
     3.5,
     4,
     3.4,
@@ -4039,8 +4039,8 @@
     4,
     3,
     3.8,
-    3.2,
-    3.9,
+    3.3,
+    3.8,
     3.7
    ],
    "mn": [
@@ -4054,44 +4054,19 @@
     84
    ]
   },
-  "412": {
-   "n": "Lammens",
-   "t": "MUN",
-   "p": "GKP",
-   "gw": [
-    3.5,
-    3.2,
-    3.8,
-    3.5,
-    2.7,
-    3.5,
-    3.7,
-    3
-   ],
-   "mn": [
-    87,
-    87,
-    86,
-    85,
-    84,
-    83,
-    83,
-    83
-   ]
-  },
   "467": {
    "n": "Sels",
    "t": "NFO",
    "p": "GKP",
    "gw": [
-    3.3,
+    3.5,
     3.7,
     3.2,
     3.5,
     3.6,
     3,
     3.1,
-    3.5
+    3.4
    ],
    "mn": [
     88,
@@ -4109,9 +4084,9 @@
    "t": "BOU",
    "p": "GKP",
    "gw": [
+    3.4,
     3.3,
-    3.3,
-    3.9,
+    4,
     2.7,
     3.8,
     3,
@@ -4129,19 +4104,19 @@
     83
    ]
   },
-  "496": {
-   "n": "Kinsky",
-   "t": "TOT",
+  "412": {
+   "n": "Lammens",
+   "t": "MUN",
    "p": "GKP",
    "gw": [
-    3.7,
-    3.7,
-    3.1,
-    3.8,
-    2.8,
     3.5,
     3.2,
-    2.6
+    3.8,
+    3.4,
+    2.7,
+    3.5,
+    3.7,
+    2.9
    ],
    "mn": [
     87,
@@ -4164,7 +4139,7 @@
     3.7,
     3.6,
     2.9,
-    3.4,
+    3.5,
     2.9,
     3
    ],
@@ -4179,6 +4154,31 @@
     80
    ]
   },
+  "496": {
+   "n": "Kinsky",
+   "t": "TOT",
+   "p": "GKP",
+   "gw": [
+    3.7,
+    3.7,
+    3,
+    3.8,
+    2.9,
+    3.4,
+    3.2,
+    2.6
+   ],
+   "mn": [
+    87,
+    87,
+    86,
+    85,
+    84,
+    83,
+    83,
+    83
+   ]
+  },
   "529": {
    "n": "Roefs",
    "t": "SUN",
@@ -4190,7 +4190,7 @@
     3.6,
     3.6,
     3.4,
-    2.9,
+    3,
     4
    ],
    "mn": [
@@ -4201,6 +4201,31 @@
     88,
     87,
     87,
+    86
+   ]
+  },
+  "250": {
+   "n": "Leno",
+   "t": "FUL",
+   "p": "GKP",
+   "gw": [
+    3.4,
+    3.1,
+    3.5,
+    3.3,
+    3.3,
+    3.3,
+    2.9,
+    3.2
+   ],
+   "mn": [
+    88,
+    88,
+    88,
+    87,
+    87,
+    87,
+    86,
     86
    ]
   },
@@ -4229,31 +4254,6 @@
     84
    ]
   },
-  "250": {
-   "n": "Leno",
-   "t": "FUL",
-   "p": "GKP",
-   "gw": [
-    3.3,
-    3.1,
-    3.4,
-    3.3,
-    3.3,
-    3.3,
-    2.9,
-    3.2
-   ],
-   "mn": [
-    88,
-    88,
-    88,
-    87,
-    87,
-    87,
-    86,
-    86
-   ]
-  },
   "226": {
    "n": "Pickford",
    "t": "EVE",
@@ -4264,7 +4264,7 @@
     3.6,
     2.9,
     3.3,
-    3.6,
+    3.7,
     2.7,
     3.2
    ],
@@ -4284,9 +4284,9 @@
    "t": "NEW",
    "p": "GKP",
    "gw": [
-    2.8,
+    2.7,
     3.1,
-    3.6,
+    3.7,
     3.3,
     2.9,
     2.6,
@@ -4366,7 +4366,7 @@
     2.7,
     2.9,
     2.9,
-    2.4
+    2.3
    ],
    "mn": [
     88,
@@ -4387,9 +4387,9 @@
     2.8,
     2.9,
     2.5,
-    2.6,
-    2.1,
-    2.4,
+    2.7,
+    2.2,
+    2.5,
     2.3,
     1.9
    ],
@@ -4434,7 +4434,7 @@
    "t": "ARS",
    "p": "GKP",
    "gw": [
-    1.8,
+    1.9,
     1,
     0.3,
     0.3,
@@ -4464,7 +4464,7 @@
     0.2,
     0.2,
     0.2,
-    0.3,
+    0.2,
     0.2,
     0.2
    ],
@@ -4541,7 +4541,7 @@
     0.1,
     0.2,
     0.2,
-    0.1
+    0.2
    ],
    "mn": [
     2,
@@ -4579,8 +4579,8 @@
     5
    ]
   },
-  "386": {
-   "n": "Bettinelli",
+  "587": {
+   "n": "Rulli",
    "t": "MCI",
    "p": "GKP",
    "gw": [
@@ -4604,8 +4604,8 @@
     4
    ]
   },
-  "587": {
-   "n": "Rulli",
+  "386": {
+   "n": "Bettinelli",
    "t": "MCI",
    "p": "GKP",
    "gw": [
@@ -4654,9 +4654,9 @@
     4
    ]
   },
-  "590": {
-   "n": "Benda",
-   "t": "NFO",
+  "58": {
+   "n": "Forster",
+   "t": "BOU",
    "p": "GKP",
    "gw": [
     0,
@@ -4686,7 +4686,7 @@
    "gw": [
     0,
     0,
-    0,
+    0.1,
     0.1,
     0.1,
     0.1,
@@ -4704,36 +4704,11 @@
     4
    ]
   },
-  "468": {
-   "n": "John",
+  "590": {
+   "n": "Benda",
    "t": "NFO",
    "p": "GKP",
    "gw": [
-    0.1,
-    0,
-    0,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    2,
-    3,
-    3,
-    3,
-    4
-   ]
-  },
-  "531": {
-   "n": "Ellborg",
-   "t": "SUN",
-   "p": "GKP",
-   "gw": [
     0,
     0,
     0.1,
@@ -4754,33 +4729,8 @@
     4
    ]
   },
-  "58": {
-   "n": "Forster",
-   "t": "BOU",
-   "p": "GKP",
-   "gw": [
-    0,
-    0,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    2,
-    3,
-    3,
-    3,
-    4
-   ]
-  },
-  "227": {
-   "n": "Travers",
+  "228": {
+   "n": "King",
    "t": "EVE",
    "p": "GKP",
    "gw": [
@@ -4829,8 +4779,33 @@
     3
    ]
   },
-  "228": {
-   "n": "King",
+  "468": {
+   "n": "John",
+   "t": "NFO",
+   "p": "GKP",
+   "gw": [
+    0,
+    0,
+    0,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    1,
+    1,
+    1,
+    2,
+    3,
+    3,
+    3,
+    4
+   ]
+  },
+  "227": {
+   "n": "Travers",
    "t": "EVE",
    "p": "GKP",
    "gw": [
@@ -4849,6 +4824,31 @@
     1,
     2,
     2,
+    3,
+    3,
+    4
+   ]
+  },
+  "531": {
+   "n": "Ellborg",
+   "t": "SUN",
+   "p": "GKP",
+   "gw": [
+    0,
+    0,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    1,
+    1,
+    1,
+    2,
+    3,
     3,
     3,
     4
@@ -4879,31 +4879,6 @@
     4
    ]
   },
-  "623": {
-   "n": "Bentley",
-   "t": "COV",
-   "p": "GKP",
-   "gw": [
-    0,
-    0,
-    0,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    2,
-    2,
-    3,
-    3,
-    4
-   ]
-  },
   "497": {
    "n": "Dubravka",
    "t": "TOT",
@@ -4911,7 +4886,7 @@
    "gw": [
     0,
     0,
-    0,
+    0.1,
     0.1,
     0.1,
     0.1,
@@ -4952,6 +4927,31 @@
     3,
     3,
     3
+   ]
+  },
+  "623": {
+   "n": "Bentley",
+   "t": "COV",
+   "p": "GKP",
+   "gw": [
+    0,
+    0,
+    0,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4
    ]
   },
   "625": {
@@ -5054,56 +5054,6 @@
     2
    ]
   },
-  "351": {
-   "n": "Mamardashvili",
-   "t": "LIV",
-   "p": "GKP",
-   "gw": [
-    0,
-    0,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    2,
-    2,
-    2,
-    2,
-    2
-   ]
-  },
-  "443": {
-   "n": "Gillespie",
-   "t": "NEW",
-   "p": "GKP",
-   "gw": [
-    0,
-    0,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    2,
-    3,
-    2,
-    3,
-    3
-   ]
-  },
   "674": {
    "n": "Kaiser",
    "t": "FUL",
@@ -5129,8 +5079,58 @@
     2
    ]
   },
+  "351": {
+   "n": "Mamardashvili",
+   "t": "LIV",
+   "p": "GKP",
+   "gw": [
+    0,
+    0,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
   "442": {
    "n": "Pope",
+   "t": "NEW",
+   "p": "GKP",
+   "gw": [
+    0,
+    0,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    1,
+    1,
+    1,
+    2,
+    3,
+    2,
+    3,
+    3
+   ]
+  },
+  "443": {
+   "n": "Gillespie",
    "t": "NEW",
    "p": "GKP",
    "gw": [
@@ -5212,7 +5212,7 @@
     0,
     0,
     0,
-    0.1,
+    0,
     0.1,
     0.1,
     0.1,
@@ -5339,7 +5339,7 @@
     0,
     0,
     0,
-    0,
+    0.1,
     0.1,
     0.1
    ],
@@ -5352,31 +5352,6 @@
     2,
     2,
     2
-   ]
-  },
-  "3": {
-   "n": "Meslier",
-   "t": "ARS",
-   "p": "GKP",
-   "gw": [
-    0.1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "mn": [
-    1,
-    1,
-    null,
-    null,
-    null,
-    1,
-    1,
-    1
    ]
   },
   "251": {
@@ -5402,6 +5377,31 @@
     1,
     2,
     2
+   ]
+  },
+  "3": {
+   "n": "Meslier",
+   "t": "ARS",
+   "p": "GKP",
+   "gw": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "mn": [
+    1,
+    1,
+    null,
+    1,
+    null,
+    1,
+    1,
+    1
    ]
   },
   "555": {
@@ -5809,14 +5809,14 @@
    "t": "ARS",
    "p": "DEF",
    "gw": [
-    4.6,
-    4.8,
-    4.8,
-    5.4,
+    4.5,
+    4.9,
+    4.9,
+    5.3,
     5.2,
     5.3,
     5,
-    5.9
+    6
    ],
    "mn": [
     87,
@@ -5838,10 +5838,10 @@
     4.8,
     3.7,
     4.4,
-    4.1,
+    4.2,
     4.8,
     3.6,
-    5
+    4.8
    ],
    "mn": [
     87,
@@ -5863,8 +5863,8 @@
     3.5,
     4,
     4.9,
-    5.3,
-    4,
+    5.4,
+    4.1,
     3.4,
     4.3
    ],
@@ -5889,9 +5889,9 @@
     5.4,
     3.1,
     4.9,
-    3.7,
+    3.6,
     4.2,
-    4.1
+    4.2
    ],
    "mn": [
     87,
@@ -5939,7 +5939,7 @@
     4.1,
     4.5,
     4.7,
-    4.3,
+    4.2,
     3.7,
     5.2
    ],
@@ -5959,14 +5959,14 @@
    "t": "LEE",
    "p": "DEF",
    "gw": [
-    5.2,
+    5.1,
     3.1,
     4.8,
     3.2,
     4.4,
     3.6,
     4.8,
-    4.6
+    4.5
    ],
    "mn": [
     87,
@@ -5984,10 +5984,10 @@
    "t": "BHA",
    "p": "DEF",
    "gw": [
-    4.5,
+    4.6,
     3.6,
     4,
-    4.5,
+    4.4,
     4.8,
     3.9,
     3.6,
@@ -6011,12 +6011,12 @@
    "gw": [
     4.6,
     4.5,
-    3.4,
+    3.3,
     4.8,
     3.1,
-    4,
+    4.2,
     3.9,
-    2.9
+    2.8
    ],
    "mn": [
     87,
@@ -6034,14 +6034,14 @@
    "t": "ARS",
    "p": "DEF",
    "gw": [
-    3.5,
+    3.6,
     3.6,
     3.7,
     4.1,
     4,
     4.1,
     3.6,
-    4.4
+    4.3
    ],
    "mn": [
     80,
@@ -6064,9 +6064,9 @@
     4.6,
     2.6,
     4.5,
-    3.3,
+    3.4,
     3.9,
-    3.8
+    3.9
    ],
    "mn": [
     87,
@@ -6087,11 +6087,11 @@
     4.8,
     2.8,
     4.5,
-    3,
+    2.9,
     4.2,
     3.4,
     4.5,
-    4.3
+    4.2
    ],
    "mn": [
     85,
@@ -6102,6 +6102,31 @@
     84,
     84,
     84
+   ]
+  },
+  "472": {
+   "n": "Murillo",
+   "t": "NFO",
+   "p": "DEF",
+   "gw": [
+    3.9,
+    3.9,
+    3.2,
+    3.6,
+    4,
+    3.1,
+    3.4,
+    4
+   ],
+   "mn": [
+    86,
+    72,
+    74,
+    76,
+    77,
+    78,
+    79,
+    80
    ]
   },
   "5": {
@@ -6127,31 +6152,6 @@
     72,
     71,
     72
-   ]
-  },
-  "472": {
-   "n": "Murillo",
-   "t": "NFO",
-   "p": "DEF",
-   "gw": [
-    3.8,
-    3.9,
-    3.2,
-    3.7,
-    3.9,
-    3.1,
-    3.4,
-    3.9
-   ],
-   "mn": [
-    86,
-    72,
-    74,
-    76,
-    77,
-    78,
-    79,
-    80
    ]
   },
   "230": {
@@ -6184,10 +6184,10 @@
    "t": "COV",
    "p": "DEF",
    "gw": [
-    3.1,
+    3.2,
     4.4,
     3.1,
-    3.6,
+    3.7,
     3.2,
     3.5,
     3.7,
@@ -6204,37 +6204,12 @@
     85
    ]
   },
-  "449": {
-   "n": "Hall",
-   "t": "NEW",
-   "p": "DEF",
-   "gw": [
-    2.3,
-    3.3,
-    4.6,
-    4.1,
-    3.3,
-    3,
-    4,
-    3.1
-   ],
-   "mn": [
-    69,
-    78,
-    86,
-    85,
-    84,
-    84,
-    84,
-    84
-   ]
-  },
   "469": {
    "n": "N.Williams",
    "t": "NFO",
    "p": "DEF",
    "gw": [
-    3.3,
+    3.4,
     4.1,
     3.2,
     3.6,
@@ -6259,11 +6234,11 @@
    "t": "MUN",
    "p": "DEF",
    "gw": [
-    3.3,
+    3.4,
     3.7,
     3.3,
     2.7,
-    3.5,
+    3.4,
     3.8,
     3.7,
     3.7
@@ -6304,29 +6279,54 @@
     84
    ]
   },
-  "598": {
-   "n": "Elvedi",
-   "t": "LEE",
+  "449": {
+   "n": "Hall",
+   "t": "NEW",
    "p": "DEF",
    "gw": [
-    4.4,
-    2.7,
-    4.2,
-    2.6,
-    3.7,
-    3,
-    4.1,
-    3.9
+    2.3,
+    3.3,
+    4.6,
+    4,
+    3.3,
+    2.9,
+    4,
+    3
    ],
    "mn": [
-    80,
-    81,
-    80,
-    79,
+    69,
     78,
-    78,
-    78,
-    78
+    86,
+    85,
+    84,
+    84,
+    84,
+    84
+   ]
+  },
+  "61": {
+   "n": "Truffert",
+   "t": "BOU",
+   "p": "DEF",
+   "gw": [
+    3.4,
+    3.3,
+    4.6,
+    2.3,
+    4.3,
+    2.9,
+    3.5,
+    3.4
+   ],
+   "mn": [
+    86,
+    85,
+    84,
+    85,
+    84,
+    83,
+    83,
+    82
    ]
   },
   "358": {
@@ -6341,7 +6341,7 @@
     3.3,
     3.8,
     2.8,
-    3.9
+    3.8
    ],
    "mn": [
     83,
@@ -6354,29 +6354,29 @@
     79
    ]
   },
-  "61": {
-   "n": "Truffert",
-   "t": "BOU",
+  "598": {
+   "n": "Elvedi",
+   "t": "LEE",
    "p": "DEF",
    "gw": [
-    3.3,
-    3.3,
     4.5,
-    2.3,
-    4.3,
-    2.9,
-    3.5,
-    3.3
+    2.7,
+    4.1,
+    2.6,
+    3.7,
+    3.1,
+    4.1,
+    3.8
    ],
    "mn": [
-    86,
-    85,
-    84,
-    85,
-    84,
-    83,
-    83,
-    82
+    80,
+    81,
+    80,
+    79,
+    78,
+    78,
+    78,
+    78
    ]
   },
   "201": {
@@ -6384,12 +6384,12 @@
    "t": "NFO",
    "p": "DEF",
    "gw": [
-    3.3,
+    3.2,
     4,
     3.2,
     3.5,
-    3.8,
-    2.8,
+    3.7,
+    2.9,
     3.1,
     3.7
    ],
@@ -6409,14 +6409,14 @@
    "t": "FUL",
    "p": "DEF",
    "gw": [
-    3.7,
+    3.6,
     3.3,
     3.7,
     3.6,
     3.4,
     3.4,
     3,
-    3.5
+    3.4
    ],
    "mn": [
     85,
@@ -6436,10 +6436,10 @@
    "gw": [
     4,
     3.9,
-    2.8,
+    2.7,
     4.2,
-    2.6,
-    3.6,
+    2.5,
+    3.5,
     3.3,
     2.3
    ],
@@ -6461,11 +6461,11 @@
    "gw": [
     4.4,
     3.1,
-    3.1,
+    3,
     3.4,
     3.7,
     2.9,
-    3.6,
+    3.5,
     3.1
    ],
    "mn": [
@@ -6488,7 +6488,7 @@
     3,
     3.8,
     2.8,
-    3.4,
+    3.3,
     4.1,
     2.7,
     3.3
@@ -6510,12 +6510,12 @@
    "p": "DEF",
    "gw": [
     3,
-    3,
+    2.9,
     2.9,
     3.4,
     3.7,
     3.7,
-    3.8,
+    3.7,
     4
    ],
    "mn": [
@@ -6536,9 +6536,9 @@
    "gw": [
     3.3,
     3.9,
-    3,
+    3.1,
     3.4,
-    3.6,
+    3.5,
     2.7,
     3,
     3.5
@@ -6566,7 +6566,7 @@
     3.2,
     3.8,
     2.9,
-    3.3
+    3.4
    ],
    "mn": [
     71,
@@ -6589,7 +6589,7 @@
     2.9,
     3.2,
     4.2,
-    3.1,
+    3,
     3.2,
     3.2
    ],
@@ -6609,7 +6609,7 @@
    "t": "ARS",
    "p": "DEF",
    "gw": [
-    3.6,
+    3.7,
     3.3,
     3.1,
     3.3,
@@ -6713,9 +6713,9 @@
     2.9,
     2.7,
     3.1,
-    3.5,
     3.4,
-    3.6,
+    3.4,
+    3.5,
     3.7
    ],
    "mn": [
@@ -6739,7 +6739,7 @@
     2.9,
     3,
     3.8,
-    2.8,
+    2.9,
     3,
     3
    ],
@@ -6759,11 +6759,11 @@
    "t": "LEE",
    "p": "DEF",
    "gw": [
-    4.5,
+    4.4,
     1.9,
     3.5,
     2.1,
-    3.3,
+    3.2,
     2.6,
     3.7,
     3.5
@@ -6786,7 +6786,7 @@
    "gw": [
     3.2,
     2.9,
-    3.7,
+    3.8,
     3.1,
     2.2,
     3.3,
@@ -6829,31 +6829,6 @@
     77
    ]
   },
-  "32": {
-   "n": "Cash",
-   "t": "AVL",
-   "p": "DEF",
-   "gw": [
-    2.7,
-    3.2,
-    3.6,
-    3.4,
-    2.5,
-    3.4,
-    2.7,
-    2.6
-   ],
-   "mn": [
-    67,
-    76,
-    81,
-    83,
-    82,
-    82,
-    82,
-    78
-   ]
-  },
   "116": {
    "n": "Dunk",
    "t": "BHA",
@@ -6861,7 +6836,7 @@
    "gw": [
     3.5,
     2.6,
-    3,
+    2.9,
     3.4,
     3.6,
     2.8,
@@ -6879,6 +6854,31 @@
     78
    ]
   },
+  "32": {
+   "n": "Cash",
+   "t": "AVL",
+   "p": "DEF",
+   "gw": [
+    2.6,
+    3.2,
+    3.5,
+    3.4,
+    2.5,
+    3.3,
+    2.7,
+    2.6
+   ],
+   "mn": [
+    67,
+    76,
+    81,
+    83,
+    82,
+    82,
+    82,
+    78
+   ]
+  },
   "448": {
    "n": "Burn",
    "t": "NEW",
@@ -6886,8 +6886,8 @@
    "gw": [
     2.5,
     3.1,
-    3.8,
-    3.2,
+    3.7,
+    3.3,
     2.7,
     2.5,
     3.4,
@@ -6904,29 +6904,29 @@
     81
    ]
   },
-  "36": {
-   "n": "Maatsen",
-   "t": "AVL",
+  "331": {
+   "n": "Gudmundsson",
+   "t": "LEE",
    "p": "DEF",
    "gw": [
+    3.9,
+    2,
+    3.6,
+    2.1,
     3.3,
+    2.5,
     3.5,
-    3.4,
-    3.3,
-    2.4,
-    3.1,
-    2.4,
-    2.4
+    3.4
    ],
    "mn": [
+    82,
+    83,
+    83,
+    82,
+    82,
     81,
-    80,
-    77,
-    77,
-    76,
-    76,
-    75,
-    74
+    81,
+    81
    ]
   },
   "145": {
@@ -6938,9 +6938,9 @@
     3.5,
     2.8,
     2.1,
-    2.9,
+    2.8,
     3.1,
-    3,
+    2.9,
     3
    ],
    "mn": [
@@ -6954,31 +6954,6 @@
     65
    ]
   },
-  "331": {
-   "n": "Gudmundsson",
-   "t": "LEE",
-   "p": "DEF",
-   "gw": [
-    3.9,
-    2,
-    3.7,
-    2.1,
-    3.3,
-    2.5,
-    3.5,
-    3.3
-   ],
-   "mn": [
-    82,
-    83,
-    83,
-    82,
-    82,
-    81,
-    81,
-    81
-   ]
-  },
   "254": {
    "n": "Robinson",
    "t": "FUL",
@@ -6986,7 +6961,7 @@
    "gw": [
     2.8,
     2.6,
-    3,
+    3.1,
     3.1,
     2.9,
     3,
@@ -7004,29 +6979,29 @@
     75
    ]
   },
-  "389": {
-   "n": "Matheus N.",
-   "t": "MCI",
+  "36": {
+   "n": "Maatsen",
+   "t": "AVL",
    "p": "DEF",
    "gw": [
-    1.5,
-    2.6,
-    2.6,
-    2.9,
-    3.9,
-    2.9,
+    3.3,
+    3.4,
+    3.4,
+    3.2,
+    2.4,
     3.1,
-    3.1
+    2.4,
+    2.4
    ],
    "mn": [
-    45,
-    54,
-    60,
-    63,
-    64,
-    65,
-    65,
-    66
+    81,
+    80,
+    77,
+    77,
+    76,
+    76,
+    75,
+    74
    ]
   },
   "391": {
@@ -7036,7 +7011,7 @@
    "gw": [
     1.9,
     2.8,
-    2.5,
+    2.6,
     2.9,
     3.7,
     2.9,
@@ -7054,6 +7029,31 @@
     58
    ]
   },
+  "389": {
+   "n": "Matheus N.",
+   "t": "MCI",
+   "p": "DEF",
+   "gw": [
+    1.5,
+    2.6,
+    2.7,
+    2.9,
+    3.8,
+    2.9,
+    3.1,
+    3.1
+   ],
+   "mn": [
+    45,
+    54,
+    60,
+    63,
+    64,
+    65,
+    65,
+    66
+   ]
+  },
   "304": {
    "n": "O'Shea",
    "t": "IPS",
@@ -7062,7 +7062,7 @@
     3,
     3.3,
     2.9,
-    3.2,
+    3.1,
     2.4,
     3,
     2.9,
@@ -7111,7 +7111,7 @@
    "gw": [
     4,
     2.5,
-    2.6,
+    2.5,
     2.9,
     3.1,
     2.3,
@@ -7129,6 +7129,31 @@
     83
    ]
   },
+  "387": {
+   "n": "O'Reilly",
+   "t": "MCI",
+   "p": "DEF",
+   "gw": [
+    2.1,
+    3,
+    2.5,
+    2.8,
+    3.5,
+    2.7,
+    2.7,
+    2.8
+   ],
+   "mn": [
+    56,
+    55,
+    54,
+    54,
+    54,
+    54,
+    54,
+    54
+   ]
+  },
   "149": {
    "n": "Colwill",
    "t": "CHE",
@@ -7138,7 +7163,7 @@
     3.1,
     2.4,
     1.9,
-    2.8,
+    2.7,
     3,
     2.9,
     2.9
@@ -7154,31 +7179,6 @@
     72
    ]
   },
-  "387": {
-   "n": "O'Reilly",
-   "t": "MCI",
-   "p": "DEF",
-   "gw": [
-    2.1,
-    3,
-    2.5,
-    2.7,
-    3.5,
-    2.7,
-    2.8,
-    2.8
-   ],
-   "mn": [
-    56,
-    55,
-    54,
-    54,
-    54,
-    54,
-    54,
-    54
-   ]
-  },
   "259": {
    "n": "Diop",
    "t": "IPS",
@@ -7187,10 +7187,10 @@
     2.8,
     3.1,
     2.7,
-    3.1,
+    3,
     2.3,
     2.9,
-    2.7,
+    2.8,
     1.9
    ],
    "mn": [
@@ -7204,38 +7204,13 @@
     85
    ]
   },
-  "34": {
-   "n": "Pau",
-   "t": "AVL",
-   "p": "DEF",
-   "gw": [
-    3,
-    3.1,
-    3.2,
-    3,
-    2.3,
-    2.9,
-    2.3,
-    2.3
-   ],
-   "mn": [
-    80,
-    78,
-    76,
-    75,
-    74,
-    73,
-    73,
-    72
-   ]
-  },
   "418": {
    "n": "Maguire",
    "t": "MUN",
    "p": "DEF",
    "gw": [
     2.9,
-    2.2,
+    2.3,
     3.2,
     2.7,
     1.9,
@@ -7254,6 +7229,31 @@
     72
    ]
   },
+  "34": {
+   "n": "Pau",
+   "t": "AVL",
+   "p": "DEF",
+   "gw": [
+    3,
+    3.1,
+    3.1,
+    3,
+    2.3,
+    2.9,
+    2.3,
+    2.3
+   ],
+   "mn": [
+    80,
+    78,
+    76,
+    75,
+    74,
+    73,
+    73,
+    72
+   ]
+  },
   "445": {
    "n": "Thiaw",
    "t": "NEW",
@@ -7264,9 +7264,9 @@
     3.4,
     3,
     2.5,
-    2.3,
+    2.2,
     3.1,
-    2.3
+    2.4
    ],
    "mn": [
     73,
@@ -7289,7 +7289,7 @@
     2.6,
     3.1,
     3.2,
-    2.8,
+    2.7,
     2.3,
     3.6
    ],
@@ -7313,10 +7313,10 @@
     3,
     2.4,
     1.9,
-    2.6,
+    2.7,
     2.9,
-    2.9,
-    2.8
+    2.8,
+    2.9
    ],
    "mn": [
     66,
@@ -7327,81 +7327,6 @@
     67,
     67,
     67
-   ]
-  },
-  "37": {
-   "n": "Lindelöf",
-   "t": "AVL",
-   "p": "DEF",
-   "gw": [
-    2.4,
-    2.8,
-    3,
-    3,
-    2.3,
-    2.9,
-    2.4,
-    2.5
-   ],
-   "mn": [
-    60,
-    66,
-    71,
-    73,
-    74,
-    74,
-    75,
-    75
-   ]
-  },
-  "611": {
-   "n": "Wan-Bissaka",
-   "t": "AVL",
-   "p": "DEF",
-   "gw": [
-    2.9,
-    3,
-    3,
-    2.9,
-    2.3,
-    2.8,
-    2.3,
-    2.4
-   ],
-   "mn": [
-    66,
-    65,
-    65,
-    65,
-    64,
-    64,
-    64,
-    64
-   ]
-  },
-  "534": {
-   "n": "Hume",
-   "t": "SUN",
-   "p": "DEF",
-   "gw": [
-    2.8,
-    2,
-    2.7,
-    3,
-    3.2,
-    2.7,
-    2.3,
-    3.5
-   ],
-   "mn": [
-    77,
-    73,
-    75,
-    73,
-    72,
-    71,
-    71,
-    69
    ]
   },
   "257": {
@@ -7427,6 +7352,81 @@
     79,
     80,
     81
+   ]
+  },
+  "37": {
+   "n": "Lindelöf",
+   "t": "AVL",
+   "p": "DEF",
+   "gw": [
+    2.3,
+    2.8,
+    3,
+    2.9,
+    2.3,
+    3,
+    2.4,
+    2.5
+   ],
+   "mn": [
+    60,
+    66,
+    71,
+    73,
+    74,
+    74,
+    75,
+    75
+   ]
+  },
+  "611": {
+   "n": "Wan-Bissaka",
+   "t": "AVL",
+   "p": "DEF",
+   "gw": [
+    2.8,
+    3,
+    3.1,
+    2.9,
+    2.3,
+    2.9,
+    2.3,
+    2.3
+   ],
+   "mn": [
+    66,
+    65,
+    65,
+    65,
+    64,
+    64,
+    64,
+    64
+   ]
+  },
+  "534": {
+   "n": "Hume",
+   "t": "SUN",
+   "p": "DEF",
+   "gw": [
+    2.8,
+    2,
+    2.6,
+    3,
+    3.2,
+    2.7,
+    2.3,
+    3.5
+   ],
+   "mn": [
+    77,
+    73,
+    75,
+    73,
+    72,
+    71,
+    71,
+    69
    ]
   },
   "113": {
@@ -7465,7 +7465,7 @@
     2.7,
     2.3,
     2.6,
-    2.8,
+    2.7,
     1.8
    ],
    "mn": [
@@ -7516,7 +7516,7 @@
     3.4,
     2.7,
     2.4,
-    2.7
+    2.6
    ],
    "mn": [
     null,
@@ -7554,31 +7554,6 @@
     79
    ]
   },
-  "229": {
-   "n": "Tarkowski",
-   "t": "EVE",
-   "p": "DEF",
-   "gw": [
-    0,
-    0,
-    0,
-    3,
-    3.6,
-    4.3,
-    2.9,
-    3.5
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    87,
-    86,
-    86,
-    85,
-    85
-   ]
-  },
   "279": {
    "n": "Ajayi",
    "t": "HUL",
@@ -7602,6 +7577,31 @@
     82,
     81,
     81
+   ]
+  },
+  "229": {
+   "n": "Tarkowski",
+   "t": "EVE",
+   "p": "DEF",
+   "gw": [
+    0,
+    0,
+    0,
+    2.9,
+    3.5,
+    4.3,
+    2.9,
+    3.4
+   ],
+   "mn": [
+    null,
+    null,
+    null,
+    87,
+    86,
+    86,
+    85,
+    85
    ]
   },
   "539": {
@@ -7634,7 +7634,7 @@
    "t": "FUL",
    "p": "DEF",
    "gw": [
-    2.7,
+    2.8,
     2.3,
     2.6,
     2.6,
@@ -7659,7 +7659,7 @@
    "t": "BHA",
    "p": "DEF",
    "gw": [
-    2.3,
+    2.4,
     1.6,
     2.1,
     2.9,
@@ -7735,7 +7735,7 @@
    "p": "DEF",
    "gw": [
     2.6,
-    2.6,
+    2.5,
     3,
     2,
     2.3,
@@ -7804,31 +7804,6 @@
     62
    ]
   },
-  "656": {
-   "n": "Mfuni",
-   "t": "COV",
-   "p": "DEF",
-   "gw": [
-    2.4,
-    3,
-    2,
-    2.4,
-    2,
-    2.2,
-    2.3,
-    1.7
-   ],
-   "mn": [
-    69,
-    68,
-    66,
-    65,
-    64,
-    62,
-    62,
-    63
-   ]
-  },
   "305": {
    "n": "Davis",
    "t": "IPS",
@@ -7879,6 +7854,31 @@
     57
    ]
   },
+  "656": {
+   "n": "Mfuni",
+   "t": "COV",
+   "p": "DEF",
+   "gw": [
+    2.4,
+    3,
+    2.1,
+    2.4,
+    2,
+    2.3,
+    2.3,
+    1.7
+   ],
+   "mn": [
+    69,
+    68,
+    66,
+    65,
+    64,
+    62,
+    62,
+    63
+   ]
+  },
   "502": {
    "n": "Robertson",
    "t": "TOT",
@@ -7912,11 +7912,11 @@
     1.8,
     2.3,
     2.8,
-    2.6,
-    2.1,
+    2.5,
+    2,
     1.9,
     2.6,
-    1.9
+    2
    ],
    "mn": [
     65,
@@ -7936,7 +7936,7 @@
    "gw": [
     1.7,
     1.8,
-    2.8,
+    2.7,
     2.4,
     1.6,
     2.6,
@@ -7963,7 +7963,7 @@
     2.1,
     2.3,
     2.3,
-    2.1,
+    2.2,
     2.1,
     1.9,
     2.2
@@ -7984,11 +7984,11 @@
    "t": "IPS",
    "p": "DEF",
    "gw": [
-    2.5,
+    2.6,
     2.4,
     2.1,
-    2.4,
-    1.7,
+    2.5,
+    1.8,
     2.3,
     2.1,
     1.4
@@ -8009,19 +8009,19 @@
    "t": "EVE",
    "p": "DEF",
    "gw": [
-    2.6,
-    3,
-    3.4,
+    2.7,
+    2.8,
+    3.3,
     1.4,
     1.7,
-    2,
-    1.5,
+    1.9,
+    1.4,
     1.7
    ],
    "mn": [
     70,
-    74,
-    71,
+    72,
+    70,
     38,
     39,
     40,
@@ -8036,12 +8036,12 @@
    "gw": [
     1.3,
     1.8,
-    2.4,
+    2.5,
     2.3,
     1.9,
     1.7,
     2.5,
-    1.8
+    1.9
    ],
    "mn": [
     46,
@@ -8061,7 +8061,7 @@
    "gw": [
     2.2,
     1.6,
-    1.7,
+    1.8,
     2,
     2.2,
     1.7,
@@ -8086,11 +8086,11 @@
    "gw": [
     1.3,
     1.7,
-    2.2,
-    2,
-    1.9,
+    2.1,
+    2.1,
+    1.8,
     1.7,
-    2.2,
+    2.3,
     1.8
    ],
    "mn": [
@@ -8139,7 +8139,7 @@
     1.6,
     2.3,
     1.5,
-    1.9,
+    2,
     1.9,
     1.4
    ],
@@ -8163,7 +8163,7 @@
     1.1,
     1.6,
     2.1,
-    2.5,
+    2.4,
     2.4,
     2.5,
     2.7
@@ -8186,7 +8186,7 @@
    "gw": [
     2.1,
     2.2,
-    1.7,
+    1.6,
     2,
     1.1,
     1.6,
@@ -8209,7 +8209,7 @@
    "t": "LIV",
    "p": "DEF",
    "gw": [
-    1.3,
+    1.2,
     1.9,
     1.5,
     1.8,
@@ -8261,8 +8261,8 @@
    "gw": [
     1.4,
     2.2,
-    1.4,
-    1.8,
+    1.5,
+    1.9,
     1.6,
     1.8,
     1.9,
@@ -8287,7 +8287,7 @@
     2.4,
     2.2,
     2.1,
-    1.9,
+    2,
     1.4,
     1.8,
     1.5,
@@ -8336,12 +8336,12 @@
    "gw": [
     1.6,
     1.5,
-    1.8,
+    1.9,
     1.9,
     1.8,
     1.9,
     1.6,
-    1.9
+    1.8
    ],
    "mn": [
     41,
@@ -8366,7 +8366,7 @@
     1.8,
     2,
     2,
-    2.3
+    2.2
    ],
    "mn": [
     17,
@@ -8387,7 +8387,7 @@
     2.6,
     1.2,
     1.5,
-    1.7,
+    1.8,
     1.9,
     1.6,
     1.5,
@@ -8461,12 +8461,12 @@
    "gw": [
     1.4,
     1.3,
-    1.9,
+    2,
     1.5,
     1.1,
     1.7,
     2,
-    1.4
+    1.5
    ],
    "mn": [
     34,
@@ -8487,10 +8487,10 @@
     0,
     0,
     0.6,
-    1.5,
+    1.6,
     2,
     2.2,
-    2.3,
+    2.4,
     1.5
    ],
    "mn": [
@@ -8514,8 +8514,8 @@
     1.3,
     1.1,
     1.5,
-    1.8,
-    1.6,
+    1.7,
+    1.7,
     1.7
    ],
    "mn": [
@@ -8527,31 +8527,6 @@
     37,
     38,
     38
-   ]
-  },
-  "90": {
-   "n": "Hickey",
-   "t": "BRE",
-   "p": "DEF",
-   "gw": [
-    0,
-    1,
-    1.3,
-    1.6,
-    1.9,
-    1.9,
-    1.9,
-    2
-   ],
-   "mn": [
-    null,
-    26,
-    37,
-    43,
-    45,
-    46,
-    46,
-    46
    ]
   },
   "10": {
@@ -8579,6 +8554,31 @@
     33
    ]
   },
+  "90": {
+   "n": "Hickey",
+   "t": "BRE",
+   "p": "DEF",
+   "gw": [
+    0,
+    1,
+    1.3,
+    1.6,
+    1.8,
+    1.9,
+    1.9,
+    2
+   ],
+   "mn": [
+    null,
+    26,
+    37,
+    43,
+    45,
+    46,
+    46,
+    46
+   ]
+  },
   "328": {
    "n": "Struijk",
    "t": "BHA",
@@ -8588,7 +8588,7 @@
     1.2,
     1.4,
     1.4,
-    1.6,
+    1.5,
     1.4,
     1.6,
     1.4
@@ -8663,7 +8663,7 @@
     0.9,
     1,
     1.2,
-    1.5,
+    1.4,
     1.5,
     1.6,
     1.7
@@ -8711,7 +8711,7 @@
    "gw": [
     0.8,
     1,
-    1.3,
+    1.4,
     1.4,
     1.3,
     1.2,
@@ -8739,7 +8739,7 @@
     1,
     1.3,
     1.3,
-    1.2,
+    1.3,
     1.1,
     1.9
    ],
@@ -8779,31 +8779,6 @@
     34
    ]
   },
-  "306": {
-   "n": "Greaves",
-   "t": "IPS",
-   "p": "DEF",
-   "gw": [
-    1.4,
-    1.2,
-    1.1,
-    1.3,
-    1,
-    1.3,
-    1.3,
-    0.9
-   ],
-   "mn": [
-    44,
-    35,
-    36,
-    38,
-    39,
-    40,
-    41,
-    41
-   ]
-  },
   "308": {
    "n": "Furlong",
    "t": "IPS",
@@ -8829,17 +8804,42 @@
     37
    ]
   },
+  "306": {
+   "n": "Greaves",
+   "t": "IPS",
+   "p": "DEF",
+   "gw": [
+    1.4,
+    1.2,
+    1.1,
+    1.3,
+    1,
+    1.3,
+    1.3,
+    0.9
+   ],
+   "mn": [
+    44,
+    35,
+    36,
+    38,
+    39,
+    40,
+    41,
+    41
+   ]
+  },
   "33": {
    "n": "Mings",
    "t": "AVL",
    "p": "DEF",
    "gw": [
     0.7,
-    0.9,
+    1,
     1.4,
     1.2,
     1,
-    1.3,
+    1.4,
     1.2,
     1.4
    ],
@@ -8864,7 +8864,7 @@
     1.1,
     0.9,
     1.3,
-    1.2,
+    1.1,
     1.5,
     1.4
    ],
@@ -8877,31 +8877,6 @@
     26,
     27,
     27
-   ]
-  },
-  "501": {
-   "n": "Danso",
-   "t": "SUN",
-   "p": "DEF",
-   "gw": [
-    0,
-    0.7,
-    1.1,
-    1.3,
-    1.5,
-    1.3,
-    1.1,
-    1.8
-   ],
-   "mn": [
-    null,
-    30,
-    34,
-    37,
-    39,
-    40,
-    40,
-    41
    ]
   },
   "478": {
@@ -8929,6 +8904,31 @@
     30
    ]
   },
+  "501": {
+   "n": "Danso",
+   "t": "SUN",
+   "p": "DEF",
+   "gw": [
+    0,
+    0.7,
+    1.1,
+    1.3,
+    1.5,
+    1.3,
+    1.1,
+    1.8
+   ],
+   "mn": [
+    null,
+    30,
+    34,
+    37,
+    39,
+    40,
+    40,
+    41
+   ]
+  },
   "62": {
    "n": "Diakité",
    "t": "BOU",
@@ -8939,7 +8939,7 @@
     1.4,
     0.8,
     1.2,
-    0.9,
+    1,
     1.1,
     1.4
    ],
@@ -8952,6 +8952,31 @@
     24,
     24,
     33
+   ]
+  },
+  "200": {
+   "n": "Lacroix",
+   "t": "CHE",
+   "p": "DEF",
+   "gw": [
+    0,
+    0.2,
+    0.4,
+    0.5,
+    1,
+    1.4,
+    1.5,
+    1.8
+   ],
+   "mn": [
+    null,
+    4,
+    9,
+    15,
+    22,
+    29,
+    33,
+    38
    ]
   },
   "577": {
@@ -8979,31 +9004,6 @@
     39
    ]
   },
-  "200": {
-   "n": "Lacroix",
-   "t": "CHE",
-   "p": "DEF",
-   "gw": [
-    0,
-    0.2,
-    0.4,
-    0.5,
-    0.9,
-    1.4,
-    1.5,
-    1.8
-   ],
-   "mn": [
-    null,
-    4,
-    9,
-    15,
-    22,
-    29,
-    33,
-    38
-   ]
-  },
   "421": {
    "n": "Heaven",
    "t": "MUN",
@@ -9011,7 +9011,7 @@
    "gw": [
     0.5,
     0.7,
-    1.4,
+    1.3,
     1.1,
     0.8,
     1.3,
@@ -9038,13 +9038,13 @@
     1,
     1.3,
     0.8,
-    0.9,
+    1,
     1.2,
     0.9,
-    1
+    1.1
    ],
    "mn": [
-    24,
+    23,
     27,
     29,
     22,
@@ -9138,7 +9138,7 @@
     0.8,
     0.8,
     1,
-    1.1,
+    1.2,
     1,
     1.1,
     1.3
@@ -9215,7 +9215,7 @@
     0.7,
     1,
     0.9,
-    1.2,
+    1.1,
     1.1
    ],
    "mn": [
@@ -9266,7 +9266,7 @@
     0.8,
     0.9,
     0.8,
-    1
+    0.9
    ],
    "mn": [
     6,
@@ -9286,11 +9286,11 @@
    "gw": [
     0.5,
     0.5,
-    0.6,
+    0.7,
     0.8,
     0.9,
     0.8,
-    1,
+    0.9,
     0.9
    ],
    "mn": [
@@ -9312,7 +9312,7 @@
     0.4,
     0.5,
     0.7,
-    0.9,
+    0.8,
     0.9,
     0.8,
     0.8,
@@ -9435,13 +9435,13 @@
    "p": "DEF",
    "gw": [
     0.4,
-    0.6,
-    0.6,
-    0.6,
     0.5,
     0.6,
     0.6,
-    0.6
+    0.5,
+    0.7,
+    0.6,
+    0.5
    ],
    "mn": [
     6,
@@ -9452,31 +9452,6 @@
     12,
     12,
     13
-   ]
-  },
-  "508": {
-   "n": "Davies",
-   "t": "TOT",
-   "p": "DEF",
-   "gw": [
-    0.3,
-    0.4,
-    0.4,
-    0.6,
-    0.5,
-    0.7,
-    0.7,
-    0.5
-   ],
-   "mn": [
-    4,
-    7,
-    10,
-    13,
-    15,
-    16,
-    17,
-    18
    ]
   },
   "532": {
@@ -9502,6 +9477,31 @@
     null,
     null,
     39
+   ]
+  },
+  "508": {
+   "n": "Davies",
+   "t": "TOT",
+   "p": "DEF",
+   "gw": [
+    0.3,
+    0.4,
+    0.4,
+    0.6,
+    0.5,
+    0.7,
+    0.7,
+    0.5
+   ],
+   "mn": [
+    4,
+    7,
+    10,
+    13,
+    15,
+    16,
+    17,
+    18
    ]
   },
   "148": {
@@ -9538,7 +9538,7 @@
     0.4,
     0.5,
     0.4,
-    0.6,
+    0.5,
     0.6,
     0.6,
     0.6
@@ -9665,7 +9665,7 @@
     0.3,
     0.4,
     0.4,
-    0.6,
+    0.7,
     0.7
    ],
    "mn": [
@@ -9704,31 +9704,6 @@
     5
    ]
   },
-  "596": {
-   "n": "Ruggeri",
-   "t": "AVL",
-   "p": "DEF",
-   "gw": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0.8
-   ],
-   "mn": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    20
-   ]
-  },
   "363": {
    "n": "Leoni",
    "t": "LIV",
@@ -9752,6 +9727,31 @@
     7,
     7,
     7
+   ]
+  },
+  "596": {
+   "n": "Ruggeri",
+   "t": "AVL",
+   "p": "DEF",
+   "gw": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0.8
+   ],
+   "mn": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    20
    ]
   },
   "475": {
@@ -10029,17 +10029,17 @@
     2
    ]
   },
-  "510": {
-   "n": "Rowswell",
+  "509": {
+   "n": "Byfield",
    "t": "TOT",
    "p": "DEF",
    "gw": [
     0.1,
     0.1,
     0.1,
-    0.1,
     0.2,
     0.2,
+    0.3,
     0.3,
     0.2
    ],
@@ -10054,15 +10054,15 @@
     4
    ]
   },
-  "509": {
-   "n": "Byfield",
+  "510": {
+   "n": "Rowswell",
    "t": "TOT",
    "p": "DEF",
    "gw": [
     0.1,
     0.1,
     0.1,
-    0.2,
+    0.1,
     0.2,
     0.2,
     0.3,
@@ -10129,31 +10129,6 @@
     4
    ]
   },
-  "606": {
-   "n": "Rowe",
-   "t": "AVL",
-   "p": "DEF",
-   "gw": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.2,
-    0.2,
-    0.2,
-    0.2
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    2,
-    3,
-    3,
-    3,
-    4
-   ]
-  },
   "65": {
    "n": "J.Araujo",
    "t": "BOU",
@@ -10177,6 +10152,31 @@
     5,
     6,
     7
+   ]
+  },
+  "606": {
+   "n": "Rowe",
+   "t": "AVL",
+   "p": "DEF",
+   "gw": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+   ],
+   "mn": [
+    1,
+    1,
+    1,
+    2,
+    3,
+    3,
+    3,
+    4
    ]
   },
   "660": {
@@ -10390,7 +10390,7 @@
     0.1,
     0.1,
     0.1,
-    0.2,
+    0.1,
     0.1
    ],
    "mn": [
@@ -11290,8 +11290,8 @@
     6.1,
     4.2,
     5.9,
-    6.3,
-    4.9
+    6.4,
+    5
    ],
    "mn": [
     87,
@@ -11309,14 +11309,14 @@
    "t": "CHE",
    "p": "MID",
    "gw": [
-    5,
+    5.1,
     6.3,
     5,
     4.4,
-    5.6,
-    5.8,
     5.7,
-    5.7
+    5.8,
+    5.6,
+    5.9
    ],
    "mn": [
     87,
@@ -11334,10 +11334,10 @@
    "t": "ARS",
    "p": "MID",
    "gw": [
+    5,
     5.1,
     5,
-    4.9,
-    5.5,
+    5.4,
     5.2,
     5.2,
     4.7,
@@ -11354,43 +11354,18 @@
     81
    ]
   },
-  "480": {
-   "n": "Gibbs-White",
-   "t": "NFO",
-   "p": "MID",
-   "gw": [
-    4.8,
-    5.4,
-    4.6,
-    4.6,
-    4.8,
-    4.3,
-    4.7,
-    5
-   ],
-   "mn": [
-    85,
-    86,
-    86,
-    85,
-    85,
-    85,
-    85,
-    85
-   ]
-  },
   "368": {
    "n": "Szoboszlai",
    "t": "LIV",
    "p": "MID",
    "gw": [
-    4.7,
+    4.8,
     5.1,
     4.3,
     4.7,
     4.6,
     5.1,
-    4.3,
+    4.4,
     5.5
    ],
    "mn": [
@@ -11404,22 +11379,47 @@
     77
    ]
   },
+  "480": {
+   "n": "Gibbs-White",
+   "t": "NFO",
+   "p": "MID",
+   "gw": [
+    4.8,
+    5.4,
+    4.6,
+    4.7,
+    4.9,
+    4.3,
+    4.6,
+    4.9
+   ],
+   "mn": [
+    85,
+    86,
+    86,
+    85,
+    85,
+    85,
+    85,
+    85
+   ]
+  },
   "366": {
    "n": "Wirtz",
    "t": "LIV",
    "p": "MID",
    "gw": [
-    4.8,
+    4.9,
     5,
     4,
     4.6,
-    4.4,
+    4.5,
     5.1,
     4.3,
-    5
+    5.1
    ],
    "mn": [
-    83,
+    84,
     78,
     77,
     81,
@@ -11435,11 +11435,11 @@
    "p": "MID",
    "gw": [
     5,
-    4.6,
+    4.7,
     5.6,
     4.8,
     3.5,
-    4.8,
+    4.7,
     4.7,
     4
    ],
@@ -11459,12 +11459,12 @@
    "t": "CHE",
    "p": "MID",
    "gw": [
-    4.4,
+    4.3,
     5.2,
     4.3,
     3.7,
     4.7,
-    4.8,
+    4.9,
     4.7,
     4.8
    ],
@@ -11487,11 +11487,11 @@
     4.4,
     4.3,
     5.3,
-    3.4,
+    3.5,
     5.2,
     3.9,
     4.5,
-    4.4
+    4.3
    ],
    "mn": [
     82,
@@ -11504,44 +11504,19 @@
     77
    ]
   },
-  "400": {
-   "n": "Doku",
-   "t": "MCI",
-   "p": "MID",
-   "gw": [
-    3.7,
-    4.6,
-    4.2,
-    4.5,
-    5.3,
-    4.3,
-    4.1,
-    4.3
-   ],
-   "mn": [
-    80,
-    78,
-    77,
-    77,
-    76,
-    75,
-    73,
-    75
-   ]
-  },
   "124": {
    "n": "Groß",
    "t": "BHA",
    "p": "MID",
    "gw": [
-    5.4,
+    5.5,
     3.6,
     3.8,
-    4.3,
-    4.9,
+    4.4,
+    4.8,
     4,
     3.9,
-    4.3
+    4.4
    ],
    "mn": [
     87,
@@ -11554,6 +11529,31 @@
     80
    ]
   },
+  "400": {
+   "n": "Doku",
+   "t": "MCI",
+   "p": "MID",
+   "gw": [
+    3.6,
+    4.6,
+    4.2,
+    4.4,
+    5.2,
+    4.4,
+    4,
+    4.4
+   ],
+   "mn": [
+    80,
+    78,
+    77,
+    77,
+    76,
+    75,
+    73,
+    75
+   ]
+  },
   "453": {
    "n": "Barnes",
    "t": "NEW",
@@ -11562,9 +11562,9 @@
     3.8,
     4.6,
     4.7,
-    4.5,
-    4.1,
-    3.8,
+    4.6,
+    4,
+    3.9,
     4.5,
     4
    ],
@@ -11585,13 +11585,13 @@
    "p": "MID",
    "gw": [
     4.1,
-    4.3,
-    4,
+    4.2,
+    3.8,
     4.2,
     4.2,
     4.1,
     3.9,
-    4.6
+    4.7
    ],
    "mn": [
     78,
@@ -11612,9 +11612,9 @@
     4.3,
     4.6,
     3.8,
-    4.6,
+    4.4,
     3.6,
-    4.2,
+    4.1,
     4,
     3
    ],
@@ -11636,10 +11636,10 @@
    "gw": [
     4.4,
     3.6,
-    4.4,
+    4.5,
     3,
     4.7,
-    3.6,
+    3.5,
     4.1,
     3.9
    ],
@@ -11659,14 +11659,14 @@
    "t": "BHA",
    "p": "MID",
    "gw": [
-    4.6,
+    4.5,
     3.6,
     3.7,
     4.3,
     4.7,
     3.8,
     3.4,
-    4
+    4.1
    ],
    "mn": [
     79,
@@ -11684,14 +11684,14 @@
    "t": "COV",
    "p": "MID",
    "gw": [
-    4,
+    3.9,
     5,
     3.7,
-    4,
+    4.1,
     3.5,
-    3.8,
-    3.8,
-    3.3
+    3.7,
+    3.9,
+    3.4
    ],
    "mn": [
     85,
@@ -11729,13 +11729,38 @@
     78
    ]
   },
+  "481": {
+   "n": "Anderson",
+   "t": "MCI",
+   "p": "MID",
+   "gw": [
+    3.4,
+    4,
+    3.8,
+    3.6,
+    4.2,
+    3.7,
+    3.7,
+    3.8
+   ],
+   "mn": [
+    85,
+    84,
+    83,
+    81,
+    80,
+    79,
+    79,
+    79
+   ]
+  },
   "13": {
    "n": "Rice",
    "t": "ARS",
    "p": "MID",
    "gw": [
     3.5,
-    3.5,
+    3.4,
     3.6,
     3.9,
     3.9,
@@ -11754,31 +11779,6 @@
     76
    ]
   },
-  "481": {
-   "n": "Anderson",
-   "t": "MCI",
-   "p": "MID",
-   "gw": [
-    3.4,
-    4,
-    3.8,
-    3.7,
-    4.2,
-    3.6,
-    3.7,
-    3.8
-   ],
-   "mn": [
-    85,
-    84,
-    83,
-    81,
-    80,
-    79,
-    79,
-    79
-   ]
-  },
   "542": {
    "n": "E.Le Fée",
    "t": "SUN",
@@ -11786,8 +11786,8 @@
    "gw": [
     3.7,
     3.4,
-    3.8,
     3.9,
+    4,
     4.2,
     3.7,
     3.5,
@@ -11804,38 +11804,13 @@
     78
    ]
   },
-  "236": {
-   "n": "Dewsbury-Hall",
-   "t": "EVE",
-   "p": "MID",
-   "gw": [
-    3.5,
-    3.5,
-    3.9,
-    3.3,
-    3.5,
-    3.9,
-    3.3,
-    3.4
-   ],
-   "mn": [
-    76,
-    76,
-    76,
-    75,
-    75,
-    75,
-    74,
-    75
-   ]
-  },
   "94": {
    "n": "Schade",
    "t": "BRE",
    "p": "MID",
    "gw": [
     3.7,
-    3.4,
+    3.5,
     3.2,
     3.5,
     3.9,
@@ -11863,7 +11838,7 @@
     3.4,
     3.1,
     3.4,
-    3.3,
+    3.4,
     3.7,
     3.4,
     4
@@ -11879,15 +11854,40 @@
     75
    ]
   },
+  "642": {
+   "n": "Thomas",
+   "t": "HUL",
+   "p": "MID",
+   "gw": [
+    3.2,
+    4.4,
+    3.1,
+    3.7,
+    3.2,
+    3.5,
+    3.7,
+    2.8
+   ],
+   "mn": [
+    81,
+    83,
+    85,
+    84,
+    84,
+    84,
+    85,
+    85
+   ]
+  },
   "239": {
    "n": "Garner",
    "t": "EVE",
    "p": "MID",
    "gw": [
     3.5,
-    3.6,
+    3.5,
     3.8,
-    3.4,
+    3.5,
     3.5,
     3.8,
     3.3,
@@ -11911,11 +11911,11 @@
    "gw": [
     4.2,
     4,
-    3.6,
+    3.5,
     3.7,
     3.1,
     3.4,
-    3.6,
+    3.7,
     3.5
    ],
    "mn": [
@@ -11929,29 +11929,29 @@
     77
    ]
   },
-  "642": {
-   "n": "Thomas",
-   "t": "HUL",
+  "236": {
+   "n": "Dewsbury-Hall",
+   "t": "EVE",
    "p": "MID",
    "gw": [
-    3.1,
-    4.4,
-    3.1,
-    3.6,
-    3.2,
+    3.4,
     3.5,
-    3.7,
-    2.8
+    3.8,
+    3.3,
+    3.5,
+    3.8,
+    3.2,
+    3.3
    ],
    "mn": [
-    81,
-    83,
-    85,
-    84,
-    84,
-    84,
-    85,
-    85
+    76,
+    76,
+    76,
+    75,
+    75,
+    75,
+    74,
+    75
    ]
   },
   "512": {
@@ -11988,10 +11988,10 @@
     3.7,
     3.3,
     4.2,
-    3.2,
-    3.6,
+    3.1,
+    3.7,
     3.5,
-    3
+    2.9
    ],
    "mn": [
     57,
@@ -12009,12 +12009,12 @@
    "t": "LIV",
    "p": "MID",
    "gw": [
-    3.3,
+    3.2,
     4,
     3.2,
     3.5,
-    3.8,
-    2.8,
+    3.7,
+    2.9,
     3.1,
     3.7
    ],
@@ -12066,7 +12066,7 @@
     4.3,
     3.2,
     3.6,
-    3
+    3.1
    ],
    "mn": [
     60,
@@ -12112,9 +12112,9 @@
     3,
     3,
     2.8,
-    3.6,
-    4.2,
-    3.4,
+    3.5,
+    4.3,
+    3.5,
     2.8,
     3.6
    ],
@@ -12136,12 +12136,12 @@
    "gw": [
     2.5,
     3.3,
-    3,
-    3.3,
-    4,
+    3.1,
+    3.4,
+    4.1,
     3.4,
     3.2,
-    3.4
+    3.3
    ],
    "mn": [
     48,
@@ -12154,31 +12154,6 @@
     50
    ]
   },
-  "244": {
-   "n": "Armstrong",
-   "t": "EVE",
-   "p": "MID",
-   "gw": [
-    3.2,
-    3.2,
-    3.4,
-    3.1,
-    3.1,
-    3.4,
-    3,
-    3.2
-   ],
-   "mn": [
-    81,
-    82,
-    81,
-    81,
-    81,
-    81,
-    81,
-    81
-   ]
-  },
   "486": {
    "n": "McAtee",
    "t": "NFO",
@@ -12188,10 +12163,10 @@
     3.3,
     3,
     3.1,
-    3.3,
+    3.2,
     3.1,
     3.2,
-    3.3
+    3.4
    ],
    "mn": [
     72,
@@ -12213,7 +12188,7 @@
     2.7,
     2.9,
     3.1,
-    3.3,
+    3.4,
     3.3,
     3.4,
     3.6
@@ -12229,54 +12204,29 @@
     79
    ]
   },
-  "156": {
-   "n": "Neto",
-   "t": "CHE",
+  "244": {
+   "n": "Armstrong",
+   "t": "EVE",
    "p": "MID",
    "gw": [
-    3,
-    3.5,
-    3,
-    2.6,
-    3.3,
-    3.5,
+    3.1,
+    3.1,
     3.4,
-    3.4
-   ],
-   "mn": [
-    59,
-    59,
-    59,
-    59,
-    59,
-    59,
-    59,
-    60
-   ]
-  },
-  "627": {
-   "n": "Barcola",
-   "t": "LIV",
-   "p": "MID",
-   "gw": [
-    3.8,
-    2.9,
-    2.5,
+    3.1,
     3.2,
-    3.1,
-    3.5,
-    3.1,
-    3.5
+    3.4,
+    3,
+    3.1
    ],
    "mn": [
-    75,
-    52,
-    54,
-    60,
-    60,
-    61,
-    62,
-    56
+    81,
+    82,
+    81,
+    81,
+    81,
+    81,
+    81,
+    81
    ]
   },
   "459": {
@@ -12284,12 +12234,12 @@
    "t": "NEW",
    "p": "MID",
    "gw": [
-    3.1,
+    3,
     3.3,
     3.4,
-    3.4,
+    3.3,
     3.1,
-    3,
+    3.1,
     3.3,
     3.1
    ],
@@ -12304,18 +12254,68 @@
     78
    ]
   },
+  "627": {
+   "n": "Barcola",
+   "t": "LIV",
+   "p": "MID",
+   "gw": [
+    3.8,
+    2.9,
+    2.5,
+    3.2,
+    3.1,
+    3.5,
+    3.1,
+    3.4
+   ],
+   "mn": [
+    75,
+    52,
+    54,
+    60,
+    60,
+    61,
+    62,
+    56
+   ]
+  },
+  "156": {
+   "n": "Neto",
+   "t": "CHE",
+   "p": "MID",
+   "gw": [
+    2.9,
+    3.5,
+    3,
+    2.6,
+    3.2,
+    3.5,
+    3.3,
+    3.3
+   ],
+   "mn": [
+    59,
+    59,
+    59,
+    59,
+    59,
+    59,
+    59,
+    60
+   ]
+  },
   "428": {
    "n": "Cunha",
    "t": "MUN",
    "p": "MID",
    "gw": [
     3.5,
-    3.1,
+    3.2,
     3.7,
     3.1,
     2.4,
     3.2,
-    3.4,
+    3.3,
     2.8
    ],
    "mn": [
@@ -12329,31 +12329,6 @@
     58
    ]
   },
-  "558": {
-   "n": "Schlager",
-   "t": "NFO",
-   "p": "MID",
-   "gw": [
-    3,
-    3.3,
-    3.1,
-    3.1,
-    3.2,
-    3,
-    3.1,
-    3.3
-   ],
-   "mn": [
-    66,
-    67,
-    67,
-    68,
-    68,
-    68,
-    68,
-    69
-   ]
-  },
   "335": {
    "n": "Stach",
    "t": "LEE",
@@ -12365,7 +12340,7 @@
     2.9,
     3.5,
     3.3,
-    3.6,
+    3.7,
     3.6
    ],
    "mn": [
@@ -12384,9 +12359,9 @@
    "t": "BHA",
    "p": "MID",
    "gw": [
-    3.7,
+    3.8,
     2.7,
-    2.8,
+    2.7,
     3.5,
     3.7,
     3.2,
@@ -12404,6 +12379,31 @@
     70
    ]
   },
+  "558": {
+   "n": "Schlager",
+   "t": "NFO",
+   "p": "MID",
+   "gw": [
+    3,
+    3.3,
+    3,
+    3.1,
+    3.3,
+    3,
+    3.1,
+    3.2
+   ],
+   "mn": [
+    66,
+    67,
+    67,
+    68,
+    68,
+    68,
+    68,
+    69
+   ]
+  },
   "399": {
    "n": "Cherki",
    "t": "MCI",
@@ -12413,8 +12413,8 @@
     3,
     2.9,
     3.3,
-    3.9,
-    3.2,
+    4,
+    3.1,
     3.1,
     3.3
    ],
@@ -12439,8 +12439,8 @@
     3.2,
     2.8,
     3.1,
-    3,
-    3.3,
+    2.9,
+    3.4,
     3.2
    ],
    "mn": [
@@ -12465,7 +12465,7 @@
     3.3,
     3.2,
     2.8,
-    3.1,
+    3,
     2.9
    ],
    "mn": [
@@ -12486,7 +12486,7 @@
    "gw": [
     3.6,
     3,
-    3,
+    3.1,
     3.1,
     3.1,
     2.8,
@@ -12509,9 +12509,9 @@
    "t": "FUL",
    "p": "MID",
    "gw": [
-    3.2,
-    2.9,
     3.1,
+    2.9,
+    3,
     3.3,
     3,
     3.1,
@@ -12534,12 +12534,12 @@
    "t": "AVL",
    "p": "MID",
    "gw": [
-    3.6,
-    3.3,
+    3.5,
+    3.4,
     2.7,
     3.4,
     3,
-    3.3,
+    3.1,
     3,
     2.3
    ],
@@ -12579,31 +12579,6 @@
     64
    ]
   },
-  "646": {
-   "n": "Fofana",
-   "t": "SUN",
-   "p": "MID",
-   "gw": [
-    3.1,
-    3.5,
-    2.8,
-    2.1,
-    2.9,
-    3.1,
-    3,
-    3
-   ],
-   "mn": [
-    75,
-    73,
-    71,
-    68,
-    67,
-    66,
-    66,
-    65
-   ]
-  },
   "101": {
    "n": "Henderson",
    "t": "CHE",
@@ -12629,54 +12604,29 @@
     82
    ]
   },
-  "242": {
-   "n": "George",
-   "t": "EVE",
+  "646": {
+   "n": "Fofana",
+   "t": "SUN",
    "p": "MID",
    "gw": [
-    2.9,
-    3,
-    3.3,
-    2.7,
+    3.1,
+    3.5,
+    2.8,
+    2.1,
     2.8,
     3.1,
-    2.6,
-    2.7
+    2.9,
+    3
    ],
    "mn": [
-    72,
+    75,
+    73,
     71,
-    69,
     68,
     67,
     66,
     66,
-    66
-   ]
-  },
-  "69": {
-   "n": "Scott",
-   "t": "BOU",
-   "p": "MID",
-   "gw": [
-    2.5,
-    2.7,
-    3.3,
-    2.5,
-    3.2,
-    2.8,
-    3,
-    3.1
-   ],
-   "mn": [
-    58,
-    61,
-    64,
-    65,
-    65,
-    66,
-    66,
-    67
+    65
    ]
   },
   "261": {
@@ -12684,9 +12634,9 @@
    "t": "FUL",
    "p": "MID",
    "gw": [
-    3.1,
+    3,
     2.8,
-    2.9,
+    3,
     3.1,
     2.9,
     3,
@@ -12704,6 +12654,31 @@
     68
    ]
   },
+  "69": {
+   "n": "Scott",
+   "t": "BOU",
+   "p": "MID",
+   "gw": [
+    2.5,
+    2.7,
+    3.2,
+    2.5,
+    3.2,
+    2.8,
+    2.9,
+    3.1
+   ],
+   "mn": [
+    58,
+    61,
+    64,
+    65,
+    65,
+    66,
+    66,
+    67
+   ]
+  },
   "345": {
    "n": "Tanaka",
    "t": "LEE",
@@ -12715,8 +12690,8 @@
     2.6,
     2.9,
     2.7,
-    3,
-    2.9
+    3.1,
+    3
    ],
    "mn": [
     70,
@@ -12727,6 +12702,31 @@
     65,
     65,
     65
+   ]
+  },
+  "242": {
+   "n": "George",
+   "t": "EVE",
+   "p": "MID",
+   "gw": [
+    2.9,
+    3,
+    3.2,
+    2.6,
+    2.8,
+    3.2,
+    2.6,
+    2.7
+   ],
+   "mn": [
+    72,
+    71,
+    69,
+    68,
+    67,
+    66,
+    66,
+    66
    ]
   },
   "12": {
@@ -12759,7 +12759,7 @@
    "t": "FUL",
    "p": "MID",
    "gw": [
-    3.1,
+    3.2,
     2.8,
     2.9,
     3.1,
@@ -12788,9 +12788,9 @@
     2.8,
     2.6,
     2.7,
-    2.9,
-    2.9,
     2.8,
+    2.8,
+    2.9,
     3
    ],
    "mn": [
@@ -12809,10 +12809,10 @@
    "t": "AVL",
    "p": "MID",
    "gw": [
+    2.9,
+    2.9,
     3,
-    2.8,
-    3,
-    3,
+    2.9,
     2.5,
     2.7,
     2.5,
@@ -12836,11 +12836,11 @@
    "gw": [
     3,
     2.3,
-    3.1,
+    3.2,
     2.4,
-    2.9,
+    2.8,
     2.6,
-    3.1,
+    3,
     2.9
    ],
    "mn": [
@@ -12859,7 +12859,7 @@
    "t": "AVL",
    "p": "MID",
    "gw": [
-    2.8,
+    2.7,
     2.7,
     3,
     2.9,
@@ -12877,6 +12877,31 @@
     49,
     49,
     50
+   ]
+  },
+  "460": {
+   "n": "Willock",
+   "t": "NEW",
+   "p": "MID",
+   "gw": [
+    2.5,
+    2.9,
+    2.9,
+    2.9,
+    2.5,
+    2.5,
+    2.7,
+    2.5
+   ],
+   "mn": [
+    64,
+    64,
+    63,
+    62,
+    62,
+    62,
+    62,
+    62
    ]
   },
   "86": {
@@ -12914,7 +12939,7 @@
     2.5,
     2.7,
     3.3,
-    2.9,
+    2.8,
     2.8,
     2.9
    ],
@@ -12929,56 +12954,6 @@
     55
    ]
   },
-  "290": {
-   "n": "Slater",
-   "t": "HUL",
-   "p": "MID",
-   "gw": [
-    2.9,
-    2.9,
-    2.6,
-    2.8,
-    2.5,
-    2.6,
-    2.8,
-    2.8
-   ],
-   "mn": [
-    85,
-    85,
-    85,
-    84,
-    84,
-    83,
-    83,
-    83
-   ]
-  },
-  "73": {
-   "n": "Adams",
-   "t": "BOU",
-   "p": "MID",
-   "gw": [
-    2.9,
-    2.6,
-    2.9,
-    2.5,
-    2.9,
-    2.6,
-    2.7,
-    2.5
-   ],
-   "mn": [
-    77,
-    72,
-    71,
-    74,
-    73,
-    73,
-    72,
-    69
-   ]
-  },
   "159": {
    "n": "Caicedo",
    "t": "CHE",
@@ -12991,7 +12966,7 @@
     2.7,
     2.7,
     2.7,
-    2.7
+    2.8
    ],
    "mn": [
     81,
@@ -13016,7 +12991,7 @@
     2.6,
     2.6,
     2.5,
-    2.6
+    2.7
    ],
    "mn": [
     83,
@@ -13029,29 +13004,79 @@
     77
    ]
   },
-  "460": {
-   "n": "Willock",
-   "t": "NEW",
+  "73": {
+   "n": "Adams",
+   "t": "BOU",
    "p": "MID",
    "gw": [
+    2.8,
+    2.6,
+    2.9,
     2.5,
     2.9,
-    2.9,
-    2.9,
-    2.5,
-    2.5,
+    2.6,
     2.7,
     2.5
    ],
    "mn": [
-    64,
-    64,
-    63,
-    62,
-    62,
-    62,
-    62,
-    62
+    77,
+    72,
+    71,
+    74,
+    73,
+    73,
+    72,
+    69
+   ]
+  },
+  "290": {
+   "n": "Slater",
+   "t": "HUL",
+   "p": "MID",
+   "gw": [
+    2.9,
+    2.9,
+    2.6,
+    2.8,
+    2.4,
+    2.6,
+    2.8,
+    2.8
+   ],
+   "mn": [
+    85,
+    85,
+    85,
+    84,
+    84,
+    83,
+    83,
+    83
+   ]
+  },
+  "452": {
+   "n": "Bruno G.",
+   "t": "ARS",
+   "p": "MID",
+   "gw": [
+    2.4,
+    2.6,
+    2.6,
+    2.7,
+    2.6,
+    2.7,
+    2.6,
+    2.9
+   ],
+   "mn": [
+    58,
+    58,
+    58,
+    58,
+    57,
+    57,
+    57,
+    57
    ]
   },
   "483": {
@@ -13059,7 +13084,7 @@
    "t": "NFO",
    "p": "MID",
    "gw": [
-    2.5,
+    2.4,
     2.8,
     2.5,
     2.6,
@@ -13079,31 +13104,6 @@
     59
    ]
   },
-  "452": {
-   "n": "Bruno G.",
-   "t": "ARS",
-   "p": "MID",
-   "gw": [
-    2.4,
-    2.6,
-    2.5,
-    2.7,
-    2.6,
-    2.7,
-    2.6,
-    2.9
-   ],
-   "mn": [
-    58,
-    58,
-    58,
-    58,
-    57,
-    57,
-    57,
-    57
-   ]
-  },
   "369": {
    "n": "Ngumoha",
    "t": "LIV",
@@ -13113,13 +13113,13 @@
     3.4,
     2.7,
     2.2,
-    2.2,
+    2.1,
     2.4,
     2,
-    3.1
+    3.2
    ],
    "mn": [
-    57,
+    56,
     60,
     55,
     40,
@@ -13162,7 +13162,7 @@
     3.3,
     2,
     2.2,
-    2.7,
+    2.6,
     2.9,
     2.5,
     2.3,
@@ -13179,6 +13179,31 @@
     70
    ]
   },
+  "545": {
+   "n": "Sadiki",
+   "t": "SUN",
+   "p": "MID",
+   "gw": [
+    2.7,
+    2.5,
+    2.6,
+    2.7,
+    2.7,
+    2.5,
+    2.4,
+    2.8
+   ],
+   "mn": [
+    85,
+    82,
+    83,
+    83,
+    79,
+    79,
+    79,
+    76
+   ]
+  },
   "515": {
    "n": "Maddison",
    "t": "TOT",
@@ -13188,8 +13213,8 @@
     2.7,
     2.1,
     2.9,
-    2.4,
-    2.7,
+    2.3,
+    2.6,
     2.7,
     2.3
    ],
@@ -13210,12 +13235,12 @@
    "p": "MID",
    "gw": [
     2.7,
-    2.4,
+    2.5,
     2.4,
     2.5,
     2.7,
     2.7,
-    2.8,
+    2.7,
     2.9
    ],
    "mn": [
@@ -13229,43 +13254,18 @@
     51
    ]
   },
-  "545": {
-   "n": "Sadiki",
-   "t": "SUN",
-   "p": "MID",
-   "gw": [
-    2.6,
-    2.5,
-    2.6,
-    2.7,
-    2.7,
-    2.5,
-    2.4,
-    2.8
-   ],
-   "mn": [
-    85,
-    82,
-    83,
-    83,
-    79,
-    79,
-    79,
-    76
-   ]
-  },
   "95": {
    "n": "O.Dango",
    "t": "BRE",
    "p": "MID",
    "gw": [
     2.7,
-    2.4,
+    2.5,
     2.3,
     2.5,
     2.7,
     2.6,
-    2.7,
+    2.8,
     2.9
    ],
    "mn": [
@@ -13290,7 +13290,7 @@
     2.6,
     2.4,
     2.5,
-    2.4,
+    2.5,
     2.2
    ],
    "mn": [
@@ -13304,38 +13304,13 @@
     70
    ]
   },
-  "161": {
-   "n": "Lavia",
-   "t": "CHE",
-   "p": "MID",
-   "gw": [
-    2.8,
-    2.8,
-    2.5,
-    2.3,
-    2.3,
-    2.4,
-    2.4,
-    2.4
-   ],
-   "mn": [
-    73,
-    69,
-    66,
-    63,
-    62,
-    61,
-    61,
-    61
-   ]
-  },
   "52": {
    "n": "Alysson",
    "t": "AVL",
    "p": "MID",
    "gw": [
-    2.6,
-    2.6,
+    2.7,
+    2.7,
     2.8,
     2.6,
     2.2,
@@ -13354,6 +13329,31 @@
     59
    ]
   },
+  "161": {
+   "n": "Lavia",
+   "t": "CHE",
+   "p": "MID",
+   "gw": [
+    2.8,
+    2.8,
+    2.5,
+    2.2,
+    2.4,
+    2.4,
+    2.4,
+    2.4
+   ],
+   "mn": [
+    73,
+    69,
+    66,
+    63,
+    62,
+    61,
+    61,
+    61
+   ]
+  },
   "75": {
    "n": "Christie",
    "t": "BOU",
@@ -13366,7 +13366,7 @@
     2.6,
     2.3,
     2.5,
-    2.4
+    2.5
    ],
    "mn": [
     49,
@@ -13386,7 +13386,7 @@
    "gw": [
     2.9,
     3.2,
-    2.3,
+    2.4,
     2.4,
     2.2,
     2.2,
@@ -13436,7 +13436,7 @@
    "gw": [
     2.2,
     2.4,
-    2.6,
+    2.5,
     2.3,
     2.6,
     2.2,
@@ -13459,7 +13459,7 @@
    "t": "ARS",
    "p": "MID",
    "gw": [
-    2.1,
+    2,
     2.2,
     2.2,
     2.4,
@@ -13477,31 +13477,6 @@
     53,
     53,
     53
-   ]
-  },
-  "157": {
-   "n": "Estêvão",
-   "t": "CHE",
-   "p": "MID",
-   "gw": [
-    2.4,
-    2.6,
-    2.2,
-    2,
-    2.4,
-    2.5,
-    2.5,
-    2.5
-   ],
-   "mn": [
-    46,
-    43,
-    42,
-    41,
-    41,
-    41,
-    41,
-    41
    ]
   },
   "43": {
@@ -13536,11 +13511,11 @@
    "gw": [
     0,
     2.4,
-    2.5,
+    2.4,
     3.1,
     3,
     2.6,
-    2.5,
+    2.6,
     2.4
    ],
    "mn": [
@@ -13554,12 +13529,37 @@
     55
    ]
   },
+  "157": {
+   "n": "Estêvão",
+   "t": "CHE",
+   "p": "MID",
+   "gw": [
+    2.4,
+    2.6,
+    2.2,
+    1.9,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "mn": [
+    46,
+    43,
+    42,
+    41,
+    41,
+    41,
+    41,
+    41
+   ]
+  },
   "14": {
    "n": "Eze",
    "t": "ARS",
    "p": "MID",
    "gw": [
-    2.1,
+    2,
     2.2,
     2.1,
     2.2,
@@ -13577,31 +13577,6 @@
     38,
     40,
     41
-   ]
-  },
-  "455": {
-   "n": "Tonali",
-   "t": "TOT",
-   "p": "MID",
-   "gw": [
-    2.2,
-    2.4,
-    2.1,
-    2.5,
-    2.2,
-    2.4,
-    2.3,
-    2.1
-   ],
-   "mn": [
-    55,
-    58,
-    60,
-    61,
-    61,
-    61,
-    61,
-    61
    ]
   },
   "431": {
@@ -13627,6 +13602,31 @@
     44,
     45,
     45
+   ]
+  },
+  "455": {
+   "n": "Tonali",
+   "t": "TOT",
+   "p": "MID",
+   "gw": [
+    2.2,
+    2.4,
+    2.1,
+    2.5,
+    2.2,
+    2.4,
+    2.3,
+    2.1
+   ],
+   "mn": [
+    55,
+    58,
+    60,
+    61,
+    61,
+    61,
+    61,
+    61
    ]
   },
   "565": {
@@ -13663,8 +13663,8 @@
     2.4,
     2.5,
     2.4,
-    2.1,
-    2.3,
+    2,
+    2.2,
     2.1,
     2.1
    ],
@@ -13704,31 +13704,6 @@
     46
    ]
   },
-  "415": {
-   "n": "Dorgu",
-   "t": "MUN",
-   "p": "MID",
-   "gw": [
-    2.2,
-    2.2,
-    2.4,
-    2.2,
-    1.7,
-    2.3,
-    2.3,
-    2.1
-   ],
-   "mn": [
-    51,
-    50,
-    49,
-    49,
-    49,
-    50,
-    50,
-    50
-   ]
-  },
   "339": {
    "n": "Longstaff",
    "t": "LEE",
@@ -13736,12 +13711,12 @@
    "gw": [
     3,
     2.1,
-    2.4,
+    2.5,
+    1.9,
+    2.3,
     1.9,
     2.2,
-    1.9,
-    2.2,
-    2.1
+    2.2
    ],
    "mn": [
     64,
@@ -13754,6 +13729,31 @@
     51
    ]
   },
+  "415": {
+   "n": "Dorgu",
+   "t": "MUN",
+   "p": "MID",
+   "gw": [
+    2.2,
+    2.2,
+    2.4,
+    2.2,
+    1.7,
+    2.3,
+    2.3,
+    2
+   ],
+   "mn": [
+    51,
+    50,
+    49,
+    49,
+    49,
+    50,
+    50,
+    50
+   ]
+  },
   "184": {
    "n": "Grimes",
    "t": "COV",
@@ -13761,7 +13761,7 @@
    "gw": [
     2.1,
     2.4,
-    2,
+    2.1,
     2.2,
     2,
     2.1,
@@ -13786,7 +13786,7 @@
    "gw": [
     3.2,
     2.1,
-    2,
+    2.1,
     2.1,
     2,
     1.9,
@@ -13812,7 +13812,7 @@
     1,
     2.3,
     2.2,
-    2.3,
+    2.2,
     2.1,
     2.1,
     2.2,
@@ -13861,8 +13861,8 @@
    "gw": [
     2.7,
     2.1,
-    2.1,
     2.2,
+    2.1,
     2.1,
     1.9,
     1.8,
@@ -13884,11 +13884,11 @@
    "t": "EVE",
    "p": "MID",
    "gw": [
-    2.1,
-    2,
-    2.2,
     2,
     2.1,
+    2.1,
+    2,
+    2,
     2.2,
     2,
     2
@@ -13916,7 +13916,7 @@
     1.9,
     1.9,
     2.1,
-    2
+    1.9
    ],
    "mn": [
     42,
@@ -13937,11 +13937,11 @@
     1.7,
     2.1,
     2.2,
-    2.2,
-    1.9,
+    2.1,
+    2,
     2,
     2.2,
-    2
+    1.9
    ],
    "mn": [
     45,
@@ -13962,9 +13962,9 @@
     2,
     2.1,
     1.9,
-    2.1,
+    2.2,
     1.9,
-    2.1,
+    2.2,
     2,
     1.7
    ],
@@ -14010,13 +14010,13 @@
    "p": "MID",
    "gw": [
     1.5,
-    1.9,
+    2,
     1.7,
     1.9,
     1.9,
     1.9,
     2.1,
-    2.5
+    2.4
    ],
    "mn": [
     20,
@@ -14054,31 +14054,6 @@
     46
    ]
   },
-  "631": {
-   "n": "Mbaye",
-   "t": "AVL",
-   "p": "MID",
-   "gw": [
-    1.9,
-    1.9,
-    2.1,
-    2,
-    1.7,
-    1.9,
-    1.8,
-    1.8
-   ],
-   "mn": [
-    32,
-    33,
-    34,
-    35,
-    35,
-    35,
-    36,
-    36
-   ]
-  },
   "102": {
    "n": "Yarmoliuk",
    "t": "BRE",
@@ -14104,6 +14079,56 @@
     56
    ]
   },
+  "631": {
+   "n": "Mbaye",
+   "t": "AVL",
+   "p": "MID",
+   "gw": [
+    1.9,
+    1.9,
+    2.1,
+    2,
+    1.8,
+    1.9,
+    1.8,
+    1.8
+   ],
+   "mn": [
+    32,
+    33,
+    34,
+    35,
+    35,
+    35,
+    36,
+    36
+   ]
+  },
+  "97": {
+   "n": "Jensen",
+   "t": "BRE",
+   "p": "MID",
+   "gw": [
+    1.8,
+    1.8,
+    1.7,
+    1.8,
+    1.9,
+    2,
+    2,
+    2.1
+   ],
+   "mn": [
+    44,
+    47,
+    45,
+    47,
+    48,
+    48,
+    49,
+    49
+   ]
+  },
   "514": {
    "n": "Tel",
    "t": "TOT",
@@ -14114,7 +14139,7 @@
     1.5,
     2.5,
     2.2,
-    2.7,
+    2.6,
     2.5,
     2.2
    ],
@@ -14129,31 +14154,6 @@
     57
    ]
   },
-  "97": {
-   "n": "Jensen",
-   "t": "BRE",
-   "p": "MID",
-   "gw": [
-    1.8,
-    1.8,
-    1.7,
-    1.8,
-    1.9,
-    2,
-    2.1,
-    2.1
-   ],
-   "mn": [
-    44,
-    47,
-    45,
-    47,
-    48,
-    48,
-    49,
-    49
-   ]
-  },
   "188": {
    "n": "Torp",
    "t": "COV",
@@ -14161,7 +14161,7 @@
    "gw": [
     1.8,
     2.1,
-    1.8,
+    1.7,
     1.9,
     1.7,
     1.8,
@@ -14184,12 +14184,12 @@
    "t": "IPS",
    "p": "MID",
    "gw": [
-    1.7,
+    1.8,
     1.9,
     1.7,
     2,
-    1.6,
-    1.9,
+    1.7,
+    2,
     1.9,
     1.5
    ],
@@ -14210,7 +14210,7 @@
    "p": "MID",
    "gw": [
     1.6,
-    1.7,
+    1.6,
     2.1,
     1.9,
     1.5,
@@ -14254,31 +14254,6 @@
     51
    ]
   },
-  "616": {
-   "n": "Bouaddi",
-   "t": "MCI",
-   "p": "MID",
-   "gw": [
-    1.7,
-    1.9,
-    1.7,
-    1.7,
-    2,
-    1.8,
-    1.7,
-    1.8
-   ],
-   "mn": [
-    53,
-    49,
-    48,
-    47,
-    46,
-    46,
-    46,
-    47
-   ]
-  },
   "103": {
    "n": "Dasilva",
    "t": "BRE",
@@ -14286,8 +14261,8 @@
    "gw": [
     1.4,
     2.2,
-    1.4,
-    1.8,
+    1.5,
+    1.9,
     1.6,
     1.8,
     1.9,
@@ -14304,19 +14279,44 @@
     62
    ]
   },
+  "616": {
+   "n": "Bouaddi",
+   "t": "MCI",
+   "p": "MID",
+   "gw": [
+    1.7,
+    1.9,
+    1.7,
+    1.8,
+    2,
+    1.7,
+    1.7,
+    1.8
+   ],
+   "mn": [
+    53,
+    49,
+    48,
+    47,
+    46,
+    46,
+    46,
+    47
+   ]
+  },
   "562": {
    "n": "Maeda",
    "t": "IPS",
    "p": "MID",
    "gw": [
-    1.8,
+    1.9,
     1.9,
     1.7,
     1.9,
     1.6,
     1.8,
     1.8,
-    1.5
+    1.6
    ],
    "mn": [
     46,
@@ -14354,31 +14354,6 @@
     46
    ]
   },
-  "456": {
-   "n": "J.Ramsey",
-   "t": "NEW",
-   "p": "MID",
-   "gw": [
-    1.4,
-    1.7,
-    1.8,
-    1.8,
-    1.8,
-    1.7,
-    1.9,
-    1.7
-   ],
-   "mn": [
-    36,
-    40,
-    43,
-    44,
-    45,
-    45,
-    46,
-    46
-   ]
-  },
   "520": {
    "n": "Bergvall",
    "t": "TOT",
@@ -14389,7 +14364,7 @@
     1.6,
     1.9,
     1.7,
-    1.8,
+    1.9,
     1.8,
     1.7
    ],
@@ -14404,19 +14379,44 @@
     48
    ]
   },
+  "456": {
+   "n": "J.Ramsey",
+   "t": "NEW",
+   "p": "MID",
+   "gw": [
+    1.4,
+    1.7,
+    1.8,
+    1.8,
+    1.7,
+    1.7,
+    1.9,
+    1.8
+   ],
+   "mn": [
+    36,
+    40,
+    43,
+    44,
+    45,
+    45,
+    46,
+    46
+   ]
+  },
   "46": {
    "n": "Barkley",
    "t": "AVL",
    "p": "MID",
    "gw": [
-    1.9,
-    1.7,
-    1.9,
     1.8,
-    1.6,
+    1.7,
+    1.9,
+    1.7,
+    1.5,
     1.7,
     1.6,
-    1.7
+    1.6
    ],
    "mn": [
     31,
@@ -14440,7 +14440,7 @@
     1.6,
     1.9,
     1.7,
-    2,
+    1.9,
     1.9
    ],
    "mn": [
@@ -14479,6 +14479,31 @@
     34
    ]
   },
+  "522": {
+   "n": "Gray",
+   "t": "TOT",
+   "p": "MID",
+   "gw": [
+    1.5,
+    1.7,
+    1.5,
+    1.9,
+    1.6,
+    1.8,
+    1.7,
+    1.6
+   ],
+   "mn": [
+    41,
+    46,
+    49,
+    50,
+    51,
+    51,
+    51,
+    52
+   ]
+  },
   "551": {
    "n": "N.Angulo",
    "t": "SUN",
@@ -14494,7 +14519,7 @@
     2.1
    ],
    "mn": [
-    38,
+    39,
     43,
     40,
     40,
@@ -14504,28 +14529,53 @@
     45
    ]
   },
-  "522": {
-   "n": "Gray",
-   "t": "TOT",
+  "462": {
+   "n": "Steur",
+   "t": "NEW",
    "p": "MID",
    "gw": [
-    1.5,
+    1.4,
     1.7,
-    1.6,
-    1.9,
+    1.7,
+    1.7,
+    1.7,
     1.6,
     1.8,
-    1.7,
     1.6
    ],
    "mn": [
+    37,
+    39,
     41,
-    46,
+    41,
+    42,
+    43,
+    43,
+    43
+   ]
+  },
+  "71": {
+   "n": "Cook",
+   "t": "BOU",
+   "p": "MID",
+   "gw": [
+    1.4,
+    1.7,
+    2,
+    1.4,
+    1.7,
+    1.5,
+    1.6,
+    1.9
+   ],
+   "mn": [
+    36,
+    47,
     49,
-    50,
-    51,
-    51,
-    51,
+    42,
+    43,
+    44,
+    44,
     52
    ]
   },
@@ -14554,31 +14604,6 @@
     39
    ]
   },
-  "71": {
-   "n": "Cook",
-   "t": "BOU",
-   "p": "MID",
-   "gw": [
-    1.4,
-    1.7,
-    2,
-    1.4,
-    1.7,
-    1.5,
-    1.6,
-    1.9
-   ],
-   "mn": [
-    36,
-    47,
-    49,
-    42,
-    43,
-    44,
-    44,
-    52
-   ]
-  },
   "655": {
    "n": "Gboho",
    "t": "COV",
@@ -14590,7 +14615,7 @@
     1.7,
     1.5,
     1.6,
-    1.7,
+    1.6,
     1.5
    ],
    "mn": [
@@ -14602,31 +14627,6 @@
     40,
     40,
     40
-   ]
-  },
-  "462": {
-   "n": "Steur",
-   "t": "NEW",
-   "p": "MID",
-   "gw": [
-    1.4,
-    1.7,
-    1.7,
-    1.7,
-    1.6,
-    1.6,
-    1.8,
-    1.6
-   ],
-   "mn": [
-    37,
-    39,
-    41,
-    41,
-    42,
-    43,
-    43,
-    43
    ]
   },
   "104": {
@@ -14684,10 +14684,10 @@
    "t": "NEW",
    "p": "MID",
    "gw": [
-    1.3,
+    1.2,
     1.5,
     1.7,
-    1.7,
+    1.8,
     1.7,
     1.6,
     1.8,
@@ -14709,14 +14709,14 @@
    "t": "IPS",
    "p": "MID",
    "gw": [
-    1.7,
+    1.6,
     1.7,
     1.6,
     1.6,
     1.5,
     1.6,
     1.6,
-    1.5
+    1.4
    ],
    "mn": [
     48,
@@ -14740,7 +14740,7 @@
     1.6,
     1.4,
     1.5,
-    1.7,
+    1.6,
     1.7
    ],
    "mn": [
@@ -14789,9 +14789,9 @@
     1.5,
     1.4,
     1.6,
-    1.9,
+    1.8,
     1.6,
-    1.7
+    1.6
    ],
    "mn": [
     17,
@@ -14879,31 +14879,6 @@
     52
    ]
   },
-  "77": {
-   "n": "Adli",
-   "t": "BOU",
-   "p": "MID",
-   "gw": [
-    0.6,
-    1.4,
-    1.9,
-    1,
-    1.5,
-    1.2,
-    1.4,
-    2
-   ],
-   "mn": [
-    7,
-    23,
-    27,
-    20,
-    22,
-    23,
-    23,
-    34
-   ]
-  },
   "54": {
    "n": "Gomes",
    "t": "AVL",
@@ -14927,6 +14902,31 @@
     45,
     45,
     46
+   ]
+  },
+  "77": {
+   "n": "Adli",
+   "t": "BOU",
+   "p": "MID",
+   "gw": [
+    0.6,
+    1.4,
+    1.9,
+    1,
+    1.5,
+    1.2,
+    1.4,
+    1.9
+   ],
+   "mn": [
+    7,
+    23,
+    27,
+    20,
+    22,
+    23,
+    23,
+    34
    ]
   },
   "7": {
@@ -14979,6 +14979,31 @@
     30
    ]
   },
+  "601": {
+   "n": "Williams-Barnett",
+   "t": "TOT",
+   "p": "MID",
+   "gw": [
+    1.7,
+    1.5,
+    1.2,
+    1.5,
+    1.2,
+    1.4,
+    1.3,
+    1.2
+   ],
+   "mn": [
+    36,
+    31,
+    29,
+    28,
+    28,
+    28,
+    29,
+    29
+   ]
+  },
   "381": {
    "n": "Koumas",
    "t": "LIV",
@@ -15004,56 +15029,6 @@
     28
    ]
   },
-  "601": {
-   "n": "Williams-Barnett",
-   "t": "TOT",
-   "p": "MID",
-   "gw": [
-    1.7,
-    1.5,
-    1.2,
-    1.5,
-    1.2,
-    1.3,
-    1.3,
-    1.2
-   ],
-   "mn": [
-    36,
-    31,
-    29,
-    28,
-    28,
-    28,
-    29,
-    29
-   ]
-  },
-  "162": {
-   "n": "Andrey Santos",
-   "t": "MUN",
-   "p": "MID",
-   "gw": [
-    0.9,
-    1.1,
-    1.4,
-    1.3,
-    1.2,
-    1.4,
-    1.5,
-    1.4
-   ],
-   "mn": [
-    18,
-    24,
-    29,
-    31,
-    32,
-    33,
-    34,
-    35
-   ]
-  },
   "164": {
    "n": "Quenda",
    "t": "CHE",
@@ -15062,7 +15037,7 @@
     1,
     1.2,
     1.2,
-    1.1,
+    1.2,
     1.4,
     1.4,
     1.4,
@@ -15079,14 +15054,39 @@
     30
    ]
   },
+  "162": {
+   "n": "Andrey Santos",
+   "t": "MUN",
+   "p": "MID",
+   "gw": [
+    0.9,
+    1.1,
+    1.4,
+    1.3,
+    1.2,
+    1.4,
+    1.5,
+    1.3
+   ],
+   "mn": [
+    18,
+    24,
+    29,
+    31,
+    32,
+    33,
+    34,
+    35
+   ]
+  },
   "635": {
    "n": "Larsson",
    "t": "FUL",
    "p": "MID",
    "gw": [
-    1.2,
     1.1,
-    1.3,
+    1.1,
+    1.2,
     1.3,
     1.3,
     1.4,
@@ -15113,7 +15113,7 @@
     1,
     1.6,
     1.2,
-    1.2,
+    1.1,
     1.3,
     1.3,
     1.6
@@ -15211,7 +15211,7 @@
    "gw": [
     0.9,
     0.9,
-    1,
+    1.1,
     1.2,
     1.1,
     1.2,
@@ -15241,7 +15241,7 @@
     1.2,
     0.9,
     1.1,
-    1.5
+    1.6
    ],
    "mn": [
     5,
@@ -15291,7 +15291,7 @@
     1.4,
     1.2,
     1.1,
-    1.3
+    1.2
    ],
    "mn": [
     null,
@@ -15316,7 +15316,7 @@
     1.1,
     1.2,
     1.4,
-    1.4
+    1.5
    ],
    "mn": [
     null,
@@ -15334,7 +15334,7 @@
    "t": "IPS",
    "p": "MID",
    "gw": [
-    1,
+    0.9,
     1,
     0.9,
     1.1,
@@ -15362,7 +15362,7 @@
     0,
     0.3,
     0.6,
-    0.9,
+    1,
     1.1,
     1.2,
     1.3,
@@ -15391,7 +15391,7 @@
     1.1,
     1,
     1.1,
-    1.1
+    1.2
    ],
    "mn": [
     7,
@@ -15429,6 +15429,31 @@
     19
    ]
   },
+  "584": {
+   "n": "Hamer",
+   "t": "COV",
+   "p": "MID",
+   "gw": [
+    0.9,
+    1.1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.9
+   ],
+   "mn": [
+    17,
+    17,
+    18,
+    19,
+    19,
+    20,
+    20,
+    20
+   ]
+  },
   "406": {
    "n": "Kovačić",
    "t": "MCI",
@@ -15454,31 +15479,6 @@
     25
    ]
   },
-  "584": {
-   "n": "Hamer",
-   "t": "COV",
-   "p": "MID",
-   "gw": [
-    0.9,
-    1.1,
-    0.9,
-    1,
-    1,
-    1,
-    1,
-    0.9
-   ],
-   "mn": [
-    17,
-    17,
-    18,
-    19,
-    19,
-    20,
-    20,
-    20
-   ]
-  },
   "628": {
    "n": "Allan",
    "t": "MCI",
@@ -15486,11 +15486,11 @@
    "gw": [
     0.6,
     0.9,
-    1,
+    0.9,
     0.9,
     1.1,
     1,
-    1.1,
+    1,
     1
    ],
    "mn": [
@@ -15509,7 +15509,7 @@
    "t": "COV",
    "p": "MID",
    "gw": [
-    0.6,
+    0.5,
     0.8,
     0.9,
     1,
@@ -15535,12 +15535,12 @@
    "p": "MID",
    "gw": [
     0.9,
-    0.9,
+    1,
     0.8,
     0.9,
     1,
     1,
-    1,
+    1.1,
     1.1
    ],
    "mn": [
@@ -15587,7 +15587,7 @@
     0.5,
     0.7,
     0.7,
-    0.9,
+    0.8,
     0.9,
     1,
     1,
@@ -15602,31 +15602,6 @@
     16,
     17,
     18
-   ]
-  },
-  "190": {
-   "n": "Tchaouna",
-   "t": "COV",
-   "p": "MID",
-   "gw": [
-    0.8,
-    0.9,
-    0.7,
-    0.9,
-    0.8,
-    0.9,
-    0.9,
-    0.9
-   ],
-   "mn": [
-    18,
-    17,
-    14,
-    16,
-    17,
-    19,
-    19,
-    20
    ]
   },
   "673": {
@@ -15654,6 +15629,31 @@
     15
    ]
   },
+  "190": {
+   "n": "Tchaouna",
+   "t": "COV",
+   "p": "MID",
+   "gw": [
+    0.8,
+    0.9,
+    0.7,
+    0.9,
+    0.8,
+    0.9,
+    0.9,
+    0.9
+   ],
+   "mn": [
+    18,
+    17,
+    14,
+    16,
+    17,
+    19,
+    19,
+    20
+   ]
+  },
   "131": {
    "n": "Baleba",
    "t": "MUN",
@@ -15666,7 +15666,7 @@
     0.8,
     1,
     1.2,
-    1.3
+    1.2
    ],
    "mn": [
     null,
@@ -15687,7 +15687,7 @@
     0.4,
     0.6,
     0.7,
-    0.8,
+    0.7,
     0.9,
     1,
     1,
@@ -15702,31 +15702,6 @@
     19,
     19,
     20
-   ]
-  },
-  "160": {
-   "n": "Garnacho",
-   "t": "AVL",
-   "p": "MID",
-   "gw": [
-    0.2,
-    0.4,
-    1.2,
-    0.8,
-    0.7,
-    0.8,
-    0.8,
-    1.2
-   ],
-   "mn": [
-    2,
-    4,
-    14,
-    8,
-    9,
-    10,
-    10,
-    19
    ]
   },
   "370": {
@@ -15754,12 +15729,37 @@
     21
    ]
   },
+  "160": {
+   "n": "Garnacho",
+   "t": "AVL",
+   "p": "MID",
+   "gw": [
+    0.2,
+    0.4,
+    1.2,
+    0.8,
+    0.7,
+    0.8,
+    0.8,
+    1.1
+   ],
+   "mn": [
+    2,
+    4,
+    14,
+    8,
+    9,
+    10,
+    10,
+    19
+   ]
+  },
   "482": {
    "n": "Hudson-Odoi",
    "t": "NFO",
    "p": "MID",
    "gw": [
-    0.6,
+    0.5,
     0.7,
     0.7,
     0.8,
@@ -15779,6 +15779,31 @@
     16
    ]
   },
+  "245": {
+   "n": "Dibling",
+   "t": "EVE",
+   "p": "MID",
+   "gw": [
+    0.5,
+    0.6,
+    0.8,
+    0.8,
+    0.8,
+    0.9,
+    0.8,
+    0.9
+   ],
+   "mn": [
+    9,
+    13,
+    16,
+    18,
+    19,
+    20,
+    21,
+    21
+   ]
+  },
   "574": {
    "n": "Hjertø-Dahl",
    "t": "HUL",
@@ -15786,7 +15811,7 @@
    "gw": [
     1,
     0.9,
-    0.8,
+    0.7,
     0.8,
     0.7,
     0.8,
@@ -15804,31 +15829,6 @@
     18
    ]
   },
-  "245": {
-   "n": "Dibling",
-   "t": "EVE",
-   "p": "MID",
-   "gw": [
-    0.5,
-    0.6,
-    0.8,
-    0.8,
-    0.8,
-    0.9,
-    0.8,
-    0.8
-   ],
-   "mn": [
-    9,
-    13,
-    16,
-    18,
-    19,
-    20,
-    21,
-    21
-   ]
-  },
   "488": {
    "n": "I.Sangaré",
    "t": "NFO",
@@ -15836,7 +15836,7 @@
    "gw": [
     0.1,
     0.6,
-    0.8,
+    0.7,
     0.8,
     0.9,
     0.9,
@@ -15884,7 +15884,7 @@
    "t": "IPS",
    "p": "MID",
    "gw": [
-    0.6,
+    0.5,
     0.6,
     0.7,
     0.8,
@@ -15938,7 +15938,7 @@
     0.5,
     0.7,
     0.8,
-    1,
+    0.9,
     0.8,
     0.8,
     0.9
@@ -15963,7 +15963,7 @@
     0.2,
     0.4,
     0.7,
-    0.7,
+    0.8,
     0.8,
     1,
     1.1
@@ -15984,7 +15984,7 @@
    "t": "IPS",
    "p": "MID",
    "gw": [
-    0.2,
+    0.3,
     0.5,
     0.6,
     0.8,
@@ -16010,11 +16010,11 @@
    "p": "MID",
    "gw": [
     0.2,
-    0.5,
-    0.7,
+    0.6,
     0.7,
     0.7,
     0.8,
+    0.9,
     0.8,
     0.8
    ],
@@ -16037,7 +16037,7 @@
     0.4,
     0.5,
     0.6,
-    0.6,
+    0.7,
     0.7,
     0.8,
     0.8,
@@ -16161,12 +16161,12 @@
    "gw": [
     0.4,
     0.6,
-    0.6,
+    0.7,
     0.5,
     0.6,
     0.6,
     0.8,
-    0.7
+    0.6
    ],
    "mn": [
     4,
@@ -16177,31 +16177,6 @@
     9,
     15,
     10
-   ]
-  },
-  "212": {
-   "n": "Hughes",
-   "t": "CRY",
-   "p": "MID",
-   "gw": [
-    0.5,
-    0.5,
-    0.6,
-    0.6,
-    0.6,
-    0.6,
-    0.8,
-    0.7
-   ],
-   "mn": [
-    7,
-    9,
-    12,
-    12,
-    13,
-    15,
-    18,
-    18
    ]
   },
   "513": {
@@ -16229,6 +16204,31 @@
     23
    ]
   },
+  "212": {
+   "n": "Hughes",
+   "t": "CRY",
+   "p": "MID",
+   "gw": [
+    0.5,
+    0.5,
+    0.6,
+    0.6,
+    0.6,
+    0.6,
+    0.8,
+    0.7
+   ],
+   "mn": [
+    7,
+    9,
+    12,
+    12,
+    13,
+    15,
+    18,
+    18
+   ]
+  },
   "263": {
    "n": "Kevin",
    "t": "FUL",
@@ -16254,31 +16254,6 @@
     11
    ]
   },
-  "621": {
-   "n": "McAidoo",
-   "t": "MCI",
-   "p": "MID",
-   "gw": [
-    0.2,
-    0.5,
-    0.6,
-    0.5,
-    0.7,
-    0.6,
-    0.8,
-    0.7
-   ],
-   "mn": [
-    2,
-    7,
-    8,
-    7,
-    8,
-    9,
-    13,
-    10
-   ]
-  },
   "563": {
    "n": "Morita",
    "t": "HUL",
@@ -16302,6 +16277,31 @@
     15,
     17,
     19
+   ]
+  },
+  "621": {
+   "n": "McAidoo",
+   "t": "MCI",
+   "p": "MID",
+   "gw": [
+    0.2,
+    0.5,
+    0.5,
+    0.5,
+    0.7,
+    0.6,
+    0.8,
+    0.7
+   ],
+   "mn": [
+    2,
+    7,
+    8,
+    7,
+    8,
+    9,
+    13,
+    10
    ]
   },
   "297": {
@@ -16462,7 +16462,7 @@
     0,
     0.1,
     0.2,
-    0.4,
+    0.3,
     0.5,
     0.7,
     0.8,
@@ -16590,7 +16590,7 @@
     0.5,
     0.5,
     0.5,
-    0.5,
+    0.6,
     0.5
    ],
    "mn": [
@@ -16612,7 +16612,7 @@
     0.1,
     0.3,
     0.4,
-    0.4,
+    0.5,
     0.5,
     0.5,
     0.5,
@@ -16691,7 +16691,7 @@
     0,
     0,
     0.7,
-    1.1
+    1
    ],
    "mn": [
     null,
@@ -16711,7 +16711,7 @@
    "gw": [
     0.3,
     0.3,
-    0.4,
+    0.3,
     0.4,
     0.4,
     0.4,
@@ -16912,8 +16912,8 @@
     0.1,
     0.1,
     0.2,
-    0.2,
-    0.2,
+    0.3,
+    0.3,
     0.3,
     0.3,
     0.3
@@ -17063,7 +17063,7 @@
     0,
     0,
     0.1,
-    0.1,
+    0.2,
     0.2,
     0.3,
     0.3
@@ -17166,7 +17166,7 @@
     0.1,
     0.1,
     0.1,
-    0.2
+    0.1
    ],
    "mn": [
     2,
@@ -17379,84 +17379,9 @@
     1
    ]
   },
-  "189": {
-   "n": "Shepherd",
-   "t": "COV",
-   "p": "MID",
-   "gw": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
-   ]
-  },
   "657": {
    "n": "Nunes",
    "t": "BRE",
-   "p": "MID",
-   "gw": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
-   ]
-  },
-  "626": {
-   "n": "Zepa",
-   "t": "FUL",
-   "p": "MID",
-   "gw": [
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1,
-    0.1
-   ],
-   "mn": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
-   ]
-  },
-  "665": {
-   "n": "Mills",
-   "t": "NEW",
    "p": "MID",
    "gw": [
     0.1,
@@ -17504,9 +17429,84 @@
     1
    ]
   },
+  "189": {
+   "n": "Shepherd",
+   "t": "COV",
+   "p": "MID",
+   "gw": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "665": {
+   "n": "Mills",
+   "t": "NEW",
+   "p": "MID",
+   "gw": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
   "659": {
    "n": "Miley",
    "t": "NEW",
+   "p": "MID",
+   "gw": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+   ],
+   "mn": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "626": {
+   "n": "Zepa",
+   "t": "FUL",
    "p": "MID",
    "gw": [
     0.1,
@@ -18711,11 +18711,11 @@
    "gw": [
     5,
     6.7,
-    6.4,
+    6.3,
     6.7,
-    8.1,
-    6.4,
-    6.1,
+    8,
+    6.5,
+    6.2,
     6.2
    ],
    "mn": [
@@ -18734,14 +18734,14 @@
    "t": "LEE",
    "p": "FWD",
    "gw": [
-    5.7,
+    5.8,
     3.8,
-    5.4,
+    5.3,
     3.9,
     4.8,
     4.2,
     4.8,
-    4.4
+    4.5
    ],
    "mn": [
     87,
@@ -18759,14 +18759,14 @@
    "t": "LIV",
    "p": "FWD",
    "gw": [
-    4.8,
+    4.7,
     4.5,
     3.9,
     4.5,
     4.3,
     4.8,
     4.3,
-    4.7
+    4.8
    ],
    "mn": [
     80,
@@ -18784,9 +18784,9 @@
    "t": "BOU",
    "p": "FWD",
    "gw": [
-    4.3,
+    4.2,
     4,
-    4.6,
+    4.5,
     3.2,
     4.8,
     3.6,
@@ -18809,24 +18809,24 @@
    "t": "EVE",
    "p": "FWD",
    "gw": [
+    3.8,
+    4,
+    4.3,
     3.6,
-    3.7,
-    4.1,
-    3.4,
-    3.5,
-    3.9,
-    3.3,
-    3.5
+    3.8,
+    4.3,
+    3.6,
+    3.6
    ],
    "mn": [
-    73,
-    72,
-    72,
-    71,
-    71,
-    70,
-    70,
-    70
+    77,
+    76,
+    76,
+    76,
+    75,
+    75,
+    74,
+    74
    ]
   },
   "166": {
@@ -18834,10 +18834,10 @@
    "t": "AVL",
    "p": "FWD",
    "gw": [
-    4.3,
-    4.1,
-    4.1,
+    4.5,
     4,
+    4,
+    4.2,
     3.3,
     3.7,
     3.5,
@@ -18861,10 +18861,10 @@
    "gw": [
     0,
     0,
-    4.1,
+    4.2,
     4.5,
     5,
-    4.9,
+    4.8,
     4.8,
     5.2
    ],
@@ -18885,13 +18885,13 @@
    "p": "FWD",
    "gw": [
     3.7,
-    4.1,
-    4,
-    3.7,
-    3.1,
+    4.2,
+    3.9,
+    3.9,
+    3.2,
     3,
     3.4,
-    3.1
+    3.2
    ],
    "mn": [
     81,
@@ -18909,14 +18909,14 @@
    "t": "NFO",
    "p": "FWD",
    "gw": [
-    3.7,
+    3.6,
     3.9,
-    3.2,
     3.3,
-    3.5,
+    3.3,
+    3.4,
     3.1,
     3.2,
-    3.3
+    3.5
    ],
    "mn": [
     79,
@@ -18937,7 +18937,7 @@
     3.5,
     2.8,
     3.3,
-    3.5,
+    3.6,
     3.6,
     3.6,
     2.7,
@@ -18959,14 +18959,14 @@
    "t": "BHA",
    "p": "FWD",
    "gw": [
-    3.7,
+    3.5,
     2.9,
     2.9,
     3.4,
     3.8,
     3.2,
     2.9,
-    3.5
+    3.4
    ],
    "mn": [
     61,
@@ -19009,14 +19009,14 @@
    "t": "FUL",
    "p": "FWD",
    "gw": [
-    3,
+    2.9,
     2.8,
-    3,
+    2.9,
     3.2,
     2.8,
     3.2,
     2.7,
-    3
+    3.1
    ],
    "mn": [
     59,
@@ -19039,7 +19039,7 @@
     2.5,
     3.3,
     2.6,
-    3,
+    2.9,
     2.9,
     2.5
    ],
@@ -19061,7 +19061,7 @@
    "gw": [
     3.6,
     2.9,
-    2.7,
+    2.6,
     2.8,
     2.4,
     2.7,
@@ -19088,8 +19088,8 @@
     2.8,
     2.3,
     2.9,
-    2.4,
-    2.7,
+    2.3,
+    2.8,
     2.7,
     2.3
    ],
@@ -19113,7 +19113,7 @@
     2.6,
     2.5,
     2.6,
-    2.6,
+    2.7,
     2.4,
     2.6,
     2.8
@@ -19137,7 +19137,7 @@
     3.1,
     2.6,
     2.6,
-    2.5,
+    2.6,
     2.7,
     2.2,
     2.2,
@@ -19161,12 +19161,12 @@
    "gw": [
     1.7,
     2.4,
-    2.6,
+    2.5,
     2.6,
     2.4,
     2.3,
     2.7,
-    2.3
+    2.4
    ],
    "mn": [
     34,
@@ -19185,11 +19185,11 @@
    "p": "FWD",
    "gw": [
     3.4,
-    2.9,
+    2.8,
     2.2,
     2.3,
     2.4,
-    2.3,
+    2.4,
     2.3,
     2.4
    ],
@@ -19213,9 +19213,9 @@
     2.4,
     2.1,
     2.6,
-    2.1,
+    2,
     2.5,
-    2.4,
+    2.3,
     1.9
    ],
    "mn": [
@@ -19236,7 +19236,7 @@
    "gw": [
     0,
     0,
-    1,
+    1.1,
     2.2,
     3.5,
     3,
@@ -19261,11 +19261,11 @@
    "gw": [
     2,
     2.6,
-    2,
-    2.3,
-    2,
     2.1,
     2.2,
+    2,
+    2.2,
+    2.3,
     2
    ],
    "mn": [
@@ -19311,12 +19311,12 @@
    "gw": [
     2.7,
     2.1,
-    2.1,
+    2.2,
     2.3,
-    1.9,
+    2,
     2,
     1.8,
-    2
+    1.9
    ],
    "mn": [
     50,
@@ -19354,43 +19354,18 @@
     48
    ]
   },
-  "125": {
-   "n": "Georginio",
-   "t": "BHA",
-   "p": "FWD",
-   "gw": [
-    2,
-    1.9,
-    2,
-    2,
-    2.2,
-    1.9,
-    1.9,
-    2
-   ],
-   "mn": [
-    35,
-    41,
-    42,
-    39,
-    39,
-    40,
-    44,
-    40
-   ]
-  },
   "640": {
    "n": "Flemming",
    "t": "IPS",
    "p": "FWD",
    "gw": [
-    2.1,
+    2.2,
     2.2,
     1.9,
     2.1,
     1.8,
+    2.1,
     2,
-    1.9,
     1.5
    ],
    "mn": [
@@ -19404,6 +19379,31 @@
     44
    ]
   },
+  "125": {
+   "n": "Georginio",
+   "t": "BHA",
+   "p": "FWD",
+   "gw": [
+    1.9,
+    1.9,
+    1.9,
+    2,
+    2.2,
+    1.9,
+    1.9,
+    1.9
+   ],
+   "mn": [
+    35,
+    41,
+    42,
+    39,
+    39,
+    40,
+    44,
+    40
+   ]
+  },
   "170": {
    "n": "Emegha",
    "t": "CHE",
@@ -19413,8 +19413,8 @@
     2.2,
     1.8,
     1.5,
-    2,
-    2,
+    1.9,
+    1.9,
     1.9,
     2
    ],
@@ -19434,11 +19434,11 @@
    "t": "NEW",
    "p": "FWD",
    "gw": [
-    1.3,
+    1.2,
     1.7,
     1.8,
-    1.9,
-    1.7,
+    1.8,
+    1.8,
     1.7,
     1.9,
     1.8
@@ -19509,7 +19509,7 @@
    "t": "CHE",
    "p": "FWD",
    "gw": [
-    1.6,
+    1.5,
     1.8,
     1.6,
     1.4,
@@ -19535,8 +19535,8 @@
    "p": "FWD",
    "gw": [
     1.2,
-    1.6,
-    1.3,
+    1.5,
+    1.4,
     1.5,
     1.6,
     1.6,
@@ -19562,7 +19562,7 @@
     1.3,
     1.5,
     1.4,
-    1.5,
+    1.4,
     1.6,
     1.5,
     1.5,
@@ -19588,10 +19588,10 @@
     1.1,
     1.5,
     1.3,
-    1.5,
     1.4,
-    1.6,
-    1.5
+    1.4,
+    1.5,
+    1.4
    ],
    "mn": [
     13,
@@ -19614,7 +19614,7 @@
     0.4,
     0.6,
     1.2,
-    1.6,
+    1.7,
     1.8,
     2.1
    ],
@@ -19627,6 +19627,31 @@
     29,
     33,
     38
+   ]
+  },
+  "81": {
+   "n": "Rodríguez",
+   "t": "BOU",
+   "p": "FWD",
+   "gw": [
+    1,
+    1,
+    1.2,
+    0.9,
+    1.4,
+    1.1,
+    1.2,
+    1.3
+   ],
+   "mn": [
+    12,
+    13,
+    14,
+    16,
+    16,
+    17,
+    17,
+    17
    ]
   },
   "492": {
@@ -19654,31 +19679,6 @@
     38
    ]
   },
-  "81": {
-   "n": "Rodríguez",
-   "t": "BOU",
-   "p": "FWD",
-   "gw": [
-    1,
-    1,
-    1.2,
-    0.9,
-    1.4,
-    1.1,
-    1.2,
-    1.2
-   ],
-   "mn": [
-    12,
-    13,
-    14,
-    16,
-    16,
-    17,
-    17,
-    17
-   ]
-  },
   "320": {
    "n": "Akpom",
    "t": "IPS",
@@ -19687,10 +19687,10 @@
     0.8,
     1,
     1,
-    1.2,
+    1.3,
     1.1,
     1.3,
-    1.2,
+    1.3,
     1
    ],
    "mn": [
@@ -19710,7 +19710,7 @@
    "p": "FWD",
    "gw": [
     1.1,
-    1,
+    1.1,
     1.3,
     1.2,
     1.1,
@@ -19761,7 +19761,7 @@
    "gw": [
     0.5,
     0.6,
-    0.7,
+    0.6,
     0.7,
     0.8,
     0.7,
@@ -19811,10 +19811,10 @@
    "gw": [
     0.5,
     0.7,
-    0.6,
+    0.5,
     0.7,
     0.7,
-    0.8,
+    0.7,
     0.8,
     0.7
    ],
@@ -19829,31 +19829,6 @@
     13
    ]
   },
-  "594": {
-   "n": "David",
-   "t": "BHA",
-   "p": "FWD",
-   "gw": [
-    0.2,
-    0.3,
-    0.4,
-    0.5,
-    0.7,
-    0.6,
-    0.6,
-    0.7
-   ],
-   "mn": [
-    2,
-    3,
-    4,
-    6,
-    7,
-    8,
-    9,
-    9
-   ]
-  },
   "608": {
    "n": "Jebbison",
    "t": "BOU",
@@ -19861,7 +19836,7 @@
    "gw": [
     0.2,
     0.3,
-    0.5,
+    0.4,
     0.4,
     0.6,
     0.6,
@@ -19877,6 +19852,31 @@
     8,
     8,
     8
+   ]
+  },
+  "594": {
+   "n": "David",
+   "t": "BHA",
+   "p": "FWD",
+   "gw": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.7,
+    0.6,
+    0.6,
+    0.6
+   ],
+   "mn": [
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    9
    ]
   },
   "193": {
@@ -19963,9 +19963,9 @@
     0.2,
     0.3,
     0.5,
+    0.4,
     0.5,
-    0.5,
-    0.5,
+    0.6,
     0.5
    ],
    "mn": [
@@ -20685,13 +20685,13 @@
    "p": "MID",
    "gw": [
     3.3,
-    3.4,
     3.3,
+    3.4,
     3.3,
     3,
     3.2,
     3,
-    3
+    2.9
    ],
    "mn": [
     86,
