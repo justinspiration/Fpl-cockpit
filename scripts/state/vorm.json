@@ -2,7 +2,7 @@
  "_bron": "Wikipedia, seizoensartikel per club, sjabloon {{football box collapsible}}",
  "_methode": "Per club het artikel '2026–27 <club> F.C. season' opgehaald en elke wedstrijd met een ingevulde eindstand eruit gehaald. De laatste vijf gespeelde duels vormen de vorm, oefenwedstrijden meegeteld en apart gemarkeerd.",
  "_waarschuwing": "Wikipedia wordt door mensen bijgehouden: een uitslag kan later ingevuld staan of een fout bevatten. Daarom wordt dit alleen voor de VORM gebruikt. De competitiestand komt uit de FPL-API en blijft leidend, en geen enkele puntenprojectie rekent hiermee.",
- "_opgehaald": "2026-11-27T14:19:10+00:00",
+ "_opgehaald": "2026-11-27T22:56:27+00:00",
  "_mislukt": [],
  "clubs": {
   "ARS": {
@@ -343,18 +343,8 @@
   "CHE": {
    "artikel": "2026–27 Chelsea F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Chelsea_F.C._season",
-   "gespeeld": 20,
+   "gespeeld": 21,
    "laatste5": [
-    {
-     "datum": "2026-10-24",
-     "opp": "Tottenham Hotspur",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 2,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "8"
-    },
     {
      "datum": "2026-10-28",
      "opp": "Liverpool",
@@ -394,12 +384,22 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "11"
+    },
+    {
+     "datum": "2026-11-27",
+     "opp": "Nottingham Forest",
+     "thuis": false,
+     "voor": 2,
+     "tegen": 3,
+     "uit": "V",
+     "soort": "officieel",
+     "toernooi": "12"
     }
    ],
    "vorm": [
-    "V",
     "G",
     "W",
+    "V",
     "V",
     "V"
    ],
@@ -1152,18 +1152,8 @@
   "NFO": {
    "artikel": "2026–27 Nottingham Forest F.C. season",
    "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Nottingham_Forest_F.C._season",
-   "gespeeld": 21,
+   "gespeeld": 22,
    "laatste5": [
-    {
-     "datum": "2026-10-18",
-     "opp": "Arsenal",
-     "thuis": true,
-     "voor": 0,
-     "tegen": 1,
-     "uit": "V",
-     "soort": "officieel",
-     "toernooi": "7"
-    },
     {
      "datum": "2026-10-23",
      "opp": "Ipswich Town",
@@ -1203,16 +1193,26 @@
      "uit": "V",
      "soort": "officieel",
      "toernooi": "11"
+    },
+    {
+     "datum": "2026-11-27",
+     "opp": "Chelsea",
+     "thuis": true,
+     "voor": 3,
+     "tegen": 2,
+     "uit": "W",
+     "soort": "officieel",
+     "toernooi": "12"
     }
    ],
    "vorm": [
-    "V",
     "G",
     "V",
     "W",
-    "V"
+    "V",
+    "W"
    ],
-   "vormpunten": 4,
+   "vormpunten": 7,
    "vormmax": 15,
    "oefen": 0
   },
